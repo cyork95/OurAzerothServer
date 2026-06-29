@@ -4844,7 +4844,7 @@ if ($dbOnline) {
 
         // ----------------------------------------------------
         // Visual Custom Item Creator Controller
-        # ----------------------------------------------------
+        // ----------------------------------------------------
         function toggleItemTypeFields(slotVal) {
             slotVal = parseInt(slotVal);
             const speedInput = document.getElementById('itmSpeed');
