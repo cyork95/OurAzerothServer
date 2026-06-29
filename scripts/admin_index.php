@@ -5332,7 +5332,7 @@ if ($dbOnline) {
         document.addEventListener('click', function(e) {
             const dropdown = document.getElementById('itmCharSearchDropdown');
             const input = document.getElementById('itmCharName');
-            if (dropdown && e.target !== dropdown && e.target !== input) {
+            if (dropdown && !dropdown.contains(e.target) && e.target !== input) {
                 dropdown.style.display = 'none';
             }
         });
@@ -5395,7 +5395,7 @@ if ($dbOnline) {
         document.addEventListener('click', function(e) {
             const dropdown = document.getElementById('itmModelSearchDropdown');
             const input = document.getElementById('itmModelSearch');
-            if (dropdown && e.target !== dropdown && e.target !== input) {
+            if (dropdown && !dropdown.contains(e.target) && e.target !== input) {
                 dropdown.style.display = 'none';
             }
         });
@@ -5403,7 +5403,7 @@ if ($dbOnline) {
         document.addEventListener('click', function(e) {
             const dropdown = document.getElementById('mailItemSearchDropdown');
             const input = document.getElementById('mailItemSearch');
-            if (dropdown && e.target !== dropdown && e.target !== input) {
+            if (dropdown && !dropdown.contains(e.target) && e.target !== input) {
                 dropdown.style.display = 'none';
             }
         });
