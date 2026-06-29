@@ -941,7 +941,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
 
                 <!-- MOVEMENT COMMANDS -->
-                <div id="subtab-movement" class="subtab-content">
+                <div id="subtab-movement" class="wiki-tab-content sub-tab-content">
                     <div class="command-list">
                         <div class="command-item">
                             <div class="command-info">
@@ -989,7 +989,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
 
                 <!-- COMBAT COMMANDS -->
-                <div id="subtab-combat" class="subtab-content" style="display: none;">
+                <div id="subtab-combat" class="wiki-tab-content sub-tab-content" style="display: none;">
                     <div class="command-list">
                         <div class="command-item">
                             <div class="command-info">
@@ -1023,7 +1023,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
 
                 <!-- INVENTORY COMMANDS -->
-                <div id="subtab-inventory" class="subtab-content" style="display: none;">
+                <div id="subtab-inventory" class="wiki-tab-content sub-tab-content" style="display: none;">
                     <div class="command-list">
                         <div class="command-item">
                             <div class="command-info">
@@ -1078,7 +1078,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
 
                 <!-- SPELLS COMMANDS -->
-                <div id="subtab-spells" class="subtab-content" style="display: none;">
+                <div id="subtab-spells" class="wiki-tab-content sub-tab-content" style="display: none;">
                     <div class="command-list">
                         <div class="command-item">
                             <div class="command-info">
@@ -1615,70 +1615,6 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         </ul>
                     </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">📖 Select Leveling Guides</div>
-                
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <button class="sub-tab-btn active" id="subbtn-guides-speedrun" onclick="switchSubTab('guides-speedrun')">⚡ Speedrun Mode (1-60)</button>
-                    <button class="sub-tab-btn" id="subbtn-guides-completionist" onclick="switchSubTab('guides-completionist')">🎯 Completionist Checklist</button>
-                    <button class="sub-tab-btn" id="subbtn-guides-loremaster" onclick="switchSubTab('guides-loremaster')">📖 Loremaster Progress</button>
-                    <button class="sub-tab-btn" id="subbtn-guides-reputation" onclick="switchSubTab('guides-reputation')">🛡️ Reputation Progress</button>
-                    <button class="sub-tab-btn" id="subbtn-guides-database" onclick="switchSubTab('guides-database')">📂 RXP Official Database</button>
-                </div>
-
-                <!-- SUBTAB: SPEEDRUN -->
-                <div id="subtab-guides-speedrun" class="sub-tab-content" style="margin-top: 1.5rem;">
-                    <h3>⚡ Speedrun Leveling Routes (Level 1-60)</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Auto-optimised routes to get you through the entire leveling journey up to level 60. Select your starting race below:</p>
-                    
-                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
-                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🔴 Horde: Orc & Troll (Valley of Trials)</summary>
-                        <table class="wiki-table" style="margin-top: 0.5rem;">
-                            <thead>
-                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 1-10 Bracket: Valley of Trials</td></tr>
-                                <tr><td>1</td><td>Accept [Your Place In The World] from Kaltunk</td><td>44.5, 38.2</td><td>Valley of Trials</td></tr>
-                                <tr><td>2</td><td>Accept [Cutting Teeth] from Galgar</td><td>44.4, 38.3</td><td>Valley of Trials</td></tr>
-                                <tr><td>3</td><td>Kill 10 Mottled Boars in the valley floor</td><td>43.1, 36.8</td><td>Valley of Trials</td></tr>
-                                <tr><td>4</td><td>Turn in [Your Place In The World] and accept [Sarkoth] from Gornek</td><td>44.6, 38.1</td><td>Valley of Trials</td></tr>
-                                <tr><td>5</td><td>Kill Sarkoth (Scorpid) in the canyon to the south</td><td>40.5, 39.2</td><td>Valley of Trials</td></tr>
-                                <tr><td>6</td><td>Loot Sarkoth's Claw and turn in [Sarkoth] to Gornek</td><td>44.6, 38.1</td><td>Valley of Trials</td></tr>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 10-20 Bracket: The Barrens</td></tr>
-                                <tr><td>1</td><td>Travel to The Crossroads in The Barrens</td><td>52.1, 30.2</td><td>The Barrens</td></tr>
-                                <tr><td>2</td><td>Accept [The Crossroads] from Thork</td><td>51.5, 30.9</td><td>The Barrens</td></tr>
-                                <tr><td>3</td><td>Accept [Plainstrider Menace] from Sergra Darkthorn</td><td>52.2, 31.0</td><td>The Barrens</td></tr>
-                                <tr><td>4</td><td>Kill Plainstriders nearby for plainstrider beaks</td><td>50.4, 33.1</td><td>The Barrens</td></tr>
-                                <tr><td>5</td><td>Turn in [Plainstrider Menace] to Sergra Darkthorn</td><td>52.2, 31.0</td><td>The Barrens</td></tr>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 20-30 Bracket: Stonetalon Mountains</td></tr>
-                                <tr><td>1</td><td>Travel to Sun Rock Retreat in Stonetalon Mountains</td><td>59.5, 75.8</td><td>Stonetalon Mountains</td></tr>
-                                <tr><td>2</td><td>Accept [Sun Rock Retreat] from Braving</td><td>60.2, 74.1</td><td>Stonetalon Mountains</td></tr>
-                                <tr><td>3</td><td>Accept [Harpies Threaten] from Maggran Earthbinder</td><td>60.5, 73.8</td><td>Stonetalon Mountains</td></tr>
-                                <tr><td>4</td><td>Kill Harpies in the northern ravine</td><td>62.1, 68.4</td><td>Stonetalon Mountains</td></tr>
-                                <tr><td>5</td><td>Turn in [Harpies Threaten] to Maggran Earthbinder</td><td>60.5, 73.8</td><td>Stonetalon Mountains</td></tr>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 30-40 Bracket: Stranglethorn Vale</td></tr>
-                                <tr><td>1</td><td>Take the zeppelin to Grom'gol Base Camp in Stranglethorn</td><td>32.2, 28.5</td><td>Stranglethorn Vale</td></tr>
-                                <tr><td>2</td><td>Accept [Grom'gol Base Camp] from Commander Aggro'gosh</td><td>32.0, 27.8</td><td>Stranglethorn Vale</td></tr>
-                                <tr><td>3</td><td>Kill Lashtail Raptors in northern Stranglethorn</td><td>35.1, 22.4</td><td>Stranglethorn Vale</td></tr>
-                                <tr><td>4</td><td>Turn in Raptor heads at Grom'gol Base Camp</td><td>32.0, 27.8</td><td>Stranglethorn Vale</td></tr>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 40-50 Bracket: Tanaris</td></tr>
-                                <tr><td>1</td><td>Travel to Gadgetzan in Tanaris desert</td><td>50.8, 27.2</td><td>Tanaris</td></tr>
-                                <tr><td>2</td><td>Accept [Wastewander Justice] from Chief Engineer Bilgewater</td><td>52.4, 28.1</td><td>Tanaris</td></tr>
-                                <tr><td>3</td><td>Kill Wastewander Bandits at Noonshade Ruins</td><td>61.2, 38.5</td><td>Tanaris</td></tr>
-                                <tr><td>4</td><td>Turn in [Wastewander Justice] in Gadgetzan</td><td>52.4, 28.1</td><td>Tanaris</td></tr>
-                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 50-60 Bracket: Un'Goro Crater</td></tr>
-                                <tr><td>1</td><td>Travel to Marshal's Refuge in Un'Goro Crater</td><td>43.1, 8.2</td><td>Un'Goro Crater</td></tr>
-                                <tr><td>2</td><td>Accept [The Scythe of Elune] or check crystals</td><td>44.5, 7.9</td><td>Un'Goro Crater</td></tr>
-                                <tr><td>3</td><td>Explore the Fire Plume Ridge volcano center</td><td>49.5, 46.2</td><td>Un'Goro Crater</td></tr>
-                                <tr><td>4</td><td>Return and complete crystal quests at Marshal's Refuge</td><td>43.1, 8.2</td><td>Un'Goro Crater</td></tr>
-                            </tbody>
-                        </table>
-                    </details>
-                    
-                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
                         <summary style="cursor: pointer; font-weight: 600; color: #fff;">🟤 Horde: Tauren (Camp Narache)</summary>
                         <table class="wiki-table" style="margin-top: 0.5rem;">
                             <thead>
@@ -1933,6 +1869,13 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
                             <li><strong>Cross-Account Trusted Linkage:</strong> Linked alt-account GUIDs in <code>acore_playerbots.playerbots_account_links</code>, permitting GMs on the main account to seamlessly control alt-account companion bots.</li>
                             <li><strong>Custom Comedy Trio:</strong> Designed and deployed three unique party personalities (<code>Melik</code> the portal-obsessed nerd, <code>Mina</code> the exhausted healer, and <code>Ricker</code> the Leeroy warrior).</li>
+                            <li><strong>AI Personalities Expanded:</strong> Added 3 new custom personalities: <code>CUSTOM_WAIFU</code> (sweet and clingy), <code>CUSTOM_LEET</code> (retro 2004 gaming slang), and <code>CUSTOM_DRUNK</code> (hilarious tavern regular).</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🔧 Client Addon Patches & Wiki fixes</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Guides Removal:</strong> Cleanly removed the client-side speedrun/Loremaster guides database explorer card from the wiki.</li>
+                            <li><strong>Broken Subtabs Fix:</strong> Fixed class-name mismatches in the Playerbot Commands Reference page to restore tab switching functionality.</li>
                         </ul>
                     </div>
 
