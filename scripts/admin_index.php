@@ -3451,9 +3451,10 @@ if ($dbOnline) {
                         </div>
                     </div>
 
-                    <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); max-width: 450px; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); max-width: 450px; margin-bottom: 1.5rem; position: relative;">
                         <label for="itmCharName">Mail Directly to Character (Name)</label>
-                        <input type="text" id="itmCharName" placeholder="Enter character name to receive item..." style="margin-bottom: 0;">
+                        <input type="text" id="itmCharName" placeholder="Enter character name to receive item..." style="margin-bottom: 0;" autocomplete="off" oninput="filterItemCharSearch(this.value)">
+                        <div id="itmCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 200px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;"></div>
                     </div>
 
                     <button type="submit" class="btn btn-success" style="width: auto;">Forging & Spawn Custom Item ⚡</button>
@@ -5112,6 +5113,60 @@ if ($dbOnline) {
             })
             .catch(err => alert("Error sending custom mail: " + err));
         }
+
+        // ----------------------------------------------------
+        // Spawner Recipient Character autocomplete search
+        // ----------------------------------------------------
+        let itemCharSearchTimeout = null;
+
+        function filterItemCharSearch(val) {
+            const dropdown = document.getElementById('itmCharSearchDropdown');
+            if (val.length < 2) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            
+            clearTimeout(itemCharSearchTimeout);
+            itemCharSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_characters', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.characters && data.characters.length > 0) {
+                        dropdown.innerHTML = data.characters.map(c => `
+                            <div class="autocomplete-item" onclick="selectItemCharForCreator('${encodeURIComponent(c.name)}')" style="padding: 0.5rem 0.75rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                <strong>${c.name}</strong> <span style="font-size:0.75rem; color:var(--text-secondary); float:right;">Lvl ${c.level}</span>
+                            </div>
+                        `).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.5rem; text-align: center; font-size:0.8rem;">No characters found</div>`;
+                        dropdown.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    dropdown.innerHTML = `<div style="color: var(--status-danger); padding: 0.5rem; text-align: center; font-size:0.8rem;">Search error</div>`;
+                    dropdown.style.display = 'block';
+                });
+            }, 150);
+        }
+
+        function selectItemCharForCreator(name) {
+            document.getElementById('itmCharName').value = decodeURIComponent(name);
+            document.getElementById('itmCharSearchDropdown').style.display = 'none';
+        }
+
+        // Close itmCharSearchDropdown on click outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('itmCharSearchDropdown');
+            const input = document.getElementById('itmCharName');
+            if (dropdown && e.target !== dropdown && e.target !== input) {
+                dropdown.style.display = 'none';
+            }
+        });
 
         // ----------------------------------------------------
         // Visual Model search and display ID grabber
