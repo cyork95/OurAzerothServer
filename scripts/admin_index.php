@@ -1045,20 +1045,32 @@ if (isset($_GET['action'])) {
                 $searchName = trim(str_ireplace('boss', '', $searchName));
             }
 
-            $sql = "SELECT entry, name, subname, minlevel, maxlevel, HealthModifier AS minhealth, ManaModifier AS maxhealth, ArmorModifier AS armor, DamageModifier AS damage_multiplier, rank FROM creature_template WHERE ";
+            $sql = "
+                SELECT ct.entry, ct.name, ct.subname, ct.minlevel, ct.maxlevel, 
+                       ct.HealthModifier AS minhealth, ct.ManaModifier AS maxhealth, 
+                       ct.ArmorModifier AS armor, ct.DamageModifier AS damage_multiplier, 
+                       ct.rank, ct.unit_class, ct.exp,
+                       s_min.basehp0 AS min_hp0, s_min.basehp1 AS min_hp1, s_min.basehp2 AS min_hp2,
+                       s_min.basearmor AS min_base_armor,
+                       s_max.basehp0 AS max_hp0, s_max.basehp1 AS max_hp1, s_max.basehp2 AS max_hp2,
+                       s_max.basearmor AS max_base_armor
+                FROM creature_template ct
+                LEFT JOIN creature_classlevelstats s_min ON s_min.level = ct.minlevel AND s_min.class = ct.unit_class
+                LEFT JOIN creature_classlevelstats s_max ON s_max.level = ct.maxlevel AND s_max.class = ct.unit_class
+                WHERE ";
             $params = array();
             $conditions = array();
 
             if (is_numeric($query)) {
-                $conditions[] = "entry = :entry";
+                $conditions[] = "ct.entry = :entry";
                 $params['entry'] = intval($query);
             } else {
                 if (!empty($searchName)) {
-                    $conditions[] = "name LIKE :search";
+                    $conditions[] = "ct.name LIKE :search";
                     $params['search'] = "%$searchName%";
                 }
                 if ($rankFilter !== null) {
-                    $conditions[] = "rank IN (" . implode(',', $rankFilter) . ")";
+                    $conditions[] = "ct.rank IN (" . implode(',', $rankFilter) . ")";
                 }
             }
 
@@ -1072,6 +1084,26 @@ if (isset($_GET['action'])) {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
             $creatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Compute actual estimated health and armor
+            foreach ($creatures as &$c) {
+                $exp = intval($c['exp'] ?? 0);
+                
+                $minHpCol = "min_hp" . $exp;
+                $minBaseHp = floatval($c[$minHpCol] ?? $c['min_hp0'] ?? 1.0);
+                
+                $maxHpCol = "max_hp" . $exp;
+                $maxBaseHp = floatval($c[$maxHpCol] ?? $c['max_hp0'] ?? 1.0);
+                
+                $minBaseArmor = floatval($c['min_base_armor'] ?? 1.0);
+                $maxBaseArmor = floatval($c['max_base_armor'] ?? 1.0);
+                
+                $c['base_min_hp'] = $minBaseHp;
+                $c['base_max_hp'] = $maxBaseHp;
+                $c['base_min_armor'] = $minBaseArmor;
+                $c['base_max_armor'] = $maxBaseArmor;
+            }
+
             echo json_encode(array('success' => true, 'creatures' => $creatures));
         } catch (Exception $e) {
             echo json_encode(array('success' => false, 'output' => $e->getMessage(), 'creatures' => []));
@@ -1149,7 +1181,7 @@ if (isset($_GET['action'])) {
             $stmt = $pdo->prepare("
                 SELECT clt.Item AS item_entry, it.name AS item_name, it.Quality AS item_quality, 
                        clt.Chance AS chance, clt.MinCount AS mincount, clt.MaxCount AS maxcount,
-                       clt.Reference AS reference, clt.Comment AS comment
+                       clt.Reference AS reference, clt.Comment AS comment, clt.GroupId AS groupid
                 FROM creature_loot_template clt
                 LEFT JOIN item_template it ON clt.Item = it.entry
                 WHERE clt.Entry = :entry
@@ -1181,7 +1213,7 @@ if (isset($_GET['action'])) {
             $stmt = $pdo->prepare("
                 SELECT rlt.Item AS item_entry, it.name AS item_name, it.Quality AS item_quality, 
                        rlt.Chance AS chance, rlt.MinCount AS mincount, rlt.MaxCount AS maxcount,
-                       rlt.Reference AS reference, rlt.Comment AS comment
+                       rlt.Reference AS reference, rlt.Comment AS comment, rlt.GroupId AS groupid
                 FROM reference_loot_template rlt
                 LEFT JOIN item_template it ON rlt.Item = it.entry
                 WHERE rlt.Entry = :entry
@@ -2501,16 +2533,18 @@ if ($dbOnline) {
                                     <input type="number" id="editCreatureMaxLvl" required>
                                 </div>
                                 <div>
-                                    <label for="editCreatureMinHealth">Min Base Health</label>
-                                    <input type="number" id="editCreatureMinHealth" required>
+                                    <label for="editCreatureMinHealth">Health Modifier</label>
+                                    <input type="number" step="0.01" id="editCreatureMinHealth" required oninput="updateActualStatsDisplay()">
+                                    <span id="actualHealthDisplay" style="font-size: 0.8rem; color: #10b981; display: block; margin-top: 4px; font-weight: 500;">(Estimated HP: --)</span>
                                 </div>
                                 <div>
-                                    <label for="editCreatureMaxHealth">Max Base Health</label>
-                                    <input type="number" id="editCreatureMaxHealth" required>
+                                    <label for="editCreatureMaxHealth">Mana Modifier</label>
+                                    <input type="number" step="0.01" id="editCreatureMaxHealth" required>
                                 </div>
                                 <div>
-                                    <label for="editCreatureArmor">Base Armor Rating</label>
-                                    <input type="number" id="editCreatureArmor" required>
+                                    <label for="editCreatureArmor">Armor Modifier</label>
+                                    <input type="number" step="0.01" id="editCreatureArmor" required oninput="updateActualStatsDisplay()">
+                                    <span id="actualArmorDisplay" style="font-size: 0.8rem; color: #38bdf8; display: block; margin-top: 4px; font-weight: 500;">(Estimated Armor: --)</span>
                                 </div>
                                 <div>
                                     <label for="editCreatureDamageMult">Damage Multiplier</label>
@@ -3361,7 +3395,7 @@ if ($dbOnline) {
                             const rankNames = { 0: '', 1: 'Elite', 2: 'Rare Elite', 3: 'Boss', 4: 'Rare' };
                             const rankBadge = c.rank > 0 ? ` <span style="color: #6366f1; border: 1px solid #6366f1; font-size: 0.7rem; background: rgba(99, 102, 241, 0.1); padding: 1px 4px; border-radius: 4px; margin-left: 5px;">${rankNames[c.rank]}</span>` : '';
                             return `
-                                <div class="autocomplete-item" onclick="selectAdminCreature(${c.entry}, '${encodeURIComponent(c.name)}', '${encodeURIComponent(c.subname || '')}', ${c.minlevel}, ${c.maxlevel}, ${c.minhealth}, ${c.maxhealth}, ${c.armor}, ${c.damage_multiplier})" style="padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                <div class="autocomplete-item" onclick="selectAdminCreature(${c.entry}, '${encodeURIComponent(c.name)}', '${encodeURIComponent(c.subname || '')}', ${c.minlevel}, ${c.maxlevel}, ${c.minhealth}, ${c.maxhealth}, ${c.armor}, ${c.damage_multiplier}, ${c.base_min_hp}, ${c.base_max_hp}, ${c.base_min_armor}, ${c.base_max_armor})" style="padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
                                     <div>
                                         <strong style="color: #fff;">${c.name}</strong>${subname}${rankBadge}
                                         <span style="color: var(--text-secondary); font-size: 0.8rem; margin-left: 0.5rem;">Lvl ${c.minlevel}-${c.maxlevel}</span>
@@ -3383,7 +3417,18 @@ if ($dbOnline) {
             }, 150);
         }
 
-        function selectAdminCreature(entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier) {
+        // Global variables to store base class stats for dynamic preview
+        let baseMinHp = 1;
+        let baseMaxHp = 1;
+        let baseMinArmor = 1;
+        let baseMaxArmor = 1;
+
+        function selectAdminCreature(entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier, baseMinHpVal = 1, baseMaxHpVal = 1, baseMinArmorVal = 1, baseMaxArmorVal = 1) {
+            baseMinHp = parseFloat(baseMinHpVal) || 1;
+            baseMaxHp = parseFloat(baseMaxHpVal) || 1;
+            baseMinArmor = parseFloat(baseMinArmorVal) || 1;
+            baseMaxArmor = parseFloat(baseMaxArmorVal) || 1;
+            
             const decodedName = decodeURIComponent(name);
             document.getElementById('creatureSearch').value = decodedName;
             document.getElementById('creatureSearchDropdown').style.display = 'none';
@@ -3429,7 +3474,7 @@ if ($dbOnline) {
                             </td>
                             <td>Lvl ${cr.minlevel}-${cr.maxlevel}</td>
                             <td style="text-align: right;">
-                                <button onclick="selectCreature(${cr.entry}, '${encodeURIComponent(cr.name)}', '${encodeURIComponent(cr.subname || '')}', ${cr.minlevel}, ${cr.maxlevel}, ${cr.minhealth}, ${cr.maxhealth}, ${cr.armor}, ${cr.damage_multiplier})" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; width: auto; margin-top:0;">Edit</button>
+                                <button onclick="baseMinHp=${cr.base_min_hp}; baseMaxHp=${cr.base_max_hp}; baseMinArmor=${cr.base_min_armor}; baseMaxArmor=${cr.base_max_armor}; selectCreature(${cr.entry}, '${encodeURIComponent(cr.name)}', '${encodeURIComponent(cr.subname || '')}', ${cr.minlevel}, ${cr.maxlevel}, ${cr.minhealth}, ${cr.maxhealth}, ${cr.armor}, ${cr.damage_multiplier})" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; width: auto; margin-top:0;">Edit</button>
                             </td>
                         </tr>
                     `;
@@ -3478,6 +3523,7 @@ if ($dbOnline) {
 
             // Load loot drop table
             loadCreatureLoot(entry);
+            updateActualStatsDisplay();
         }
 
         function saveCreatureDetails(e) {
@@ -3508,6 +3554,54 @@ if ($dbOnline) {
         }
 
         // Loot Editor script controllers
+        // Helper to calculate exact probabilities for grouped items (where Chance=0)
+        function calculateLootChances(lootArray) {
+            const groupStats = {};
+            
+            lootArray.forEach(item => {
+                const gId = parseInt(item.groupid || 0);
+                const chance = parseFloat(item.chance);
+                
+                if (gId > 0) {
+                    if (!groupStats[gId]) {
+                        groupStats[gId] = {
+                            totalExplicit: 0,
+                            zeroChanceCount: 0
+                        };
+                    }
+                    if (chance > 0) {
+                        groupStats[gId].totalExplicit += chance;
+                    } else {
+                        groupStats[gId].zeroChanceCount++;
+                    }
+                }
+            });
+            
+            return lootArray.map(item => {
+                const gId = parseInt(item.groupid || 0);
+                const chance = parseFloat(item.chance);
+                let calculatedChance = chance;
+                let chanceLabel = `${chance}%`;
+                let badge = '';
+
+                if (gId > 0) {
+                    const stats = groupStats[gId];
+                    if (chance === 0) {
+                        const remaining = Math.max(0, 100 - stats.totalExplicit);
+                        calculatedChance = stats.zeroChanceCount > 0 ? (remaining / stats.zeroChanceCount) : 0;
+                        calculatedChance = Math.round(calculatedChance * 10000) / 10000;
+                        chanceLabel = `${calculatedChance}% (Equal Share)`;
+                        badge = `<span style="font-size:0.7rem; background:rgba(16, 185, 129, 0.15); color:#10b981; border:1px solid #10b98155; padding:1px 4px; border-radius:4px; margin-left:5px;">Group ${gId}</span>`;
+                    } else {
+                        chanceLabel = `${chance}% (Group Weight)`;
+                        badge = `<span style="font-size:0.7rem; background:rgba(99, 102, 241, 0.15); color:#818cf8; border:1px solid #818cf855; padding:1px 4px; border-radius:4px; margin-left:5px;">Group ${gId}</span>`;
+                    }
+                }
+                
+                return { ...item, calculatedChance, chanceLabel, badge };
+            });
+        }
+
         function loadCreatureLoot(entry) {
             document.getElementById('lootCreatureHeader').textContent = `${selectedCreature.name} (Entry: ${entry})`;
             
@@ -3526,7 +3620,8 @@ if ($dbOnline) {
                 }
 
                 let html = '';
-                data.loot.forEach(item => {
+                const processedLoot = calculateLootChances(data.loot);
+                processedLoot.forEach(item => {
                     let displayName = item.item_name || 'Unknown Item';
                     let displayId = `#${item.item_entry}`;
                     let isRef = false;
@@ -3563,7 +3658,7 @@ if ($dbOnline) {
                         <tr>
                             <td style="color: ${color}; font-weight: 500;">${displayLabel} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
                             <td>${item.mincount === item.maxcount ? item.mincount : `${item.mincount}-${item.maxcount}`}</td>
-                            <td><strong style="color: var(--accent-primary)">${item.chance}</strong>%</td>
+                            <td><strong style="color: var(--accent-primary)">${item.chanceLabel}</strong>${item.badge}</td>
                             <td style="text-align: right;">
                                 <button onclick="editLootItem(${item.item_entry}, '${encodeURIComponent(displayName)}', ${item.chance}, ${item.mincount}, ${item.maxcount}, ${refId})" class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-right:0.25rem; margin-top:0;">Edit</button>
                                 <button onclick="deleteLootItem(${item.item_entry}, ${refId})" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-top:0;">Delete</button>
@@ -4059,7 +4154,8 @@ if ($dbOnline) {
                 }
                 
                 let html = '';
-                data.loot.forEach(item => {
+                const processedLoot = calculateLootChances(data.loot);
+                processedLoot.forEach(item => {
                     let displayName = item.item_name || 'Unknown Item';
                     let displayId = `#${item.item_entry}`;
                     let isRef = false;
@@ -4094,7 +4190,7 @@ if ($dbOnline) {
                         <tr>
                             <td style="color: ${color}; font-weight: 500;">${displayLabel} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
                             <td>${item.mincount === item.maxcount ? item.mincount : `${item.mincount}-${item.maxcount}`}</td>
-                            <td><strong style="color: var(--accent-primary)">${item.chance}</strong>%</td>
+                            <td><strong style="color: var(--accent-primary)">${item.chanceLabel}</strong>${item.badge}</td>
                         </tr>
                     `;
                 });
@@ -4107,6 +4203,31 @@ if ($dbOnline) {
 
         function closeLootModal() {
             document.getElementById('lootModal').style.display = 'none';
+        }
+
+        function updateActualStatsDisplay() {
+            const healthMod = parseFloat(document.getElementById('editCreatureMinHealth').value) || 1.0;
+            const armorMod = parseFloat(document.getElementById('editCreatureArmor').value) || 1.0;
+            const minLvl = parseInt(document.getElementById('editCreatureMinLvl').value) || 1;
+            const maxLvl = parseInt(document.getElementById('editCreatureMaxLvl').value) || 1;
+
+            const minHpVal = Math.round(baseMinHp * healthMod);
+            const maxHpVal = Math.round(baseMaxHp * healthMod);
+            const minArmorVal = Math.round(baseMinArmor * armorMod);
+            const maxArmorVal = Math.round(baseMaxArmor * armorMod);
+
+            let hpText = `(Estimated HP: ${minHpVal})`;
+            if (minLvl !== maxLvl) {
+                hpText = `(Estimated HP: ${minHpVal} - ${maxHpVal})`;
+            }
+            
+            let armorText = `(Estimated Armor: ${minArmorVal})`;
+            if (minLvl !== maxLvl) {
+                armorText = `(Estimated Armor: ${minArmorVal} - ${maxArmorVal})`;
+            }
+
+            document.getElementById('actualHealthDisplay').textContent = hpText;
+            document.getElementById('actualArmorDisplay').textContent = armorText;
         }
 
         // Live Event filter controller
