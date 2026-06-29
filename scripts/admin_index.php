@@ -1148,7 +1148,8 @@ if (isset($_GET['action'])) {
 
             $stmt = $pdo->prepare("
                 SELECT clt.Item AS item_entry, it.name AS item_name, it.Quality AS item_quality, 
-                       clt.Chance AS chance, clt.MinCount AS mincount, clt.MaxCount AS maxcount
+                       clt.Chance AS chance, clt.MinCount AS mincount, clt.MaxCount AS maxcount,
+                       clt.Reference AS reference, clt.Comment AS comment
                 FROM creature_loot_template clt
                 LEFT JOIN item_template it ON clt.Item = it.entry
                 WHERE clt.Entry = :entry
@@ -1198,11 +1199,12 @@ if (isset($_GET['action'])) {
     if ($action === 'save_loot_item') {
         $creature_entry = intval($_POST['creature_entry'] ?? 0);
         $item_entry = intval($_POST['item_entry'] ?? 0);
+        $reference = intval($_POST['reference'] ?? 0);
         $chance = floatval($_POST['chance'] ?? 1.0);
         $mincount = intval($_POST['mincount'] ?? 1);
         $maxcount = intval($_POST['maxcount'] ?? 1);
 
-        if ($creature_entry <= 0 || $item_entry <= 0 || $chance <= 0) {
+        if ($creature_entry <= 0 || ($item_entry <= 0 && $reference <= 0) || $chance <= 0) {
             echo json_encode(array('success' => false, 'output' => 'Invalid parameters. Chance must be greater than 0%.'));
             exit;
         }
@@ -1215,16 +1217,24 @@ if (isset($_GET['action'])) {
             ));
 
             $stmt = $pdo->prepare("
-                INSERT INTO creature_loot_template (Entry, Item, Chance, MinCount, MaxCount, GroupId, Loveloot, ConditionId)
-                VALUES (:creature_entry, :item_entry, :chance, :mincount, :maxcount, 0, 0, 0)
+                INSERT INTO creature_loot_template (Entry, Item, Reference, Chance, MinCount, MaxCount, GroupId, QuestRequired, LootMode, Comment)
+                VALUES (:creature_entry, :item_entry, :reference, :chance, :mincount, :maxcount, 0, 0, 1, :comment)
                 ON DUPLICATE KEY UPDATE Chance = :chance, MinCount = :mincount, MaxCount = :maxcount
             ");
+            
+            $comment = "";
+            if ($reference > 0) {
+                $comment = "Creature " . $creature_entry . " - ReferenceTable " . $reference;
+            }
+
             $stmt->execute(array(
                 'creature_entry' => $creature_entry,
                 'item_entry' => $item_entry,
+                'reference' => $reference,
                 'chance' => $chance,
                 'mincount' => $mincount,
-                'maxcount' => $maxcount
+                'maxcount' => $maxcount,
+                'comment' => $comment
             ));
 
             $res = sendSoapCommand("reload creature_loot_template");
@@ -1241,8 +1251,9 @@ if (isset($_GET['action'])) {
     if ($action === 'delete_loot_item') {
         $creature_entry = intval($_POST['creature_entry'] ?? 0);
         $item_entry = intval($_POST['item_entry'] ?? 0);
+        $reference = intval($_POST['reference'] ?? 0);
 
-        if ($creature_entry <= 0 || $item_entry <= 0) {
+        if ($creature_entry <= 0 || ($item_entry <= 0 && $reference <= 0)) {
             echo json_encode(array('success' => false, 'output' => 'Invalid parameters.'));
             exit;
         }
@@ -1254,14 +1265,25 @@ if (isset($_GET['action'])) {
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ));
 
-            $stmt = $pdo->prepare("
-                DELETE FROM creature_loot_template
-                WHERE Entry = :creature_entry AND Item = :item_entry
-            ");
-            $stmt->execute(array(
-                'creature_entry' => $creature_entry,
-                'item_entry' => $item_entry
-            ));
+            if ($item_entry > 0) {
+                $stmt = $pdo->prepare("
+                    DELETE FROM creature_loot_template
+                    WHERE Entry = :creature_entry AND Item = :item_entry AND Reference = 0
+                ");
+                $stmt->execute(array(
+                    'creature_entry' => $creature_entry,
+                    'item_entry' => $item_entry
+                ));
+            } else {
+                $stmt = $pdo->prepare("
+                    DELETE FROM creature_loot_template
+                    WHERE Entry = :creature_entry AND Item = 0 AND Reference = :reference
+                ");
+                $stmt->execute(array(
+                    'creature_entry' => $creature_entry,
+                    'reference' => $reference
+                ));
+            }
 
             $res = sendSoapCommand("reload creature_loot_template");
             if ($res['success']) {
@@ -2508,6 +2530,7 @@ if ($dbOnline) {
                                 <div id="itemAutocompleteSuggestions" class="autocomplete-suggestions" style="display: none;"></div>
                             </div>
                             <input type="hidden" id="lootItemEntry">
+                            <input type="hidden" id="lootItemReference" value="0">
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div>
@@ -3447,21 +3470,38 @@ if ($dbOnline) {
 
                 let html = '';
                 data.loot.forEach(item => {
-                    const quality = parseInt(item.item_quality) || 0;
+                    let displayName = item.item_name || 'Unknown Item';
+                    let displayId = `#${item.item_entry}`;
+                    let isRef = false;
+                    let refId = parseInt(item.reference) || 0;
+
+                    if (parseInt(item.item_entry) === 0 && refId > 0) {
+                        isRef = true;
+                        let match = item.comment ? item.comment.match(/\(([^)]+)\)/) : null;
+                        let refName = match ? match[1] : "Reference Table";
+                        displayName = "🔄 " + refName;
+                        displayId = "Ref: #" + refId;
+                    }
+
+                    const quality = isRef ? -1 : (parseInt(item.item_quality) || 0);
                     let color = '#fff';
-                    if (quality === 2) color = '#1eff00';
-                    if (quality === 3) color = '#0070dd';
-                    if (quality === 4) color = '#a335ee';
-                    if (quality === 5) color = '#ff8000';
+                    if (isRef) {
+                        color = '#38bdf8'; // Sky-400 for references
+                    } else {
+                        if (quality === 2) color = '#1eff00';
+                        if (quality === 3) color = '#0070dd';
+                        if (quality === 4) color = '#a335ee';
+                        if (quality === 5) color = '#ff8000';
+                    }
 
                     html += `
                         <tr>
-                            <td style="color: ${color}; font-weight: 500;">${item.item_name || 'Unknown Item'} <span style="font-size:0.8rem; color:var(--text-secondary)">(#${item.item_entry})</span></td>
+                            <td style="color: ${color}; font-weight: 500;">${displayName} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
                             <td>${item.mincount === item.maxcount ? item.mincount : `${item.mincount}-${item.maxcount}`}</td>
                             <td><strong style="color: var(--accent-primary)">${item.chance}</strong>%</td>
                             <td style="text-align: right;">
-                                <button onclick="editLootItem(${item.item_entry}, '${encodeURIComponent(item.item_name || '')}', ${item.chance}, ${item.mincount}, ${item.maxcount})" class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-right:0.25rem; margin-top:0;">Edit</button>
-                                <button onclick="deleteLootItem(${item.item_entry})" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-top:0;">Delete</button>
+                                <button onclick="editLootItem(${item.item_entry}, '${encodeURIComponent(displayName)}', ${item.chance}, ${item.mincount}, ${item.maxcount}, ${refId})" class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-right:0.25rem; margin-top:0;">Edit</button>
+                                <button onclick="deleteLootItem(${item.item_entry}, ${refId})" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; width: auto; margin-top:0;">Delete</button>
                             </td>
                         </tr>
                     `;
@@ -3503,13 +3543,19 @@ if ($dbOnline) {
 
         function selectAutocompleteItem(entry, name) {
             document.getElementById('lootItemEntry').value = entry;
+            document.getElementById('lootItemReference').value = '0';
             document.getElementById('lootItemSearch').value = `${decodeURIComponent(name)} (#${entry})`;
             document.getElementById('itemAutocompleteSuggestions').style.display = 'none';
         }
 
-        function editLootItem(entry, name, chance, min, max) {
+        function editLootItem(entry, name, chance, min, max, refId = 0) {
             document.getElementById('lootItemEntry').value = entry;
-            document.getElementById('lootItemSearch').value = `${decodeURIComponent(name)} (#${entry})`;
+            document.getElementById('lootItemReference').value = refId;
+            if (refId > 0) {
+                document.getElementById('lootItemSearch').value = `${decodeURIComponent(name)} (Ref: #${refId})`;
+            } else {
+                document.getElementById('lootItemSearch').value = `${decodeURIComponent(name)} (#${entry})`;
+            }
             document.getElementById('lootMinCount').value = min;
             document.getElementById('lootMaxCount').value = max;
             document.getElementById('lootChance').value = chance;
@@ -3519,16 +3565,17 @@ if ($dbOnline) {
         function saveLootDrop(e) {
             e.preventDefault();
             const item_entry = document.getElementById('lootItemEntry').value;
+            const reference = document.getElementById('lootItemReference').value || '0';
             const mincount = document.getElementById('lootMinCount').value;
             const maxcount = document.getElementById('lootMaxCount').value;
             const chance = document.getElementById('lootChance').value;
 
-            if (!selectedCreature || !item_entry) {
-                alert("Please select a monster and an item.");
+            if (!selectedCreature || (item_entry === '' && reference === '0')) {
+                alert("Please select a monster and an item/reference.");
                 return;
             }
 
-            const params = `creature_entry=${selectedCreature.entry}&item_entry=${item_entry}&chance=${chance}&mincount=${mincount}&maxcount=${maxcount}`;
+            const params = `creature_entry=${selectedCreature.entry}&item_entry=${item_entry}&reference=${reference}&chance=${chance}&mincount=${mincount}&maxcount=${maxcount}`;
 
             fetch('index.php?action=save_loot_item', {
                 method: 'POST',
@@ -3545,10 +3592,10 @@ if ($dbOnline) {
             .catch(err => alert("Error saving loot item: " + err));
         }
 
-        function deleteLootItem(itemEntry) {
+        function deleteLootItem(itemEntry, refId = 0) {
             if (!confirm("Are you sure you want to delete this item drop from the creature's loot table?")) return;
 
-            const params = `creature_entry=${selectedCreature.entry}&item_entry=${itemEntry}`;
+            const params = `creature_entry=${selectedCreature.entry}&item_entry=${itemEntry}&reference=${refId}`;
 
             fetch('index.php?action=delete_loot_item', {
                 method: 'POST',
