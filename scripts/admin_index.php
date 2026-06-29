@@ -1164,6 +1164,38 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if ($action === 'get_reference_loot') {
+        $entry = intval($_GET['entry'] ?? 0);
+        if ($entry <= 0) {
+            echo json_encode(array('success' => false, 'loot' => []));
+            exit;
+        }
+
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_WORLD . ";charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            $stmt = $pdo->prepare("
+                SELECT rlt.Item AS item_entry, it.name AS item_name, it.Quality AS item_quality, 
+                       rlt.Chance AS chance, rlt.MinCount AS mincount, rlt.MaxCount AS maxcount,
+                       rlt.Reference AS reference, rlt.Comment AS comment
+                FROM reference_loot_template rlt
+                LEFT JOIN item_template it ON rlt.Item = it.entry
+                WHERE rlt.Entry = :entry
+                ORDER BY rlt.Chance DESC
+            ");
+            $stmt->execute(array('entry' => $entry));
+            $loot = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo json_encode(array('success' => true, 'loot' => $loot));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage(), 'loot' => []));
+        }
+        exit;
+    }
+
     if ($action === 'search_items') {
         $query = trim($_GET['query'] ?? '');
         if (empty($query)) {
@@ -3387,7 +3419,12 @@ if ($dbOnline) {
                     html += `
                         <tr>
                             <td>${cr.entry}</td>
-                            <td><strong>${cr.name}</strong> ${cr.subname ? `<span style="color: var(--text-secondary)">(${cr.subname})</span>` : ''}</td>
+                            <td>
+                                <a href="https://www.wowhead.com/wotlk/npc=${cr.entry}" target="_blank" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.3);" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='#fff'" title="View on Wowhead">
+                                    <strong>${cr.name}</strong> 🔗
+                                </a>
+                                ${cr.subname ? `<span style="color: var(--text-secondary); display:block; font-size:0.8rem;">(${cr.subname})</span>` : ''}
+                            </td>
                             <td>Lvl ${cr.minlevel}-${cr.maxlevel}</td>
                             <td style="text-align: right;">
                                 <button onclick="selectCreature(${cr.entry}, '${encodeURIComponent(cr.name)}', '${encodeURIComponent(cr.subname || '')}', ${cr.minlevel}, ${cr.maxlevel}, ${cr.minhealth}, ${cr.maxhealth}, ${cr.armor}, ${cr.damage_multiplier})" class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; width: auto; margin-top:0;">Edit</button>
@@ -3418,6 +3455,24 @@ if ($dbOnline) {
             document.getElementById('editCreatureMaxHealth').value = maxHp;
             document.getElementById('editCreatureArmor').value = armor;
             document.getElementById('editCreatureDamageMult').value = damageMult;
+
+            // Populate the search table below with the currently selected creature row + Wowhead link
+            const searchBody = document.getElementById('creatureSearchResultBody');
+            searchBody.innerHTML = `
+                <tr style="background: rgba(99, 102, 241, 0.05); border-left: 3px solid var(--accent-primary);">
+                    <td>${entry}</td>
+                    <td style="font-weight: 500;">
+                        <a href="https://www.wowhead.com/wotlk/npc=${entry}" target="_blank" style="color: var(--accent-primary); text-decoration: none; border-bottom: 1px dashed var(--accent-primary)55;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            ${decodeURIComponent(name)} 🔗
+                        </a>
+                        ${subname ? `<span style="font-size:0.8rem; color:var(--text-secondary); display:block; font-weight:normal;">${decodeURIComponent(subname)}</span>` : ''}
+                    </td>
+                    <td>${minLvl === maxLvl ? minLvl : `${minLvl}-${maxLvl}`}</td>
+                    <td style="text-align: right; color: var(--status-success); font-weight: 500; font-size: 0.85rem; padding-right: 1.5rem;">
+                        Editing ✏️
+                    </td>
+                </tr>
+            `;
 
             // Load loot drop table
             loadCreatureLoot(entry);
@@ -3494,9 +3549,17 @@ if ($dbOnline) {
                         if (quality === 5) color = '#ff8000';
                     }
 
+                    // Format name with modal link or Wowhead link
+                    let displayLabel = displayName;
+                    if (isRef) {
+                        displayLabel = `<span onclick="openReferenceLootModal(${refId}, '${displayName.replace(/'/g, "\'")}')" style="cursor: pointer; color: ${color}; border-bottom: 1px dashed ${color}aa;" title="Click to view reference table drops">${displayName} 👁️</span>`;
+                    } else if (item.item_entry > 0) {
+                        displayLabel = `<a href="https://www.wowhead.com/wotlk/item=${item.item_entry}" target="_blank" style="color: ${color}; text-decoration: none; border-bottom: 1px dashed ${color}55;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'" title="View on Wowhead">${displayName} 🔗</a>`;
+                    }
+
                     html += `
                         <tr>
-                            <td style="color: ${color}; font-weight: 500;">${displayName} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
+                            <td style="color: ${color}; font-weight: 500;">${displayLabel} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
                             <td>${item.mincount === item.maxcount ? item.mincount : `${item.mincount}-${item.maxcount}`}</td>
                             <td><strong style="color: var(--accent-primary)">${item.chance}</strong>%</td>
                             <td style="text-align: right;">
@@ -3974,6 +4037,75 @@ if ($dbOnline) {
             });
         }
 
+        // Modal for reference table popups
+        function openReferenceLootModal(refId, refName) {
+            const modal = document.getElementById('lootModal');
+            const title = document.getElementById('lootModalTitle');
+            const body = document.getElementById('lootModalTableBody');
+            
+            title.textContent = `Reference Table: ${refName} (#${refId})`;
+            body.innerHTML = '<tr><td colspan="3" style="text-align: center; color: var(--text-secondary); padding: 1.5rem;">Loading reference loot...</td></tr>';
+            modal.style.display = 'flex';
+
+            fetch(`index.php?action=get_reference_loot&entry=${refId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.success || data.loot.length === 0) {
+                    body.innerHTML = '<tr><td colspan="3" style="text-align: center; color: var(--text-secondary); padding: 1.5rem;">No loot entries found in this reference table.</td></tr>';
+                    return;
+                }
+                
+                let html = '';
+                data.loot.forEach(item => {
+                    let displayName = item.item_name || 'Unknown Item';
+                    let displayId = `#${item.item_entry}`;
+                    let isRef = false;
+                    let innerRefId = parseInt(item.reference) || 0;
+
+                    if (parseInt(item.item_entry) === 0 && innerRefId > 0) {
+                        isRef = true;
+                        let match = item.comment ? item.comment.match(/\(([^)]+)\)/) : null;
+                        let refNameInner = match ? match[1] : "Reference Table";
+                        displayName = "🔄 " + refNameInner;
+                        displayId = "Ref: #" + innerRefId;
+                    }
+
+                    const quality = isRef ? -1 : (parseInt(item.item_quality) || 0);
+                    let color = '#fff';
+                    if (isRef) color = '#38bdf8';
+                    else {
+                        if (quality === 2) color = '#1eff00';
+                        if (quality === 3) color = '#0070dd';
+                        if (quality === 4) color = '#a335ee';
+                        if (quality === 5) color = '#ff8000';
+                    }
+
+                    let displayLabel = displayName;
+                    if (!isRef && item.item_entry > 0) {
+                        displayLabel = `<a href="https://www.wowhead.com/wotlk/item=${item.item_entry}" target="_blank" style="color: ${color}; text-decoration: none; border-bottom: 1px dashed ${color}55;" title="View on Wowhead">${displayName} 🔗</a>`;
+                    } else if (isRef) {
+                        displayLabel = `<span onclick="openReferenceLootModal(${innerRefId}, '${displayName.replace(/'/g, "\'")}')" style="cursor: pointer; color: ${color}; border-bottom: 1px dashed ${color}aa;" title="Click to view inner reference table">${displayName} 👁️</span>`;
+                    }
+
+                    html += `
+                        <tr>
+                            <td style="color: ${color}; font-weight: 500;">${displayLabel} <span style="font-size:0.8rem; color:var(--text-secondary)">(${displayId})</span></td>
+                            <td>${item.mincount === item.maxcount ? item.mincount : `${item.mincount}-${item.maxcount}`}</td>
+                            <td><strong style="color: var(--accent-primary)">${item.chance}</strong>%</td>
+                        </tr>
+                    `;
+                });
+                body.innerHTML = html;
+            })
+            .catch(err => {
+                body.innerHTML = `<tr><td colspan="3" style="text-align: center; color: var(--status-danger); padding: 1.5rem;">Failed loading reference: ${err}</td></tr>`;
+            });
+        }
+
+        function closeLootModal() {
+            document.getElementById('lootModal').style.display = 'none';
+        }
+
         // Live Event filter controller
         function filterEvents(query) {
             query = query.toLowerCase();
@@ -3988,5 +4120,26 @@ if ($dbOnline) {
             });
         }
     </script>
+    <!-- Modal for Reference Table Loot -->
+    <div id="lootModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+        <div class="card" style="width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; border: 1px solid var(--border-glass); background: #0f172a; padding: 2rem;">
+            <span onclick="closeLootModal()" style="position: absolute; top: 1rem; right: 1.25rem; font-size: 1.5rem; cursor: pointer; color: var(--text-secondary);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-secondary)'">&times;</span>
+            <div class="card-title" id="lootModalTitle" style="margin-bottom: 1.5rem;">Reference Table Content</div>
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name (ID)</th>
+                            <th>Qty</th>
+                            <th>Chance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lootModalTableBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
