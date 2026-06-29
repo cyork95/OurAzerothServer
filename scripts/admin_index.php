@@ -1031,7 +1031,7 @@ if (isset($_GET['action'])) {
                 $searchName = trim(str_ireplace('boss', '', $searchName));
             }
 
-            $sql = "SELECT entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier, rank FROM creature_template WHERE ";
+            $sql = "SELECT entry, name, subname, minlevel, maxlevel, HealthModifier AS minhealth, ManaModifier AS maxhealth, ArmorModifier AS armor, DamageModifier AS damage_multiplier, rank FROM creature_template WHERE ";
             $params = array();
             $conditions = array();
 
@@ -1091,7 +1091,7 @@ if (isset($_GET['action'])) {
             $stmt = $pdo->prepare("
                 UPDATE creature_template
                 SET name = :name, subname = :subname, minlevel = :minlevel, maxlevel = :maxlevel, 
-                    minhealth = :minhealth, maxhealth = :maxhealth, armor = :armor, damage_multiplier = :damage_multiplier
+                    HealthModifier = :minhealth, ManaModifier = :maxhealth, ArmorModifier = :armor, DamageModifier = :damage_multiplier
                 WHERE entry = :entry
             ");
             $stmt->execute(array(
@@ -2784,14 +2784,23 @@ if ($dbOnline) {
                                 PDO::ATTR_TIMEOUT => 3,
                                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
                             ]);
-                            $stmtOnline = $charPdoTemp->query("SELECT name FROM characters WHERE online = 1 ORDER BY name ASC");
-                            $onlineChars = $stmtOnline->fetchAll(PDO::FETCH_COLUMN);
+                            // Filter out bot accounts and sort by online status
+                            $stmtOnline = $charPdoTemp->query("
+                                SELECT c.name, c.online
+                                FROM acore_characters.characters c
+                                JOIN acore_auth.account a ON c.account = a.id
+                                WHERE a.username NOT LIKE 'RNDBOT%' AND a.username NOT LIKE 'BOT_%'
+                                ORDER BY c.online DESC, c.name ASC
+                            ");
+                            $onlineChars = $stmtOnline->fetchAll(PDO::FETCH_ASSOC);
                         } catch (Exception $e) {}
                         ?>
                         <select id="rarePlayerSelect">
-                            <option value="">-- Choose Online Player --</option>
-                            <?php foreach ($onlineChars as $name): ?>
-                                <option value="<?php echo htmlspecialchars($name); ?>"><?php echo htmlspecialchars($name); ?></option>
+                            <option value="">-- Choose Character --</option>
+                            <?php foreach ($onlineChars as $c): ?>
+                                <option value="<?php echo htmlspecialchars($c['name']); ?>">
+                                    <?php echo htmlspecialchars($c['name']) . ($c['online'] ? ' (Online)' : ' (Offline)'); ?>
+                                </option>
                             <?php endforeach; ?>
                         </select>
                     </div>
