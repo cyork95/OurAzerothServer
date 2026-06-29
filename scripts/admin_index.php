@@ -1262,6 +1262,63 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    // Send Custom Mail Action (Subject, Body, Gold, and Attachments)
+    if ($action === 'send_custom_mail') {
+        $recipient = trim($_POST['recipient'] ?? '');
+        $subject = trim($_POST['subject'] ?? 'System Message');
+        $body = trim($_POST['body'] ?? 'Here is your package.');
+        $gold = floatval($_POST['gold'] ?? 0.0);
+        $attachments = json_decode($_POST['attachments'] ?? '[]', true);
+
+        if (empty($recipient)) {
+            echo json_encode(array('success' => false, 'output' => 'Recipient name is required.'));
+            exit;
+        }
+
+        // Clean subject and body from double quotes to prevent SOAP syntax error
+        $subject = str_replace('"', "'", $subject);
+        $body = str_replace('"', "'", $body);
+
+        $outputs = array();
+        
+        // 1. Send Money if specified (convert gold to copper)
+        if ($gold > 0) {
+            $copper = round($gold * 10000);
+            $moneyCmd = 'send money ' . $recipient . ' "' . $subject . '" "' . $body . '" ' . $copper;
+            $res = sendSoapCommand($moneyCmd);
+            $outputs[] = "Money Mail: " . $res['output'];
+        }
+
+        // 2. Send Items if attached
+        if (!empty($attachments) && is_array($attachments)) {
+            // Build item arguments: itemid1[:count1] itemid2[:count2] ...
+            $itemArgs = array();
+            foreach ($attachments as $att) {
+                $itemId = intval($att['id']);
+                $count = intval($att['count']);
+                if ($itemId > 0 && $count > 0) {
+                    $itemArgs[] = $itemId . ':' . $count;
+                }
+            }
+
+            if (!empty($itemArgs)) {
+                $itemsCmd = 'send items ' . $recipient . ' "' . $subject . '" "' . $body . '" ' . implode(' ', $itemArgs);
+                $res = sendSoapCommand($itemsCmd);
+                $outputs[] = "Items Mail: " . $res['output'];
+            }
+        }
+
+        // If neither money nor items sent, send a plain mail
+        if ($gold <= 0 && empty($attachments)) {
+            $mailCmd = 'send mail ' . $recipient . ' "' . $subject . '" "' . $body . '"';
+            $res = sendSoapCommand($mailCmd);
+            $outputs[] = "Plain Mail: " . $res['output'];
+        }
+
+        echo json_encode(array('success' => true, 'output' => implode("\n", $outputs)));
+        exit;
+    }
+
     // Send Mail Packages (Gold, Bags, Mounts)
     if ($action === 'send_mail_package') {
         $name = trim($_POST['name'] ?? '');
@@ -1276,6 +1333,10 @@ if (isset($_GET['action'])) {
         if ($package === 'bags') {
             // Send 4x Netherweave Bags (ID: 21841)
             $commands[] = 'send mail ' . $name . ' "Starter Bags Pack" "Here are 4 Netherweave Bags for your adventures!" 21841 21841 21841 21841';
+        } elseif ($package === 'gold_1') {
+            $commands[] = 'send money ' . $name . ' "1 Gold Gift" "Enjoy 1 gold." 10000';
+        } elseif ($package === 'gold_10') {
+            $commands[] = 'send money ' . $name . ' "10 Gold Gift" "Enjoy 10 gold." 100000';
         } elseif ($package === 'gold_100') {
             $commands[] = 'send money ' . $name . ' "100 Gold Gift" "Enjoy 100 gold." 1000000';
         } elseif ($package === 'gold_1000') {
@@ -3000,6 +3061,8 @@ if ($dbOnline) {
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
                                 <button onclick="sendMailPackage('bags')" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem;">🎒 Send 4x Bags</button>
                                 <button onclick="sendMailPackage('mount')" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem;">🏇 Send Mount & Riding</button>
+                                <button onclick="sendMailPackage('gold_1')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">🪙 Send 1 Gold</button>
+                                <button onclick="sendMailPackage('gold_10')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">🪙 Send 10 Gold</button>
                                 <button onclick="sendMailPackage('gold_100')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">💰 Send 100 Gold</button>
                                 <button onclick="sendMailPackage('gold_1000')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">👑 Send 1000 Gold</button>
                             </div>
@@ -3015,6 +3078,56 @@ if ($dbOnline) {
                     </div>
                 </div>
 
+
+                <!-- Custom Mail Service Card -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-title">Custom Mail & Item Spawner Service</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Compose custom messages, send specific gold amounts, and attach up to 12 items to any character.
+                    </p>
+                    <form onsubmit="sendCustomMail(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <label for="mailRecipient">Recipient Character Name</label>
+                                <input type="text" id="mailRecipient" placeholder="Character name..." required>
+                            </div>
+                            <div>
+                                <label for="mailGold">Send Gold Amount</label>
+                                <input type="number" step="0.0001" id="mailGold" value="0" min="0">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.25rem;">
+                            <label for="mailSubject">Subject Line</label>
+                            <input type="text" id="mailSubject" placeholder="Enter subject..." value="GM Package" required>
+                        </div>
+
+                        <div style="margin-bottom: 1.25rem;">
+                            <label for="mailBody">Mail Body Text</label>
+                            <textarea id="mailBody" rows="4" placeholder="Type message body here..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 8px; color: #fff; padding: 0.75rem; font-family: inherit; font-size: 0.9rem; resize: vertical;">Enjoy this delivery!</textarea>
+                        </div>
+
+                        <!-- Item Autocomplete Attachment Builder -->
+                        <div style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--accent-primary);">Attach Database Items (Max 12)</h4>
+                            <div style="display: flex; gap: 0.75rem; align-items: center; position: relative; margin-bottom: 1rem;">
+                                <div style="flex: 1; position: relative;">
+                                    <input type="text" id="mailItemSearch" placeholder="Type item name or ID to attach..." autocomplete="off" oninput="filterMailItemSearch(this.value)" style="margin-bottom: 0;">
+                                    <div id="mailItemSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; bottom: 100%; left: 0; width: 100%; max-height: 200px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5); margin-bottom: 5px; padding: 0.25rem;"></div>
+                                </div>
+                                <input type="number" id="mailItemQty" value="1" min="1" style="width: 80px; margin-bottom: 0; text-align: center;" placeholder="Qty">
+                                <button type="button" onclick="addMailAttachment()" class="btn btn-primary" style="margin-top: 0; padding: 0.65rem 1rem; width: auto;">Attach</button>
+                            </div>
+                            
+                            <!-- Visual attachment slots -->
+                            <div id="mailAttachmentsList" style="display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 40px; padding: 0.5rem; background: rgba(0,0,0,0.15); border-radius: 6px; border: 1px dashed rgba(255,255,255,0.08); align-items: center;">
+                                <span style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">No items attached yet.</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success" style="width: auto;">🚀 Send Custom Mail Delivery</button>
+                    </form>
+                </div>
 
                 <!-- Account Creator Card -->
                 <div class="card">
@@ -4841,6 +4954,153 @@ if ($dbOnline) {
             })
             .catch(err => alert("Failed saving LLM settings: " + err));
         }
+
+        // ----------------------------------------------------
+        // Custom Mail & Attachment Spawner Service
+        // ----------------------------------------------------
+        let mailAttachments = [];
+        let mailItemSearchTimeout = null;
+        let selectedMailItem = null;
+
+        function filterMailItemSearch(val) {
+            const dropdown = document.getElementById('mailItemSearchDropdown');
+            if (val.length < 2) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            
+            clearTimeout(mailItemSearchTimeout);
+            mailItemSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_items', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.items && data.items.length > 0) {
+                        dropdown.innerHTML = data.items.map(item => {
+                            const quality = parseInt(item.quality) || 0;
+                            let color = '#fff';
+                            if (quality === 2) color = '#1eff00';
+                            if (quality === 3) color = '#0070dd';
+                            if (quality === 4) color = '#a335ee';
+                            if (quality === 5) color = '#ff8000';
+                            return `
+                                <div class="autocomplete-item" onclick="selectMailItem(${item.entry}, '${encodeURIComponent(item.name)}')" style="padding: 0.5rem 0.75rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: ${color};" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                    <strong>${item.name}</strong> <span style="font-size:0.75rem; color:var(--text-secondary); float:right;">#${item.entry}</span>
+                                </div>
+                            `;
+                        }).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.5rem; text-align: center; font-size:0.8rem;">No items found</div>`;
+                        dropdown.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    dropdown.innerHTML = `<div style="color: var(--status-danger); padding: 0.5rem; text-align: center; font-size:0.8rem;">Search error</div>`;
+                    dropdown.style.display = 'block';
+                });
+            }, 150);
+        }
+
+        function selectMailItem(entry, name) {
+            selectedMailItem = { entry, name: decodeURIComponent(name) };
+            document.getElementById('mailItemSearch').value = decodeURIComponent(name) + ` (#${entry})`;
+            document.getElementById('mailItemSearchDropdown').style.display = 'none';
+        }
+
+        function addMailAttachment() {
+            if (!selectedMailItem) {
+                const rawVal = document.getElementById('mailItemSearch').value.trim();
+                if (rawVal && !isNaN(rawVal)) {
+                    selectedMailItem = { entry: parseInt(rawVal), name: `Item #${rawVal}` };
+                } else {
+                    alert("Please search and select an item first.");
+                    return;
+                }
+            }
+
+            if (mailAttachments.length >= 12) {
+                alert("You can attach a maximum of 12 items.");
+                return;
+            }
+
+            const qty = parseInt(document.getElementById('mailItemQty').value) || 1;
+            mailAttachments.push({
+                id: selectedMailItem.entry,
+                name: selectedMailItem.name,
+                count: qty
+            });
+
+            document.getElementById('mailItemSearch').value = '';
+            document.getElementById('mailItemQty').value = '1';
+            selectedMailItem = null;
+
+            renderMailAttachments();
+        }
+
+        function removeMailAttachment(index) {
+            mailAttachments.splice(index, 1);
+            renderMailAttachments();
+        }
+
+        function renderMailAttachments() {
+            const container = document.getElementById('mailAttachmentsList');
+            if (mailAttachments.length === 0) {
+                container.innerHTML = '<span style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">No items attached yet.</span>';
+                return;
+            }
+
+            container.innerHTML = mailAttachments.map((att, idx) => `
+                <div style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); padding: 0.35rem 0.75rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; color: #a5b4fc;">
+                    <span>${att.name} x${att.count}</span>
+                    <span onclick="removeMailAttachment(${idx})" style="color: #ef4444; cursor: pointer; font-weight: bold; font-size: 1rem; line-height: 1;" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='#ef4444'">✕</span>
+                </div>
+            `).join('');
+        }
+
+        function sendCustomMail(e) {
+            e.preventDefault();
+            const recipient = document.getElementById('mailRecipient').value;
+            const gold = document.getElementById('mailGold').value;
+            const subject = document.getElementById('mailSubject').value;
+            const body = document.getElementById('mailBody').value;
+
+            if (!confirm(`Are you ready to send this custom delivery to ${recipient}?`)) {
+                return;
+            }
+
+            const params = `recipient=${encodeURIComponent(recipient)}&gold=${gold}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&attachments=${encodeURIComponent(JSON.stringify(mailAttachments))}`;
+
+            fetch('index.php?action=send_custom_mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output);
+                if (data.success) {
+                    document.getElementById('mailGold').value = '0';
+                    document.getElementById('mailSubject').value = 'GM Package';
+                    document.getElementById('mailBody').value = 'Enjoy this delivery!';
+                    mailAttachments = [];
+                    renderMailAttachments();
+                }
+            })
+            .catch(err => alert("Error sending custom mail: " + err));
+        }
+
+        // Close autocomplete dropdown on click outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('mailItemSearchDropdown');
+            const input = document.getElementById('mailItemSearch');
+            if (dropdown && e.target !== dropdown && e.target !== input) {
+                dropdown.style.display = 'none';
+            }
+        });
 
         // ----------------------------------------------------
         // Visual Custom Item Creator Controller
