@@ -932,6 +932,27 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     <p>Instead of manually typing invite commands, you can click the <strong>"Invite"</strong> button next to any online bot in the Admin Panel. If the browser blocks clipboard access, copy the command displayed in the popup prompt and paste it in-game.</p>
                 </div>
 
+                <!-- Setup Macro card -->
+                <div class="card" style="margin-top: 1.5rem; border-color: rgba(139, 92, 246, 0.15); background: rgba(255,255,255,0.01);">
+                    <div class="card-title" style="color: var(--accent-hover); font-size: 1.1rem;">👥 Party Setup & Auto-Gear Companion Macro</div>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">To easily invite, summon, and gear your party bots (Penial, Melik, Mina, Ricker) all at once, you can create a single in-game macro with the following commands:</p>
+                    <pre style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass); margin-bottom: 1.5rem;"><code style="color: #fff; font-family: monospace; font-size: 0.9rem; display: block; line-height: 1.5;">.playerbots bot add Penial
+.playerbots bot add Melik
+.playerbots bot add Mina
+.playerbots bot add Ricker
+.playerbots bot init=auto Penial
+.playerbots bot init=auto Melik
+.playerbots bot init=auto Mina
+.playerbots bot init=auto Ricker
+/p summon</code></pre>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">What this Macro does:</h4>
+                    <ul style="font-size: 0.85rem; margin-left: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li><strong><code>.playerbots bot add &lt;name&gt;</code></strong>: Logs the bot character into the world and automatically adds them to your party.</li>
+                        <li><strong><code>.playerbots bot init=auto &lt;name&gt;</code></strong>: Automatically equips each bot with a full set of gear matching your character's current average gear score.</li>
+                        <li><strong><code>/p summon</code></strong>: Sends a group chat instruction to all party members prompting all bots to instantly teleport to your current location.</li>
+                    </ul>
+                </div>
+
                 <!-- Sub-tabs for categories -->
                 <div class="sub-tabs">
                     <button class="sub-tab-btn active" id="subbtn-movement" onclick="switchSubTab('movement')">Movement & Stance</button>
