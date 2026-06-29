@@ -170,6 +170,20 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if ($action === 'shutdown_server') {
+        // Run safe shutdown watchdog in background
+        exec('nohup /home/coyofroyo/safe_shutdown.sh > /dev/null 2>&1 &');
+        echo json_encode(array('success' => true, 'output' => "Safe 30-second shutdown initiated.\n- Announcements sent in-game.\n- Saving player progress...\n- Tmux container will be terminated."));
+        exit;
+    }
+
+    if ($action === 'start_server') {
+        // Start services in background
+        exec('nohup /home/coyofroyo/start.sh > /dev/null 2>&1 &');
+        echo json_encode(array('success' => true, 'output' => "Start command executed.\n- Services starting in tmux session 'azeroth'."));
+        exit;
+    }
+
 
     if ($action === 'search_logs') {
         $charName = trim($_POST['name'] ?? '');
@@ -2120,9 +2134,13 @@ if ($dbOnline) {
                     <div>
                         <h3 style="font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary);">Actions</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem;">
-                            Restarting services halts the active session tmux process, copies log dumps, and boots a clean game daemon session.
+                            Control server processes directly. Shuttings down saves player stats and terminates the tmux container.
                         </p>
-                        <button onclick="triggerRestart()" class="btn btn-danger" style="padding: 0.85rem 1.5rem;">🔄 Restart Game Server Services</button>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <button onclick="triggerRestart()" class="btn btn-warning" style="padding: 0.75rem 1.25rem; margin-top: 0; width: auto; flex: 1;">🔄 Restart Server</button>
+                            <button onclick="triggerShutdown()" class="btn btn-danger" style="padding: 0.75rem 1.25rem; margin-top: 0; width: auto; flex: 1;">🛑 Shutdown Server</button>
+                            <button onclick="triggerStart()" class="btn btn-success" style="padding: 0.75rem 1.25rem; margin-top: 0; width: auto; flex: 1;">⚡ Start Server</button>
+                        </div>
                         <div id="restartStatus" style="margin-top: 1rem; font-weight: 500; font-size: 0.9rem;"></div>
                     </div>
                 </div>
@@ -3116,6 +3134,47 @@ if ($dbOnline) {
                 statusDiv.style.color = 'var(--status-danger)';
                 statusDiv.textContent = "Request failed: " + err;
             });
+        }
+
+        function triggerShutdown() {
+            if (!confirm("Are you sure you want to shut down the server? If online, it will perform a safe 30-second countdown in-game and auto-save player progress before turning off.")) return;
+            const statusDiv = document.getElementById('restartStatus');
+            statusDiv.style.color = 'var(--status-warning)';
+            statusDiv.textContent = "Initiating safe server shutdown...";
+            
+            fetch('index.php?action=shutdown_server')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.style.color = 'var(--status-danger)';
+                    statusDiv.innerHTML = "Success: " + data.output.replace(/\n/g, "<br>");
+                } else {
+                    statusDiv.style.color = 'var(--status-danger)';
+                    statusDiv.textContent = "Failed to shut down: " + data.output;
+                }
+                fetchSystemStats();
+            })
+            .catch(err => alert('Request failed: ' + err));
+        }
+
+        function triggerStart() {
+            const statusDiv = document.getElementById('restartStatus');
+            statusDiv.style.color = 'var(--status-warning)';
+            statusDiv.textContent = "Starting server services...";
+            
+            fetch('index.php?action=start_server')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.style.color = 'var(--status-success)';
+                    statusDiv.innerHTML = "Success: " + data.output.replace(/\n/g, "<br>");
+                } else {
+                    statusDiv.style.color = 'var(--status-danger)';
+                    statusDiv.textContent = "Failed to start: " + data.output;
+                }
+                fetchSystemStats();
+            })
+            .catch(err => alert('Request failed: ' + err));
         }
 
         function toggleServerEvent(id, currentlyActive) {
