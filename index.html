@@ -1915,10 +1915,43 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--primary); padding-left: 1.5rem; margin-left: 0.5rem;">
+                    <!-- VERSION 1.0.4 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.4 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 29, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🧠 Ollama AI Chat Updates & Uncensored Engine</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Uncensored Model:</strong> Switched backend engine to <code>dolphin3</code> (Llama 3.1 8B fine-tune) to completely bypass safety filters for mature/flirty roleplay.</li>
+                            <li><strong>Extended Context & Memory:</strong> Enabled active sentiment tracking and increased conversation history buffer size to <strong>30 exchanges (60 messages total)</strong>.</li>
+                            <li><strong>C++ Chat Loop Prevention:</strong> Patched the C++ core chat handler (<code>mod-ollama-chat_handler.cpp</code>) to ignore name-mentions in bot-to-bot messages, preventing infinite dialogue loops while maintaining 100% response rates for player name-mentions.</li>
+                            <li><strong>Balanced Reply Chances:</strong> Lowered general bot-to-bot party chat reply chance to 10% and player chat to 25% for realistic pacing.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Altbot Control & Personalities</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Cross-Account Trusted Linkage:</strong> Linked alt-account GUIDs in <code>acore_playerbots.playerbots_account_links</code>, permitting GMs on the main account to seamlessly control alt-account companion bots.</li>
+                            <li><strong>Custom Comedy Trio:</strong> Designed and deployed three unique party personalities (<code>Melik</code> the portal-obsessed nerd, <code>Mina</code> the exhausted healer, and <code>Ricker</code> the Leeroy warrior).</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.0.3 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.3</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 29, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Server & Quest System</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Group Quest Loot Sharing:</strong> Installed the lightweight C++ module <code>mod-quest-loot-party</code>. When a quest item drops from a creature (e.g., Anaya Dawnrunner's locket), the item is automatically shared and distributed to all nearby party members who have the quest active, preventing the need to kill the same quest target multiple times.</li>
+                        </ul>
+                    </div>
+
                     <!-- VERSION 1.0.2 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.2 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.2</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 28, 2026</p>
                         
                         <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Companion Bots (mod-playerbots)</h4>
