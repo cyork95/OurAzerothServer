@@ -346,6 +346,19 @@ if (isset($_GET['action'])) {
             $uptimeStr = implode(", ", $parts);
         }
         
+        $cpuTemp = "N/A";
+        exec("sensors | grep -i 'Package id 0' | awk '{print $4}'", $tempOutput);
+        if (!empty($tempOutput) && isset($tempOutput[0])) {
+            $cpuTemp = trim($tempOutput[0]);
+        } else {
+            if (file_exists('/sys/class/thermal/thermal_zone1/temp')) {
+                $rawTemp = intval(file_get_contents('/sys/class/thermal/thermal_zone1/temp'));
+                if ($rawTemp > 0) {
+                    $cpuTemp = "+" . round($rawTemp / 1000, 1) . "°C";
+                }
+            }
+        }
+
         $worldRunning = false;
         exec("pgrep -f './worldserver' || pgrep worldserver", $pidsWorld);
         if (!empty($pidsWorld)) {
@@ -372,6 +385,7 @@ if (isset($_GET['action'])) {
             'disk_total' => $diskTotalGB,
             'disk_used' => $diskUsedGB,
             'uptime' => $uptimeStr,
+            'cpu_temp' => $cpuTemp,
             'auth_running' => $authRunning,
             'world_running' => $worldRunning,
             'soap_online' => $soapOnlineVal
@@ -453,6 +467,8 @@ if (isset($_GET['action'])) {
         $freeprof = intval($_POST['freeprof'] ?? 0);
         $accmount = intval($_POST['accmount'] ?? 0);
         $accachieve = intval($_POST['accachieve'] ?? 0);
+        $questParty = intval($_POST['questparty'] ?? 0);
+        $groupQuests = intval($_POST['groupquests'] ?? 0);
 
         $transPath = '/home/coyofroyo/azeroth-server/etc/modules/transmog.conf';
         $enchantsPath = '/home/coyofroyo/azeroth-server/etc/modules/random_enchants.conf';
@@ -516,6 +532,50 @@ if (isset($_GET['action'])) {
             file_put_contents($accachievePath, $content);
         }
 
+        // Save Quest Loot Party
+        $qpPaths = [
+            '/home/coyofroyo/azeroth-server/etc/modules/mod_quest_loot_party.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf'
+        ];
+        $qpUpdated = false;
+        $boolVal = $questParty ? 'true' : 'false';
+        foreach ($qpPaths as $path) {
+            if (file_exists($path)) {
+                $c = file_get_contents($path);
+                $c = preg_replace('/^QuestParty\.Enable\s*=\s*(true|false|1|0)/m', "QuestParty.Enable = $boolVal", $c);
+                file_put_contents($path, $c);
+                $qpUpdated = true;
+                break;
+            }
+        }
+        if (!$qpUpdated) {
+            $defaultPath = '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf';
+            $defaultContent = "[worldserver]\nQuestParty.Enable = $boolVal\nQuestParty.Message = true\n";
+            file_put_contents($defaultPath, $defaultContent);
+        }
+
+        // Save Group Quests
+        $gqPaths = [
+            '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/groupquests.conf'
+        ];
+        $gqUpdated = false;
+        foreach ($gqPaths as $path) {
+            if (file_exists($path)) {
+                $c = file_get_contents($path);
+                $c = preg_replace('/^(GroupQuests|mod_groupquests)\.Enable\s*=\s*(true|false|1|0)/m', "$1.Enable = $groupQuests", $c);
+                file_put_contents($path, $c);
+                $gqUpdated = true;
+                break;
+            }
+        }
+        if (!$gqUpdated) {
+            $defaultPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf';
+            $defaultContent = "[worldserver]\nGroupQuests.Enable = $groupQuests\n";
+            file_put_contents($defaultPath, $defaultContent);
+        }
+
         $res = sendSoapCommand('reload config');
         if ($res['success']) {
             $res['output'] = "Server modules config updated and reloaded successfully!";
@@ -556,6 +616,120 @@ if (isset($_GET['action'])) {
             echo json_encode(array('success' => true, 'auctions' => $auctions));
         } catch (Exception $e) {
             echo json_encode(array('success' => false, 'output' => $e->getMessage(), 'auctions' => []));
+        }
+        exit;
+    }
+
+    if ($action === 'get_character_personality') {
+        $guid = intval($_GET['guid'] ?? 0);
+        if ($guid === 0) {
+            echo json_encode(array('success' => false, 'personality' => '', 'prompt' => ''));
+            exit;
+        }
+
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_characters;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            $stmt = $pdo->prepare("SELECT personality FROM mod_ollama_chat_personality WHERE guid = :guid");
+            $stmt->execute(array('guid' => $guid));
+            $pers = $stmt->fetchColumn() ?: '';
+
+            $prompt = '';
+            if (!empty($pers)) {
+                $stmt2 = $pdo->prepare("SELECT prompt FROM mod_ollama_chat_personality_templates WHERE `key` = :key");
+                $stmt2->execute(array('key' => $pers));
+                $prompt = $stmt2->fetchColumn() ?: '';
+            }
+
+            echo json_encode(array('success' => true, 'personality' => $pers, 'prompt' => $prompt));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'error' => $e->getMessage()));
+        }
+        exit;
+    }
+
+    if ($action === 'save_character_personality') {
+        $guid = intval($_POST['guid'] ?? 0);
+        $name = trim($_POST['name'] ?? '');
+        $personality = trim($_POST['personality'] ?? '');
+        $prompt = trim($_POST['prompt'] ?? '');
+
+        if ($guid === 0 || empty($name)) {
+            echo json_encode(array('success' => false, 'output' => 'Character guid and name are required.'));
+            exit;
+        }
+
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_characters;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            if ($personality === 'custom') {
+                $key = "CUSTOM_" . strtoupper($name);
+                $stmt = $pdo->prepare("
+                    INSERT INTO mod_ollama_chat_personality_templates (`key`, prompt, manual_only)
+                    VALUES (:key, :prompt, 1)
+                    ON DUPLICATE KEY UPDATE prompt = :prompt
+                ");
+                $stmt->execute(array('key' => $key, 'prompt' => $prompt));
+            } else {
+                $key = $personality;
+            }
+
+            if (empty($key)) {
+                $stmt2 = $pdo->prepare("DELETE FROM mod_ollama_chat_personality WHERE guid = :guid");
+                $stmt2->execute(array('guid' => $guid));
+            } else {
+                $stmt2 = $pdo->prepare("
+                    INSERT INTO mod_ollama_chat_personality (guid, personality)
+                    VALUES (:guid, :key)
+                    ON DUPLICATE KEY UPDATE personality = :key
+                ");
+                $stmt2->execute(array('guid' => $guid, 'key' => $key));
+            }
+
+            echo json_encode(array('success' => true, 'output' => "AI Personality successfully saved for $name!"));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
+    if ($action === 'get_character_inventory') {
+        $guid = intval($_GET['guid'] ?? 0);
+        if ($guid === 0) {
+            echo json_encode(array('success' => false, 'items' => []));
+            exit;
+        }
+
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_characters;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            $stmt = $pdo->prepare("
+                SELECT i.itemEntry AS entry, t.name, t.Quality AS quality, SUM(i.count) AS count
+                FROM acore_characters.character_inventory ci
+                JOIN acore_characters.item_instance i ON ci.item = i.guid
+                JOIN acore_world.item_template t ON i.itemEntry = t.entry
+                WHERE ci.guid = :guid
+                GROUP BY i.itemEntry, t.name, t.Quality
+                ORDER BY t.Quality DESC, t.name ASC
+            ");
+            $stmt->execute(array('guid' => $guid));
+            $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode(array('success' => true, 'items' => $items));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'error' => $e->getMessage()));
         }
         exit;
     }
@@ -839,16 +1013,50 @@ if (isset($_GET['action'])) {
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ));
 
-            $stmt = $pdo->prepare("
-                SELECT entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier
-                FROM creature_template
-                WHERE name LIKE :search OR entry = :entry
-                LIMIT 50
-            ");
-            $stmt->execute(array(
-                'search' => "%$query%",
-                'entry' => is_numeric($query) ? intval($query) : -1
-            ));
+            $rankFilter = null;
+            $searchName = $query;
+
+            // Parse special rank keywords to make elite/rare search work
+            if (stripos($searchName, 'rare elite') !== false) {
+                $rankFilter = array(2);
+                $searchName = trim(str_ireplace('rare elite', '', $searchName));
+            } elseif (stripos($searchName, 'rare') !== false) {
+                $rankFilter = array(2, 4);
+                $searchName = trim(str_ireplace('rare', '', $searchName));
+            } elseif (stripos($searchName, 'elite') !== false) {
+                $rankFilter = array(1, 2);
+                $searchName = trim(str_ireplace('elite', '', $searchName));
+            } elseif (stripos($searchName, 'boss') !== false) {
+                $rankFilter = array(3);
+                $searchName = trim(str_ireplace('boss', '', $searchName));
+            }
+
+            $sql = "SELECT entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier, rank FROM creature_template WHERE ";
+            $params = array();
+            $conditions = array();
+
+            if (is_numeric($query)) {
+                $conditions[] = "entry = :entry";
+                $params['entry'] = intval($query);
+            } else {
+                if (!empty($searchName)) {
+                    $conditions[] = "name LIKE :search";
+                    $params['search'] = "%$searchName%";
+                }
+                if ($rankFilter !== null) {
+                    $conditions[] = "rank IN (" . implode(',', $rankFilter) . ")";
+                }
+            }
+
+            if (empty($conditions)) {
+                $conditions[] = "1=1";
+            }
+
+            $sql .= implode(" AND ", $conditions);
+            $sql .= " LIMIT 50";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute($params);
             $creatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode(array('success' => true, 'creatures' => $creatures));
         } catch (Exception $e) {
@@ -1178,6 +1386,39 @@ if (file_exists($aoeLootConfigPath)) {
     }
 }
 
+$questPartyEnabled = 0;
+$questPartyPaths = [
+    '/home/coyofroyo/azeroth-server/etc/modules/mod_quest_loot_party.conf',
+    '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf'
+];
+foreach ($questPartyPaths as $path) {
+    if (file_exists($path)) {
+        $fileContent = file_get_contents($path);
+        if (preg_match('/^QuestParty\.Enable\s*=\s*(true|1|false|0)/m', $fileContent, $matches)) {
+            $val = strtolower(trim($matches[1]));
+            $questPartyEnabled = ($val === 'true' || $val === '1') ? 1 : 0;
+        }
+        break;
+    }
+}
+
+$groupQuestsEnabled = 0;
+$groupQuestsPaths = [
+    '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf',
+    '/home/coyofroyo/azeroth-server/etc/modules/mod-groupquests.conf',
+    '/home/coyofroyo/azeroth-server/etc/modules/groupquests.conf'
+];
+foreach ($groupQuestsPaths as $path) {
+    if (file_exists($path)) {
+        $fileContent = file_get_contents($path);
+        if (preg_match('/^(GroupQuests|mod_groupquests)\.Enable\s*=\s*(true|1|false|0)/m', $fileContent, $matches)) {
+            $val = strtolower(trim($matches[2]));
+            $groupQuestsEnabled = ($val === 'true' || $val === '1') ? 1 : 0;
+        }
+        break;
+    }
+}
+
 $mythicPlusEnabled = 0;
 $mythicPlusConfigPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_mythic_plus.conf';
 if (file_exists($mythicPlusConfigPath)) {
@@ -1490,7 +1731,7 @@ if ($dbOnline) {
         /* Dashboard Grid layouts */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
@@ -1597,6 +1838,21 @@ if ($dbOnline) {
             border-color: var(--accent-primary);
             box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
             background: rgba(255, 255, 255, 0.05);
+        }
+
+        .search-input {
+            background: rgba(255, 255, 255, 0.04) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(255,255,255,0.6)" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat 0.85rem center !important;
+            padding-left: 2.5rem !important;
+            border: 1px solid var(--border-glass) !important;
+            border-radius: 10px !important;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary) !important;
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.35), inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+            background-color: rgba(255, 255, 255, 0.07) !important;
         }
 
         .search-input {
@@ -1821,6 +2077,11 @@ if ($dbOnline) {
                     <div class="stat-subtext" id="stat-cpu-load">Load: --</div>
                 </div>
                 <div class="stat-card">
+                    <div class="stat-title">Host CPU Temp</div>
+                    <div class="stat-value" id="stat-temp">--°C</div>
+                    <div class="stat-subtext" id="stat-temp-status">Thermal Status: Safe</div>
+                </div>
+                <div class="stat-card">
                     <div class="stat-title">Host RAM Usage</div>
                     <div class="stat-value" id="stat-ram">--%</div>
                     <div class="stat-subtext" id="stat-ram-GB">-- / -- GB</div>
@@ -1940,6 +2201,20 @@ if ($dbOnline) {
                             <select id="featAccountAchievements">
                                 <option value="1" <?php echo $accountAchievementsEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
                                 <option value="0" <?php echo $accountAchievementsEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="featQuestParty">Quest Loot Sharing (QuestParty)</label>
+                            <select id="featQuestParty">
+                                <option value="1" <?php echo $questPartyEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $questPartyEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="featGroupQuests">Objective Sharing (GroupQuests)</label>
+                            <select id="featGroupQuests">
+                                <option value="1" <?php echo $groupQuestsEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $groupQuestsEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
                             </select>
                         </div>
                     </div>
@@ -2106,9 +2381,11 @@ if ($dbOnline) {
                 <div class="card-split-grid">
                     <div>
                         <label for="creatureSearch">Search Monsters</label>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                            <input type="text" id="creatureSearch" class="search-input" placeholder="Enter monster name or entry ID..." style="margin-bottom: 0;">
-                            <button onclick="searchCreatures()" class="btn btn-primary" style="width: auto; margin-bottom: 0;">Search</button>
+                        <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center; margin-bottom: 1rem;">
+                            <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary); pointer-events: none; z-index: 5;">🔍</span>
+                            <input type="text" id="creatureSearch" class="search-input" placeholder="Type name, ID, or ranks (e.g. 'elite wolf')..." autocomplete="off" oninput="filterAdminCreatureSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;">
+                            <button class="clear-search-btn" id="clearAdminCreatureSearchBtn" onclick="clearAdminCreatureSearch()" style="position: absolute; right: 12px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; line-height: 1; z-index: 5;">✕</button>
+                            <div id="creatureSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 250px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;"></div>
                         </div>
                         <div class="admin-table-container" style="max-height: 380px;">
                             <table class="admin-table">
@@ -2242,9 +2519,11 @@ if ($dbOnline) {
                 <div class="card">
                     <div class="card-title">Character Editor & Teleporter</div>
                     <label for="charSearchInput">Search Character Name</label>
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                        <input type="text" id="charSearchInput" class="search-input" placeholder="Enter name..." style="margin-bottom: 0;">
-                        <button onclick="searchCharacters()" class="btn btn-primary" style="width: auto; margin-bottom: 0;">Search</button>
+                    <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary); pointer-events: none; z-index: 5;">🔍</span>
+                        <input type="text" id="charSearchInput" class="search-input" placeholder="Type character name..." autocomplete="off" oninput="filterAdminCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;">
+                        <button class="clear-search-btn" id="clearAdminCharSearchBtn" onclick="clearAdminCharSearch()" style="position: absolute; right: 12px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; line-height: 1; z-index: 5;">✕</button>
+                        <div id="charSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 250px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;"></div>
                     </div>
                     <div class="admin-table-container" style="max-height: 250px; margin-bottom: 1.5rem;">
                         <table class="admin-table">
@@ -2270,6 +2549,32 @@ if ($dbOnline) {
                         </h3>
                         <div class="detail-row"><span class="detail-label">Online:</span><span class="detail-val" id="editCharOnline">--</span></div>
                         <div class="detail-row"><span class="detail-label">Gold Balance:</span><span class="detail-val" id="editCharGold">--</span></div>
+                        
+                        <div class="inventory-section" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--accent-primary);">Inventory / Equipped Gear</h4>
+                            <div id="charInventoryContainer" style="max-height: 200px; overflow-y: auto; background: rgba(0, 0, 0, 0.25); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                                Select a character to load inventory...
+                            </div>
+                        </div>
+                        
+                        <div class="personality-section" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--accent-primary);">Ollama AI Chat Personality</h4>
+                            <label for="charBotOllama">Select Personality</label>
+                            <select id="charBotOllama" onchange="toggleCharOllamaPrompt(this)" style="width: 100%; margin-bottom: 1rem;">
+                                <option value="">-- No AI Chat Personality --</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="grumpy">Grumpy</option>
+                                <option value="sarcastic">Sarcastic</option>
+                                <option value="custom">Custom Personality Prompt...</option>
+                            </select>
+                            
+                            <div id="charCustomPromptArea" style="display: none; margin-bottom: 1rem;">
+                                <label for="charCustomOllamaPrompt">Custom Personality System Prompt</label>
+                                <textarea id="charCustomOllamaPrompt" rows="4" placeholder="Describe how the bot should talk and behave..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; border-radius: 6px; font-family: inherit; font-size: 0.9rem; resize: vertical;"></textarea>
+                            </div>
+                            <button onclick="saveCharacterPersonality()" class="btn btn-success" style="width: 100%;">Save AI Personality</button>
+                            <div id="charPersonalityOutput" style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--status-success);"></div>
+                        </div>
                         
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
                             <div>
@@ -2384,6 +2689,35 @@ if ($dbOnline) {
                         <button type="submit" class="btn btn-success" style="margin-top: 1.5rem;">Summon New Follower</button>
                     </form>
                     <div id="followerCreationOutput" style="margin-top: 1rem; border-radius: 8px; padding: 0.75rem; font-size: 0.9rem;"></div>
+                </div>
+
+                <!-- Account Creator Card -->
+                <div class="card">
+                    <div class="card-title">Create Game Account</div>
+                    <form onsubmit="createGameAccountForm(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label for="accUsername">Username</label>
+                                <input type="text" id="accUsername" class="search-input" required placeholder="Account name..." style="margin-bottom: 0;">
+                            </div>
+                            <div>
+                                <label for="accPassword">Password</label>
+                                <input type="password" id="accPassword" required placeholder="Password...">
+                            </div>
+                            <div>
+                                <label for="accGmLevel">Access Level</label>
+                                <select id="accGmLevel" style="width: 100%;">
+                                    <option value="0">0 - Player (Default)</option>
+                                    <option value="1">1 - Moderator</option>
+                                    <option value="2">2 - Gamemaster</option>
+                                    <option value="3">3 - Admin</option>
+                                    <option value="4">4 - Console</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success" style="margin-top: 1.5rem;">Create Account</button>
+                    </form>
+                    <div id="accountCreationOutput" style="margin-top: 1rem; border-radius: 8px; padding: 0.75rem; font-size: 0.9rem;"></div>
                 </div>
             </div>
         </div>
@@ -2695,6 +3029,44 @@ if ($dbOnline) {
             }
         });
 
+        function toggleCharOllamaPrompt(select) {
+            const area = document.getElementById('charCustomPromptArea');
+            if (select.value === 'custom') {
+                area.style.display = 'block';
+            } else {
+                area.style.display = 'none';
+            }
+        }
+
+        function saveCharacterPersonality() {
+            if (!selectedCharacter) return;
+            const selectVal = document.getElementById('charBotOllama').value;
+            const promptVal = document.getElementById('charCustomOllamaPrompt').value;
+            const outputDiv = document.getElementById('charPersonalityOutput');
+            outputDiv.style.color = '#fff';
+            outputDiv.textContent = 'Saving personality...';
+
+            fetch('index.php?action=save_character_personality', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `guid=${selectedCharacter.guid}&name=${encodeURIComponent(selectedCharacter.name)}&personality=${selectVal}&prompt=${encodeURIComponent(promptVal)}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    outputDiv.style.color = 'var(--status-success)';
+                    outputDiv.textContent = data.output;
+                } else {
+                    outputDiv.style.color = 'var(--status-danger)';
+                    outputDiv.textContent = 'Error: ' + data.output;
+                }
+            })
+            .catch(err => {
+                outputDiv.style.color = 'var(--status-danger)';
+                outputDiv.textContent = 'Error: ' + err;
+            });
+        }
+
         function spawnRareNearPlayer() {
             const player = document.getElementById('rarePlayerSelect').value;
             const entry = document.getElementById('rareMonsterSelect').value;
@@ -2724,6 +3096,21 @@ if ($dbOnline) {
             .catch(err => alert('Request failed: ' + err));
         }
 
+        // Close autocomplete dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            const charDropdown = document.getElementById('charSearchDropdown');
+            const charInput = document.getElementById('charSearchInput');
+            if (charDropdown && e.target !== charDropdown && e.target !== charInput) {
+                charDropdown.style.display = 'none';
+            }
+
+            const creatureDropdown = document.getElementById('creatureSearchDropdown');
+            const creatureInput = document.getElementById('creatureSearch');
+            if (creatureDropdown && e.target !== creatureDropdown && e.target !== creatureInput) {
+                creatureDropdown.style.display = 'none';
+            }
+        });
+
         // Live stats fetcher
         function fetchSystemStats() {
             fetch('index.php?action=get_system_stats')
@@ -2732,6 +3119,23 @@ if ($dbOnline) {
                 if (data.success) {
                     document.getElementById('stat-cpu').textContent = data.cpu + '%';
                     document.getElementById('stat-cpu-load').textContent = 'Load: ' + data.cpu_load;
+                    
+                    document.getElementById('stat-temp').textContent = data.cpu_temp;
+                    const tempNum = parseFloat(data.cpu_temp.replace('+', '').replace('°C', ''));
+                    const statusEl = document.getElementById('stat-temp-status');
+                    if (isNaN(tempNum)) {
+                        statusEl.textContent = 'Thermal Status: Unknown';
+                        statusEl.style.color = 'var(--text-secondary)';
+                    } else if (tempNum >= 90.0) {
+                        statusEl.textContent = 'Thermal Status: CRITICAL';
+                        statusEl.style.color = '#ef4444';
+                    } else if (tempNum >= 80.0) {
+                        statusEl.textContent = 'Thermal Status: HIGH WARNING';
+                        statusEl.style.color = '#f59e0b';
+                    } else {
+                        statusEl.textContent = 'Thermal Status: Safe';
+                        statusEl.style.color = 'var(--status-success)';
+                    }
                     
                     document.getElementById('stat-ram').textContent = data.ram_percent + '%';
                     document.getElementById('stat-ram-GB').textContent = data.ram_used + ' / ' + data.ram_total + ' GB';
@@ -2808,8 +3212,10 @@ if ($dbOnline) {
             const freeprof = document.getElementById('featFreeProfessions').value;
             const accmount = document.getElementById('featAccountMount').value;
             const accachieve = document.getElementById('featAccountAchievements').value;
+            const questparty = document.getElementById('featQuestParty').value;
+            const groupquests = document.getElementById('featGroupQuests').value;
 
-            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}`;
+            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}`;
 
             fetch('index.php?action=set_features_config', {
                 method: 'POST',
@@ -2872,6 +3278,70 @@ if ($dbOnline) {
             .then(res => res.json())
             .then(data => alert(data.output))
             .catch(err => alert("Error saving progression lock: " + err));
+        }
+
+        // Creature autocomplete search logic (Wiki Style)
+        let adminCreatureSearchTimeout = null;
+        function filterAdminCreatureSearch(val) {
+            const dropdown = document.getElementById('creatureSearchDropdown');
+            const clearBtn = document.getElementById('clearAdminCreatureSearchBtn');
+            
+            if (!val.trim()) {
+                dropdown.style.display = 'none';
+                clearBtn.style.display = 'none';
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            
+            clearTimeout(adminCreatureSearchTimeout);
+            adminCreatureSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_creatures', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.creatures && data.creatures.length > 0) {
+                        dropdown.innerHTML = data.creatures.map(c => {
+                            const subname = c.subname ? ` <span style="font-size: 0.8rem; opacity: 0.7;">(${c.subname})</span>` : '';
+                            const rankNames = { 0: '', 1: 'Elite', 2: 'Rare Elite', 3: 'Boss', 4: 'Rare' };
+                            const rankBadge = c.rank > 0 ? ` <span style="color: #6366f1; border: 1px solid #6366f1; font-size: 0.7rem; background: rgba(99, 102, 241, 0.1); padding: 1px 4px; border-radius: 4px; margin-left: 5px;">${rankNames[c.rank]}</span>` : '';
+                            return `
+                                <div class="autocomplete-item" onclick="selectAdminCreature(${c.entry}, '${encodeURIComponent(c.name)}', '${encodeURIComponent(c.subname || '')}', ${c.minlevel}, ${c.maxlevel}, ${c.minhealth}, ${c.maxhealth}, ${c.armor}, ${c.damage_multiplier})" style="padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                    <div>
+                                        <strong style="color: #fff;">${c.name}</strong>${subname}${rankBadge}
+                                        <span style="color: var(--text-secondary); font-size: 0.8rem; margin-left: 0.5rem;">Lvl ${c.minlevel}-${c.maxlevel}</span>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">ID: ${c.entry}</span>
+                                </div>
+                            `;
+                        }).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">No creatures found</div>`;
+                        dropdown.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    dropdown.innerHTML = `<div style="color: var(--status-danger); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">Search error</div>`;
+                    dropdown.style.display = 'block';
+                });
+            }, 150);
+        }
+
+        function selectAdminCreature(entry, name, subname, minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier) {
+            const decodedName = decodeURIComponent(name);
+            document.getElementById('creatureSearch').value = decodedName;
+            document.getElementById('creatureSearchDropdown').style.display = 'none';
+            selectCreature(entry, decodedName, decodeURIComponent(subname), minlevel, maxlevel, minhealth, maxhealth, armor, damage_multiplier);
+        }
+
+        function clearAdminCreatureSearch() {
+            document.getElementById('creatureSearch').value = '';
+            document.getElementById('creatureSearchDropdown').style.display = 'none';
+            document.getElementById('clearAdminCreatureSearchBtn').style.display = 'none';
         }
 
         // Creature Editor script controllers
@@ -3104,6 +3574,70 @@ if ($dbOnline) {
             }
         });
 
+        // Character autocomplete search logic (Wiki Style)
+        let adminCharSearchTimeout = null;
+        function filterAdminCharSearch(val) {
+            const dropdown = document.getElementById('charSearchDropdown');
+            const clearBtn = document.getElementById('clearAdminCharSearchBtn');
+            
+            if (!val.trim()) {
+                dropdown.style.display = 'none';
+                clearBtn.style.display = 'none';
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            
+            clearTimeout(adminCharSearchTimeout);
+            adminCharSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_characters', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.characters && data.characters.length > 0) {
+                        dropdown.innerHTML = data.characters.map(c => {
+                            const botBadge = c.is_bot ? ' <span style="color: var(--status-warning); font-size: 0.7rem; background: rgba(245, 158, 11, 0.1); padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BOT</span>' : '';
+                            return `
+                                <div class="autocomplete-item" onclick="selectAdminChar(${c.guid}, '${encodeURIComponent(c.name)}', ${c.level}, ${c.online}, ${c.money})" style="padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                    <div>
+                                        <strong style="color: #fff;">${c.name}</strong>${botBadge}
+                                        <span style="color: var(--text-secondary); font-size: 0.8rem; margin-left: 0.5rem;">Lvl ${c.level}</span>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: ${c.online ? 'var(--status-success)' : 'var(--text-secondary)'};">
+                                        ${c.online ? 'Online' : 'Offline'}
+                                    </span>
+                                </div>
+                            `;
+                        }).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">No characters found</div>`;
+                        dropdown.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    dropdown.innerHTML = `<div style="color: var(--status-danger); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">Search error</div>`;
+                    dropdown.style.display = 'block';
+                });
+            }, 150);
+        }
+
+        function selectAdminChar(guid, name, level, online, money) {
+            const decodedName = decodeURIComponent(name);
+            document.getElementById('charSearchInput').value = decodedName;
+            document.getElementById('charSearchDropdown').style.display = 'none';
+            selectCharacter(guid, decodedName, level, online, money);
+        }
+
+        function clearAdminCharSearch() {
+            document.getElementById('charSearchInput').value = '';
+            document.getElementById('charSearchDropdown').style.display = 'none';
+            document.getElementById('clearAdminCharSearchBtn').style.display = 'none';
+        }
+
         // Character quick editor script controllers
         let selectedCharacter = null;
 
@@ -3154,6 +3688,69 @@ if ($dbOnline) {
             
             const gold = Math.floor(money / 10000);
             document.getElementById('editCharGold').textContent = gold + ' Gold';
+
+            // Fetch and display personality
+            const ollamaSelect = document.getElementById('charBotOllama');
+            const customArea = document.getElementById('charCustomPromptArea');
+            const customPromptInput = document.getElementById('charCustomOllamaPrompt');
+            document.getElementById('charPersonalityOutput').textContent = '';
+            
+            fetch('index.php?action=get_character_personality&guid=' + guid)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    let persValue = data.personality;
+                    if (persValue.startsWith('CUSTOM_')) {
+                        ollamaSelect.value = 'custom';
+                        customArea.style.display = 'block';
+                        customPromptInput.value = data.prompt;
+                    } else {
+                        ollamaSelect.value = persValue.toLowerCase();
+                        customArea.style.display = 'none';
+                        customPromptInput.value = '';
+                    }
+                } else {
+                    ollamaSelect.value = '';
+                    customArea.style.display = 'none';
+                    customPromptInput.value = '';
+                }
+            })
+            .catch(() => {
+                ollamaSelect.value = '';
+                customArea.style.display = 'none';
+                customPromptInput.value = '';
+            });
+
+            // Fetch and display inventory
+            const invContainer = document.getElementById('charInventoryContainer');
+            invContainer.innerHTML = '<span style="color: var(--text-secondary);">Loading inventory...</span>';
+            fetch('index.php?action=get_character_inventory&guid=' + guid)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.items && data.items.length > 0) {
+                    let itemsHtml = '<table style="width: 100%; border-collapse: collapse;">';
+                    data.items.forEach(it => {
+                        let color = '#fff';
+                        if (it.quality === 1) color = '#ffffff'; // Common
+                        else if (it.quality === 2) color = '#1eff00'; // Uncommon
+                        else if (it.quality === 3) color = '#0070dd'; // Rare
+                        else if (it.quality === 4) color = '#a335ee'; // Epic
+                        else if (it.quality === 5) color = '#ff8000'; // Legendary
+                        
+                        itemsHtml += `<tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                            <td style="color: ${color}; padding: 0.35rem 0;">${it.name} <span style="color:var(--text-secondary); font-size:0.75rem;">(#${it.entry})</span></td>
+                            <td style="text-align: right; color: var(--text-secondary); padding: 0.35rem 0;">x${it.count}</td>
+                        </tr>`;
+                    });
+                    itemsHtml += '</table>';
+                    invContainer.innerHTML = itemsHtml;
+                } else {
+                    invContainer.innerHTML = '<span style="color: var(--text-secondary);">No items found in bags or equipment.</span>';
+                }
+            })
+            .catch(err => {
+                invContainer.innerHTML = '<span style="color: var(--status-danger);">Failed to load inventory: ' + err + '</span>';
+            });
         }
 
         function modifyCharacter(type) {
@@ -3189,6 +3786,44 @@ if ($dbOnline) {
                 searchCharacters();
             })
             .catch(err => alert('Error updating character property: ' + err));
+        }
+
+        function createGameAccountForm(e) {
+            e.preventDefault();
+            const username = document.getElementById('accUsername').value;
+            const password = document.getElementById('accPassword').value;
+            const gmlevel = document.getElementById('accGmLevel').value;
+
+            const resultDiv = document.getElementById('accountCreationOutput');
+            resultDiv.style.background = 'rgba(255, 255, 255, 0.03)';
+            resultDiv.style.color = '#fff';
+            resultDiv.textContent = 'Creating account...';
+
+            fetch('index.php?action=create_account', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&gmlevel=${gmlevel}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    resultDiv.style.background = 'rgba(16, 185, 129, 0.05)';
+                    resultDiv.style.color = 'var(--status-success)';
+                    resultDiv.innerHTML = `<strong>Success:</strong> ${data.output}`;
+                    // Clear inputs on success
+                    document.getElementById('accUsername').value = '';
+                    document.getElementById('accPassword').value = '';
+                } else {
+                    resultDiv.style.background = 'rgba(239, 68, 68, 0.05)';
+                    resultDiv.style.color = 'var(--status-danger)';
+                    resultDiv.innerHTML = `<strong>Error:</strong> ${data.output || 'Unknown error'}`;
+                }
+            })
+            .catch(err => {
+                resultDiv.style.background = 'rgba(239, 68, 68, 0.05)';
+                resultDiv.style.color = 'var(--status-danger)';
+                resultDiv.textContent = 'Error: ' + err;
+            });
         }
 
         function createCustomFollowerForm(e) {
