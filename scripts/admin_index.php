@@ -1411,6 +1411,7 @@ if (isset($_GET['action'])) {
         $crit = intval($_POST['crit'] ?? 40);
         $haste = intval($_POST['haste'] ?? 40);
         $char_name = trim($_POST['char_name'] ?? '');
+        $displayid = intval($_POST['displayid'] ?? 17291);
 
         try {
             $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_WORLD . ";charset=utf8mb4";
@@ -1439,7 +1440,7 @@ if (isset($_GET['action'])) {
                     stat_type1, stat_value1, stat_type2, stat_value2, stat_type3, stat_value3, stat_type4, stat_value4,
                     dmg_min1, dmg_max1, dmg_type1, delay, spellid_1, spellcategory_1, Bonding
                 ) VALUES (
-                    :entry, :class, :subclass, :name, 17291, :quality, 0, 1, 1000, 200, 
+                    :entry, :class, :subclass, :name, :displayid, :quality, 0, 1, 1000, 200, 
                     :slot, -1, -1, 200, 1,
                     :st1, :sv1, :st2, :sv2, :st3, :sv3, :st4, :sv4,
                     :min_dmg, :max_dmg, 0, :delay, 0, 0, 1
@@ -1463,7 +1464,8 @@ if (isset($_GET['action'])) {
                 'sv4' => isset($stats[3]) ? $stats[3]['val'] : 0,
                 'min_dmg' => $min_dmg,
                 'max_dmg' => $max_dmg,
-                'delay' => $speed
+                'delay' => $speed,
+                'displayid' => $displayid
             ));
 
             // Optional: If Spell Power/Crit/Haste is set, we can add a custom item_enchantment_template or socket
@@ -1566,7 +1568,7 @@ if (isset($_GET['action'])) {
             ));
 
             $stmt = $pdo->prepare("
-                SELECT entry, name, Quality AS quality
+                SELECT entry, name, Quality AS quality, displayid
                 FROM item_template
                 WHERE name LIKE :search OR entry = :entry
                 LIMIT 20
@@ -3410,6 +3412,17 @@ if ($dbOnline) {
                             <label for="itmMaxDmg">Maximum Damage</label>
                             <input type="number" id="itmMaxDmg" value="250">
                         </div>
+                        <div>
+                            <label for="itmModelSearch">Copy Look from Database Item</label>
+                            <div style="position: relative;">
+                                <input type="text" id="itmModelSearch" placeholder="Type item to copy visual..." autocomplete="off" oninput="filterItemModelSearch(this.value)">
+                                <div id="itmModelSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 200px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="itmDisplayId">Display ID (Model ID)</label>
+                            <input type="number" id="itmDisplayId" value="17291" placeholder="Thunderfury: 17291" required>
+                        </div>
                     </div>
 
                     <h4 style="font-size: 1.05rem; font-weight: 500; margin-bottom: 1rem; color: var(--accent-primary); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">Item Custom Stats</h4>
@@ -5093,6 +5106,68 @@ if ($dbOnline) {
             .catch(err => alert("Error sending custom mail: " + err));
         }
 
+        // ----------------------------------------------------
+        // Visual Model search and display ID grabber
+        // ----------------------------------------------------
+        let itmModelSearchTimeout = null;
+
+        function filterItemModelSearch(val) {
+            const dropdown = document.getElementById('itmModelSearchDropdown');
+            if (val.length < 2) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            
+            clearTimeout(itmModelSearchTimeout);
+            itmModelSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_items', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.items && data.items.length > 0) {
+                        dropdown.innerHTML = data.items.map(item => {
+                            const quality = parseInt(item.quality) || 0;
+                            let color = '#fff';
+                            if (quality === 2) color = '#1eff00';
+                            if (quality === 3) color = '#0070dd';
+                            if (quality === 4) color = '#a335ee';
+                            if (quality === 5) color = '#ff8000';
+                            return `
+                                <div class="autocomplete-item" onclick="selectItemModel(${item.displayid}, '${encodeURIComponent(item.name)}')" style="padding: 0.5rem 0.75rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: ${color};" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                    <strong>${item.name}</strong> <span style="font-size:0.75rem; color:var(--text-secondary); float:right;">Model: #${item.displayid}</span>
+                                </div>
+                            `;
+                        }).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.5rem; text-align: center; font-size:0.8rem;">No items found</div>`;
+                        dropdown.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    dropdown.innerHTML = `<div style="color: var(--status-danger); padding: 0.5rem; text-align: center; font-size:0.8rem;">Search error</div>`;
+                    dropdown.style.display = 'block';
+                });
+            }, 150);
+        }
+
+        function selectItemModel(displayid, name) {
+            document.getElementById('itmDisplayId').value = displayid;
+            document.getElementById('itmModelSearch').value = decodeURIComponent(name);
+            document.getElementById('itmModelSearchDropdown').style.display = 'none';
+        }
+
+        // Close autocomplete dropdown on click outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('itmModelSearchDropdown');
+            const input = document.getElementById('itmModelSearch');
+            if (dropdown && e.target !== dropdown && e.target !== input) {
+                dropdown.style.display = 'none';
+            }
+        });
         // Close autocomplete dropdown on click outside
         document.addEventListener('click', function(e) {
             const dropdown = document.getElementById('mailItemSearchDropdown');
@@ -5142,6 +5217,7 @@ if ($dbOnline) {
             const agility = document.getElementById('itmAgility').value;
             const intellect = document.getElementById('itmIntellect').value;
             const char_name = document.getElementById('itmCharName').value;
+            const displayid = document.getElementById('itmDisplayId').value;
 
             // Determine item class/subclass
             let itemClass = 2; // Default weapon
@@ -5154,7 +5230,7 @@ if ($dbOnline) {
                 itemSubclass = 4; // Cloth/Plate placeholder
             }
 
-            const params = `name=${encodeURIComponent(name)}&quality=${quality}&slot=${slot}&speed=${speed}&min_dmg=${min_dmg}&max_dmg=${max_dmg}&stamina=${stamina}&strength=${strength}&agility=${agility}&intellect=${intellect}&char_name=${encodeURIComponent(char_name)}&class=${itemClass}&subclass=${itemSubclass}`;
+            const params = `name=${encodeURIComponent(name)}&quality=${quality}&slot=${slot}&speed=${speed}&min_dmg=${min_dmg}&max_dmg=${max_dmg}&stamina=${stamina}&strength=${strength}&agility=${agility}&intellect=${intellect}&char_name=${encodeURIComponent(char_name)}&class=${itemClass}&subclass=${itemSubclass}&displayid=${displayid}`;
 
             if (!confirm(`Are you ready to forge the Legendary item '${name}' and add it to the server database?`)) {
                 return;
