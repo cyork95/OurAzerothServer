@@ -2094,23 +2094,23 @@ if ($dbOnline) {
             <div class="nav-item active" onclick="switchTab('dashboard')" id="nav-dashboard">
                 <span>📊</span> Dashboard & Controls
             </div>
-            <div class="nav-item" onclick="switchTab('db-editors')" id="nav-db-editors">
-                <span>🗄️</span> Database Editors
+            <div class="nav-item" onclick="switchTab('auction-house')" id="nav-auction-house">
+                <span>⚖️</span> Live Auction House
             </div>
             <div class="nav-item" onclick="switchTab('char-tools')" id="nav-char-tools">
                 <span>👥</span> Character Tools
             </div>
-            <div class="nav-item" onclick="switchTab('auction-house')" id="nav-auction-house">
-                <span>⚖️</span> Live Auction House
+            <div class="nav-item" onclick="switchTab('rare-spawner')" id="nav-rare-spawner">
+                <span>👾</span> Rare Spawner Tool
             </div>
-            <div class="nav-item" onclick="switchTab('console-tab')" id="nav-console-tab">
-                <span>💬</span> SOAP Console
+            <div class="nav-item" onclick="switchTab('db-editors')" id="nav-db-editors">
+                <span>🗄️</span> Database Editors
             </div>
             <div class="nav-item" onclick="switchTab('system-logs')" id="nav-system-logs">
                 <span>📰</span> Chat & Event Logs
             </div>
-            <div class="nav-item" onclick="switchTab('rare-spawner')" id="nav-rare-spawner">
-                <span>👾</span> Rare Spawner Tool
+            <div class="nav-item" onclick="switchTab('console-tab')" id="nav-console-tab">
+                <span>💬</span> SOAP Console
             </div>
         </div>
 
