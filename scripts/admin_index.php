@@ -387,6 +387,34 @@ if (isset($_GET['action'])) {
 
         $soapRes = sendSoapCommand('server info');
         $soapOnlineVal = $soapRes['success'];
+
+        // Read Ollama Config
+        $confPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_ollama_chat.conf';
+        $llm_config = array(
+            'host' => 'http://127.0.0.1',
+            'port' => '11434',
+            'model' => 'llama3',
+            'temp' => '0.7'
+        );
+        if (file_exists($confPath)) {
+            $c = file_get_contents($confPath);
+            if (preg_match('/^OllamaChat\\.Host\\s*=\\s*"?([^"\n]*)"?/m', $c, $m)) $llm_config['host'] = $m[1];
+            if (preg_match('/^OllamaChat\\.Port\\s*=\\s*(\\d+)/m', $c, $m)) $llm_config['port'] = $m[1];
+            if (preg_match('/^OllamaChat\\.Model\\s*=\\s*"?([^"\n]*)"?/m', $c, $m)) $llm_config['model'] = $m[1];
+            if (preg_match('/^OllamaChat\\.Temperature\\s*=\\s*([0-9.]+)/m', $c, $m)) $llm_config['temp'] = $m[1];
+        }
+
+        // Test if Ollama is listening on the configured host/port
+        $ollamaOnline = false;
+        $url = $llm_config['host'] . ':' . $llm_config['port'] . '/';
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 1);
+        $resOllama = curl_exec($ch);
+        if ($resOllama !== false) {
+            $ollamaOnline = true;
+        }
+        curl_close($ch);
         
         echo json_encode(array(
             'success' => true,
@@ -402,7 +430,9 @@ if (isset($_GET['action'])) {
             'cpu_temp' => $cpuTemp,
             'auth_running' => $authRunning,
             'world_running' => $worldRunning,
-            'soap_online' => $soapOnlineVal
+            'soap_online' => $soapOnlineVal,
+            'llm_config' => $llm_config,
+            'ollama_online' => $ollamaOnline
         ));
         exit;
     }
@@ -2492,9 +2522,7 @@ if ($dbOnline) {
             <div class="nav-item" onclick="switchTab('playerbots')" id="nav-playerbots">
                 <span>🤖</span> Playerbots Manager
             </div>
-            <div class="nav-item" onclick="switchTab('llm-tuner')" id="nav-llm-tuner">
-                <span>🧠</span> Ollama LLM Tuner
-            </div>
+
             <div class="nav-item" onclick="switchTab('rare-spawner')" id="nav-rare-spawner">
                 <span>👾</span> Rare Spawner Tool
             </div>
@@ -2836,6 +2864,16 @@ if ($dbOnline) {
                         </form>
                     </div>
                 </div>
+            </div>
+
+            <!-- Ollama AI Chat Integration Status Card (Read-only) -->
+            <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-title">Ollama AI Spatial Chat Status</div>
+                <div class="detail-row"><span class="detail-label">Ollama Host Connection:</span><span class="detail-val" id="dbg-llm-host">Loading...</span></div>
+                <div class="detail-row"><span class="detail-label">Ollama Port:</span><span class="detail-val" id="dbg-llm-port">Loading...</span></div>
+                <div class="detail-row"><span class="detail-label">Active Model:</span><span class="detail-val" id="dbg-llm-model" style="color: var(--accent-primary); font-weight: 500;">Loading...</span></div>
+                <div class="detail-row"><span class="detail-label">Chat Temperature:</span><span class="detail-val" id="dbg-llm-temp">Loading...</span></div>
+                <div class="detail-row"><span class="detail-label">Ollama API Status:</span><span class="detail-val" id="dbg-llm-status">Checking...</span></div>
             </div>
         </div>
 
@@ -3370,40 +3408,7 @@ if ($dbOnline) {
             </div>
         </div>
 
-        <!-- TAB: OLLAMA LLM TUNER -->
-        <div class="tab-content" id="tab-llm-tuner">
-            <div class="card">
-                <div class="card-title">Ollama LLM Spatial Chat Configurator</div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
-                    Configure connection hosts, LLM models, parameters, and global system instruction prompts for spatial AI bot chat interactions.
-                </p>
-                <form onsubmit="saveLLMConfig(event)" style="max-width: 650px;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div>
-                            <label for="llmHost">Ollama Host Connection</label>
-                            <input type="text" id="llmHost" placeholder="http://127.0.0.1" required>
-                        </div>
-                        <div>
-                            <label for="llmPort">Ollama Port</label>
-                            <input type="number" id="llmPort" placeholder="11434" required>
-                        </div>
-                        <div>
-                            <label for="llmModel">Active LLM Model</label>
-                            <input type="text" id="llmModel" placeholder="llama3" required>
-                        </div>
-                        <div>
-                            <label for="llmTemp">Chat Temperature (0.0 - 1.0)</label>
-                            <input type="number" step="0.1" id="llmTemp" min="0" max="1" placeholder="0.7" required>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <label for="llmPrompt">Default Spatial Chat Prompt Instructions</label>
-                        <textarea id="llmPrompt" rows="8" placeholder="Enter default instructions guiding LLM responses in spatial environment chat..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 8px; color: #fff; padding: 0.75rem; font-family: inherit; font-size: 0.9rem; resize: vertical;"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success" style="width: auto;">Save & Apply Config</button>
-                </form>
-            </div>
-        </div>
+
 
         <!-- TAB: ITEM CREATOR & SPAWNER -->
         <div class="tab-content" id="tab-item-creator">
@@ -3940,6 +3945,15 @@ if ($dbOnline) {
                     document.getElementById('svc-auth').innerHTML = data.auth_running ? '<span style="color: var(--status-success)">Running 🟢</span>' : '<span style="color: var(--status-danger)">Stopped 🔴</span>';
                     document.getElementById('svc-world').innerHTML = data.world_running ? '<span style="color: var(--status-success)">Running 🟢</span>' : '<span style="color: var(--status-danger)">Stopped 🔴</span>';
                     document.getElementById('svc-soap').innerHTML = data.soap_online ? '<span style="color: var(--status-success)">Listening 🟢</span>' : '<span style="color: var(--status-danger)">Connection Error 🔴</span>';
+                    
+                    // Populate read-only Ollama Status Card
+                    if (data.llm_config) {
+                        document.getElementById('dbg-llm-host').textContent = data.llm_config.host;
+                        document.getElementById('dbg-llm-port').textContent = data.llm_config.port;
+                        document.getElementById('dbg-llm-model').textContent = data.llm_config.model;
+                        document.getElementById('dbg-llm-temp').textContent = data.llm_config.temp;
+                        document.getElementById('dbg-llm-status').innerHTML = data.ollama_online ? '<span style="color: var(--status-success)">Online 🟢</span>' : '<span style="color: var(--status-danger)">Connection Offline 🔴</span>';
+                    }
                 }
             })
             .catch(err => console.error("Error fetching stats:", err));
