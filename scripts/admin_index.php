@@ -2283,10 +2283,9 @@ if ($dbOnline) {
                             </select>
                         </div>
                         <div>
-                            <label for="featGroupQuests">Objective Sharing (GroupQuests)</label>
-                            <select id="featGroupQuests">
-                                <option value="1" <?php echo $groupQuestsEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
-                                <option value="0" <?php echo $groupQuestsEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            <label for="featGroupQuests" style="color: var(--text-secondary);">Objective Sharing (GroupQuests) <span style="font-size:0.75rem; color:var(--status-danger);">[Not Installed]</span></label>
+                            <select id="featGroupQuests" disabled style="opacity: 0.6; cursor: not-allowed; background: rgba(0, 0, 0, 0.3);">
+                                <option value="0" selected>Disabled (Requires Recompile)</option>
                             </select>
                         </div>
                     </div>
