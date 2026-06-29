@@ -586,6 +586,9 @@
             <button class="menu-btn" id="tabbtn-changelog" onclick="switchTab('changelog')">
                 <span class="icon">📜</span> Change Log
             </button>
+            <button class="menu-btn" id="tabbtn-bug-tracker" onclick="switchTab('bug-tracker')">
+                <span class="icon">🐛</span> Bug & Feature Tracker
+            </button>
         </nav>
         <div class="sidebar-footer">
             <a href="http://192.168.1.168/admin/" target="_blank" class="btn-admin">⚙️ Admin Console</a>
@@ -1970,6 +1973,30 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <li><strong>Eluna Mail Restored:</strong> Commented out buggy <code>OnPlayerSendMail</code> hook in <code>autobiographer.lua</code> to prevent internal mail database errors.</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 9: BUG & FEATURE TRACKER -->
+        <div id="tab-bug-tracker" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">🐛 Bug & Server Enhancement Tracker</div>
+                <p>Submit issues, bug reports, and enhancement ideas here. Responses are automatically synced to a Google Sheet where <strong>Google Spark</strong> analyses them to generate developer fixes!</p>
+                
+                <div class="alert alert-info" style="margin-bottom: 1.5rem; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 6px; padding: 1rem;">
+                    <strong style="color: #60a5fa; display: block; margin-bottom: 0.25rem;">⚙️ How to Link Your Google Form:</strong>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                        To connect this tab to your live Google Form database:
+                    </p>
+                    <ol style="margin: 0.5rem 0 0 1.25rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                        <li>Create a form at <a href="https://forms.google.com" target="_blank" style="color: #60a5fa; text-decoration: underline;">Google Forms</a> containing columns like <em>Bug Title, Steps to Reproduce, Class/Area, Type (Bug/Enhancement), and Priority</em>.</li>
+                        <li>Link the form responses to a new Google Sheet.</li>
+                        <li>Click <strong>Send</strong> -> <strong>Embed HTML (&lt;&gt;)</strong>, copy the iframe's <code>src</code> URL, and update the <code>src</code> attribute on the iframe in this file (<code>index.html</code>) to render it seamlessly.</li>
+                    </ol>
+                </div>
+
+                <div style="width: 100%; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.15); box-sizing: border-box;">
+                    <iframe id="bug-tracker-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfD90U-K5p3-VdPhv6d4P3yE5u497nL7-g9l-R1234567890/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="border: none; display: block; background: transparent;">Loading form…</iframe>
                 </div>
             </div>
         </div>
