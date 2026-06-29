@@ -2826,7 +2826,7 @@ if ($dbOnline) {
                         <label for="rareMonsterSearch">Search Monster / Boss to Spawn</label>
                         <input type="text" id="rareMonsterSearch" class="search-input" placeholder="Type name (e.g. Time-Lost) or entry ID..." oninput="searchRares()" autocomplete="off" style="width: 100%; margin-bottom: 0;">
                         <input type="hidden" id="rareMonsterSelect" value="">
-                        <div id="rareSuggestions" class="autocomplete-suggestions" style="position: absolute; left: 0; right: 0; background: var(--bg-dark); border: 1px solid var(--border-glass); border-radius: 6px; z-index: 1000; max-height: 250px; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"></div>
+                        <div id="rareSuggestions" class="autocomplete-suggestions" style="position: absolute; left: 0; right: 0; background: #121826; border: 1px solid var(--border-glass); border-radius: 6px; z-index: 1000; max-height: 250px; overflow-y: auto; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"></div>
                     </div>
                 </div>
                 
