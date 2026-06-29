@@ -1400,18 +1400,26 @@ if (isset($_GET['action'])) {
         $slot = intval($_POST['slot'] ?? 13); // 13 = One hand weapon
         $class = intval($_POST['class'] ?? 2); // 2 = Weapon
         $subclass = intval($_POST['subclass'] ?? 7); // 7 = One-handed Sword
-        $min_dmg = floatval($_POST['min_dmg'] ?? 150.0);
-        $max_dmg = floatval($_POST['max_dmg'] ?? 250.0);
-        $speed = intval($_POST['speed'] ?? 2000); // 2.0s speed
-        $stamina = intval($_POST['stamina'] ?? 50);
-        $strength = intval($_POST['strength'] ?? 50);
-        $agility = intval($_POST['agility'] ?? 50);
-        $intellect = intval($_POST['intellect'] ?? 50);
-        $spellpower = intval($_POST['spellpower'] ?? 100);
-        $crit = intval($_POST['crit'] ?? 40);
-        $haste = intval($_POST['haste'] ?? 40);
-        $char_name = trim($_POST['char_name'] ?? '');
+        $min_dmg = floatval($_POST['min_dmg'] ?? 0.0);
+        $max_dmg = floatval($_POST['max_dmg'] ?? 0.0);
+        $speed = intval($_POST['speed'] ?? 0); 
         $displayid = intval($_POST['displayid'] ?? 17291);
+        $armor = intval($_POST['armor'] ?? 0);
+        $block = intval($_POST['block'] ?? 0);
+        $char_name = trim($_POST['char_name'] ?? '');
+        $spellid = intval($_POST['spellid'] ?? 0);
+
+        // Retrieve Stats
+        $stamina = intval($_POST['stamina'] ?? 0);
+        $strength = intval($_POST['strength'] ?? 0);
+        $agility = intval($_POST['agility'] ?? 0);
+        $intellect = intval($_POST['intellect'] ?? 0);
+        $spirit = intval($_POST['spirit'] ?? 0);
+        $spellpower = intval($_POST['spellpower'] ?? 0);
+        $crit = intval($_POST['crit'] ?? 0);
+        $haste = intval($_POST['haste'] ?? 0);
+        $attackpower = intval($_POST['attackpower'] ?? 0);
+        $defense = intval($_POST['defense'] ?? 0);
 
         try {
             $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_WORLD . ";charset=utf8mb4";
@@ -1426,24 +1434,39 @@ if (isset($_GET['action'])) {
             $new_entry = intval($max_row['max_entry'] ?? 98999) + 1;
             if ($new_entry < 99000) $new_entry = 99000;
 
-            // Stats array mapping
+            // Stats array mapping for WotLK
             $stats = array();
-            if ($stamina > 0) $stats[] = array('type' => 12, 'val' => $stamina); // 12 = Stamina
+            if ($stamina > 0) $stats[] = array('type' => 7, 'val' => $stamina); // 7 = Stamina
             if ($strength > 0) $stats[] = array('type' => 4, 'val' => $strength); // 4 = Strength
             if ($agility > 0) $stats[] = array('type' => 3, 'val' => $agility); // 3 = Agility
             if ($intellect > 0) $stats[] = array('type' => 5, 'val' => $intellect); // 5 = Intellect
+            if ($spirit > 0) $stats[] = array('type' => 6, 'val' => $spirit); // 6 = Spirit
+            if ($spellpower > 0) $stats[] = array('type' => 45, 'val' => $spellpower); // 45 = Spell Power
+            if ($crit > 0) $stats[] = array('type' => 32, 'val' => $crit); // 32 = Crit Rating
+            if ($haste > 0) $stats[] = array('type' => 36, 'val' => $haste); // 36 = Haste Rating
+            if ($attackpower > 0) $stats[] = array('type' => 38, 'val' => $attackpower); // 38 = Attack Power
+            if ($defense > 0) $stats[] = array('type' => 12, 'val' => $defense); // 12 = Defense Skill
+
+            // Determine spelltrigger based on spell type
+            // Procs (Fiery, Lifesteal, Unholy) trigger on-hit (1), passives trigger on-equip (0)
+            $spelltrigger = 0;
+            if ($spellid == 13898 || $spellid == 20004 || $spellid == 22728) {
+                $spelltrigger = 1;
+            }
 
             $sql = "
                 INSERT INTO item_template (
                     entry, class, subclass, name, displayid, Quality, Flags, BuyCount, BuyPrice, SellPrice, 
                     InventoryType, AllowableClass, AllowableRace, ItemLevel, RequiredLevel,
                     stat_type1, stat_value1, stat_type2, stat_value2, stat_type3, stat_value3, stat_type4, stat_value4,
-                    dmg_min1, dmg_max1, dmg_type1, delay, spellid_1, spellcategory_1, Bonding
+                    stat_type5, stat_value5, stat_type6, stat_value6, stat_type7, stat_value7, stat_type8, stat_value8,
+                    dmg_min1, dmg_max1, dmg_type1, delay, spellid_1, spelltrigger_1, Bonding, armor, block
                 ) VALUES (
                     :entry, :class, :subclass, :name, :displayid, :quality, 0, 1, 1000, 200, 
                     :slot, -1, -1, 200, 1,
                     :st1, :sv1, :st2, :sv2, :st3, :sv3, :st4, :sv4,
-                    :min_dmg, :max_dmg, 0, :delay, 0, 0, 1
+                    :st5, :sv5, :st6, :sv6, :st7, :sv7, :st8, :sv8,
+                    :min_dmg, :max_dmg, 0, :delay, :spellid, :spelltrigger, 1, :armor, :block
                 )
             ";
             $stmt = $pdo->prepare($sql);
@@ -1462,24 +1485,33 @@ if (isset($_GET['action'])) {
                 'sv3' => isset($stats[2]) ? $stats[2]['val'] : 0,
                 'st4' => isset($stats[3]) ? $stats[3]['type'] : 0,
                 'sv4' => isset($stats[3]) ? $stats[3]['val'] : 0,
+                'st5' => isset($stats[4]) ? $stats[4]['type'] : 0,
+                'sv5' => isset($stats[4]) ? $stats[4]['val'] : 0,
+                'st6' => isset($stats[5]) ? $stats[5]['type'] : 0,
+                'sv6' => isset($stats[5]) ? $stats[5]['val'] : 0,
+                'st7' => isset($stats[6]) ? $stats[6]['type'] : 0,
+                'sv7' => isset($stats[6]) ? $stats[6]['val'] : 0,
+                'st8' => isset($stats[7]) ? $stats[7]['type'] : 0,
+                'sv8' => isset($stats[7]) ? $stats[7]['val'] : 0,
                 'min_dmg' => $min_dmg,
                 'max_dmg' => $max_dmg,
                 'delay' => $speed,
-                'displayid' => $displayid
+                'displayid' => $displayid,
+                'spellid' => $spellid,
+                'spelltrigger' => $spelltrigger,
+                'armor' => $armor,
+                'block' => $block
             ));
 
-            // Optional: If Spell Power/Crit/Haste is set, we can add a custom item_enchantment_template or socket
-            // For simplicity, inserting into item_template is enough to generate the item!
-            
             // Reload item_template in-game
             sendSoapCommand('reload item_template');
             
-            $output = "Custom Item Created (Entry ID: $new_entry) & reloaded in-game!";
+            $output = "Custom Item Forged Successfully (Entry ID: $new_entry) & loaded on server!";
             
             // Mail to character if name provided
             if (!empty($char_name)) {
-                $r = sendSoapCommand('send mail ' . $char_name . ' "Custom Weapon Created" "Here is your custom forged blade!" ' . $new_entry);
-                $output .= "\nMailed to $char_name: " . $r['output'];
+                $r = sendSoapCommand('send mail ' . $char_name . ' "Custom Item Forged" "Here is your custom forged item!" ' . $new_entry);
+                $output .= "\\nMailed to $char_name: " . $r['output'];
             }
 
             echo json_encode(array('success' => true, 'output' => $output));
@@ -3378,12 +3410,21 @@ if ($dbOnline) {
             <div class="card">
                 <div class="card-title">Visual Custom Item Creator & Spawner</div>
                 <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
-                    Design legendary, epic, or custom weapons and armor, save them into the game database, and automatically mail them to characters.
+                    Design custom server gear, add active procs or passive enchants, and mail them to characters.
                 </p>
+
+                <!-- Creator Category Selector -->
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                    <button type="button" id="btn-sub-weapon" onclick="switchItemCreatorType('weapon')" class="btn btn-primary" style="margin-top:0; width:auto; font-size:0.9rem; padding: 0.5rem 1rem;">⚔️ Weapon Creator</button>
+                    <button type="button" id="btn-sub-armor" onclick="switchItemCreatorType('armor')" class="btn" style="margin-top:0; width:auto; font-size:0.9rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.05); color: var(--text-secondary);">🛡️ Armor & Shields</button>
+                    <button type="button" id="btn-sub-accessory" onclick="switchItemCreatorType('accessory')" class="btn" style="margin-top:0; width:auto; font-size:0.9rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.05); color: var(--text-secondary);">💍 Trinkets & Accessories</button>
+                </div>
+
                 <form onsubmit="createCustomItem(event)">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <!-- Global Info Section (Common to all) -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
                         <div>
-                            <label for="itmName">Weapon / Armor Name</label>
+                            <label for="itmName">Item Display Name</label>
                             <input type="text" id="itmName" placeholder="e.g. Antigravity Blade" required>
                         </div>
                         <div>
@@ -3394,29 +3435,6 @@ if ($dbOnline) {
                                 <option value="4" style="color: #a335ee;">Purple (Epic)</option>
                                 <option value="5" style="color: #ff8000;" selected>Orange (Legendary)</option>
                             </select>
-                        </div>
-                        <div>
-                            <label for="itmSlot">Equipment Slot</label>
-                            <select id="itmSlot" onchange="toggleItemTypeFields(this.value)">
-                                <option value="13">One-Handed Weapon</option>
-                                <option value="17">Two-Handed Weapon</option>
-                                <option value="14">Shield</option>
-                                <option value="5">Chest Armor</option>
-                                <option value="1">Head / Helm</option>
-                                <option value="3">Shoulders</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="itmSpeed">Weapon Attack Speed (Seconds)</label>
-                            <input type="number" step="0.1" id="itmSpeed" value="2.0">
-                        </div>
-                        <div>
-                            <label for="itmMinDmg">Minimum Damage</label>
-                            <input type="number" id="itmMinDmg" value="150">
-                        </div>
-                        <div>
-                            <label for="itmMaxDmg">Maximum Damage</label>
-                            <input type="number" id="itmMaxDmg" value="250">
                         </div>
                         <div>
                             <label for="itmModelSearch">Copy Look from Database Item</label>
@@ -3431,26 +3449,163 @@ if ($dbOnline) {
                         </div>
                     </div>
 
-                    <h4 style="font-size: 1.05rem; font-weight: 500; margin-bottom: 1rem; color: var(--accent-primary); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">Item Custom Stats</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                        <div>
-                            <label for="itmStamina">Stamina</label>
-                            <input type="number" id="itmStamina" value="50">
+                    <!-- 1. Weapon Specific Fields -->
+                    <div id="section-creator-weapon" style="display: block; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: var(--accent-primary); margin-bottom: 1rem;">Weapon Configuration</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <label for="itmWeaponSlot">Weapon Slot</label>
+                                <select id="itmWeaponSlot">
+                                    <option value="13">One-Handed Weapon</option>
+                                    <option value="17">Two-Handed Weapon</option>
+                                    <option value="15">Ranged / Bow</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="itmSpeed">Attack Speed (Seconds)</label>
+                                <input type="number" step="0.1" id="itmSpeed" value="2.0">
+                            </div>
+                            <div>
+                                <label for="itmMinDmg">Minimum Damage</label>
+                                <input type="number" id="itmMinDmg" value="150">
+                            </div>
+                            <div>
+                                <label for="itmMaxDmg">Maximum Damage</label>
+                                <input type="number" id="itmMaxDmg" value="250">
+                            </div>
                         </div>
-                        <div>
-                            <label for="itmStrength">Strength</label>
-                            <input type="number" id="itmStrength" value="50">
-                        </div>
-                        <div>
-                            <label for="itmAgility">Agility</label>
-                            <input type="number" id="itmAgility" value="50">
-                        </div>
-                        <div>
-                            <label for="itmIntellect">Intellect</label>
-                            <input type="number" id="itmIntellect" value="50">
+                        
+                        <h4 style="font-size: 1rem; color: var(--accent-primary); margin-bottom: 0.75rem;">Select Weapon Special Proc / Enchant</h4>
+                        <div style="max-width: 400px; margin-bottom: 1.5rem;">
+                            <select id="itmWeaponSpell">
+                                <option value="0">-- None / No Visual Glow --</option>
+                                <option value="13898">🔥 Fiery Weapon (Proc 40 Fire Damage)</option>
+                                <option value="20004">❤️ Lifesteal (Proc Health Steal & Heal)</option>
+                                <option value="22728">💀 Unholy Weapon (Proc disease/damage debuff)</option>
+                                <option value="22749">🔮 Spell Power +30 (Passive spell damage)</option>
+                                <option value="22750">➕ Healing Power +55 (Passive healing spells)</option>
+                            </select>
                         </div>
                     </div>
 
+                    <!-- 2. Armor Specific Fields -->
+                    <div id="section-creator-armor" style="display: none; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: var(--accent-primary); margin-bottom: 1rem;">Armor & Shield Configuration</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <label for="itmArmorSlot">Armor Slot</label>
+                                <select id="itmArmorSlot">
+                                    <option value="1">Head / Helm</option>
+                                    <option value="3">Shoulder</option>
+                                    <option value="5">Chest Armor</option>
+                                    <option value="10">Hands / Gloves</option>
+                                    <option value="7">Legs / Greaves</option>
+                                    <option value="14">Shield</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="itmArmorVal">Armor Value</label>
+                                <input type="number" id="itmArmorVal" value="500">
+                            </div>
+                            <div>
+                                <label for="itmBlockVal">Shield Block Value</label>
+                                <input type="number" id="itmBlockVal" value="0" placeholder="Shield only...">
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1rem; color: var(--accent-primary); margin-bottom: 0.75rem;">Select Armor Special Enchant</h4>
+                        <div style="max-width: 400px; margin-bottom: 1.5rem;">
+                            <select id="itmArmorSpell">
+                                <option value="0">-- None --</option>
+                                <option value="14962">🛡️ Spiked Shield (Reflects 4 damage when hit)</option>
+                                <option value="18005">💧 Mana Regen (+5 Mp5 passive)</option>
+                                <option value="21623">💚 Health Regen (+5 Hp5 passive)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 3. Accessory Specific Fields -->
+                    <div id="section-creator-accessory" style="display: none; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; color: var(--accent-primary); margin-bottom: 1rem;">Jewelry & Accessory Configuration</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <label for="itmAccessorySlot">Accessory Slot</label>
+                                <select id="itmAccessorySlot">
+                                    <option value="11">Ring / Band</option>
+                                    <option value="2">Necklace / Amulet</option>
+                                    <option value="12">Trinket</option>
+                                    <option value="16">Cloak / Back</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1rem; color: var(--accent-primary); margin-bottom: 0.75rem;">Select Accessory Special Enchant</h4>
+                        <div style="max-width: 400px; margin-bottom: 1.5rem;">
+                            <select id="itmAccessorySpell">
+                                <option value="0">-- None --</option>
+                                <option value="18005">💧 Mana Regen (+5 Mp5 passive)</option>
+                                <option value="21623">💚 Health Regen (+5 Hp5 passive)</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!-- Stat Modifiers Grid with Explanations -->
+                    <h3 style="font-size: 1.1rem; color: var(--accent-primary); border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 1.5rem; margin-bottom: 1rem;">Configure Item Stats</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div>
+                            <label for="itmStamina">Stamina</label>
+                            <input type="number" id="itmStamina" value="50">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">💚 Increases Max Health (+10 HP per point)</span>
+                        </div>
+                        <div>
+                            <label for="itmStrength">Strength</label>
+                            <input type="number" id="itmStrength" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">⚔️ Melee AP and Shield Block value</span>
+                        </div>
+                        <div>
+                            <label for="itmAgility">Agility</label>
+                            <input type="number" id="itmAgility" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">🏃 Increases Physical Crit & Armor</span>
+                        </div>
+                        <div>
+                            <label for="itmIntellect">Intellect</label>
+                            <input type="number" id="itmIntellect" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">🧙 Increases Max Mana & Spell Crit</span>
+                        </div>
+                        <div>
+                            <label for="itmSpirit">Spirit</label>
+                            <input type="number" id="itmSpirit" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">💧 Increases Mana & Health regeneration</span>
+                        </div>
+                        <div>
+                            <label for="itmSpellPower">Spell Power</label>
+                            <input type="number" id="itmSpellPower" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">🔮 Increases damage and healing of spells</span>
+                        </div>
+                        <div>
+                            <label for="itmCrit">Crit Rating</label>
+                            <input type="number" id="itmCrit" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">💥 Increases Critical Strike chance</span>
+                        </div>
+                        <div>
+                            <label for="itmHaste">Haste Rating</label>
+                            <input type="number" id="itmHaste" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">⚡ Increases Attack Speed & cast rates</span>
+                        </div>
+                        <div>
+                            <label for="itmAttackPower">Attack Power</label>
+                            <input type="number" id="itmAttackPower" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">🗡️ Increases physical strike damage</span>
+                        </div>
+                        <div>
+                            <label for="itmDefense">Defense Rating</label>
+                            <input type="number" id="itmDefense" value="0">
+                            <span class="stat-explanation" style="font-size: 0.75rem; color: var(--text-secondary); display: block; margin-top: 0.25rem;">🛡️ Increases dodge, parry, block & miss</span>
+                        </div>
+                    </div>
+
+                    <!-- Recipient Spawner Search -->
                     <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); max-width: 450px; margin-bottom: 1.5rem; position: relative;">
                         <label for="itmCharName">Mail Directly to Character (Name)</label>
                         <input type="text" id="itmCharName" placeholder="Enter character name to receive item..." style="margin-bottom: 0;" autocomplete="off" oninput="filterItemCharSearch(this.value)">
@@ -5240,61 +5395,100 @@ if ($dbOnline) {
         });
 
         // ----------------------------------------------------
-        // Visual Custom Item Creator Controller
+        // Overhauled Custom Item Creator JS Controller
         // ----------------------------------------------------
-        function toggleItemTypeFields(slotVal) {
-            slotVal = parseInt(slotVal);
-            const speedInput = document.getElementById('itmSpeed');
-            const minDmgInput = document.getElementById('itmMinDmg');
-            const maxDmgInput = document.getElementById('itmMaxDmg');
-            
-            // If weapon (slot 13 or 17), enable speed/dmg. If shield/armor, disable
-            if (slotVal === 13 || slotVal === 17) {
-                speedInput.disabled = false;
-                minDmgInput.disabled = false;
-                maxDmgInput.disabled = false;
-                speedInput.style.opacity = '1';
-                minDmgInput.style.opacity = '1';
-                maxDmgInput.style.opacity = '1';
-            } else {
-                speedInput.disabled = true;
-                minDmgInput.disabled = true;
-                maxDmgInput.disabled = true;
-                speedInput.style.opacity = '0.5';
-                minDmgInput.style.opacity = '0.5';
-                maxDmgInput.style.opacity = '0.5';
-            }
+        let currentItemCreatorType = 'weapon';
+
+        function switchItemCreatorType(type) {
+            currentItemCreatorType = type;
+
+            // Toggle sub-tab button styling
+            const tabs = ['weapon', 'armor', 'accessory'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('btn-sub-' + t);
+                const section = document.getElementById('section-creator-' + t);
+                if (t === type) {
+                    btn.className = 'btn btn-primary';
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    section.style.display = 'block';
+                } else {
+                    btn.className = 'btn';
+                    btn.style.background = 'rgba(255,255,255,0.05)';
+                    btn.style.color = 'var(--text-secondary)';
+                    section.style.display = 'none';
+                }
+            });
         }
 
         function createCustomItem(e) {
             e.preventDefault();
             const name = document.getElementById('itmName').value;
             const quality = document.getElementById('itmQuality').value;
-            const slot = document.getElementById('itmSlot').value;
-            const speed = Math.round(parseFloat(document.getElementById('itmSpeed').value || 2.0) * 1000);
-            const min_dmg = document.getElementById('itmMinDmg').value;
-            const max_dmg = document.getElementById('itmMaxDmg').value;
+            const displayid = document.getElementById('itmDisplayId').value;
+            const char_name = document.getElementById('itmCharName').value;
+
+            // Retrieve common stats
             const stamina = document.getElementById('itmStamina').value;
             const strength = document.getElementById('itmStrength').value;
             const agility = document.getElementById('itmAgility').value;
             const intellect = document.getElementById('itmIntellect').value;
-            const char_name = document.getElementById('itmCharName').value;
-            const displayid = document.getElementById('itmDisplayId').value;
+            const spirit = document.getElementById('itmSpirit').value;
+            const spellpower = document.getElementById('itmSpellPower').value;
+            const crit = document.getElementById('itmCrit').value;
+            const haste = document.getElementById('itmHaste').value;
+            const attackpower = document.getElementById('itmAttackPower').value;
+            const defense = document.getElementById('itmDefense').value;
 
-            // Determine item class/subclass
+            // Build payload variables based on active category
             let itemClass = 2; // Default weapon
             let itemSubclass = 7; // One hand sword
-            if (parseInt(slot) === 14) {
+            let slot = 13;
+            let speed = 0;
+            let min_dmg = 0;
+            let max_dmg = 0;
+            let armor = 0;
+            let block = 0;
+            let spellid = 0;
+
+            if (currentItemCreatorType === 'weapon') {
+                slot = document.getElementById('itmWeaponSlot').value;
+                speed = Math.round(parseFloat(document.getElementById('itmSpeed').value || 2.0) * 1000);
+                min_dmg = document.getElementById('itmMinDmg').value;
+                max_dmg = document.getElementById('itmMaxDmg').value;
+                spellid = document.getElementById('itmWeaponSpell').value;
+                
+                itemClass = 2;
+                if (parseInt(slot) === 15) {
+                    itemSubclass = 2; // Bow
+                } else if (parseInt(slot) === 17) {
+                    itemSubclass = 8; // Two hand sword
+                } else {
+                    itemSubclass = 7; // One hand sword
+                }
+            } else if (currentItemCreatorType === 'armor') {
+                slot = document.getElementById('itmArmorSlot').value;
+                armor = document.getElementById('itmArmorVal').value;
+                block = document.getElementById('itmBlockVal').value;
+                spellid = document.getElementById('itmArmorSpell').value;
+
                 itemClass = 4; // Armor
-                itemSubclass = 6; // Shield
-            } else if (parseInt(slot) === 5 || parseInt(slot) === 1 || parseInt(slot) === 3) {
-                itemClass = 4; // Armor
-                itemSubclass = 4; // Cloth/Plate placeholder
+                if (parseInt(slot) === 14) {
+                    itemSubclass = 6; // Shield
+                } else {
+                    itemSubclass = 4; // Plate/Cloth template placeholder
+                }
+            } else if (currentItemCreatorType === 'accessory') {
+                slot = document.getElementById('itmAccessorySlot').value;
+                spellid = document.getElementById('itmAccessorySpell').value;
+
+                itemClass = 4; // Accessories are Armor class in Core DB
+                itemSubclass = 0; // Ring/Neck placeholder
             }
 
-            const params = `name=${encodeURIComponent(name)}&quality=${quality}&slot=${slot}&speed=${speed}&min_dmg=${min_dmg}&max_dmg=${max_dmg}&stamina=${stamina}&strength=${strength}&agility=${agility}&intellect=${intellect}&char_name=${encodeURIComponent(char_name)}&class=${itemClass}&subclass=${itemSubclass}&displayid=${displayid}`;
+            const params = `name=${encodeURIComponent(name)}&quality=${quality}&slot=${slot}&speed=${speed}&min_dmg=${min_dmg}&max_dmg=${max_dmg}&stamina=${stamina}&strength=${strength}&agility=${agility}&intellect=${intellect}&spirit=${spirit}&spellpower=${spellpower}&crit=${crit}&haste=${haste}&attackpower=${attackpower}&defense=${defense}&char_name=${encodeURIComponent(char_name)}&class=${itemClass}&subclass=${itemSubclass}&displayid=${displayid}&armor=${armor}&block=${block}&spellid=${spellid}`;
 
-            if (!confirm(`Are you ready to forge the Legendary item '${name}' and add it to the server database?`)) {
+            if (!confirm(`Are you ready to forge the custom item '${name}' and write it to the database?`)) {
                 return;
             }
 
@@ -5309,6 +5503,7 @@ if ($dbOnline) {
                 if (data.success) {
                     document.getElementById('itmName').value = '';
                     document.getElementById('itmCharName').value = '';
+                    document.getElementById('itmModelSearch').value = '';
                 }
             })
             .catch(err => alert("Forging error: " + err));
