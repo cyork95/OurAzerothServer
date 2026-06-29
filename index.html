@@ -588,7 +588,7 @@
             </button>
         </nav>
         <div class="sidebar-footer">
-            <a href="/admin/" class="btn-admin">⚙️ Admin Console</a>
+            <a href="http://192.168.1.168/admin/" target="_blank" class="btn-admin">⚙️ Admin Console</a>
         </div>
     </aside>
 
@@ -765,7 +765,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Instead of relying purely on the random bots running around the world, you can design your own custom companion characters who will follow you, dungeon with you, and help you quest.</p>
                 
                 <h3>1. Use the Custom Follower Creator</h3>
-                <p>Go to the <a href="/admin/" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> and scroll to the bottom to find the **AI Custom Follower Creator** card. Fill in your character's name, choose a name for your follower, choose their race/class/gender/level, and click **Create Follower**.</p>
+                <p>Go to the <a href="http://192.168.1.168/admin/" target="_blank" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> and scroll to the bottom to find the **AI Custom Follower Creator** card. Fill in your character's name, choose a name for your follower, choose their race/class/gender/level, and click **Create Follower**.</p>
                 
                 <div class="alert alert-warning">
                     <strong>⚠️ Server Restarts & In-Memory Cache</strong>
@@ -899,18 +899,21 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <div class="card-title">3. Summoning & Gearing Your Follower</div>
                 <p>After creating your follower and restarting the server, log in on your main character and perform the following steps:</p>
                 
-                <h3>How to Bring Them Into the World</h3>
+                <h3>How to Bring Them Into the World (Summoning)</h3>
                 <ol>
-                    <li>Type the following command in your chat bar to load the bot and add them to your party:</li>
+                    <li>Type either of the following commands in your main chat bar to load the bot and add them to your party:</li>
                 </ol>
-                <pre><code>.playerbots bot add FollowerName</code></pre>
-                <p style="font-size: 0.85rem; margin-top: -0.5rem; color: var(--text-secondary);">*(Replace <code>FollowerName</code> with the name of the character you created, e.g. <code>.playerbots bot add Testydruid</code>)*</p>
+                <pre><code>.playerbots bot add FollowerName</code><button class="btn-copy" onclick="copyText('.playerbots bot add FollowerName')">Copy</button></pre>
+                <p style="font-size: 0.85rem; margin-top: -0.5rem; color: var(--text-secondary);">*(Alias: <code>.pb bot add FollowerName</code>. Replace <code>FollowerName</code> with your bot's name).*</p>
                 <ol start="2">
                     <li>The bot will spawn directly next to you and join your party.</li>
-                    <li>Target the bot, open your whisper chat (press <code>/w FollowerName</code>), and send:</li>
                 </ol>
-                <pre><code>init=auto</code><button class="btn-copy" onclick="copyText('init=auto')">Copy</button></pre>
-                <p>This triggers the server's bot factory to instantly generate and equip them with appropriate level-scaling gear! As you level up, you can whisper them <code>init=auto</code> again to refresh their gear to match your level.</p>
+
+                <h3>How to Equip Them (Gearing)</h3>
+                <p>With our server's Altbot Command Bypass, you can instantly gear your companion directly from the chat bar without having to whisper them:</p>
+                <pre><code>.playerbots bot init=auto FollowerName</code><button class="btn-copy" onclick="copyText('.playerbots bot init=auto ')">Copy</button></pre>
+                <p style="font-size: 0.85rem; margin-top: -0.5rem; color: var(--text-secondary);">*(Alias: <code>.pb bot init=auto FollowerName</code>. Replace <code>FollowerName</code> with your bot's name. You can also specify other gear qualities like <code>rare</code>, <code>epic</code>, or <code>legendary</code>).*</p>
+                <p>This triggers the server's bot factory to instantly generate and equip them with a full set of appropriate level-scaling gear! As you level up, you can run this command again to refresh their gear to match your level.</p>
             </div>
         </div>
 
@@ -1024,10 +1027,10 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     <div class="command-list">
                         <div class="command-item">
                             <div class="command-info">
-                                <h4>init=auto</h4>
-                                <p>Generates level-appropriate equipment automatically. Target them and whisper this.</p>
+                                <h4>.playerbots bot init=auto &lt;botname&gt;</h4>
+                                <p><strong>Altbot Gearing:</strong> Generates level-appropriate equipment automatically. You can type this directly in the chat bar (alias: <code>.pb bot init=auto</code>), or whisper <code>init=auto</code> directly to the bot.</p>
                             </div>
-                            <button class="btn-inline-copy" onclick="copyText('init=auto')">Copy Command</button>
+                            <button class="btn-inline-copy" onclick="copyText('.playerbots bot init=auto ')">Copy Command</button>
                         </div>
                         <div class="command-item">
                             <div class="command-info">
@@ -1427,7 +1430,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
             <div class="card">
                 <div class="card-title">Admin Panel Features Guide</div>
-                <p>The <a href="/admin/" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> has been overhauled into a clean, sidebar-navigated dashboard. Features are now organized into five category tabs to reduce crowding:</p>
+                <p>The <a href="http://192.168.1.168/admin/" target="_blank" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> has been overhauled into a clean, sidebar-navigated dashboard. Features are now organized into five category tabs to reduce crowding:</p>
 
                 <h3>1. 📊 Dashboard & Controls</h3>
                 <p>Contains server metrics, service states, and configuration modules:</p>
