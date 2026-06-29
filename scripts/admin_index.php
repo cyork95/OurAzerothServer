@@ -404,17 +404,15 @@ if (isset($_GET['action'])) {
             if (preg_match('/^OllamaChat\\.Temperature\\s*=\\s*([0-9.]+)/m', $c, $m)) $llm_config['temp'] = $m[1];
         }
 
-        // Test if Ollama is listening on the configured host/port
+        // Test if Ollama is listening on the configured host/port using raw socket connection (bypasses missing php-curl package)
         $ollamaOnline = false;
-        $url = $llm_config['host'] . ':' . $llm_config['port'] . '/';
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 1);
-        $resOllama = curl_exec($ch);
-        if ($resOllama !== false) {
+        $cleanHost = str_replace(array('http://', 'https://'), '', $llm_config['host']);
+        $cleanPort = intval($llm_config['port']);
+        $fp = @fsockopen($cleanHost, $cleanPort, $errno, $errstr, 1);
+        if ($fp) {
             $ollamaOnline = true;
+            fclose($fp);
         }
-        curl_close($ch);
         
         echo json_encode(array(
             'success' => true,
