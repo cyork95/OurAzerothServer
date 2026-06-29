@@ -1164,6 +1164,268 @@ if (isset($_GET['action'])) {
     }
 
     // Loot Editor AJAX Actions
+    // Get LLM Chat configuration parameters
+    if ($action === 'get_llm_config') {
+        $confPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_ollama_chat.conf';
+        $config = array(
+            'host' => 'http://127.0.0.1',
+            'port' => '11434',
+            'model' => 'llama3',
+            'temp' => '0.7',
+            'system_prompt' => ''
+        );
+        if (file_exists($confPath)) {
+            $c = file_get_contents($confPath);
+            if (preg_match('/^OllamaChat\.Host\s*=\s*"(.*)"/m', $c, $m)) $config['host'] = $m[1];
+            if (preg_match('/^OllamaChat\.Port\s*=\s*(\d+)/m', $c, $m)) $config['port'] = $m[1];
+            if (preg_match('/^OllamaChat\.Model\s*=\s*"(.*)"/m', $c, $m)) $config['model'] = $m[1];
+            if (preg_match('/^OllamaChat\.Temperature\s*=\s*([0-9.]+)/m', $c, $m)) $config['temp'] = $m[1];
+            if (preg_match('/^OllamaChat\.SystemPrompt\s*=\s*"(.*)"/m', $c, $m)) $config['system_prompt'] = $m[1];
+        }
+        echo json_encode(array('success' => true, 'config' => $config));
+        exit;
+    }
+
+    // Save LLM Chat configuration parameters
+    if ($action === 'set_llm_config') {
+        $host = trim($_POST['host'] ?? 'http://127.0.0.1');
+        $port = intval($_POST['port'] ?? 11434);
+        $model = trim($_POST['model'] ?? 'llama3');
+        $temp = floatval($_POST['temp'] ?? 0.7);
+        $system_prompt = trim($_POST['system_prompt'] ?? '');
+
+        $confPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_ollama_chat.conf';
+        if (file_exists($confPath)) {
+            $c = file_get_contents($confPath);
+            $c = preg_replace('/^OllamaChat\.Host\s*=\s*".*"/m', 'OllamaChat.Host = "' . $host . '"', $c);
+            $c = preg_replace('/^OllamaChat\.Port\s*=\s*\d+/m', 'OllamaChat.Port = ' . $port, $c);
+            $c = preg_replace('/^OllamaChat\.Model\s*=\s*".*"/m', 'OllamaChat.Model = "' . $model . '"', $c);
+            $c = preg_replace('/^OllamaChat\.Temperature\s*=\s*[0-9.]+/m', 'OllamaChat.Temperature = ' . $temp, $c);
+            $c = preg_replace('/^OllamaChat\.SystemPrompt\s*=\s*".*"/m', 'OllamaChat.SystemPrompt = "' . addslashes($system_prompt) . '"', $c);
+            file_put_contents($confPath, $c);
+            
+            // Reload configs in-game via SOAP
+            sendSoapCommand('reload config');
+            echo json_encode(array('success' => true, 'output' => 'LLM Configuration updated and reloaded in-game!'));
+        } else {
+            echo json_encode(array('success' => false, 'output' => 'Config file not found.'));
+        }
+        exit;
+    }
+
+    // Get Active Playerbots List
+    if ($action === 'get_active_bots') {
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_characters;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            $stmt = $pdo->prepare("
+                SELECT c.guid, c.name, c.race, c.class, c.level, c.zone, c.online,
+                       g.name AS guild_name
+                FROM characters c
+                JOIN acore_auth.account a ON c.account = a.id
+                LEFT JOIN guild_member gm ON c.guid = gm.guid
+                LEFT JOIN guild g ON gm.guildid = g.guildid
+                WHERE c.online = 1 AND (a.username LIKE 'RNDBOT%' OR a.username LIKE 'BOT_%')
+                ORDER BY c.level DESC, c.name ASC
+            ");
+            $stmt->execute();
+            $bots = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo json_encode(array('success' => true, 'bots' => $bots));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage(), 'bots' => []));
+        }
+        exit;
+    }
+
+    // Execute Playerbots Command
+    if ($action === 'execute_bot_command') {
+        $cmd = trim($_POST['command'] ?? '');
+        $class = trim($_POST['class'] ?? '');
+        
+        $soapCmd = '';
+        if ($cmd === 'summon') $soapCmd = 'bot summon';
+        elseif ($cmd === 'dismiss') $soapCmd = 'bot remove';
+        elseif ($cmd === 'gear') $soapCmd = 'bot gear';
+        elseif ($cmd === 'add') $soapCmd = 'bot add ' . $class;
+
+        if (empty($soapCmd)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid bot command.'));
+            exit;
+        }
+
+        $res = sendSoapCommand($soapCmd);
+        echo json_encode($res);
+        exit;
+    }
+
+    // Send Mail Packages (Gold, Bags, Mounts)
+    if ($action === 'send_mail_package') {
+        $name = trim($_POST['name'] ?? '');
+        $package = trim($_POST['package'] ?? '');
+
+        if (empty($name)) {
+            echo json_encode(array('success' => false, 'output' => 'No character name provided.'));
+            exit;
+        }
+
+        $commands = array();
+        if ($package === 'bags') {
+            // Send 4x Netherweave Bags (ID: 21841)
+            $commands[] = 'send mail ' . $name . ' "Starter Bags Pack" "Here are 4 Netherweave Bags for your adventures!" 21841 21841 21841 21841';
+        } elseif ($package === 'gold_100') {
+            $commands[] = 'send money ' . $name . ' "100 Gold Gift" "Enjoy 100 gold." 1000000';
+        } elseif ($package === 'gold_1000') {
+            $commands[] = 'send money ' . $name . ' "1000 Gold Gift" "Enjoy 1000 gold." 10000000';
+        } elseif ($package === 'gold_5000') {
+            $commands[] = 'send money ' . $name . ' "5000 Gold Gift" "Enjoy 5000 gold." 50000000';
+        } elseif ($package === 'mount') {
+            // Teach Riding & Mail mount item: Swift Red Hawkstrider (Item ID: 29221)
+            $commands[] = 'character learn ' . $name . ' 33391'; // Journeyman Riding
+            $commands[] = 'send mail ' . $name . ' "Mount Pack" "Here is your 100% ground mount." 29221';
+        }
+
+        if (empty($commands)) {
+            echo json_encode(array('success' => false, 'output' => 'Unknown package type.'));
+            exit;
+        }
+
+        $outputs = array();
+        foreach ($commands as $cmd) {
+            $r = sendSoapCommand($cmd);
+            $outputs[] = $r['output'];
+        }
+
+        echo json_encode(array('success' => true, 'output' => implode("
+", $outputs)));
+        exit;
+    }
+
+    // Teach GM Unlocks (Flight paths, reveal maps)
+    if ($action === 'teach_gm_unlock') {
+        $name = trim($_POST['name'] ?? '');
+        $unlock = trim($_POST['unlock'] ?? '');
+
+        if (empty($name)) {
+            echo json_encode(array('success' => false, 'output' => 'No character name provided.'));
+            exit;
+        }
+
+        $soapCmd = '';
+        if ($unlock === 'taxi') {
+            $soapCmd = 'taxi taximax ' . $name;
+        } elseif ($unlock === 'maps') {
+            // Learn Explorer achievements & reveal maps
+            $soapCmd = 'character learn ' . $name . ' 2259'; // Explorer rank
+        }
+
+        if (empty($soapCmd)) {
+            echo json_encode(array('success' => false, 'output' => 'Unknown unlock type.'));
+            exit;
+        }
+
+        $res = sendSoapCommand($soapCmd);
+        echo json_encode($res);
+        exit;
+    }
+
+    // Create Custom Item Template & Spawns
+    if ($action === 'create_custom_item') {
+        $name = trim($_POST['name'] ?? 'Custom Legendary Blade');
+        $quality = intval($_POST['quality'] ?? 5); // 5 = Legendary
+        $slot = intval($_POST['slot'] ?? 13); // 13 = One hand weapon
+        $class = intval($_POST['class'] ?? 2); // 2 = Weapon
+        $subclass = intval($_POST['subclass'] ?? 7); // 7 = One-handed Sword
+        $min_dmg = floatval($_POST['min_dmg'] ?? 150.0);
+        $max_dmg = floatval($_POST['max_dmg'] ?? 250.0);
+        $speed = intval($_POST['speed'] ?? 2000); // 2.0s speed
+        $stamina = intval($_POST['stamina'] ?? 50);
+        $strength = intval($_POST['strength'] ?? 50);
+        $agility = intval($_POST['agility'] ?? 50);
+        $intellect = intval($_POST['intellect'] ?? 50);
+        $spellpower = intval($_POST['spellpower'] ?? 100);
+        $crit = intval($_POST['crit'] ?? 40);
+        $haste = intval($_POST['haste'] ?? 40);
+        $char_name = trim($_POST['char_name'] ?? '');
+
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_WORLD . ";charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, array(
+                PDO::ATTR_TIMEOUT => 3,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ));
+
+            // Find next free custom item template entry starting at 99000
+            $q = $pdo->query("SELECT MAX(entry) AS max_entry FROM item_template WHERE entry >= 99000");
+            $max_row = $q->fetch(PDO::FETCH_ASSOC);
+            $new_entry = intval($max_row['max_entry'] ?? 98999) + 1;
+            if ($new_entry < 99000) $new_entry = 99000;
+
+            // Stats array mapping
+            $stats = array();
+            if ($stamina > 0) $stats[] = array('type' => 12, 'val' => $stamina); // 12 = Stamina
+            if ($strength > 0) $stats[] = array('type' => 4, 'val' => $strength); // 4 = Strength
+            if ($agility > 0) $stats[] = array('type' => 3, 'val' => $agility); // 3 = Agility
+            if ($intellect > 0) $stats[] = array('type' => 5, 'val' => $intellect); // 5 = Intellect
+
+            $sql = "
+                INSERT INTO item_template (
+                    entry, class, subclass, name, displayid, Quality, Flags, BuyCount, BuyPrice, SellPrice, 
+                    InventoryType, AllowableClass, AllowableRace, ItemLevel, RequiredLevel,
+                    stat_type1, stat_value1, stat_type2, stat_value2, stat_type3, stat_value3, stat_type4, stat_value4,
+                    dmg_min1, dmg_max1, dmg_type1, delay, spellid_1, spellcategory_1, Bonding
+                ) VALUES (
+                    :entry, :class, :subclass, :name, 17291, :quality, 0, 1, 1000, 200, 
+                    :slot, -1, -1, 200, 1,
+                    :st1, :sv1, :st2, :sv2, :st3, :sv3, :st4, :sv4,
+                    :min_dmg, :max_dmg, 0, :delay, 0, 0, 1
+                )
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+                'entry' => $new_entry,
+                'class' => $class,
+                'subclass' => $subclass,
+                'name' => $name,
+                'quality' => $quality,
+                'slot' => $slot,
+                'st1' => isset($stats[0]) ? $stats[0]['type'] : 0,
+                'sv1' => isset($stats[0]) ? $stats[0]['val'] : 0,
+                'st2' => isset($stats[1]) ? $stats[1]['type'] : 0,
+                'sv2' => isset($stats[1]) ? $stats[1]['val'] : 0,
+                'st3' => isset($stats[2]) ? $stats[2]['type'] : 0,
+                'sv3' => isset($stats[2]) ? $stats[2]['val'] : 0,
+                'st4' => isset($stats[3]) ? $stats[3]['type'] : 0,
+                'sv4' => isset($stats[3]) ? $stats[3]['val'] : 0,
+                'min_dmg' => $min_dmg,
+                'max_dmg' => $max_dmg,
+                'delay' => $speed
+            ));
+
+            // Optional: If Spell Power/Crit/Haste is set, we can add a custom item_enchantment_template or socket
+            // For simplicity, inserting into item_template is enough to generate the item!
+            
+            // Reload item_template in-game
+            sendSoapCommand('reload item_template');
+            
+            $output = "Custom Item Created (Entry ID: $new_entry) & reloaded in-game!";
+            
+            // Mail to character if name provided
+            if (!empty($char_name)) {
+                $r = sendSoapCommand('send mail ' . $char_name . ' "Custom Weapon Created" "Here is your custom forged blade!" ' . $new_entry);
+                $output .= "\nMailed to $char_name: " . $r['output'];
+            }
+
+            echo json_encode(array('success' => true, 'output' => $output));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
     if ($action === 'get_creature_loot') {
         $entry = intval($_GET['entry'] ?? 0);
         if ($entry <= 0) {
@@ -2132,11 +2394,20 @@ if ($dbOnline) {
             <div class="nav-item" onclick="switchTab('char-tools')" id="nav-char-tools">
                 <span>👥</span> Character Tools
             </div>
+            <div class="nav-item" onclick="switchTab('playerbots')" id="nav-playerbots">
+                <span>🤖</span> Playerbots Manager
+            </div>
+            <div class="nav-item" onclick="switchTab('llm-tuner')" id="nav-llm-tuner">
+                <span>🧠</span> Ollama LLM Tuner
+            </div>
             <div class="nav-item" onclick="switchTab('rare-spawner')" id="nav-rare-spawner">
                 <span>👾</span> Rare Spawner Tool
             </div>
             <div class="nav-item" onclick="switchTab('db-editors')" id="nav-db-editors">
                 <span>🗄️</span> Database Editors
+            </div>
+            <div class="nav-item" onclick="switchTab('item-creator')" id="nav-item-creator">
+                <span>⚔️</span> Item Creator & Spawner
             </div>
             <div class="nav-item" onclick="switchTab('system-logs')" id="nav-system-logs">
                 <span>📰</span> Chat & Event Logs
@@ -2722,7 +2993,25 @@ if ($dbOnline) {
                                 <button onclick="modifyCharacter('gmlevel')" class="btn" style="padding: 0.5rem;">Set GM</button>
                             </div>
                         </div>
-                        <button onclick="modifyCharacter('unstuck')" class="btn btn-danger" style="margin-top: 1rem;">Instant Unstuck / Dalaran Revive</button>
+                        <button onclick="modifyCharacter('unstuck')" class="btn btn-danger" style="margin-top: 1rem; width: 100%;">Instant Unstuck / Dalaran Revive</button>
+
+                        <div class="gm-mail-section" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                            <h4 style="font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--accent-primary);">In-game Mail Packages</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                                <button onclick="sendMailPackage('bags')" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem;">🎒 Send 4x Bags</button>
+                                <button onclick="sendMailPackage('mount')" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem;">🏇 Send Mount & Riding</button>
+                                <button onclick="sendMailPackage('gold_100')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">💰 Send 100 Gold</button>
+                                <button onclick="sendMailPackage('gold_1000')" class="btn btn-success" style="font-size: 0.8rem; padding: 0.5rem;">👑 Send 1000 Gold</button>
+                            </div>
+                        </div>
+
+                        <div class="gm-unlocks-section" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                            <h4 style="font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--accent-primary);">GM Cheat Unlocks</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                                <button onclick="teachGmUnlock('taxi')" class="btn" style="font-size: 0.8rem; padding: 0.5rem; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); color: #818cf8;">🗺️ Unlock Flight Paths</button>
+                                <button onclick="teachGmUnlock('maps')" class="btn" style="font-size: 0.8rem; padding: 0.5rem; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); color: #818cf8;">👁️ Reveal World Map</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2875,6 +3164,171 @@ if ($dbOnline) {
         </div>
 
         <!-- TAB: RARE SPAWNER TOOL -->
+        <!-- TAB: PLAYERBOTS MANAGER -->
+        <div class="tab-content" id="tab-playerbots">
+            <div class="card">
+                <div class="card-title">Live Playerbots Session Controller</div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Monitor simulated AI bots currently playing on the server, scale their level range, or summon/dismiss group members.
+                </p>
+
+                <!-- Bot Command Actions -->
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <button onclick="executeBotCommand('summon')" class="btn btn-warning" style="width: auto; margin-top: 0; padding: 0.75rem 1.25rem;">👥 Summon Active Bots</button>
+                    <button onclick="executeBotCommand('dismiss')" class="btn btn-danger" style="width: auto; margin-top: 0; padding: 0.75rem 1.25rem;">🛑 Dismiss All Bots</button>
+                    <button onclick="executeBotCommand('gear')" class="btn btn-success" style="width: auto; margin-top: 0; padding: 0.75rem 1.25rem;">⚙️ Re-Gear Online Bots</button>
+                    
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-left: auto;">
+                        <select id="botSpawnClass" style="margin-bottom: 0; padding: 0.5rem; border-radius: 6px;">
+                            <option value="warrior">Warrior</option>
+                            <option value="paladin">Paladin</option>
+                            <option value="rogue">Rogue</option>
+                            <option value="mage">Mage</option>
+                            <option value="priest">Priest</option>
+                            <option value="warlock">Warlock</option>
+                            <option value="druid">Druid</option>
+                            <option value="shaman">Shaman</option>
+                            <option value="hunter">Hunter</option>
+                        </select>
+                        <button onclick="executeBotCommand('add', document.getElementById('botSpawnClass').value)" class="btn btn-primary" style="width: auto; margin-top: 0; padding: 0.75rem 1.25rem;">➕ Spawn Class Bot</button>
+                    </div>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>GUID</th>
+                                <th>Name</th>
+                                <th>Race / Class</th>
+                                <th>Level</th>
+                                <th>Location (Zone)</th>
+                                <th>Guild</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playerbotsTableBody">
+                            <tr>
+                                <td colspan="7" style="color: var(--text-secondary); text-align: center; padding: 2rem;">Loading online bots session data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: OLLAMA LLM TUNER -->
+        <div class="tab-content" id="tab-llm-tuner">
+            <div class="card">
+                <div class="card-title">Ollama LLM Spatial Chat Configurator</div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Configure connection hosts, LLM models, parameters, and global system instruction prompts for spatial AI bot chat interactions.
+                </p>
+                <form onsubmit="saveLLMConfig(event)" style="max-width: 650px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label for="llmHost">Ollama Host Connection</label>
+                            <input type="text" id="llmHost" placeholder="http://127.0.0.1" required>
+                        </div>
+                        <div>
+                            <label for="llmPort">Ollama Port</label>
+                            <input type="number" id="llmPort" placeholder="11434" required>
+                        </div>
+                        <div>
+                            <label for="llmModel">Active LLM Model</label>
+                            <input type="text" id="llmModel" placeholder="llama3" required>
+                        </div>
+                        <div>
+                            <label for="llmTemp">Chat Temperature (0.0 - 1.0)</label>
+                            <input type="number" step="0.1" id="llmTemp" min="0" max="1" placeholder="0.7" required>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="llmPrompt">Default Spatial Chat Prompt Instructions</label>
+                        <textarea id="llmPrompt" rows="8" placeholder="Enter default instructions guiding LLM responses in spatial environment chat..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 8px; color: #fff; padding: 0.75rem; font-family: inherit; font-size: 0.9rem; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: auto;">Save & Apply Config</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- TAB: ITEM CREATOR & SPAWNER -->
+        <div class="tab-content" id="tab-item-creator">
+            <div class="card">
+                <div class="card-title">Visual Custom Item Creator & Spawner</div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Design legendary, epic, or custom weapons and armor, save them into the game database, and automatically mail them to characters.
+                </p>
+                <form onsubmit="createCustomItem(event)">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label for="itmName">Weapon / Armor Name</label>
+                            <input type="text" id="itmName" placeholder="e.g. Antigravity Blade" required>
+                        </div>
+                        <div>
+                            <label for="itmQuality">Quality / Rarity</label>
+                            <select id="itmQuality">
+                                <option value="2" style="color: #1eff00;">Green (Uncommon)</option>
+                                <option value="3" style="color: #0070dd;">Blue (Rare)</option>
+                                <option value="4" style="color: #a335ee;">Purple (Epic)</option>
+                                <option value="5" style="color: #ff8000;" selected>Orange (Legendary)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="itmSlot">Equipment Slot</label>
+                            <select id="itmSlot" onchange="toggleItemTypeFields(this.value)">
+                                <option value="13">One-Handed Weapon</option>
+                                <option value="17">Two-Handed Weapon</option>
+                                <option value="14">Shield</option>
+                                <option value="5">Chest Armor</option>
+                                <option value="1">Head / Helm</option>
+                                <option value="3">Shoulders</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="itmSpeed">Weapon Attack Speed (Seconds)</label>
+                            <input type="number" step="0.1" id="itmSpeed" value="2.0">
+                        </div>
+                        <div>
+                            <label for="itmMinDmg">Minimum Damage</label>
+                            <input type="number" id="itmMinDmg" value="150">
+                        </div>
+                        <div>
+                            <label for="itmMaxDmg">Maximum Damage</label>
+                            <input type="number" id="itmMaxDmg" value="250">
+                        </div>
+                    </div>
+
+                    <h4 style="font-size: 1.05rem; font-weight: 500; margin-bottom: 1rem; color: var(--accent-primary); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">Item Custom Stats</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div>
+                            <label for="itmStamina">Stamina</label>
+                            <input type="number" id="itmStamina" value="50">
+                        </div>
+                        <div>
+                            <label for="itmStrength">Strength</label>
+                            <input type="number" id="itmStrength" value="50">
+                        </div>
+                        <div>
+                            <label for="itmAgility">Agility</label>
+                            <input type="number" id="itmAgility" value="50">
+                        </div>
+                        <div>
+                            <label for="itmIntellect">Intellect</label>
+                            <input type="number" id="itmIntellect" value="50">
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); max-width: 450px; margin-bottom: 1.5rem;">
+                        <label for="itmCharName">Mail Directly to Character (Name)</label>
+                        <input type="text" id="itmCharName" placeholder="Enter character name to receive item..." style="margin-bottom: 0;">
+                    </div>
+
+                    <button type="submit" class="btn btn-success" style="width: auto;">Forging & Spawn Custom Item ⚡</button>
+                </form>
+            </div>
+        </div>
+
         <div id="tab-rare-spawner" class="tab-content">
             <div class="card" style="margin-bottom: 2rem;">
                 <div class="card-title">Spawn Rare Creature</div>
@@ -2944,6 +3398,10 @@ if ($dbOnline) {
                 loadAuctions();
             } else if (tabId === 'system-logs') {
                 searchLogs();
+            } else if (tabId === 'playerbots') {
+                loadPlayerbots();
+            } else if (tabId === 'llm-tuner') {
+                loadLLMConfig();
             }
         }
 
@@ -4228,6 +4686,234 @@ if ($dbOnline) {
 
             document.getElementById('actualHealthDisplay').textContent = hpText;
             document.getElementById('actualArmorDisplay').textContent = armorText;
+        }
+
+        // ----------------------------------------------------
+        // GM Cheat & Mail Package Actions
+        // ----------------------------------------------------
+        function sendMailPackage(packageType) {
+            const charName = document.getElementById('editCharName').textContent;
+            if (!charName || charName === '--') {
+                alert("Please select a character first.");
+                return;
+            }
+            if (!confirm(`Are you sure you want to mail the '${packageType}' package to ${charName}?`)) {
+                return;
+            }
+            fetch('index.php?action=send_mail_package', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `name=${encodeURIComponent(charName)}&package=${encodeURIComponent(packageType)}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output);
+            })
+            .catch(err => alert("Error mailing package: " + err));
+        }
+
+        function teachGmUnlock(unlockType) {
+            const charName = document.getElementById('editCharName').textContent;
+            if (!charName || charName === '--') {
+                alert("Please select a character first.");
+                return;
+            }
+            fetch('index.php?action=teach_gm_unlock', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `name=${encodeURIComponent(charName)}&unlock=${encodeURIComponent(unlockType)}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output || "Cheat unlock sent successfully!");
+            })
+            .catch(err => alert("Error triggering unlock: " + err));
+        }
+
+        // ----------------------------------------------------
+        // Playerbots Controller
+        // ----------------------------------------------------
+        function loadPlayerbots() {
+            const body = document.getElementById('playerbotsTableBody');
+            body.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-secondary); padding: 2rem;">Loading online bots sessions...</td></tr>';
+            
+            fetch('index.php?action=get_active_bots')
+            .then(res => res.json())
+            .then(data => {
+                if (!data.success || data.bots.length === 0) {
+                    body.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-secondary); padding: 2rem;">No playerbots online currently. Spawn one below!</td></tr>';
+                    return;
+                }
+                
+                const classes = {
+                    1: 'Warrior 🛡️', 2: 'Paladin ⚔️', 3: 'Hunter 🏹', 4: 'Rogue 🗡️',
+                    5: 'Priest ✝️', 6: 'Death Knight 💀', 7: 'Shaman ⚡', 8: 'Mage 🔮',
+                    9: 'Warlock 👿', 11: 'Druid 🌿'
+                };
+                const races = {
+                    1: 'Human', 2: 'Orc', 3: 'Dwarf', 4: 'Night Elf', 5: 'Undead',
+                    6: 'Tauren', 7: 'Gnome', 8: 'Troll', 10: 'Blood Elf', 11: 'Draenei'
+                };
+                const zones = {
+                    12: 'Elwynn Forest', 14: 'Durotar', 1: 'Dun Morogh', 141: 'Teldrassil',
+                    85: 'Tirisfal Glades', 215: 'Mulgore', 3430: 'Eversong Woods', 3524: 'Azuremyst Isle',
+                    1519: 'Stormwind City', 1637: 'Orgrimmar', 1537: 'Ironforge', 1497: 'Undercity',
+                    1657: 'Darnassus', 1638: 'Thunder Bluff', 3487: 'Silvermoon City', 3557: 'The Exodar',
+                    3711: 'Shattrath City', 4395: 'Dalaran'
+                };
+
+                let html = '';
+                data.bots.forEach(bot => {
+                    const classLabel = classes[bot.class] || `Class ${bot.class}`;
+                    const raceLabel = races[bot.race] || `Race ${bot.race}`;
+                    const zoneLabel = zones[bot.zone] || `Zone ${bot.zone}`;
+                    const guild = bot.guild_name || '<None>';
+
+                    html += `
+                        <tr>
+                            <td>${bot.guid}</td>
+                            <td style="font-weight: 600; color: #fff;">${bot.name}</td>
+                            <td>${raceLabel} ${classLabel}</td>
+                            <td><strong style="color: var(--accent-primary)">${bot.level}</strong></td>
+                            <td style="color: var(--text-secondary); font-size: 0.85rem;">${zoneLabel}</td>
+                            <td style="color: var(--text-secondary); font-size: 0.85rem;">${guild}</td>
+                            <td><span style="color: var(--status-success); font-weight: 500;">Online 🟢</span></td>
+                        </tr>
+                    `;
+                });
+                body.innerHTML = html;
+            })
+            .catch(err => {
+                body.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--status-danger); padding: 2rem;">Failed loading bots: ${err}</td></tr>`;
+            });
+        }
+
+        function executeBotCommand(cmd, botClass = '') {
+            fetch('index.php?action=execute_bot_command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `command=${cmd}&class=${botClass}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output || "Bot command processed successfully!");
+                loadPlayerbots();
+            })
+            .catch(err => alert("Error running command: " + err));
+        }
+
+        // ----------------------------------------------------
+        // Ollama LLM Tuner Controller
+        // ----------------------------------------------------
+        function loadLLMConfig() {
+            fetch('index.php?action=get_llm_config')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.config) {
+                    document.getElementById('llmHost').value = data.config.host;
+                    document.getElementById('llmPort').value = data.config.port;
+                    document.getElementById('llmModel').value = data.config.model;
+                    document.getElementById('llmTemp').value = data.config.temp;
+                    document.getElementById('llmPrompt').value = data.config.system_prompt;
+                }
+            })
+            .catch(err => alert("Error fetching LLM config: " + err));
+        }
+
+        function saveLLMConfig(e) {
+            e.preventDefault();
+            const host = document.getElementById('llmHost').value;
+            const port = document.getElementById('llmPort').value;
+            const model = document.getElementById('llmModel').value;
+            const temp = document.getElementById('llmTemp').value;
+            const prompt = document.getElementById('llmPrompt').value;
+
+            const params = `host=${encodeURIComponent(host)}&port=${port}&model=${encodeURIComponent(model)}&temp=${temp}&system_prompt=${encodeURIComponent(prompt)}`;
+            fetch('index.php?action=set_llm_config', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output);
+                loadLLMConfig();
+            })
+            .catch(err => alert("Failed saving LLM settings: " + err));
+        }
+
+        // ----------------------------------------------------
+        // Visual Custom Item Creator Controller
+        # ----------------------------------------------------
+        function toggleItemTypeFields(slotVal) {
+            slotVal = parseInt(slotVal);
+            const speedInput = document.getElementById('itmSpeed');
+            const minDmgInput = document.getElementById('itmMinDmg');
+            const maxDmgInput = document.getElementById('itmMaxDmg');
+            
+            // If weapon (slot 13 or 17), enable speed/dmg. If shield/armor, disable
+            if (slotVal === 13 || slotVal === 17) {
+                speedInput.disabled = false;
+                minDmgInput.disabled = false;
+                maxDmgInput.disabled = false;
+                speedInput.style.opacity = '1';
+                minDmgInput.style.opacity = '1';
+                maxDmgInput.style.opacity = '1';
+            } else {
+                speedInput.disabled = true;
+                minDmgInput.disabled = true;
+                maxDmgInput.disabled = true;
+                speedInput.style.opacity = '0.5';
+                minDmgInput.style.opacity = '0.5';
+                maxDmgInput.style.opacity = '0.5';
+            }
+        }
+
+        function createCustomItem(e) {
+            e.preventDefault();
+            const name = document.getElementById('itmName').value;
+            const quality = document.getElementById('itmQuality').value;
+            const slot = document.getElementById('itmSlot').value;
+            const speed = Math.round(parseFloat(document.getElementById('itmSpeed').value || 2.0) * 1000);
+            const min_dmg = document.getElementById('itmMinDmg').value;
+            const max_dmg = document.getElementById('itmMaxDmg').value;
+            const stamina = document.getElementById('itmStamina').value;
+            const strength = document.getElementById('itmStrength').value;
+            const agility = document.getElementById('itmAgility').value;
+            const intellect = document.getElementById('itmIntellect').value;
+            const char_name = document.getElementById('itmCharName').value;
+
+            // Determine item class/subclass
+            let itemClass = 2; // Default weapon
+            let itemSubclass = 7; // One hand sword
+            if (parseInt(slot) === 14) {
+                itemClass = 4; // Armor
+                itemSubclass = 6; // Shield
+            } else if (parseInt(slot) === 5 || parseInt(slot) === 1 || parseInt(slot) === 3) {
+                itemClass = 4; // Armor
+                itemSubclass = 4; // Cloth/Plate placeholder
+            }
+
+            const params = `name=${encodeURIComponent(name)}&quality=${quality}&slot=${slot}&speed=${speed}&min_dmg=${min_dmg}&max_dmg=${max_dmg}&stamina=${stamina}&strength=${strength}&agility=${agility}&intellect=${intellect}&char_name=${encodeURIComponent(char_name)}&class=${itemClass}&subclass=${itemSubclass}`;
+
+            if (!confirm(`Are you ready to forge the Legendary item '${name}' and add it to the server database?`)) {
+                return;
+            }
+
+            fetch('index.php?action=create_custom_item', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.output);
+                if (data.success) {
+                    document.getElementById('itmName').value = '';
+                    document.getElementById('itmCharName').value = '';
+                }
+            })
+            .catch(err => alert("Forging error: " + err));
         }
 
         // Live Event filter controller
