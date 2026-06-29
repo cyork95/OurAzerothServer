@@ -2575,7 +2575,10 @@ if ($dbOnline) {
                             </div>
 
                             <label for="lootChance" style="margin-top: 1rem;">Drop Chance Percentage: <span id="lootChanceVal" style="color: var(--accent-primary); font-weight: 600;">100</span>%</label>
-                            <input type="range" id="lootChance" min="0.001" max="100" step="0.1" value="100" oninput="document.getElementById('lootChanceVal').textContent = this.value">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <input type="range" id="lootChance" min="0" max="100" step="0.0001" value="100" style="flex: 1; margin-bottom: 0;" oninput="document.getElementById('lootChanceVal').textContent = this.value; document.getElementById('lootChanceInput').value = this.value">
+                                <input type="number" id="lootChanceInput" min="0" max="100" step="0.0001" value="100" style="width: 110px; padding: 0.35rem 0.5rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); border-radius: 6px; color: #fff; margin-bottom: 0;" oninput="document.getElementById('lootChanceVal').textContent = this.value; document.getElementById('lootChance').value = this.value">
+                            </div>
                             
                             <button type="submit" class="btn btn-success" style="margin-top: 1.5rem;">Save Loot Entry & Reload Tables</button>
                         </form>
@@ -3621,6 +3624,7 @@ if ($dbOnline) {
             document.getElementById('lootMinCount').value = min;
             document.getElementById('lootMaxCount').value = max;
             document.getElementById('lootChance').value = chance;
+            document.getElementById('lootChanceInput').value = chance;
             document.getElementById('lootChanceVal').textContent = chance;
         }
 
@@ -3630,7 +3634,7 @@ if ($dbOnline) {
             const reference = document.getElementById('lootItemReference').value || '0';
             const mincount = document.getElementById('lootMinCount').value;
             const maxcount = document.getElementById('lootMaxCount').value;
-            const chance = document.getElementById('lootChance').value;
+            const chance = document.getElementById('lootChanceInput').value || document.getElementById('lootChance').value;
 
             if (!selectedCreature || (item_entry === '' && reference === '0')) {
                 alert("Please select a monster and an item/reference.");
