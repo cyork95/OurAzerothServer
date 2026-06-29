@@ -22,7 +22,9 @@ This workspace manages the orchestration, configuration, and maintenance of a si
 - **Build Directory**: `/home/coyofroyo/azerothcore-wotlk/build`
 - **Installation Directory**: `/home/coyofroyo/azeroth-server`
 - **Data (DBC/Maps)**: `/home/coyofroyo/azeroth-server/data`
-- **Web Root (Armory)**: `/var/www/html/armory`
+- **Web Root (Armory/Admin Panel)**: `/var/www/html/admin` (originally `/var/www/html/wiki`)
+  > [!NOTE]
+  > The admin dashboard and server wiki frontend is maintained locally in the VS Code workspace as [index.html](file:///c:/Users/coyof/Documents/Claude/Claude%20Code/OurAzerothServer/index.html) and deployed to the server's `/var/www/html/admin/index.php` using the local python script [update_wiki.py](file:///c:/Users/coyof/Documents/Claude/Claude%20Code/OurAzerothServer/update_wiki.py). Always edit `index.html` locally and run `update_wiki.py` to deploy changes.
 
 ---
 
