@@ -374,13 +374,13 @@ if (isset($_GET['action'])) {
         }
 
         $worldRunning = false;
-        exec("pgrep -f './worldserver' || pgrep worldserver", $pidsWorld);
+        exec("pgrep -x worldserver", $pidsWorld);
         if (!empty($pidsWorld)) {
             $worldRunning = true;
         }
         
         $authRunning = false;
-        exec("pgrep -f './authserver' || pgrep authserver", $pidsAuth);
+        exec("pgrep -x authserver", $pidsAuth);
         if (!empty($pidsAuth)) {
             $authRunning = true;
         }
