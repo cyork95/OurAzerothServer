@@ -1,0 +1,4 @@
+# Ignore large zips and temporary folders
+*.zip
+temp_*
+/temp_*

@@ -1,0 +1,27 @@
+name: Daily Wiki Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows you to trigger it manually from GitHub
+
+jobs:
+  update-wiki:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Database Exporter
+        run: |
+          python3 /home/coyofroyo/azeroth-server/bin/wiki_exporter.py
+          # Copy the exported JSON to the repository workspace
+          cp /home/coyofroyo/azeroth-server/bin/wiki_data.json ./wiki_data.json
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add wiki_data.json
+          git commit -m "Auto-update server wiki database" || exit 0
+          git push

@@ -1,0 +1,2294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurAzeroth Server Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-glass: rgba(17, 24, 39, 0.7);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --accent-primary: #8b5cf6;
+            --accent-hover: #a78bfa;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --status-success: #10b981;
+            --status-danger: #ef4444;
+            --status-warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Fixed Left-Hand Sidebar styling */
+        .wiki-sidebar {
+            width: 280px;
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(24px);
+            border-right: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+        }
+
+        .sidebar-brand {
+            padding: 2.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            text-align: center;
+        }
+
+        .sidebar-brand h2 {
+            margin: 0;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-brand .badge-tag {
+            font-size: 0.7rem;
+            color: #a78bfa;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 0.15rem 0.65rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .sidebar-menu {
+            padding: 1.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .menu-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 0.8rem 1.1rem;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        .menu-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .menu-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(59, 130, 246, 0.12));
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+            text-shadow: 0 0 8px rgba(167, 139, 250, 0.35);
+        }
+
+        .menu-btn .icon {
+            font-size: 1.15rem;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .sidebar-footer .btn-admin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15));
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .sidebar-footer .btn-admin:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.25));
+            border-color: var(--accent-hover);
+        }
+
+        /* Main Scrollable Area */
+        .wiki-main {
+            margin-left: 280px;
+            padding: 3rem 2.5rem;
+            flex: 1;
+            min-height: 100vh;
+            box-sizing: border-box;
+            max-width: calc(100vw - 280px);
+        }
+
+        /* Card styles */
+        .card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 2.25rem;
+            margin-bottom: 2.25rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.2);
+            box-shadow: 0 16px 50px rgba(139, 92, 246, 0.12);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            background: linear-gradient(135deg, #fff, var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-hover);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.15rem;
+        }
+
+        ol, ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.75rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        /* Code highlight and copy helper */
+        code {
+            font-family: monospace;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            padding: 0.2rem 0.45rem;
+            border-radius: 6px;
+            color: #d8b4fe;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        code:hover {
+            background: rgba(139, 92, 246, 0.2);
+            color: #fff;
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(139, 92, 246, 0.25);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 92, 246, 0.45);
+        }
+
+        /* Details styling for shrines */
+        .shrine-details {
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .shrine-details[open] {
+            border-color: rgba(139, 92, 246, 0.3) !important;
+            background: rgba(139, 92, 246, 0.02) !important;
+        }
+        .shrine-details summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .shrine-details summary::after {
+            content: '▼';
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease;
+        }
+        .shrine-details[open] summary::after {
+            transform: rotate(180deg);
+            color: var(--accent-hover);
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-glass);
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: monospace;
+            position: relative;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: #a78bfa;
+            font-size: 0.9rem;
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #fbbf24;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.06);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+        }
+
+        /* Buttons */
+        .btn-copy {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        /* Grid Matrix */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .matrix-table th, .matrix-table td {
+            border: 1px solid var(--border-glass);
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .matrix-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .matrix-table td.valid {
+            color: var(--status-success);
+            font-weight: 600;
+            background: rgba(16, 185, 129, 0.04);
+        }
+
+        .matrix-table td.invalid {
+            color: var(--status-danger);
+            background: rgba(239, 68, 68, 0.02);
+        }
+
+        /* Command Tabs inside sections */
+        .sub-tabs {
+            display: flex;
+            gap: 0.25rem;
+            margin: 1rem 0;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 0.25rem;
+        }
+
+        .sub-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .sub-tab-btn.active {
+            color: var(--accent-hover);
+            border-bottom-color: var(--accent-primary);
+        }
+
+        .command-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .command-item {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .command-info h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-family: monospace;
+        }
+
+        .command-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .btn-inline-copy {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: var(--accent-hover);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-inline-copy:hover {
+            background: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        /* Timeline and autobiography */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--accent-primary);
+            padding-left: 1.5rem;
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: 2px solid var(--bg-primary);
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
+        .timeline-content {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Wiki tables */
+        .wiki-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .wiki-table th, .wiki-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .wiki-table th {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .char-bio-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 900px) {
+            .char-bio-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Autocomplete dropdown styles */
+        .autocomplete-dropdown {
+            scrollbar-width: thin;
+        }
+        .autocomplete-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            color: var(--text-primary);
+        }
+        .autocomplete-item:hover {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-hover);
+        }
+        .class-badge {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Left Sidebar Panel -->
+    <aside class="wiki-sidebar">
+        <div class="sidebar-brand">
+            <h2>OurAzeroth</h2>
+            <span class="badge-tag">Wiki & Guide</span>
+        </div>
+        <nav class="sidebar-menu">
+            <button class="menu-btn active" id="tabbtn-client-setup" onclick="switchTab('client-setup')">
+                <span class="icon">💻</span> Connection & Setup
+            </button>
+            <button class="menu-btn" id="tabbtn-custom-followers" onclick="switchTab('custom-followers')">
+                <span class="icon">👥</span> Custom Followers
+            </button>
+            <button class="menu-btn" id="tabbtn-bot-commands" onclick="switchTab('bot-commands')">
+                <span class="icon">🗣️</span> Bot Commands
+            </button>
+            <button class="menu-btn" id="tabbtn-ai-ollama" onclick="switchTab('ai-ollama')">
+                <span class="icon">🤖</span> AI Ollama Chat
+            </button>
+            <button class="menu-btn" id="tabbtn-character-bio" onclick="switchTab('character-bio')">
+                <span class="icon">📖</span> Character Search
+            </button>
+            <button class="menu-btn" id="tabbtn-server-modules" onclick="switchTab('server-modules')">
+                <span class="icon">⚙️</span> Server Modules
+            </button>
+            <button class="menu-btn" id="tabbtn-restedxp-guides" onclick="switchTab('restedxp-guides')">
+                <span class="icon">🗺️</span> Guidelime Guides
+            </button>
+            <button class="menu-btn" id="tabbtn-changelog" onclick="switchTab('changelog')">
+                <span class="icon">📜</span> Change Log
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="/admin/" class="btn-admin">⚙️ Admin Console</a>
+        </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="wiki-main">
+
+        <!-- TAB 1: CLIENT SETUP -->
+        <div id="tab-client-setup" class="wiki-tab-content">
+            <div class="card">
+                <div class="card-title">1. Connecting to the Server</div>
+                <p>To connect to the local server, you must edit your WoW client's configuration file to point to the server host's network IP.</p>
+
+                <div class="alert alert-info" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                    <strong>⬇️ Download Client, Addons & HD Pack</strong>
+                    <p>If you need to install the game client, download game add-ons, or fetch the high-definition graphics pack, you can download all of them directly from the ChromieCraft page:</p>
+                    <a href="https://chromiecraft.com/en/downloads/" target="_blank" style="display: inline-block; margin-top: 0.5rem; color: #fff; background: var(--accent-primary); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent-primary)'">📥 Go to ChromieCraft Downloads Page</a>
+                </div>
+                
+                <h3>Update the Realmlist file</h3>
+                <ol>
+                    <li>Open your World of Warcraft 3.3.5a game directory.</li>
+                    <li>Navigate to <code>Data/enUS/</code> (or <code>Data/enGB/</code> depending on your client version).</li>
+                    <li>Find the file named <strong><code>realmlist.wtf</code></strong>, right-click it, and open it with **Notepad**.</li>
+                    <li>Delete everything inside and replace it with:</li>
+                </ol>
+                <pre><code>set realmlist 192.168.1.168</code><button class="btn-copy" onclick="copyText('set realmlist 192.168.1.168')">Copy</button></pre>
+                <ol start="5">
+                    <li>Save the file and close Notepad.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="card-title">2. Setting up Borderless Windowed Mode</div>
+                <p>The original Wrath of the Lich King client does not have a native "Borderless Windowed" checkbox. Running the game in traditional Fullscreen can crash modern Windows PCs or cause issues when switching screens. Maximized Windowed mode acts exactly like borderless fullscreen.</p>
+                
+                <h3>Manual Configuration Settings</h3>
+                <ol>
+                    <li>Go to your World of Warcraft folder.</li>
+                    <li>Open the **<code>WTF</code>** folder.</li>
+                    <li>Open the file **<code>Config.wtf</code>** in **Notepad**.</li>
+                    <li>Scroll to the bottom and paste the following lines:</li>
+                </ol>
+                <pre><code>SET gxWindow "1"
+SET gxMaximize "1"
+SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindow &quot;1&quot;\nSET gxMaximize &quot;1&quot;\nSET gxRefresh &quot;60&quot;')">Copy</button></pre>
+                <p style="font-size: 0.85rem; margin-top: -0.5rem; font-style: italic;">*Note: If your monitor has a higher refresh rate (e.g. 144Hz or 240Hz), change the "60" value in gxRefresh to match your screen.*</p>
+                <ol start="5">
+                    <li>Save the file and launch the game. It will now open as a seamless borderless window.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <div class="card-title">3. Installing the HD Graphics Pack & 4GB Patch</div>
+                <p>The server is configured to load beautiful high-definition textures and models if you have installed the optional HD pack.</p>
+                
+                <h3>How to Install the HD Pack</h3>
+                <ol>
+                    <li>Ensure your downloaded HD pack files end with <code>.mpq</code> (e.g. <code>patch-W.mpq</code>).</li>
+                    <li>Move these patch files into your WoW client's **<code>Data/</code>** folder (NOT the enUS subfolder, directly in <code>Data/</code>).</li>
+                    <li><strong>Important:</strong> Do not overwrite or rename files named <code>patch.mpq</code>, <code>patch-2.mpq</code>, or <code>patch-3.mpq</code>. Rename your custom HD patches to any unused letter or number (e.g. <code>patch-W.mpq</code>, <code>patch-K.mpq</code>, or <code>patch-5.mpq</code>).</li>
+                    <li>Delete the **<code>Cache/</code>** directory inside your WoW folder before launching. This folder is safely rebuilt by the game and prevents graphics glitches.</li>
+                </ol>
+
+                <div class="alert alert-danger">
+                    <strong>⚠️ CRITICAL: HD Graphics Crashes & The 4GB Patch</strong>
+                    <p>WotLK was released in 2008 as a 32-bit application. Windows strictly limits 32-bit applications to **2 GB of RAM**.</p>
+                    <p>Because the HD Pack loads extremely large textures, changing your display options or walking into populated zones will quickly exceed 2 GB, causing your game to crash instantly (usually throwing **Error #132**).</p>
+                    <p><strong>The Fix:</strong> Download the free utility tool here: <a href="https://ntcore.com/4gb-patch/" target="_blank" style="color: #fff; text-decoration: underline; font-weight: 600; cursor: pointer;">Download NTCore 4GB Patch Tool</a>. Open the utility, select your <code>Wow.exe</code> file, and apply the patch. This allows the game to use up to 4 GB of RAM, fully preventing any HD graphics-related memory crashes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">5. Custom Server Rewards & Items</div>
+                <p>We have added unique custom items and scripts to enhance your cooperative gameplay and reward class milestones!</p>
+
+                <div style="background: rgba(139, 92, 246, 0.04); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.15); margin-top: 1rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_heart_wooden.jpg" style="width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.3);" />
+                        <div>
+                            <h4 style="color: #a855f7; margin: 0 0 0.25rem 0; font-size: 1.05rem;">Heart of the Cleansed Timberling <span style="font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; background: rgba(168, 85, 247, 0.15); color: #c084fc; font-weight: normal; margin-left: 0.5rem; border: 1px solid rgba(168, 85, 247, 0.25);">Epic Trinket</span></h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin: 0;"><strong>Use:</strong> Summons a tiny Blackmoss the Fetid companion to follow you and protect you in combat for 2 minutes. (120,000 ms Cooldown).</p>
+                            <p style="font-size: 0.8rem; color: #10b981; margin-top: 0.4rem; font-style: italic;">"A token of the wild spirits, bound to you by Moonglade's blessing."</p>
+                            <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+                                <li><strong>How to Obtain:</strong> Automatically mailed to you by the <strong>Great Bear Spirit</strong> upon completing the quest <em>"The Moss-twined Heart"</em> or <em>"Planting the Heart"</em>.</li>
+                                <li><strong>GM Command:</strong> Admin characters can spawn it instantly with <code>.additem 99001</code>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">4. Installing the OurAzeroth Addon Bundle (Quest Guide & Bagnon)</div>
+                <p>We have bundled our custom quest guidance companion **OurRestedXP** and the unified inventory addon **Bagnon** into a single convenient download specifically for our server's levelling experience!</p>
+                
+                <div style="margin: 1rem 0; padding: 1rem; background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <strong style="color: #fff; font-size: 0.95rem;">📦 Download Addon Bundle</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;">Download the compiled ZIP containing both addons directly from our Google Drive storage.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1h4qtjjGFabiv43G548wMbCl9mchoba9y/view?usp=sharing" target="_blank" style="display: inline-block; color: #fff; background: var(--accent-primary); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent-primary)'">📥 Download Addon Bundle ZIP</a>
+                </div>
+
+                <h3>How to Install & Configure</h3>
+                <ol>
+                    <li>Extract the downloaded **<code>OurAzeroth_Addons.zip</code>** archive file.</li>
+                    <li>Copy all the extracted directories (such as <code>Bagnon</code>, <code>Guidelime</code>, <code>MobInfo2</code>, <code>Questie</code>, <code>WeakAuras</code>, and the leveling guides).</li>
+                    <li>Navigate to your World of Warcraft directory and open the **<code>Interface/AddOns/</code>** folder.</li>
+                    <li>Paste the folders directly there.</li>
+                    <li>Launch the game, or type <strong><code>/reload</code></strong> in chat if you are already logged in.</li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <strong>🎮 Addon Features & In-Game Options</strong>
+                    <ul>
+                        <li><strong>Bagnon Single-Inventory System</strong>: Merges all bags, bank vaults, and guild banks into a single clean inventory window with integrated text search and item sorting.</li>
+                        <li><strong>Collapsible Sidebar Guide</strong>: Shows your active step, coordinates, and distance calculations to targets.</li>
+                        <li><strong>Floating Navigation Pointer</strong>: A 3D arrow that rotates in real-time towards your target destination relative to your player's facing direction.</li>
+                        <li><strong>Minimap Coordinates Display</strong>: Centered real-time coordinate display shown directly below your minimap.</li>
+                        <li><strong>Reset Guide Button</strong>: Added a <code>[Reset Guide]</code> button at the bottom-left of the tracker window to instantly wipe skip history.</li>
+                        <li><strong>Guidelime Leveling Guide & Navigation Arrow</strong>: In-game leveling routes (TUGs Vanilla 1-60 & Flymolo Outland 58-70) complete with real-time direction pointer and Questie DB integration.</li>
+                        <li><strong>MobInfo-2 Bestiary Database</strong>: Tracks creature health/mana, records loot drops, damage averages, and resistances directly in your tooltips. Configure with <code>/mi2</code>.</li> and restart the active guide from Step 1.</li>
+                        <li><strong>Class & Role Labels</strong>: Guide items in the dropdown show class requirements (e.g. <code>(Priest/Warlock)</code>) derived from RestedXP headers.</li>
+                        <li><strong>Party Progress Auto-Sync</strong>: Automatically announces quest acceptances and completions to your group members.</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning" style="margin-top: 1rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 8px; padding: 1rem; color: var(--text-secondary);">
+                    <strong style="color: #fff; font-size: 0.95rem; display: block; margin-bottom: 0.5rem;">🗺️ Tip: Tracking Every Quest for Achievements & Loremaster</strong>
+                    <p style="font-size: 0.85rem; margin-top: 0; line-height: 1.4;">While Guidelime provides the most efficient leveling path, it will skip inefficient quests. If you want to complete <strong>every single quest</strong> in a zone for achievements or Loremaster, use the built-in <strong>Questie</strong> tools:</p>
+                    <ul style="margin-left: 1.25rem; font-size: 0.85rem; line-height: 1.4;">
+                        <li><strong>Show Low-Level Quests:</strong> Left-click the Questie minimap icon (or type <code>/questie</code>), go to Map/Minimap settings, and check <strong>"Show Low-Level Quests"</strong>. Every quest in your current zone will now display on the map as an exclamation mark (<code>!</code>) regardless of your level!</li>
+                        <li><strong>Track Missing Quests:</strong> Type <code>/questie journey</code> in chat. This opens your personal logbook showing a list of every quest in each zone, which ones you have completed, which ones are currently available to pick up, and which pre-requisites are still missing!</li>
+                    </ul>
+                </div>
+
+                <h3>📚 Compiling Custom Guidelime/TUG Guides</h3>
+                <p>Want to import more leveling routes? We support converting and compiling custom Guidelime guides (like the famous <strong>TUGs Vanilla, TBC Outland, or WotLK Northrend guides</strong>) into the addon database:</p>
+                <ol>
+                    <li>Download any Guidelime guide package (e.g., from CurseForge) and copy the zip files to your workstation's <code>Downloads/</code> folder.</li>
+                    <li>Run the converter script inside your workspace directory:
+                        <pre style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 0.5rem; border-radius: 6px; font-family: monospace; color: #a78bfa; margin: 0.5rem 0; overflow-x: auto;">python scratch/convert_downloads.py</pre>
+                    </li>
+                    <li>The script will extract the guides, convert the markup tags, compile the guide nodes, and automatically copy them directly into your local private server client.</li>
+                </ol>
+            </div>
+
+            <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.03);">
+                <div class="card-title" style="color: #f59e0b;"><span class="icon">🏹</span> 5. Hunter Melee Weaving Disconnect Workaround</div>
+                <p>If you are playing a Hunter (like <strong>Eliphas</strong>), you may experience sudden disconnects to the login screen right when clicking <strong>Raptor Strike</strong> in melee range while <strong>Auto Shot</strong> is active.</p>
+                <p>This is a known client-side stability bug in the original 2008 WotLK client's auto-attack stance toggling logic.</p>
+                
+                <h3>How to Fix in Your Client Settings</h3>
+                <ol>
+                    <li>Press <strong><code>Esc</code></strong> to open the Game Menu.</li>
+                    <li>Select <strong><code>Interface</code></strong>.</li>
+                    <li>Select the <strong><code>Combat</code></strong> category on the left side.</li>
+                    <li>Find the setting <strong><code>Auto Attack/Auto Shot</code></strong>:
+                        <ul>
+                            <li><strong>Uncheck</strong> the box if it is currently enabled.</li>
+                        </ul>
+                    </li>
+                    <li>Alternatively, ensure <strong><code>Stop Auto Attack</code></strong> is <strong>checked</strong>.</li>
+                    <li>Click <strong><code>Okay</code></strong> and test using Raptor Strike again in melee range.</li>
+                </ol>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem; font-style: italic; color: var(--text-secondary);">*Note: Disabling this prevents the client from automatically toggling combat modes on its own (you will simply right-click the mob or click a melee ability to start melee swings, preventing client-side combat state locks).*</p>
+            </div>
+        </div>
+
+        <!-- TAB 2: CUSTOM FOLLOWERS -->
+        <div id="tab-custom-followers" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">Creating Custom Follower Companions</div>
+                <p>Instead of relying purely on the random bots running around the world, you can design your own custom companion characters who will follow you, dungeon with you, and help you quest.</p>
+                
+                <h3>1. Use the Custom Follower Creator</h3>
+                <p>Go to the <a href="/admin/" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> and scroll to the bottom to find the **AI Custom Follower Creator** card. Fill in your character's name, choose a name for your follower, choose their race/class/gender/level, and click **Create Follower**.</p>
+                
+                <div class="alert alert-warning">
+                    <strong>⚠️ Server Restarts & In-Memory Cache</strong>
+                    <p>The game server loads all character files into an in-memory cache when starting up. When you create a follower through the web dashboard, they are saved directly in the database, but the running game server won't know they exist yet.</p>
+                    <p><strong>Before you can summon them, you must restart the server</strong>. You can do this by clicking <strong>"Reload Conf"</strong> or <strong>"Restart Services"</strong> in the Admin Panel, or by typing <code>.server restart 5</code> in your game chat. The server takes about 10 seconds to reboot.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">2. In-Game Race & Class Compatibility Grid</div>
+                <p>When designing your custom follower, you must select a valid Race and Class combination. In Wrath of the Lich King, certain races cannot be certain classes. If you choose an invalid combination (like a Human Druid), the server will refuse to load them.</p>
+                
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Race</th>
+                            <th>Warrior</th>
+                            <th>Paladin</th>
+                            <th>Hunter</th>
+                            <th>Rogue</th>
+                            <th>Priest</th>
+                            <th>Shaman</th>
+                            <th>Mage</th>
+                            <th>Warlock</th>
+                            <th>Druid</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Human</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dwarf</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Night Elf</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gnome</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Orc</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Undead</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tauren</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Troll</strong></td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="valid">Yes</td>
+                            <td class="invalid">No</td>
+                            <td class="invalid">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.85rem; font-style: italic; color: var(--text-secondary);">*Note: Death Knight is excluded from this list because the server is progression-gated to Vanilla (Level 60 cap), which disables Death Knight generation entirely.*</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">3. Summoning & Gearing Your Follower</div>
+                <p>After creating your follower and restarting the server, log in on your main character and perform the following steps:</p>
+                
+                <h3>How to Bring Them Into the World</h3>
+                <ol>
+                    <li>Type the following command in your chat bar to load the bot and add them to your party:</li>
+                </ol>
+                <pre><code>.playerbots bot add FollowerName</code></pre>
+                <p style="font-size: 0.85rem; margin-top: -0.5rem; color: var(--text-secondary);">*(Replace <code>FollowerName</code> with the name of the character you created, e.g. <code>.playerbots bot add Testydruid</code>)*</p>
+                <ol start="2">
+                    <li>The bot will spawn directly next to you and join your party.</li>
+                    <li>Target the bot, open your whisper chat (press <code>/w FollowerName</code>), and send:</li>
+                </ol>
+                <pre><code>init=auto</code><button class="btn-copy" onclick="copyText('init=auto')">Copy</button></pre>
+                <p>This triggers the server's bot factory to instantly generate and equip them with appropriate level-scaling gear! As you level up, you can whisper them <code>init=auto</code> again to refresh their gear to match your level.</p>
+            </div>
+        </div>
+
+        <!-- TAB 3: BOT COMMANDS -->
+        <div id="tab-bot-commands" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">Playerbot In-Game Commands Reference</div>
+                <p>To control your bot companion, you must communicate with them. You can give commands in two ways:</p>
+                <ul>
+                    <li><strong>Group Chat</strong>: Type the command in party chat (e.g. <code>/p follow</code> or <code>/p stay</code>) and all bots in your group will obey.</li>
+                    <li><strong>Whispers</strong>: Send a private whisper to a specific bot (e.g. <code>/w BotName follow</code>) to command only that bot.</li>
+                </ul>
+
+                <div class="alert alert-info">
+                    <strong>💡 Pro Tip: Quick Invites</strong>
+                    <p>Instead of manually typing invite commands, you can click the <strong>"Invite"</strong> button next to any online bot in the Admin Panel. If the browser blocks clipboard access, copy the command displayed in the popup prompt and paste it in-game.</p>
+                </div>
+
+                <!-- Sub-tabs for categories -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-btn active" id="subbtn-movement" onclick="switchSubTab('movement')">Movement & Stance</button>
+                    <button class="sub-tab-btn" id="subbtn-combat" onclick="switchSubTab('combat')">Combat Roles</button>
+                    <button class="sub-tab-btn" id="subbtn-inventory" onclick="switchSubTab('inventory')">Inventory & Gearing</button>
+                    <button class="sub-tab-btn" id="subbtn-spells" onclick="switchSubTab('spells')">Spells & Stats</button>
+                </div>
+
+                <!-- MOVEMENT COMMANDS -->
+                <div id="subtab-movement" class="subtab-content">
+                    <div class="command-list">
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>summon</h4>
+                                <p><strong>Teleport to Me:</strong> Immediately teleports the bot(s) directly to your location.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('summon')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>follow</h4>
+                                <p>Tells the bot to follow you immediately (default stance).</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('follow')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>stay</h4>
+                                <p>Tells the bot to hold its position and stop moving.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('stay')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>flee</h4>
+                                <p>Tells the bot to stop fighting, ignore threat, and run directly to you.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('flee')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>grind</h4>
+                                <p>Tells the bot to wander nearby and attack any hostile creatures in range.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('grind')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>formation [type]</h4>
+                                <p>Sets group march formation. Options: <code>near</code>, <code>arrow</code>, <code>line</code>, <code>shield</code>, <code>circle</code>.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('formation arrow')">Copy Command</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMBAT COMMANDS -->
+                <div id="subtab-combat" class="subtab-content" style="display: none;">
+                    <div class="command-list">
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>attack</h4>
+                                <p>Tells the bot to immediately attack your current target.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('attack')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>cooldowns</h4>
+                                <p>Tells the bot to use long combat cooldowns (trinkets, major abilities).</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('cooldowns')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>threat</h4>
+                                <p>Prints out the bot's current threat table details.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('threat')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>tank / dps / heal</h4>
+                                <p>Sets the combat role. For example, whisper a druid <code>heal</code> to prioritize healing spells.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('heal')">Copy Command</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INVENTORY COMMANDS -->
+                <div id="subtab-inventory" class="subtab-content" style="display: none;">
+                    <div class="command-list">
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>init=auto</h4>
+                                <p>Generates level-appropriate equipment automatically. Target them and whisper this.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('init=auto')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>autogear</h4>
+                                <p><strong>Auto Equip:</strong> Tells the bot to scan its bags and automatically equip the best available gear.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('autogear')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>equip upgrade</h4>
+                                <p>Tells the bot to specifically scan its inventory bags for gear upgrades and put them on.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('equip upgrade')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>s [gray/vendor/item link]</h4>
+                                <p><strong>Sell Items:</strong> When standing near a merchant, whisper <code>s gray</code> to sell trash, or <code>s vendor</code> to sell unusable gear, or <code>s [item link]</code>.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('s vendor')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>repair</h4>
+                                <p>When standing near a repair vendor, this tells the bot to repair all its equipment.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('repair')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>nc -loot / +loot</h4>
+                                <p>Disable (<code>nc -loot</code>) or enable (<code>nc +loot</code>) looting of corpses entirely.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('nc -loot')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>loot strategy [all/normal/gray/none]</h4>
+                                <p>Sets what item qualities the bot gathers. Whisper e.g. <code>loot strategy normal</code>.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('loot strategy normal')">Copy Command</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPELLS COMMANDS -->
+                <div id="subtab-spells" class="subtab-content" style="display: none;">
+                    <div class="command-list">
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>trainer learn</h4>
+                                <p><strong>Train Spells:</strong> When standing near a class trainer, whisper this to have them buy/learn all available spells.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('trainer learn')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>cast [spell name]</h4>
+                                <p>Tells the bot to cast a specific spell on your target. Example: <code>cast Power Word: Fortitude</code>.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('cast Power Word: Shield')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>cast [spell name] on [bot name]</h4>
+                                <p>Tells the bot to cast a self-buff on themselves. Example: <code>cast Battle Shout on Thorn</code>.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('cast Battle Shout on Thorn')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>spells</h4>
+                                <p>Lists the active spells the bot is capable of casting.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('spells')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>talents</h4>
+                                <p>Whisper <code>talents</code> to view the bot's current specialization points.</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('talents')">Copy Command</button>
+                        </div>
+                        <div class="command-item">
+                            <div class="command-info">
+                                <h4>stats</h4>
+                                <p>Prints out the bot's current stats (Armor, Crit, Spell Power, Defense, etc.).</p>
+                            </div>
+                            <button class="btn-inline-copy" onclick="copyText('stats')">Copy Command</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: OLLAMA AI CHAT -->
+        <div id="tab-ai-ollama" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">Talking to Bots (Ollama AI Chat Integration)</div>
+                <p>The server is integrated with a local Large Language Model (Ollama). This allows the playerbots in the game world to behave like real players, complete with unique personalities, factions, and area awareness. You can have conversations with them!</p>
+                
+                <h3>How to Chat with Bots</h3>
+                <ul>
+                    <li><strong>Say Chat (`/s [Message]`)</strong>: Stand near a bot in the world and type in local Say chat. For example, if you stand near Dianne, type <code>/s Hey Dianne, nice weather today.</code> There is a **90% chance** she will reply back to you privately or in local chat!</li>
+                    <li><strong>Party Chat (`/p [Message]`)</strong>: If you invite bots to a group, they will listen to party chat. If you say something to the group, bots have a **90% chance** to reply, joke, or chime in on your conversation.</li>
+                </ul>
+
+                <div class="alert alert-warning">
+                    <strong>🔒 Why Whispers Do Not Trigger AI Chat</strong>
+                    <p>Whisper replies are disabled for Ollama. Whispering a bot (e.g. <code>/w BotName hello</code>) will not generate an AI response.</p>
+                    <p><strong>Reason:</strong> Whispers are strictly reserved for playerbot control commands (like <code>follow</code>, <code>stay</code>, <code>init=auto</code>). If Ollama intercepted whispers, the AI would try to carry on a conversation instead of letting you control their movement and gear!</p>
+                    <p>To chat with a bot, always use local <strong>Say</strong> or group <strong>Party</strong> chat.</p>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Available AI Personalities</h3>
+                <p>When creating a custom follower on the admin dashboard, you can assign them one of the following AI personalities. This shapes how the local Ollama LLM generates their dialogue in Say and Party chat:</p>
+                
+                <div class="admin-table-container" style="margin-top: 1rem; max-height: 400px; overflow-y: auto; border: 1px solid var(--border-glass); border-radius: 8px;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="padding: 0.75rem 1rem;">Personality Key</th>
+                                <th style="padding: 0.75rem 1rem;">Behavior Prompt / System Instructions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody id="ollama-personalities-body">
+                                <!-- Populated via JavaScript -->
+                            </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: CHARACTER AUTOBIOGRAPHY -->
+        <div id="tab-character-bio" class="wiki-tab-content" style="display: none;">
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-title">Select Character Profile</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Look up any character on the server to view their life timeline, kill statistics, and recent chat history.
+                </p>
+                <div style="position: relative; max-width: 450px;">
+                    <label for="bioCharSearchInput">Search Character Name</label>
+                    <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center;">
+                        <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary);">🔍</span>
+                        <input type="text" id="bioCharSearchInput" placeholder="Type character name..." autocomplete="off" oninput="filterCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;">
+                        <button class="clear-search-btn" id="clearSearchBtn" onclick="clearCharSearch()" style="position: absolute; right: 12px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; line-height: 1;">✕</button>
+                    </div>
+                    
+                    <!-- Autocomplete dropdown suggestions -->
+                    <div id="bioCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 250px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;">
+                        <!-- Filtered items will be appended here dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="charBioContent" style="display: none;">
+                <!-- Bio Layout Column Grid -->
+                <div class="char-bio-columns">
+                    <!-- Left Column: Biography Timeline -->
+                    <div class="card">
+                        <div class="card-title">📖 Biography Timeline</div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Historical achievements, level-ups, deaths, and completed missions.
+                        </p>
+                        <div id="bioTimeline" class="timeline">
+                            <!-- Timeline items inserted here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Kills & Chats -->
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <!-- Kill Tracker Card -->
+                        <div class="card">
+                            <div class="card-title">⚔️ Monster Kill Tracker</div>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+                                Complete catalog of all monsters defeated by this character.
+                            </p>
+                            <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border-glass); border-radius: 8px;">
+                                <table class="wiki-table" style="margin-top: 0;">
+                                    <thead>
+                                        <tr>
+                                            <th>Monster / Creature</th>
+                                            <th style="width: 100px; text-align: right;">Kills</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bioKillsBody">
+                                        <!-- Kills stats inserted here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Chat Logs Card -->
+                        <div class="card">
+                            <div class="card-title">🗣️ Recent Personal Chats</div>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+                                History of local Say, group Party, or Whisper channels.
+                            </p>
+                            <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border-glass); border-radius: 8px;">
+                                <table class="wiki-table" style="margin-top: 0;">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 80px;">Type</th>
+                                            <th>Message</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bioChatsBody">
+                                        <!-- Chats inserted here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: ACTIVE MODULES & ADMIN PANEL -->
+        <div id="tab-server-modules" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">Enabled Modules & Server Customizations</div>
+                <p>Our server has several custom modules installed to enhance single-player progression. Here is an overview of what they do:</p>
+                
+                <h3>1. Autobalance (Dungeon & Raid Scaling)</h3>
+                <p>Normally, dungeons in World of Warcraft require a full group of 5 players, and raids require 10 to 40 players. The <strong>Autobalance</strong> module dynamically scales the health, damage, and armor of bosses and monsters based on your current party size. If you want to run Deadmines solo or with just 1 or 2 bot companions, the monsters will scale down so you can complete the dungeon comfortably.</p>
+                
+                <h3>2. AHBot (Auction House Economy Simulator)</h3>
+                <p>To make the auction house feel alive on a single-player server, the <strong>AHBot</strong> module simulates a live economy. It automatically posts trade goods, equipment, recipes, and materials to the Auction House, and will buy items that you post for a fair price. This allows you to sell loot and buy resources just like you would on a populated official server.</p>
+
+                <h3>3. Level Synchronization</h3>
+                <p>Instead of running into level 80 bots while your own character is level 10, the server has <strong>Level Synchronization</strong> enabled. The maximum level of random bots in the world is dynamically capped by the highest level online real human player. As you progress and level up, the bots in the world will level up alongside you.</p>
+
+                <h3>4. Transmog (Transmogrification features)</h3>
+                <p>The <strong>Transmog</strong> module allows you to change the appearance of your armor and weapons to match other items you've collected, without losing the stats of your current equipment. Visit a Transmogrifier NPC in any major city to customize your character's look!</p>
+
+                <h3>5. Diablo-Style Random Enchants</h3>
+                <p>The <strong>Random Enchants</strong> module simulates a Diablo-style loot system. When equipment drops from monsters, is looted from chests, or is crafted, there is a random chance it will automatically roll bonus magical stats and enchants (ranging from simple stat boosts to class-specific spell modifiers). This adds an exciting element of RNG to equipment hunting!</p>
+
+                <h3>6. Challenge Modes (Opt-in Gameplay Rules)</h3>
+                <p>The <strong>Challenge Modes</strong> module introduces custom gameplay rulesets to the server. These challenges are NOT realm-wide; instead, they are <strong>character-specific opt-ins</strong>. When you create a new Level 1 character, you will find a mysterious interactive object called the <strong>Shrine of Challenge</strong> (a glowing blue chalice object) in your starting area. If you interact with it at Level 1 before gaining any XP, you can choose to activate one or more of these rulesets for that character. The available modes are:</p>
+                <ul>
+                    <li><strong>Hardcore Mode</strong>: If your character dies, you permanently become a ghost and can never be revived (one-life run).</li>
+                    <li><strong>Semi-Hardcore Mode</strong>: When you die, you lose all worn equipment and carried gold, but can still revive.</li>
+                    <li><strong>Ironman Mode</strong>: Enforces strict Ironman rules (wear only white/gray gear, no talents, no professions, no buffs, no groups, and permanent death on first defeat).</li>
+                    <li><strong>Self-Crafted Mode</strong>: You are only allowed to wear equipment that your character has personally crafted.</li>
+                    <li><strong>Item Quality Mode</strong>: You are only allowed to wear equipment of Normal (White) or Poor (Gray) quality.</li>
+                    <li><strong>Slow XP Modes</strong>: Reduces your experience gains to 0.5x (Slow) or 0.25x (Very Slow) for a slower level progression.</li>
+                    <li><strong>Quest XP Only</strong>: You gain experience points exclusively from completing quests; killing monsters yields zero XP.</li>
+                </ul>
+
+                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 500; color: var(--accent-hover);">📍 Shrine of Challenge Locations & Guides (Expand for Directions):</p>
+                <div style="border: 1px solid var(--border-glass); padding: 1rem; border-radius: 12px; background: rgba(0, 0, 0, 0.15); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    <p style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        The <strong>Shrine of Challenge</strong> is a large stone chalice/pedestal with a glowing blue flame on top. For most races, it spawns directly at your level 1 feet. Select your race to view directions:
+                    </p>
+
+                    <!-- Human -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">👱 Human — Northshire Valley</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Directly in front of the main entrance to Northshire Abbey hall, next to the stone steps. You spawn facing it!
+                            <br>• <strong>Coordinates:</strong> <code>-8920.6, -178.2, 80.9</code> (Map 0).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz -8920.64 -178.191 80.891 0')">.go xyz -8920.64 -178.191 80.891 0</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Dwarf / Gnome -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🧔 Dwarf & Gnome — Coldridge Valley</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Right outside the main double-doors of Anvilmar (the starting mountain bunker in the snow). You spawn facing it.
+                            <br>• <strong>Coordinates:</strong> <code>-6135.3, 336.1, 402.2</code> (Map 0).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz -6135.29 336.119 402.238 0')">.go xyz -6135.29 336.119 402.238 0</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Night Elf -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🧝 Night Elf — Shadowglen</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> At the base of the giant starting tree (Shadowglen) next to the starting quest NPC Conservator Ilthalaine.
+                            <br>• <strong>Coordinates:</strong> <code>10415.2, 809.6, 1318.2</code> (Map 1).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz 10415.2 809.575 1318.19 1')">.go xyz 10415.2 809.575 1318.19 1</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Draenei -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🐐 Draenei — Ammen Vale (Graveyard spawn)</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Unlike other races, this shrine is not at your Level 1 feet. Walk out of the crashed ship pod (Megelon spawn point), follow the road North-West for about 320 yards passing the Nestlewood Owls, and you will find it sitting directly next to the Ammen Vale Graveyard (where the Spirit Healer stands).
+                            <br>• <strong>Coordinates:</strong> <code>-4147.1, -13667.7, 75.8</code> (Map 530).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz -4147.11 -13667.7 75.8166 530')">.go xyz -4147.11 -13667.7 75.8166 530</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Orc / Troll -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">👹 Orc & Troll — Valley of Trials</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Right in the center of the dusty valley floor, directly outside the starting den building where Kaltunk and Gornek stand.
+                            <br>• <strong>Coordinates:</strong> <code>-658.9, -4311.9, 45.7</code> (Map 1).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz -658.88 -4311.88 45.666 1')">.go xyz -658.88 -4311.88 45.666 1</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Tauren -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🐮 Tauren — Camp Narache</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Directly in Camp Narache, right next to the giant chief's tent where Chief Hawkwind stands.
+                            <br>• <strong>Coordinates:</strong> <code>-2994.2, -136.3, 77.9</code> (Map 1).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz -2994.22 -136.321 77.9491 1')">.go xyz -2994.22 -136.321 77.9491 1</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Undead -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🧟 Undead — Deathknell</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Directly outside the door of the starting chapel crypt where you spawn, sitting next to the stone wall.
+                            <br>• <strong>Coordinates:</strong> <code>1842.9, 1651.3, 95.6</code> (Map 0).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz 1842.91 1651.33 95.6206 0')">.go xyz 1842.91 1651.33 95.6206 0</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Blood Elf -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">🧝‍♀️ Blood Elf — Sunstrider Isle</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> Directly outside the starting Falthrien Academy spire, right next to the quest NPC Well Watcher Solanian.
+                            <br>• <strong>Coordinates:</strong> <code>10452.0, -6389.9, 43.8</code> (Map 530).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz 10452 -6389.91 43.7962 530')">.go xyz 10452 -6389.91 43.7962 530</code> (Click to copy)
+                        </div>
+                    </details>
+
+                    <!-- Death Knight -->
+                    <details class="shrine-details" style="margin-bottom: 0.75rem; border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(255, 255, 255, 0.02); padding: 0.50rem 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--text-primary); outline: none;">💀 Death Knight — Acherus: The Ebon Hold</summary>
+                        <div style="margin-top: 0.5rem; padding-left: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); border-left: 2px solid var(--accent-primary); line-height: 1.6;">
+                            • <strong>Where to find it:</strong> On the starting level floor of Acherus, right next to the green teleporter pad leading to the upper deck.
+                            <br>• <strong>Coordinates:</strong> <code>2415.8, -5649.9, 376.8</code> (Map 609).
+                            <br>• <strong>GM Teleport command:</strong> <code onclick="copyText('.go xyz 2415.84 -5649.91 376.819 609')">.go xyz 2415.84 -5649.91 376.819 609</code> (Click to copy)
+                        </div>
+                    </details>
+                </div>
+
+                <h3>7. AoE Looting System</h3>
+                <p>The <strong>AoE Loot</strong> module allows you to loot all nearby fallen monsters at the same time by clicking on just one of them, saving you from clicking on corpses individually.</p>
+
+                <h3>8. Mythic+ Dungeons</h3>
+                <p>The <strong>Mythic+ Dungeons</strong> module introduces key-based dungeon difficulty scaling. Interact with the pedestal at the start of any dungeon using a Mythic Keystone to enable scaling health, damage, and active gameplay affixes (like Bolstering or Sanguine) for a high-end challenge.</p>
+
+                <h3>9. Solo LFG System</h3>
+                <p>The <strong>Solo LFG</strong> module enables solo players to queue for the Dungeon Finder system. Once you queue, the system will match you or automatically populate the party so you can run dungeons without waiting for other real players.</p>
+
+                <h3>10. All-Professions & Free Trainer</h3>
+                <p>The <strong>Free Professions</strong> module spawns NPC trainers who teach professions for free. Additionally, the server's trade skill limit has been modified to allow <strong>every character to learn all 11 primary professions simultaneously</strong> (e.g. you can be a Blacksmith, Engineer, Alchemist, Enchanter, and Gatherer all on the same character!).</p>
+
+                <h3>11. Account-Wide Mounts & Achievements</h3>
+                <p>The <strong>Account Mounts and Achievements</strong> modules synchronize all learned mounts and unlocked achievements across all characters on your account. If you learn a rare mount on one character, it becomes immediately usable by all your alt characters.</p>
+
+                <h3>12. Item Upgrade System</h3>
+                <p>The <strong>Item Upgrade</strong> module spawns an NPC in major cities who can upgrade the item level and stats of your equipment in exchange for gold or custom currencies.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Admin Panel Features Guide</div>
+                <p>The <a href="/admin/" style="color: var(--accent-hover); text-decoration: underline;">Admin Control Panel</a> has been overhauled into a clean, sidebar-navigated dashboard. Features are now organized into five category tabs to reduce crowding:</p>
+
+                <h3>1. 📊 Dashboard & Controls</h3>
+                <p>Contains server metrics, service states, and configuration modules:</p>
+                <ul>
+                    <li><strong>Live Host Stats</strong>: Polls OS parameters every 5 seconds to display CPU load, RAM usage, Disk space, and uptime.</li>
+                    <li><strong>Process Control</strong>: Shows live indicators of the <code>authserver</code>, <code>worldserver</code>, and SOAP remote connection. Features a red **Restart services** button to cleanly reboot the game daemons.</li>
+                    <li><strong>Server Custom Modules Control</strong>: Globally toggle Transmog, Diablo Random Enchants, Autobalance, Solo LFG, AoE Loot, Mythic+, free professions trainers, account mounts, and achievements on/off dynamically.</li>
+                    <li><strong>Challenge Modes Configurations</strong>: Toggle the starting zone opt-in challenges (Hardcore, Ironman, Self-Crafted, etc.).</li>
+                    <li><strong>Random Playerbots Config</strong>: Turn random playerbots on/off and configure their population range.</li>
+                    <li><strong>Seasonal Events Toggler</strong>: Override the Blizzard calendar to start/stop holiday events immediately in real-time.
+                        <details style="margin-top: 0.5rem; color: var(--text-secondary);">
+                            <summary style="cursor: pointer; font-weight: 500; color: var(--accent-hover);">📅 Main Seasonal Events Details (Toggleable):</summary>
+                            <ul style="margin-top: 0.25rem; padding-left: 1.25rem; font-size: 0.85rem;">
+                                <li><strong>Midsummer Fire Festival (ID 1)</strong>: Bonfires across Azeroth to honor fire, exchange burning blossoms, and fight seasonal boss Ahune in Slave Pens.</li>
+                                <li><strong>Feast of Winter Veil (ID 2)</strong>: Holiday gifts in Ironforge/Orgrimmar, festive treats, and the Abominable Greench event.</li>
+                                <li><strong>Feast of Noblegarden (ID 3)</strong>: Spring egg hunt in starter zones to earn Noblegarden chocolates, holiday clothing, and unique mounts.</li>
+                                <li><strong>Children's Week (ID 4)</strong>: Help local orphans tour Azeroth (Stormwind/Orgrimmar/Shattrath/Dalaran) to earn special companion pets.</li>
+                                <li><strong>Harvest Festival (ID 5)</strong>: Honor fallen heroes (Uther / Grom Hellscream) at monuments outside Stormwind and Orgrimmar.</li>
+                                <li><strong>Hallow's End (ID 6)</strong>: Halloween trick-or-treating at inns, masks, and defeating the Headless Horseman in Scarlet Monastery.</li>
+                                <li><strong>Love is in the Air (ID 7)</strong>: Valentine's cologne/perfumes, gift exchanging, and defeating Apothecary Hummel in Shadowfang Keep.</li>
+                                <li><strong>Brewfest (ID 8)</strong>: Beer festival, ram racing outside major cities, and fighting Coren Direbrew in Blackrock Depths.</li>
+                                <li><strong>Lunar Festival (ID 12)</strong>: Honor Elders throughout the world, gather Coins of Ancestry, and defeat Omen in Moonglade.</li>
+                                <li><strong>Pilgrim's Bounty (ID 25)</strong>: Thanksgiving feast tables outside cities, cooking recipes, and turkey shooting.</li>
+                            </ul>
+                        </details>
+
+                        <details style="margin-top: 0.5rem; color: var(--text-secondary);">
+                            <summary style="cursor: pointer; font-weight: 500; color: var(--accent-hover);">📂 Server Event Categories & Purposes:</summary>
+                            <div style="font-size: 0.85rem; line-height: 1.5; padding: 0.5rem 0.25rem;">
+                                <p style="margin-bottom: 0.5rem;"><strong>• Annual World Holidays (IDs 1-12, 24-26, 50-52)</strong>: Standard holiday events spawning thematic decorations, bosses, achievements, and unique pets/mounts.</p>
+                                <p style="margin-bottom: 0.5rem;"><strong>• Fishing Extravaganzas (IDs 14-15, 62-64, 90)</strong>: Spawns school of pool nodes for tournaments. Stranglethorn (Sundays) and Kalu'ak Derby (Saturdays) for rare fishing prizes.</p>
+                                <p style="margin-bottom: 0.5rem;"><strong>• PvP Battleground Call to Arms (IDs 18-21, 53-54)</strong>: Increases honor points and experience gains from specific battlegrounds on rotation.</p>
+                                <p style="margin-bottom: 0.5rem;"><strong>• World Progression Campaigns (IDs 22, 101-119, 131-190)</strong>: Progression gates that alter zones over time (e.g. Ahn'Qiraj war effort material deliveries, Sunwell Isle phase reclamation).</p>
+                                <p style="margin-bottom: 0.5rem;"><strong>• Arena Seasons (IDs 55-60, 75-76)</strong>: Activates competitive arenas and makes seasonal gladiator vendor gear available.</p>
+                                <p><strong>• Capital Invasions (IDs 13, 17, 120-130)</strong>: Spawns elemental rifts or Scourge necropolises to attack cities and high-level zones.</p>
+                            </div>
+                        </details>
+
+                        <details style="margin-top: 0.5rem; color: var(--text-secondary);">
+                            <summary style="cursor: pointer; font-weight: 500; color: var(--accent-hover);">🔍 Complete List of All Database Game Events (<span id="events-count">0</span> events):</summary>
+                            <div style="margin-top: 0.5rem;">
+                                <input type="text" id="wikiEventSearch" onkeyup="filterWikiEvents(this.value)" placeholder="Filter all database events..." style="width: 100%; padding: 0.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); border-radius: 6px; color: #fff; margin-bottom: 0.75rem; font-size: 0.85rem;">
+                                <div style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-glass); padding: 0.25rem; border-radius: 6px; background: rgba(0, 0, 0, 0.2);">
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+                                        <thead>
+                                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: left;">
+                                                <th style="padding: 0.25rem 0.5rem; color: var(--accent-hover); width: 60px;">ID</th>
+                                                <th style="padding: 0.25rem 0.5rem; color: var(--accent-hover);">Event Name / Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                                        <tbody id="wiki-events-body">
+                                                <!-- Populated via JavaScript -->
+                                            </tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li><strong>Progression Lock</strong>: Gate the server at specific expansions or raid tiers (Vanilla, TBC, WotLK) to lock maximum levels and tier accesses.
+                        <details style="margin-top: 0.5rem; color: var(--text-secondary);">
+                            <summary style="cursor: pointer; font-weight: 500; color: var(--accent-hover);">🔒 Expansion Gating Brackets & Level Caps:</summary>
+                            <ul style="margin-top: 0.25rem; padding-left: 1.25rem; font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
+                                <li><strong>Bracket 0</strong>: Pre-Vanilla (Level 60, no raids)</li>
+                                <li><strong>Bracket 1</strong>: Molten Core & Onyxia Lair</li>
+                                <li><strong>Bracket 2</strong>: Blackwing Lair (BWL)</li>
+                                <li><strong>Bracket 3</strong>: Zul'Gurub</li>
+                                <li><strong>Bracket 4</strong>: Ruins & Temple of AQ</li>
+                                <li><strong>Bracket 5</strong>: Naxxramas 40 (Vanilla End)</li>
+                                <li><strong>Bracket 6</strong>: BC Pre-patch (Level 60 BC talents)</li>
+                                <li><strong>Bracket 7</strong>: BC Tier 4 (Level 70, Karazhan)</li>
+                                <li><strong>Bracket 8</strong>: BC Tier 5 (SSC & Tempest Keep)</li>
+                                <li><strong>Bracket 9</strong>: BC Tier 6 (Hyjal & Black Temple)</li>
+                                <li><strong>Bracket 10</strong>: BC Zul'Aman</li>
+                                <li><strong>Bracket 11</strong>: BC Sunwell Plateau (BC End)</li>
+                                <li><strong>Bracket 12</strong>: WotLK Pre-patch (Level 70, WotLK talents)</li>
+                                <li><strong>Bracket 13</strong>: WotLK Tier 7 (Level 80, Naxx 10/25)</li>
+                                <li><strong>Bracket 14</strong>: WotLK Tier 8 (Ulduar)</li>
+                                <li><strong>Bracket 15</strong>: WotLK Tier 9 (Trial of the Crusader)</li>
+                                <li><strong>Bracket 16</strong>: WotLK Tier 10 (Icecrown Citadel)</li>
+                                <li><strong>Bracket 17</strong>: WotLK Ruby Sanctum</li>
+                                <li><strong>Bracket 18</strong>: Unlocked (Full WotLK End-Game)</li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+
+                <h3>2. 🗄️ Database Editors (Monster & Loot Customization)</h3>
+                <p>Allows direct custom edits to the server's world database:</p>
+                <ul>
+                    <li><strong>Monster (Creature Template) Editor</strong>: Look up any monster by name or ID. Modify its level range, base health pool, armor rating, or damage multiplier. Clicking **Save** writes changes to <code>creature_template</code> and runs `.reload creature_template` to update them in-game instantly.</li>
+                    <li><strong>Monster Loot Table Editor</strong>: Once a monster is selected, it displays its drop list. You can remove drops, modify drop rates with percentage sliders, and add new drops. Autocomplete suggestions help you find items by name while adding drops. Runs `.reload creature_loot_template` on save.</li>
+                </ul>
+
+                <h3>3. 👥 Character Tools</h3>
+                <p>Manage player sessions and summon customized companions:</p>
+                <ul>
+                    <li><strong>Character Quick-Editor & Teleporter</strong>: Edit any character's level, add gold, grant GM admin rights, or teleport them to major cities. Features a safety **Instant Unstuck** button.</li>
+                    <li><strong>AI Custom Follower Creator</strong>: Create a custom bot helper bound to your account. Enter its name, race, class, level, and gender. The tool seeds it in the character database. You can then summon it in-game using `.playerbots bot add [Name]` and whisper `init=auto` to auto-equip them!</li>
+                </ul>
+
+                <h3>4. ⚖️ Live Auction House</h3>
+                <p>Queries the active database to list active listings. Items are color-coded by quality (gray, white, green, blue, purple, orange), displaying quantity, faction house, seller, current bids, and buyout prices.</p>
+
+                <h3>5. 🌤️ Server Weather Control</h3>
+                <p>Instantly changes the weather effects across all game zones on the server using the GM console command <code>.wchange [weather_type] [intensity]</code>. In-game equivalents can also be typed directly in chat:</p>
+                <ul>
+                    <li><strong>Clear Weather</strong>: <code onclick="copyText('.wchange 0 0')">.wchange 0 0</code> (Click to copy)</li>
+                    <li><strong>Rain (Heavy)</strong>: <code onclick="copyText('.wchange 1 1')">.wchange 1 1</code> (Click to copy)</li>
+                    <li><strong>Snow (Heavy)</strong>: <code onclick="copyText('.wchange 2 1')">.wchange 2 1</code> (Click to copy)</li>
+                    <li><strong>Sandstorm (Heavy)</strong>: <code onclick="copyText('.wchange 3 1')">.wchange 3 1</code> (Click to copy)</li>
+                </ul>
+
+                <h3>6. 💬 SOAP Console</h3>
+                <p>A secure interactive terminal linked directly to the running worldserver daemon. Type any GM command (e.g. <code>.server status</code>) and receive immediate console output feedback.</p>
+
+                <h3>7. 👾 Rare Spawner & Spawn Detector</h3>
+                <p>Features an automated rare tracking and custom summoning mechanism:</p>
+                <ul>
+                    <li><strong>Rare Spawn Alert (Spawn Detector)</strong>: Whenever a Rare (quality 4) or Rare Elite (quality 2) creature is spawned anywhere on the server, the system automatically detects it and broadcasts a large screen-center **Raid Warning** and a chat alert to all players who are currently in the same zone. This makes hunt-tracking rare spawns or Spirit Beasts extremely active and fun!</li>
+                    <li><strong>Admin Rare Spawner Tool</strong>: Skip the multi-day respawn cooldowns! Navigate to the Admin Panel, select any online character, choose a rare template (e.g. <em>Time-Lost Proto-Drake</em> or <em>Loque'nahak</em>), and click **Summon Rare Near Player** to spawn it instantly at their current in-game coordinates.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 7: GUIDELIME QUEST GUIDES -->
+        <div id="tab-restedxp-guides" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">🗺️ Guidelime Leveling & Quest Guides</div>
+                <p>If you prefer to review guide steps on a second screen, or if you want to inspect our custom guide routes, you can refer to the full compiled leveling database here. Steps are tailored by zone bracket and level range.</p>
+            </div>
+
+            <!-- Reverse Engineering Guidelime card -->
+            <div class="card" style="border-color: rgba(59,130,246,0.25);">
+                <div class="card-title" style="color: #60a5fa;">🔧 Reverse Engineering Guidelime for WotLK 3.3.5a</div>
+                <p>To bridge the modern Guidelime addon APIs down to the legacy WotLK client, we injected custom compatibility patches and shims directly into the client files:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+                    <div style="background: rgba(255,255,255,0.01); padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);">
+                        <h4 style="color: #fff; margin-bottom: 0.25rem; font-size: 0.9rem;">💾 UIPanelScrollFrame Auto-Naming</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">Anonymous scroll frames fail on WotLK if they lack a global name. We hooked the global <code>CreateFrame</code> inside <code>LibStub</code> to automatically assign unique names to anonymous scroll frames and bind their scrollbar properties.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.01); padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);">
+                        <h4 style="color: #fff; margin-bottom: 0.25rem; font-size: 0.9rem;">🚀 Memory Leak Optimization</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">The original <code>CreateFrame</code> hook allocated unique closures for <code>.SetEnabled</code> for every frame, triggering fatal client memory allocation crashes (<em>"memory block too big"</em>). We optimized it to bind a single static shim reference.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.01); padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);">
+                        <h4 style="color: #fff; margin-bottom: 0.25rem; font-size: 0.9rem;">⚙️ C_QuestLog.GetQuestInfo Fallback</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">WotLK lacks the modern quest log info APIs. We shimmed <code>C_QuestLog.GetQuestInfo</code> to safely return <code>nil</code>, forcing Guidelime to fall back to Questie's WotLK query wrapper (<code>QUESTIE.getQuestName</code>).</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.01); padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);">
+                        <h4 style="color: #fff; margin-bottom: 0.25rem; font-size: 0.9rem;">🗺️ Vector Coordinates & Mapping</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">To allow HereBeDragons-2.0's vector math to run on WotLK's flat 2D map coordinates, we shimmed <code>CreateVector2D</code> and injected coordinate <code>GetXY()</code> methods into compatibility files.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wowhead Leveling Reference Panel -->
+            <div class="card" style="border-color: rgba(139,92,246,0.15);">
+                <div class="card-title" style="color: var(--accent-hover);">📚 Wowhead Classic Leveling Campaign Tips</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div>
+                        <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">⚔️ Optimal Dungeon Milestones</h4>
+                        <ul style="font-size: 0.85rem; margin-left: 1.2rem; color: var(--text-secondary);">
+                            <li><strong>Horde Path</strong>: Ragefire Chasm (13-18), Wailing Caverns (18-25), Shadowfang Keep (23-30)</li>
+                            <li><strong>Alliance Path</strong>: Deadmines (16-23), The Stockade (23-30)</li>
+                            <li><strong>Contested Path</strong>: Scarlet Monastery (30-44), Zul'Farrak (44-49), Blackrock Depths (49-56), LBRS (56-60)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🐴 Mounts & Faction Discounts</h4>
+                        <ul style="font-size: 0.85rem; margin-left: 1.2rem; color: var(--text-secondary);">
+                            <li><strong>Level 40 Riding</strong>: Standard riding skill costs 20g and the mount costs 80g (100g total before faction rep discounts).</li>
+                            <li><strong>Free Mounts</strong>: Warlocks and Paladins can learn their summon spells for free from class trainers!</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🎒 Recovery & Inventory management</h4>
+                        <ul style="font-size: 0.85rem; margin-left: 1.2rem; color: var(--text-secondary);">
+                            <li><strong>First Aid Skill</strong>: Bandages are highly recommended for all classes (requires no mana, 1 min cooldown).</li>
+                            <li><strong>Rested Experience</strong>: Always log out inside an Inn or Capital City (portrait gains a gold aura and 'zzz' icon) to accumulate double monster-kill XP.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📖 Select Leveling Guides</div>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="sub-tab-btn active" id="subbtn-guides-speedrun" onclick="switchSubTab('guides-speedrun')">⚡ Speedrun Mode (1-60)</button>
+                    <button class="sub-tab-btn" id="subbtn-guides-completionist" onclick="switchSubTab('guides-completionist')">🎯 Completionist Checklist</button>
+                    <button class="sub-tab-btn" id="subbtn-guides-loremaster" onclick="switchSubTab('guides-loremaster')">📖 Loremaster Progress</button>
+                    <button class="sub-tab-btn" id="subbtn-guides-reputation" onclick="switchSubTab('guides-reputation')">🛡️ Reputation Progress</button>
+                    <button class="sub-tab-btn" id="subbtn-guides-database" onclick="switchSubTab('guides-database')">📂 RXP Official Database</button>
+                </div>
+
+                <!-- SUBTAB: SPEEDRUN -->
+                <div id="subtab-guides-speedrun" class="sub-tab-content" style="margin-top: 1.5rem;">
+                    <h3>⚡ Speedrun Leveling Routes (Level 1-60)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Auto-optimised routes to get you through the entire leveling journey up to level 60. Select your starting race below:</p>
+                    
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🔴 Horde: Orc & Troll (Valley of Trials)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 1-10 Bracket: Valley of Trials</td></tr>
+                                <tr><td>1</td><td>Accept [Your Place In The World] from Kaltunk</td><td>44.5, 38.2</td><td>Valley of Trials</td></tr>
+                                <tr><td>2</td><td>Accept [Cutting Teeth] from Galgar</td><td>44.4, 38.3</td><td>Valley of Trials</td></tr>
+                                <tr><td>3</td><td>Kill 10 Mottled Boars in the valley floor</td><td>43.1, 36.8</td><td>Valley of Trials</td></tr>
+                                <tr><td>4</td><td>Turn in [Your Place In The World] and accept [Sarkoth] from Gornek</td><td>44.6, 38.1</td><td>Valley of Trials</td></tr>
+                                <tr><td>5</td><td>Kill Sarkoth (Scorpid) in the canyon to the south</td><td>40.5, 39.2</td><td>Valley of Trials</td></tr>
+                                <tr><td>6</td><td>Loot Sarkoth's Claw and turn in [Sarkoth] to Gornek</td><td>44.6, 38.1</td><td>Valley of Trials</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 10-20 Bracket: The Barrens</td></tr>
+                                <tr><td>1</td><td>Travel to The Crossroads in The Barrens</td><td>52.1, 30.2</td><td>The Barrens</td></tr>
+                                <tr><td>2</td><td>Accept [The Crossroads] from Thork</td><td>51.5, 30.9</td><td>The Barrens</td></tr>
+                                <tr><td>3</td><td>Accept [Plainstrider Menace] from Sergra Darkthorn</td><td>52.2, 31.0</td><td>The Barrens</td></tr>
+                                <tr><td>4</td><td>Kill Plainstriders nearby for plainstrider beaks</td><td>50.4, 33.1</td><td>The Barrens</td></tr>
+                                <tr><td>5</td><td>Turn in [Plainstrider Menace] to Sergra Darkthorn</td><td>52.2, 31.0</td><td>The Barrens</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 20-30 Bracket: Stonetalon Mountains</td></tr>
+                                <tr><td>1</td><td>Travel to Sun Rock Retreat in Stonetalon Mountains</td><td>59.5, 75.8</td><td>Stonetalon Mountains</td></tr>
+                                <tr><td>2</td><td>Accept [Sun Rock Retreat] from Braving</td><td>60.2, 74.1</td><td>Stonetalon Mountains</td></tr>
+                                <tr><td>3</td><td>Accept [Harpies Threaten] from Maggran Earthbinder</td><td>60.5, 73.8</td><td>Stonetalon Mountains</td></tr>
+                                <tr><td>4</td><td>Kill Harpies in the northern ravine</td><td>62.1, 68.4</td><td>Stonetalon Mountains</td></tr>
+                                <tr><td>5</td><td>Turn in [Harpies Threaten] to Maggran Earthbinder</td><td>60.5, 73.8</td><td>Stonetalon Mountains</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 30-40 Bracket: Stranglethorn Vale</td></tr>
+                                <tr><td>1</td><td>Take the zeppelin to Grom'gol Base Camp in Stranglethorn</td><td>32.2, 28.5</td><td>Stranglethorn Vale</td></tr>
+                                <tr><td>2</td><td>Accept [Grom'gol Base Camp] from Commander Aggro'gosh</td><td>32.0, 27.8</td><td>Stranglethorn Vale</td></tr>
+                                <tr><td>3</td><td>Kill Lashtail Raptors in northern Stranglethorn</td><td>35.1, 22.4</td><td>Stranglethorn Vale</td></tr>
+                                <tr><td>4</td><td>Turn in Raptor heads at Grom'gol Base Camp</td><td>32.0, 27.8</td><td>Stranglethorn Vale</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 40-50 Bracket: Tanaris</td></tr>
+                                <tr><td>1</td><td>Travel to Gadgetzan in Tanaris desert</td><td>50.8, 27.2</td><td>Tanaris</td></tr>
+                                <tr><td>2</td><td>Accept [Wastewander Justice] from Chief Engineer Bilgewater</td><td>52.4, 28.1</td><td>Tanaris</td></tr>
+                                <tr><td>3</td><td>Kill Wastewander Bandits at Noonshade Ruins</td><td>61.2, 38.5</td><td>Tanaris</td></tr>
+                                <tr><td>4</td><td>Turn in [Wastewander Justice] in Gadgetzan</td><td>52.4, 28.1</td><td>Tanaris</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 50-60 Bracket: Un'Goro Crater</td></tr>
+                                <tr><td>1</td><td>Travel to Marshal's Refuge in Un'Goro Crater</td><td>43.1, 8.2</td><td>Un'Goro Crater</td></tr>
+                                <tr><td>2</td><td>Accept [The Scythe of Elune] or check crystals</td><td>44.5, 7.9</td><td>Un'Goro Crater</td></tr>
+                                <tr><td>3</td><td>Explore the Fire Plume Ridge volcano center</td><td>49.5, 46.2</td><td>Un'Goro Crater</td></tr>
+                                <tr><td>4</td><td>Return and complete crystal quests at Marshal's Refuge</td><td>43.1, 8.2</td><td>Un'Goro Crater</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🟤 Horde: Tauren (Camp Narache)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [The Rite of Strength] from Chief Hawkwind</td><td>29.9, 13.6</td><td>Camp Narache</td></tr>
+                                <tr><td>2</td><td>Accept [A Humble Task] from Grull Hawkwind</td><td>29.8, 13.5</td><td>Camp Narache</td></tr>
+                                <tr><td>3</td><td>Kill Plainstriders nearby for feathers</td><td>32.4, 15.2</td><td>Camp Narache</td></tr>
+                                <tr><td>4</td><td>Collect water pitcher at the well</td><td>31.1, 12.8</td><td>Camp Narache</td></tr>
+                                <tr><td>5</td><td>Turn in [A Humble Task] & [The Rite of Strength] to Chief Hawkwind</td><td>29.9, 13.6</td><td>Camp Narache</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🟢 Horde: Blood Elf (Sunstrider Isle)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [The Sunspire] from Lanthan Perilon</td><td>30.6, 22.4</td><td>Sunstrider Isle</td></tr>
+                                <tr><td>2</td><td>Turn in [The Sunspire] to Well Watcher Solanian</td><td>28.7, 20.1</td><td>Sunstrider Isle</td></tr>
+                                <tr><td>3</td><td>Accept [Solanian's Belongings]</td><td>28.7, 20.1</td><td>Sunstrider Isle</td></tr>
+                                <tr><td>4</td><td>Collect Solanian's Journal, Orb, and Scroll from the ground</td><td>31.2, 24.5</td><td>Sunstrider Isle</td></tr>
+                                <tr><td>5</td><td>Turn in [Solanian's Belongings] to Well Watcher Solanian</td><td>28.7, 20.1</td><td>Sunstrider Isle</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🟣 Horde: Undead / Scourge (Deathknell)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [Rude Awakening] from Undertaker Mordo</td><td>18.4, 16.5</td><td>Deathknell</td></tr>
+                                <tr><td>2</td><td>Turn in to Shadow Priest Sarvis inside the chapel</td><td>18.5, 15.8</td><td>Deathknell</td></tr>
+                                <tr><td>3</td><td>Accept [The Mindless Ones]</td><td>18.5, 15.8</td><td>Deathknell</td></tr>
+                                <tr><td>4</td><td>Kill Mindless Zombies and Wretched Ghouls outside the gates</td><td>17.2, 16.2</td><td>Deathknell</td></tr>
+                                <tr><td>5</td><td>Turn in [The Mindless Ones] to Shadow Priest Sarvis</td><td>18.5, 15.8</td><td>Deathknell</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🔵 Alliance: Human (Northshire)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 1-10 Bracket: Northshire Valley</td></tr>
+                                <tr><td>1</td><td>Accept [A Threat Within] from Deputy Willem</td><td>48.2, 41.5</td><td>Northshire</td></tr>
+                                <tr><td>2</td><td>Turn in [A Threat Within] to Marshal McBride inside the abbey</td><td>48.9, 41.7</td><td>Northshire</td></tr>
+                                <tr><td>3</td><td>Accept [Kobold Camp Out] from Marshal McBride</td><td>48.9, 41.7</td><td>Northshire</td></tr>
+                                <tr><td>4</td><td>Kill 10 Kobold Vermin in the Northshire fields</td><td>49.2, 40.5</td><td>Northshire</td></tr>
+                                <tr><td>5</td><td>Turn in [Kobold Camp Out] to Marshal McBride</td><td>48.9, 41.7</td><td>Northshire</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 10-20 Bracket: Westfall</td></tr>
+                                <tr><td>1</td><td>Travel to Sentinel Hill in Westfall</td><td>56.4, 47.5</td><td>Westfall</td></tr>
+                                <tr><td>2</td><td>Accept [The People's Militia] from Gryan Stoutmantle</td><td>56.1, 47.2</td><td>Westfall</td></tr>
+                                <tr><td>3</td><td>Kill Defias Thugs and Defias Smugglers nearby</td><td>58.2, 50.1</td><td>Westfall</td></tr>
+                                <tr><td>4</td><td>Turn in [The People's Militia] to Gryan Stoutmantle</td><td>56.1, 47.2</td><td>Westfall</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 20-30 Bracket: Duskwood</td></tr>
+                                <tr><td>1</td><td>Travel to Darkshire in Duskwood</td><td>73.8, 44.5</td><td>Duskwood</td></tr>
+                                <tr><td>2</td><td>Accept [The Hermit] from Abercrombie</td><td>74.2, 45.1</td><td>Duskwood</td></tr>
+                                <tr><td>3</td><td>Deliver items to Althea Ebonlocke in Darkshire</td><td>73.5, 46.8</td><td>Duskwood</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 30-40 Bracket: Stranglethorn Vale</td></tr>
+                                <tr><td>1</td><td>Travel to Booty Bay in southern Stranglethorn</td><td>27.2, 77.1</td><td>Stranglethorn Vale</td></tr>
+                                <tr><td>2</td><td>Accept [The Stone of the Tides] from Baron Revilgaz</td><td>27.1, 76.8</td><td>Stranglethorn Vale</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 40-50 Bracket: Tanaris</td></tr>
+                                <tr><td>1</td><td>Travel to Gadgetzan in Tanaris</td><td>50.8, 27.2</td><td>Tanaris</td></tr>
+                                <tr><td>2</td><td>Accept [Wastewander Justice] from Chief Engineer Bilgewater</td><td>52.4, 28.1</td><td>Tanaris</td></tr>
+                                <tr style="background: rgba(139, 92, 246, 0.1);"><td colspan="4" style="text-align: left; font-weight: bold; color: var(--accent-hover);">Level 50-60 Bracket: Western Plaguelands</td></tr>
+                                <tr><td>1</td><td>Travel to Chillwind Camp in Western Plaguelands</td><td>42.8, 84.2</td><td>Western Plaguelands</td></tr>
+                                <tr><td>2</td><td>Accept [Clear the Way] from Commander Ashlam Valour</td><td>43.1, 84.9</td><td>Western Plaguelands</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">⚪ Alliance: Dwarf & Gnome (Coldridge Valley)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [Dwarven Outfitters] from Sten Stoutarm</td><td>28.6, 76.2</td><td>Coldridge Valley</td></tr>
+                                <tr><td>2</td><td>Kill 8 Crag Boars nearby for Sten Stoutarm</td><td>29.8, 74.5</td><td>Coldridge Valley</td></tr>
+                                <tr><td>3</td><td>Turn in [Dwarven Outfitters] to Sten Stoutarm</td><td>28.6, 76.2</td><td>Coldridge Valley</td></tr>
+                                <tr><td>4</td><td>Accept [Coldridge Valley Mail Delivery] from Talin Keeneye</td><td>29.1, 75.8</td><td>Coldridge Valley</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🔘 Alliance: Night Elf (Shadowglen)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [The Balance of Nature] from Conservator Ilthalaine</td><td>57.8, 45.6</td><td>Shadowglen</td></tr>
+                                <tr><td>2</td><td>Kill Young Nightsabers and Thistle Boars nearby</td><td>58.2, 44.8</td><td>Shadowglen</td></tr>
+                                <tr><td>3</td><td>Turn in [The Balance of Nature] to Conservator Ilthalaine</td><td>57.8, 45.6</td><td>Shadowglen</td></tr>
+                                <tr><td>4</td><td>Accept [Webwood Venom] from Gilshalan Windwalker</td><td>59.2, 46.1</td><td>Shadowglen</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="wiki-details" style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px; padding: 0.75rem;">
+                        <summary style="cursor: pointer; font-weight: 600; color: #fff;">🔆 Alliance: Draenei (Ammen Vale)</summary>
+                        <table class="wiki-table" style="margin-top: 0.5rem;">
+                            <thead>
+                                <tr><th>Step</th><th>Description</th><th>Coordinates</th><th>Zone</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Accept [You Survived!] from Prophlon</td><td>79.8, 51.5</td><td>Ammen Vale</td></tr>
+                                <tr><td>2</td><td>Turn in [You Survived!] to Botanist Taerix</td><td>81.2, 50.4</td><td>Ammen Vale</td></tr>
+                                <tr><td>3</td><td>Accept [Volatile Mutate] from Botanist Taerix</td><td>81.2, 50.4</td><td>Ammen Vale</td></tr>
+                                <tr><td>4</td><td>Kill 8 Volatile Mutates around the crash site</td><td>78.4, 48.5</td><td>Ammen Vale</td></tr>
+                                <tr><td>5</td><td>Turn in [Volatile Mutate] to Botanist Taerix</td><td>81.2, 50.4</td><td>Ammen Vale</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+
+                <!-- SUBTAB: COMPLETIONIST -->
+                <div id="subtab-guides-completionist" class="sub-tab-content" style="margin-top: 1.5rem; display: none;">
+                    <h3>🎯 Completionist 1-60 Zone Checklist</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Detailed checklist tracking all critical quests across both factions to achieve 100% completion in each level bracket zone:</p>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Level Range</th><th>Zone</th><th>Faction</th><th>Critical Quest Checklist</th><th>Starting NPC</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Level 1-10</td><td>Durotar / Valley of Trials</td><td>Horde</td><td>[Your Place In The World], [Cutting Teeth], [Sarkoth]</td><td>Kaltunk / Gornek</td></tr>
+                            <tr><td>Level 1-10</td><td>Elwynn / Northshire</td><td>Alliance</td><td>[A Threat Within], [Kobold Camp Out], [Brotherhood of Thieves]</td><td>Willem / McBride</td></tr>
+                            <tr><td>Level 10-20</td><td>The Barrens (Crossroads)</td><td>Horde</td><td>[The Crossroads], [Plainstrider Menace], [Fungal Spores]</td><td>Thork / Sergra</td></tr>
+                            <tr><td>Level 10-20</td><td>Westfall (Sentinel Hill)</td><td>Alliance</td><td>[The People's Militia], [Patrol Westfall], [The Defias Brotherhood]</td><td>Gryan Stoutmantle</td></tr>
+                            <tr><td>Level 20-30</td><td>Stonetalon Mountains</td><td>Horde</td><td>[Sun Rock Retreat], [Harpies Threaten], [Deep Coal Mine]</td><td>Maggran Earthbinder</td></tr>
+                            <tr><td>Level 20-30</td><td>Duskwood (Darkshire)</td><td>Alliance</td><td>[The Hermit], [Discover Rolf's Fate], [Sven's Camp]</td><td>Abercrombie / Althea</td></tr>
+                            <tr><td>Level 30-40</td><td>Stranglethorn Vale (Grom'gol)</td><td>Horde</td><td>[Grom'gol Base Camp], [Lashtail Raptor Hunting], [Bloody Bone Necklaces]</td><td>Commander Aggro'gosh</td></tr>
+                            <tr><td>Level 30-40</td><td>Stranglethorn Vale (Booty Bay)</td><td>Alliance</td><td>[The Stone of the Tides], [Investigate the Camp], [Singing Crystal]</td><td>Baron Revilgaz</td></tr>
+                            <tr><td>Level 40-50</td><td>Tanaris Desert (Gadgetzan)</td><td>Both</td><td>[Wastewander Justice], [Water Pouch Bounty], [Screecher Spirits]</td><td>Bilgewater / Dirge</td></tr>
+                            <tr><td>Level 50-60</td><td>Un'Goro Crater</td><td>Both</td><td>[The Scythe of Elune], [Crystals Power], [Volcano Research]</td><td>Williden / Larion</td></tr>
+                            <tr><td>Level 50-60</td><td>Western Plaguelands</td><td>Both</td><td>[Clear the Way], [Cauldron Cauldrons Campaign], [The Scarlet Crusade]</td><td>Ashlam Valour</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SUBTAB: LOREMASTER -->
+                <div id="subtab-guides-loremaster" class="sub-tab-content" style="margin-top: 1.5rem; display: none;">
+                    <h3>📖 Loremaster 1-60 Campaign Achievements Progress</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Essential quest chains required to complete the Loremaster achievements for Kalimdor and Eastern Kingdoms. Complete these to lock in your Loremaster titles:</p>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Level Range</th><th>Expansion Area</th><th>Achievement Name</th><th>Critical Prerequisite Quest Chain</th><th>Map Coordinates</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Level 1-10</td><td>Durotar starting path</td><td>Loremaster of Kalimdor</td><td>[Sarkoth] -> [Vile Familiar]</td><td>Valley of Trials (44.6, 38.1)</td></tr>
+                            <tr><td>Level 1-10</td><td>Elwynn starting path</td><td>Loremaster of Eastern Kingdoms</td><td>[Kobold Camp Out] -> [Redridge Mail]</td><td>Northshire Valley (48.9, 41.7)</td></tr>
+                            <tr><td>Level 10-20</td><td>The Barrens campaign</td><td>Loremaster of Kalimdor</td><td>[The Crossroads] -> [The Samophlange]</td><td>The Barrens (51.5, 30.9)</td></tr>
+                            <tr><td>Level 10-20</td><td>Westfall campaign</td><td>Loremaster of Eastern Kingdoms</td><td>[The People's Militia] -> [Defias Brotherhood]</td><td>Westfall (56.1, 47.2)</td></tr>
+                            <tr><td>Level 20-30</td><td>Stonetalon Mountains</td><td>Loremaster of Kalimdor</td><td>[Harpies Threaten] -> [Stonetalon Incursion]</td><td>Stonetalon Valley (60.5, 73.8)</td></tr>
+                            <tr><td>Level 20-30</td><td>Duskwood campaign</td><td>Loremaster of Eastern Kingdoms</td><td>[The Hermit] -> [The Legend of Stalvan]</td><td>Duskwood (74.2, 45.1)</td></tr>
+                            <tr><td>Level 30-40</td><td>Stranglethorn campaign</td><td>Loremaster of Eastern Kingdoms</td><td>[Grom'gol Raptor Hunting] -> [Colonel Kurzen]</td><td>Stranglethorn (32.0, 27.8)</td></tr>
+                            <tr><td>Level 40-50</td><td>Tanaris campaign</td><td>Loremaster of Kalimdor</td><td>[Wastewander Justice] -> [Noggenfogger Elixir]</td><td>Tanaris (52.4, 28.1)</td></tr>
+                            <tr><td>Level 50-60</td><td>Un'Goro Crater campaign</td><td>Loremaster of Kalimdor</td><td>[Volcano Expedition] -> [Linken's Adventure]</td><td>Un'Goro Crater (43.1, 8.2)</td></tr>
+                            <tr><td>Level 50-60</td><td>Western Plaguelands</td><td>Loremaster of Eastern Kingdoms</td><td>[Clear the Way] -> [The Battle of Darrowshire]</td><td>Plaguelands (43.1, 84.9)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SUBTAB: REPUTATION -->
+                <div id="subtab-guides-reputation" class="sub-tab-content" style="margin-top: 1.5rem; display: none;">
+                    <h3>🛡️ Ultimate 1-60 Faction Reputation Progression Route</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Optimized level brackets and zones to maximize reputation gains with your faction's core capitals (Orgrimmar, Undercity, Thunder Bluff / Stormwind, Ironforge, Darnassus):</p>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Level Bracket</th><th>Zone (Alliance Path)</th><th>Focus Factions</th><th>Zone (Horde Path)</th><th>Focus Factions</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Level 1-10</td><td>Elwynn Forest & Dun Morogh</td><td>Stormwind / Ironforge</td><td>Tirisfal Glades & Durotar</td><td>Undercity / Orgrimmar</td></tr>
+                            <tr><td>Level 10-20</td><td>Loch Modan & Darkshore</td><td>Ironforge / Darnassus</td><td>Silverpine & The Barrens</td><td>Undercity / Darkspear</td></tr>
+                            <tr><td>Level 20-30</td><td>Wetlands & Duskwood</td><td>Ironforge / Stormwind</td><td>Stonetalon Mountains & Ashenvale</td><td>Orgrimmar / Thunder Bluff</td></tr>
+                            <tr><td>Level 30-40</td><td>Stranglethorn & Arathi</td><td>Booty Bay / Stormwind</td><td>STV (Grom'gol) & Thousand Needles</td><td>Darkspear / Thunder Bluff</td></tr>
+                            <tr><td>Level 40-50</td><td>Tanaris & Feralas</td><td>Steamwheedle / Darnassus</td><td>Tanaris & Feralas</td><td>Steamwheedle / Thunder Bluff</td></tr>
+                            <tr><td>Level 50-60</td><td>Western Plaguelands & Silithus</td><td>Argent Dawn / CC</td><td>Western Plaguelands & Silithus</td><td>Argent Dawn / CC</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SUBTAB: RXP DATABASE -->
+                <div id="subtab-guides-database" class="sub-tab-content" style="margin-top: 1.5rem; display: none;">
+                    <h3>📂 Compiled Guidelime Leveling Guides Database</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Explore the compiled list of our leveling guides (TUGs Vanilla 1-60 & Flymolo Outland 58-70) that were bundled directly into your client. Select a category below to see details:</p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Select Guide Group:</label>
+                            <select id="guide-group-select" onchange="updateGuideNames()" style="background: var(--bg-dark); border: 1px solid var(--border-glass); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; outline: none; cursor: pointer;">
+                                <option value="TUGs Alliance 1-60">TUGs Alliance Leveling (1-60)</option>
+                                <option value="Flymolo Outland 58-70 (Alliance)">Flymolo Outland Leveling (58-70)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Select Guide Path:</label>
+                            <select id="guide-name-select" style="background: var(--bg-dark); border: 1px solid var(--border-glass); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; outline: none; cursor: pointer; min-width: 200px;">
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-end;">
+                            <button onclick="displayGuideOverview()" class="menu-btn" style="padding: 0.5rem 1.5rem; background: var(--primary); border: none; font-weight: 600; border-radius: 6px; cursor: pointer; color: #fff; transition: all 0.2s;">🔍 View Index</button>
+                        </div>
+                    </div>
+
+                    <div id="guide-overview-card" class="details-card" style="display: none; padding: 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 6px;">
+                        <h4 id="guide-overview-title" style="color: #fff; margin-bottom: 0.5rem;"></h4>
+                        <p id="guide-overview-desc" style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 8: CHANGE LOG -->
+        <div id="tab-changelog" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">📜 Server Version Control & Change Log</div>
+                <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
+                
+                <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--primary); padding-left: 1.5rem; margin-left: 0.5rem;">
+                    <!-- VERSION 1.0.2 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.2 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 28, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Companion Bots (mod-playerbots)</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Druid Thorns Shifting Fix:</strong> Patched <code>DruidTriggers.cpp</code> so that Druid companion bots will not shift into Bear Form or Cat Form if there are party members missing <em>Thorns</em> or <em>Mark of the Wild</em>, ensuring proper buff coverage before shifting.</li>
+                            <li><strong>Altbot Init Bypass:</strong> Patched <code>PlayerbotMgr.cpp</code> to bypass the C++ <code>addClassBot</code> restriction, allowing players to run <code>.playerbots bot init=[quality]</code> commands on their own alt companions to generate level-appropriate gear in-game.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🔧 Server Tools & Mail System</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Automated Mail Skill:</strong> Implemented a secure workspace tool to send in-game mail with gold, bags, and items directly from the workstation shell, resolving quote-escaping errors.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.0.1 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.1</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 28, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🎁 Custom Items & Eluna Features</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Heart of the Cleansed Timberling (Item 99001):</strong> Designed and deployed a custom Epic trinket that summons a friendly Cleansed Timberling (NPC 3570) to protect the player in combat for 2 minutes.</li>
+                            <li><strong>Quest Mail Reward Engine:</strong> Integrated an Eluna Lua script that delivers the trinket via a custom Druid-themed mail envelope from the <em>Great Bear Spirit</em> upon completing the <em>"Body and Heart"</em> quest.</li>
+                            <li><strong>Post-Completion Delivery:</strong> Implemented a database-backed login hook that checks for completed quest state and delivers the mail to active characters who already cleared the quest.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🔧 Client Addon Patches & Shims</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>QuestPOI Safe Hook:</strong> Intercepted and wrapped <code>QuestPOI_SelectButtonByQuestId</code> in a protected <code>pcall</code> loop to prevent client Lua errors (nil button index crashes) in WotLK tracker frames.</li>
+                            <li><strong>Guidelime Logout Crash Fix:</strong> Patched a table index nil error in Guidelime's <code>PLAYER_LOGOUT</code> handler caused by <code>UnitGUID("player")</code> returning nil, ensuring player progression data saves cleanly on logout.</li>
+                            <li><strong>Questie Tracker Nil Error Fix:</strong> Wrapped tracker frame height calculations in safety checks to prevent arithmetic errors when quest coordinates are briefly nil during screen redraws.</li>
+                            <li><strong>Guidelime Quest Turn-In Revert Fix:</strong> Bridged Guidelime's completed quest database to read directly from Questie's local database (<code>Questie.db.char.complete</code>), bypassing missing WotLK client APIs and preventing completed quest steps from reverting.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.0.0 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.0</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 28, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🔧 Client Addon Patches & Shims</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Guidelime Safe-Checks:</strong> Patched <code>QuestLog-Classic.lua</code> to prevent <code>nil</code> UI element errors caused by custom Quest Log frames.</li>
+                            <li><strong>WorldMap Pin Pooling:</strong> Injected global pinPools and AcquirePin/RemovePin shims inside Questie compat to support WotLK.</li>
+                            <li><strong>LibStub Memory Fix:</strong> Overrode <code>CreateFrame</code> for scroll frames to assign unique names and reuse a static <code>SetEnabled</code> shim, preventing memory block allocation crashes.</li>
+                            <li><strong>Vector Math Compatibility:</strong> Added <code>CreateVector2D</code> and <code>GetXY</code> shims to support HereBeDragons-2.0.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Bot Companions (mod-playerbots)</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Druid Thorns:</strong> Patched Druid AI strategy to automatically buff all party members with Thorns instead of only the main tank.</li>
+                            <li><strong>Altbot Bypass:</strong> Allowed Game Masters to bypass account ownership limits to manage account-created alts via playerbot command flags.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Server Configuration & Database Updates</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Auction House Economy:</strong> Boosted AHBot limits from 250 to 5,000 items (Alliance/Horde) and 3,000 items (Neutral).</li>
+                            <li><strong>Ping Disconnect Bypass:</strong> Disabled strict overspeed ping check (<code>MaxOverspeedPings = 0</code>) to prevent kicks during minor client lag spikes.</li>
+                            <li><strong>Eluna Mail Restored:</strong> Commented out buggy <code>OnPlayerSendMail</code> hook in <code>autobiographer.lua</code> to prevent internal mail database errors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        let wikiData = null;
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('wiki_data.json')
+                .then(res => res.json())
+                .then(data => {
+                    wikiData = data;
+                    serverCharacters = data.characters || [];
+                    
+                    // Populate Game Events
+                    const eventsBody = document.getElementById('wiki-events-body');
+                    const eventsCount = document.getElementById('events-count');
+                    if (eventsBody && data.events) {
+                        eventsCount.textContent = data.events.length;
+                        eventsBody.innerHTML = data.events.map(evt => `
+                            <tr class="wiki-event-row" data-search="${evt.id} ${evt.name.toLowerCase()}" style="border-bottom: 1px solid rgba(255, 255, 255, 0.02);">
+                                <td style="padding: 0.25rem 0.5rem; font-weight: 600; color: var(--text-primary);">#${evt.id}</td>
+                                <td style="padding: 0.25rem 0.5rem;">${evt.name}</td>
+                            </tr>
+                        `).join('');
+                    }
+                    
+                    // Populate Ollama Personalities
+                    const personalitiesBody = document.getElementById('ollama-personalities-body');
+                    if (personalitiesBody && data.personalities) {
+                        personalitiesBody.innerHTML = data.personalities.map(pers => `
+                            <tr>
+                                <td style="padding: 0.75rem 1rem;"><strong style="color: var(--accent-hover);">${pers.key}</strong></td>
+                                <td style="padding: 0.75rem 1rem; color: var(--text-primary); font-size: 0.9rem;">${pers.prompt}</td>
+                            </tr>
+                        `).join('');
+                    }
+                })
+                .catch(err => {
+                    console.error("Failed to load wiki data:", err);
+                });
+        });
+
+        // Main Tab Switcher
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.wiki-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.menu-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show target tab content
+            document.getElementById('tab-' + tabId).style.display = 'block';
+
+            // Find clicked button and activate it
+            const activeBtn = document.getElementById('tabbtn-' + tabId);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        // Sub Tab Switcher (Commands)
+        function switchSubTab(subTabId) {
+            // Hide all sub tab contents
+            const contents = document.querySelectorAll('.sub-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Deactivate all sub tab buttons
+            const buttons = document.querySelectorAll('.sub-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show target sub tab content
+            document.getElementById('subtab-' + subTabId).style.display = 'block';
+
+            // Activate clicked button
+            document.getElementById('subbtn-' + subTabId).classList.add('active');
+        }
+
+        // RXP Database Dropdown Lists
+        const RXP_GUIDE_MAP = {
+            "TUGs Alliance 1-60": [
+                "1-6 Dwarf&Gnome",
+                "1-6 Northshire",
+                "6-9 Dwarf&Gnome",
+                "6-9 Elwynn Forest",
+                "9-12 Dun Morogh",
+                "9-12 Elwynn Forest",
+                "12-15 Loch Modan",
+                "12-15 Westfall",
+                "15-20 Loch Modan & Redridge",
+                "20-25 Wetlands",
+                "25-30 Duskwood",
+                "30-40 Stranglethorn Vale & Arathi",
+                "40-50 Tanaris & Hinterlands",
+                "50-60 Western & Eastern Plaguelands"
+            ],
+            "Flymolo Outland 58-70 (Alliance)": [
+                "58-61 Hellfire Peninsula",
+                "61-63 Zangarmarsh",
+                "63-65 Terokkar Forest",
+                "65-67 Nagrand",
+                "67-68 Blade's Edge Mountains",
+                "68-69 Netherstorm",
+                "69-70 Shadowmoon Valley"
+            ]
+        };
+
+        function updateGuideNames() {
+            const groupSelect = document.getElementById('guide-group-select');
+            const nameSelect = document.getElementById('guide-name-select');
+            const selectedGroup = groupSelect.value;
+            
+            nameSelect.innerHTML = '';
+            const guides = RXP_GUIDE_MAP[selectedGroup] || [];
+            guides.forEach(guide => {
+                const opt = document.createElement('option');
+                opt.value = guide;
+                opt.textContent = guide;
+                nameSelect.appendChild(opt);
+            });
+        }
+
+        function displayGuideOverview() {
+            const groupSelect = document.getElementById('guide-group-select');
+            const nameSelect = document.getElementById('guide-name-select');
+            const titleEl = document.getElementById('guide-overview-title');
+            const descEl = document.getElementById('guide-overview-desc');
+            const cardEl = document.getElementById('guide-overview-card');
+
+            titleEl.textContent = `📍 Selected Path: ${nameSelect.value}`;
+            descEl.innerHTML = `This path belongs to the <strong>${groupSelect.value}</strong> guide group.<br><br>
+                                 • <strong>Status:</strong> Active & Compiled inside the game database.<br>
+                                 • <strong>Waypoints:</strong> Dynamic 3D compass coords automatically mapped to coordinate frames in-game.<br>
+                                 • <strong>How to load:</strong> Log into the client on a character matching this level bracket/faction. The addon will auto-select it, or you can cycle to it using the <strong>Next Guide</strong> button on the top right of the addon tracker frame.`;
+            cardEl.style.display = 'block';
+        }
+
+        // Initialize guide dropdowns on load
+        window.addEventListener('load', () => {
+            updateGuideNames();
+        });
+
+        // Copy Text Helper
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            }).catch(err => {
+                prompt('Copy this text:', text);
+            });
+        }
+
+        // Character Autocomplete Search logic
+        let serverCharacters = [];
+        
+        const CLASS_NAMES = {
+            1: { name: 'Warrior', color: '#C79C6E' },
+            2: { name: 'Paladin', color: '#F58CBA' },
+            3: { name: 'Hunter', color: '#A9D271' },
+            4: { name: 'Rogue', color: '#FFF569' },
+            5: { name: 'Priest', color: '#FFFFFF' },
+            6: { name: 'Death Knight', color: '#C41F3B' },
+            7: { name: 'Shaman', color: '#0070DE' },
+            8: { name: 'Mage', color: '#40C7EB' },
+            9: { name: 'Warlock', color: '#8787ED' },
+            11: { name: 'Druid', color: '#FF7D0A' }
+        };
+        
+        const RACE_NAMES = {
+            1: 'Human', 2: 'Orc', 3: 'Dwarf', 4: 'Night Elf', 5: 'Undead',
+            6: 'Tauren', 7: 'Gnome', 8: 'Troll', 10: 'Blood Elf', 11: 'Draenei'
+        };
+
+        function filterCharSearch(val) {
+            const dropdown = document.getElementById('bioCharSearchDropdown');
+            const clearBtn = document.getElementById('clearSearchBtn');
+            
+            if (!val.trim()) {
+                dropdown.style.display = 'none';
+                clearBtn.style.display = 'none';
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            const query = val.toLowerCase();
+            const matches = serverCharacters.filter(c => c.name.toLowerCase().includes(query)).slice(0, 10);
+            
+            if (matches.length > 0) {
+                dropdown.innerHTML = matches.map(c => {
+                    const classInfo = CLASS_NAMES[c.class] || { name: 'Unknown', color: '#fff' };
+                    const raceName = RACE_NAMES[c.race] || 'Unknown';
+                    
+                    return `
+                        <div class="autocomplete-item" onclick="selectCharacter(${c.guid}, '${escapeJsString(c.name)}')">
+                            <div>
+                                <strong style="color: #fff; font-size: 0.95rem;">${c.name}</strong>
+                                <span style="color: var(--text-secondary); font-size: 0.85rem; margin-left: 0.5rem;">Lvl ${c.level} ${raceName}</span>
+                            </div>
+                            <span class="class-badge" style="background: rgba(255,255,255,0.03); border: 1px solid ${classInfo.color}; color: ${classInfo.color};">
+                                ${classInfo.name}
+                            </span>
+                        </div>
+                    `;
+                }).join('');
+                dropdown.style.display = 'block';
+            } else {
+                dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">No matching characters found</div>`;
+                dropdown.style.display = 'block';
+            }
+        }
+        
+        function selectCharacter(guid, name) {
+            document.getElementById('bioCharSearchInput').value = name;
+            document.getElementById('bioCharSearchDropdown').style.display = 'none';
+            loadCharBioDetails(guid);
+        }
+        
+        function clearCharSearch() {
+            document.getElementById('bioCharSearchInput').value = '';
+            document.getElementById('bioCharSearchDropdown').style.display = 'none';
+            document.getElementById('clearSearchBtn').style.display = 'none';
+            document.getElementById('charBioContent').style.display = 'none';
+        }
+        
+        function escapeJsString(str) {
+            return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const container = document.getElementById('bioCharSearchDropdown');
+            const input = document.getElementById('bioCharSearchInput');
+            if (container && e.target !== container && e.target !== input) {
+                container.style.display = 'none';
+            }
+        });
+
+
+
+        function filterWikiEvents(query) {
+            query = query.toLowerCase();
+            const rows = document.querySelectorAll('.wiki-event-row');
+            rows.forEach(row => {
+                const searchText = row.getAttribute('data-search');
+                if (searchText.includes(query)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function loadCharBioDetails(guid) {
+            const bioContent = document.getElementById('charBioContent');
+            const timeline = document.getElementById('bioTimeline');
+            const killsBody = document.getElementById('bioKillsBody');
+            const chatsBody = document.getElementById('bioChatsBody');
+            
+            if (!guid) {
+                bioContent.style.display = 'none';
+                return;
+            }
+            
+            timeline.innerHTML = '<div style="color: var(--text-secondary); padding: 1rem 0;">Loading timeline...</div>';
+            killsBody.innerHTML = '<tr><td colspan="2" style="color: var(--text-secondary); text-align: center; padding: 1.5rem;">Loading kills...</td></tr>';
+            chatsBody.innerHTML = '<tr><td colspan="2" style="color: var(--text-secondary); text-align: center; padding: 1.5rem;">Loading chat history...</td></tr>';
+            bioContent.style.display = 'block';
+            
+            // Look up from loaded static wiki data
+            const bio = (wikiData && wikiData.biographies && wikiData.biographies[guid]) || [];
+            const kills = (wikiData && wikiData.kills && wikiData.kills[guid]) || [];
+            const chats = (wikiData && wikiData.chats && wikiData.chats[guid]) || [];
+            const data = { success: true, bio, kills, chats };
+            
+            setTimeout(() => {
+                if (data.success) {
+                    // 1. Render Timeline
+                    if (data.bio && data.bio.length > 0) {
+                        timeline.innerHTML = data.bio.map(item => `
+                            <div class="timeline-item">
+                                <div class="timeline-date">${item.timestamp} [${item.type}]</div>
+                                <div class="timeline-content">${item.details}</div>
+                            </div>
+                        `).join('');
+                    } else {
+                        timeline.innerHTML = '<div style="color: var(--text-secondary); padding: 1rem 0;">No biography logs exist yet for this character. Actions like level-ups, deaths, and completed quests will be recorded here!</div>';
+                    }
+                    
+                    // 2. Render Kills
+                    if (data.kills && data.kills.length > 0) {
+                        killsBody.innerHTML = data.kills.map(k => `
+                            <tr>
+                                <td><strong>${k.name}</strong></td>
+                                <td style="text-align: right; color: var(--accent-hover); font-weight: bold;">${k.count}</td>
+                            </tr>
+                        `).join('');
+                    } else {
+                        killsBody.innerHTML = '<tr><td colspan="2" style="color: var(--text-secondary); text-align: center; padding: 1.5rem;">No monster kills recorded yet.</td></tr>';
+                    }
+                    
+                    // 3. Render Chats
+                    if (data.chats && data.chats.length > 0) {
+                        chatsBody.innerHTML = data.chats.map(c => {
+                            let badgeColor = 'rgba(255, 255, 255, 0.08)';
+                            let textColor = 'var(--text-secondary)';
+                            if (c.type === 'SAY' || c.type === 'YELL') {
+                                badgeColor = 'rgba(16, 185, 129, 0.08)';
+                                textColor = 'var(--status-success)';
+                            } else if (c.type === 'WHISPER') {
+                                badgeColor = 'rgba(139, 92, 246, 0.08)';
+                                textColor = 'var(--accent-hover)';
+                            } else if (c.type === 'PARTY') {
+                                badgeColor = 'rgba(59, 130, 246, 0.08)';
+                                textColor = '#60a5fa';
+                            } else if (c.type === 'GUILD') {
+                                badgeColor = 'rgba(245, 158, 11, 0.08)';
+                                textColor = '#fbbf24';
+                            }
+                            
+                            return `
+                                <tr>
+                                    <td><span style="display: inline-block; padding: 0.15rem 0.4rem; border-radius: 4px; background: ${badgeColor}; color: ${textColor}; font-size: 0.7rem; font-weight: 600;">${c.type}</span></td>
+                                    <td style="color: var(--text-primary); font-size: 0.85rem;">
+                                        <div style="font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 0.1rem; font-family: monospace;">${c.timestamp}</div>
+                                        ${c.details}
+                                    </td>
+                                </tr>
+                            `;
+                        }).join('');
+                    } else {
+                        chatsBody.innerHTML = '<tr><td colspan="2" style="color: var(--text-secondary); text-align: center; padding: 1.5rem;">No local or party chats recorded yet.</td></tr>';
+                    }
+                } else {
+                    alert('Error: ' + data.output);
+                }
+            })
+            .catch(err => alert('Request failed: ' + err));
+        }
+    </script>
+</body>
+</html>
