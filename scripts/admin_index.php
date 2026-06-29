@@ -1554,7 +1554,7 @@ if (isset($_GET['action'])) {
     }
 
     if ($action === 'search_items') {
-        $query = trim($_GET['query'] ?? '');
+        $query = trim($_POST['query'] ?? $_GET['query'] ?? '');
         if (empty($query)) {
             echo json_encode(array('success' => false, 'items' => []));
             exit;
@@ -2958,8 +2958,10 @@ if ($dbOnline) {
         <!-- TAB 3: CHARACTER TOOLS -->
         <div class="tab-content" id="tab-char-tools">
             <div class="card-split-grid">
-                <!-- Character Search and Editor -->
-                <div class="card">
+                <!-- Left Column -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Character Search and Editor -->
+                    <div class="card">
                     <div class="card-title">Character Editor & Teleporter</div>
                     <label for="charSearchInput">Search Character Name</label>
                     <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center; margin-bottom: 1rem;">
@@ -3131,8 +3133,11 @@ if ($dbOnline) {
                     </form>
                 </div>
 
-                <!-- Account Creator Card -->
-                <div class="card">
+                </div>
+                <!-- Right Column -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Account Creator Card -->
+                    <div class="card">
                     <div class="card-title">Create Game Account</div>
                     <form onsubmit="createGameAccountForm(event)">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -3160,6 +3165,7 @@ if ($dbOnline) {
                     <div id="accountCreationOutput" style="margin-top: 1rem; border-radius: 8px; padding: 0.75rem; font-size: 0.9rem;"></div>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- TAB 4: LIVE AUCTION HOUSE -->
@@ -4938,6 +4944,7 @@ if ($dbOnline) {
                 if (data.success && data.config) {
                     document.getElementById('llmHost').value = data.config.host;
                     document.getElementById('llmPort').value = data.config.port;
+                    console.log("LLM config loaded:", data.config);
                     document.getElementById('llmModel').value = data.config.model;
                     document.getElementById('llmTemp').value = data.config.temp;
                     document.getElementById('llmPrompt').value = data.config.system_prompt;
