@@ -956,6 +956,39 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     </ul>
                 </div>
 
+                <!-- GM Merchant Spawning Card -->
+                <div class="card" style="margin-top: 1.5rem; border-color: rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.02);">
+                    <div class="card-title" style="color: #10b981; font-size: 1.1rem;">🛒 GM Merchant Spawning & Cleanup</div>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Use these commands to spawn essential vendors anywhere in the world. These are standard generic NPCs that match the cleanup macro below.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; font-size: 0.85rem; margin-bottom: 0.4rem;">General Trade Goods & Bags</h4>
+                            <code onclick="copyText('.npc add 15396')">.npc add 15396</code>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; font-size: 0.85rem; margin-bottom: 0.4rem;">Reagent Vendor</h4>
+                            <code onclick="copyText('.npc add 15393')">.npc add 15393</code>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; font-size: 0.85rem; margin-bottom: 0.4rem;">Innkeeper</h4>
+                            <code onclick="copyText('.npc add 15394')">.npc add 15394</code>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; font-size: 0.85rem; margin-bottom: 0.4rem;">Repair Vendor & Armorer</h4>
+                            <code onclick="copyText('.npc add 15397')">.npc add 15397</code>
+                        </div>
+                    </div>
+
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🧹 Cleanup Macro: DeleteVendor</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Create a macro named <strong>DeleteVendor</strong> to instantly target and remove any of these spawned merchants when you are done with them:</p>
+                    <pre style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);"><code style="color: #10b981; font-family: monospace; font-size: 0.9rem; display: block; line-height: 1.5;">/target General Goods
+/target Reagents
+/target Innkeeper
+/target Armorer
+.npc delete</code><button class="btn-copy" onclick="copyText('/target General Goods\n/target Reagents\n/target Innkeeper\n/target Armorer\n.npc delete')">Copy</button></pre>
+                </div>
+
                 <!-- Sub-tabs for categories -->
                 <div class="sub-tabs">
                     <button class="sub-tab-btn active" id="subbtn-movement" onclick="switchSubTab('movement')">Movement & Stance</button>
