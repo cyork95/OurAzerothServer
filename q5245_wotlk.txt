@@ -1,0 +1,815 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+0:32
+/
+2:55
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Kalimdor
+Winterspring
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 56
+Requires level 53
+Side: Alliance
+Start: Jaron Stoneshaper
+End: Aurora Skycaller
+Not sharable
+Difficulty: 53  54  59  67
+Added in patch 1.13.2 "Classic"
+
+
+Series
+
+1.
+To Winterspring!
+Starfall
+
+2.
+The Ruins of Kel'Theril
+
+3.
+Troubled Spirits of Kel'Theril
+
+4.
+Fragments of the Past
+
+5.
+Fragments of the Past
+
+
+Screenshots (1)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Troubled Spirits of Kel'Theril
+Use Jaron's Pick to find the four Highborne Relic Fragments. Bring them to Aurora Skycaller in Eastern Plaguelands.
+	First Relic Fragment
+
+	Second Relic Fragment
+
+	Third Relic Fragment
+
+	Fourth Relic Fragment
+Provided item:
+	Jaron's Pick
+Relevant Locations
+This quest starts in Winterspring and ends in Eastern Plaguelands.
+Tip: Click map to zoom
+Hide pins
+Winterspring
+Description
+The highborne spirits are miserable creatures, that's for sure. They are still searching for pieces of the very thing that has cursed them to Kel'Theril forever -- the stolen relic.
+
+If you are that interested, take my pick and go south to the lake, see if you can gather the pieces of it from within the ice.
+
+Now, I can't tell you a thing about what you find, but I do know of someone who might... Aurora Skycaller; she dwells near the Northpass Tower in the northern part of Eastern Plaguelands.
+Progress
+Completion
+Rewards
+You will receive: 0
+Gains
+Upon completion of this quest you will gain:
+8,450 experience
+25 reputation with Alliance
+LEVEL
+66
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5245))
+Gather info with the Wowhead Client
+Related
+Comments (106)
+Screenshots (1)
+Videos (2)
+1 - 40 of 106
+Next ›
+Last »
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+Classic
+Burning Crusade
+3.3.3
+3.3.2
+3.2.2
+3.2.0
+3.0.9
+3.0.3
+3.0.2
+2.4.3
+2.4.1
+2.3.3
+2.3.0
+2.2.3
+2.2.2
+2.1.3
+2.1.2
+2.1.1
+2.1.0
+2.0.12
+2.0.8
+2.0.6
+2.0.5
+2.0.1
+1.12.1
+1.12.0
+1.11.2
+1.11.0
+1.10.2
+1.9.4
+1.9.2
+1.9.0
+1.8.4
+1.8.0
+1.7.1
+1.7.0
+1.6.1
+1.6.0
+1.5.1
+1.4.2
+1.3.1
+1.2.4
+1.2.1
+
+114
+
+
+From ThottbotBy johnny on 2005/12/20 (Patch 1.8.4)
+
+Subject: "Location"
+First Relic Fragment:  55,42
+Second Relic Fragment: 50,41
+Third Relic Fragment:  53,43
+Forth Relic Fragment:  52,41
+
+1
+
+
+
+HardnThick on 2006/12/20 (Patch 2.0.1)Subject: "Perfect!"
+
+Perfect locations, easily obtained.
+
+42
+
+
+By 4526 (4,482 – 10·40) on 2006/12/10 (Patch 2.0.1)
+
+Just look around Lake Kel'Theril.
+
+55,43 First Relic Fragment
+51,42 Second
+53,42 Third
+52,42 Fourth
+
+0
+
+
+
+86477 on 2007/11/07 (Patch 2.2.3)
+
+2nd is at 50,41
+
+
+
+1
+
+
+
+128626 on 2008/02/29 (Patch 2.3.3)
+
+ya i think they changed it during the patches ;/
+
+
+
+5
+
+
+
+70494 on 2008/03/23 (Patch 2.3.3)
+
+On a map: https://www.wowhead.com/wotlk/maps=618:550431510415531421520421
+
+
+
+6
+
+
+
+106847 on 2008/04/16 (Patch 2.4.1)
+
+For those who have more precise coords: 1st: 55.4 42.8 2nd: 50.9 41.7 3rd 53.3 43.4 4th 52.4 41.5
+
+29
+
+
+By 21580 (611 – 1·4) on 2007/02/11 (Patch 2.0.6)
+
+If you pick up the relic and immediately mount and ride away you can get away from the spawning spirits most of the time.
+
+3
+
+
+
+66392 on 2007/06/29 (Patch 2.1.2)
+
+THIS is absolutely the trick to doing this quest quickly with no fighting necessary. I was able to breeze right through. On two of the pickups, I was quick enough on the mount summoning that the Highbornes did not seem to appear.
+
+
+
+4
+
+
+
+Krush on 2007/09/18 (Patch 2.1.3)
+
+Note: Going back into Stealth (Rogue) did not work... They saw right through it. Also clear out the area if you are going to fight, they will pull any adds that are in the area with them.
+
+
+
+3
+
+
+
+41896 on 2008/03/19 (Patch 2.3.3)
+
+The Highbornes do drop some nice stuff if you can kill them do so.
+
+
+
+1
+
+
+
+113709 on 2008/04/18 (Patch 2.4.1)
+
+As well as this, if you are a shaman or a druid, you can shapeshift into Ghost Wolf or Travel Form, which is a much less cumbersome solution.
+
+
+
+1
+
+
+
+322659 on 2009/04/15 (Patch 3.1.0)
+
+However, once the ghosts or whatever appear, Vanish works normally.
+
+Show 1 More Reply
+
+22
+
+
+From ThottbotBy IanEnc on 2005/10/08 (Patch 1.7.1)
+
+Subject: "<Blank>"
+All of the relics are found on the frozen lake just South South West of Everlook.  The lake is filled with water elementals (levels 56 to a possible rare 60 elite spawn) and undead spirits.
+
+One relic is at the north part of the lake, another east, south and west.
+
+Beware though, because everytime you mine a relic it releases 2 undead spirits levels 54-56 after you.
+
+6
+
+
+
+jonpugh on 2007/07/27 (Patch 2.1.3)Subject: "Re: no elementals"
+
+The Elementals are only at the lake during an invasion. Normally it's only ghosts and miners in the area (there are 4+ rich thorium spawns around the lake).
+
+
+
+42
+
+
+
+borretje on 2007/10/08 (Patch 2.2.2)
+
+I did this quest to day 30-9-2007 and had no real problem with it.
+I found relic 3 and 1 very simple and had nothing chasing me.
+Then I wanted to find out if you had the loc of all the parts.
+Only after that I was chased by 2 undead after mining the last 2 parts.
+(I wonder what would have happened if I didn't read the information you give me ;) )
+
+Ok, loc of all the parts are as follow.
+Part 1 55,42
+Part 2 50,41
+Part 3 53,43
+Part 4 52,41
+
+22
+
+
+From ThottbotBy Fieryire on 2006/09/01 (Patch 1.12.0)
+
+Subject: "Location of Aurora Skycaller."
+I found Aurora Skycaller at coords 53:21 in Eastern Plaguelands.  For those without coords it is below Quel'Lithien Lodge in the north central part of Eastern Plagulands.
+
+This was as of 25 AUG 06.
+
+14
+
+
+By kisbal (613 – 11·11) on 2009/01/04 (Patch 3.0.3)
+
+This quest counts for Loremaster of Kalimdor.
+
+13
+
+
+By 64435 (188 – 1·1) on 2007/06/25 (Patch 2.1.2)
+
+Aurora Skycaller can be found at coords (53, 21) or a bit NorthWest of Northpass Tower, in Eastern Plaguelands.
+
+12
+
+
+From ThottbotBy Kalbur on 2006/12/20 (Patch 2.0.1)
+
+Subject: "Locations"
+First Relic Fragment: 55,42
+Second Relic Fragment: 50, 41
+Third Relic Fragment: 55, 43
+Fourth Relic Fragment: 52, 41
+Aurora Skycaller (EPL):  53, 21
+For those without coords, type /m to create a macro, hit the New button, type a name for it, get the I beam on the text area, and copy and paste the following:
+
+/script px,py=GetPlayerMapPosition("player")
+/script DEFAULT_CHAT_FRAME:AddMessage(format("[ %s ] %d , %d",GetZoneText(),px*100,py*100));
+
+When you use this macro, it will tell you what zone you're in and the coords of where you are standing!
+
+0
+
+
+
+Taserface on 2020/04/18 (Classic)
+
+Or copy and past this in a macro and aa little window will appear that constantly give you your locations coordinates. /run local p,f="player",CreateFrame("Button",nil,UIParent,"OptionsButtonTemplate")f:SetPoint("TOP",0,0)f:SetScript("OnUpdate",function(s,e)x,y=C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit(p),p):GetXY()f:SetText(format("x%.1f y%.1f",x*100,y*100))end)
+
+12
+
+
+By 10315 (3,330 – 3·32) on 2007/01/20 (Patch 2.0.5)
+
+Once you finish "picking" a relic, no matter whether you looted it or not 2 lvl 54-55 Highborne will spawn and attack you, regardless of how far you are.
+
+11
+
+
+From ThottbotBy Deathsmaster on 2007/01/25 (Patch 2.0.6)
+
+Subject: "100% Accurate"
+The fragments are all located as follows:
+First Relic: 55,42
+Second Relic: 50,41
+Third Relic: 53,43
+Forth Relic: 52,41
+After obtaining all fragments, it asks you to go to Aurora Skycaller in Eastern Plaguelands at Northpass Tower.  She is located at 2 locations, she goes back and forth to them.  As follows:
+Location 1: 52,21 (at a small moonwell below the
+                    lodge north west of the tower)
+Location 2: 56,24 (inside Northpass Tower)
+If you don't have a UI or macro that tells you locations; here's one you can use:
+
+Location Macro (just copy and paste in macro):
+
+/script px,py=GetPlayerMapPosition("player")
+/script DEFAULT_CHAT_FRAME:AddMessage(format("[ %s ] %s , %s",GetZoneText(),(px*100),(py*100)))
+
+This Message was posted by Deathsmaster, Server = Hellscream
+
+8
+
+
+By 50808 (270 – 1·3) on 2007/05/17 (Patch 2.0.12)
+
+can I destroy the pick ax when I finish this?
+
+5
+
+
+
+40195 on 2007/06/10 (Patch 2.1.1)
+
+Aurora does not ask for the pick, so it would SEEM as though it's safe to destroy the pick once you've collected all four fragments.
+
+6
+
+
+From ThottbotBy malleh on 2006/03/03 (Patch 1.9.4)
+
+Subject: "Coords for relics!"
+First Relic Fragment  55,42
+Second Relic Fragment 50,41
+Third Relic Fragment  53,43
+Forth Relic Fragment  52,41
+
+6
+
+
+From ThottbotBy Pwnin on 2008/06/22 (Patch 2.4.1)
+
+Subject: "Re: Troubled Spirits of Kel'Theril [5245]"
+coords-
+First Relic Fragment-55,42
+Second Relic Fragment-50,41
+Third Relic Fragment-55,43
+Fourth Relic Fragment-52,41
+
+For people without coords;
+It's really easy to find, just SouthWest of Everlook, the frozen lake. but be careful because once you loot the relics 2 undead spirits pop up
+
+hope this helps :)
+
+5
+
+
+From ThottbotBy TenitrhusDaggerspineUS on 2007/09/01 (Patch 2.1.3)
+
+Subject: "Re: Troubled Spirits of Kel'Theril [5245]"
+Hey... she's pretty hot.
+
+5
+
+
+By 133862 (202 – 3) on 2009/02/22 (Patch 3.0.9)
+
+Watch out for Princess Tenpestria (Tempestria) lvl 60 Elite..she has 3 guards...all elementals. She wasn't there the first time I did this quest on a diff toon, but this time around she was there...
+
+4
+
+
+From AllakhazamBy LedZep on 2005/09/15 (Patch 1.7.0)
+
+Subject: "Easy"
+Did this as a 52 holy priest.. dug up the relic, shield and ran from mobs.. repeat x3
+
+4
+
+
+From ThottbotBy Elysaoem on 2006/06/20 (Patch 1.11.0)
+
+Subject: "Coords:"
+First Relic Fragment:  55,42
+Second Relic Fragment: 50,41
+Third Relic Fragment:  53,43
+Forth Relic Fragment:  52,41
+
+4
+
+
+By 64664 (6,686 – 1·6·81) on 2007/07/23 (Patch 2.1.3)
+
+Watch out for the Water elementals that roam around there, they are around lvl 56-58 and they really hurt a lot.
+It seems they only pop up under certain condtions. On my druid there weren't any of them, however when my warrior did the part there were a few of them at every relic.
+
+4
+
+
+By syth (5,621 – 1·19·36) on 2007/09/24 (Patch 2.1.3)
+
+I don't know if they changed the timing, but even with auto-loot on, I was not able to get more than 60% through summoning my mount before the adds appeared.
+
+4
+
+
+From ThottbotBy Minkusu on 2007/12/02 (Patch 2.3.0)
+
+Subject: "Re: Troubled Spirits of Kel'Theril [5245]"
+Commenting on the Comments for the PREVIOUS Quest in this chain, THIS precise Quest info is for turning into the Skycaller.... Lady.... For lack of better words in Eastern Plague, Speaking of which, is she possible to get to at lvl 56 (BM Hunter)?
+
+Please, Make sure you're posting info in the right quest spots, it makes it hard to find the actual info for the quests when we have to read thru all that crap from the previous quest that we finished already.
+
+4
+
+
+By 123204 (136 – 0) on 2008/12/27 (Patch 3.0.3)
+
+she is found at 48.85, 17.68 at quel'lithien lodge
+
+4
+
+
+By 166755 (1,403 – 2·19) on 2009/09/12 (Patch 3.2.0)
+
+As a level 55 fire Mage, I had a very hard time with this one. There were more Elemental rooming around than teens at the Mall on Sunday. No matter how careful I was, they repeatedly swarmed on me. Blinking and running didn't help since they were in every direction. All I could do was loot the Relic and try to run close to the next one before I died. Res and repeat. Surely it is not normally this way. I've done this quest with 7 of my other toons and have never had this kind of problem or seen this many Elementals. Good luck to all.
+
+4
+
+
+By XxTimetoKillxX (14,263 – 3·30·162) on 2010/05/31 (Patch 3.3.3)
+
+Counts toward Loremaster of Kalimdor, as well do the first 2 and last 2 in this chain, I suggest handing this quest in with The Everlook Report and Duke Nicholas Zverenhoff as they both count towards Kalimdor as well, and can be picked up in Everlook.
+
+3
+
+
+From AllakhazamBy Scarkh on 2005/03/20 (Patch 1.2.4)
+
+Subject: "first fragment"
+im actually having problems finding the first fragment. I can get the others by picking the ice at the other locations but whenever i try picking for the first fragment i get nothing and i must fight the two mobs that spawn everytime i try which is very annoying.
+
+I have tried abandoning the quest and destroying the items to restart the quest but still there is this problem. Am i the only one experiencing this?
+
+1
+
+
+
+BurgesstheRed on 2005/05/28 (Patch 1.4.2)Subject: "RE: first fragment"
+
+Im having trouble also looting the first relic piece. Everytime I get there is no loot to get.
+
+
+
+1
+
+
+
+MidnightSpecialist on 2006/03/06 (Patch 1.9.4)Subject: "RE: first fragment"
+
+yup i'm on Cenarion and i picked one and nothing then picked the other 3 and got them immediately 1-3. 4th won't appear at all, sent GM a notice but i've read on various sites that this quest is glitchy like that. I just dropped it and am gonna try again. Some others are saying that they come back and it spawns, odd, really frustrating. I hope blizzard fixes this problem soon.
+
+3
+
+
+From ThottbotBy agoriani on 2006/07/27 (Patch 1.11.2)
+
+Subject: "easy q"
+First Relic Fragment:  55,42
+Second Relic Fragment: 50,41
+Third Relic Fragment:  53,43
+Forth Relic Fragment:  52,41
+
+all above places are in the frozen lake kel' theril south from the quest giver.
+Every time you open a relic spawns 1 or 2 undead 55lvl but you can take the relic and run if you dont want to waste time...
+
+3
+
+
+From ThottbotBy kraveboi on 2007/05/15 (Patch 2.0.12)
+
+Subject: "where to find Jaron Stoneshaper's"
+Jaron is in Eastern Plaguelands at cords 53,21 i have also attached 2 pics.
+
+She is not in castle she is just left of it when facing castle. She's hidden in between some tree's...
+
+Kraveboi
+(Greymayne)
+
+3
+
+
+By 65603 (11,764 – 6·19·41) on 2007/10/10 (Patch 2.2.3)
+
+If you summon your mount as you're collecting the loot, you can run away with about 0.5 seconds left before they spawn.
+
+1
+
+
+
+44517 on 2007/10/19 (Patch 2.2.3)
+
+If you're a mage, blink and run works, and yes I have auto loot st up, who wouldn't?
+
+3
+
+
+By 94904 (112 – 0) on 2007/10/21 (Patch 2.2.3)
+
+The water elementals show up if Princess Tempestria spawns. More about here at this Wowhead link. They are immune to cold based spells or it seemed that way to me. Only fire and arcane worked on em.
+https://www.wowhead.com/wotlk/npc=14457
+If the elementals are not spawned, this quest is fairly easy to get the goods and get out, if you don't slack around. Mage blink works well.
+Last edited by 94904 on 2007/10/21 (Patch 2.2.3)
+
+3
+
+
+By 81728 (147 – 1) on 2007/11/04 (Patch 2.2.3)
+
+I found the second relic at 50,41 o_o
+
+3
+
+
+By 86477 (1,086 – 4·15) on 2007/11/07 (Patch 2.2.3)
+
+if yer a preist- cast shield before you trigger them- then its easier to summon horse and leg it
+
+3
+
+
+By 100501 (235 – 3·3) on 2007/12/28 (Patch 2.3.0)
+
+8450 xp as of patch 2.3
+
+3
+
+
+By 114856 (178 – 2) on 2008/01/06 (Patch 2.3.0)
+
+Wow, that was the second fastest 8450 xp I have ever gotten. Just ran to the relics, used them and ran to the next without caring for followers.
+
+3
+
+
+By Lurts (1,285 – 2·5) on 2008/07/29 (Patch 2.4.3)
+
+Another way to avoid the spawning spirits is to open up the fragment, but not loot it. Reopen it and the spirits shouldn't spawn.
+
+1
+
+
+
+Mergy on 2009/01/13 (Patch 3.0.3)
+
+When I tried this, the spirits spawned as I was opening. Luckily my pet's on top of things. ;)
+
+3
+
+
+From ThottbotBy amaturewow  on 2008/08/01 (Patch 2.4.3)
+
+Subject: "Re: Troubled Spirits of Kel'Theril [5245]"
+i did this quest with a level 54 hunter had to feign death a few times but witht he help of my boar pet got it done!
+
+3
+
+
+From ThottbotBy irspud on 2008/08/04 (Patch 2.4.3)
+
+Subject: "Re: Troubled Spirits of Kel'Theril [5245]"
+the cords are right. once you pick it up run like mad but make sure you have a clear spot to run to like up a hill or the road. they may strike you once but if you keep going you lose aggro.
+
+3
+
+
+By 249489 (132 – 0) on 2008/11/27 (Patch 3.0.3)
+
+Might be important to Tell people that if you are ine a group you'ill have to Leave group or have the loot to Free for All in order to do this quest or you'll be picking for ever with no loots at all.
+
+3
+
+
+By ThEReApEr (218 – 2) on 2009/11/01 (Patch 3.2.2)
+
+um just for the info i manage to take all 4 fragments without fithing the adds that spown just get the fragment fast mount and run :P u can evade the fithing...
+
+3
+
+
+By BestStepBro (21,856 – 3·8·17) on 2023/11/11 (Classic)
+
+soloing doing this while Princess Tempestria and the elementals roaming around is next to impossible
+
+2
+
+
+From AllakhazamBy Boyfin on 2005/01/25 (Patch 1.2.1)
+
+Subject: "Reward"
+Reward is: 5800 exp
+
+0
+
+
+
+ArusSaab on 2005/05/21 (Patch 1.4.2)Subject: "RE: Reward"
+
+Also received a Slight Increase in reputation with all Alliance factions
+
+
+
+0
+
+
+
+Winti on 2006/03/15 (Patch 1.9.4)Subject: "RE: Reward"
+
+For some reason it only gave me about half of that.
+
+2
+
+
+From ThottbotBy Crawford25 on 2005/10/08 (Patch 1.7.1)
+
+Subject: "Soution to 4th Relic"
+go to the Relic at 52,42 then go into inventory right click pick and it should mine. I had bug and that worked. Make sure you are on top of or near relic.
+1 - 40 of 106
+Next ›
+Last »
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads

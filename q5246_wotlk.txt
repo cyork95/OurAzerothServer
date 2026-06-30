@@ -1,0 +1,216 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Eastern Kingdoms
+Eastern Plaguelands
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 56
+Requires level 53
+Side: Both
+Start: Aurora Skycaller
+End: Aurora Skycaller
+Sharable
+Difficulty: 53  54  59  67
+Added in patch 1.13.2 "Classic"
+
+
+Series
+
+1.
+To Winterspring!
+Starfall
+
+2.
+The Ruins of Kel'Theril
+
+3.
+Troubled Spirits of Kel'Theril
+
+4.
+Fragments of the Past
+
+5.
+Fragments of the Past
+
+
+Screenshots (2)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Fragments of the Past
+Find the Sacred Highborne Writings in the Temple of Zin-Malor in Azshara, and bring them to Aurora Skycaller near the Northpass Tower in Eastern Plaguelands.
+	Sacred Highborne Writings
+Relevant Locations
+This quest starts and ends in Eastern Plaguelands.
+Tip: Click map to zoom
+Hide pins
+Eastern Plaguelands
+Description
+I did not realize... Forgive my callous words, <class>.
+
+The mistakes of my ancestors are not what I wish to dwell on, but if your request is truly genuine, then I will help you.
+
+<Aurora examines the fragments.>
+
+I believe this is the Crystal of Zin-Malor, an artifact that can contain and control strong arcane forces. It could have been used for good, but the evil intentions of those that stole it caused it to shatter.
+
+Go to the Temple of Zin-Malor in Azshara - I can only hope the book is still there.
+Progress
+Completion
+Rewards
+You will receive: 0
+Gains
+Upon completion of this quest you will gain:
+8,450 experience
+25 reputation with Alliance
+LEVEL
+66
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5246))
+Gather info with the Wowhead Client
+Related
+See also (1)
+Comments (65)
+Screenshots (2)
+Videos (2)
+1 - 1 of 1
+ 
+Name
+
+Level
+
+Req.
+
+Side
+
+Rewards
+
+Exp.
+
+Money
+
+Category
+
+
+Fragments of the Past
+	57	53			8,750		Eastern Plaguelands
+1 - 1 of 1
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads

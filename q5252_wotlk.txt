@@ -1,0 +1,282 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+0:16
+/
+2:55
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Kalimdor
+Winterspring
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 58
+Requires level 53
+Side: Both
+Start: Remorseful Highborne
+End: Wynd Nightchaser
+Not sharable
+Difficulty: 53  54  56  61  69
+Added in patch 1.13.2 "Classic"
+
+
+Series
+
+1.
+Tormented By the Past
+
+2.
+Remorseful Highborne
+
+3.
+The Crystal of Zin-Malor
+
+
+Screenshots
+
+None yet – Submit one!
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Remorseful Highborne
+Speak with Wynd Nightchaser in Starfall Village, and ask about the proper place for the Crystal of Zin-Malor.
+	Crystal of Zin-Malor (Provided)
+Relevant Locations
+The entirety of this quest happens in Winterspring.
+Tip: Click map to zoom
+Hide pins
+Winterspring
+Description
+The... the crystal...
+
+The highborne here are clouded by their own misssery...
+
+I am sorrrrrowful, but I realize the errorrrr of what happened so long ago. Even though there is no waaaay to change the past, I am now at peacccce knowing that you have recovered the crystal of Zin-Malor...
+
+Youuu must return it...
+
+It muuuussst be returrrned.
+Progress
+Completion
+Rewards
+You will receive: 0
+Gains
+Upon completion of this quest you will gain:
+6,750 experience
+25 reputation with Alliance
+LEVEL
+68
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5252))
+Gather info with the Wowhead Client
+Related
+Comments (10)
+Screenshots
+Videos (1)
+1 - 10 of 10
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+Classic
+3.0.2
+2.4.1
+2.3.3
+2.3.0
+2.0.8
+2.0.1
+1.4.2
+1.4.0
+
+7
+
+
+From ThottbotBy WhisperElf on 2008/01/28 (Patch 2.3.3)
+
+Subject: "Re: Remorseful Highborne [5252]"
+Don't wear the Crystal of Zin-Malor as you will only die and keep dieing.
+
+7
+
+
+By Evgeny (584 – 3·6) on 2008/10/31 (Patch 3.0.2)
+
+DOES Count towards Loremaster of Kalimdor (unlike the previous 2 in the chain)
+
+5
+
+
+By mrdummy (2,778 – 1·32) on 2008/05/10 (Patch 2.4.1)
+
+Nice detail: after completing quest, all spirits turns friendly green and all go away to the small shrines near. You have now free way for some minutes without fighting. :)
+
+2
+
+
+
+166613 on 2008/08/28 (Patch 3.0.1)
+
+This wasn't true for me; had to ride for my life after the turn-in, because a named ghost was beating the $%^ out of me. Got out and got the xp/rep, though.
+
+4
+
+
+By AchillesJG (14,209 – 1·23·32) on 2007/12/22 (Patch 2.3.0)
+
+2.3 Changed Exp reward to 6750. I was level 59 when I completed this
+
+2
+
+
+By scyap (1,635 – 9·12) on 2007/02/27 (Patch 2.0.8)
+
+help! i didnt get the crystal !
+
+1
+
+
+From AllakhazamBy Fantic on 2005/04/29 (Patch 1.4.0)
+
+Subject: "Reward"
+4650 EXP @ 55
+
+Leads to:
+ The Crystal of Zin-Malor
+
+1
+
+
+By Norjak (12,372 – 1·11·16) on 2022/09/27 (Classic)
+
+After turning in this quest, all Highborne around the lake turn friendly for a minute.
+
+0
+
+
+By 143201 (2,092 – 13·16) <Rare Premium User> on 2008/04/20 (Patch 2.4.1)
+
+Wynd Nightchaser is located at coords 52, 30. Or for those without coords Wynd is located in the first building on the left as you enter the town.
+
+-1
+
+
+From AllakhazamBy simonakis on 2007/01/06 (Patch 2.0.1)
+
+Subject: "WHERE IS THE CRYSTAL???"
+Where can i find the crystal of Zin-Malor?
+From AllakhazamBy Thantul on 2005/05/11 (Patch 1.4.2)
+
+1 - 10 of 10
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads
