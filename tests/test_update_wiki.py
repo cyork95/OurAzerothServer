@@ -42,11 +42,11 @@ def test_update_wiki_success(mock_print, mock_run_cmd, mock_get_config):
     assert mock_run_cmd.call_count == 5
     mock_run_cmd.assert_has_calls([
         call(['ssh', '-i', 'key', 'user@ip', 'python3 /home/coyofroyo/azeroth-server/bin/wiki_exporter.py']),
-        call('scp -i "key" user@ip:/home/coyofroyo/azeroth-server/bin/wiki_data.json ./wiki_data.json'),
+        call(['scp', '-i', 'key', 'user@ip:/home/coyofroyo/azeroth-server/bin/wiki_data.json', './wiki_data.json']),
         call(['git', 'add', 'index.html', 'wiki_data.json']),
         call(['git', 'commit', '-m', 'Auto-update server wiki data']),
         call(['git', 'push'])
-    ], any_order=False)
+    ])
 
     mock_print.assert_any_call("Done! Wiki has been updated and pushed successfully.")
 
