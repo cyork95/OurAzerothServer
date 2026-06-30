@@ -1899,10 +1899,30 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--primary); padding-left: 1.5rem; margin-left: 0.5rem;">
+                    <!-- VERSION 1.0.5 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.5 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 30, 2026</p>
+                        
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚔️ Universal Weapon & Armor Training System</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Cross-Class Training:</strong> Patched the C++ core (<code>Trainer.cpp</code> and <code>Player.cpp</code>) to bypass racial/class gating for spell training, allowing classes to learn any weapon or armor proficiency (e.g. Mages wielding swords/staves or Priests training in Plate).</li>
+                            <li><strong>Plate & Mail Equip Gating:</strong> Patched <code>PlayerStorage.cpp</code> so players can equip any class/race-restricted weapons and armors.</li>
+                            <li><strong>Dynamic Penalty Multiplier:</strong> Added support for a configurable cost penalty (default 100x) for training non-native skills.</li>
+                        </ul>
+
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🖥️ Admin Dashboard Configuration & Utilities</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Universal Training Panel Card:</strong> Added a card under Character Tools allowing GMs to toggle Universal Training and set the cost penalty multiplier on the fly, with automated SOAP config reloads.</li>
+                            <li><strong>Character Account Transfer Service:</strong> Integrated a secure transfer form widget to transfer character ownership across account IDs directly from the web interface.</li>
+                        </ul>
+                    </div>
+
                     <!-- VERSION 1.0.4 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-dark);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.4 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.4</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 29, 2026</p>
                         
                         <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🧠 Ollama AI Chat Updates & Uncensored Engine</h4>
@@ -2015,18 +2035,6 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             <div class="card">
                 <div class="card-title">🐛 Bug & Server Enhancement Tracker</div>
                 <p>Submit issues, bug reports, and enhancement ideas here. Responses are automatically synced to a Google Sheet where <strong>Google Spark</strong> analyses them to generate developer fixes!</p>
-                
-                <div class="alert alert-info" style="margin-bottom: 1.5rem; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 6px; padding: 1rem;">
-                    <strong style="color: #60a5fa; display: block; margin-bottom: 0.25rem;">⚙️ How to Link Your Google Form:</strong>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
-                        To connect this tab to your live Google Form database:
-                    </p>
-                    <ol style="margin: 0.5rem 0 0 1.25rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
-                        <li>Create a form at <a href="https://forms.google.com" target="_blank" style="color: #60a5fa; text-decoration: underline;">Google Forms</a> containing columns like <em>Bug Title, Steps to Reproduce, Class/Area, Type (Bug/Enhancement), and Priority</em>.</li>
-                        <li>Link the form responses to a new Google Sheet.</li>
-                        <li>Click <strong>Send</strong> -> <strong>Embed HTML (&lt;&gt;)</strong>, copy the iframe's <code>src</code> URL, and update the <code>src</code> attribute on the iframe in this file (<code>index.html</code>) to render it seamlessly.</li>
-                    </ol>
-                </div>
 
                 <div style="width: 100%; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.15); box-sizing: border-box;">
                     <iframe id="bug-tracker-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSeD32bo14SF2DyGu84sAzqzvChJXaBz4BQkEog2HyTTT7dSPA/viewform?embedded=true" width="100%" height="1168" frameborder="0" marginheight="0" marginwidth="0" style="border: none; display: block; background: transparent;">Loading form…</iframe>
