@@ -599,7 +599,7 @@ if (isset($_GET['action'])) {
         // Save Group Quests
         $gqPaths = [
             '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf',
-            '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/mod-groupquests.conf',
             '/home/coyofroyo/azeroth-server/etc/modules/groupquests.conf'
         ];
         $gqUpdated = false;
