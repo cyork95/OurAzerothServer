@@ -1,0 +1,311 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+0:08
+/
+2:55
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Eastern Kingdoms
+Eastern Plaguelands
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 60
+Requires level 55
+Side: Both
+Start: Duke Nicholas Zverenhoff
+End: Lord Maxwell Tyrosus
+Sharable
+Difficulty: 55  56  58  63  72
+Added in patch 1.13.2 "Classic"
+
+
+Series
+
+1.
+Lord Maxwell Tyrosus
+
+2.
+The Argent Hold
+
+
+Screenshots (1)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Lord Maxwell Tyrosus
+Speak with Lord Maxwell Tyrosus. He is inside the church.
+Relevant Locations
+The entirety of this quest happens in Eastern Plaguelands.
+Tip: Click map to zoom
+Hide pins
+Eastern Plaguelands
+Description
+I am about to bestow a great honor upon you, <name>.
+
+Lord Maxwell wishes to reward you for your service to the Argent Dawn!
+
+It has been years since Maxwell has granted audience to outsiders.
+Completion
+Rewards
+You will receive: 0
+Gains
+Upon completion of this quest you will gain:
+9,550 experience
+250 reputation with Argent Dawn
+LEVEL
+70
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5264))
+Gather info with the Wowhead Client
+Related
+Comments (11)
+Screenshots (1)
+Videos (1)
+1 - 11 of 11
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+Classic
+3.1.3
+3.0.2
+2.2.3
+2.2.2
+2.1.2
+2.0.5
+2.0.1
+1.12.1
+
+33
+
+
+From ThottbotBy Unknown on 2006/12/13 (Patch 2.0.1)
+
+Subject: "never seen..."
+never seen a non-elite boss.
+
+25
+
+
+By Naenthos (8,182 – 2·21·67) on 2007/06/25 (Patch 2.1.2)
+
+Also, you'll have to complete The Archivist before you can get Balnazzar's head.
+
+So it's as follows:
+
+'The Archivist' (https://www.wowhead.com/wotlk/quest=5251).
+
+Killing Balnazzar then gets you 'The Truth Comes Crashing Down' (https://www.wowhead.com/wotlk/quest=5262),
+which leads to 'Above and Beyond' (https://www.wowhead.com/wotlk/quest=5263) for which you have to kill Rivendare.
+
+After this you can get the quest 'Lord Maxwell Tyrosus' (https://www.wowhead.com/wotlk/quest=5264) and collect your reward.
+
+14
+
+
+From ThottbotBy Unknown on 2007/10/13 (Patch 2.2.3)
+
+Subject: "Re: Lord Maxwell Tyrosus [5264]"
+yep rep quest need to be friendly to do it with argent dawn
+
+7
+
+
+From ThottbotBy spectrezh on 2006/11/07 (Patch 1.12.1)
+
+Subject: "why is this quest elite?"
+why is the quest elite if u dont have to kill anyone or anything? weird
+
+7
+
+
+From ThottbotBy Morbid Rush on 2006/11/07 (Patch 1.12.1)
+
+Subject: "..."
+It's the questline after you kill Balnazzar (in Live Stratholme) and afterwards, you need to kill Baron Rivendare (another boss in Stratholme, but in the undead side.) Both of which are elite bosses.
+
+7
+
+
+By jball2k (2,118 – 20·18) on 2006/12/12 (Patch 2.0.1)
+
+You receive this quest in Lights Hope right after you turn in the the quest Above and Beyond. The quest to kill Baron Rivendare and return with his head.
+
+0
+
+
+
+31567 on 2007/03/15 (Patch 2.0.10)
+
+and before Riverdale its Balnazaar
+
+
+
+4
+
+
+
+128741 on 2008/03/17 (Patch 2.3.3)
+
+You have to complete quest after quest, their heads are quest items and are not lootable by players who dont have those quest turned on.
+
+7
+
+
+From ThottbotBy jamiss on 2007/10/04 (Patch 2.2.2)
+
+Subject: "Re: Lord Maxwell Tyrosus [5264]"
+Magozo you can the first quest of the chain when you are friendly with the Argent Dawn so do some more rep dude :)
+
+5
+
+
+From ThottbotBy Magozo on 2007/01/19 (Patch 2.0.5)
+
+Subject: "WTF again!"
+so i need to do another quest first to even Look at Argent quest? (sword/shield/staff q) dont even know if he is Elite
+
+2
+
+
+By testdrug (1,550 – 9·22) on 2009/08/17 (Patch 3.1.3)
+
+This quest and it's follow-up The Argent Hold DOES count towards the Loremaster of Eastern Kingdoms achievement.
+
+1
+
+
+By sandreid87 (14,456 – 1·31·73) on 2019/08/01 (Classic)
+
+Follow-up quest is: The Argent Hold.
+
+0
+
+
+By 7784 (6,174 – 1·11·52) on 2008/10/17 (Patch 3.0.2)
+
+This quest actually gives 500 Argent Dawn rep, contrary to the 350 posted above.
+
+0
+
+
+
+235937 on 2008/10/27 (Patch 3.0.2)
+
+I can confirm this, having just completed it. 500 rep for this quest.
+1 - 11 of 11
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads
