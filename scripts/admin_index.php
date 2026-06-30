@@ -13,6 +13,17 @@ define('DB_USER', getenv('DB_USER') ?: 'acore');
 define('DB_PASS', getenv('DB_PASS') ?: 'acore');
 define('DB_WORLD', getenv('DB_WORLD') ?: 'acore_world');
 
+// Helper to update configuration files
+function updateConfigOption($path, $regex, $replacement) {
+    if (file_exists($path) && is_writable($path)) {
+        $content = file_get_contents($path);
+        $content = preg_replace($regex, $replacement, $content);
+        file_put_contents($path, $content);
+        return true;
+    }
+    return false;
+}
+
 // Helper to send SOAP Remote Access Command
 function sendSoapCommand($command) {
     $oldTimeout = ini_get('default_socket_timeout');
@@ -533,56 +544,16 @@ if (isset($_GET['action'])) {
         $accmountPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_account_mount.conf';
         $accachievePath = '/home/coyofroyo/azeroth-server/etc/modules/mod_achievements.conf';
 
-        if (file_exists($transPath) && is_writable($transPath)) {
-            $content = file_get_contents($transPath);
-            $content = preg_replace('/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog", $content);
-            file_put_contents($transPath, $content);
-        }
-        if (file_exists($enchantsPath) && is_writable($enchantsPath)) {
-            $content = file_get_contents($enchantsPath);
-            $content = preg_replace('/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants", $content);
-            file_put_contents($enchantsPath, $content);
-        }
-        if (file_exists($abPath) && is_writable($abPath)) {
-            $content = file_get_contents($abPath);
-            $content = preg_replace('/^AutoBalance\.Enable\.Global\s*=\s*\d+/m', "AutoBalance.Enable.Global = $autobalance", $content);
-            file_put_contents($abPath, $content);
-        }
-        if (file_exists($sololfgPath) && is_writable($sololfgPath)) {
-            $content = file_get_contents($sololfgPath);
-            $content = preg_replace('/^SoloLFG\.Enable\s*=\s*\d+/m', "SoloLFG.Enable = $sololfg", $content);
-            file_put_contents($sololfgPath, $content);
-        }
-        if (file_exists($aoelootPath) && is_writable($aoelootPath)) {
-            $content = file_get_contents($aoelootPath);
-            $content = preg_replace('/^AOELoot\.Enable\s*=\s*\d+/m', "AOELoot.Enable = $aoeloot", $content);
-            file_put_contents($aoelootPath, $content);
-        }
-        if (file_exists($mythicplusPath) && is_writable($mythicplusPath)) {
-            $content = file_get_contents($mythicplusPath);
-            $content = preg_replace('/^MythicPlus\.Enable\s*=\s*\d+/m', "MythicPlus.Enable = $mythicplus", $content);
-            file_put_contents($mythicplusPath, $content);
-        }
-        if (file_exists($itemupgradePath) && is_writable($itemupgradePath)) {
-            $content = file_get_contents($itemupgradePath);
-            $content = preg_replace('/^ItemUpgrade\.Enable\s*=\s*\d+/m', "ItemUpgrade.Enable = $itemupgrade", $content);
-            file_put_contents($itemupgradePath, $content);
-        }
-        if (file_exists($freeprofPath) && is_writable($freeprofPath)) {
-            $content = file_get_contents($freeprofPath);
-            $content = preg_replace('/^NpcFreeProfessions\.Enable\s*=\s*\d+/m', "NpcFreeProfessions.Enable = $freeprof", $content);
-            file_put_contents($freeprofPath, $content);
-        }
-        if (file_exists($accmountPath) && is_writable($accmountPath)) {
-            $content = file_get_contents($accmountPath);
-            $content = preg_replace('/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount", $content);
-            file_put_contents($accmountPath, $content);
-        }
-        if (file_exists($accachievePath) && is_writable($accachievePath)) {
-            $content = file_get_contents($accachievePath);
-            $content = preg_replace('/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve", $content);
-            file_put_contents($accachievePath, $content);
-        }
+        updateConfigOption($transPath, '/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog");
+        updateConfigOption($enchantsPath, '/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants");
+        updateConfigOption($abPath, '/^AutoBalance\.Enable\.Global\s*=\s*\d+/m', "AutoBalance.Enable.Global = $autobalance");
+        updateConfigOption($sololfgPath, '/^SoloLFG\.Enable\s*=\s*\d+/m', "SoloLFG.Enable = $sololfg");
+        updateConfigOption($aoelootPath, '/^AOELoot\.Enable\s*=\s*\d+/m', "AOELoot.Enable = $aoeloot");
+        updateConfigOption($mythicplusPath, '/^MythicPlus\.Enable\s*=\s*\d+/m', "MythicPlus.Enable = $mythicplus");
+        updateConfigOption($itemupgradePath, '/^ItemUpgrade\.Enable\s*=\s*\d+/m', "ItemUpgrade.Enable = $itemupgrade");
+        updateConfigOption($freeprofPath, '/^NpcFreeProfessions\.Enable\s*=\s*\d+/m', "NpcFreeProfessions.Enable = $freeprof");
+        updateConfigOption($accmountPath, '/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount");
+        updateConfigOption($accachievePath, '/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve");
 
         // Save Quest Loot Party
         $qpPaths = [
