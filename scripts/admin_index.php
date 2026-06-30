@@ -2,16 +2,16 @@
 // AzerothCore Admin Control Panel
 // Remote Access via SOAP & MariaDB
 
-define('SOAP_USER', 'admin');
-define('SOAP_PASS', 'admin');
-define('SOAP_URL', 'http://127.0.0.1:7878/');
-define('CONFIG_PATH', '/home/coyofroyo/azeroth-server/etc/modules/individualProgression.conf');
+define('SOAP_USER', getenv('SOAP_USER') ?: '');
+define('SOAP_PASS', getenv('SOAP_PASS') ?: '');
+define('SOAP_URL', getenv('SOAP_URL') ?: 'http://127.0.0.1:7878/');
+define('CONFIG_PATH', getenv('CONFIG_PATH') ?: '/home/coyofroyo/azeroth-server/etc/modules/individualProgression.conf');
 
 // Database configuration
-define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'acore');
-define('DB_PASS', 'acore');
-define('DB_WORLD', 'acore_world');
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_USER', getenv('DB_USER') ?: '');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_WORLD', getenv('DB_WORLD') ?: 'acore_world');
 
 // Helper to send SOAP Remote Access Command
 function sendSoapCommand($command) {
