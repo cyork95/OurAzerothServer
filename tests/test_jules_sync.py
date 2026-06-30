@@ -141,7 +141,12 @@ def test_connect_to_sheet_success(mock_gspread, mock_sac, mock_exists):
 
     sheet = jules_sync.connect_to_sheet()
     assert sheet == mock_sheet1
-    mock_gspread.authorize.assert_called_once()
+
+    mock_sac.from_json_keyfile_name.assert_called_once_with(
+        jules_sync.CREDS_FILE,
+        ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    )
+    mock_gspread.authorize.assert_called_once_with(mock_sac.from_json_keyfile_name.return_value)
     mock_client.open.assert_called_with(jules_sync.SHEET_NAME)
 
 @patch("jules_sync.connect_to_sheet")
