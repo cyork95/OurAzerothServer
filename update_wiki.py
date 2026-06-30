@@ -1,6 +1,4 @@
 import subprocess
-import os
-import sys
 
 # Load .env file if it exists
 env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")

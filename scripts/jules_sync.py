@@ -1,6 +1,5 @@
 import os
 import sys
-import json
 import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
