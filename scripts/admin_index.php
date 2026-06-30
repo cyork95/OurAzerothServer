@@ -799,10 +799,17 @@ if (isset($_GET['action'])) {
             $stmt->execute(array('search' => "%$query%"));
             $chars = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            foreach ($chars as &$ch) {
-                $stmtBot = $pdo->prepare("SELECT COUNT(*) FROM acore_playerbots.playerbots_random_bots WHERE bot = :guid");
-                $stmtBot->execute(array('guid' => $ch['guid']));
-                $ch['is_bot'] = $stmtBot->fetchColumn() > 0;
+            if (!empty($chars)) {
+                $guids = array_column($chars, 'guid');
+                $placeholders = implode(',', array_fill(0, count($guids), '?'));
+                $stmtBot = $pdo->prepare("SELECT bot FROM acore_playerbots.playerbots_random_bots WHERE bot IN ($placeholders)");
+                $stmtBot->execute($guids);
+                $bots = $stmtBot->fetchAll(PDO::FETCH_COLUMN);
+                $botSet = array_flip($bots);
+
+                foreach ($chars as &$ch) {
+                    $ch['is_bot'] = isset($botSet[$ch['guid']]);
+                }
             }
             
             echo json_encode(array('success' => true, 'characters' => $chars));
