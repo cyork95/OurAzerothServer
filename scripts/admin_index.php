@@ -207,11 +207,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $chatWhere[] = "sender_name LIKE ?";
-                    $chatParams[] = "%$charName%";
+                    $chatParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $chatWhere[] = "message LIKE ?";
-                    $chatParams[] = "%$keyword%";
+                    $chatParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'CHAT_ALL') {
                     $chatWhere[] = "chat_type = ?";
@@ -236,11 +236,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $evtWhere[] = "c.name LIKE ?";
-                    $evtParams[] = "%$charName%";
+                    $evtParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $evtWhere[] = "a.event_details LIKE ?";
-                    $evtParams[] = "%$keyword%";
+                    $evtParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'EVENTS_ALL') {
                     if ($type === 'LOGIN') {
@@ -599,7 +599,7 @@ if (isset($_GET['action'])) {
         // Save Group Quests
         $gqPaths = [
             '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf',
-            '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/mod-groupquests.conf',
             '/home/coyofroyo/azeroth-server/etc/modules/groupquests.conf'
         ];
         $gqUpdated = false;
@@ -796,13 +796,20 @@ if (isset($_GET['action'])) {
                 WHERE c.name LIKE :search
                 LIMIT 20
             ");
-            $stmt->execute(array('search' => "%$query%"));
+            $stmt->execute(array('search' => '%' . $query . '%'));
             $chars = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            foreach ($chars as &$ch) {
-                $stmtBot = $pdo->prepare("SELECT COUNT(*) FROM acore_playerbots.playerbots_random_bots WHERE bot = :guid");
-                $stmtBot->execute(array('guid' => $ch['guid']));
-                $ch['is_bot'] = $stmtBot->fetchColumn() > 0;
+            if (!empty($chars)) {
+                $guids = array_column($chars, 'guid');
+                $placeholders = implode(',', array_fill(0, count($guids), '?'));
+                $stmtBot = $pdo->prepare("SELECT bot FROM acore_playerbots.playerbots_random_bots WHERE bot IN ($placeholders)");
+                $stmtBot->execute($guids);
+                $bots = $stmtBot->fetchAll(PDO::FETCH_COLUMN);
+                $botSet = array_flip($bots);
+
+                foreach ($chars as &$ch) {
+                    $ch['is_bot'] = isset($botSet[$ch['guid']]);
+                }
             }
             
             echo json_encode(array('success' => true, 'characters' => $chars));
@@ -1095,7 +1102,7 @@ if (isset($_GET['action'])) {
             } else {
                 if (!empty($searchName)) {
                     $conditions[] = "ct.name LIKE :search";
-                    $params['search'] = "%$searchName%";
+                    $params['search'] = '%' . $searchName . '%';
                 }
                 if ($rankFilter !== null) {
                     $conditions[] = "ct.rank IN (" . implode(',', $rankFilter) . ")";
@@ -1634,7 +1641,7 @@ if (isset($_GET['action'])) {
                 LIMIT 20
             ");
             $stmt->execute(array(
-                'search' => "%$query%",
+                'search' => '%' . $query . '%',
                 'entry' => is_numeric($query) ? intval($query) : -1
             ));
             $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
