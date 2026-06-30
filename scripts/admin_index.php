@@ -133,8 +133,18 @@ if (isset($_GET['action'])) {
             exit;
         }
 
-        $res = sendSoapCommand("account create $username $password");
+        if (!preg_match('/^[a-zA-Z0-9_-]+$/', $username)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid username format.'));
+            exit;
+        }
+
+        $safePassword = '"' . addcslashes($password, '"\\') . '"';
+
+        $res = sendSoapCommand("account create $username $safePassword");
         if (!$res['success']) {
+            if (isset($res['output'])) {
+                $res['output'] = str_replace(array($password, $safePassword), '***', $res['output']);
+            }
             echo json_encode($res);
             exit;
         }
