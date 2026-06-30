@@ -12,26 +12,23 @@ if os.path.exists(env_path):
                 key, _, value = line.partition("=")
                 os.environ[key.strip()] = value.strip().strip("'\"")
 
-ssh_key = os.getenv("SSH_KEY_PATH")
-target_ip = os.getenv("SERVER_IP")
-user = os.getenv("SERVER_USER")
-
-if not ssh_key or not target_ip or not user:
-    if os.getenv("PYTEST_CURRENT_TEST"):
-        print("Warning: Missing required environment variables for update_wiki, but continuing because we are in a test environment.")
-        ssh_key = "test_key"
-        target_ip = "127.0.0.1"
-        user = "test_user"
-    else:
-        print("Error: Missing required environment variables.")
-        print("Please ensure SSH_KEY_PATH, SERVER_IP, and SERVER_USER are set in the environment or a .env file.")
-        sys.exit(1)
+def get_config():
+    ssh_key = os.getenv("SSH_KEY_PATH")
+    target_ip = os.getenv("SERVER_IP")
+    user = os.getenv("SERVER_USER")
+    return ssh_key, target_ip, user
 
 def run_cmd(cmd):
     res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     return res.stdout, res.stderr
 
 def update_wiki():
+    ssh_key, target_ip, user = get_config()
+    if not ssh_key or not target_ip or not user:
+        print("Error: Missing required environment variables.")
+        print("Please ensure SSH_KEY_PATH, SERVER_IP, and SERVER_USER are set in the environment or a .env file.")
+        return
+
     print("1. Running database exporter on remote server...")
     ssh_cmd = f'ssh -i "{ssh_key}" {user}@{target_ip} "python3 /home/coyofroyo/azeroth-server/bin/wiki_exporter.py"'
     stdout, stderr = run_cmd(ssh_cmd)
