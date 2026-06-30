@@ -207,11 +207,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $chatWhere[] = "sender_name LIKE ?";
-                    $chatParams[] = "%$charName%";
+                    $chatParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $chatWhere[] = "message LIKE ?";
-                    $chatParams[] = "%$keyword%";
+                    $chatParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'CHAT_ALL') {
                     $chatWhere[] = "chat_type = ?";
@@ -236,11 +236,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $evtWhere[] = "c.name LIKE ?";
-                    $evtParams[] = "%$charName%";
+                    $evtParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $evtWhere[] = "a.event_details LIKE ?";
-                    $evtParams[] = "%$keyword%";
+                    $evtParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'EVENTS_ALL') {
                     if ($type === 'LOGIN') {
@@ -796,7 +796,7 @@ if (isset($_GET['action'])) {
                 WHERE c.name LIKE :search
                 LIMIT 20
             ");
-            $stmt->execute(array('search' => "%$query%"));
+            $stmt->execute(array('search' => '%' . $query . '%'));
             $chars = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             foreach ($chars as &$ch) {
@@ -1095,7 +1095,7 @@ if (isset($_GET['action'])) {
             } else {
                 if (!empty($searchName)) {
                     $conditions[] = "ct.name LIKE :search";
-                    $params['search'] = "%$searchName%";
+                    $params['search'] = '%' . $searchName . '%';
                 }
                 if ($rankFilter !== null) {
                     $conditions[] = "ct.rank IN (" . implode(',', $rankFilter) . ")";
@@ -1634,7 +1634,7 @@ if (isset($_GET['action'])) {
                 LIMIT 20
             ");
             $stmt->execute(array(
-                'search' => "%$query%",
+                'search' => '%' . $query . '%',
                 'entry' => is_numeric($query) ? intval($query) : -1
             ));
             $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
