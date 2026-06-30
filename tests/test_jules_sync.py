@@ -29,6 +29,35 @@ def test_github_issue_payload():
         assert kwargs["json"]["title"] == title
         assert kwargs["json"]["labels"] == labels
 
+def test_create_github_issue_error_code():
+    title = "Test Bug Error"
+    body = "Test Details Error"
+    labels = ["jules", "bug"]
+
+    with patch("requests.post") as mock_post:
+        mock_res = MagicMock()
+        mock_res.status_code = 500
+        mock_res.text = "Internal Server Error"
+        mock_post.return_value = mock_res
+
+        issue_num = jules_sync.create_github_issue(title, body, labels)
+
+        assert issue_num is None
+        mock_post.assert_called_once()
+
+def test_create_github_issue_missing_token():
+    title = "Test Bug Missing Token"
+    body = "Test Details"
+    labels = ["jules", "bug"]
+
+    with patch("jules_sync.GITHUB_TOKEN", None):
+        with patch("builtins.print") as mock_print:
+            with pytest.raises(SystemExit) as exc_info:
+                jules_sync.create_github_issue(title, body, labels)
+
+            mock_print.assert_called_with("Error: GITHUB_TOKEN environment variable not set.")
+            assert exc_info.value.code == 1
+
 @patch("jules_sync.connect_to_sheet")
 @patch("jules_sync.create_github_issue")
 def test_sync_tracker_logic(mock_create_issue, mock_connect):
