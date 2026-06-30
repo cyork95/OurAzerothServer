@@ -1,5 +1,4 @@
 import subprocess
-import os
 
 ssh_key = r"C:\Users\coyof\.ssh\id_ed25519"
 target_ip = "192.168.1.168"
