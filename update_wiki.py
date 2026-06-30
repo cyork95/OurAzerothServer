@@ -19,7 +19,7 @@ def get_config():
     return ssh_key, target_ip, user
 
 def run_cmd(cmd):
-    res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    res = subprocess.run(cmd, shell=False, capture_output=True, text=True)
     return res.stdout, res.stderr
 
 def update_wiki():
@@ -30,7 +30,7 @@ def update_wiki():
         return
 
     print("1. Running database exporter on remote server...")
-    ssh_cmd = f'ssh -i "{ssh_key}" {user}@{target_ip} "python3 /home/coyofroyo/azeroth-server/bin/wiki_exporter.py"'
+    ssh_cmd = ["ssh", "-i", ssh_key, f"{user}@{target_ip}", "python3 /home/coyofroyo/azeroth-server/bin/wiki_exporter.py"]
     stdout, stderr = run_cmd(ssh_cmd)
     if "Successfully exported" not in stdout and "Successfully exported" not in stderr:
         print("Exporter error:")
@@ -43,12 +43,12 @@ def update_wiki():
     stdout, stderr = run_cmd(scp_cmd)
     
     print("3. Staging and committing changes locally...")
-    run_cmd("git add index.html wiki_data.json")
-    stdout, stderr = run_cmd('git commit -m "Auto-update server wiki data"')
+    run_cmd(["git", "add", "index.html", "wiki_data.json"])
+    stdout, stderr = run_cmd(["git", "commit", "-m", "Auto-update server wiki data"])
     print(stdout.strip())
     
     print("4. Pushing updates to GitHub Pages...")
-    stdout, stderr = run_cmd("git push")
+    stdout, stderr = run_cmd(["git", "push"])
     print(stdout.strip())
     print("Done! Wiki has been updated and pushed successfully.")
 

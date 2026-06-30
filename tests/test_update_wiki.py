@@ -15,9 +15,9 @@ def test_run_cmd():
         mock_res.stderr = "mock_stderr"
         mock_run.return_value = mock_res
 
-        stdout, stderr = run_cmd("echo test")
+        stdout, stderr = run_cmd(["echo", "test"])
 
-        mock_run.assert_called_once_with("echo test", shell=True, capture_output=True, text=True)
+        mock_run.assert_called_once_with(["echo", "test"], shell=False, capture_output=True, text=True)
         assert stdout == "mock_stdout"
         assert stderr == "mock_stderr"
 
