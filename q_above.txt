@@ -1,0 +1,283 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+MISTS
+···
+DIABLO IV
+···
+LIVE
+PTR
+12.1.0
+PTR
+12.0.7
+BETA
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSHOUSING TOOLSDISCORD WEBHOOKDATABASETOOLSGUIDESCOMMUNITYGO AD-FREE
+CLASSES
+TRENDING TOPICS
+MIDNIGHT
+PATCH 12.0.7
+MIDNIGHT SEASON 1
+MIDNIGHT TALENT CALC
+TIER LISTS
+PROFESSIONS
+PLAYER HOUSING
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+0:25
+/
+2:55
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Dungeons
+Stratholme
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Required level: ??
+Type: Dungeon
+Side: None
+Sharable
+Added in patch 1.11.1 "Shadow of the Necropolis"
+
+
+Screenshots (1)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Above and Beyond
+This quest was marked obsolete by Blizzard and cannot be obtained or completed.
+Venture to Stratholme and destroy Baron Rivendare. Take his head and return to Duke Nicholas Zverenhoff.
+	Head of Baron Rivendare
+Relevant Locations
+The entirety of this quest happens in Stratholme.
+Tip: Click map to zoom
+Hide pins
+Change floor...
+Stratholme: The Gauntlet
+Description
+You display a natural aptitude for destruction and you follow orders. It is rare to see the two coexist. I am beginning to think that you may make an excellent vehicle of divine justice.
+
+<Zverenhoff clasps his hands together in front of his face.>
+
+Kel'Thuzad's errand boy rules over Stratholme. Prove to me that you are a champion - my champion. Destroy Baron Rivendare and return to me with his head.
+Progress
+Completion
+Gains
+Upon completion of this quest you will gain:
+500 reputation with Argent Dawn
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5263))
+Gather info with the Wowhead Client
+Related
+Comments (9)
+Screenshots (1)
+1 - 9 of 9
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+3.3.5
+3.3.3
+3.1.3
+3.0.2
+2.0.1
+1.12.1
+
+25
+
+
+By Violet (13,493 – 1·25·44) on 2006/10/26 (Patch 1.12.1)
+
+This is continued by http://www.wowhead.com/?quest=5264.
+
+8
+
+
+By kreghx (31,633 – 8·49·214) on 2006/12/18 (Patch 2.0.1)
+
+The key to doing that in a 5 man is to only pull the first one, and pull it to the very back. Then when an add wanders in you let it run to the back and then shackle it. Kill the add after the first one is done. After you kill the add you rest for mana. You always let them wander in on their own in a 5 man, unless you are very comfortable about pulling. Every one of the abominations will wander in on it's own, so you only need to pull the first one. Always stay at the back of entryway by the gate. This way when you kill the last Abom and Rammstien comes out (his aggro range is huge), you have enough time to let the casters regain mana before he charges the group.
+
+After Rammstien dies (try to remain back in the entryway still) the army of non-elite undead come after the group, AoE them, using any way you can to make them all stay in one spot. Warriors have Challenging Shout, Tauren have War Stomp, and Mages have that Frost Nova. Just make them all stay still for the AoE and you'll be fine.
+
+As soon as those guys die the REAL hard part comes. If you've never fought the 5 elite guards in a 5 man group before, then this will be very difficult. The key is to hold off on AoE until the tank establishes aggro on all the guards. Once the tank has the aggro under control you can AoE to your heart's content. A good idea is for the Mage to do the Frost Nova followed by Arcan Explosion until he's out of mana.
+
+Thus ends the Slaughterhouse Courtyard fun.
+
+8
+
+
+By 235937 (1,711 – 4·17) on 2008/10/27 (Patch 3.0.2)
+
+Ok. I just did this quest and saw this firsthand in my log, so I'm pretty sure about this stuff.
+
+If you all recall, there was a patch a while ago which said it increased the ease by which one reps up with old school factions. I'm pretty sure AD is included in this. Over the last few days, I've finished off every Strat quest. Most of them have rewarded me with 1,000 rep. The entries here seem to be out of date.
+
+This quest now rewards 1,000 Argent Dawn reputation, not the listed 350. This quest alone, that is. I'm not including the follow-up.
+
+The follow-up to this, which sends you to Tyrosus, awards 500 rep. It doesn't end there. The final quest in this chain, in which Tyrosus sends you to get your reward from this chest, is an additional 1,000 rep.
+
+So for this quest, in total, it's not the 500-1,000 you might think from looking at some of these entries. It's 2,500 rep. If you're looking to get exalted with the Argent Dawn, it is absolutely a must to do this imo. If you're a geared 70, this last solo Rivendare run will net you quite a bit of rep.
+
+6 Corrupter's Scourgestones = 900 rep
+10+ Invader's Scourgestones (avoiding most trash) = 150 rep
+Rivendare kill within timer = 400 rep
+Quest chain completion = 2500 rep
+Miscellaneous trash rep = 50 rep
+= 4,000 Argent Dawn reputation
+
+0
+
+
+
+259747 on 2009/01/07 (Patch 3.0.3)
+
+Close, but Timed Baron kill rewards 300 rep, not 400.
+
+
+
+5
+
+
+
+profilerv2 on 2009/01/22 (Patch 3.0.3)
+
+100 rep for killing baron, 300 rep for saving the argent dawn NPC = 400 rep total
+
+7
+
+
+By 195365 (156 – 1) on 2009/07/30 (Patch 3.1.3)
+
+To find the Baron you need to kill the low Bosses and then the mobs inside the green areas behind them. That opens the gate to get to the Baron
+
+3
+
+
+By 7784 (6,174 – 1·11·52) on 2008/10/17 (Patch 3.0.2)
+
+This quest actually gives 1,000 Argent Dawn rep, contrary to the 350 posted above.
+
+3
+
+
+By Faelestra (27,656 – 2·22·41) <Rare Premium User> on 2010/04/30 (Patch 3.3.3)
+
+Counts towards Loremaster of Eastern Kingdoms.
+
+2
+
+
+By 195365 (156 – 1) on 2009/07/30 (Patch 3.1.3)
+
+Fot a map of the instance, just look up Strathholme in wowhead and you will find a map
+
+2
+
+
+By 172375 (418 – 2·4) on 2010/09/13 (Patch 3.3.5)
+
+1000 rep for this quest, 500 and then 1000 for the short follow ups.
+
+0
+
+
+By 261223 (179 – 1) on 2009/07/24 (Patch 3.1.3)
+
+I've run this place about 5 times - only found this Baron guy once - is there an add on that has maps of instances?
+1 - 9 of 9
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Housing Tools
+Discord Webhook
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads
