@@ -1905,16 +1905,13 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.5 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--primary-glow); color: var(--primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: June 30, 2026</p>
                         
-                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚔️ Universal Weapon & Armor Training System</h4>
+                        <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚔️ Universal Weapon & Armor Training (Reverted)</h4>
                         <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                            <li><strong>Cross-Class Training:</strong> Patched the C++ core (<code>Trainer.cpp</code> and <code>Player.cpp</code>) to bypass racial/class gating for spell training, allowing classes to learn any weapon or armor proficiency (e.g. Mages wielding swords/staves or Priests training in Plate).</li>
-                            <li><strong>Plate & Mail Equip Gating:</strong> Patched <code>PlayerStorage.cpp</code> so players can equip any class/race-restricted weapons and armors.</li>
-                            <li><strong>Dynamic Penalty Multiplier:</strong> Added support for a configurable cost penalty (default 100x) for training non-native skills.</li>
+                            <li><strong>Decided Not to Implement:</strong> Reverted the C++ core changes and Eluna gossip bypass script. Due to hardcoded client-side limitations in WotLK 3.3.5a (non-native skill lines are hidden visually in the default Skills UI) and level-gating mechanics, we decided to keep native class restrictions intact.</li>
                         </ul>
 
                         <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🖥️ Admin Dashboard Configuration & Utilities</h4>
                         <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                            <li><strong>Universal Training Panel Card:</strong> Added a card under Character Tools allowing GMs to toggle Universal Training and set the cost penalty multiplier on the fly, with automated SOAP config reloads.</li>
                             <li><strong>Character Account Transfer Service:</strong> Integrated a secure transfer form widget to transfer character ownership across account IDs directly from the web interface.</li>
                         </ul>
                     </div>
