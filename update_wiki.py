@@ -1,8 +1,23 @@
 import subprocess
 
-ssh_key = r"C:\Users\coyof\.ssh\id_ed25519"
-target_ip = "192.168.1.168"
-user = "coyofroyo"
+# Load .env file if it exists
+env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+if os.path.exists(env_path):
+    with open(env_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, value = line.partition("=")
+                os.environ[key.strip()] = value.strip().strip("'\"")
+
+ssh_key = os.getenv("SSH_KEY_PATH")
+target_ip = os.getenv("SERVER_IP")
+user = os.getenv("SERVER_USER")
+
+if not ssh_key or not target_ip or not user:
+    print("Error: Missing required environment variables.")
+    print("Please ensure SSH_KEY_PATH, SERVER_IP, and SERVER_USER are set in the environment or a .env file.")
+    sys.exit(1)
 
 def run_cmd(cmd):
     res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
