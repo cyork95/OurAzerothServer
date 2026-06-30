@@ -117,3 +117,79 @@ def test_sync_tracker_closure(mock_get, mock_connect):
 
     # Status should be updated to 'Fixed'
     mock_sheet.update_cell.assert_called_with(2, 6, "Fixed")
+
+@patch("os.path.exists")
+def test_connect_to_sheet_missing_creds(mock_exists):
+    mock_exists.return_value = False
+    with patch("builtins.print") as mock_print:
+        with pytest.raises(SystemExit) as exc:
+            jules_sync.connect_to_sheet()
+        assert exc.value.code == 1
+        mock_print.assert_called_with(f"Error: Google Credentials JSON file not found at {jules_sync.CREDS_FILE}")
+
+@patch("os.path.exists")
+@patch("jules_sync.ServiceAccountCredentials")
+@patch("jules_sync.gspread")
+def test_connect_to_sheet_success(mock_gspread, mock_sac, mock_exists):
+    mock_exists.return_value = True
+
+    mock_client = MagicMock()
+    mock_gspread.authorize.return_value = mock_client
+
+    mock_sheet1 = MagicMock()
+    mock_client.open.return_value = MagicMock(sheet1=mock_sheet1)
+
+    sheet = jules_sync.connect_to_sheet()
+    assert sheet == mock_sheet1
+    mock_gspread.authorize.assert_called_once()
+    mock_client.open.assert_called_with(jules_sync.SHEET_NAME)
+
+@patch("jules_sync.connect_to_sheet")
+@patch("requests.get")
+def test_sync_tracker_closure_api_error(mock_get, mock_connect):
+    mock_sheet = MagicMock()
+    mock_connect.return_value = mock_sheet
+    mock_sheet.get_all_records.return_value = [
+        {
+            "Title": "Old Bug",
+            "Description": "Fixed already",
+            "Type": "Bug",
+            "Priority": "Low",
+            "Status": "In Progress",
+            "GitHub_Issue_ID": "789"
+        }
+    ]
+
+    mock_res = MagicMock()
+    mock_res.status_code = 404
+    mock_get.return_value = mock_res
+
+    with patch("builtins.print") as mock_print:
+        jules_sync.sync_tracker()
+        mock_print.assert_any_call("Error querying GitHub Issue #789: 404")
+
+    mock_sheet.update_cell.assert_not_called()
+
+@patch("jules_sync.connect_to_sheet")
+@patch("requests.get")
+def test_sync_tracker_closure_open_issue(mock_get, mock_connect):
+    mock_sheet = MagicMock()
+    mock_connect.return_value = mock_sheet
+    mock_sheet.get_all_records.return_value = [
+        {
+            "Title": "Old Bug",
+            "Description": "Fixed already",
+            "Type": "Bug",
+            "Priority": "Low",
+            "Status": "In Progress",
+            "GitHub_Issue_ID": "789"
+        }
+    ]
+
+    mock_res = MagicMock()
+    mock_res.status_code = 200
+    mock_res.json.return_value = {"state": "open"}
+    mock_get.return_value = mock_res
+
+    jules_sync.sync_tracker()
+    mock_sheet.update_cell.assert_not_called()

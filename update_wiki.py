@@ -39,7 +39,7 @@ def update_wiki():
     print("Remote: " + stdout.strip().split("\n")[-1])
     
     print("2. Downloading wiki_data.json to local directory...")
-    scp_cmd = ["scp", "-i", ssh_key, f"{user}@{target_ip}:/home/coyofroyo/azeroth-server/bin/wiki_data.json", "./wiki_data.json"]
+    scp_cmd = f'scp -i "{ssh_key}" {user}@{target_ip}:/home/coyofroyo/azeroth-server/bin/wiki_data.json ./wiki_data.json'
     stdout, stderr = run_cmd(scp_cmd)
     
     print("3. Staging and committing changes locally...")
