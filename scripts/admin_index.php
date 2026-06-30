@@ -508,6 +508,37 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if ($action === 'get_paragon_config') {
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_ale;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS);
+            $stmt = $pdo->query("SELECT `key`, `value` FROM paragon_config");
+            $config = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+            echo json_encode(array('success' => true, 'config' => $config));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
+    if ($action === 'set_paragon_config') {
+        $key = $_POST['key'] ?? '';
+        $value = $_POST['value'] ?? '';
+        try {
+            $dsn = "mysql:host=" . DB_HOST, ";dbname=acore_ale;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS);
+            $stmt = $pdo->prepare("REPLACE INTO paragon_config (`key`, `value`) VALUES (?, ?)");
+            $stmt->execute([$key, $value]);
+
+            // Trigger Eluna reload
+            $res = sendSoapCommand('eluna reload');
+            echo json_encode($res);
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
     if ($action === 'set_features_config') {
         $transmog = intval($_POST['transmog'] ?? 0);
         $enchants = intval($_POST['enchants'] ?? 0);
