@@ -1,0 +1,817 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Kalimdor
+Winterspring
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 60
+Requires level 58
+Side: Alliance
+Start: Rivern Frostwind
+End: Rivern Frostwind
+Repeatable
+Sharable
+Difficulty: 58  63  72
+Added in patch 1.13.2 "Classic"
+
+
+Screenshots (1)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Winterfall Intrusion
+Rivern Frostwind wants you to slay 5 Winterfall Shaman and 5 Winterfall Ursa.
+ 
+	Winterfall Shaman slain (5)
+
+ 
+	Winterfall Ursa slain (5)
+Relevant Locations
+The entirety of this quest happens in Winterspring.
+Tip: Click map to zoom
+Hide pins
+Winterspring
+Description
+My presence goes unnoticed by most, <name>. However, there is an annoyance that seems firmly rooted here in Winterspring: the Winterfall furbolg.
+
+Although I have never directly attacked the furbolg, they seem crazed, fearful of anything in their path. I have watched them slay countless creatures that had the misfortune to simply be in the wrong place at the wrong time.
+
+I am weary of their meddling -- please, help me by fighting back. Slay the furbolg and keep them away from Frostsaber Rock.
+Progress
+Completion
+Gains
+Upon completion of this quest you will gain:
+250 reputation with Wintersaber Trainers
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5201))
+Gather info with the Wowhead Client
+Related
+Comments (40)
+Screenshots (1)
+1 - 40 of 40
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+3.3.3
+3.3.2
+3.3.0
+3.2.0
+3.0.2
+2.4.3
+2.4.1
+2.3.3
+2.3.2
+2.3.0
+2.2.3
+2.1.3
+2.1.0
+2.0.12
+2.0.10
+1.12.1
+1.11.0
+1.9.2
+1.8.3
+1.8.0
+1.6.1
+1.2.4
+1.2.3
+
+69
+
+
+From ThottbotBy The Minion on 2007/10/27 (Patch 2.2.3)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+I believe this might help a bit:
+
+http://www.wowwiki.com/images/c/cc/Winterfall_intrusion.jpg
+
+9
+
+
+
+Danale on 2007/12/02 (Patch 2.3.0)Subject: "Re: Winterfall Intrusion [5201]"
+
+If you're a druid with Feline Grace you can cut even more time by just jumping off Frostsaber Rock in cat form and running off from there!
+
+But thanks for the map, this is great!
+
+30
+
+
+By 364 (6,604 – 3·23·38) on 2006/11/10 (Patch 1.12.1)
+
+Once this particular quest becomes available, you can use it to your advantage to kill two birds with one stone.
+
+Before you start killing the Winterfall Furbolgs, make certain you have done the Winterfall Activity quest. (https://www.wowhead.com/wotlk/quest=8464) Once you complete the quest, you will then be able to collect Winterfall Spirit Beads (https://www.wowhead.com/wotlk/item=21383) for the Beads for Salfa quest (https://www.wowhead.com/wotlk/quest=8469).
+
+This way, you shall be able to grind not only Wintersaber Trainer faction, but you can also grind Timbermaw faction as well with the bead turn-ins.
+
+On a seperate note, if you are getting frustrated by the presence of people in or around the Winterfall camp, if they are of the same faction as yourself, try and see if you can get together in a single party. Unlike the meat drops, since you are farming for kill counts here, so long as as you are not in a raid every kill will count to the whole group.
+
+However, if they are of the opposite faction there is one (maybe two) things you could do. First, you could either put up with them and try to tag mobs before they do. The second bit is a bit more evil and requires a lot of patience to get the ability to do this.
+
+Just ignore the fact that it lists this as Horde only, this quest is available to both factions once they hit exalted with Timbermaw. It's called The Root of All Evil (https://www.wowhead.com/wotlk/quest=8481). It gives you a torch that you can use to summon an elite demon to that cave north of the Winterfall Village. The demon will then try and lay waste to anyone who is unlucky enough to get close to it. He'll make short work of most farmers, but (and I'm not completely certain on this) until you complete, drop, or fail the quest itself (or maybe log out or leave the area?), he won't despawn.
+
+10
+
+
+
+26532 <Rare Premium User> on 2008/02/17 (Patch 2.3.3)
+
+[quote]Once this particular quest becomes available...[/quote] Specifically, it's available at 1500/3000 in Neutral. So now just six  Frostsaber Provisions runs before you can start picking this one up.
+
+29
+
+
+By 172152 (1,770 – 15·11) on 2008/07/10 (Patch 2.4.1)
+
+Currently being 1010/12000 into honored here are my tips for this quest. You MUST be alliance to do these quests.
+
+The Wintersaber Trainers are located in Northern Winterspring and pretty much the point of grinding reputation with them is solely to get Reins of the Winterspring Frostsaber. Now, pre-BC this mount was extremely hard to get due to the little amount of reputation you would get per quest turn in thus the grind was highly not worth it. Since Burning Crusade came out the reputation has been increased however the mount is still uncommon since people don't find the worth of the grind.
+
+To get started you must find Rivern Frostwind (Note: he is literally on top of the giant rock at (49,9). You can get up to him from the back of the rock).
+
+Outline of the reputation levels:
+
+[Neutral]
+Frostsaber Provisions
+1500/3000 Reputation: Winterfall Intrusion
+[Friendly]
+Frostsaber Provisions
+Winterfall Intrusion
+[Honored]
+Frostsaber Provisions
+Winterfall Intrusion
+Rampaging Giants (Group)
+[Revered]
+Frostsaber Provisions
+Winterfall Intrusion
+Rampaging Giants (Group)
+[Exalted]
+Frostsaber Provisions
+Winterfall Intrusion
+Rampaging Giants (Group)
+Overview of the quests:
+Frostsaber Provisions
+Repuation: 250 (Humans: 275)
+For this quest you need to collect:
+Shardtooth Meat (5)
+Chillwind Meat (5)
+This quest seems pretty straight forward. I suggest killing Elder Shardtooth and Chillwind Ravager to get these meats. I find a good place to farm these is around (58,19). They have about a 30% drop rate.
+Winterfall Intrusion
+This quest becomes unlocked at 1500/3000 Neutral
+Repuation: 250 (Humans: 275)
+For this quest you need to slay:
+Winterfall Shaman (5)
+Winterfall Ursa (5)
+This quest you need to head down to the Winterfall Village (67,36). If you're finding a lack of Winterfall Ursa look on the hill behind the camp. Shamans are spawned inside the camp. If you see a lack of them kill what's in there and some will spawn. There is always a shaman with High Chief Winterfall.
+Rampaging Giants (Group)
+This quest becomes unlocked at Honored
+Repuation: 350 (Humans: 385)
+For this quest you need to slay:
+Frostmaul Giant (4)
+Frostmaul Preserver (4)
+This quest you need to head down to the Frostwhisper Gorge (62,67). And ramp down can be found at (59,64). These have a good spawn rate, pretty evenly mixed. If someone else if farming them you can hear back up and across the bridge to about (62,73) and you'll find more there. These are 60 elites however they are pretty easy to kill (me being a 0,21,40 destro warlock). The only downside to this quest is really the walk.
+Tips for farming:
+It's always nice to have a friend. This is a really boring grind so it's nice to have someone to do it with.
+Riding Crop or Skybreaker Whip are worth it for this grind
+Except for the elites, you can pull a few of these a time as a 70 and be okay.
+Once you hit honored and you unlock Rampaging Giants I would only do that and Winterfall Intrusion. The ride is longer but not having to farm the meat with the bad drop rate and the bonus repuation is worth it if you can take the elites.
+Don't get discouraged. It seems like it's gonna take forever but it's not as bad as it seems. In one day I'm a bit into honored.
+Some math:
+Neutral -> Friendly:
+Repeating: Frostsaber Provisions:
+12 trips ---- Humans: 11 trips
+Repeating: Frostsaber Provisions and adding Winterfall Intrusion at (1500/3000):
+9 trips --- Humans: 9 (there'll be a bit of leftover)
+Friendly -> Honored
+Repeating: Frostsaber Provisions or Winterfall Intrusion:
+24 trips ---- Humans: 22 trips
+Repeating: Frostsaber Provisions and Winterfall Intrusion:
+12 trips --- Humans: 11
+Honored -> Revered
+Repeating: Frostsaber Provisions or Winterfall Intrusion:
+48 trips ---- Humans: 44 trips
+Repeating: Frostsaber Provisions and Winterfall Intrusion:
+24 trips --- Humans: 22
+Repeating: Frostsaber Provisions or Winterfall Intrusion and Rampaging Giants:
+20 trips --- Humans: 19
+Repeating: Frostsaber Provisions and Winterfall Intrusion and Rampaging Giants:
+15 trips --- Humans: 13
+Revered -> Exalted (Same order as above)
+84 trips --- Humans: 77
+42 trips --- Humans: 39
+35 trips --- Humans: 32
+25 trips --- Humans: 23
+
+Good luck all!
+
+27
+
+
+From ThottbotBy Jon Elf on 2008/02/06 (Patch 2.3.3)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+Update on the reins of the Wintersaber Quest. Rep is now 250 per turn in. I am currently on friendly, so with the furlbogs and the meats thats 500 per run. I am also using this to boost my leatherworking skill. Because its only a short flight to Darnassus to get new patterns i have been able to go from 260 to 287 in no time at all. Also got dragonscale skill so when i hit 300 it's a quick flight to Azshara to pick up patterns for some serious kit. Hope this is useful and or interesting to someone
+
+19
+
+
+From ThottbotBy sabryna on 2008/02/28 (Patch 2.3.3)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+Used to be attainable at 60? Need to fix it on wowwiki!
+
+17
+
+
+By 2590 (9,622 – 4·21·66) on 2006/11/28 (Patch 1.12.1)
+
+Though there is another quest to kill giants once you're honored with the Wintersaber faction, this quest is your meat and potatoes on this terrible grind. One thing to take note of: shamans are the rare spawns on this quest. If i'm the only one farming the village (late late night :P) I try to keep the bottom and middle floor clear of denwatchers and ursas so that shamans have room to spawn. If you ride up the mountain overlooking the village, there is a whole ridge of Ursas, so you need to maintain a supply of shamans to keep the pace up.
+
+There are 2 patrols that can spawn as shamans as well, on top of the ridge and in front of the village. If they aren't a shaman, they are a denwatcher, so just take it out and hope for a shaman spawn next time you come back from turning in.
+
+The runners that come through the village do not aggro by proximity but they are social atleast to the chief, so be careful.
+
+There are chests that spawn at both the houses on the edges of the upperlevel, and both the houses at the edge of the bottom level. I've pulled greens, blues, etc out of them, but usually get ores, bars, food, herbs, water, etc :P Some of the grinders I quested with completely ignored the chests to save time doing the quest; whatever floats your boat eh? : )
+
+There is a named rare spawn thats also a good snag for greens; he spawns near the chief: https://www.wowhead.com/wotlk/npc=10199
+
+When running back to the Quest NPC to turn this quest in, you want to have all your riding speed gear on and basically make a bee-line over the mountain ridges, avoiding mobs because they will knock you off your mount.
+
+You can eventually get very fast at this quest, especially if you can maintain a spawn of shamans up. Grouping with people, whether or not they are doing the quest, can help a lot as well.
+
+There used to be a bug where you would get credit for quest kills halfway across the map of winterspring, but that was fixed quite some time ago : P
+
+0
+
+
+
+Tamika on 2007/10/05 (Patch 2.2.2)
+
+ennui's method is correct, I get near 550 rep per hour (non human) when the village is not swarmed. you can try doing 2 quests at a time (meats and this) but your rep per hour won't go up since droprate may result frustrating (me as prot.warrior for example :P )
+
+14
+
+
+By 5509 (2,290 – 10·20) on 2006/10/29 (Patch 1.12.1)
+
+Be prepared to do this quest over and over many times, and to be very frustrated with the people around you stealing your mobs.
+I usually wait untill the slow hours untill setting foot there.
+
+9
+
+
+From ThottbotBy Flameboyz on 2007/11/17 (Patch 2.3.0)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+250 rep per hand in now
+
+8
+
+
+From ThottbotBy explode13 on 2007/04/12 (Patch 2.0.12)
+
+Subject: "BIG TIP FOR SHAMANS (Draenei of course ^^)"
+ok after you do the annoying meat gathering quest 20 times to get this one, go to everlook and set your hearth there. Every time you run back to Rivern to turn in the quest you can use astral recall to hearth back to Everlook and cut your riding time for the whole grind in half. Dont forget your normal hearth either =). Good Luck Shamans FTW
+
+EDIT: just started doing it 5-10 min runs
+
+7
+
+
+From ThottbotBy Mannalynn on 2008/01/20 (Patch 2.3.2)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+Well, I've been doing this quest for a bit on Lothar-- and I've found that Shamans are definitely the hardest to find...in the evening. In the early morning, (I'm talking 4:30-5:30am), all I could find were Shamans! Ursas, however, were a-plenty on the southern hillside, just as an above poster mentioned.
+
+5
+
+
+By Seafog (5,441 – 1·24·41) on 2008/10/12 (Patch 3.0.2)
+
+Having completed this grind now, I see a few missing details on the spawn points. Here is how the spawns really work so you can maximise shaman spawns. Basically, if it CAN spawn as a shaman, but it hasn't, kill it. There are plenty of guaranteed ursa up top. Waiting for shaman repops is very boring, you WILL have to wait fairly regularly if you don't do this and 'thinning' the herd is easy at 70.
+
+Outside the wall: All den watchers except one. The exception can spawn as a shaman or a den watcher. This is the only one that roams and it will path across the road. Learn to recognize its path and kill it if appropriate.
+
+Lower level: The ones around the huts can spawn as den watchers or shamans. So kill any den watchers that spawn here. There are a few well away from the huts, they only spawn as den watchers so you can ignore them.
+
+Middle level: There are 7 spawn points here. They are either shaman or ursa, so kill any ursa that pop.
+
+Cave: The chief and a shaman spawn here, and occasionally a rare spawn furbolg. Never anything else.
+
+Hilltop level: These are always ursa except for one. The exception is either a den watcher or a shaman. The exception is also the only roamer up here and is generally easy to spot. Kill it if appropriate.
+
+4
+
+
+From ThottbotBy boneycork on 2006/06/24 (Patch 1.11.0)
+
+Subject: "This is tough"
+Dont know what its like on other servers but the village is constantly farmed bare on my server. Unless Im doing this in the early hours of the morning I can expect the whole place to be completely furbolg-less.
+
+2
+
+
+
+LuniNutz on 2006/07/30 (Patch 1.11.2)Subject: "RE: This is tough"
+
+Yeah, sometimes it is brutal to try and do this quest.  Farmers are everywhere.  Just try and group up with some of them as you'd be surprised at how many people are trying to do the same thing.  I've met a few friends doing that.
+
+
+
+5
+
+
+
+saler on 2006/10/11 (Patch 1.12.1)Subject: "cost?"
+
+is this the same cost a other epic mounts?(not encluding the alterac rams/wolves)
+
+
+
+5
+
+
+
+Kaina on 2007/03/06 (Patch 2.0.10)Subject: "Mount Costs"
+
+The Winterspring Frostsaber currently costs 90g, and requires the lvl 40 mount skill. You may purchase this at Exalted with the Wintersaber Trainers. Also, to get this quest: Winterfall Intrusions, you must be 1500/3000 neutral with the Wintersaber Trainers. To get the Rampaging Giants quest, you must be honored with the Wintersaber Trainers.
+
+4
+
+
+By 151385 (217 – 2) on 2008/06/16 (Patch 2.4.1)
+
+I've actually made qutie a bit of cash off the Firewaters that drop. People really like the size increase :)
+
+0
+
+
+
+200192 on 2009/06/26 (Patch 3.1.3)
+
+thats what she said :o
+
+4
+
+
+By Mixel (305 – 4·6) on 2009/08/29 (Patch 3.2.0)
+
+Not sure if it's been mentioned, but I'd recommend that any shamans doing this grind set your hearth to Everlook and get a Glyph of Astral Recall. With the glyph you get a total of 10 hearths per hour including your hearthstone, which will obviously save you quite a bit of time in the long run.
+Last edited by Mixel on 2009/08/29 (Patch 3.2.0)
+
+4
+
+
+By 484004 (255 – 2) on 2009/12/17 (Patch 3.3.0)
+
+This is truly a grind. Therefore, in the interest of efficiency, I clocked myself after receiving the Winterfall Intrusion quest and having some practice at making the runs.
+
+It took me 23 minutes to complete both the Sabertooth Provisions and the Winterfall Intrusion quests roundtrip from Rivern Frostwind and back with a very short stop at Everlook (which you are right next to anyway after doing Winterfall) to clear out my inventory and do minor repairs at the armor repair shop.
+
+It took me 11 minutes roundtrip (with no stop at Everlook) to go straight to Winterfall and complete that quest and run back to Rivern.
+
+Moral of the story: some folks are saying to stop doing the provision quest once you get Winterfall Intrusion to be more efficient on time. However, this doesn't actually play out in reality. It will take you just as long if you concentrate on just Winterfall, and Winterfall is also often farmed, which means you may run into down time waiting for things to respawn (while you can always find plenty of bears and chimeras).
+
+That being said, it will take 87 trips total to reach Exalted status (if you do not include Rampaging Giants). I am doing this as a level 61 Frost Mage and don't think I can kill the giants solo, although I haven't tried since a few levels ago. Let's assume you're a little quicker than me and can do the provision run in 10 minutes or the combo run in 20 minutes. Doing the math, you will spend:
+
+14.5 HOURS OF YOUR LIFE just to get a cool looking mount that doesn't even run slightly faster. We are truly geeks.
+
+3
+
+
+From ThottbotBy Unknown on 2006/06/24 (Patch 1.11.0)
+
+Subject: "rep ??"
+do get the same 50 rep for all three quests?
+
+3
+
+
+By 49663 (3,513 – 1·5·34) on 2007/11/02 (Patch 2.2.3)
+
+On the 2.3 PTR this quest now gives 250 rep
+
+4
+
+
+
+Breotan on 2007/11/15 (Patch 2.3.0)
+
+Verified on live server after 2.3 patch. 250 rep per turn-in.
+
+2
+
+
+From ThottbotBy Suze on 2005/11/17 (Patch 1.8.3)
+
+Subject: "that epic mount"
+ive been doing this for 3 days now and now that ive got second quest it does seem a little bit easier. tactic being kill mobs for first quest on way to kill winterfall mobs then once thats complete kill what ever u need to complete first quest on way back to hand in second quest. Still a hard task but it is for an epic mount  stick with it and am sure u will get it :) bonus 2 second quest boosts ure rep with timbermaws 
+
+2
+
+
+By 125087 (4,736 – 1·8·45) on 2008/05/05 (Patch 2.4.1)
+
+250 rep / 275 for a human.
+
+kill 10 npc. say thats 1 minute each so 10 minutes.
+then you get to run back and forth to the trainer and the furbolgs. lets say a 5 minute round trip(with 75 riding skilll)
+
+15 minutes given to each quest.(unless a lvl 60 with 75 riding wants to test this, no carrot,spurs,or glove enchant as not everybody will have any/all of those)
+
+4 quests per hour. would have been hell at 50 rep per quest.
+
+say you do this for 10 hours a day thats 40 a day. take just under 4 days to do it.(not accounting for the 1500 rep already needed to pick up this quest.
+
+lvl 58s can pick up the meat quest which is prolly even longer since its not 100% drop rate. but you have to be 60 to pick up this one and the elites one.
+
+2
+
+
+By 125087 (4,736 – 1·8·45) on 2008/05/05 (Patch 2.4.1)
+
+do Ursa and Shaman offer any rep for killing them?
+
+1
+
+
+
+Tiran <Rare Premium User> on 2008/05/05 (Patch 2.4.1)
+
+You only get WST rep for the quest turn-ins. Killing Ursa and Shaman and Den Watchers will get you Timbermaw rep though.
+
+
+
+0
+
+
+
+Darktower on 2008/05/08 (Patch 2.4.1)
+
+Waiting for repops makes the grind even that much slower =/
+
+2
+
+
+By 243011 (1,838 – 4·16) on 2010/03/30 (Patch 3.3.3)
+
+These are my timings for this quest and the provisions quest:
+
+From inn in Wintergrasp, via Winterfall village and then pick up the meat: 10 minutes.
+This can be done once every 30 minutes via HS.
+
+Full round, both quests, stone to stone: 15 minutes (2k rep/hour)
+
+Doing just the provisions quest: 7-8 minutes so about the same rep per hour as a full round, but without bonus rep for Timbermaw hold.
+
+This is a level 80 titans grip warrior, so I have to get close to the mob but oneshot everything.
+
+One timesaver I use is that I am an engineer so I jump off the cliff and parachute down to land on the other side of the glade, shave off probably 10-15 seconds and with all these runs, that will amount to something.
+
+Theoretical timings:
+HS to Everlook - 1st run 10 minutes 500 rep
+Make a full run - 500 rep 15 minutes
+Do only provisions - 250 rep 8 minutes
+repeat
+This way you get 1250 rep every 33 minutes (about 2250 rep/hr) and can sell and mail off stuff.
+
+HS to everlook - 10 min 500 rep
+2 full runs: 1000 rep 30 minutes
+repeat
+That is 1500 rep in 40 minutes or 2250 rep per hour.
+
+Basically, keep doing full runs especially if you need the Timbermaw hold rep.
+
+1
+
+
+From AllakhazamBy Icelement on 2005/02/19 (Patch 1.2.3)
+
+Why cant i get this quest?
+Is it possilby required honored or revered status for it?
+
+1
+
+
+From AllakhazamBy demonaSoF on 2005/02/24 (Patch 1.2.4)
+
+Subject: "wintersaber"
+You get the quest after you do Frostsaber Provisions and get the faction to halfway in Neutral.
+
+The quest changes again when you get honored.
+
+You must be (not sure on this, as I am not there yet) either revered or exhaulted to purchase the special frostsaber mount.
+
+Demona
+Officer, Sword of Fate
+Malygos
+
+1
+
+
+From AllakhazamBy PaddyG on 2005/08/23 (Patch 1.6.1)
+
+Subject: "Party makes it guuicker"
+Just started on these last night, if you are partied with someone who is also on the quest, you don't have to be anywhere near them to get kill credit. You can be at Frostsaber handing in the quest and getting the next, and as your riding back, you can see your kills mounting up. Not sure if this would work if you are partied for someone not on the quest though. However, if guildies need Timbermaw rep, they could do worse than help you out.
+
+0
+
+
+
+MercuryD on 2006/03/28 (Patch 1.9.4)Subject: "RE: Party makes it guuicker"
+
+I did this as described a while back, with a NE Priest who had the first quest, but who has not gotten the rep for the second one (This quest). It worked like a charm - I think I got kill credit FROM the top of Pride Rock. However, today I tried it with a Human Warrior who had none of the quests, and had to be within sight distance of him or closer to get the credit. I hadn't tried the trick since 1.8 was put into place - Did they change it in 1.9, or is there something else?
+
+1
+
+
+From AllakhazamBy Marice on 2005/10/11 (Patch 1.8.0)
+
+Subject: "wintersaber"
+You start out at 0/3000 in Neutral with this faction.
+
+At that rep you get the quest Frostsaber Provisions.
+
+You have to complete the Frostsaber Provisions quest enough times to raise your rep to 1500/3000 in Neutral at which point this quest becomes an option.
+
+1
+
+
+From ThottbotBy KatahaneTenshi on 2005/10/11 (Patch 1.8.0)
+
+Subject: "Anyone gotten this quest?"
+im level 60, and been doing the frostsaber provision quest for a little while, 3-4 times. and this guy won't give the quest. just wondering if you have to be friendly or if there are pre-reqs
+
+1
+
+
+From ThottbotBy Chrystolis on 2005/10/11 (Patch 1.8.0)
+
+Subject: "<Blank>"
+you get a new quest at each rank up in faction.  Once you get exalted you can get a new type of epic mount
+
+1
+
+
+From ThottbotBy ArGhH on 2005/10/11 (Patch 1.8.0)
+
+Subject: "31x Frostsaber provision = Winterfall Intusion"
+you need to do the first quest 31 to tricker this one..
+
+the first quest could be done on about 30 mins, while this one can be done on 15 mins.
+
+a tip.. doing this grant you rep at the Timbermaw Furbolgs, so after a while you can buy some nice recepies and stuff, which we'rent availeble before.
+
+1
+
+
+From ThottbotBy Quero59 on 2005/10/11 (Patch 1.8.0)
+
+Subject: "<Blank>"
+Look for "Meilosh" and "Gorn one Eye".
+
+You need the Timbermaw friendly for Meilosh and honored for Gorn. A long way.
+
+1
+
+
+From AllakhazamBy yanuyanu on 2006/10/09 (Patch 1.12.1)
+
+Subject: "Quest Corrections, info"
+The quest for me required:
+5 kills Winterfall Ursa (lvls 52 - 58) 67,37
+5 kills Winterfall Shaman (lvls 51-57) 67,35
+5 kills Winterfall Den Watcher (lvls 50-56) 66,34
+
+1
+
+
+From ThottbotBy Zoeres on 2007/03/31 (Patch 2.0.10)
+
+Subject: "Wintersaber is awesome.."
+This mount is very hard to get. First you need to do the first quest 20 times in order to do the second one. When you reach exalted you'll be able to get an epic mount. A very cool one. But the beauty of it is that you don't need the epic mount riding skill to use it!
+
+1
+
+
+From AllakhazamBy xoxojessika on 2007/04/18 (Patch 2.0.12)
+
+Subject: "Below Incorrect"
+You do not need to kill Den Watchers for this quest, only Ursa and Shaman. I am currently on this quest.
+
+Unless they've changed the quest line since then?
+
+1
+
+
+From ThottbotBy shadowaniki on 2007/05/25 (Patch 2.1.0)
+
+Subject: "ursas"
+why is it that it's so hard to find ursas and shamans are everywhere D:
+
+7
+
+
+
+StKenjutsushi on 2007/08/06 (Patch 2.1.3)Subject: "Re: ursas"
+
+You must be new.
+
+Back before The Burning Crusade, these things were farmed to exhaustion day in and day out.
+
+Check out how long ago those posts were made.
+
+0
+
+
+By 54334 (1,134 – 8·9) on 2007/08/03 (Patch 2.1.3)
+
+I've been farming these guys for 35 minutes and haven't got 1 meat. Are the drop rates really this horrible?
+
+5
+
+
+
+70229 on 2007/08/08 (Patch 2.1.3)
+
+you don't get meat for this quest. Just have to kill them .. .the meat one is from the chimaera and bears ...
+
+0
+
+
+By 172118 (509 – 3) on 2008/07/28 (Patch 2.4.3)
+
+opps wrong quest lol. But to talk about this one, This is an easy quest. it saves A LOT of time. this one you just need to kill 10 (5 for each type) and thats fast. the previous quest you needed to kill the monster and try and get 10 meats ( 5 from each) with a really low drop rate that you normally kill alot more than 10. it gives you the same amount of rep as the last one also. and srry about the last post of mine on this lol. : )
+Last edited by 172118 on 2008/07/30 (Patch 2.4.3)
+
+0
+
+
+
+110805 on 2008/07/29 (Patch 2.4.3)
+
+ummmmmm. . . . you must be drunk . . . Hic! This is not a group quest.
+
+0
+
+
+By 341860 (191 – 2·5) on 2010/03/02 (Patch 3.3.2)
+
+So after reading that this quest becomes available at 1500/3000, I decided to check out what my rep was at with them. I hit exalted with the Timbermaw about 2 weeks ago and am currently sitting at 550/3000 (still Neutral) with the Wintersabers and this quest is now available to me. You DO NOT have to be 1500/3000, just exalted with Timbermaw to open the quest.
+
+-1
+
+
+From ThottbotBy Unknown on 2005/10/11 (Patch 1.8.0)
+
+Subject: "<Blank>"
+I asked a GM about this.
+He said that the quest of this guy were purely intended to raise faction.
+
+What reward you would get when you get to revered status, he wouldn't tell.
+
+-1
+
+
+From ThottbotBy chrisl22186 on 2005/10/11 (Patch 1.8.0)
+
+Subject: "yes"
+been doing that quest and got myself halfway in the neutral rep and i got the next quest winterfall intrusion and u could also do the frostsaber provisions to double ur rep...now working to get thatlast quest so i could get that mount
+
+-1
+
+
+From ThottbotBy SpaZmonkeyWenGer on 2006/01/29 (Patch 1.9.2)
+
+Subject: "blah"
+I just let the rest of the farmers there take care of killing the den watchers and everything else that moves.
+
+-1
+
+
+From ThottbotBy WeeNiall on 2007/12/02 (Patch 2.3.0)
+
+Subject: "Re: Winterfall Intrusion [5201]"
+i have real trouble trying to find Ursas. its gay.
+1 - 40 of 40
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads

@@ -2,16 +2,27 @@
 // AzerothCore Admin Control Panel
 // Remote Access via SOAP & MariaDB
 
-define('SOAP_USER', 'admin');
-define('SOAP_PASS', 'admin');
-define('SOAP_URL', 'http://127.0.0.1:7878/');
-define('CONFIG_PATH', '/home/coyofroyo/azeroth-server/etc/modules/individualProgression.conf');
+define('SOAP_USER', getenv('SOAP_USER') ?: 'admin');
+define('SOAP_PASS', getenv('SOAP_PASS') ?: 'admin');
+define('SOAP_URL', getenv('SOAP_URL') ?: 'http://127.0.0.1:7878/');
+define('CONFIG_PATH', getenv('CONFIG_PATH') ?: '/home/coyofroyo/azeroth-server/etc/modules/individualProgression.conf');
 
 // Database configuration
-define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'acore');
-define('DB_PASS', 'acore');
-define('DB_WORLD', 'acore_world');
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_USER', getenv('DB_USER') ?: 'acore');
+define('DB_PASS', getenv('DB_PASS') ?: 'acore');
+define('DB_WORLD', getenv('DB_WORLD') ?: 'acore_world');
+
+// Helper to update configuration files
+function updateConfigOption($path, $regex, $replacement) {
+    if (file_exists($path) && is_writable($path)) {
+        $content = file_get_contents($path);
+        $content = preg_replace($regex, $replacement, $content);
+        file_put_contents($path, $content);
+        return true;
+    }
+    return false;
+}
 
 // Helper to send SOAP Remote Access Command
 function sendSoapCommand($command) {
@@ -133,8 +144,18 @@ if (isset($_GET['action'])) {
             exit;
         }
 
-        $res = sendSoapCommand("account create $username $password");
+        if (!preg_match('/^[a-zA-Z0-9_-]+$/', $username)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid username format.'));
+            exit;
+        }
+
+        $safePassword = '"' . addcslashes($password, '"\\') . '"';
+
+        $res = sendSoapCommand("account create $username $safePassword");
         if (!$res['success']) {
+            if (isset($res['output'])) {
+                $res['output'] = str_replace(array($password, $safePassword), '***', $res['output']);
+            }
             echo json_encode($res);
             exit;
         }
@@ -207,11 +228,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $chatWhere[] = "sender_name LIKE ?";
-                    $chatParams[] = "%$charName%";
+                    $chatParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $chatWhere[] = "message LIKE ?";
-                    $chatParams[] = "%$keyword%";
+                    $chatParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'CHAT_ALL') {
                     $chatWhere[] = "chat_type = ?";
@@ -236,11 +257,11 @@ if (isset($_GET['action'])) {
                 
                 if ($charName !== '') {
                     $evtWhere[] = "c.name LIKE ?";
-                    $evtParams[] = "%$charName%";
+                    $evtParams[] = '%' . $charName . '%';
                 }
                 if ($keyword !== '') {
                     $evtWhere[] = "a.event_details LIKE ?";
-                    $evtParams[] = "%$keyword%";
+                    $evtParams[] = '%' . $keyword . '%';
                 }
                 if ($type !== 'ALL' && $type !== 'EVENTS_ALL') {
                     if ($type === 'LOGIN') {
@@ -498,6 +519,37 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if ($action === 'get_paragon_config') {
+        try {
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_ale;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS);
+            $stmt = $pdo->query("SELECT `key`, `value` FROM paragon_config");
+            $config = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+            echo json_encode(array('success' => true, 'config' => $config));
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
+    if ($action === 'set_paragon_config') {
+        $key = $_POST['key'] ?? '';
+        $value = $_POST['value'] ?? '';
+        try {
+            $dsn = "mysql:host=" . DB_HOST, ";dbname=acore_ale;charset=utf8mb4";
+            $pdo = new PDO($dsn, DB_USER, DB_PASS);
+            $stmt = $pdo->prepare("REPLACE INTO paragon_config (`key`, `value`) VALUES (?, ?)");
+            $stmt->execute([$key, $value]);
+
+            // Trigger Eluna reload
+            $res = sendSoapCommand('eluna reload');
+            echo json_encode($res);
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => $e->getMessage()));
+        }
+        exit;
+    }
+
     if ($action === 'set_features_config') {
         $transmog = intval($_POST['transmog'] ?? 0);
         $enchants = intval($_POST['enchants'] ?? 0);
@@ -511,6 +563,7 @@ if (isset($_GET['action'])) {
         $accachieve = intval($_POST['accachieve'] ?? 0);
         $questParty = intval($_POST['questparty'] ?? 0);
         $groupQuests = intval($_POST['groupquests'] ?? 0);
+        $arac = intval($_POST['arac'] ?? 0);
 
         $transPath = '/home/coyofroyo/azeroth-server/etc/modules/transmog.conf';
         $enchantsPath = '/home/coyofroyo/azeroth-server/etc/modules/random_enchants.conf';
@@ -522,57 +575,19 @@ if (isset($_GET['action'])) {
         $freeprofPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_npc_free_professions.conf';
         $accmountPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_account_mount.conf';
         $accachievePath = '/home/coyofroyo/azeroth-server/etc/modules/mod_achievements.conf';
+        $aracPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_arac.conf';
 
-        if (file_exists($transPath) && is_writable($transPath)) {
-            $content = file_get_contents($transPath);
-            $content = preg_replace('/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog", $content);
-            file_put_contents($transPath, $content);
-        }
-        if (file_exists($enchantsPath) && is_writable($enchantsPath)) {
-            $content = file_get_contents($enchantsPath);
-            $content = preg_replace('/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants", $content);
-            file_put_contents($enchantsPath, $content);
-        }
-        if (file_exists($abPath) && is_writable($abPath)) {
-            $content = file_get_contents($abPath);
-            $content = preg_replace('/^AutoBalance\.Enable\.Global\s*=\s*\d+/m', "AutoBalance.Enable.Global = $autobalance", $content);
-            file_put_contents($abPath, $content);
-        }
-        if (file_exists($sololfgPath) && is_writable($sololfgPath)) {
-            $content = file_get_contents($sololfgPath);
-            $content = preg_replace('/^SoloLFG\.Enable\s*=\s*\d+/m', "SoloLFG.Enable = $sololfg", $content);
-            file_put_contents($sololfgPath, $content);
-        }
-        if (file_exists($aoelootPath) && is_writable($aoelootPath)) {
-            $content = file_get_contents($aoelootPath);
-            $content = preg_replace('/^AOELoot\.Enable\s*=\s*\d+/m', "AOELoot.Enable = $aoeloot", $content);
-            file_put_contents($aoelootPath, $content);
-        }
-        if (file_exists($mythicplusPath) && is_writable($mythicplusPath)) {
-            $content = file_get_contents($mythicplusPath);
-            $content = preg_replace('/^MythicPlus\.Enable\s*=\s*\d+/m', "MythicPlus.Enable = $mythicplus", $content);
-            file_put_contents($mythicplusPath, $content);
-        }
-        if (file_exists($itemupgradePath) && is_writable($itemupgradePath)) {
-            $content = file_get_contents($itemupgradePath);
-            $content = preg_replace('/^ItemUpgrade\.Enable\s*=\s*\d+/m', "ItemUpgrade.Enable = $itemupgrade", $content);
-            file_put_contents($itemupgradePath, $content);
-        }
-        if (file_exists($freeprofPath) && is_writable($freeprofPath)) {
-            $content = file_get_contents($freeprofPath);
-            $content = preg_replace('/^NpcFreeProfessions\.Enable\s*=\s*\d+/m', "NpcFreeProfessions.Enable = $freeprof", $content);
-            file_put_contents($freeprofPath, $content);
-        }
-        if (file_exists($accmountPath) && is_writable($accmountPath)) {
-            $content = file_get_contents($accmountPath);
-            $content = preg_replace('/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount", $content);
-            file_put_contents($accmountPath, $content);
-        }
-        if (file_exists($accachievePath) && is_writable($accachievePath)) {
-            $content = file_get_contents($accachievePath);
-            $content = preg_replace('/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve", $content);
-            file_put_contents($accachievePath, $content);
-        }
+        updateConfigOption($transPath, '/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog");
+        updateConfigOption($enchantsPath, '/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants");
+        updateConfigOption($abPath, '/^AutoBalance\.Enable\.Global\s*=\s*\d+/m', "AutoBalance.Enable.Global = $autobalance");
+        updateConfigOption($sololfgPath, '/^SoloLFG\.Enable\s*=\s*\d+/m', "SoloLFG.Enable = $sololfg");
+        updateConfigOption($aoelootPath, '/^AOELoot\.Enable\s*=\s*\d+/m', "AOELoot.Enable = $aoeloot");
+        updateConfigOption($mythicplusPath, '/^MythicPlus\.Enable\s*=\s*\d+/m', "MythicPlus.Enable = $mythicplus");
+        updateConfigOption($itemupgradePath, '/^ItemUpgrade\.Enable\s*=\s*\d+/m', "ItemUpgrade.Enable = $itemupgrade");
+        updateConfigOption($freeprofPath, '/^NpcFreeProfessions\.Enable\s*=\s*\d+/m', "NpcFreeProfessions.Enable = $freeprof");
+        updateConfigOption($accmountPath, '/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount");
+        updateConfigOption($accachievePath, '/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve");
+        updateConfigOption($aracPath, '/^ARAC\.Enable\s*=\s*\d+/m', "ARAC.Enable = $arac");
 
         // Save Quest Loot Party
         $qpPaths = [
@@ -599,7 +614,7 @@ if (isset($_GET['action'])) {
         // Save Group Quests
         $gqPaths = [
             '/home/coyofroyo/azeroth-server/etc/modules/mod_groupquests.conf',
-            '/home/coyofroyo/azeroth-server/etc/modules/mod-quest-loot-party.conf',
+            '/home/coyofroyo/azeroth-server/etc/modules/mod-groupquests.conf',
             '/home/coyofroyo/azeroth-server/etc/modules/groupquests.conf'
         ];
         $gqUpdated = false;
@@ -796,13 +811,20 @@ if (isset($_GET['action'])) {
                 WHERE c.name LIKE :search
                 LIMIT 20
             ");
-            $stmt->execute(array('search' => "%$query%"));
+            $stmt->execute(array('search' => '%' . $query . '%'));
             $chars = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            foreach ($chars as &$ch) {
-                $stmtBot = $pdo->prepare("SELECT COUNT(*) FROM acore_playerbots.playerbots_random_bots WHERE bot = :guid");
-                $stmtBot->execute(array('guid' => $ch['guid']));
-                $ch['is_bot'] = $stmtBot->fetchColumn() > 0;
+            if (!empty($chars)) {
+                $guids = array_column($chars, 'guid');
+                $placeholders = implode(',', array_fill(0, count($guids), '?'));
+                $stmtBot = $pdo->prepare("SELECT bot FROM acore_playerbots.playerbots_random_bots WHERE bot IN ($placeholders)");
+                $stmtBot->execute($guids);
+                $bots = $stmtBot->fetchAll(PDO::FETCH_COLUMN);
+                $botSet = array_flip($bots);
+
+                foreach ($chars as &$ch) {
+                    $ch['is_bot'] = isset($botSet[$ch['guid']]);
+                }
             }
             
             echo json_encode(array('success' => true, 'characters' => $chars));
@@ -1095,7 +1117,7 @@ if (isset($_GET['action'])) {
             } else {
                 if (!empty($searchName)) {
                     $conditions[] = "ct.name LIKE :search";
-                    $params['search'] = "%$searchName%";
+                    $params['search'] = '%' . $searchName . '%';
                 }
                 if ($rankFilter !== null) {
                     $conditions[] = "ct.rank IN (" . implode(',', $rankFilter) . ")";
@@ -1634,7 +1656,7 @@ if (isset($_GET['action'])) {
                 LIMIT 20
             ");
             $stmt->execute(array(
-                'search' => "%$query%",
+                'search' => '%' . $query . '%',
                 'entry' => is_numeric($query) ? intval($query) : -1
             ));
             $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -1946,6 +1968,15 @@ if (file_exists($accountAchievementsConfigPath)) {
     $content = file_get_contents($accountAchievementsConfigPath);
     if (preg_match('/^Account\.Achievements\.Enable\s*=\s*(\d+)/m', $content, $matches)) {
         $accountAchievementsEnabled = intval($matches[1]);
+    }
+}
+
+$aracEnabled = 0;
+$aracConfigPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_arac.conf';
+if (file_exists($aracConfigPath)) {
+    $content = file_get_contents($aracConfigPath);
+    if (preg_match('/^ARAC\.Enable\s*=\s*(\d+)/m', $content, $matches)) {
+        $aracEnabled = intval($matches[1]);
     }
 }
 
@@ -2697,6 +2728,13 @@ if ($dbOnline) {
                             <select id="featAccountAchievements">
                                 <option value="1" <?php echo $accountAchievementsEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
                                 <option value="0" <?php echo $accountAchievementsEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="featARAC">All Races All Classes (ARAC)</label>
+                            <select id="featARAC">
+                                <option value="1" <?php echo $aracEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $aracEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
                             </select>
                         </div>
                         <div>
@@ -4058,8 +4096,9 @@ if ($dbOnline) {
             const accachieve = document.getElementById('featAccountAchievements').value;
             const questparty = document.getElementById('featQuestParty').value;
             const groupquests = document.getElementById('featGroupQuests').value;
+            const arac = document.getElementById('featARAC').value;
 
-            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}`;
+            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}&arac=${arac}`;
 
             fetch('index.php?action=set_features_config', {
                 method: 'POST',

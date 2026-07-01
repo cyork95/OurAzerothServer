@@ -1,8 +1,8 @@
 import os
 import sys
-import json
 import requests
 import gspread
+import concurrent.futures
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Google Sheets Configuration
@@ -52,6 +52,12 @@ def sync_tracker():
     sheet = connect_to_sheet()
     rows = sheet.get_all_records()
     
+    in_progress_tasks = []
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+
     # Headers typically: Timestamp, Title, Description, Type, Priority, Status, GitHub_Issue_ID
     # We scan rows, 1-indexed for gspread updates (+2 because headers is row 1 and list is 0-indexed)
     for idx, row in enumerate(rows):
@@ -83,23 +89,31 @@ def sync_tracker():
                 sheet.update_cell(row_num, 6, "In Progress")  # Col 6 = Status
                 sheet.update_cell(row_num, 7, str(issue_number))  # Col 7 = GitHub_Issue_ID
                 
-        # 2. Check Active Issues -> If GitHub Issue is closed, update status to 'Fixed'
+        # 2. Check Active Issues -> Collect for concurrent fetching
         elif status == "in progress" and issue_id:
             issue_num = int(issue_id)
             url = f"https://api.github.com/repos/{GITHUB_REPO}/issues/{issue_num}"
-            headers = {
-                "Authorization": f"token {GITHUB_TOKEN}",
-                "Accept": "application/vnd.github.v3+json"
-            }
+            row_num = idx + 2
+            in_progress_tasks.append((issue_num, url, row_num))
+
+    # Process "in progress" issues concurrently
+    if in_progress_tasks:
+        def fetch_issue_status(task):
+            issue_num, url, row_num = task
             res = requests.get(url, headers=headers)
-            if res.status_code == 200:
-                issue_info = res.json()
-                if issue_info.get("state") == "closed":
-                    print(f"GitHub Issue #{issue_num} has been closed (resolved). Updating sheet status...")
-                    row_num = idx + 2
-                    sheet.update_cell(row_num, 6, "Fixed")
-            else:
-                print(f"Error querying GitHub Issue #{issue_num}: {res.status_code}")
+            return issue_num, row_num, res
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            future_to_task = {executor.submit(fetch_issue_status, task): task for task in in_progress_tasks}
+            for future in concurrent.futures.as_completed(future_to_task):
+                issue_num, row_num, res = future.result()
+                if res.status_code == 200:
+                    issue_info = res.json()
+                    if issue_info.get("state") == "closed":
+                        print(f"GitHub Issue #{issue_num} has been closed (resolved). Updating sheet status...")
+                        sheet.update_cell(row_num, 6, "Fixed")
+                else:
+                    print(f"Error querying GitHub Issue #{issue_num}: {res.status_code}")
 
 if __name__ == "__main__":
     sync_tracker()

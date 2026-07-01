@@ -1,0 +1,422 @@
+Skip to Main Content
+WOW
+RETAIL
+CLASSIC
+TBC
+WRATH
+MISTS
+···
+DIABLO IV
+···
+LOG IN WITH:
+Battle.net
+Email
+Register
+NEWSDATABASETOOLSGUIDESCOMMUNITYGO AD-FREEMORE
+BEST IN SLOT
+CLASSES
+DUNGEONS
+LEVELING
+PROFESSIONS
+PVP
+QUESTS
+REPUTATION
+RAIDS
+TIER LISTS
+Report Ad
+Report ad
+Remove All Ads
+Report Ad
+Report ad
+Remove All Ads
+0:30
+/
+2:55
+Keep Watching
+Report Ad
+Report ad
+Remove All Ads
+Database
+Quests
+Eastern Kingdoms
+Eastern Plaguelands
+Drop the Ads.
+Keep the Loot.
+
+
+Quick Facts
+
+Level: 56
+Requires level 50
+Side: Both
+Start: Chromie
+End: Carlin Redpath
+Not sharable
+Difficulty: 50  52  54  59  67
+Added in patch 1.13.2 "Classic"
+
+
+Series
+
+1.
+Brother Carlin
+
+2.
+Villains of Darrowshire
+
+
+Screenshots (1)
+
+
+
+Videos
+
+None yet – Suggest one!
+Links
+Brother Carlin
+Bring the Extended Annals of Darrowshire to Carlin Redpath in Eastern Plaguelands.
+	Extended Annals of Darrowshire (Provided)
+Relevant Locations
+Part of this quest happens in Western Plaguelands and Eastern Plaguelands.
+Tip: Click map to zoom
+Hide pins
+Western Plaguelands
+Description
+The Annals of Darrowshire, through my magic, has gained pages at its end, and now it extends its history beyond the battle. One of the extra passages tells of another Redpath, Carlin, who survived Joseph's betrayal. Carlin's now in the Plaguelands to the east, at the Light's Hope Chapel.
+
+Take the book and speak with him.
+Progress
+Completion
+Rewards
+You will receive: 0
+Gains
+Upon completion of this quest you will gain:
+4,200 experience
+75 reputation with Argent Dawn
+LEVEL
+66
+See if you've already completed this by typing:
+/run print(C_QuestLog.IsQuestFlaggedCompleted(5210))
+Gather info with the Wowhead Client
+Related
+Comments (20)
+Screenshots (1)
+Videos (2)
+1 - 20 of 20
+Add your comment|Sort: newest first, oldest first, highest rated|Filter by patch:
+Classic
+3.2.2
+3.0.2
+2.4.1
+2.3.3
+2.3.0
+2.2.2
+2.1.2
+2.0.12
+2.0.1
+1.12.1
+1.11.2
+1.10.2
+1.9.4
+1.6.1
+
+37
+
+
+From ThottbotBy Chrisond on 2007/07/01 (Patch 2.1.2)
+
+Subject: "Re: Brother Carlin [5210]"
+Brother Carlin is at 81,59 Right next to the flight path guy.
+
+16
+
+
+From ThottbotBy Dank101 on 2006/09/30 (Patch 1.12.1)
+
+Subject: "book"
+the book comes from the quest before this - Annals of darrowshire
+
+you have to get a book in the ruins of Andorhal
+first chain of the quest starts from the little girl pamela
+
+hope this helps
+
+1
+
+
+
+Miegresdebil on 2006/12/13 (Patch 2.0.1)Subject: "The previous quest:"
+
+The Annals of Darrowshire
+
+9
+
+
+From ThottbotBy Hydr0fLame on 2006/02/24 (Patch 1.9.4)
+
+Subject: "cords"
+81,58
+
+8
+
+
+By wingsofscion (11,746 – 1·22·97) on 2008/07/11 (Patch 2.4.1)
+
+The full quest chain for The Battle of Darrowshire:
+1. Little Pamela
+2. Pamela's Doll
+3. Auntie Marlene
+4. A Strange Historian
+5. The Annals of Darrowshire
+6. Brother Carlin
+7a. Villains of Darrowshire
+7b. Heroes of Darrowshire
+8. Marauders of Darrowshire
+9. Return to Chromie
+10. The Battle of Darrowshire
+11. Hidden Treasures
+Villains and Heroes do both need to be completed in order to get Marauders. However, Defenders of Darrowshire (the Uncle Carlin chain) does not need to be completed in order to get to The Battle of Darrowshire.
+
+7
+
+
+From ThottbotBy holyless on 2006/04/01 (Patch 1.9.4)
+
+Subject: "Location of skull and sword"
+you can find the skull and the bottom of the lake in the middle where the fighting is.  51,49
+you can find the broken sword at location 54,63. Best go along outside edge of cliff and just drop down pick up sword and then ride mount back out to the west out of the canyon. Didn't have to fight any MOB's for this quest
+
+6
+
+
+By 31730 (4,123 – 8·34) on 2007/05/04 (Patch 2.0.12)
+
+Brother Carlin is in front of a tent near the flight path for Eastern Plaguelands at Light's Hope Chapel, which is in the mountains northeast of Corins Crossing. GL! =D
+
+4
+
+
+From AllakhazamBy DrickosTruelight on 2007/10/02 (Patch 2.2.2)
+
+Subject: "LOC"
+Cross Over into Eastern Plaguelands. At location (81, 95).
+
+0
+
+
+
+Zedno on 2008/01/24 (Patch 2.3.3)Subject: "LOC"
+
+81,59 is the correct location
+
+4
+
+
+By 87721 (3,993 – 12·55) on 2009/10/30 (Patch 3.2.2)
+
+I strongly encourage you to read the book while its in your possession. There is some great lore in there!
+
+If you already gave up the book you can read it here: https://www.wowhead.com/wotlk/item=13202
+
+3
+
+
+By 101009 (149 – 1) on 2007/11/18 (Patch 2.3.0)
+
+I was having trouble finding lights hope chapel, apparently Carlin Redpath is to the right of it. Eventually i found it, it ended up being at these Coords 81, 58.
+
+Carlin is located at these Coords 81, 59 (right next to the chapel.)
+
+3
+
+
+By 26532 (281,938 – 22·105·945) <Rare Premium User> on 2008/05/15 (Patch 2.4.1)
+
+This quest is the follow-up to  The Annals of Darrowshire. Completing it will open up both  Heroes of Darrowshire and  Villains of Darrowshire.
+Last edited by 26532 on 2009/10/21 (Patch 3.2.2)
+
+3
+
+
+By 141922 (811 – 3·11) on 2008/11/01 (Patch 3.0.2)
+
+This quest is misleading as to how far you must travel to complete it. Beware.
+Last edited by 141922 on 2008/11/01 (Patch 3.0.2)
+
+1
+
+
+From ThottbotBy Sitruk08 on 2007/06/22 (Patch 2.1.2)
+
+Subject: "Re: Brother Carlin [5210]"
+Where do you find brother carlin can some one give the location
+
+1
+
+
+From AllakhazamBy WoWAuren on 2008/02/02 (Patch 2.3.3)
+
+Subject: "lol"
+lol why did u destroy it
+
+dency 52 warlock (echo isles)
+
+1
+
+
+From AllakhazamBy Nyhm on 2008/07/06 (Patch 2.4.1)
+
+Subject: "."
+Brother Carlin is at 81,59 Right next to the flight path guy.
+
+1
+
+
+By Seprest (5,192 – 1·18·47) on 2020/05/04 (Classic)
+
+Turning in this quest, Carlin remarks "I know that Andorhal is lost, but has the Scourge yet reached fair Tirisfal?". WHAT!
+
+0
+
+
+By kreghx (31,633 – 8·49·214) on 2006/12/18 (Patch 2.0.1)
+
+This quest series begins either at Sister Pamela(https://www.wowhead.com/wotlk/quest=5601) or Little Pamela(https://www.wowhead.com/wotlk/quest=5142)
+
+-3
+
+
+From AllakhazamBy martinw on 2005/08/11 (Patch 1.6.1)
+
+Subject: "Damn"
+I destroyed the book thinking it was just any other book. Why can't Blizz implement some sort of system where it doesn't let you destroy quest items?
+
+Edited, Thu Aug 11 06:19:03 2005
+
+0
+
+
+
+Ilmare on 2005/09/01 (Patch 1.6.1)Subject: "RE: Damn"
+
+What about quest items you no longer need, but are still in your inventory? If they don't let you destroy quest items, I would still have my triage bandages, flare gun, etc etc....
+
+
+
+0
+
+
+
+Nathanyel on 2006/09/12 (Patch 1.12.0)Subject: "Damn"
+
+the "Quest Item" in the tooltip is a dead giveaway, isn't it?
+
+
+
+0
+
+
+
+Melegant on 2006/12/02 (Patch 1.12.1)Subject: "RE: Damn"
+
+Maybe not be able to destroy quest itmes for active quests...
+
+
+
+3
+
+
+
+DrickosTruelight on 2007/10/02 (Patch 2.2.2)Subject: "Damn"
+
+You should be able to drop the quest and get it again. When you do, you get another book. So, your not stuck.
+
+-3
+
+
+From ThottbotBy VaporV on 2006/05/07 (Patch 1.10.2)
+
+Subject: "Lost"
+I lost this book i think i just threw it away anyway of getting it back?
+From ThottbotBy Synsk on 2006/07/19 (Patch 1.11.2)
+
+From ThottbotBy Marshan on 2007/04/25 (Patch 2.0.12)
+
+1 - 20 of 20
+ 
+Contribute
+Add your comment
+Submit a screenshot
+Suggest a video
+Submit your data
+Please keep the following in mind when posting a comment:
+Your comment must be in English or it will be removed.
+Unsure how to post? Check out our handy guide!
+You might want to proof-read your comments before posting them.
+Please post questions on our forums for quicker reply.
+Post a Comment
+You are not logged in. Please log in or register an account to add your comment.
+News
+Database
+Tools
+Guides
+Community
+Go Ad-Free
+More
+WOW GUIDES
+Class Guides
+Delve Guides
+Leveling Guides
+Mythic+ Guides
+Profession Guides
+Raid Guides
+Talent Calculator
+Tier Lists
+Midnight
+MOP CLASSIC GUIDES
+Class Guides
+Profession Guides
+Dungeon Guides
+Raid Guides
+Quest Guides
+Reputation Guides
+Pet Battle Guides
+Scenario Guides
+Challenge Mode Guides
+Talent Calculator
+Tier Lists
+WOW CLASSIC GUIDES
+Attunement Guide
+Best in Slot Guides
+Class Guides
+Dungeon Guides
+Leveling Guides
+Profession Guides
+PvP Guides
+Quest Guides
+Raid Guides
+Reputation Guides
+DIABLO IV GUIDES
+Lord of Hatred Expansion
+Season 13
+Endgame Tier List
+Tier Lists
+Barbarian Builds
+Druid Builds
+Necromancer Builds
+Paladin Builds
+Rogue Builds
+Sorcerer Builds
+Spiritborn Builds
+Need Help?
+User Tools
+About Us
+Advertise
+Do Not Sell or Share My Personal Information
+Random Page
+Premium
+Privacy Policy
+Terms of Use
+Report Ad
+Report ad
+Remove All Ads

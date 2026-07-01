@@ -1,0 +1,3 @@
+Error: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.wowhead.com/wotlk/quest=5216", waiting until "load"
