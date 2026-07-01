@@ -684,24 +684,34 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             </div>
 
             <div class="card">
-                <div class="card-title">4. Installing the OurAzeroth Addon Bundle (Quest Guide & Bagnon)</div>
-                <p>We have bundled our custom quest guidance companion **OurRestedXP** and the unified inventory addon **Bagnon** into a single convenient download specifically for our server's levelling experience!</p>
+                <div class="card-title">4. Installing the OurAzeroth Addon & Client Files Bundle</div>
+                <p>We have compiled a complete ZIP bundle containing all server add-ons (Quest Guides, Bagnon, MobInfo), custom user interface files (Black Market Auction House), and spatial textures/sound assets (Single Player Delves) specifically for our server overhaul!</p>
                 
                 <div style="margin: 1rem 0; padding: 1rem; background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                     <div>
-                        <strong style="color: #fff; font-size: 0.95rem;">📦 Download Addon Bundle</strong>
-                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;">Download the compiled ZIP containing both addons directly from our Google Drive storage.</p>
+                        <strong style="color: #fff; font-size: 0.95rem;">📦 Download Addon & Client Files Bundle</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;">Download the compiled ZIP directly from our Google Drive storage.</p>
                     </div>
-                    <a href="https://drive.google.com/file/d/1h4qtjjGFabiv43G548wMbCl9mchoba9y/view?usp=sharing" target="_blank" style="display: inline-block; color: #fff; background: var(--accent-primary); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent-primary)'">📥 Download Addon Bundle ZIP</a>
+                    <a href="https://drive.google.com/file/d/1olnNSEER-2lf5abNkhsr20RLWiBjPisr/view?usp=sharing" target="_blank" style="display: inline-block; color: #fff; background: var(--accent-primary); border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent-primary)'">📥 Download Bundle ZIP</a>
                 </div>
 
                 <h3>How to Install & Configure</h3>
                 <ol>
-                    <li>Extract the downloaded **<code>OurAzeroth_Addons.zip</code>** archive file.</li>
-                    <li>Copy all the extracted directories (such as <code>Bagnon</code>, <code>Guidelime</code>, <code>MobInfo2</code>, <code>Questie</code>, <code>WeakAuras</code>, and the leveling guides).</li>
-                    <li>Navigate to your World of Warcraft directory and open the **<code>Interface/AddOns/</code>** folder.</li>
-                    <li>Paste the folders directly there.</li>
-                    <li>Launch the game, or type <strong><code>/reload</code></strong> in chat if you are already logged in.</li>
+                    <li>Extract the downloaded archive file.</li>
+                    <li>
+                        <strong>Standard Add-ons:</strong> Copy the add-on folders (<code>Bagnon</code>, <code>Guidelime</code>, <code>MobInfo2</code>, <code>Questie</code>, <code>WeakAuras</code>) into your WoW directory under:
+                        <pre style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; color: #a78bfa; margin: 0.25rem 0;">WoW_Directory/Interface/AddOns/</pre>
+                    </li>
+                    <li>
+                        <strong>Black Market UI (BMAH Addon):</strong> Copy the folder <code>BlackMarketUI</code> into your WoW directory under:
+                        <pre style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; color: #a78bfa; margin: 0.25rem 0;">WoW_Directory/Interface/AddOns/</pre>
+                    </li>
+                    <li>
+                        <strong>Single Player Delves Assets:</strong> Copy the five custom asset folders (<code>Interface</code>, <code>Sound</code>, <code>starwars</code>, <code>textures</code>, and <code>world</code>) and paste them directly into the <strong>root</strong> of your WoW directory:
+                        <pre style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; color: #a78bfa; margin: 0.25rem 0;">WoW_Directory/</pre>
+                        <em>Note: Make sure your operating system **merges** these files into your existing WoW directories (Interface/Sound) rather than overwriting them.</em>
+                    </li>
+                    <li>Delete your WoW client's <strong><code>Cache</code></strong> folder, launch the game, and enjoy!</li>
                 </ol>
 
                 <div class="alert alert-info">
