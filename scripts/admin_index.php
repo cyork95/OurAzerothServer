@@ -184,6 +184,69 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if ($action === 'move_character') {
+        $charName = trim($_POST['character_name'] ?? '');
+        $accName = trim($_POST['target_account_name'] ?? '');
+
+        if (empty($charName) || empty($accName)) {
+            echo json_encode(array('success' => false, 'output' => 'Character Name and Target Account Name are required.'));
+            exit;
+        }
+
+        try {
+            $dsnChar = "mysql:host=" . DB_HOST . ";dbname=acore_characters;charset=utf8mb4";
+            $dsnAuth = "mysql:host=" . DB_HOST . ";dbname=acore_auth;charset=utf8mb4";
+            $pdoChar = new PDO($dsnChar, DB_USER, DB_PASS);
+            $pdoAuth = new PDO($dsnAuth, DB_USER, DB_PASS);
+
+            $stmt = $pdoChar->prepare("SELECT guid, name, online FROM characters WHERE name = ?");
+            $stmt->execute([$charName]);
+            $char = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$char) {
+                echo json_encode(array('success' => false, 'output' => "Character '$charName' not found."));
+                exit;
+            }
+
+            if ($char['online'] == 1) {
+                echo json_encode(array('success' => false, 'output' => "Character '{$char['name']}' is currently online. They must log off before they can be transferred."));
+                exit;
+            }
+
+            $guid = intval($char['guid']);
+
+            $stmtAcc = $pdoAuth->prepare("SELECT id FROM account WHERE username = ?");
+            $stmtAcc->execute([$accName]);
+            $account = $stmtAcc->fetch(PDO::FETCH_ASSOC);
+
+            if (!$account) {
+                echo json_encode(array('success' => false, 'output' => "Target account '$accName' not found."));
+                exit;
+            }
+
+            $accountId = intval($account['id']);
+
+            $upd = $pdoChar->prepare("UPDATE characters SET account = ? WHERE guid = ?");
+            $upd->execute([$accountId, $guid]);
+
+            $botOutput = "";
+            $tableCheck = $pdoChar->query("SHOW TABLES LIKE 'playerbots_random_bots'");
+            if ($tableCheck && $tableCheck->rowCount() > 0) {
+                $updBot = $pdoChar->prepare("UPDATE playerbots_random_bots SET owner = ? WHERE guid = ?");
+                $updBot->execute([$accountId, $guid]);
+                if ($updBot->rowCount() > 0) {
+                    $botOutput = " (Updated playerbot owner account ID)";
+                }
+            }
+
+            echo json_encode(array('success' => true, 'output' => "Character '{$char['name']}' has been successfully transferred to account '$accName'!$botOutput"));
+            exit;
+        } catch (Exception $e) {
+            echo json_encode(array('success' => false, 'output' => "Database error: " . $e->getMessage()));
+            exit;
+        }
+    }
+
     if ($action === 'restart_server') {
         // Run safe restart watchdog in background
         exec('nohup /home/coyofroyo/safe_restart.sh > /dev/null 2>&1 &');
@@ -536,7 +599,7 @@ if (isset($_GET['action'])) {
         $key = $_POST['key'] ?? '';
         $value = $_POST['value'] ?? '';
         try {
-            $dsn = "mysql:host=" . DB_HOST, ";dbname=acore_ale;charset=utf8mb4";
+            $dsn = "mysql:host=" . DB_HOST . ";dbname=acore_ale;charset=utf8mb4";
             $pdo = new PDO($dsn, DB_USER, DB_PASS);
             $stmt = $pdo->prepare("REPLACE INTO paragon_config (`key`, `value`) VALUES (?, ?)");
             $stmt->execute([$key, $value]);
@@ -564,6 +627,7 @@ if (isset($_GET['action'])) {
         $questParty = intval($_POST['questparty'] ?? 0);
         $groupQuests = intval($_POST['groupquests'] ?? 0);
         $arac = intval($_POST['arac'] ?? 0);
+        $individualXp = intval($_POST['individualxp'] ?? 1);
 
         $transPath = '/home/coyofroyo/azeroth-server/etc/modules/transmog.conf';
         $enchantsPath = '/home/coyofroyo/azeroth-server/etc/modules/random_enchants.conf';
@@ -576,6 +640,7 @@ if (isset($_GET['action'])) {
         $accmountPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_account_mount.conf';
         $accachievePath = '/home/coyofroyo/azeroth-server/etc/modules/mod_achievements.conf';
         $aracPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_arac.conf';
+        $individualXpPath = '/home/coyofroyo/azeroth-server/etc/modules/individual_xp.conf';
 
         updateConfigOption($transPath, '/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog");
         updateConfigOption($enchantsPath, '/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants");
@@ -588,6 +653,7 @@ if (isset($_GET['action'])) {
         updateConfigOption($accmountPath, '/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount");
         updateConfigOption($accachievePath, '/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve");
         updateConfigOption($aracPath, '/^ARAC\.Enable\s*=\s*\d+/m', "ARAC.Enable = $arac");
+        updateConfigOption($individualXpPath, '/^IndividualXp\.Enabled\s*=\s*(true|false|1|0)/m', "IndividualXp.Enabled = " . ($individualXp ? 'true' : 'false'));
 
         // Save Quest Loot Party
         $qpPaths = [
@@ -636,6 +702,38 @@ if (isset($_GET['action'])) {
         $res = sendSoapCommand('reload config');
         if ($res['success']) {
             $res['output'] = "Server modules config updated and reloaded successfully!";
+        }
+        echo json_encode($res);
+        exit;
+    }
+
+    if ($action === 'set_tcg_config') {
+        $mode = intval($_POST['mode'] ?? 2);
+        $boxes = intval($_POST['boxes'] ?? 0);
+        $bossDrop = intval($_POST['boss_drop'] ?? 0);
+        $creatures = trim($_POST['creatures'] ?? '');
+        $items = trim($_POST['items'] ?? '');
+        $mail = intval($_POST['mail'] ?? 0);
+
+        $confPath = '/home/coyofroyo/azeroth-server/etc/modules/mod-tcg-vendors.conf';
+        if (!file_exists($confPath)) {
+            echo json_encode(array('success' => false, 'output' => 'mod-tcg-vendors.conf not found.'));
+            exit;
+        }
+
+        $content = file_get_contents($confPath);
+        $content = preg_replace('/^TCGVendors\.Mode\s*=\s*\d+/m', "TCGVendors.Mode = $mode", $content);
+        $content = preg_replace('/^TCGVendors\.LandroBoxesMultiRedeem\s*=\s*\d+/m', "TCGVendors.LandroBoxesMultiRedeem = $boxes", $content);
+        $content = preg_replace('/^TCGVendors\.BossDrop\.Enabled\s*=\s*\d+/m', "TCGVendors.BossDrop.Enabled = $bossDrop", $content);
+        $content = preg_replace('/^TCGVendors\.BossDrop\.CreatureIds\s*=\s*[^\n\r]*/m', "TCGVendors.BossDrop.CreatureIds = $creatures", $content);
+        $content = preg_replace('/^TCGVendors\.BossDrop\.ItemIds\s*=\s*[^\n\r]*/m', "TCGVendors.BossDrop.ItemIds = $items", $content);
+        $content = preg_replace('/^TCGVendors\.BossDrop\.MailParticipants\s*=\s*\d+/m', "TCGVendors.BossDrop.MailParticipants = $mail", $content);
+
+        file_put_contents($confPath, $content);
+
+        $res = sendSoapCommand('reload config');
+        if ($res['success']) {
+            $res['output'] = "TCG & Promotional Config updated and reloaded successfully!";
         }
         echo json_encode($res);
         exit;
@@ -1980,6 +2078,45 @@ if (file_exists($aracConfigPath)) {
     }
 }
 
+$individualXpEnabled = 1;
+$individualXpConfigPath = '/home/coyofroyo/azeroth-server/etc/modules/individual_xp.conf';
+if (file_exists($individualXpConfigPath)) {
+    $content = file_get_contents($individualXpConfigPath);
+    if (preg_match('/^IndividualXp\.Enabled\s*=\s*(true|false|1|0)/m', $content, $matches)) {
+        $val = strtolower(trim($matches[1]));
+        $individualXpEnabled = ($val === 'true' || $val === '1') ? 1 : 0;
+    }
+}
+
+$tcgMode = 2;
+$tcgBoxesMultiRedeem = 0;
+$tcgBossDropEnabled = 0;
+$tcgBossDropCreatures = '';
+$tcgBossDropItems = '';
+$tcgBossDropMail = 0;
+$tcgConfigPath = '/home/coyofroyo/azeroth-server/etc/modules/mod-tcg-vendors.conf';
+if (file_exists($tcgConfigPath)) {
+    $content = file_get_contents($tcgConfigPath);
+    if (preg_match('/^TCGVendors\.Mode\s*=\s*(\d+)/m', $content, $matches)) {
+        $tcgMode = intval($matches[1]);
+    }
+    if (preg_match('/^TCGVendors\.LandroBoxesMultiRedeem\s*=\s*(\d+)/m', $content, $matches)) {
+        $tcgBoxesMultiRedeem = intval($matches[1]);
+    }
+    if (preg_match('/^TCGVendors\.BossDrop\.Enabled\s*=\s*(\d+)/m', $content, $matches)) {
+        $tcgBossDropEnabled = intval($matches[1]);
+    }
+    if (preg_match('/^TCGVendors\.BossDrop\.CreatureIds\s*=\s*(.*)$/m', $content, $matches)) {
+        $tcgBossDropCreatures = trim($matches[1]);
+    }
+    if (preg_match('/^TCGVendors\.BossDrop\.ItemIds\s*=\s*(.*)$/m', $content, $matches)) {
+        $tcgBossDropItems = trim($matches[1]);
+    }
+    if (preg_match('/^TCGVendors\.BossDrop\.MailParticipants\s*=\s*(\d+)/m', $content, $matches)) {
+        $tcgBossDropMail = intval($matches[1]);
+    }
+}
+
 $onlineBots = [];
 $onlineBotsCount = 0;
 if ($dbOnline) {
@@ -2750,6 +2887,13 @@ if ($dbOnline) {
                                 <option value="0" selected>Disabled (Requires Recompile)</option>
                             </select>
                         </div>
+                        <div>
+                            <label for="featIndividualXp">Individual XP Rates (SetXpBar)</label>
+                            <select id="featIndividualXp">
+                                <option value="1" <?php echo $individualXpEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $individualXpEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: auto;">Save Features Config & Reload</button>
                 </form>
@@ -2825,6 +2969,57 @@ if ($dbOnline) {
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: auto;">Save Challenge Config & Reload</button>
+                </form>
+            </div>
+
+            <!-- TCG & Promotions -->
+            <div class="card">
+                <div class="card-title">TCG & Promotional Vendors Configuration</div>
+                <form onsubmit="saveTcgConfig(event)">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label for="tcgMode">Redemption Mode</label>
+                            <select id="tcgMode">
+                                <option value="0" <?php echo $tcgMode == 0 ? 'selected' : ''; ?>>Disabled</option>
+                                <option value="1" <?php echo $tcgMode == 1 ? 'selected' : ''; ?>>Free Redemption</option>
+                                <option value="2" <?php echo $tcgMode == 2 ? 'selected' : ''; ?>>Blizz-like Code</option>
+                                <option value="3" <?php echo $tcgMode == 3 ? 'selected' : ''; ?>>Item-Specific Code</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tcgBoxes">Landro's Gift Box Multi-Redeem</label>
+                            <select id="tcgBoxes">
+                                <option value="1" <?php echo $tcgBoxesMultiRedeem == 1 ? 'selected' : ''; ?>>Unlimited (Consumable)</option>
+                                <option value="0" <?php echo $tcgBoxesMultiRedeem == 0 ? 'selected' : ''; ?>>One-time per Character</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tcgBossDropEnabled">Boss Drop System</label>
+                            <select id="tcgBossDropEnabled">
+                                <option value="1" <?php echo $tcgBossDropEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $tcgBossDropEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tcgBossDropMail">Boss Drop Delivery Method</label>
+                            <select id="tcgBossDropMail">
+                                <option value="0" <?php echo $tcgBossDropMail == 0 ? 'selected' : ''; ?>>Loot Window Only</option>
+                                <option value="1" <?php echo $tcgBossDropMail == 1 ? 'selected' : ''; ?>>In-Game Mail Only</option>
+                                <option value="2" <?php echo $tcgBossDropMail == 2 ? 'selected' : ''; ?>>Mail AND Loot Corpse</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label for="tcgBossCreatures">Trigger Boss Creature IDs (Comma-separated)</label>
+                            <textarea id="tcgBossCreatures" rows="3" style="width: 100%; font-family: monospace; font-size: 0.85rem; padding: 0.5rem; background: rgba(0,0,0,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;"><?php echo htmlspecialchars($tcgBossDropCreatures); ?></textarea>
+                        </div>
+                        <div>
+                            <label for="tcgBossItems">Reward Item IDs (Comma-separated)</label>
+                            <textarea id="tcgBossItems" rows="3" style="width: 100%; font-family: monospace; font-size: 0.85rem; padding: 0.5rem; background: rgba(0,0,0,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;"><?php echo htmlspecialchars($tcgBossDropItems); ?></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: auto;">Save TCG Config & Reload</button>
                 </form>
             </div>
 
@@ -3269,6 +3464,29 @@ if ($dbOnline) {
                         <button type="submit" class="btn btn-success" style="margin-top: 1.5rem;">Create Account</button>
                     </form>
                     <div id="accountCreationOutput" style="margin-top: 1rem; border-radius: 8px; padding: 0.75rem; font-size: 0.9rem;"></div>
+                </div>
+
+                <!-- Character Account Transfer Card -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-title">Character Account Transfer</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Transfer ownership of a character to a different account. The character <strong>must be offline</strong> to perform this action.
+                    </p>
+                    <form onsubmit="transferCharacter(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                            <div style="position: relative;">
+                                <label for="transferCharName">Character Name</label>
+                                <input type="text" id="transferCharName" placeholder="Character name..." required autocomplete="off" oninput="filterTransferCharSearch(this.value)">
+                                <div id="transferCharDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 200px; overflow-y: auto; background: #121826; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;"></div>
+                            </div>
+                            <div>
+                                <label for="transferAccName">Target Account Name</label>
+                                <input type="text" id="transferAccName" placeholder="Account username..." required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: auto;">Move Character</button>
+                    </form>
+                    <div id="transferOutput" style="margin-top: 1rem; border-radius: 8px; padding: 0.75rem; font-size: 0.9rem; display: none;"></div>
                 </div>
             </div>
         </div>
@@ -4097,8 +4315,9 @@ if ($dbOnline) {
             const questparty = document.getElementById('featQuestParty').value;
             const groupquests = document.getElementById('featGroupQuests').value;
             const arac = document.getElementById('featARAC').value;
+            const individualxp = document.getElementById('featIndividualXp').value;
 
-            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}&arac=${arac}`;
+            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}&arac=${arac}&individualxp=${individualxp}`;
 
             fetch('index.php?action=set_features_config', {
                 method: 'POST',
@@ -4132,6 +4351,27 @@ if ($dbOnline) {
             .then(res => res.json())
             .then(data => alert(data.output))
             .catch(err => alert("Error saving challenge config: " + err));
+        }
+
+        function saveTcgConfig(e) {
+            e.preventDefault();
+            const mode = document.getElementById('tcgMode').value;
+            const boxes = document.getElementById('tcgBoxes').value;
+            const boss_drop = document.getElementById('tcgBossDropEnabled').value;
+            const creatures = document.getElementById('tcgBossCreatures').value;
+            const items = document.getElementById('tcgBossItems').value;
+            const mail = document.getElementById('tcgBossDropMail').value;
+
+            const params = `mode=${mode}&boxes=${boxes}&boss_drop=${boss_drop}&creatures=${encodeURIComponent(creatures)}&items=${encodeURIComponent(items)}&mail=${mail}`;
+
+            fetch('index.php?action=set_tcg_config', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(res => res.json())
+            .then(data => alert(data.output))
+            .catch(err => alert("Error saving TCG config: " + err));
         }
 
         function saveBotConfig(e) {
@@ -4636,6 +4876,90 @@ if ($dbOnline) {
             document.getElementById('charSearchInput').value = '';
             document.getElementById('charSearchDropdown').style.display = 'none';
             document.getElementById('clearAdminCharSearchBtn').style.display = 'none';
+        }
+
+        // Character transfer logic
+        let transferCharSearchTimeout = null;
+        function filterTransferCharSearch(val) {
+            const dropdown = document.getElementById('transferCharDropdown');
+            if (!val.trim()) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            clearTimeout(transferCharSearchTimeout);
+            transferCharSearchTimeout = setTimeout(() => {
+                fetch('index.php?action=search_characters', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `query=${encodeURIComponent(val)}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.characters && data.characters.length > 0) {
+                        dropdown.innerHTML = data.characters.map(c => `
+                            <div class="autocomplete-item" onclick="selectTransferChar('${encodeURIComponent(c.name)}')" style="padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); color: #fff; display: flex; justify-content: space-between; align-items: center;" onmouseover="this.style.background='var(--primary-glow)'" onmouseout="this.style.background='transparent'">
+                                <div>
+                                    <strong style="color: #fff;">${c.name}</strong>
+                                    <span style="color: var(--text-secondary); font-size: 0.8rem; margin-left: 0.5rem;">Lvl ${c.level}</span>
+                                </div>
+                                <span style="font-size: 0.8rem; color: ${c.online ? 'var(--status-success)' : 'var(--text-secondary)'};">
+                                    ${c.online ? 'Online' : 'Offline'}
+                                </span>
+                            </div>
+                        `).join('');
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.style.display = 'none';
+                    }
+                })
+                .catch(() => dropdown.style.display = 'none');
+            }, 150);
+        }
+
+        function selectTransferChar(name) {
+            document.getElementById('transferCharName').value = decodeURIComponent(name);
+            document.getElementById('transferCharDropdown').style.display = 'none';
+        }
+
+        function transferCharacter(e) {
+            e.preventDefault();
+            const charName = document.getElementById('transferCharName').value;
+            const accName = document.getElementById('transferAccName').value;
+            const output = document.getElementById('transferOutput');
+
+            if (!confirm(`Are you sure you want to transfer character "${charName}" to account "${accName}"?`)) {
+                return;
+            }
+
+            output.style.display = 'block';
+            output.style.background = 'rgba(255, 255, 255, 0.05)';
+            output.style.color = '#fff';
+            output.innerHTML = "Processing transfer...";
+
+            fetch('index.php?action=move_character', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `character_name=${encodeURIComponent(charName)}&target_account_name=${encodeURIComponent(accName)}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    output.style.background = 'rgba(16, 185, 129, 0.1)';
+                    output.style.color = 'var(--status-success)';
+                    output.innerHTML = data.output;
+                    document.getElementById('transferCharName').value = '';
+                    document.getElementById('transferAccName').value = '';
+                } else {
+                    output.style.background = 'rgba(239, 68, 68, 0.1)';
+                    output.style.color = 'var(--status-danger)';
+                    output.innerHTML = data.output;
+                }
+            })
+            .catch(err => {
+                output.style.background = 'rgba(239, 68, 68, 0.1)';
+                output.style.color = 'var(--status-danger)';
+                output.innerHTML = "Failed to communicate with server: " + err;
+            });
         }
 
         // Character quick editor script controllers
