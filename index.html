@@ -1487,53 +1487,110 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <h3>13. Item Upgrade System</h3>
                 <p>The <strong>Item Upgrade</strong> module spawns an NPC in major cities who can upgrade the item level and stats of your equipment in exchange for gold or custom currencies.</p>
 
-                <h3>13. Guild House System (Beta & Migration)</h3>
-                <p>We are currently migrating from our legacy Lua "Beta" system to a permanent C++ Phased Guild House module. During this transition, both systems are documented below.</p>
+                <h3>13. Guild House System (C++ Phased Instances)</h3>
+                <p>We have upgraded our Guild Housing from the legacy Lua script to the official phased C++ <strong>mod-guildhouse</strong> module. Guilds can now purchase and fully customize private, phased instances with trainers, vendors, portals, and other amenities.</p>
 
-                <!-- Lua Beta System -->
-                <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border-glass); margin-bottom: 1.5rem;">
-                    <h4 style="color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">Active (Beta)</span>
-                        Legacy Lua Guild Teleport
-                    </h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        Current beta members can use the following command to teleport to a shared faction-specific camp. This system requires a guild with at least 1 member.
-                    </p>
-                    <div style="background: rgba(0, 0, 0, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                        <code onclick="copyText('.guild house')">.guild house</code>
-                    </div>
-                </div>
-
-                <!-- C++ Module Migration -->
                 <div style="background: rgba(139, 92, 246, 0.03); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.25); margin-bottom: 1.5rem;">
                     <h4 style="color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Deploying...</span>
-                        C++ Phased Guild Houses (mod-guildhouse)
+                        <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">Active (C++ Module)</span>
+                        Phased Guild House Control & commands
                     </h4>
                     <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        The official AzerothCore module is being compiled. Once active, guilds will be able to purchase and customize private, phased instances with the following features:
+                        To begin, the Guild Master can visit the <strong>Guild House Recruiter</strong> (NPC ID <code>500030</code>) in any major capital, or guild members can use standard chat commands:
                     </p>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
                         <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); padding: 0.75rem; border-radius: 8px;">
                             <h5 style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem;">🚀 Phased Teleport</h5>
-                            <code style="opacity: 0.6;">.gh tele</code>
+                            <code onclick="copyText('.gh tele')">.gh tele</code>
                         </div>
                         <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); padding: 0.75rem; border-radius: 8px;">
-                            <h5 style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem;">🤵 Personal Butler</h5>
-                            <code style="opacity: 0.6;">.gh butler</code>
+                            <h5 style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem;">🤵 Personal Butler / Buy</h5>
+                            <code onclick="copyText('.gh buy')">.gh buy</code>
                         </div>
                     </div>
 
-                    <h4 style="color: #fff; margin-bottom: 0.75rem; font-size: 1rem;">🛠️ Migration Amenities Roadmap</h4>
-                    <ul style="font-size: 0.85rem; color: var(--text-secondary); margin-left: 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem;">
-                        <li>Phased Instance Mapping</li>
-                        <li>NPC Purchase Management</li>
-                        <li>Guild Bank Integration</li>
-                        <li>Global City Portals</li>
+                    <h4 style="color: #fff; margin-bottom: 0.75rem; font-size: 1rem;">🛠️ Guild House Cost Config Reference</h4>
+                    <table style="width: 100%; font-size: 0.85rem; color: var(--text-secondary); border-collapse: collapse; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-align: left;">
+                                <th style="padding: 0.5rem;">Config/Amenity</th>
+                                <th style="padding: 0.5rem;">Default Cost (Gold)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;">Guild House Land Purchase</td><td style="padding: 0.4rem;">1,000g</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;">Mailbox / Spirit Healer</td><td style="padding: 0.4rem;">50g / 10g</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;">Innkeeper / Bank / Auctioneer</td><td style="padding: 0.4rem;">100g each</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;">Class Trainers / Portals</td><td style="padding: 0.4rem;">100g each</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;">Trade Vendors / Profession NPCs</td><td style="padding: 0.4rem;">50g each</td></tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                        * Minimum purchase rank defaults to <strong>Initiate (4)</strong>, and selling back defaults to <strong>Guild Master (0)</strong>.
+                    </p>
+                </div>
+
+                <h3>14. TCG & Promotional Rewards (mod-tcg-vendors)</h3>
+                <p>The <strong>TCG Vendors</strong> module restores the functionality of legacy Trading Card Game (TCG) and Blizzcon/Worldwide Invitational promotional vendor NPCs. These vendors allow you to redeem rare vanity pets, mounts, and toys.</p>
+
+                <div style="background: rgba(245, 158, 11, 0.03); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.25); margin-bottom: 1.5rem;">
+                    <h4 style="color: #fff; margin-bottom: 0.75rem; font-size: 1rem;">🛍️ Promotional Rewards Vendors Directory</h4>
+                    <table style="width: 100%; font-size: 0.85rem; color: var(--text-secondary); border-collapse: collapse; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-align: left;">
+                                <th style="padding: 0.5rem;">Vendor NPC</th>
+                                <th style="padding: 0.5rem;">Location</th>
+                                <th style="padding: 0.5rem;">Rewards Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;"><strong>Landro Longshot</strong></td><td style="padding: 0.4rem;">Booty Bay (The Salty Sailor)</td><td style="padding: 0.4rem;">TCG Expansion Sets & Gift Boxes</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;"><strong>Ransin Donner / Zas'Tysh</strong></td><td style="padding: 0.4rem;">Ironforge (Forlorn) / Orgrimmar (Heroes)</td><td style="padding: 0.4rem;">Blizzcon Promotions (Murky, etc.)</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;"><strong>Garel Redrock / Tharl Stonebleeder</strong></td><td style="padding: 0.4rem;">Ironforge / Orgrimmar</td><td style="padding: 0.4rem;">Murlocs & Lurky Promotional Pets</td></tr>
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);"><td style="padding: 0.4rem;"><strong>Ian Drake / Edward Cairn</strong></td><td style="padding: 0.4rem;">Stormwind / Undercity</td><td style="padding: 0.4rem;">Worldwide Invitational (Tyrael's Hilt, etc.)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🎟️ How to Redeem Rewards</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem;">
+                        Redemption rules vary depending on the active **Redemption Mode** in the Admin Control Panel:
+                    </p>
+                    <ul style="font-size: 0.85rem; color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem; line-height: 1.4;">
+                        <li><strong>Free Mode</strong>: Walk up to any vendor and select any item from their gossip menu to redeem it immediately.</li>
+                        <li><strong>Blizz-like Code Mode</strong>: Input any valid TCG item code (or standard Blizzard promotional code) in the gossip dialogue to redeem.</li>
+                        <li><strong>Boss Drop System (Custom)</strong>: When enabled, killing configured raid/dungeon bosses will drop <strong>Simple Stationery</strong> containing a randomly pre-generated unique code. Claim this item, read the code, and present it to the corresponding vendor to redeem your reward!</li>
                     </ul>
+
+                <h3>15. Individual XP Rates (mod-individual-xp)</h3>
+                <p>The <strong>Individual XP Rates</strong> module allows you to control your leveling speed. Rather than being bound to a server-wide XP multiplier, players can customize their own experience rates dynamically.</p>
+
+                <div style="background: rgba(16, 185, 129, 0.03); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.25); margin-bottom: 1.5rem;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">Active (C++ Module)</span>
+                        Leveling Speed Commands
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                        Use the following in-game commands to check, set, or lock your experience gain multiplier. The rate can be set to any integer value between <strong>1 (normal)</strong> and the configured server maximum (default <strong>10 (fast)</strong>):
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); padding: 0.75rem; border-radius: 8px;">
+                            <h5 style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem;">📊 View Current Rate</h5>
+                            <code onclick="copyText('.xp')">.xp</code>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); padding: 0.75rem; border-radius: 8px;">
+                            <h5 style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.4rem;">⚡ Set Rate (e.g. 5x)</h5>
+                            <code onclick="copyText('.xp rate 5')">.xp rate 5</code>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                        <strong>Client Addon Option:</strong> Players can also install the client-side <strong>SetXpBar</strong> addon which allows right-clicking the XP bar directly to select and toggle rates through an intuitive UI overlay.
+                    </p>
                 </div>
             </div>
+
+
 
             <div class="card" style="border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);">
                 <div class="card-title" style="color: var(--accent-hover);"><span class="icon">🚀</span> Server Roadmap & Upcoming Features</div>
