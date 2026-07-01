@@ -563,6 +563,7 @@ if (isset($_GET['action'])) {
         $accachieve = intval($_POST['accachieve'] ?? 0);
         $questParty = intval($_POST['questparty'] ?? 0);
         $groupQuests = intval($_POST['groupquests'] ?? 0);
+        $arac = intval($_POST['arac'] ?? 0);
 
         $transPath = '/home/coyofroyo/azeroth-server/etc/modules/transmog.conf';
         $enchantsPath = '/home/coyofroyo/azeroth-server/etc/modules/random_enchants.conf';
@@ -574,6 +575,7 @@ if (isset($_GET['action'])) {
         $freeprofPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_npc_free_professions.conf';
         $accmountPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_account_mount.conf';
         $accachievePath = '/home/coyofroyo/azeroth-server/etc/modules/mod_achievements.conf';
+        $aracPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_arac.conf';
 
         updateConfigOption($transPath, '/^Transmogrification\.Enable\s*=\s*\d+/m', "Transmogrification.Enable = $transmog");
         updateConfigOption($enchantsPath, '/^RandomEnchants\.Enable\s*=\s*\d+/m', "RandomEnchants.Enable = $enchants");
@@ -585,6 +587,7 @@ if (isset($_GET['action'])) {
         updateConfigOption($freeprofPath, '/^NpcFreeProfessions\.Enable\s*=\s*\d+/m', "NpcFreeProfessions.Enable = $freeprof");
         updateConfigOption($accmountPath, '/^Account\.Mounts\.Enable\s*=\s*\d+/m', "Account.Mounts.Enable = $accmount");
         updateConfigOption($accachievePath, '/^Account\.Achievements\.Enable\s*=\s*\d+/m', "Account.Achievements.Enable = $accachieve");
+        updateConfigOption($aracPath, '/^ARAC\.Enable\s*=\s*\d+/m', "ARAC.Enable = $arac");
 
         // Save Quest Loot Party
         $qpPaths = [
@@ -1968,6 +1971,15 @@ if (file_exists($accountAchievementsConfigPath)) {
     }
 }
 
+$aracEnabled = 0;
+$aracConfigPath = '/home/coyofroyo/azeroth-server/etc/modules/mod_arac.conf';
+if (file_exists($aracConfigPath)) {
+    $content = file_get_contents($aracConfigPath);
+    if (preg_match('/^ARAC\.Enable\s*=\s*(\d+)/m', $content, $matches)) {
+        $aracEnabled = intval($matches[1]);
+    }
+}
+
 $onlineBots = [];
 $onlineBotsCount = 0;
 if ($dbOnline) {
@@ -2716,6 +2728,13 @@ if ($dbOnline) {
                             <select id="featAccountAchievements">
                                 <option value="1" <?php echo $accountAchievementsEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
                                 <option value="0" <?php echo $accountAchievementsEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="featARAC">All Races All Classes (ARAC)</label>
+                            <select id="featARAC">
+                                <option value="1" <?php echo $aracEnabled == 1 ? 'selected' : ''; ?>>Enabled</option>
+                                <option value="0" <?php echo $aracEnabled == 0 ? 'selected' : ''; ?>>Disabled</option>
                             </select>
                         </div>
                         <div>
@@ -4077,8 +4096,9 @@ if ($dbOnline) {
             const accachieve = document.getElementById('featAccountAchievements').value;
             const questparty = document.getElementById('featQuestParty').value;
             const groupquests = document.getElementById('featGroupQuests').value;
+            const arac = document.getElementById('featARAC').value;
 
-            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}`;
+            const params = `transmog=${transmog}&enchants=${enchants}&autobalance=${autobalance}&sololfg=${sololfg}&aoeloot=${aoeloot}&mythicplus=${mythicplus}&itemupgrade=${itemupgrade}&freeprof=${freeprof}&accmount=${accmount}&accachieve=${accachieve}&questparty=${questparty}&groupquests=${groupquests}&arac=${arac}`;
 
             fetch('index.php?action=set_features_config', {
                 method: 'POST',

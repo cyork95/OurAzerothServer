@@ -1,0 +1,79 @@
+[Tue Jun 30 21:55:18 2026] PHP 8.3.6 Development Server (http://localhost:8080) started
+[Tue Jun 30 21:56:01 2026] [::1]:59080 Accepted
+[Tue Jun 30 21:56:01 2026] [::1]:59080 [200]: GET /index.html
+[Tue Jun 30 21:56:01 2026] [::1]:59080 Closing
+[Tue Jun 30 21:56:01 2026] [::1]:59096 Accepted
+[Tue Jun 30 21:56:01 2026] [::1]:59096 [200]: GET /wiki_data.json
+[Tue Jun 30 21:56:01 2026] [::1]:59096 Closing
+[Tue Jun 30 21:56:03 2026] [::1]:59108 Accepted
+[Tue Jun 30 21:56:03 2026] PHP Fatal error:  Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 21:56:03 2026] [::1]:59108 [500]: GET /scripts/admin_index.php - Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 21:56:03 2026] [::1]:59108 Closing
+[Tue Jun 30 21:57:06 2026] [::1]:47040 Accepted
+[Tue Jun 30 21:57:06 2026] [::1]:47040 [200]: GET /index.html
+[Tue Jun 30 21:57:06 2026] [::1]:47040 Closing
+[Tue Jun 30 21:57:06 2026] [::1]:47042 Accepted
+[Tue Jun 30 21:57:06 2026] [::1]:47042 [200]: GET /wiki_data.json
+[Tue Jun 30 21:57:06 2026] [::1]:47042 Closing
+[Tue Jun 30 21:57:10 2026] [::1]:47044 Accepted
+[Tue Jun 30 21:57:10 2026] PHP Fatal error:  Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 21:57:10 2026] [::1]:47044 [500]: GET /scripts/admin_index.php - Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 21:57:10 2026] [::1]:47044 Closing
+[Tue Jun 30 22:01:13 2026] [::1]:36748 Accepted
+[Tue Jun 30 22:01:13 2026] [::1]:36748 [200]: GET /index.html
+[Tue Jun 30 22:01:13 2026] [::1]:36748 Closing
+[Tue Jun 30 22:01:13 2026] [::1]:36760 Accepted
+[Tue Jun 30 22:01:13 2026] [::1]:36760 [200]: GET /wiki_data.json
+[Tue Jun 30 22:01:13 2026] [::1]:36760 Closing
+[Tue Jun 30 22:01:22 2026] [::1]:43112 Accepted
+[Tue Jun 30 22:01:22 2026] PHP Fatal error:  Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:01:22 2026] [::1]:43112 [500]: GET /scripts/admin_index.php - Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:01:22 2026] [::1]:43112 Closing
+[Tue Jun 30 22:02:44 2026] [::1]:48834 Accepted
+[Tue Jun 30 22:02:44 2026] PHP Fatal error:  Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:02:44 2026] [::1]:48834 [500]: GET /scripts/admin_index.php - Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:02:44 2026] [::1]:48834 Closing
+[Tue Jun 30 22:03:10 2026] [::1]:40358 Accepted
+[Tue Jun 30 22:03:10 2026] PHP Fatal error:  Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:03:10 2026] [::1]:40358 [500]: GET /scripts/admin_index.php - Uncaught Error: Class "SoapClient" not found in /app/scripts/admin_index.php:32
+Stack trace:
+#0 /app/scripts/admin_index.php(1973): sendSoapCommand()
+#1 {main}
+  thrown in /app/scripts/admin_index.php on line 32
+[Tue Jun 30 22:03:10 2026] [::1]:40358 Closing
