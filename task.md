@@ -1,0 +1,61 @@
+# Tasks: AzerothCore Single-Player Server Setup
+
+- [x] **Phase 1: Target Server Preparation**
+  - [x] Update Ubuntu server and install build dependencies
+  - [x] Install and configure MariaDB
+  - [x] Install and configure Nginx + PHP-FPM (for Armory)
+  - [x] Install Ollama and pull local model (e.g., Llama3.2)
+- [x] **Phase 2: Source Code & Modules Setup**
+  - [x] Clone AzerothCore-wotlk repo
+  - [x] Clone initial modules (`mod-playerbots`, `mod-ollama-chat`, `mod-autobalance`, `mod-transmog`, `mod-npc-free-professions`, `mod-ale`, `mod-challenge-modes`, `mod-random-enchants`, `mod-individual-progression`)
+  - [x] Clone new modules (`mod-mythic-plus`, `mod-solo-lfg`, `mod-item-upgrade`, `mod-gain-honor-guard`, `mod-aoe-loot`, `mod-account-mounts`, `mod-account-achievements`)
+- [x] **Phase 3: Client Data Extraction & SCP Transfer**
+  - [x] Run map extractors on Windows workstation (DBC, maps, vmaps, mmaps)
+  - [x] Transfer extracted data folders to Ubuntu target via SCP
+- [x] **Phase 4: Compilation & Build**
+  - [x] Run CMake to configure AzerothCore with modules on target
+  - [x] Compile using GCC with `make -j10`
+- [x] **Phase 5: Database Population & Web Setup**
+  - [x] Assembly of AzerothCore databases
+  - [x] Apply migrations and SQL patches for Playerbots, Challenge Modes, and all new modules
+  - [x] Set up AzerothCore Armory website on Nginx
+  - [x] Set up custom Admin Control Panel (PHP/SOAP interface) at `/var/www/html/admin`
+- [x] **Phase 6: Configuration & Orchestration**
+  - [x] Configure `worldserver.conf` overrides
+  - [x] Configure `playerbots.conf` and `ollama-chat.conf`
+  - [x] Create `tmux` execution scripts for automatic server startup
+- [x] **Phase 7: System Verification**
+  - [x] Start server processes inside `tmux`
+  - [x] Verify database connection and Playerbot activity in-game
+  - [x] Connect client from Windows and test Ollama spatial chat
+- [x] **Clean Up: Disable and Remove Armory**
+  - [x] Stop the Armory tmux service window
+  - [x] Remove `/armory/` and `/data/` location blocks from Nginx config
+- [x] **Phase 8: Admin Control Panel Upgrades**
+  - [x] Add backend AJAX API handlers to PHP
+  - [x] Add CSS styling for stats rows, tables, and bot cards
+  - [x] Add HTML widgets for Live Host Health, Playerbots Manager, and Character Editor
+  - [x] Add frontend JavaScript functions for stats auto-polling and actions
+  - [x] Verify functionality in the browser
+- [x] **Phase 9: Gating Verification & Uptime Font Sizing**
+  - [x] Decreased the Server Uptime value text font size in `admin/index.php` to `1.25rem` to prevent UI card overflow
+  - [x] Patched `mod-playerbots` C++ sources (`RandomPlayerbotFactory.cpp` and `PlayerbotDungeonRepository.cpp`) to respect `IndividualProgression.ProgressionLimit`
+  - [x] Recompiled the game server (`worldserver`) on the target and ran `make install` to deploy the binary
+  - [x] Truncated all character tables in the `acore_characters` database to remove stale TBC/WotLK database bot records and state
+  - [x] Configured `playerbots.conf` for max level 60 and disabled Death Knight logins
+  - [x] Restarted the server and verified that 839 fresh Vanilla-compliant bot characters were successfully generated
+- [x] **Phase 10: Follower Creator & Teleport Bugfix**
+  - [x] Rename `teleportBotToPlayer` to `teleportBotToLocation` in the JS scripts and update the HTML button in `admin/index.php`
+  - [x] Add the `create_follower` PHP AJAX backend endpoint in `admin/index.php`
+  - [x] Add the AI Custom Follower Creator HTML card panel in `admin/index.php`
+  - [x] Add the Javascript controller function `createCustomFollower` in `admin/index.php`
+  - [x] Deploy changes and verify character generation and follower summoning in-game
+- [x] **Phase 11: Server Wiki Website Creation**
+  - [x] Create `/var/www/html/wiki/index.php` locally in the workspace
+  - [x] Implement dark-mode glassmorphic styling, tabs, copy-to-clipboard elements, and layouts
+  - [x] Populate client setup guides, borderless maximization settings, and LAA 4GB patch instructions
+  - [x] Populate custom follower creations with race/class grid, summon guides, and whisper instructions
+  - [x] Populate server restart details and full playerbots command list reference
+  - [x] Integrate linking between Wiki and Admin Panel
+  - [x] Add Challenge Modes toggles to the Admin Panel and document them on the Wiki
+  - [x] Deploy changes using SCP and verify functionality in the browser
