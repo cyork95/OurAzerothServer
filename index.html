@@ -3181,7 +3181,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         let humanCharacters = [];
         let customMacros = [];
         
-        window.addEventListener('DOMContentLoaded', () => {
+        function initApp() {
             // Start interactive particle effects immediately
             initWotlkEffects();
 
@@ -3230,7 +3230,13 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         banner.textContent = `Wiki Data Fetch Error: ${err.message || err}`;
                     }
                 });
-        });
+        }
+
+        if (document.readyState === 'loading') {
+            window.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
 
         // Main Tab Switcher
         function switchTab(tabId) {
