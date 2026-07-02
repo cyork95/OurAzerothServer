@@ -69,3 +69,20 @@ def test_update_wiki_exporter_error(mock_run_cmd, mock_get_config):
     update_wiki()
 
     assert mock_run_cmd.call_count == 1
+
+def test_wiki_data_json_structure():
+    import json
+    assert os.path.exists('wiki_data.json'), "wiki_data.json must exist in root directory"
+    with open('wiki_data.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    assert isinstance(data, dict), "wiki_data.json must be a dictionary"
+    assert 'events' in data, "events key must be present in wiki data"
+    assert 'personalities' in data, "personalities key must be present in wiki data"
+    assert 'characters' in data, "characters key must be present in wiki data"
+    assert 'auctions' in data, "auctions key must be present in wiki data"
+    assert 'human_characters' in data, "human_characters key must be present in wiki data"
+    
+    assert isinstance(data['auctions'], list), "auctions must be a list"
+    assert isinstance(data['human_characters'], list), "human_characters must be a list"
+

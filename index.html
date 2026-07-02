@@ -811,6 +811,256 @@
             color: var(--status-success);
             border: 1px solid rgba(76, 175, 80, 0.25);
         }
+
+        /* Coin Prices */
+        .coin {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        .coin-gold { color: #f59e0b; }
+        .coin-silver { color: #9ca3af; }
+        .coin-copper { color: #b45309; }
+        .coin-icon {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 2px;
+            margin-right: 6px;
+        }
+        .coin-icon-gold { background: radial-gradient(circle, #ffe066, #f59e0b); border: 1px solid #d97706; }
+        .coin-icon-silver { background: radial-gradient(circle, #f3f4f6, #9ca3af); border: 1px solid #4b5563; }
+        .coin-icon-copper { background: radial-gradient(circle, #f97316, #b45309); border: 1px solid #7c2d12; }
+
+        /* Macro Catalog UI */
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .macro-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .macro-card:hover {
+            border-color: rgba(79, 195, 247, 0.3);
+            transform: translateY(-2px);
+        }
+        .macro-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .macro-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.85rem;
+            line-height: 1.4;
+        }
+        .macro-body {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            padding: 0.6rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            color: #818cf8;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin-bottom: 0.85rem;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        .btn-copy-macro {
+            background: rgba(79, 195, 247, 0.08);
+            border: 1px solid rgba(79, 195, 247, 0.25);
+            color: #4fc3f7;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-copy-macro:hover {
+            background: rgba(79, 195, 247, 0.2);
+            border-color: #4fc3f7;
+        }
+        .btn-delete-macro {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #f87171;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-delete-macro:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #f87171;
+        }
+        .macro-vault-form {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 0.85rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #fff;
+            margin-bottom: 0.35rem;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.55rem 0.75rem;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #4fc3f7;
+        }
+
+        /* Auction House CSS */
+        .ah-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            background: rgba(17, 24, 39, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .ah-filter-item {
+            flex: 1;
+            min-width: 160px;
+        }
+        .ah-filter-item label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.35rem;
+            font-weight: 500;
+        }
+        .ah-table-container {
+            overflow-x: auto;
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+        }
+        .ah-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+        .ah-table th, .ah-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .ah-table th {
+            background: rgba(10, 15, 25, 0.8);
+            color: #fff;
+            font-weight: 600;
+        }
+        .ah-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .item-quality-0 { color: #9d9d9d !important; }
+        .item-quality-1 { color: #ffffff !important; }
+        .item-quality-2 { color: #1eff00 !important; }
+        .item-quality-3 { color: #0070dd !important; }
+        .item-quality-4 { color: #a335ee !important; }
+        .item-quality-5 { color: #ff8000 !important; }
+        .item-quality-6 { color: #e6cc80 !important; }
+        .badge-qty {
+            background: rgba(255,255,255,0.1);
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Account Ledger CSS */
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .account-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: border-color 0.2s;
+        }
+        .account-card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .account-header {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .char-link {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .char-link:hover {
+            text-decoration: underline;
+            color: #c4b5fd;
+        }
+        .badge-char-count {
+            font-size: 0.75rem;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #c4b5fd;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -842,6 +1092,15 @@
             </button>
             <button class="menu-btn" id="tabbtn-leveling-guides" onclick="switchTab('leveling-guides')">
                 <span class="icon">🗺️</span> Zygor Guides
+            </button>
+            <button class="menu-btn" id="tabbtn-macros" onclick="switchTab('macros')">
+                <span class="icon">⚡</span> Macro Book
+            </button>
+            <button class="menu-btn" id="tabbtn-auctionhouse" onclick="switchTab('auctionhouse')">
+                <span class="icon">⚖️</span> Auction House
+            </button>
+            <button class="menu-btn" id="tabbtn-accounts" onclick="switchTab('accounts')">
+                <span class="icon">👤</span> Account Ledger
             </button>
             <button class="menu-btn" id="tabbtn-changelog" onclick="switchTab('changelog')">
                 <span class="icon">📜</span> Change Log
@@ -2571,6 +2830,191 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <div style="width: 100%; border: 1px solid var(--border-glass); border-radius: 4px; overflow: hidden; background: rgba(0, 0, 0, 0.15); box-sizing: border-box;">
                     <iframe id="bug-tracker-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSeD32bo14SF2DyGu84sAzqzvChJXaBz4BQkEog2HyTTT7dSPA/viewform?embedded=true" width="100%" height="1168" frameborder="0" marginheight="0" marginwidth="0" style="border: none; display: block; background: transparent;">Loading form…</iframe>
                 </div>
+        </div>
+
+        <!-- TAB 10: MACRO BOOK -->
+        <div id="tab-macros" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">⚡ In-game Utility & Command Macros</div>
+                <p>Macros are automated in-game shortcuts that execute multiple commands at once. Select a category below to browse ready-made macros, or use the form at the bottom to build and save your own custom macro library. Click <strong>Copy Macro</strong> to copy the command straight to your clipboard, then paste it (<code>Ctrl + V</code>) inside WoW's macro interface (<code>/macro</code>).</p>
+            </div>
+
+            <!-- Preset companion macros -->
+            <div class="card">
+                <div class="card-title">🤖 Bot Companions Presets</div>
+                <p>Essential playerbot management commands compiled as copyable WotLK macros:</p>
+                <div class="macro-grid">
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Summon Bots <span class="badge-tag" style="background: rgba(79, 195, 247, 0.15); border: 1px solid rgba(79, 195, 247, 0.3); color: #4fc3f7; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Summon</span></div>
+                            <div class="macro-desc">Summons all hired playerbots in your roster directly to your position. Useful when they get stuck or separated.</div>
+                            <div class="macro-body">/t bots summon</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots summon', this)">📋 Copy Macro</button>
+                    </div>
+
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Bots Follow <span class="badge-tag" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Movement</span></div>
+                            <div class="macro-desc">Forces all hired playerbots to immediately break combat/stay and follow behind you closely.</div>
+                            <div class="macro-body">/t bots follow</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots follow', this)">📋 Copy Macro</button>
+                    </div>
+
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Bots Stand Still <span class="badge-tag" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Movement</span></div>
+                            <div class="macro-desc">Forces all hired playerbots to stay at their current locations. Great for pre-positioning healers/dps before a pull.</div>
+                            <div class="macro-body">/t bots stay</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots stay', this)">📋 Copy Macro</button>
+                    </div>
+
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Form up (Shieldwall) <span class="badge-tag" style="background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); color: #c4b5fd; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Formation</span></div>
+                            <div class="macro-desc">Commands your playerbots to form a neat shieldwall defensive line right in front of you.</div>
+                            <div class="macro-body">/t bots formation shieldwall</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots formation shieldwall', this)">📋 Copy Macro</button>
+                    </div>
+
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Release Bots <span class="badge-tag" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Roster</span></div>
+                            <div class="macro-desc">Unsummons all playerbots from your active party without dismissing them from your roster permanently.</div>
+                            <div class="macro-body">/t bots release</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots release', this)">📋 Copy Macro</button>
+                    </div>
+
+                    <div class="macro-card">
+                        <div>
+                            <div class="macro-title">Request Buffs <span class="badge-tag" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Spells</span></div>
+                            <div class="macro-desc">Asks your playerbots to cast all available class buffs on you and the other party members.</div>
+                            <div class="macro-body">/t bots buffs</div>
+                        </div>
+                        <button class="btn-copy-macro" onclick="copyText('/t bots buffs', this)">📋 Copy Macro</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom User Macro Vault -->
+            <div class="card">
+                <div class="card-title">📝 My Custom Macro Vault</div>
+                <p>Create and persist your own custom in-game macros. These are saved locally in your browser's memory and are immediately available on reload:</p>
+                
+                <div id="custom-macros-container" class="macro-grid">
+                    <!-- Dynamic user macros go here -->
+                </div>
+
+                <div class="macro-vault-form">
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.05rem;">✨ Create Custom Macro</h3>
+                    <form id="macro-form" onsubmit="saveCustomMacro(event)">
+                        <div class="form-group">
+                            <label for="macro-name">Macro Name / Title</label>
+                            <input type="text" id="macro-name" class="form-control" placeholder="e.g. Clean Cache & Reload" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="macro-description">Description (Explain what it does)</label>
+                            <input type="text" id="macro-description" class="form-control" placeholder="e.g. Broadcasts status check to bots" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="macro-commands">Macro Commands (One or more slash lines)</label>
+                            <textarea id="macro-commands" rows="3" class="form-control" style="font-family: monospace; resize: vertical;" placeholder="e.g.&#10;/p Bots reload&#10;/say Check complete!" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-action-frost" style="margin-top: 0.5rem; cursor: pointer; padding: 0.6rem 1.2rem;">💾 Save Macro to Library</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 11: AUCTION HOUSE -->
+        <div id="tab-auctionhouse" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">⚖️ Live Auction House Ledger</div>
+                <p>Browse active auctions listed on the server. The listings are automatically synced from the characters database and show buyout rates, sellers, quantities, and remaining time. <strong>Use search and filters to find specific items!</strong></p>
+                
+                <div class="ah-filters">
+                    <div class="ah-filter-item">
+                        <label for="ah-search">🔍 Item Name</label>
+                        <input type="text" id="ah-search" class="form-control" placeholder="Search item name..." oninput="filterAuctions()">
+                    </div>
+                    <div class="ah-filter-item">
+                        <label for="ah-quality-filter">💎 Quality</label>
+                        <select id="ah-quality-filter" class="form-control" onchange="filterAuctions()">
+                            <option value="all">All Qualities</option>
+                            <option value="0">Poor (Grey)</option>
+                            <option value="1">Common (White)</option>
+                            <option value="2">Uncommon (Green)</option>
+                            <option value="3">Rare (Blue)</option>
+                            <option value="4">Epic (Purple)</option>
+                            <option value="5">Legendary (Orange)</option>
+                        </select>
+                    </div>
+                    <div class="ah-filter-item">
+                        <label for="ah-class-filter">📦 Item Type</label>
+                        <select id="ah-class-filter" class="form-control" onchange="filterAuctions()">
+                            <option value="all">All Categories</option>
+                            <option value="weapon">Weapons</option>
+                            <option value="armor">Armor</option>
+                            <option value="recipe">Recipes & Formulas</option>
+                            <option value="consumable">Consumables & Potions</option>
+                            <option value="reagent">Reagents & Trade Goods</option>
+                            <option value="quest">Quest Items</option>
+                        </select>
+                    </div>
+                    <div class="ah-filter-item">
+                        <label for="ah-sort">↕️ Sort By</label>
+                        <select id="ah-sort" class="form-control" onchange="filterAuctions()">
+                            <option value="newest">Newest Listings</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="price_asc">Buyout (Low to High)</option>
+                            <option value="price_desc">Buyout (High to Low)</option>
+                            <option value="level_desc">Req. Level (High to Low)</option>
+                            <option value="time_asc">Time Left (Shortest First)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ah-table-container">
+                    <table class="ah-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th style="text-align: center;">Qty</th>
+                                <th style="text-align: center;">iLvl</th>
+                                <th style="text-align: center;">Req. Lvl</th>
+                                <th>Seller</th>
+                                <th>Time Left</th>
+                                <th style="text-align: right;">Buyout Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ah-ledger-body">
+                            <!-- Dynamic auctions populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 12: ACCOUNT LEDGER -->
+        <div id="tab-accounts" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">👤 Server Accounts & Characters Registry</div>
+                <p>Below is a directory of all registered human/GM accounts on the server and their respective characters. <strong>Click a character name to view their detailed kill stats, biography events, and log feeds</strong> in the Character Search tab!</p>
+                
+                <div class="ah-filters" style="margin-bottom: 1.5rem;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <label for="acc-search">🔍 Filter Accounts & Characters</label>
+                        <input type="text" id="acc-search" class="form-control" placeholder="Search account or character name..." oninput="filterAccounts()">
+                    </div>
+                </div>
+
+                <div id="accounts-ledger-container" class="account-grid">
+                    <!-- Dynamic account cards loaded here -->
+                </div>
             </div>
         </div>
 
@@ -2578,6 +3022,9 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
     <script>
         let wikiData = null;
+        let activeAuctions = [];
+        let humanCharacters = [];
+        let customMacros = [];
         
         window.addEventListener('DOMContentLoaded', () => {
             fetch('wiki_data.json')
@@ -2585,6 +3032,8 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 .then(data => {
                     wikiData = data;
                     serverCharacters = data.characters || [];
+                    activeAuctions = data.auctions || [];
+                    humanCharacters = data.human_characters || [];
                     
                     // Populate Game Events
                     const eventsBody = document.getElementById('wiki-events-body');
@@ -2609,6 +3058,11 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             </tr>
                         `).join('');
                     }
+                    
+                    // Initialise custom macros and renderers
+                    initCustomMacros();
+                    filterAuctions();
+                    filterAccounts();
                 })
                 .catch(err => {
                     console.error("Failed to load wiki data:", err);
@@ -2680,9 +3134,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         }
 
         // Copy Text Helper
-        function copyText(text) {
+        function copyText(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard!');
+                if (btn) {
+                    const origHtml = btn.innerHTML;
+                    btn.innerHTML = '✓ Copied!';
+                    btn.style.background = 'rgba(16, 185, 129, 0.2)';
+                    btn.style.borderColor = '#10b981';
+                    btn.style.color = '#34d399';
+                    setTimeout(() => {
+                        btn.innerHTML = origHtml;
+                        btn.style.background = '';
+                        btn.style.borderColor = '';
+                        btn.style.color = '';
+                    }, 2000);
+                } else {
+                    alert('Copied to clipboard!');
+                }
             }).catch(err => {
                 prompt('Copy this text:', text);
             });
@@ -2869,6 +3337,312 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 } else {
                     alert('Error: ' + data.output);
                 }
+            }, 50);
+        }
+
+        // --- NEW FEATURES ENGINES ---
+
+        // 1. MACRO BOOK ENGINE
+        function initCustomMacros() {
+            const stored = localStorage.getItem('our_azeroth_custom_macros');
+            if (stored) {
+                try {
+                    customMacros = JSON.parse(stored);
+                } catch (e) {
+                    customMacros = [];
+                }
+            } else {
+                // Populate some nice defaults for them!
+                customMacros = [
+                    {
+                        id: 'def-1',
+                        name: 'Check Server Status',
+                        desc: 'Requests bot statistics and active server performance metrics.',
+                        body: '.server status\n/t bots stats'
+                    },
+                    {
+                        id: 'def-2',
+                        name: 'Form up (Circle)',
+                        desc: 'Commands all playerbots to form a circle around you.',
+                        body: '/t bots formation circle'
+                    }
+                ];
+                localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+            }
+            renderCustomMacros();
+        }
+
+        function renderCustomMacros() {
+            const container = document.getElementById('custom-macros-container');
+            if (!container) return;
+
+            if (customMacros.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1 / -1; color: var(--text-secondary); text-align: center; padding: 2rem; border: 1px dashed rgba(255,255,255,0.08); border-radius: 8px;">No custom macros saved yet. Use the form below to create one!</div>`;
+                return;
+            }
+
+            container.innerHTML = customMacros.map(m => `
+                <div class="macro-card" id="macrocard-${m.id}">
+                    <div>
+                        <div class="macro-title">
+                            ${m.name} 
+                            <span class="badge-tag" style="background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.2); color: #c4b5fd; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">Custom</span>
+                        </div>
+                        <div class="macro-desc">${m.desc}</div>
+                        <div class="macro-body">${m.body}</div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                        <button class="btn-copy-macro" style="flex: 1;" onclick="copyText('${escapeJsString(m.body)}', this)">📋 Copy Macro</button>
+                        <button class="btn-delete-macro" onclick="deleteCustomMacro('${m.id}')">🗑️ Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveCustomMacro(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('macro-name');
+            const descInput = document.getElementById('macro-description');
+            const bodyInput = document.getElementById('macro-commands');
+
+            const name = nameInput.value.trim();
+            const desc = descInput.value.trim();
+            const body = bodyInput.value.trim();
+
+            if (!name || !desc || !body) return;
+
+            const newMacro = {
+                id: 'custom-' + Date.now(),
+                name: name,
+                desc: desc,
+                body: body
+            };
+
+            customMacros.push(newMacro);
+            localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+            
+            nameInput.value = '';
+            descInput.value = '';
+            bodyInput.value = '';
+
+            renderCustomMacros();
+        }
+
+        function deleteCustomMacro(id) {
+            customMacros = customMacros.filter(m => m.id !== id);
+            localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+            renderCustomMacros();
+        }
+
+
+        // 2. AUCTION HOUSE ENGINE
+        function formatMoney(copper) {
+            if (copper <= 0) return `<span class="coin coin-copper">0<span class="coin-icon coin-icon-copper"></span></span>`;
+            
+            const gold = Math.floor(copper / 10000);
+            const silver = Math.floor((copper % 10000) / 100);
+            const cop = copper % 100;
+            
+            let result = '';
+            if (gold > 0) {
+                result += `<span class="coin coin-gold">${gold}<span class="coin-icon coin-icon-gold"></span></span>`;
+            }
+            if (silver > 0 || gold > 0) {
+                result += `<span class="coin coin-silver">${silver}<span class="coin-icon coin-icon-silver"></span></span>`;
+            }
+            result += `<span class="coin coin-copper">${cop}<span class="coin-icon coin-icon-copper"></span></span>`;
+            return result;
+        }
+
+        function formatTimeLeft(seconds) {
+            if (seconds <= 0) return 'Expired';
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            if (h > 0) {
+                return `${h}h ${m}m`;
+            }
+            return `${m}m`;
+        }
+
+        function filterAuctions() {
+            const searchVal = document.getElementById('ah-search').value.toLowerCase();
+            const qualityFilter = document.getElementById('ah-quality-filter').value;
+            const classFilter = document.getElementById('ah-class-filter').value;
+            const sortVal = document.getElementById('ah-sort').value;
+
+            let filtered = activeAuctions.filter(item => {
+                // Name filter
+                if (searchVal && !item.name.toLowerCase().includes(searchVal)) return false;
+                
+                // Quality filter
+                if (qualityFilter !== 'all' && item.quality.toString() !== qualityFilter) return false;
+                
+                // Class/Type filter
+                if (classFilter !== 'all') {
+                    const cls = item.class;
+                    // Class mappings in WotLK: 
+                    // 2 = Weapon, 4 = Armor, 0 = Consumables/Potions, 7 = Trade Goods/Reagents, 9 = Recipe, 12 = Quest
+                    if (classFilter === 'weapon' && cls !== 2) return false;
+                    if (classFilter === 'armor' && cls !== 4) return false;
+                    if (classFilter === 'recipe' && cls !== 9) return false;
+                    if (classFilter === 'consumable' && cls !== 0) return false;
+                    if (classFilter === 'reagent' && cls !== 7) return false;
+                    if (classFilter === 'quest' && cls !== 12) return false;
+                }
+                
+                return true;
+            });
+
+            // Sort logic
+            if (sortVal === 'name_asc') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortVal === 'price_asc') {
+                filtered.sort((a, b) => a.buyout - b.buyout);
+            } else if (sortVal === 'price_desc') {
+                filtered.sort((a, b) => b.buyout - a.buyout);
+            } else if (sortVal === 'level_desc') {
+                filtered.sort((a, b) => b.required_level - a.required_level);
+            } else if (sortVal === 'time_asc') {
+                filtered.sort((a, b) => a.time_left - b.time_left);
+            } else {
+                // newest (default by id desc)
+                filtered.sort((a, b) => b.auction_id - a.auction_id);
+            }
+
+            renderAuctions(filtered);
+        }
+
+        function renderAuctions(list) {
+            const body = document.getElementById('ah-ledger-body');
+            if (!body) return;
+
+            if (list.length === 0) {
+                body.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-secondary); padding: 2rem;">No active auctions matching criteria.</td></tr>`;
+                return;
+            }
+
+            body.innerHTML = list.map(item => {
+                const qClass = 'item-quality-' + item.quality;
+                const buyoutFormatted = formatMoney(item.buyout);
+                const timeLeft = formatTimeLeft(item.time_left);
+                const itemLvl = item.item_level || '-';
+                const reqLvl = item.required_level || '-';
+                
+                return `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                        <td>
+                            <strong class="${qClass}" style="font-size: 0.9rem;">${item.name}</strong>
+                        </td>
+                        <td style="text-align: center;"><span class="badge-qty">${item.quantity}</span></td>
+                        <td style="text-align: center; color: var(--text-secondary);">${itemLvl}</td>
+                        <td style="text-align: center; color: var(--text-secondary);">${reqLvl}</td>
+                        <td><span style="color: #60a5fa; font-weight: 500;">${item.owner_name}</span></td>
+                        <td style="color: var(--text-secondary); font-family: monospace;">${timeLeft}</td>
+                        <td style="text-align: right; white-space: nowrap;">${buyoutFormatted}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+
+        // 3. ACCOUNT LEDGER ENGINE
+        function filterAccounts() {
+            const query = document.getElementById('acc-search').value.toLowerCase().trim();
+            
+            // Group characters by account
+            const grouped = {};
+            humanCharacters.forEach(c => {
+                if (!grouped[c.username]) {
+                    grouped[c.username] = {
+                        account_name: c.username,
+                        characters: []
+                    };
+                }
+                grouped[c.username].characters.push(c);
+            });
+
+            const accountsArray = Object.values(grouped);
+            
+            let filtered = accountsArray;
+            if (query) {
+                filtered = accountsArray.filter(acc => {
+                    // Match account name
+                    if (acc.account_name.toLowerCase().includes(query)) return true;
+                    // Match character names
+                    return acc.characters.some(c => c.name.toLowerCase().includes(query));
+                });
+            }
+
+            renderAccounts(filtered);
+        }
+
+        function renderAccounts(list) {
+            const container = document.getElementById('accounts-ledger-container');
+            if (!container) return;
+
+            if (list.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1 / -1; color: var(--text-secondary); text-align: center; padding: 2rem; border: 1px dashed rgba(255,255,255,0.08); border-radius: 8px;">No accounts found matching filter.</div>`;
+                return;
+            }
+
+            container.innerHTML = list.map(acc => {
+                const charRows = acc.characters.map(c => {
+                    const classInfo = CLASS_NAMES[c.class] || { name: 'Unknown', color: '#fff' };
+                    const raceName = RACE_NAMES[c.race] || 'Unknown';
+                    const genderSymbol = c.gender === 0 ? '♂' : '♀';
+                    const genderColor = c.gender === 0 ? '#60a5fa' : '#f58cba';
+                    const lvlBadgeStyle = c.level === 80 
+                        ? 'background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24;'
+                        : 'background: rgba(255,255,255,0.05); color: var(--text-secondary);';
+
+                    return `
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+                            <td style="padding: 0.5rem 0.75rem;">
+                                <a class="char-link" onclick="viewCharacterDetails(${c.guid}, '${escapeJsString(c.name)}')">${c.name}</a>
+                            </td>
+                            <td style="padding: 0.5rem 0.75rem; text-align: center;">
+                                <span style="display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; ${lvlBadgeStyle}">${c.level}</span>
+                            </td>
+                            <td style="padding: 0.5rem 0.75rem; color: ${classInfo.color}; font-weight: 500;">
+                                ${classInfo.name}
+                            </td>
+                            <td style="padding: 0.5rem 0.75rem; color: var(--text-secondary);">${raceName}</td>
+                            <td style="padding: 0.5rem 0.75rem; text-align: center; color: ${genderColor}; font-weight: bold; font-size: 1rem;">
+                                ${genderSymbol}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="account-card">
+                        <div class="account-header">
+                            <span>👤 ${acc.account_name}</span>
+                            <span class="badge-char-count">${acc.characters.length} Characters</span>
+                        </div>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--text-secondary); font-size: 0.75rem;">
+                                    <th style="padding: 0.35rem 0.75rem; font-weight: 500;">Character</th>
+                                    <th style="padding: 0.35rem 0.75rem; text-align: center; font-weight: 500;">Lvl</th>
+                                    <th style="padding: 0.35rem 0.75rem; font-weight: 500;">Class</th>
+                                    <th style="padding: 0.35rem 0.75rem; font-weight: 500;">Race</th>
+                                    <th style="padding: 0.35rem 0.75rem; text-align: center; font-weight: 500;">Gen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${charRows}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function viewCharacterDetails(guid, name) {
+            switchTab('character-bio');
+            selectCharacter(guid, name);
+        }
             }, 50);
         }
     </script>
