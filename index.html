@@ -1114,6 +1114,7 @@
     </style>
 </head>
 <body>
+    <div id="debug-banner" style="display:none; background: #ef4444; color: #fff; padding: 1rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.15);"></div>
     <canvas id="snow-canvas"></canvas>
 
     <!-- Fixed Left Sidebar Panel -->
@@ -3166,6 +3167,15 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
         }
 
+        window.onerror = function(message, source, lineno, colno, error) {
+            const banner = document.getElementById('debug-banner');
+            if (banner) {
+                banner.style.display = 'block';
+                banner.textContent = `JS Error: ${message} at line ${lineno}:${colno}`;
+            }
+            return false;
+        };
+
         let wikiData = null;
         let activeAuctions = [];
         let humanCharacters = [];
@@ -3214,6 +3224,11 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 })
                 .catch(err => {
                     console.error("Failed to load wiki data:", err);
+                    const banner = document.getElementById('debug-banner');
+                    if (banner) {
+                        banner.style.display = 'block';
+                        banner.textContent = `Wiki Data Fetch Error: ${err.message || err}`;
+                    }
                 });
         });
 
