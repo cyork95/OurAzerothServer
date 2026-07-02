@@ -1072,11 +1072,20 @@
             <span class="badge-tag">Wiki & Guide</span>
         </div>
         <nav class="sidebar-menu">
-            <button class="menu-btn active" id="tabbtn-quick-start" onclick="switchTab('quick-start')">
-                <span class="icon">❄️</span> Quick Start
+            <!-- Welcome & Setup -->
+            <button class="menu-btn active" id="tabbtn-home" onclick="switchTab('home')">
+                <span class="icon">❄️</span> Home
+            </button>
+            <button class="menu-btn" id="tabbtn-quick-start" onclick="switchTab('quick-start')">
+                <span class="icon">⚙️</span> Quick Start
             </button>
             <button class="menu-btn" id="tabbtn-downloads" onclick="switchTab('downloads')">
                 <span class="icon">📥</span> Downloads
+            </button>
+
+            <!-- Gameplay & Features -->
+            <button class="menu-btn" id="tabbtn-server-features" onclick="switchTab('server-features')">
+                <span class="icon">⚔️</span> Server Features
             </button>
             <button class="menu-btn" id="tabbtn-companions" onclick="switchTab('companions')">
                 <span class="icon">👥</span> Companions & Bots
@@ -1084,24 +1093,25 @@
             <button class="menu-btn" id="tabbtn-ai-ollama" onclick="switchTab('ai-ollama')">
                 <span class="icon">🤖</span> AI Chat
             </button>
-            <button class="menu-btn" id="tabbtn-character-bio" onclick="switchTab('character-bio')">
-                <span class="icon">📖</span> Character Search
-            </button>
-            <button class="menu-btn" id="tabbtn-server-features" onclick="switchTab('server-features')">
-                <span class="icon">⚔️</span> Server Features
-            </button>
             <button class="menu-btn" id="tabbtn-leveling-guides" onclick="switchTab('leveling-guides')">
                 <span class="icon">🗺️</span> Zygor Guides
             </button>
+
+            <!-- Player Utilities & Tools -->
             <button class="menu-btn" id="tabbtn-macros" onclick="switchTab('macros')">
                 <span class="icon">⚡</span> Macro Book
             </button>
             <button class="menu-btn" id="tabbtn-auctionhouse" onclick="switchTab('auctionhouse')">
                 <span class="icon">⚖️</span> Auction House
             </button>
+            <button class="menu-btn" id="tabbtn-character-bio" onclick="switchTab('character-bio')">
+                <span class="icon">📖</span> Character Search
+            </button>
             <button class="menu-btn" id="tabbtn-accounts" onclick="switchTab('accounts')">
                 <span class="icon">👤</span> Account Ledger
             </button>
+
+            <!-- Meta & Support -->
             <button class="menu-btn" id="tabbtn-changelog" onclick="switchTab('changelog')">
                 <span class="icon">📜</span> Change Log
             </button>
@@ -1117,8 +1127,87 @@
     <!-- Main Content Container -->
     <main class="wiki-main">
 
-        <!-- TAB 1: QUICK START -->
-        <div id="tab-quick-start" class="wiki-tab-content">
+        <!-- TAB 1: HOME -->
+        <div id="tab-home" class="wiki-tab-content">
+            <div class="card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(79, 195, 247, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%); border: 1px solid rgba(79, 195, 247, 0.2);">
+                <div class="card-title" style="font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #4fc3f7, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">❄️ Welcome to OurAzeroth</div>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: #fff;">OurAzeroth is a custom single-player and cooperative World of Warcraft (Wrath of the Lich King 3.3.5a) server. It orchestrates a simulated, dynamic MMORPG environment designed specifically for solo adventurers or small groups who want to experience the classic Azeroth and Northrend content on their own terms.</p>
+                <p style="margin-top: 1rem; line-height: 1.6;">For players who have no idea how it works: instead of playing in an empty world, this server runs advanced background modules to simulate a live server economy, active auction houses, scaling dungeons, and custom player companions. Read below to explore the core pillars of the project!</p>
+            </div>
+
+            <!-- CORE PILLARS CARD -->
+            <div class="card">
+                <div class="card-title">🛡️ Core Pillars of the Project</div>
+                <div class="macro-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 6px; padding: 1.2rem;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 6px;">👥 AI Playerbots</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4;">Hire simulated AI playerbots to join your party. They execute roles (Tank, Healer, DPS), buff you, and participate in dungeons. You can manage them with commands or ready-made macros.</p>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 6px; padding: 1.2rem;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 6px;">🤖 LLM-Powered AI Chat</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4;">Linked directly to a local Ollama Large Language Model. Playerbots have unique personalities and will dynamically converse with you in spatial chat and respond to your messages.</p>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 6px; padding: 1.2rem;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 6px;">⚖️ Dynamic AH Economy</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4;">A live Auction House Bot (AHBot) continually posts and bids on items, simulating a thriving player economy so you can trade, sell craftings, and buy equipment seamlessly.</p>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 6px; padding: 1.2rem;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1rem; display: flex; align-items: center; gap: 6px;">⚔️ Autobalance Scaling</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4;">All dungeons and raids automatically scale in difficulty, health, and damage based on your active party size. You can complete any classic raid solo or with a few bots.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK DIRECTORY / NAVIGATION -->
+            <div class="card">
+                <div class="card-title">🧭 Quick Navigation Directory</div>
+                <p>Use the links below to jump straight to specific wiki hubs:</p>
+                <div class="macro-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <button class="btn-action-frost" onclick="switchTab('quick-start')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>⚙️</span> Quick Start Guide
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('downloads')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>📥</span> Downloads & Client Files
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('server-features')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>⚔️</span> Server Custom Features
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('companions')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>👥</span> Bot Companions List
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('character-bio')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>📖</span> Character Search
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('macros')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>⚡</span> In-Game Macro Book
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('auctionhouse')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>⚖️</span> Live Auction House
+                    </button>
+                    <button class="btn-action-frost" onclick="switchTab('accounts')" style="padding: 1rem; font-size: 0.9rem; text-align: left; display: flex; align-items: center; gap: 8px; justify-content: flex-start; cursor: pointer;">
+                        <span>👤</span> Accounts Directory
+                    </button>
+                </div>
+            </div>
+
+            <!-- IMPORTANT EXTERNAL LINKS -->
+            <div class="card">
+                <div class="card-title">🔗 Important External Links & Resources</div>
+                <p>Useful spreadsheets, addon pages, and control tools for server maintenance:</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://docs.google.com/spreadsheets/d/1b-7MRCZahkF4Thrb-_QIzMAWEakXTTGtrdt3MRMBR-4/edit?gid=1752953381#gid=1752953381" target="_blank" class="btn-action-frost" style="background: rgba(239, 83, 80, 0.08); border-color: rgba(239, 83, 80, 0.3); color: #fca5a5; display: inline-flex; align-items: center; gap: 6px;">🐛 Google Sheets Bug Tracker</a>
+                    <a href="https://felbite.com/addons/" target="_blank" class="btn-action-frost" style="display: inline-flex; align-items: center; gap: 6px;">❄️ Felbite WotLK Addons Database</a>
+                    <a href="https://chromiecraft.com/en/downloads/" target="_blank" class="btn-action-frost" style="display: inline-flex; align-items: center; gap: 6px;">📥 ChromieCraft WotLK Downloads</a>
+                    <a href="http://192.168.1.168/admin/" target="_blank" class="btn-action-frost" style="background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.3); color: #c4b5fd; display: inline-flex; align-items: center; gap: 6px;">⚙️ Target Server Admin Console</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: QUICK START -->
+        <div id="tab-quick-start" class="wiki-tab-content" style="display: none;">
             <div class="card">
                 <div class="card-title">Welcome to OurAzeroth</div>
                 <p>OurAzeroth is a custom World of Warcraft (Wrath of the Lich King 3.3.5a) single-player server designed for cooperative, immersive adventure. Explore a living world scaled down dynamically for solo and group play, recruit custom AI companions, converse with LLM-powered bots, and build your legend in a classic progressive era.</p>
