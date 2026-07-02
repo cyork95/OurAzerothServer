@@ -1070,8 +1070,8 @@
             width: 100vw;
             height: 100vh;
             pointer-events: none;
-            z-index: 0;
-            opacity: 0.45;
+            z-index: 999;
+            opacity: 0.55;
         }
 
         /* Mouse click frost spark particles */
@@ -3782,6 +3782,10 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             }).join('');
         }
 
+        
+            }, 50);
+        }
+
         function viewCharacterDetails(guid, name) {
             switchTab('character-bio');
             selectCharacter(guid, name);
@@ -3880,8 +3884,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 }
             });
         }
-            }, 50);
-        }
+
     </script>
 </body>
 </html>
