@@ -3185,7 +3185,9 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             // Start interactive particle effects immediately
             initWotlkEffects();
 
-            fetch('wiki_data.json')
+            // Use the same search parameters to bust cache for the JSON file
+            const cacheBuster = window.location.search || ('?t=' + Date.now());
+            fetch('wiki_data.json' + cacheBuster)
                 .then(res => res.json())
                 .then(data => {
                     wikiData = data;
