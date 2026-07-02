@@ -2022,7 +2022,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
         <!-- TAB 5: CHARACTER SEARCH -->
         <div id="tab-character-bio" class="wiki-tab-content" style="display: none;">
-            <div class="card" style="margin-bottom: 2rem;">
+            <div class="card" style="margin-bottom: 2rem; overflow: visible;">
                 <div class="card-title">Select Character Profile</div>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
                     Look up any character on the server to view their life timeline, kill statistics, and recent chat history.
@@ -2745,7 +2745,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         document.addEventListener('click', function(e) {
             const container = document.getElementById('bioCharSearchDropdown');
             const input = document.getElementById('bioCharSearchInput');
-            if (container && e.target !== container && e.target !== input) {
+            if (container && !container.contains(e.target) && e.target !== input) {
                 container.style.display = 'none';
             }
         });
