@@ -119,3 +119,11 @@ The admin portal/wiki is served from the server at `https://yorkdevelops.com/Our
     - Downloads the fresh `wiki_data.json` data dump to the local directory.
     - Stages and commits `index.html` and `wiki_data.json` to Git.
     - Pushes the updates to GitHub `master`, which triggers the GitHub Pages automatic deployment pipeline.
+
+---
+
+## Important Links & Tools
+
+*   **Server Wiki / Portal**: [yorkdevelops.com/OurAzerothServer/](https://yorkdevelops.com/OurAzerothServer/) (Served via GitHub Pages)
+*   **Google Sheets Bug Tracker**: [Server Bug Tracker / Task List](https://docs.google.com/spreadsheets/d/1b-7MRCZahkF4Thrb-_QIzMAWEakXTTGtrdt3MRMBR-4/edit?gid=1752953381#gid=1752953381)
+*   **External Addons Source**: [Felbite Addons Database](https://felbite.com/addons/) (Curated 3.3.5a client addons and WeakAuras)
