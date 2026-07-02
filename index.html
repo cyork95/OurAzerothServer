@@ -541,6 +541,7 @@
             margin: 1rem 0;
             border-bottom: 1px solid var(--border-glass);
             padding-bottom: 0.25rem;
+            flex-wrap: wrap;
         }
 
         .sub-tab-btn {
@@ -551,7 +552,7 @@
             font-size: 0.82rem;
             cursor: pointer;
             border-bottom: 2px solid transparent;
-            transition: all 0.2s;
+            transition: all 0.25s;
             font-family: 'Inter', sans-serif;
         }
 
@@ -982,87 +983,664 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Our server addon package pre-compiles and unlocks Zygor leveling pathways. The dynamic navigation arrow coordinates are mapped straight to the server coordinate systems to align perfectly with custom quests and NPC spawns.</p>
             </div>
 
+            <!-- ADDONS DIRECTORY OVERHAUL -->
             <div class="card">
-                <div class="card-title">📦 Detailed Addons Directory</div>
-                <p>Our server's client-side addon bundle includes a curated suite of tools to enhance your Wrath of the Lich King interface. Here is a breakdown of every included addon and its purpose:</p>
+                <div class="card-title">📦 Installed Addons Directory</div>
+                <p>Our Wrath of the Lich King client features an extensive collection of 54 curated user addons and interface enhancements. Browse the sections below to review their features and operational commands:</p>
                 
-                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
-                    <!-- Zygor -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🟢 Zygor Guides Viewer <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">In-Game Guide</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Provides a premium 3D navigation waypoint arrow and step-by-step auto-completing quest instructions, talent suggestions, and gear helpers tailored for 1-80 leveling, achievements, professions, and gold farming.</p>
-                    </div>
+                <!-- Subtabs for Addon Categories -->
+                <div class="sub-tabs" style="margin-bottom: 1.5rem;">
+                    <button class="sub-tab-btn addon-sub-tab-btn active" id="addon-subbtn-questing-maps" onclick="switchAddonSubTab('questing-maps')">🗺️ Questing & Maps</button>
+                    <button class="sub-tab-btn addon-sub-tab-btn" id="addon-subbtn-combat-raids" onclick="switchAddonSubTab('combat-raids')">⚔️ Combat & Raids</button>
+                    <button class="sub-tab-btn addon-sub-tab-btn" id="addon-subbtn-bags-economy" onclick="switchAddonSubTab('bags-economy')">🎒 Bags & Economy</button>
+                    <button class="sub-tab-btn addon-sub-tab-btn" id="addon-subbtn-ui-frames" onclick="switchAddonSubTab('ui-frames')">👤 UI & Unit Frames</button>
+                    <button class="sub-tab-btn addon-sub-tab-btn" id="addon-subbtn-class-specific" onclick="switchAddonSubTab('class-specific')">🧙 Class & Crafting</button>
+                    <button class="sub-tab-btn addon-sub-tab-btn" id="addon-subbtn-misc-fun" onclick="switchAddonSubTab('misc-fun')">🎲 Utilities & Fun</button>
+                </div>
 
-                    <!-- Questie -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🟡 Questie <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Quest Helper</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">The classic quest tracker. Overlays available quests, quest givers, objectives, and monster targets directly onto your main map and minimap, tracking steps in player tooltips. Type <code>/questie</code> in-game to configure.</p>
-                    </div>
+                <!-- CATEGORY 1: QUESTING & MAPS -->
+                <div id="addon-subtab-questing-maps" class="addon-sub-tab-content" style="display: block;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🟢 Zygor Guides Viewer</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Guide</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Premium speedrun guide overlay with 3D waypoint arrow and auto-tracking checklist.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/zygor</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/zygor')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- Bagnon -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🔵 Bagnon <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Inventory Management</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Merges all individual inventory bags, bank slots, and guild bank tabs into a single, unified, searchable window. Color-codes items by rarity quality (gray, white, green, blue, purple, orange).</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🟡 Questie</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Tracker</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Classic map objectives tracker. Displays icons for quest givers, items, and monsters on maps.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/questie</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/questie')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- MobInfo-2 -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🟣 MobInfo-2 <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Creature Bestiary</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Builds an active bestiary database as you fight. Tracks creature health/mana points, armor ratings, resistances, damage ranges, and logs item drop percentages directly onto creature target tooltips. Type <code>/mi2</code> to configure.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🗺️ Atlas</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Maps</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Custom map browser for dungeons, raids, and flight paths with loot list integrations.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/atlas</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/atlas')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- WeakAuras -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🛡️ WeakAuras 2 <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">UI HUD Customizer</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">A customizable graphical framework. Displays buff durations, cooldown timers, spell triggers, class resource bars, and combat warnings. Type <code>/wa</code> to import and manage auragraphics.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>💎 AtlasLoot</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Loot DB</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Complete gear database showing drop percentages for every dungeon boss, faction vendor, and craft.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/atlasloot</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/atlasloot')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- BlackMarketUI -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">⚖️ BlackMarketUI <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">BMAH Interface</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Provides a custom-themed visual interface window specifically matching our server's custom Black Market Auction House (BMAH) listings to let players bid on rare promotional mounts and vanity items.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🌀 SexyMap</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Minimap</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Customizes the minimap with animated skins, coordinate displays, auto-fading buttons, and sizes.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/sexymap</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/sexymap')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- WhatsTraining -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">📖 What's Training? <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Spellbook Extension</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Adds a dedicated tab inside your spellbook UI mapping out all future spells, exact level requirements, training gold costs, and trainer locations for your class so you never skip a spell rank upgrade.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🏹 TomTom</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Navigation</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Custom waypoint system displaying a 3D arrow to guide players to exact coordinate locations.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/tomtom</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/tomtom')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- GatherMate2 -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🌿 GatherMate 2 <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Resource Mapping</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Records coordinates of every herb node, mining vein, gas cloud, and fishing pool you gather. Overlays these locations on your main map and minimap to map out efficient gathering routes.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🌐 Cromulent</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Map Header</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Overlays helpful level ranges, instance lists, and fishing skills directly on the main world map title.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>Auto-loads</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/cromulent')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- OmniCC -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">⏳ OmniCC <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Cooldown Text</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Overlays numerical cooldown countdown timers directly onto your action buttons, items, and debuffs so you know the exact second a spell or trinket will be ready.</p>
-                    </div>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📍 Mapster</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Map Mod</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Redesigns map frames with scale controls, coordinates, group pins, and fog-of-war transparency.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/mapster</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/mapster')">Copy</button>
+                            </div>
+                        </div>
 
-                    <!-- SilverDragon -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">🐉 SilverDragon <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Rare Mob Tracker</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Scans your game client caches. Alerts you with a loud warning sound and click-target pop-up trigger whenever a rare beast or boss (e.g. Time-Lost Proto-Drake, Loque'nahak) is targeted or spawns near you.</p>
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📜 EveryQuest</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Checklist</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Massive database tracking completed and missing quests by zone to help complete achievements.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/everyquest</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/everyquest')">Copy</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Auctionator -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">💰 Auctionator <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">AH Optimizer</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Simplifies your Auction House interactions. Enables one-click posting of item stacks, registers historical scanning values to show pricing on item tooltips, and simplifies buying lists.</p>
+                <!-- CATEGORY 2: COMBAT & RAIDS -->
+                <div id="addon-subtab-combat-raids" class="addon-sub-tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📊 Details! Damage Meter</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Parser</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Precision parser tracking DPS, healing, absorbs, death details, threat, and logs.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/details</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/details')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>👾 Deadly Boss Mods (DBM)</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Raid</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Triggers countdowns, visual alerts, and warnings for boss encounter mechanics and dungeons.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79,195,247,0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/dbm</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/dbm')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🛡️ WeakAuras 2</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">HUD</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Highly customizable HUD framework to display graphical triggers, debuffs, and resource bars.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/wa</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/wa')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>👿 Omen Threat Meter</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Threat</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Tracks real-time threat values to help damage dealers avoid pulling monster aggro from tanks.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/omen</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/omen')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🏷️ TidyPlates</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Plates</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Overhauls overhead health plates with customized themes, debuff track icons, and aggro glows.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/tidyplates</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/tidyplates')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🔊 GTFO</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Alert</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Plays loud acoustic alarms when you stand in damage-over-time fire, void zones, or poison clouds.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/gtfo</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/gtfo')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🛑 LoseControl</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">CC Tracker</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Displays duration icons of crowd control status effects (stuns, fears) directly on unit frames.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/losecontrol</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/losecontrol')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>⏳ Quartz</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Cast Bar</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Custom casting bar with lag indicators to allow queuing up the next spell during GCDs.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/quartz</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/quartz')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>⚡ MSBT</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Combat text</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Mik Scrolling Battle Text customizes layout of damage numbers, heal indicators, and triggers.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/msbt</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/msbt')">Copy</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Postal -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">📬 Postal <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Mailbox Enhancer</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">Enables bulk mailing, auto-completes character name fields from your friend/guild lists, and features an "Open All" button to cleanly retrieve all attachments, auction notifications, and letters at once.</p>
+                <!-- CATEGORY 3: BAGS & ECONOMY -->
+                <div id="addon-subtab-bags-economy" class="addon-sub-tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🔵 Bagnon</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Inventory</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Merges all inventory, bank slots, and guild vault tabs into searchable unified windows.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/bagnon</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/bagnon')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>💰 Auctionator</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">AH Mod</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Redesigns Auction House listing creation, post queues, and registers tooltips pricing logs.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/auctionator</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/auctionator')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📬 Postal</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Mail</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Enables one-click "Open All Mail", batch item attachment lists, and contact name autocompletes.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/postal</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/postal')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🥞 BankStack</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Sorter</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Instantly aggregates, stacks, and sorts inventory or bank containers using custom rulesets.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/sort</code> or <code>/stack</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/sort')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📈 Accountant</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Bookkeeper</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Logs gold transactions by source (quests, vendors, repairs, AH, mail) to track balance changes.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/accountant</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/accountant')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🛠️ Skillet</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Tradeskills</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Trade skill interface overhaul supporting multi-item queues, recipe search, and shopping lists.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/skillet</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/skillet')">Copy</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Details -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px;">
-                        <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">📊 Details! Damage Meter <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary);">Parser</span></h4>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">The most advanced damage and healing parser. Tracks player and pet DPS, damage taken, heal output details, overheals, dispels, and shows a full event recap log when players or party bots die.</p>
+                <!-- CATEGORY 4: UI & UNIT FRAMES -->
+                <div id="addon-subtab-ui-frames" class="addon-sub-tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>👤 XPerl UnitFrames</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Frames</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Replaces unit frames with 3D animated portraits, buff indicators, raid frames, and threat.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/xperl</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/xperl')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📦 BlizzMove</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Utility</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Allows players to click and drag default Blizzard frames (Character, Quest, Map) to move them.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Usage: <code>Ctrl + Drag Window</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('Ctrl')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🛠️ MoveAnything</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">UI Editor</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Deep layout editor to move, scale, alpha-fade, or hide any element in the Blizzard interface.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/move</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/move')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>💬 Prat 3.0</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Chat</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Advanced chat logs layout (customizes font sizing, timestamps, URL parsing, and class colors).</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/prat</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/prat')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>⚓ Titan Panel</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Stats bar</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Adds control bars at the top or bottom of your UI to display gold, repair level, bags, and latency.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/titan</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/titan')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>⚙️ ACP</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Manager</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Addon Control Panel allows enabling/disabling addons and reloading UI directly inside game menus.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/acp</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/acp')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 5: CLASS & CRAFTING -->
+                <div id="addon-subtab-class-specific" class="addon-sub-tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📜 Ackis Recipe List</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Recipes</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Scans primary professions and outlines missing recipes, plans, formulas, and source locations.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/arl</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/arl')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>👕 MogIt</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Transmog</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Wardrobe visualizer displaying 3D models of every armor piece and weapon in client files.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/mogit</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/mogit')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📖 What's Training?</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Spells</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Adds a spellbook list mapping all future spells, required levels, and training gold costs.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Usage: <code>Spellbook tab</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/whatstraining')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span> Druid Focus</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Druid</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">DroodFocus compiles energy bars, mana, combo points, and active debuffs/buffs for feral druids.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/droodfocus</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/droodfocus')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>💀 Necrosis</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Warlock</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Warlock menu sphere consolidating curse selectors, minion summons, and soul shard trackers.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/necrosis</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/necrosis')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🧪 Poisoner</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Rogue</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Rogue quick UI widget to quickly apply poisons, track charges, and alert on expiration.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/poison</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/poison')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>⚡ TotemTimers</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Shaman</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Shaman totem tracking bars detailing duration timers, spell range circles, and weapon imbues.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/totemtimers</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/totemtimers')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🎯 ZHunterMod</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Hunter</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Hunter bar extension to manage traps, aspects, and pet control buttons cleanly.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/zhunter</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/zhunter')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 6: UTILITIES & FUN -->
+                <div id="addon-subtab-misc-fun" class="addon-sub-tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>💎 Bejeweled</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Game</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Integrates the classic gem-matching puzzle game to play during flight paths or queues.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/bejeweled</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/bejeweled')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🔴 Peggle</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Game</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Integrates the popular peg-clearing arcade game directly inside your WoW interface.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/peggle</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/peggle')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>📖 Storyline</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">UI Mod</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Replaces basic quest dialogs with animated RPG dialogue boxes detailing 3D character models.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/storyline</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/storyline')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🐉 SilverDragon</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Rare Scan</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Scans client cache data and targets to trigger acoustic alerts when rare mobs spawn nearby.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/silverdragon</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/silverdragon')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🌿 FarmHud</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Overlay</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Transforms your minimap into a full-screen transparent HUD overlay to make tracking nodes easy.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>/farmhud</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/farmhud')">Copy</button>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border-glass); padding: 1.25rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h4 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <span>🔍 idTip</span>
+                                    <span style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(79,195,247,0.1); color: var(--accent-primary); text-transform: uppercase;">Tooltips</span>
+                                </h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">Adds Item IDs, Spell IDs, Quest IDs, and NPC entry IDs directly to game hover tooltips.</p>
+                            </div>
+                            <div style="font-size: 0.75rem; font-family: monospace; color: var(--text-frost); border-top: 1px solid rgba(79, 195, 247, 0.04); padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Cmd: <code>Auto-loads</code></span>
+                                <button class="btn-inline-copy" style="padding: 1px 6px; font-size: 0.6rem;" onclick="copyText('/idtip')">Copy</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1732,7 +2310,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         <div id="tab-leveling-guides" class="wiki-tab-content" style="display: none;">
             <div class="card">
                 <div class="card-title">🗺️ Zygor Speed Leveling & Quest Guides</div>
-                <p>Zygor Guides is the ultimate premium in-game dynamic guiding system. It features a smart 3D navigation waypoint arrow, step-by-step auto-completing quest instructions, class talent suggestions, and gearing assistants. It is fully integrated with our WotLK server database.</p>
+                <p>Zygor Guides is the ultimate premium in-game guiding system. It features a smart 3D navigation waypoint arrow, step-by-step auto-completing quest instructions, class talent suggestions, and gearing assistants. It is fully integrated with our WotLK server database.</p>
             </div>
 
             <!-- Zygor Setup Card -->
@@ -2040,6 +2618,18 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
             // Activate clicked button
             document.querySelector('#subbtn-guides-' + subTabId).classList.add('active');
+        }
+
+        // Addon Sub Tab Switcher
+        function switchAddonSubTab(subTabId) {
+            const contents = document.querySelectorAll('.addon-sub-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            const buttons = document.querySelectorAll('.addon-sub-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('addon-subtab-' + subTabId).style.display = 'block';
+            document.getElementById('addon-subbtn-' + subTabId).classList.add('active');
         }
 
         // Copy Text Helper
