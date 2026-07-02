@@ -1061,9 +1061,60 @@
             border-radius: 12px;
             font-weight: 600;
         }
+
+        /* WotLK Interactive Effects */
+        #snow-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.45;
+        }
+
+        /* Mouse click frost spark particles */
+        .frost-spark {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #e0f7fa 0%, #80deea 60%, rgba(79, 195, 247, 0.8) 100%);
+            box-shadow: 0 0 8px #4fc3f7, 0 0 15px #00e5ff;
+            pointer-events: none;
+            z-index: 9999;
+            animation: explode-spark 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes explode-spark {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Frost Pulse Glow */
+        .sidebar-brand h2 {
+            animation: frost-glow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes frost-glow {
+            0% {
+                text-shadow: 0 0 2px rgba(79, 195, 247, 0.2);
+            }
+            100% {
+                text-shadow: 0 0 12px rgba(79, 195, 247, 0.85), 0 0 20px rgba(139, 92, 246, 0.65);
+            }
+        }
     </style>
 </head>
 <body>
+    <canvas id="snow-canvas"></canvas>
 
     <!-- Fixed Left Sidebar Panel -->
     <aside class="wiki-sidebar">
@@ -3116,6 +3167,9 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         let customMacros = [];
         
         window.addEventListener('DOMContentLoaded', () => {
+            // Start interactive particle effects immediately
+            initWotlkEffects();
+
             fetch('wiki_data.json')
                 .then(res => res.json())
                 .then(data => {
@@ -3731,6 +3785,100 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         function viewCharacterDetails(guid, name) {
             switchTab('character-bio');
             selectCharacter(guid, name);
+        }
+
+        // --- WotLK INTERACTIVE EFFECTS ENGINE ---
+        function initWotlkEffects() {
+            // 1. Snow Particle System (Canvas)
+            const canvas = document.getElementById('snow-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let width = canvas.width = window.innerWidth;
+                let height = canvas.height = window.innerHeight;
+
+                window.addEventListener('resize', () => {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                });
+
+                const particles = [];
+                const maxParticles = 55;
+
+                for (let i = 0; i < maxParticles; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        r: Math.random() * 2.2 + 0.8,
+                        speed: Math.random() * 0.9 + 0.3,
+                        swingSpeed: Math.random() * 0.015 + 0.005,
+                        angle: Math.random() * Math.PI * 2
+                    });
+                }
+
+                function draw() {
+                    ctx.clearRect(0, 0, width, height);
+                    ctx.fillStyle = 'rgba(200, 240, 255, 0.45)';
+                    ctx.beginPath();
+                    for (let i = 0; i < maxParticles; i++) {
+                        const p = particles[i];
+                        ctx.moveTo(p.x, p.y);
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+                        
+                        // Update snow coordinates
+                        p.y += p.speed;
+                        p.angle += p.swingSpeed;
+                        p.x += Math.sin(p.angle) * 0.4;
+
+                        // Recycle snow particle when it hits bottom or sides
+                        if (p.y > height || p.x > width || p.x < 0) {
+                            particles[i] = {
+                                x: Math.random() * width,
+                                y: -10,
+                                r: p.r,
+                                speed: p.speed,
+                                swingSpeed: p.swingSpeed,
+                                angle: p.angle
+                            };
+                        }
+                    }
+                    ctx.fill();
+                    requestAnimationFrame(draw);
+                }
+                draw();
+            }
+
+            // 2. Mouse Click Frost Spark Splatter
+            document.addEventListener('click', (e) => {
+                // Ignore clicks on buttons, forms, and links
+                const tag = e.target.tagName;
+                if (['BUTTON', 'A', 'INPUT', 'SELECT', 'TEXTAREA'].includes(tag) || e.target.closest('button') || e.target.closest('a')) {
+                    return;
+                }
+
+                const count = 7;
+                for (let i = 0; i < count; i++) {
+                    const spark = document.createElement('div');
+                    spark.className = 'frost-spark';
+                    spark.style.left = e.pageX + 'px';
+                    spark.style.top = e.pageY + 'px';
+
+                    // Dispersal vectors
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 45 + 15;
+                    const tx = Math.cos(angle) * distance;
+                    const ty = Math.sin(angle) * distance;
+
+                    spark.style.setProperty('--tx', `${tx}px`);
+                    spark.style.setProperty('--ty', `${ty}px`);
+
+                    document.body.appendChild(spark);
+
+                    // Auto cleanup DOM
+                    setTimeout(() => {
+                        spark.remove();
+                    }, 800);
+                }
+            });
         }
             }, 50);
         }
