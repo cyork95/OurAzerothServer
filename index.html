@@ -3161,6 +3161,11 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
     </main>
 
     <script>
+        // Ensure trailing slash for correct relative path resolution on GitHub Pages
+        if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+            window.location.replace(window.location.href + '/');
+        }
+
         let wikiData = null;
         let activeAuctions = [];
         let humanCharacters = [];
