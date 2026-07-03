@@ -1981,7 +1981,7 @@
       "name": "Anderren",
       "race": 5,
       "class": 4,
-      "level": 41,
+      "level": 42,
       "gender": 0
     },
     {
@@ -4301,7 +4301,7 @@
       "name": "Damad",
       "race": 1,
       "class": 8,
-      "level": 5,
+      "level": 6,
       "gender": 0
     },
     {
@@ -14109,7 +14109,7 @@
       "name": "Taamun",
       "race": 8,
       "class": 7,
-      "level": 7,
+      "level": 8,
       "gender": 0
     },
     {
@@ -15357,7 +15357,7 @@
       "name": "Uhti",
       "race": 6,
       "class": 1,
-      "level": 14,
+      "level": 15,
       "gender": 0
     },
     {
@@ -72247,6 +72247,11 @@
     "1423": [],
     "1158": [
       {
+        "timestamp": "2026-07-02T22:36:43",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 773.20g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:30:59",
         "type": "MONEY_CHANGE",
         "details": "Spent 773.20g (New Balance: 0.01g)"
@@ -73240,11 +73245,6 @@
         "timestamp": "2026-07-01T00:37:48",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Swampwalker Boots"
-      },
-      {
-        "timestamp": "2026-07-01T00:37:48",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Unearthed Bands"
       }
     ],
     "1447": [],
@@ -109035,6 +109035,31 @@
     ],
     "1183": [
       {
+        "timestamp": "2026-07-02T22:38:26",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 12.80g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:38:00",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 12.80g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:53",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 12.80g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:36",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 12.80g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:36:33",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 12.80g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:35:58",
         "type": "MONEY_CHANGE",
         "details": "Spent 12.80g (New Balance: 0.00g)"
@@ -110006,31 +110031,6 @@
       },
       {
         "timestamp": "2026-07-01T20:58:47",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 10.48g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:58:24",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 10.48g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:58:04",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 10.48g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:57:44",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 10.48g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:57:22",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 10.48g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:57:03",
         "type": "MONEY_CHANGE",
         "details": "Spent 10.48g (New Balance: 0.00g)"
       }
@@ -122198,6 +122198,11 @@
     ],
     "1350": [
       {
+        "timestamp": "2026-07-02T22:38:39",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 218.90g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:06:16",
         "type": "LEVEL_UP",
         "details": "Reached level 6 (was 22)"
@@ -123191,11 +123196,6 @@
         "timestamp": "2026-06-30T13:33:01",
         "type": "DEATH",
         "details": "Killed by Cookie in Eastern Kingdoms"
-      },
-      {
-        "timestamp": "2026-06-30T13:31:51",
-        "type": "DEATH",
-        "details": "Killed by Chane in PvP at Kalimdor"
       }
     ],
     "1398": [
@@ -124203,6 +124203,11 @@
     "1552": [],
     "1355": [
       {
+        "timestamp": "2026-07-02T22:37:36",
+        "type": "ELITE_KILL",
+        "details": "Defeated Rare monster: Geolord Mottle"
+      },
+      {
         "timestamp": "2026-07-02T22:02:00",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Portable Hole"
@@ -125196,11 +125201,6 @@
         "timestamp": "2026-06-29T02:01:50",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-06-29T02:01:50",
-        "type": "LOGIN",
-        "details": "Logged into the game"
       }
     ],
     "1800": [],
@@ -130461,6 +130461,11 @@
     "1741": [],
     "1327": [
       {
+        "timestamp": "2026-07-02T22:36:54",
+        "type": "DEATH",
+        "details": "Killed by Thunderhead Stagwing in Kalimdor"
+      },
+      {
         "timestamp": "2026-07-02T22:28:24",
         "type": "DEATH",
         "details": "Killed by Thunderhead Stagwing in Kalimdor"
@@ -131454,11 +131459,6 @@
         "timestamp": "2026-07-01T00:38:16",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Dreamweave Gloves"
-      },
-      {
-        "timestamp": "2026-07-01T00:38:16",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Gem Studded Band"
       }
     ],
     "1678": [],
@@ -162982,6 +162982,11 @@
     ],
     "1192": [
       {
+        "timestamp": "2026-07-02T22:36:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1030.56g (New Balance: 0.02g)"
+      },
+      {
         "timestamp": "2026-07-02T22:02:12",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Bloodstained Coif"
@@ -163973,11 +163978,6 @@
       },
       {
         "timestamp": "2026-07-02T05:38:26",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Searscale Drake"
-      },
-      {
-        "timestamp": "2026-07-02T05:24:10",
         "type": "ELITE_KILL",
         "details": "Defeated Elite monster: Searscale Drake"
       }
@@ -190468,6 +190468,11 @@
     "1711": [],
     "1222": [
       {
+        "timestamp": "2026-07-02T22:37:22",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 291.04g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:01:59",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Portable Hole"
@@ -191461,11 +191466,6 @@
         "timestamp": "2026-06-29T18:40:16",
         "type": "LOGIN",
         "details": "Logged into the game"
-      },
-      {
-        "timestamp": "2026-06-29T18:39:16",
-        "type": "LOGOUT",
-        "details": "Logged out of the game"
       }
     ],
     "1763": [],
@@ -195485,6 +195485,11 @@
     ],
     "1094": [
       {
+        "timestamp": "2026-07-02T22:36:42",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 684.63g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:02:01",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Magician's Mantle"
@@ -196478,11 +196483,6 @@
         "timestamp": "2026-07-01T00:37:36",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Cragfists"
-      },
-      {
-        "timestamp": "2026-07-01T00:37:36",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Archaedic Stone"
       }
     ],
     "1315": [
@@ -204602,6 +204602,11 @@
     ],
     "1140": [
       {
+        "timestamp": "2026-07-02T22:36:32",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 2044.94g (New Balance: -0.06g)"
+      },
+      {
         "timestamp": "2026-07-02T22:01:21",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Ruby Crown of Restoration"
@@ -205595,11 +205600,6 @@
         "timestamp": "2026-06-30T23:50:52",
         "type": "LOGIN",
         "details": "Logged into the game"
-      },
-      {
-        "timestamp": "2026-06-30T23:50:51",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Ruby Crown of Restoration"
       }
     ],
     "1679": [],
@@ -216685,6 +216685,11 @@
     ],
     "829": [
       {
+        "timestamp": "2026-07-02T22:37:44",
+        "type": "DEATH",
+        "details": "Killed by Blackened Ancient in Kalimdor"
+      },
+      {
         "timestamp": "2026-07-02T22:08:20",
         "type": "MONEY_CHANGE",
         "details": "Spent 546.72g (New Balance: 0.00g)"
@@ -217678,11 +217683,6 @@
         "timestamp": "2026-06-30T20:01:00",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Thunderwood"
-      },
-      {
-        "timestamp": "2026-06-30T20:01:00",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       }
     ],
     "1901": [],
@@ -221920,6 +221920,16 @@
     "1542": [],
     "1364": [
       {
+        "timestamp": "2026-07-02T22:37:55",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 390.39g (New Balance: -0.10g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:36:58",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 390.36g (New Balance: -0.03g)"
+      },
+      {
         "timestamp": "2026-07-02T22:02:04",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Firebelcher"
@@ -222898,16 +222908,6 @@
         "timestamp": "2026-06-29T15:33:54",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: Well Watcher Solanian (Quest ID: 10073)"
-      },
-      {
-        "timestamp": "2026-06-29T15:28:49",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-06-29T15:28:49",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       },
       {
         "timestamp": "2026-06-29T15:28:49",
@@ -232986,6 +232986,11 @@
     ],
     "1296": [
       {
+        "timestamp": "2026-07-02T22:37:17",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 2060.49g (New Balance: 0.04g)"
+      },
+      {
         "timestamp": "2026-07-02T22:35:59",
         "type": "MONEY_CHANGE",
         "details": "Spent 2060.33g (New Balance: 0.10g)"
@@ -233964,11 +233969,6 @@
         "timestamp": "2026-07-01T20:02:18",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Bloodseeker"
-      },
-      {
-        "timestamp": "2026-07-01T20:02:18",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       },
       {
         "timestamp": "2026-07-01T20:02:18",
@@ -244118,6 +244118,11 @@
     ],
     "1386": [
       {
+        "timestamp": "2026-07-02T22:36:51",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.50g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:31:02",
         "type": "MONEY_CHANGE",
         "details": "Spent 187.50g (New Balance: 0.00g)"
@@ -245111,11 +245116,6 @@
         "timestamp": "2026-06-30T20:01:50",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-06-30T20:01:50",
-        "type": "LOGIN",
-        "details": "Logged into the game"
       }
     ],
     "1422": [],
@@ -248222,6 +248222,21 @@
     "1703": [],
     "1243": [
       {
+        "timestamp": "2026-07-02T22:37:47",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 151.71g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:08",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 151.70g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:36:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 151.70g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:34:18",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: A Fishy Peril (Quest ID: 40)"
@@ -249205,21 +249220,6 @@
         "timestamp": "2026-07-01T20:57:41",
         "type": "LEVEL_UP",
         "details": "Reached level 5 (was 4)"
-      },
-      {
-        "timestamp": "2026-07-01T20:57:26",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 29.52g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:57:10",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 29.52g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-01T20:56:51",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 29.52g (New Balance: 0.00g)"
       }
     ],
     "1405": [
@@ -266070,6 +266070,26 @@
     ],
     "1128": [
       {
+        "timestamp": "2026-07-02T22:38:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 31.26g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 31.26g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:17",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 31.26g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:36:46",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 31.26g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:36:13",
         "type": "MONEY_CHANGE",
         "details": "Spent 31.26g (New Balance: 0.00g)"
@@ -267048,26 +267068,6 @@
         "timestamp": "2026-07-01T00:14:55",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: A Fishy Peril (Quest ID: 40)"
-      },
-      {
-        "timestamp": "2026-06-30T23:55:34",
-        "type": "LEVEL_UP",
-        "details": "Reached level 9 (was 12)"
-      },
-      {
-        "timestamp": "2026-06-30T23:50:10",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-06-30T23:50:10",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-06-30T23:50:10",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       }
     ],
     "1196": [
@@ -303181,6 +303181,36 @@
     "1819": [],
     "1173": [
       {
+        "timestamp": "2026-07-02T22:38:33",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:56",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:38",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:32",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:37:02",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:36:57",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 187.29g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:36:13",
         "type": "MONEY_CHANGE",
         "details": "Spent 187.29g (New Balance: 0.00g)"
@@ -304149,36 +304179,6 @@
         "timestamp": "2026-07-01T01:55:03",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Charged Gear"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Scorn's Focal Dagger"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Beacon of Hope"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Earthen Rod"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
-      },
-      {
-        "timestamp": "2026-07-01T01:55:03",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       }
     ],
     "1532": [],
@@ -315979,6 +315979,11 @@
     "1814": [],
     "1096": [
       {
+        "timestamp": "2026-07-02T22:37:29",
+        "type": "DEATH",
+        "details": "Killed by Darkspine Myrmidon in Outland"
+      },
+      {
         "timestamp": "2026-07-02T22:25:24",
         "type": "DEATH",
         "details": "Killed by Darkspine Myrmidon in Outland"
@@ -316972,11 +316977,6 @@
         "timestamp": "2026-07-02T00:07:03",
         "type": "MONEY_CHANGE",
         "details": "Spent 720.18g (New Balance: 0.02g)"
-      },
-      {
-        "timestamp": "2026-07-02T00:01:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 720.16g (New Balance: 0.02g)"
       }
     ],
     "1220": [
@@ -338142,6 +338142,11 @@
     "1816": [],
     "1357": [
       {
+        "timestamp": "2026-07-02T22:36:17",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 363.48g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:31:43",
         "type": "MONEY_CHANGE",
         "details": "Spent 363.47g (New Balance: 0.00g)"
@@ -339135,11 +339140,6 @@
         "timestamp": "2026-06-30T08:27:28",
         "type": "MONEY_CHANGE",
         "details": "Spent 900.60g (New Balance: -0.03g)"
-      },
-      {
-        "timestamp": "2026-06-30T08:23:01",
-        "type": "DEATH",
-        "details": "Killed by Sharptalon in Kalimdor"
       }
     ],
     "1550": [
@@ -349052,6 +349052,11 @@
     "1509": [],
     "1284": [
       {
+        "timestamp": "2026-07-02T22:38:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 196.06g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-02T22:33:39",
         "type": "MONEY_CHANGE",
         "details": "Spent 196.06g (New Balance: 0.00g)"
@@ -350045,11 +350050,6 @@
         "timestamp": "2026-06-29T18:38:56",
         "type": "ELITE_KILL",
         "details": "Defeated Rare monster: Morgaine the Sly"
-      },
-      {
-        "timestamp": "2026-06-29T18:38:16",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 193.61g (New Balance: 0.00g)"
       }
     ],
     "1563": [],
@@ -355142,6 +355142,11 @@
     ],
     "822": [
       {
+        "timestamp": "2026-07-02T22:36:22",
+        "type": "DEATH",
+        "details": "Killed by Jaedenar Darkweaver in Kalimdor"
+      },
+      {
         "timestamp": "2026-07-02T22:36:12",
         "type": "DEATH",
         "details": "Killed by Jaedenar Darkweaver in Kalimdor"
@@ -356135,11 +356140,6 @@
         "timestamp": "2026-06-30T23:50:24",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Crimson Felt Hat"
-      },
-      {
-        "timestamp": "2026-06-30T23:50:24",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Chains of the Lich"
       }
     ],
     "1498": [],
@@ -389178,6 +389178,16 @@
     "1500": [],
     "1262": [
       {
+        "timestamp": "2026-07-02T22:38:22",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1320.09g (New Balance: 0.05g)"
+      },
+      {
+        "timestamp": "2026-07-02T22:38:15",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1320.07g (New Balance: 0.03g)"
+      },
+      {
         "timestamp": "2026-07-02T22:29:46",
         "type": "DEATH",
         "details": "Killed by Dark Iron Slaver in Eastern Kingdoms"
@@ -390166,20 +390176,15 @@
         "timestamp": "2026-06-30T02:44:32",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Gem Studded Band"
-      },
-      {
-        "timestamp": "2026-06-30T02:44:32",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Cyclopean Band"
-      },
-      {
-        "timestamp": "2026-06-30T02:44:32",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Spritecaster Cape"
       }
     ],
     "1662": [],
     "1213": [
+      {
+        "timestamp": "2026-07-02T22:36:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 661.82g (New Balance: 0.01g)"
+      },
       {
         "timestamp": "2026-07-02T22:33:28",
         "type": "MONEY_CHANGE",
@@ -391174,11 +391179,6 @@
         "timestamp": "2026-06-30T23:51:11",
         "type": "EQUIP_ITEM",
         "details": "Equipped item: Gravestone Scepter"
-      },
-      {
-        "timestamp": "2026-06-30T23:51:11",
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Portable Hole"
       }
     ],
     "1694": [],
@@ -394192,6 +394192,11 @@
     ],
     "1125": [
       {
+        "timestamp": "2026-07-02T22:37:15",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1171.79g (New Balance: 0.03g)"
+      },
+      {
         "timestamp": "2026-07-02T22:16:54",
         "type": "MONEY_CHANGE",
         "details": "Spent 1171.79g (New Balance: 0.02g)"
@@ -395185,11 +395190,6 @@
         "timestamp": "2026-07-01T00:36:31",
         "type": "LOGOUT",
         "details": "Logged out of the game"
-      },
-      {
-        "timestamp": "2026-07-01T00:28:15",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1166.19g (New Balance: -0.08g)"
       }
     ],
     "1646": [
@@ -404384,11 +404384,11 @@
         "count": 53
       },
       {
-        "name": "Vicious Gray Bear",
-        "count": 46
+        "name": "Thistlefur Avenger",
+        "count": 47
       },
       {
-        "name": "Thistlefur Avenger",
+        "name": "Vicious Gray Bear",
         "count": 46
       },
       {
@@ -405200,7 +405200,7 @@
     "1373": [
       {
         "name": "Moongraze Stag",
-        "count": 96
+        "count": 97
       },
       {
         "name": "Timberstrider Fledgling",
@@ -406325,6 +406325,10 @@
         "count": 8
       },
       {
+        "name": "Vicious Gray Bear",
+        "count": 8
+      },
+      {
         "name": "Hatefury Betrayer",
         "count": 8
       },
@@ -406338,10 +406342,6 @@
       },
       {
         "name": "Plague Lurker",
-        "count": 7
-      },
-      {
-        "name": "Vicious Gray Bear",
         "count": 7
       },
       {
@@ -406648,6 +406648,10 @@
         "count": 11
       },
       {
+        "name": "Spitelash Serpent Guard",
+        "count": 10
+      },
+      {
         "name": "Centipaar Wasp",
         "count": 10
       },
@@ -406661,10 +406665,6 @@
       },
       {
         "name": "Spitelash Screamer",
-        "count": 9
-      },
-      {
-        "name": "Spitelash Serpent Guard",
         "count": 9
       },
       {
@@ -406799,7 +406799,7 @@
     "1190": [
       {
         "name": "Crag Boar",
-        "count": 203
+        "count": 204
       },
       {
         "name": "Ragged Young Wolf",
@@ -407403,7 +407403,7 @@
       },
       {
         "name": "Defias Cutpurse",
-        "count": 136
+        "count": 143
       },
       {
         "name": "Murloc Streamrunner",
@@ -410367,7 +410367,7 @@
       },
       {
         "name": "Stonetusk Boar",
-        "count": 12
+        "count": 14
       },
       {
         "name": "Mutated Constrictor",
@@ -410418,6 +410418,10 @@
         "count": 6
       },
       {
+        "name": "Forest Spider",
+        "count": 5
+      },
+      {
         "name": "Enraged Ravager",
         "count": 5
       },
@@ -410440,10 +410444,6 @@
       {
         "name": "Black Ravager Mastiff",
         "count": 5
-      },
-      {
-        "name": "Forest Spider",
-        "count": 4
       },
       {
         "name": "Deepmoss Venomspitter",
@@ -410534,6 +410534,10 @@
         "count": 1
       },
       {
+        "name": "Kobold Tunneler",
+        "count": 1
+      },
+      {
         "name": "Twilight Runner",
         "count": 1
       },
@@ -410553,7 +410557,7 @@
       },
       {
         "name": "Adult Plainstrider",
-        "count": 46
+        "count": 47
       },
       {
         "name": "Prairie Wolf",
@@ -410580,11 +410584,11 @@
         "count": 15
       },
       {
-        "name": "Razormane Thornweaver",
-        "count": 8
+        "name": "Flatland Cougar",
+        "count": 9
       },
       {
-        "name": "Flatland Cougar",
+        "name": "Razormane Thornweaver",
         "count": 8
       },
       {
@@ -410751,6 +410755,10 @@
         "count": 2
       },
       {
+        "name": "Razormane Scout",
+        "count": 2
+      },
+      {
         "name": "Clattering Scorpid",
         "count": 2
       },
@@ -410768,6 +410776,10 @@
       },
       {
         "name": "Savannah Matriarch",
+        "count": 1
+      },
+      {
+        "name": "Geolord Mottle",
         "count": 1
       }
     ],
@@ -410829,7 +410841,12 @@
       }
     ],
     "1818": [],
-    "1982": [],
+    "1982": [
+      {
+        "name": "Chicken",
+        "count": 1
+      }
+    ],
     "1912": [],
     "1211": [],
     "1549": [],
@@ -411513,12 +411530,12 @@
         "count": 10
       },
       {
-        "name": "Singed Basilisk",
+        "name": "Plains Creeper",
         "count": 9
       },
       {
-        "name": "Plains Creeper",
-        "count": 8
+        "name": "Singed Basilisk",
+        "count": 9
       },
       {
         "name": "Highperch Wyvern",
@@ -412314,7 +412331,7 @@
       },
       {
         "name": "Ghostpaw Runner",
-        "count": 24
+        "count": 26
       },
       {
         "name": "Giant Moss Creeper",
@@ -413824,6 +413841,10 @@
         "count": 18
       },
       {
+        "name": "Starving Buzzard",
+        "count": 16
+      },
+      {
         "name": "Silithid Hive Drone",
         "count": 16
       },
@@ -413838,10 +413859,6 @@
       {
         "name": "Raging Thunder Lizard",
         "count": 15
-      },
-      {
-        "name": "Starving Buzzard",
-        "count": 14
       },
       {
         "name": "Snapjaw",
@@ -413888,6 +413905,10 @@
         "count": 8
       },
       {
+        "name": "Crag Coyote",
+        "count": 8
+      },
+      {
         "name": "Searing Infernal",
         "count": 8
       },
@@ -413897,10 +413918,6 @@
       },
       {
         "name": "Toad",
-        "count": 7
-      },
-      {
-        "name": "Crag Coyote",
         "count": 7
       },
       {
@@ -414219,12 +414236,12 @@
         "count": 38
       },
       {
-        "name": "Zhevra Runner",
+        "name": "Palemane Skinner",
         "count": 38
       },
       {
-        "name": "Palemane Skinner",
-        "count": 37
+        "name": "Zhevra Runner",
+        "count": 38
       },
       {
         "name": "Adult Plainstrider",
@@ -414562,6 +414579,10 @@
         "count": 5
       },
       {
+        "name": "Glasshide Gazer",
+        "count": 4
+      },
+      {
         "name": "Grimtotem Raider",
         "count": 4
       },
@@ -414572,10 +414593,6 @@
       {
         "name": "Lingering Highborne",
         "count": 4
-      },
-      {
-        "name": "Glasshide Gazer",
-        "count": 3
       },
       {
         "name": "Woodpaw Mongrel",
@@ -415532,6 +415549,10 @@
         "count": 1
       },
       {
+        "name": "Dalaran Apprentice",
+        "count": 1
+      },
+      {
         "name": "Rotting Slime",
         "count": 1
       },
@@ -415648,6 +415669,10 @@
         "count": 5
       },
       {
+        "name": "Corrosive Sap Beast",
+        "count": 5
+      },
+      {
         "name": "Bloodfury Slayer",
         "count": 5
       },
@@ -415657,10 +415682,6 @@
       },
       {
         "name": "Thistlefur Shaman",
-        "count": 4
-      },
-      {
-        "name": "Corrosive Sap Beast",
         "count": 4
       },
       {
@@ -416581,6 +416602,10 @@
         "count": 9
       },
       {
+        "name": "Wastewander Shadow Mage",
+        "count": 9
+      },
+      {
         "name": "Deadwood Warrior",
         "count": 9
       },
@@ -416606,10 +416631,6 @@
       },
       {
         "name": "Haldarr Trickster",
-        "count": 8
-      },
-      {
-        "name": "Wastewander Shadow Mage",
         "count": 8
       },
       {
@@ -417067,7 +417088,7 @@
       },
       {
         "name": "Incendosaur",
-        "count": 11
+        "count": 12
       },
       {
         "name": "Heavy War Golem",
@@ -417812,7 +417833,11 @@
       },
       {
         "name": "Gray Forest Wolf",
-        "count": 7
+        "count": 8
+      },
+      {
+        "name": "Rockhide Boar",
+        "count": 3
       },
       {
         "name": "Prowler",
@@ -417930,6 +417955,10 @@
         "count": 11
       },
       {
+        "name": "Thistlefur Shaman",
+        "count": 10
+      },
+      {
         "name": "Thistlefur Avenger",
         "count": 10
       },
@@ -417943,10 +417972,6 @@
       },
       {
         "name": "Young Forest Bear",
-        "count": 9
-      },
-      {
-        "name": "Thistlefur Shaman",
         "count": 9
       },
       {
@@ -419294,6 +419319,10 @@
         "count": 7
       },
       {
+        "name": "Dark Adept",
+        "count": 6
+      },
+      {
         "name": "Crypt Slayer",
         "count": 6
       },
@@ -419311,10 +419340,6 @@
       },
       {
         "name": "Scourge Champion",
-        "count": 5
-      },
-      {
-        "name": "Dark Adept",
         "count": 5
       },
       {
@@ -419482,7 +419507,7 @@
       },
       {
         "name": "Wastewander Thief",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Angerclaw Bear",
@@ -420231,6 +420256,10 @@
         "count": 3
       },
       {
+        "name": "Southsea Brigand",
+        "count": 3
+      },
+      {
         "name": "Thunderhawk Hatchling",
         "count": 3
       },
@@ -420247,6 +420276,10 @@
         "count": 3
       },
       {
+        "name": "Southsea Cannoneer",
+        "count": 2
+      },
+      {
         "name": "Southsea Cutthroat",
         "count": 2
       },
@@ -420261,14 +420294,6 @@
       {
         "name": "Bloodfury Slayer",
         "count": 2
-      },
-      {
-        "name": "Southsea Brigand",
-        "count": 1
-      },
-      {
-        "name": "Southsea Cannoneer",
-        "count": 1
       },
       {
         "name": "Wandering Barrens Giraffe",
@@ -420328,11 +420353,11 @@
         "count": 46
       },
       {
-        "name": "Rockjaw Skullthumper",
-        "count": 44
+        "name": "Mountain Boar",
+        "count": 45
       },
       {
-        "name": "Mountain Boar",
+        "name": "Rockjaw Skullthumper",
         "count": 44
       },
       {
@@ -420352,11 +420377,11 @@
         "count": 38
       },
       {
-        "name": "Frostmane Hideskinner",
-        "count": 36
+        "name": "Elder Black Bear",
+        "count": 37
       },
       {
-        "name": "Elder Black Bear",
+        "name": "Frostmane Hideskinner",
         "count": 36
       },
       {
@@ -422818,6 +422843,10 @@
         "count": 2
       },
       {
+        "name": "Black Ravager Mastiff",
+        "count": 2
+      },
+      {
         "name": "Giant Wetlands Crocolisk",
         "count": 1
       },
@@ -422847,10 +422876,6 @@
       },
       {
         "name": "Blink Dragon",
-        "count": 1
-      },
-      {
-        "name": "Black Ravager Mastiff",
         "count": 1
       },
       {
@@ -423182,6 +423207,10 @@
         "count": 9
       },
       {
+        "name": "Rabid Dire Wolf",
+        "count": 8
+      },
+      {
         "name": "Hatefury Trickster",
         "count": 8
       },
@@ -423195,10 +423224,6 @@
       },
       {
         "name": "Tyranis Malem",
-        "count": 7
-      },
-      {
-        "name": "Rabid Dire Wolf",
         "count": 7
       },
       {
@@ -423879,7 +423904,7 @@
       },
       {
         "name": "Winter Wolf",
-        "count": 11
+        "count": 12
       },
       {
         "name": "Murloc",
@@ -424107,6 +424132,10 @@
         "count": 3
       },
       {
+        "name": "Haal'eshi Talonguard",
+        "count": 3
+      },
+      {
         "name": "Twilight Geolord",
         "count": 3
       },
@@ -424124,10 +424153,6 @@
       },
       {
         "name": "Chillwind Chimaera",
-        "count": 2
-      },
-      {
-        "name": "Haal'eshi Talonguard",
         "count": 2
       },
       {
@@ -424372,7 +424397,7 @@
       },
       {
         "name": "Razormane Quilboar",
-        "count": 90
+        "count": 91
       },
       {
         "name": "Razormane Scout",
@@ -425536,6 +425561,10 @@
         "count": 3
       },
       {
+        "name": "Thistlefur Avenger",
+        "count": 3
+      },
+      {
         "name": "Smoldar",
         "count": 3
       },
@@ -425557,10 +425586,6 @@
       },
       {
         "name": "Elder Gray Bear",
-        "count": 2
-      },
-      {
-        "name": "Thistlefur Avenger",
         "count": 2
       },
       {
@@ -425891,12 +425916,16 @@
         "count": 6
       },
       {
-        "name": "Noxious Flayer",
+        "name": "Bloodfen Razormaw",
         "count": 5
       },
       {
-        "name": "Bloodfen Razormaw",
-        "count": 4
+        "name": "Bloodfen Lashtail",
+        "count": 5
+      },
+      {
+        "name": "Noxious Flayer",
+        "count": 5
       },
       {
         "name": "Elder Mistvale Gorilla",
@@ -425904,10 +425933,6 @@
       },
       {
         "name": "Risen Husk",
-        "count": 3
-      },
-      {
-        "name": "Bloodfen Lashtail",
         "count": 3
       },
       {
@@ -428863,7 +428888,7 @@
       },
       {
         "name": "Crag Boar",
-        "count": 153
+        "count": 154
       },
       {
         "name": "Snow Tracker Wolf",
@@ -429133,15 +429158,15 @@
         "count": 14
       },
       {
+        "name": "Rogue Flame Spirit",
+        "count": 12
+      },
+      {
         "name": "Black Ooze",
         "count": 11
       },
       {
         "name": "Sap Beast",
-        "count": 11
-      },
-      {
-        "name": "Rogue Flame Spirit",
         "count": 11
       },
       {
@@ -429366,6 +429391,10 @@
       },
       {
         "name": "Pridewing Skyhunter",
+        "count": 1
+      },
+      {
+        "name": "Charred Ancient",
         "count": 1
       },
       {
@@ -429777,6 +429806,10 @@
         "count": 13
       },
       {
+        "name": "Bleeding Hollow Peon",
+        "count": 12
+      },
+      {
         "name": "Bleeding Hollow Riding Worg",
         "count": 12
       },
@@ -429787,10 +429820,6 @@
       {
         "name": "Bleeding Hollow Grunt",
         "count": 12
-      },
-      {
-        "name": "Bleeding Hollow Peon",
-        "count": 11
       },
       {
         "name": "Quillfang Ravager",
@@ -430052,12 +430081,12 @@
         "count": 30
       },
       {
-        "name": "Carrion Scarab",
+        "name": "Blackrock Slayer",
         "count": 28
       },
       {
-        "name": "Blackrock Slayer",
-        "count": 27
+        "name": "Carrion Scarab",
+        "count": 28
       },
       {
         "name": "Ice Thistle Yeti",
@@ -430093,7 +430122,7 @@
       },
       {
         "name": "Blackrock Warlock",
-        "count": 12
+        "count": 13
       },
       {
         "name": "Twilight Geolord",
@@ -430168,12 +430197,12 @@
         "count": 6
       },
       {
-        "name": "Infernal Sentry",
+        "name": "Blackrock Sorcerer",
         "count": 6
       },
       {
-        "name": "Blackrock Sorcerer",
-        "count": 5
+        "name": "Infernal Sentry",
+        "count": 6
       },
       {
         "name": "Entropic Beast",
@@ -430601,6 +430630,14 @@
         "count": 3
       },
       {
+        "name": "Hungering Wraith",
+        "count": 2
+      },
+      {
+        "name": "Wailing Death",
+        "count": 2
+      },
+      {
         "name": "Felstalker",
         "count": 2
       },
@@ -430639,10 +430676,6 @@
       {
         "name": "XT:9",
         "count": 2
-      },
-      {
-        "name": "Hungering Wraith",
-        "count": 1
       },
       {
         "name": "Scarlet Mage",
@@ -430940,7 +430973,7 @@
       },
       {
         "name": "Feral Tender",
-        "count": 15
+        "count": 19
       },
       {
         "name": "Grimscale Seer",
@@ -430948,7 +430981,7 @@
       },
       {
         "name": "Tender",
-        "count": 10
+        "count": 11
       },
       {
         "name": "Rotlimb Marauder",
@@ -430995,7 +431028,7 @@
       },
       {
         "name": "Sand Skitterer",
-        "count": 42
+        "count": 43
       },
       {
         "name": "Dredge Striker",
@@ -431779,12 +431812,12 @@
         "count": 13
       },
       {
-        "name": "Palemane Skinner",
+        "name": "Palemane Tanner",
         "count": 9
       },
       {
-        "name": "Palemane Tanner",
-        "count": 8
+        "name": "Palemane Skinner",
+        "count": 9
       },
       {
         "name": "Venture Co. Laborer",
@@ -431886,12 +431919,12 @@
         "count": 8
       },
       {
-        "name": "War Reaver",
+        "name": "Scourge Guard",
         "count": 7
       },
       {
-        "name": "Scourge Guard",
-        "count": 6
+        "name": "War Reaver",
+        "count": 7
       },
       {
         "name": "Raging Owlbeast",
@@ -432281,11 +432314,19 @@
         "count": 10
       },
       {
+        "name": "Tamed Sporebat",
+        "count": 10
+      },
+      {
         "name": "Razorfang Ravager",
         "count": 10
       },
       {
         "name": "Dread Weaver",
+        "count": 10
+      },
+      {
+        "name": "Feralfen Hunter",
         "count": 10
       },
       {
@@ -432309,10 +432350,6 @@
         "count": 8
       },
       {
-        "name": "Tamed Sporebat",
-        "count": 8
-      },
-      {
         "name": "Razorfang Hatchling",
         "count": 8
       },
@@ -432326,10 +432363,6 @@
       },
       {
         "name": "Blackrock Soldier",
-        "count": 8
-      },
-      {
-        "name": "Feralfen Hunter",
         "count": 8
       },
       {
@@ -432586,7 +432619,7 @@
       },
       {
         "name": "Tar Lord",
-        "count": 18
+        "count": 19
       },
       {
         "name": "Highborne Apparition",
@@ -432887,7 +432920,7 @@
       },
       {
         "name": "Greater Plainstrider",
-        "count": 33
+        "count": 34
       },
       {
         "name": "Flatland Prowler",
@@ -434576,7 +434609,7 @@
       },
       {
         "name": "Defias Trapper",
-        "count": 57
+        "count": 58
       },
       {
         "name": "Forest Lurker",
@@ -434584,7 +434617,7 @@
       },
       {
         "name": "Defias Smuggler",
-        "count": 41
+        "count": 43
       },
       {
         "name": "Large Crag Boar",
@@ -434783,15 +434816,15 @@
         "count": 10
       },
       {
+        "name": "Dredge Striker",
+        "count": 9
+      },
+      {
         "name": "Rockhide Boar",
         "count": 8
       },
       {
         "name": "Shardtooth Mauler",
-        "count": 8
-      },
-      {
-        "name": "Dredge Striker",
         "count": 8
       },
       {
@@ -434803,15 +434836,15 @@
         "count": 7
       },
       {
+        "name": "Stonelash Scorpid",
+        "count": 7
+      },
+      {
         "name": "Diseased Grizzly",
         "count": 6
       },
       {
         "name": "Defias Cutpurse",
-        "count": 6
-      },
-      {
-        "name": "Stonelash Scorpid",
         "count": 6
       },
       {
@@ -435470,7 +435503,7 @@
     "1243": [
       {
         "name": "Mangy Wolf",
-        "count": 355
+        "count": 356
       },
       {
         "name": "Kobold Tunneler",
@@ -435482,7 +435515,7 @@
       },
       {
         "name": "Defias Cutpurse",
-        "count": 94
+        "count": 98
       },
       {
         "name": "Stonetusk Boar",
@@ -436010,7 +436043,7 @@
       },
       {
         "name": "Scorpid Tail Lasher",
-        "count": 10
+        "count": 11
       },
       {
         "name": "Mangy Silvermane",
@@ -438053,6 +438086,10 @@
         "count": 1
       },
       {
+        "name": "Wildthorn Stalker",
+        "count": 1
+      },
+      {
         "name": "Mosshide Mongrel",
         "count": 1
       },
@@ -438872,15 +438909,15 @@
         "count": 44
       },
       {
+        "name": "Kobold Tunneler",
+        "count": 39
+      },
+      {
         "name": "Forest Spider",
         "count": 38
       },
       {
         "name": "Defias Bandit",
-        "count": 34
-      },
-      {
-        "name": "Kobold Tunneler",
         "count": 34
       },
       {
@@ -439740,12 +439777,12 @@
         "count": 17
       },
       {
-        "name": "Prairie Stalker",
+        "name": "Vile Familiar",
         "count": 15
       },
       {
-        "name": "Vile Familiar",
-        "count": 14
+        "name": "Prairie Stalker",
+        "count": 15
       },
       {
         "name": "Kul Tiras Marine",
@@ -439976,12 +440013,12 @@
         "count": 10
       },
       {
-        "name": "Wandering Barrens Giraffe",
-        "count": 9
+        "name": "Bloodfury Windcaller",
+        "count": 10
       },
       {
-        "name": "Bloodfury Windcaller",
-        "count": 8
+        "name": "Wandering Barrens Giraffe",
+        "count": 9
       },
       {
         "name": "Razormane Stalker",
@@ -440032,6 +440069,10 @@
         "count": 2
       },
       {
+        "name": "Bloodfury Harpy",
+        "count": 2
+      },
+      {
         "name": "Sunscale Scytheclaw",
         "count": 2
       },
@@ -440049,10 +440090,6 @@
       },
       {
         "name": "Felmusk Felsworn",
-        "count": 1
-      },
-      {
-        "name": "Bloodfury Harpy",
         "count": 1
       },
       {
@@ -440458,7 +440495,7 @@
     "792": [
       {
         "name": "Crag Boar",
-        "count": 137
+        "count": 138
       },
       {
         "name": "Young Black Bear",
@@ -442158,7 +442195,7 @@
     "1263": [
       {
         "name": "Moongraze Stag",
-        "count": 92
+        "count": 93
       },
       {
         "name": "Root Trapper",
@@ -442170,7 +442207,7 @@
       },
       {
         "name": "Infected Nightstalker Runt",
-        "count": 36
+        "count": 37
       },
       {
         "name": "Suffering Highborne",
@@ -442178,7 +442215,7 @@
       },
       {
         "name": "Timberstrider",
-        "count": 24
+        "count": 25
       },
       {
         "name": "Death Singer",
@@ -443768,7 +443805,7 @@
       },
       {
         "name": "Venomous Cloud Serpent",
-        "count": 14
+        "count": 15
       },
       {
         "name": "Giant Moss Creeper",
@@ -444279,6 +444316,10 @@
         "count": 2
       },
       {
+        "name": "Whirlwind Ripper",
+        "count": 2
+      },
+      {
         "name": "Green Recluse",
         "count": 2
       },
@@ -444328,10 +444369,6 @@
       },
       {
         "name": "Elder Gray Bear",
-        "count": 1
-      },
-      {
-        "name": "Whirlwind Ripper",
         "count": 1
       },
       {
@@ -445158,7 +445195,7 @@
     "1173": [
       {
         "name": "Defias Thug",
-        "count": 95
+        "count": 103
       },
       {
         "name": "Kobold Vermin",
@@ -445676,7 +445713,7 @@
     "1143": [
       {
         "name": "Prairie Wolf",
-        "count": 235
+        "count": 236
       },
       {
         "name": "Adult Plainstrider",
@@ -447092,15 +447129,15 @@
         "count": 14
       },
       {
+        "name": "Hive'Ashi Drone",
+        "count": 14
+      },
+      {
         "name": "Shardtooth Mauler",
         "count": 13
       },
       {
         "name": "Spitelash Siren",
-        "count": 13
-      },
-      {
-        "name": "Hive'Ashi Drone",
         "count": 13
       },
       {
@@ -447112,6 +447149,10 @@
         "count": 12
       },
       {
+        "name": "Tortured Sentinel",
+        "count": 11
+      },
+      {
         "name": "Fen Strider",
         "count": 11
       },
@@ -447121,10 +447162,6 @@
       },
       {
         "name": "Earth Elemental",
-        "count": 10
-      },
-      {
-        "name": "Tortured Sentinel",
         "count": 10
       },
       {
@@ -447620,16 +447657,16 @@
         "count": 10
       },
       {
+        "name": "Plague Lurker",
+        "count": 9
+      },
+      {
         "name": "Frenzied Pterrordax",
         "count": 9
       },
       {
         "name": "Angerclaw Bear",
         "count": 9
-      },
-      {
-        "name": "Plague Lurker",
-        "count": 8
       },
       {
         "name": "Greater Obsidian Elemental",
@@ -448209,11 +448246,11 @@
         "count": 33
       },
       {
-        "name": "Elder Mottled Boar",
-        "count": 13
+        "name": "Kolkar Drudge",
+        "count": 14
       },
       {
-        "name": "Kolkar Drudge",
+        "name": "Elder Mottled Boar",
         "count": 13
       },
       {
@@ -448634,7 +448671,7 @@
       },
       {
         "name": "Giant Buzzard",
-        "count": 54
+        "count": 55
       },
       {
         "name": "Syndicate Enforcer",
@@ -452051,7 +452088,7 @@
       },
       {
         "name": "Bristleback Water Seeker",
-        "count": 23
+        "count": 24
       },
       {
         "name": "Venture Co. Logger",
@@ -452063,7 +452100,7 @@
       },
       {
         "name": "Bristleback Hunter",
-        "count": 16
+        "count": 17
       },
       {
         "name": "Sunscale Scytheclaw",
@@ -453467,15 +453504,15 @@
         "count": 8
       },
       {
+        "name": "Vampiric Mistbat",
+        "count": 8
+      },
+      {
         "name": "Eversong Tender",
         "count": 7
       },
       {
         "name": "Wrathtail Sea Witch",
-        "count": 7
-      },
-      {
-        "name": "Vampiric Mistbat",
         "count": 7
       },
       {
@@ -460002,7 +460039,7 @@
       },
       {
         "name": "Razormane Scout",
-        "count": 32
+        "count": 35
       },
       {
         "name": "Greater Plainstrider",
@@ -461724,15 +461761,15 @@
         "count": 23
       },
       {
+        "name": "Stonelash Scorpid",
+        "count": 20
+      },
+      {
         "name": "Raging Owlbeast",
         "count": 19
       },
       {
         "name": "Suffering Highborne",
-        "count": 19
-      },
-      {
-        "name": "Stonelash Scorpid",
         "count": 19
       },
       {
@@ -462620,18 +462657,18 @@
     "1262": [
       {
         "name": "Dark Iron Taskmaster",
-        "count": 38
+        "count": 39
       },
       {
         "name": "Saltwater Snapjaw",
         "count": 21
       },
       {
-        "name": "Jaedenar Guardian",
-        "count": 13
+        "name": "Dark Iron Slaver",
+        "count": 14
       },
       {
-        "name": "Dark Iron Slaver",
+        "name": "Jaedenar Guardian",
         "count": 13
       },
       {
@@ -462758,11 +462795,11 @@
         "count": 18
       },
       {
-        "name": "Pesterhide Hyena",
-        "count": 16
+        "name": "Felmusk Felsworn",
+        "count": 17
       },
       {
-        "name": "Felmusk Felsworn",
+        "name": "Pesterhide Hyena",
         "count": 16
       },
       {
@@ -463128,7 +463165,7 @@
     "1333": [
       {
         "name": "Greater Duskbat",
-        "count": 161
+        "count": 162
       },
       {
         "name": "Decrepit Darkhound",
@@ -463210,7 +463247,7 @@
       },
       {
         "name": "Heavy War Golem",
-        "count": 19
+        "count": 20
       },
       {
         "name": "Sprite Darter",
@@ -464969,7 +465006,13 @@
     "1966": [],
     "1394": [],
     "1818": [],
-    "1982": [],
+    "1982": [
+      {
+        "timestamp": "2026-07-02T22:37:44",
+        "type": "SAY",
+        "details": "blessed are the weak"
+      }
+    ],
     "1912": [],
     "1211": [],
     "1549": [],
