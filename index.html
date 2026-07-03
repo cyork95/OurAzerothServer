@@ -3225,56 +3225,70 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         let humanCharacters = [];
         let customMacros = [];
         
+        function showError(step, err) {
+            console.error('[OurAzeroth] Step "' + step + '" crashed:', err);
+            const banner = document.getElementById('debug-banner');
+            if (banner) {
+                banner.style.display = 'block';
+                banner.style.whiteSpace = 'pre-wrap';
+                banner.textContent += '\n[' + step + '] ' + (err && err.message ? err.message : String(err));
+            }
+        }
+
         function initApp() {
             // Start interactive particle effects immediately
-            initWotlkEffects();
+            try { initWotlkEffects(); } catch(e) { showError('initWotlkEffects', e); }
 
             // Use the same search parameters to bust cache for the JSON file
-            const cacheBuster = window.location.search || ('?t=' + Date.now());
+            const cacheBuster = '?t=' + Date.now();
             fetch('wiki_data.json' + cacheBuster)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching wiki_data.json');
+                    return res.json();
+                })
                 .then(data => {
-                    wikiData = data;
-                    serverCharacters = data.characters || [];
-                    activeAuctions = data.auctions || [];
-                    humanCharacters = data.human_characters || [];
-                    
+                    try {
+                        wikiData = data;
+                        serverCharacters = data.characters || [];
+                        activeAuctions = data.auctions || [];
+                        humanCharacters = data.human_characters || [];
+                    } catch(e) { showError('data-assign', e); return; }
+
                     // Populate Game Events
-                    const eventsBody = document.getElementById('wiki-events-body');
-                    const eventsCount = document.getElementById('events-count');
-                    if (eventsBody && data.events) {
-                        eventsCount.textContent = data.events.length;
-                        eventsBody.innerHTML = data.events.map(evt => `
-                            <tr class="wiki-event-row" data-search="${evt.id} ${evt.name.toLowerCase()}" style="border-bottom: 1px solid rgba(79, 195, 247, 0.02);">
-                                <td style="padding: 0.25rem 0.5rem; font-weight: 600; color: var(--text-primary);">#${evt.id}</td>
-                                <td style="padding: 0.25rem 0.5rem;">${evt.name}</td>
-                            </tr>
-                        `).join('');
-                    }
-                    
+                    try {
+                        const eventsBody = document.getElementById('wiki-events-body');
+                        const eventsCount = document.getElementById('events-count');
+                        if (eventsBody && data.events) {
+                            eventsCount.textContent = data.events.length;
+                            eventsBody.innerHTML = data.events.map(evt => `
+                                <tr class="wiki-event-row" data-search="${evt.id} ${evt.name.toLowerCase()}" style="border-bottom: 1px solid rgba(79, 195, 247, 0.02);">
+                                    <td style="padding: 0.25rem 0.5rem; font-weight: 600; color: var(--text-primary);">#${evt.id}</td>
+                                    <td style="padding: 0.25rem 0.5rem;">${evt.name}</td>
+                                </tr>
+                            `).join('');
+                        }
+                    } catch(e) { showError('populate-events', e); }
+
                     // Populate Ollama Personalities
-                    const personalitiesBody = document.getElementById('ollama-personalities-body');
-                    if (personalitiesBody && data.personalities) {
-                        personalitiesBody.innerHTML = data.personalities.map(pers => `
-                            <tr style="border-bottom: 1px solid rgba(79, 195, 247, 0.05);">
-                                <td style="padding: 0.75rem 1rem;"><strong style="color: var(--accent-hover);">${pers.key}</strong></td>
-                                <td style="padding: 0.75rem 1rem; color: var(--text-primary); font-size: 0.85rem;">${pers.prompt}</td>
-                            </tr>
-                        `).join('');
-                    }
-                    
+                    try {
+                        const personalitiesBody = document.getElementById('ollama-personalities-body');
+                        if (personalitiesBody && data.personalities) {
+                            personalitiesBody.innerHTML = data.personalities.map(pers => `
+                                <tr style="border-bottom: 1px solid rgba(79, 195, 247, 0.05);">
+                                    <td style="padding: 0.75rem 1rem;"><strong style="color: var(--accent-hover);">${pers.key}</strong></td>
+                                    <td style="padding: 0.75rem 1rem; color: var(--text-primary); font-size: 0.85rem;">${pers.prompt}</td>
+                                </tr>
+                            `).join('');
+                        }
+                    } catch(e) { showError('populate-personalities', e); }
+
                     // Initialise custom macros and renderers
-                    initCustomMacros();
-                    filterAuctions();
-                    filterAccounts();
+                    try { initCustomMacros(); } catch(e) { showError('initCustomMacros', e); }
+                    try { filterAuctions(); } catch(e) { showError('filterAuctions', e); }
+                    try { filterAccounts(); } catch(e) { showError('filterAccounts', e); }
                 })
                 .catch(err => {
-                    console.error("Failed to load wiki data:", err);
-                    const banner = document.getElementById('debug-banner');
-                    if (banner) {
-                        banner.style.display = 'block';
-                        banner.textContent = `Wiki Data Fetch Error: ${err.message || err}`;
-                    }
+                    showError('fetch-wiki_data.json', err);
                 });
         }
 
