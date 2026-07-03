@@ -2833,10 +2833,29 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--accent-primary); padding-left: 1.5rem; margin-left: 0.5rem;">
-                    <!-- VERSION 1.0.6 -->
+                    <!-- VERSION 1.0.7 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary); box-shadow: 0 0 8px var(--accent-glow);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.6 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.7 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 2, 2026</p>
+                        
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🛠️ Stability & Performance Bug Fixes</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Ollama Chat Thread Lock Fixed:</strong> Disabled synchronous sentiment tracking (<code>OllamaChat.EnableSentimentTracking = 0</code>). This prevents the world server's main loop from freezing and crashing when the local LLM parses message sentiment (such as when players say profanity to bots).</li>
+                            <li><strong>Save Interval Decreased:</strong> Changed <code>PlayerSaveInterval</code> in <code>worldserver.conf</code> to 60000 ms (1 minute) to auto-save character data frequently and prevent rollbacks on crashes.</li>
+                        </ul>
+
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Playerbots & Cross-Control</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Mutual Summoning Linked:</strong> Established mutual trust links between all GM/human accounts (ADMIN, XMILLERX, COYOFROYO, COYOFROYO2, COYOFROYO3, XMILLERX2, XMILLERX1) in the playerbots database. All main accounts can now summon and command each other's characters as bots.</li>
+                            <li><strong>Meetra AI Persona:</strong> Configured Meetra with a custom <code>CUSTOM_DARK_BITCHY_PRIEST</code> personality prompt and returned her GUID to account 185.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.0.6 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.6</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 2, 2026</p>
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Server & Cross-Faction Interactions</h4>
