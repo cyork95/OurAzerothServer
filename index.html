@@ -3558,8 +3558,26 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         // --- NEW FEATURES ENGINES ---
 
         // 1. MACRO BOOK ENGINE
+        // Safe localStorage wrapper to prevent SecurityError crashes in restricted/incognito environments
+        function safeGetLocalStorage(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                console.warn("localStorage is blocked or disabled:", e);
+                return null;
+            }
+        }
+
+        function safeSetLocalStorage(key, val) {
+            try {
+                localStorage.setItem(key, val);
+            } catch (e) {
+                console.warn("localStorage is blocked or disabled:", e);
+            }
+        }
+
         function initCustomMacros() {
-            const stored = localStorage.getItem('our_azeroth_custom_macros');
+            const stored = safeGetLocalStorage('our_azeroth_custom_macros');
             if (stored) {
                 try {
                     customMacros = JSON.parse(stored);
@@ -3582,7 +3600,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         body: '/t bots formation circle'
                     }
                 ];
-                localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+                safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
             }
             renderCustomMacros();
         }
@@ -3634,7 +3652,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             };
 
             customMacros.push(newMacro);
-            localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+            safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
             
             nameInput.value = '';
             descInput.value = '';
@@ -3645,7 +3663,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
         function deleteCustomMacro(id) {
             customMacros = customMacros.filter(m => m.id !== id);
-            localStorage.setItem('our_azeroth_custom_macros', JSON.stringify(customMacros));
+            safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
             renderCustomMacros();
         }
 
