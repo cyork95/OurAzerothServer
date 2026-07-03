@@ -3444,7 +3444,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         }
         
         function escapeJsString(str) {
-            return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+            return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
         }
         
         // Close dropdown when clicking outside
