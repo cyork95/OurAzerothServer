@@ -2842,6 +2842,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🛠️ Stability & Performance Bug Fixes</h4>
                         <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
                             <li><strong>Ollama Chat Thread Lock Fixed:</strong> Disabled synchronous sentiment tracking (<code>OllamaChat.EnableSentimentTracking = 0</code>). This prevents the world server's main loop from freezing and crashing when the local LLM parses message sentiment (such as when players say profanity to bots).</li>
+                            <li><strong>Custom Channels Bot Replies Disabled:</strong> Set <code>OllamaChat.DisableForCustomChannels = 1</code> in <code>mod_ollama_chat.conf</code>. This stops bots from listening and responding in global/local channels like General (<code>/1</code>) and Trade (<code>/2</code>), eliminating crashes when talking in public channels.</li>
                             <li><strong>Save Interval Decreased:</strong> Changed <code>PlayerSaveInterval</code> in <code>worldserver.conf</code> to 60000 ms (1 minute) to auto-save character data frequently and prevent rollbacks on crashes.</li>
                         </ul>
 
