@@ -3066,10 +3066,30 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--accent-primary); padding-left: 1.5rem; margin-left: 0.5rem;">
-                    <!-- VERSION 1.0.9 -->
+                    <!-- VERSION 1.1.0 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary); box-shadow: 0 0 8px var(--accent-glow);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.9 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.0 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 5, 2026</p>
+                        
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Server & Module Updates</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Disabled Faction-Free Module:</strong> Completely removed <code>mod-Faction-Free</code> from compilation to restore normal Horde vs. Alliance NPC interactions, clean up aggressive town guards, and fix creature templates.</li>
+                            <li><strong>Installed MultiBot Bridge:</strong> Compiled and enabled the C++ server-side module <code>mod-multibot-bridge</code>, allowing the client-side MultiBot addon to communicate with playerbots.</li>
+                            <li><strong>Enabled Weapon Proficiency Persistence:</strong> Configured <code>ValidateSkillLearnedBySpells = 0</code> in <code>worldserver.conf</code> to prevent the server from stripping custom learned weapon skills on login/logout.</li>
+                        </ul>
+
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Playerbots & Addons</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>MultiBot Chatless UI:</strong> Installed the custom game client addon interface for seamless multi-bot commanding and cross-faction chat whispers.</li>
+                            <li><strong>Playerbot Manager Addon:</strong> Extracted and installed the visual bot controller dashboard directly to the game client addons directory.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.0.9 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.0.9</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 4, 2026</p>
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Playerbots & AI Personalities</h4>
