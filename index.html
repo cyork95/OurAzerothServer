@@ -2763,13 +2763,26 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     <li>Select <strong><code>Interface</code></strong>.</li>
                     <li>Select the <strong><code>Combat</code></strong> category on the left side.</li>
                     <li>Find the setting <strong><code>Auto Attack/Auto Shot</code></strong>:
-                        <ul>
-                            <li><strong>Uncheck</strong> the box if it is currently enabled.</li>
-                        </ul>
+                    <ul>
+                        <li><strong>Uncheck</strong> the box if it is currently enabled.</li>
+                    </ul>
                     </li>
                     <li>Alternatively, ensure <strong><code>Stop Auto Attack</code></strong> is <strong>checked</strong>.</li>
                     <li>Click <strong><code>Okay</code></strong> and test using Raptor Strike again in melee range.</li>
                 </ol>
+            </div>
+
+            <!-- Ashenvale Quest NPC Note Card -->
+            <div class="card" style="border: 1px solid rgba(79, 195, 247, 0.3); background: rgba(79, 195, 247, 0.02); margin-top: 1rem;">
+                <div class="card-title" style="color: var(--accent-hover);"><span class="icon">🧭</span> Ashenvale Quest NPC Name Reference (Shael'dryn / Shael'fryn)</div>
+                <p>When leveling through Ashenvale, your quest guides (Zygor/Guidelime) may instruct you to find an NPC named <strong>Shael'fryn</strong> (or <strong>Shael fryn</strong>) for various quests, such as <em>"Troll Charm"</em>.</p>
+                <p>On this server, she is stored under her database name <strong>Shael'dryn</strong> (NPC Entry ID: <code>3916</code>). She is located at the Raynewood Retreat at coordinates <code>61.8, 51.4</code> in Ashenvale.</p>
+                
+                <h3>Useful GM Commands</h3>
+                <ul>
+                    <li><strong>Spawn her:</strong> <code onclick="copyText('.npc add 3916')">.npc add 3916</code> (Click to copy)</li>
+                    <li><strong>Teleport to her:</strong> <code onclick="copyText('.go creature 3916')">.go creature 3916</code> (Click to copy)</li>
+                </ul>
             </div>
         </div>
 
