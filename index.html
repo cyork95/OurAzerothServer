@@ -1177,6 +1177,9 @@
             <button class="menu-btn" id="tabbtn-ai-ollama" onclick="switchTab('ai-ollama')">
                 <span class="icon">🤖</span> AI Chat
             </button>
+            <button class="menu-btn" id="tabbtn-raid-strategies" onclick="switchTab('raid-strategies')">
+                <span class="icon">🏰</span> Raid Strategies
+            </button>
             <button class="menu-btn" id="tabbtn-leveling-guides" onclick="switchTab('leveling-guides')">
                 <span class="icon">🗺️</span> Zygor Guides
             </button>
@@ -2770,6 +2773,195 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             </div>
         </div>
 
+        <!-- TAB 12: RAID STRATEGIES -->
+        <div id="tab-raid-strategies" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">🏰 In-Game Playerbot Raid Strategy Reference</div>
+                <p>This reference details the pre-coded AI strategies and operational tips for taking down bosses solo with your playerbot companions. Be sure to use these instructions alongside the <strong>Autobalance</strong> module to scale content dynamically.</p>
+                <div class="alert alert-info" style="margin-top: 1rem; margin-bottom: 0px;">
+                    <strong>ℹ️ Quick Strategy Commands</strong>
+                    <p style="margin-bottom: 0.5rem;">You can enable or disable specific strategies by whispering commands to your bots or typing in party chat:</p>
+                    <ul style="margin-bottom: 0px; padding-left: 1.2rem; font-size: 0.85rem;">
+                        <li><strong>Enable Strategy:</strong> <code>/p co +[strategy]</code> (e.g. <code>/p co +tremor</code> for Shamans to drop tremor totems, <code>/p co +dps assist</code>)</li>
+                        <li><strong>Disable Strategy:</strong> <code>/p co -[strategy]</code> (e.g. <code>/p co -tank assist</code> to prevent tank repositioning)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Expansion Level Sub-tabs -->
+            <div class="sub-tabs" style="margin-bottom: 1.5rem;">
+                <button class="sub-tab-btn active" id="raid-subbtn-vanilla" onclick="switchRaidSubTab('vanilla')">❄️ Classic (60)</button>
+                <button class="sub-tab-btn" id="raid-subbtn-tbc" onclick="switchRaidSubTab('tbc')">🔥 Burning Crusade (70)</button>
+                <button class="sub-tab-btn" id="raid-subbtn-wotlk" onclick="switchRaidSubTab('wotlk')">👑 Wrath of the Lich King (80)</button>
+            </div>
+
+            <!-- CLASSIC (60) SUB-TAB -->
+            <div id="raid-subtab-vanilla" class="sub-tab-content">
+                <div class="card">
+                    <div class="card-title" style="color: #a78bfa; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🔥 Molten Core <span style="font-size: 0.75rem; background: rgba(167, 139, 250, 0.1); padding: 2px 6px; border-radius: 4px;">Completable with IP Nerfs</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Lucifron, Gehennas & Sulfuron Harbinger</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Shadow / Fire resistance aura will be automatically applied by Paladin/Priest bots.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Use the Skull icon to focus target down individual boss adds first.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Magmadar</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Fire resistance aura automatically applied.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Use Priest bots to place Fear Ward on your tank, and have Shamans drop tremor totems to clear the fear.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Garr & Golemagg the Incinerator</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Disabled AoE DPS abilities via damage multipliers to prevent multiple simultaneous add explosions. Golemagg off-tanks will pull Core Ragers away to remove their buff.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Baron Geddon</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Bots instantly run away from the raid when targeted with Living Bomb, and run away from Baron Geddon during Inferno channels.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Shazzrah</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Ranged bots automatically position themselves at maximum distance to avoid Arcane Explosion while keeping DPS/heals active.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Majordomo Executus & Ragnaros</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Magic resistance configurations and clean fire/shadow aura transitions. Focus down Majordomo's adds using the Skull mark priority.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title" style="color: #a78bfa; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🐉 Blackwing Lair <span style="font-size: 0.75rem; background: rgba(167, 139, 250, 0.1); padding: 2px 6px; border-radius: 4px;">Onyxia Scale Cloak Granted Auto</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Razorgore the Untamed</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Raid Notes:</strong> Player must manually mind-control Razorgore using the Orb of Domination to destroy the eggs in Phase 1 while bots cover and clear the spawning guards.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Chromaggus</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Bots automatically prioritize cleansing and clearing Brood Affliction: Bronze instantly.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Use RTSC commands to position the tank by the door to Line-of-Sight (LOS) Chromaggus' breath attacks.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Nefarian</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Tips & Setup:</strong> Use RTSC to position the main tank at the stairs facing away from the raid. Enable Shamans tremor totems (<code>co +tremor</code>). Disable tank assist (<code>co -tank assist</code>) on the main tank before Phase 3 so Nefarian isn't dragged into the raid when the bone adds wake up.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TBC (70) SUB-TAB -->
+            <div id="raid-subtab-tbc" class="sub-tab-content" style="display: none;">
+                <div class="card">
+                    <div class="card-title" style="color: #f87171; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🏰 Karazhan <span style="font-size: 0.75rem; background: rgba(248, 113, 113, 0.1); padding: 2px 6px; border-radius: 4px;">10-Man Raid</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Attumen & Midnight</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Main tank grabs Midnight, bots focus DPS on Midnight. Assist tank picks up Attumen (who cleaves) and drags him away. When Midnight hits 25% and Attumen mounts, the raid stacks behind the boss to avoid Berserker Charge.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Moroes</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Main tank locks on Moroes. Other bots prioritize killing adds marked with the Skull icon in sequence (Millstipe -> Von'indi, etc.).</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Maiden of Virtue</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Tank holds Maiden in center, ranged bots fan out between the pillars to avoid chaining Holy Wrath. Tank moves boss to a stunned healer so the Holy Ground damage breaks their Repentance stun.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Opera Event (Romulo/Julianne, Oz, Wolf)</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Romulo/Julianne: bots balance damage to kill both simultaneously. Oz: focus kills Dorothee -> Tito -> Roar -> Strawman. Wolf: main tank positions boss in front left corner; transformed bots run away.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">The Curator</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Tank holds Curator in hallway center. Ranged bots spread. All bots instantly target and destroy Astral Flares. Assist tank stays second on threat to take Hateful Bolts. Cooldowns/Heroism saved for Evocation phase.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Shade of Aran</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Coded Strategy:</strong> Ranged bots stay spread. Bots run to the room's edges during Magnetic Pull and <strong>completely stop moving</strong> when Flame Wreath is active.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Warning:</strong> Flame Wreath strategies deactivate if Aran dies. If Wreath is active when he dies, immediately tell bots to <code>stay</code> or they will run, blow up, and wipe the raid.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Netherspite</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Beam Block Assignments:</strong> Tank bots block Red beam (stepping in and out to clear debuffs). DPS bots block Blue beam (swapping at 24 stacks). Rogues, Warriors, and Healers cover the Green beam. Bots automatically avoid Void Zones.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Nightbane</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Ground Phase:</strong> Tank holds boss perpendicularly. Priest bots cast Fear Ward on tank. Ranged bots cycle between three fixed spots if Charred Earth spawns under them.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Flight Phase:</strong> Stop attacking, stack near Nightbane's flight position to prevent Fireball Barrages. Once Rain of Bones is cast, stack out of the Spores to destroy the Skeletons. Ranged/temporary pets are disabled due to map pathing bugs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title" style="color: #f87171; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🐍 Serpentshrine Cavern & Tempest Keep <span style="font-size: 0.75rem; background: rgba(248, 113, 113, 0.1); padding: 2px 6px; border-radius: 4px;">25-Man Raids</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Hydross the Unstable</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Requires 2 tanks (Frost tank and Nature tank). Main tank holds Hydross until Mark hits 100%, then drags him across the invisible center line to transition phases. Assist tank taunts immediately. DPS completely pauses for 5 seconds during phase shifts.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Leotheras the Blind</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Ranged bots run away during Whirlwinds. In demon phase (Phase 2 & 3), a Warlock bot spams Searing Pain to ranged-tank Leotheras. Bots focus and destroy their own Inner Demons immediately (healers/tanks use pre-coded DPS spell rotations to kill theirs).</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Lady Vashj</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Phase 2 Core Looter:</strong> A melee bot is cheat-designated as the Core Looter. It teleports to Tainted Elementals, loots the Core, and passes it through a chain of designated helper bots (healers/ranged) standing at the stairs up to the shield generators.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Phase 3:</strong> Bots clean up residual adds. Main tank drags Vashj out of Toxic Pools. Hunters prioritize shooting Toxic Sporebats immediately.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Kael'thas Sunstrider</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Coded Strategy:</strong> Phase 1: tank advisors on West wall, Warlock tanks Capernian. Phase 2: Kill Weapons (Staff -> Mace -> Sword -> Dagger -> Axe -> Bow -> Shield). Bots equip legendary weapons. Phase 3: Tanks get ready at advisor respawns before they wake up. Phase 4: Main tank on Kael'thas. Kill eggs. Break Mind Control with legendary Dagger. Shock Barrier broken with high DPS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title" style="color: #f87171; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">🐗 Zul'Aman & Hyjal Summit <span style="font-size: 0.75rem; background: rgba(248, 113, 113, 0.1); padding: 2px 6px; border-radius: 4px;">Raid Challenges</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Akil'zon & Jan'alai (Zul'Aman)</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Akil'zon:</strong> Ranged spread 13y. All bots collapse on the main tank 5 seconds before Electrical Storm.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Jan'alai:</strong> Ranged spread 15y. Move out of Fire Bombs. Bots mark one Hatcher with Skull to kill, and mark the other with Moon to ignore, allowing eggs on one side to hatch in controlled waves.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Azgalor & Archimonde (Hyjal Summit)</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;"><strong>Azgalor:</strong> Melee wait back until tank positions boss. Doom targets run to designated path; off-tank catches spawned Doomguard.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Archimonde:</strong> Avoid Doomfire trails. Priest Fear Ward on tank. Shamans use Tremor Totem. Remember to use your Tears of the Goddess item to survive Air Burst fall damage!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WOTLK (80) SUB-TAB -->
+            <div id="raid-subtab-wotlk" class="sub-tab-content" style="display: none;">
+                <div class="card">
+                    <div class="card-title" style="color: #60a5fa; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">☠️ Naxxramas & Vault of Archavon <span style="font-size: 0.75rem; background: rgba(96, 165, 250, 0.1); padding: 2px 6px; border-radius: 4px;">WotLK Entry Raids</span></div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Anub'Rekhan</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Disperse ranged bots to 20y to avoid Impale spikes: <code>/ra @ranged disperse set 20</code>.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Grand Widow Faerlina</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Strategy:</strong> Focus all damage on the boss using the Skull mark. The worshipper adds will naturally die to bot passive AoE cleaves.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Maexxna</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Build a targeting macro to quickly free bots caught in Web Wraps. Trigger Bloodlust/Heroism when she hits 30% HP to burn through Frenzy.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Patchwerk</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Melee bots will take heavy damage from Hateful Strike. Bring extra healer/tank bots or lean towards ranged DPS composition to mitigate.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: #fff; margin-bottom: 0.4rem; font-size: 0.95rem;">Koralon the Flame Watcher</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>Tips:</strong> Disperse ranged bots to 6y to minimize damage taken from Flaming Cinders: <code>/ra @ranged disperse set 6</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- TAB 7: ZYGOR QUEST GUIDES -->
         <div id="tab-leveling-guides" class="wiki-tab-content" style="display: none;">
             <div class="card">
@@ -3412,6 +3604,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
             // Activate clicked button
             document.querySelector('#subbtn-' + subTabId).classList.add('active');
+        }
+
+        // Sub Tab Switcher (Raid Strategies)
+        function switchRaidSubTab(subTabId) {
+            // Hide all sub tab contents
+            const contents = document.querySelector('#tab-raid-strategies').querySelectorAll('.sub-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Deactivate all sub tab buttons
+            const buttons = document.querySelector('#tab-raid-strategies').querySelectorAll('.sub-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show target sub tab content
+            document.querySelector('#raid-subtab-' + subTabId).style.display = 'block';
+
+            // Activate clicked button
+            document.querySelector('#raid-subbtn-' + subTabId).classList.add('active');
         }
 
         // Guide Sub Tab Switcher
