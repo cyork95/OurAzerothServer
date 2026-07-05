@@ -1191,6 +1191,9 @@
             <button class="menu-btn" id="tabbtn-auctionhouse" onclick="switchTab('auctionhouse')">
                 <span class="icon">⚖️</span> Auction House
             </button>
+            <button class="menu-btn" id="tabbtn-server-stats" onclick="switchTab('server-stats')">
+                <span class="icon">📊</span> Server Statistics
+            </button>
             <button class="menu-btn" id="tabbtn-character-bio" onclick="switchTab('character-bio')">
                 <span class="icon">📖</span> Character Search
             </button>
@@ -2487,6 +2490,136 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             </div>
         </div>
 
+        <!-- TAB 13: SERVER STATISTICS -->
+        <div id="tab-server-stats" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title">📊 Server Statistics & Leaderboards</div>
+                <p>Welcome to the Hall of Fame! This page displays the top characters and achievements across all accounts on <strong>OurAzerothServer</strong>. Data is updated hourly by the database exporter.</p>
+            </div>
+
+            <!-- Stats Sub-tabs -->
+            <div class="sub-tabs" style="margin-bottom: 1.5rem;">
+                <button class="sub-tab-btn active" id="stats-subbtn-wealth" onclick="switchStatsSubTab('wealth')">💰 Wealth & Playtime</button>
+                <button class="sub-tab-btn" id="stats-subbtn-quests" onclick="switchStatsSubTab('quests')">🧭 Quests & Milestones</button>
+                <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
+            </div>
+
+            <!-- WEALTH & PLAYTIME SUB-TAB -->
+            <div id="stats-subtab-wealth" class="sub-tab-content">
+                <div class="char-bio-columns">
+                    <!-- Richest Card -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--gold-light);">💰 Wealthiest Characters</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Gold Balance</th></tr>
+                            </thead>
+                            <tbody id="stats-richest-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Playtime Card -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-hover);">⏳ Total Time Played</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Playtime</th></tr>
+                            </thead>
+                            <tbody id="stats-playtime-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUESTS & MILESTONES SUB-TAB -->
+            <div id="stats-subtab-quests" class="sub-tab-content" style="display: none;">
+                <div class="char-bio-columns">
+                    <!-- Quest Completionists -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--gold-light);">📜 Most Quests Completed</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Quests</th></tr>
+                            </thead>
+                            <tbody id="stats-quests-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Elite Killers -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--status-warning);">⚔️ Elite & Rare Killers</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Elite Kills</th></tr>
+                            </thead>
+                            <tbody id="stats-elites-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Deaths Leaderboard -->
+                <div class="card" style="margin-top: 2rem;">
+                    <div class="card-title" style="color: var(--status-danger);">💀 Most Deaths (The Graveyard Club)</div>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Race</th><th>Total Deaths</th></tr>
+                        </thead>
+                        <tbody id="stats-deaths-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- COMPANIONS & HUNTING SUB-TAB -->
+            <div id="stats-subtab-hunting" class="sub-tab-content" style="display: none;">
+                <div class="char-bio-columns">
+                    <!-- Mounts Card -->
+                    <div class="card">
+                        <div class="card-title" style="color: #a78bfa;">🐴 Most Mounts Learned</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Class</th><th>Mounts Count</th></tr>
+                            </thead>
+                            <tbody id="stats-mounts-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pets Card -->
+                    <div class="card">
+                        <div class="card-title" style="color: #f472b6;">🦉 Most Pets Learned</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Class</th><th>Pets Count</th></tr>
+                            </thead>
+                            <tbody id="stats-pets-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Creature Kills -->
+                <div class="card" style="margin-top: 2rem;">
+                    <div class="card-title" style="color: var(--status-success);">🎯 Highest Creature Kill Count (Individual Species)</div>
+                    <table class="wiki-table">
+                        <thead>
+                            <tr><th>Rank</th><th>Character</th><th>Target Creature</th><th>Level</th><th>Class</th><th>Kills</th></tr>
+                        </thead>
+                        <tbody id="stats-creatures-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
         <!-- TAB 5: CHARACTER SEARCH -->
         <div id="tab-character-bio" class="wiki-tab-content" style="display: none;">
             <div class="card" style="margin-bottom: 2rem; overflow: visible;">
@@ -3592,6 +3725,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     try { initCustomMacros(); } catch(e) { showError('initCustomMacros', e); }
                     try { filterAuctions(); } catch(e) { showError('filterAuctions', e); }
                     try { filterAccounts(); } catch(e) { showError('filterAccounts', e); }
+                    try { initServerStats(); } catch(e) { showError('initServerStats', e); }
                 })
                 .catch(err => {
                     showError('fetch-wiki_data.json', err);
@@ -3914,32 +4048,51 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
         }
 
         function initCustomMacros() {
-            const stored = safeGetLocalStorage('our_azeroth_custom_macros');
-            if (stored) {
-                try {
-                    customMacros = JSON.parse(stored);
-                } catch (e) {
-                    customMacros = [];
+            // Load from database API
+            fetch('https://yorkdevelops.com/admin/index.php?action=get_macros')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.macros) {
+                    customMacros = data.macros.map(m => ({
+                        id: m.id,
+                        name: m.name,
+                        desc: m.description,
+                        body: m.body
+                    }));
+                } else {
+                    throw new Error(data.output || 'API error');
                 }
-            } else {
-                // Populate some nice defaults for them!
-                customMacros = [
-                    {
-                        id: 'def-1',
-                        name: 'Check Server Status',
-                        desc: 'Requests bot statistics and active server performance metrics.',
-                        body: '.server status\n/t bots stats'
-                    },
-                    {
-                        id: 'def-2',
-                        name: 'Form up (Circle)',
-                        desc: 'Commands all playerbots to form a circle around you.',
-                        body: '/t bots formation circle'
+                renderCustomMacros();
+            })
+            .catch(err => {
+                console.warn("Failed to load macros from server, falling back to local storage:", err);
+                // Local fallback
+                const stored = safeGetLocalStorage('our_azeroth_custom_macros');
+                if (stored) {
+                    try {
+                        customMacros = JSON.parse(stored);
+                    } catch (e) {
+                        customMacros = [];
                     }
-                ];
-                safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
-            }
-            renderCustomMacros();
+                } else {
+                    customMacros = [
+                        {
+                            id: 'def-1',
+                            name: 'Check Server Status',
+                            desc: 'Requests bot statistics and active server performance metrics.',
+                            body: '.server status\n/t bots stats'
+                        },
+                        {
+                            id: 'def-2',
+                            name: 'Form up (Circle)',
+                            desc: 'Commands all playerbots to form a circle around you.',
+                            body: '/t bots formation circle'
+                        }
+                    ];
+                    safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
+                }
+                renderCustomMacros();
+            });
         }
 
         function renderCustomMacros() {
@@ -3981,27 +4134,70 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
             if (!name || !desc || !body) return;
 
-            const newMacro = {
-                id: 'custom-' + Date.now(),
-                name: name,
-                desc: desc,
-                body: body
-            };
+            // POST to database
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('description', desc);
+            formData.append('body', body);
 
-            customMacros.push(newMacro);
-            safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
-            
-            nameInput.value = '';
-            descInput.value = '';
-            bodyInput.value = '';
-
-            renderCustomMacros();
+            fetch('https://yorkdevelops.com/admin/index.php?action=save_macro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    nameInput.value = '';
+                    descInput.value = '';
+                    bodyInput.value = '';
+                    initCustomMacros(); // Reload macros from server
+                } else {
+                    alert('Error saving macro: ' + data.output);
+                }
+            })
+            .catch(err => {
+                console.warn("Failed to save macro on server, saving locally:", err);
+                const newMacro = {
+                    id: 'custom-' + Date.now(),
+                    name: name,
+                    desc: desc,
+                    body: body
+                };
+                customMacros.push(newMacro);
+                safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
+                nameInput.value = '';
+                descInput.value = '';
+                bodyInput.value = '';
+                renderCustomMacros();
+            });
         }
 
         function deleteCustomMacro(id) {
-            customMacros = customMacros.filter(m => m.id !== id);
-            safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
-            renderCustomMacros();
+            // If it is a local default macro without numeric DB ID, just filter locally
+            if (typeof id === 'string' && id.startsWith('def-')) {
+                customMacros = customMacros.filter(m => m.id !== id);
+                safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
+                renderCustomMacros();
+                return;
+            }
+
+            // Otherwise DELETE from database
+            fetch('https://yorkdevelops.com/admin/index.php?action=delete_macro&id=' + id)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    initCustomMacros(); // Reload macros from server
+                } else {
+                    alert('Error deleting macro: ' + data.output);
+                }
+            })
+            .catch(err => {
+                console.warn("Failed to delete macro on server, deleting locally:", err);
+                customMacros = customMacros.filter(m => m.id !== id);
+                safeSetLocalStorage('our_azeroth_custom_macros', JSON.stringify(customMacros));
+                renderCustomMacros();
+            });
         }
 
 
@@ -4333,8 +4529,156 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     setTimeout(() => {
                         spark.remove();
                     }, 800);
-                }
             });
+        }
+
+        // 3. SERVER STATISTICS ENGINE
+        function switchStatsSubTab(subTabId) {
+            const contents = document.querySelector('#tab-server-stats').querySelectorAll('.sub-tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            const buttons = document.querySelector('#tab-server-stats').querySelectorAll('.sub-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('stats-subtab-' + subTabId).style.display = 'block';
+            const activeBtn = document.getElementById('stats-subbtn-' + subTabId);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        function formatPlaytime(seconds) {
+            const days = Math.floor(seconds / 86400);
+            const hours = Math.floor((seconds % 86400) / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+
+            let res = '';
+            if (days > 0) res += days + 'd ';
+            if (hours > 0 || days > 0) res += hours + 'h ';
+            res += minutes + 'm';
+            return res;
+        }
+
+        function initServerStats() {
+            if (!wikiData || !wikiData.stats) return;
+            const stats = wikiData.stats;
+
+            function formatNameCol(name, raceId, classId, level) {
+                const className = CLASS_MAP[classId] || 'Unknown';
+                const color = CLASS_COLORS[classId] || '#fff';
+                const raceName = RACE_MAP[raceId] || 'Unknown';
+                return `<strong style="color: ${color};">${name}</strong> <span style="color: var(--text-secondary); font-size: 0.78rem;">(${raceName} ${className})</span>`;
+            }
+
+            // Richest
+            const richestBody = document.getElementById('stats-richest-body');
+            if (richestBody && stats.richest) {
+                richestBody.innerHTML = stats.richest.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td>${formatMoney(char.money)}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Playtime
+            const playtimeBody = document.getElementById('stats-playtime-body');
+            if (playtimeBody && stats.playtime) {
+                playtimeBody.innerHTML = stats.playtime.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td>${formatPlaytime(char.totaltime)}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Quests
+            const questsBody = document.getElementById('stats-quests-body');
+            if (questsBody && stats.quests) {
+                questsBody.innerHTML = stats.quests.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td><strong>${char.count}</strong> quests</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Elite Kills
+            const elitesBody = document.getElementById('stats-elites-body');
+            if (elitesBody && stats.elite_kills) {
+                elitesBody.innerHTML = stats.elite_kills.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td><span style="color: var(--status-warning); font-weight: 600;">${char.count} kills</span></td>
+                    </tr>
+                `).join('');
+            }
+
+            // Deaths
+            const deathsBody = document.getElementById('stats-deaths-body');
+            if (deathsBody && stats.deaths) {
+                deathsBody.innerHTML = stats.deaths.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td>${RACE_MAP[char.race] || 'Unknown'}</td>
+                        <td><span style="color: var(--status-danger); font-weight: 600;">${char.count} deaths</span></td>
+                    </tr>
+                `).join('');
+            }
+
+            // Creature Kills
+            const creaturesBody = document.getElementById('stats-creatures-body');
+            if (creaturesBody && stats.creature_kills) {
+                creaturesBody.innerHTML = stats.creature_kills.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
+                        <td><strong style="color: #fff;">${char.creature_name}</strong></td>
+                        <td>${char.level}</td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td><strong>${char.kill_count.toLocaleString()}</strong> kills</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Mounts
+            const mountsBody = document.getElementById('stats-mounts-body');
+            if (mountsBody && stats.mounts) {
+                mountsBody.innerHTML = stats.mounts.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td><span style="color: #a78bfa; font-weight: 600;">${char.count} mounts</span></td>
+                    </tr>
+                `).join('');
+            }
+
+            // Pets
+            const petsBody = document.getElementById('stats-pets-body');
+            if (petsBody && stats.pets) {
+                petsBody.innerHTML = stats.pets.map((char, index) => `
+                    <tr>
+                        <td><strong>#${index + 1}</strong></td>
+                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
+                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
+                        <td><span style="color: #f472b6; font-weight: 600;">${char.count} companion pets</span></td>
+                    </tr>
+                `).join('');
+            }
         }
 
     </script>
