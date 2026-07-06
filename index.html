@@ -2628,13 +2628,18 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     <div class="card-title" style="color: #a78bfa;">🔮 Mount Rarity & Farm Luck Tracker</div>
                     <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">This panel tracks your boss run attempts and calculates your cumulative mathematical probability of having obtained each rare mount by now based on your boss kill counts across your characters (using the standard Rarity formula: <code>1 - (1 - drop_rate)^attempts</code>).</p>
                     
-                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 250px;">
-                            <label for="rarity-char-select" style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Filter by Character:</label>
-                            <select id="rarity-char-select" onchange="renderRarityTracker()" style="width: 100%; padding: 0.5rem; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); border-radius: 4px; color: #fff;">
-                                <option value="all">-- All Characters (Combined Accounts) --</option>
-                                <!-- Populated dynamically -->
-                            </select>
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; position: relative;">
+                        <div style="flex: 1; min-width: 280px; position: relative; max-width: 450px;">
+                            <label style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Search Character Profile (leave blank for server totals):</label>
+                            <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center;">
+                                <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary);">🔍</span>
+                                <input type="text" id="rarityCharSearchInput" placeholder="Type character name..." autocomplete="off" oninput="filterRarityCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;" />
+                                <button id="rarityClearSearchBtn" onclick="clearRarityCharSearch()" style="position: absolute; right: 10px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; padding: 4px;">×</button>
+                            </div>
+                            <div id="rarityCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; left: 0; right: 0; z-index: 100; max-height: 250px; overflow-y: auto;">
+                                <!-- Dropdown items populated dynamically -->
+                            </div>
+                            <input type="hidden" id="rarity-char-guid-val" value="all" />
                         </div>
                     </div>
 
@@ -3993,6 +3998,62 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             document.getElementById('charBioContent').style.display = 'none';
         }
         
+        function filterRarityCharSearch(val) {
+            const dropdown = document.getElementById('rarityCharSearchDropdown');
+            const clearBtn = document.getElementById('rarityClearSearchBtn');
+            
+            if (!val.trim()) {
+                dropdown.style.display = 'none';
+                clearBtn.style.display = 'none';
+                document.getElementById('rarity-char-guid-val').value = 'all';
+                renderRarityTracker();
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            const query = val.toLowerCase();
+            const matches = serverCharacters.filter(c => c.name.toLowerCase().includes(query)).slice(0, 10);
+            
+            if (matches.length > 0) {
+                dropdown.innerHTML = matches.map(c => {
+                    const classInfo = CLASS_NAMES[c.class] || { name: 'Unknown', color: '#fff' };
+                    const raceName = RACE_NAMES[c.race] || 'Unknown';
+                    
+                    return `
+                        <div class="autocomplete-item" onclick="selectRarityCharacter(${c.guid}, '${escapeJsString(c.name)}')">
+                            <div>
+                                <strong style="color: #fff; font-size: 0.95rem;">${c.name}</strong>
+                                <span style="color: var(--text-secondary); font-size: 0.85rem; margin-left: 0.5rem;">Lvl ${c.level} ${raceName}</span>
+                            </div>
+                            <span class="class-badge" style="background: rgba(255,255,255,0.03); border: 1px solid ${classInfo.color}; color: ${classInfo.color};">
+                                ${classInfo.name}
+                            </span>
+                        </div>
+                    `;
+                }).join('');
+                dropdown.style.display = 'block';
+            } else {
+                dropdown.innerHTML = `<div style="color: var(--text-secondary); padding: 0.75rem 1rem; font-size: 0.85rem; text-align: center;">No matching characters found</div>`;
+                dropdown.style.display = 'block';
+            }
+        }
+        
+        function selectRarityCharacter(guid, name) {
+            document.getElementById('rarityCharSearchInput').value = name;
+            document.getElementById('rarityCharSearchDropdown').style.display = 'none';
+            document.getElementById('rarity-char-guid-val').value = guid;
+            document.getElementById('rarityClearSearchBtn').style.display = 'block';
+            renderRarityTracker();
+        }
+        
+        function clearRarityCharSearch() {
+            document.getElementById('rarityCharSearchInput').value = '';
+            document.getElementById('rarityCharSearchDropdown').style.display = 'none';
+            document.getElementById('rarityClearSearchBtn').style.display = 'none';
+            document.getElementById('rarity-char-guid-val').value = 'all';
+            renderRarityTracker();
+        }
+        
         function escapeJsString(str) {
             return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
         }
@@ -4003,6 +4064,12 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             const input = document.getElementById('bioCharSearchInput');
             if (container && !container.contains(e.target) && e.target !== input) {
                 container.style.display = 'none';
+            }
+            
+            const rContainer = document.getElementById('rarityCharSearchDropdown');
+            const rInput = document.getElementById('rarityCharSearchInput');
+            if (rContainer && !rContainer.contains(e.target) && e.target !== rInput) {
+                rContainer.style.display = 'none';
             }
         });
 
@@ -4783,22 +4850,6 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 }).join('');
             }
 
-            // Initialize Rarity Character Select Dropdown
-            const raritySelect = document.getElementById('rarity-char-select');
-            if (raritySelect && wikiData.stats) {
-                // Keep the default option
-                raritySelect.innerHTML = '<option value="all">-- All Characters (Combined Accounts) --</option>';
-                if (wikiData.stats.playtime) {
-                    const sortedChars = [...wikiData.stats.playtime].sort((a, b) => a.name.localeCompare(b.name));
-                    sortedChars.forEach(char => {
-                        const match = serverCharacters.find(c => c.name.toLowerCase() === char.name.toLowerCase());
-                        if (match) {
-                            const classInfo = CLASS_NAMES[char.class] || { name: 'Class', color: '#fff' };
-                            raritySelect.innerHTML += `<option value="${match.guid}">${char.name} (Lvl ${char.level} ${classInfo.name})</option>`;
-                        }
-                    });
-                }
-            }
             
             // Populate Chat Stats
             if (wikiData.stats && wikiData.stats.chat_stats) {
@@ -4893,16 +4944,40 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             try { renderRarityTracker(); } catch(e) { console.error("Error rendering rarity:", e); }
         }
 
-        const RARE_MOUNTS = [
-            { id: 'deathcharger', name: "Deathcharger's Reins", boss: "Lord Rivendare", spellId: 13335, creatureIds: [4539], dropRate: 0.01 },
-            { id: 'ravenlord', name: "Reins of the Raven Lord", boss: "Anzu", spellId: 41566, creatureIds: [23035], dropRate: 0.01 },
-            { id: 'whitehawkstrider', name: "Swift White Hawkstrider", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46628, creatureIds: [24664], dropRate: 0.04 },
-            { id: 'fierywarhorse', name: "Fiery Warhorse's Reins", boss: "Attumen the Huntsman", spellId: 43666, creatureIds: [16151], dropRate: 0.01 },
-            { id: 'ashes', name: "Ashes of Al'ar", boss: "Kael'thas Sunstrider (TK)", spellId: 32458, creatureIds: [19622], dropRate: 0.01 },
-            { id: 'blueproto', name: "Reins of the Blue Proto-Drake", boss: "Skadi the Ruthless", spellId: 59996, creatureIds: [26693], dropRate: 0.01 },
-            { id: 'onyxiadrake', name: "Reins of the Onyxian Drake", boss: "Onyxia", spellId: 69395, creatureIds: [10184], dropRate: 0.01 },
-            { id: 'mimiron', name: "Mimiron's Head", boss: "Yogg-Saron", spellId: 63956, creatureIds: [33288], dropRate: 0.01 },
-            { id: 'invincible', name: "Invincible's Reins", boss: "The Lich King", spellId: 72286, creatureIds: [36597], dropRate: 0.01 }
+        const RARITY_HUNTS = [
+            // Mounts
+            { type: 'mount', id: 'deathcharger', name: "Deathcharger's Reins", boss: "Lord Rivendare", spellId: 13335, creatureIds: [4539], dropRate: 0.01 },
+            { type: 'mount', id: 'ravenlord', name: "Reins of the Raven Lord", boss: "Anzu", spellId: 41566, creatureIds: [23035], dropRate: 0.01 },
+            { type: 'mount', id: 'whitehawkstrider', name: "Swift White Hawkstrider", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46628, creatureIds: [24664], dropRate: 0.04 },
+            { type: 'mount', id: 'fierywarhorse', name: "Fiery Warhorse's Reins", boss: "Attumen the Huntsman", spellId: 43666, creatureIds: [16151], dropRate: 0.01 },
+            { type: 'mount', id: 'ashes', name: "Ashes of Al'ar", boss: "Kael'thas Sunstrider (TK)", spellId: 32458, creatureIds: [19622], dropRate: 0.01 },
+            { type: 'mount', id: 'blueproto', name: "Reins of the Blue Proto-Drake", boss: "Skadi the Ruthless", spellId: 59996, creatureIds: [26693], dropRate: 0.01 },
+            { type: 'mount', id: 'onyxiadrake', name: "Reins of the Onyxian Drake", boss: "Onyxia", spellId: 69395, creatureIds: [10184], dropRate: 0.01 },
+            { type: 'mount', id: 'mimiron', name: "Mimiron's Head", boss: "Yogg-Saron", spellId: 63956, creatureIds: [33288], dropRate: 0.01 },
+            { type: 'mount', id: 'invincible', name: "Invincible's Reins", boss: "The Lich King", spellId: 72286, creatureIds: [36597], dropRate: 0.01 },
+            { type: 'mount', id: 'zulian_tiger', name: "Swift Zulian Tiger", boss: "High Priest Thekal", spellId: 24252, creatureIds: [14503], dropRate: 0.01 },
+            { type: 'mount', id: 'razzashi_raptor', name: "Swift Razzashi Raptor", boss: "High Priest Mandokir", spellId: 24242, creatureIds: [14507], dropRate: 0.01 },
+            { type: 'mount', id: 'grand_mammoth', name: "Grand Black War Mammoth", boss: "Vault of Archavon Bosses", spellId: 61447, creatureIds: [31842, 33993, 35013, 38433], dropRate: 0.01 },
+            { type: 'mount', id: 'azure_drake', name: "Reins of the Azure Drake", boss: "Malygos (EoE)", spellId: 43955, creatureIds: [28859], dropRate: 0.015 },
+            { type: 'mount', id: 'blue_drake', name: "Reins of the Blue Drake", boss: "Malygos (EoE)", spellId: 43952, creatureIds: [28859], dropRate: 0.015 },
+            { type: 'mount', id: 'tlpd', name: "Time-Lost Proto-Drake", boss: "Time-Lost Proto-Drake", spellId: 60002, creatureIds: [32491], dropRate: 1.0 },
+
+            // Companion Pets
+            { type: 'pet', id: 'phoenix_hatchling', name: "Phoenix Hatchling", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46599, creatureIds: [24664], dropRate: 0.08 },
+            { type: 'pet', id: 'mojo_frog', name: "Mojo", boss: "Hex Lord Malacrass", spellId: 43918, creatureIds: [24239], dropRate: 0.015 },
+            { type: 'pet', id: 'squashling', name: "Sinister Squashling", boss: "Headless Horseman", spellId: 42614, creatureIds: [23682], dropRate: 0.015 },
+
+            // Transmogs & Legendaries (Items)
+            { type: 'transmog', id: 'tf_left', name: "Bindings of the Windseeker (Left)", boss: "Baron Geddon", itemId: 18563, creatureIds: [12057], dropRate: 0.03 },
+            { type: 'transmog', id: 'tf_right', name: "Bindings of the Windseeker (Right)", boss: "Garr", itemId: 18564, creatureIds: [12056], dropRate: 0.03 },
+            { type: 'transmog', id: 'thunderfury', name: "Thunderfury, Blessed Blade", boss: "Baron Geddon & Garr", itemId: 19019, creatureIds: [12057, 12056], dropRate: 0.005 },
+            { type: 'transmog', id: 'eye_sulfuras', name: "Eye of Sulfuras", boss: "Ragnaros", itemId: 17204, creatureIds: [11502], dropRate: 0.03 },
+            { type: 'transmog', id: 'sulfuras', name: "Sulfuras, Hand of Ragnaros", boss: "Ragnaros", itemId: 17182, creatureIds: [11502], dropRate: 0.005 },
+            { type: 'transmog', id: 'warglaive_main', name: "Warglaive of Azzinoth (Main)", boss: "Illidan Stormrage", itemId: 32837, creatureIds: [22917], dropRate: 0.04 },
+            { type: 'transmog', id: 'warglaive_off', name: "Warglaive of Azzinoth (Off)", boss: "Illidan Stormrage", itemId: 32838, creatureIds: [22917], dropRate: 0.04 },
+            { type: 'transmog', id: 'thoridal', name: "Thori'dal, the Stars' Fury", boss: "Kil'jaeden", itemId: 34334, creatureIds: [25315], dropRate: 0.06 },
+            { type: 'transmog', id: 'bulwark', name: "Bulwark of Azzinoth", boss: "Illidan Stormrage", itemId: 32863, creatureIds: [22917], dropRate: 0.02 },
+            { type: 'transmog', id: 'zinrokh', name: "Zin'rokh, Destroyer of Worlds", boss: "Hakkar the Soulflayer", itemId: 18608, creatureIds: [14834], dropRate: 0.015 }
         ];
 
         function renderRarityTracker() {
@@ -4911,15 +4986,16 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             const container = document.getElementById('rarity-mounts-container');
             if (!container) return;
 
-            const selectEl = document.getElementById('rarity-char-select');
-            const selectedVal = selectEl ? selectEl.value : 'all';
+            const hiddenEl = document.getElementById('rarity-char-guid-val');
+            const selectedVal = hiddenEl ? hiddenEl.value : 'all';
             const isAll = selectedVal === 'all';
             const selectedGuid = isAll ? null : parseInt(selectedVal, 10);
 
             const bossKills = stats.mount_boss_kills || [];
-            const learnedMounts = stats.learned_rare_mounts || [];
+            const learnedSpells = stats.learned_rare_spells || [];
+            const obtainedItems = stats.obtained_rare_items || [];
 
-            container.innerHTML = RARE_MOUNTS.map(m => {
+            container.innerHTML = RARITY_HUNTS.map(m => {
                 let attempts = 0;
                 if (isAll) {
                     attempts = bossKills
@@ -4931,10 +5007,18 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 }
 
                 let obtained = false;
-                if (isAll) {
-                    obtained = learnedMounts.some(l => l.spell === m.spellId);
+                if (m.type === 'transmog') {
+                    if (isAll) {
+                        obtained = obtainedItems.some(l => l.item === m.itemId);
+                    } else {
+                        obtained = obtainedItems.some(l => l.guid === selectedGuid && l.item === m.itemId);
+                    }
                 } else {
-                    obtained = learnedMounts.some(l => l.guid === selectedGuid && l.spell === m.spellId);
+                    if (isAll) {
+                        obtained = learnedSpells.some(l => l.spell === m.spellId);
+                    } else {
+                        obtained = learnedSpells.some(l => l.guid === selectedGuid && l.spell === m.spellId);
+                    }
                 }
 
                 const prob = obtained ? 1.0 : (attempts > 0 ? (1 - Math.pow(1 - m.dropRate, attempts)) : 0.0);
@@ -4954,12 +5038,20 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     statusBadge = `<span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Unstarted</span>`;
                 }
 
+                let typeBadge = '';
+                if (m.type === 'mount') typeBadge = `<span style="background: rgba(167, 139, 250, 0.12); border: 1px solid rgba(167, 139, 250, 0.3); color: #c084fc; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 0.5rem; text-transform: uppercase;">🐴 Mount</span>`;
+                else if (m.type === 'pet') typeBadge = `<span style="background: rgba(244, 114, 182, 0.12); border: 1px solid rgba(244, 114, 182, 0.3); color: #f472b6; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 0.5rem; text-transform: uppercase;">🦉 Pet</span>`;
+                else if (m.type === 'transmog') typeBadge = `<span style="background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.3); color: #fbbf24; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 0.5rem; text-transform: uppercase;">✨ Transmog</span>`;
+
                 return `
                     <div class="card" style="margin-bottom: 0; display: flex; flex-direction: column; justify-content: space-between; min-height: 195px; background: rgba(12, 17, 27, 0.45); ${borderStyle}">
                         <div>
                             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
                                 <div>
-                                    <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.15rem; font-weight: 600;">${m.name}</h4>
+                                    <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 0.15rem;">
+                                        <h4 style="color: #fff; font-size: 1.05rem; font-weight: 600; margin: 0;">${m.name}</h4>
+                                        ${typeBadge}
+                                    </div>
                                     <span style="font-size: 0.8rem; color: var(--text-secondary);">Source: <strong>${m.boss}</strong> (${(m.dropRate * 100).toFixed(1)}% drop)</span>
                                 </div>
                                 ${statusBadge}
@@ -4981,7 +5073,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                                 <div style="width: ${progressPct}%; height: 100%; background: ${obtained ? 'var(--status-success)' : 'var(--accent-hover)'}; border-radius: 3px; transition: width 0.3s ease;"></div>
                             </div>
                             <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-secondary);">
-                                <span>${obtained ? 'Mount collected!' : `Luck progress: ${progressPct}% to expected drop`}</span>
+                                <span>${obtained ? 'Collected!' : `Luck progress: ${progressPct}% to expected drop`}</span>
                                 <span>${obtained ? '' : `${targetAttempts} runs threshold`}</span>
                             </div>
                         </div>

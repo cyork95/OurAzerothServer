@@ -1681,7 +1681,7 @@
       "name": "Agariags",
       "race": 3,
       "class": 1,
-      "level": 28,
+      "level": 29,
       "gender": 0
     },
     {
@@ -1953,7 +1953,7 @@
       "name": "Alanysil",
       "race": 4,
       "class": 3,
-      "level": 28,
+      "level": 29,
       "gender": 1
     },
     {
@@ -3489,7 +3489,7 @@
       "name": "Bagdath",
       "race": 3,
       "class": 3,
-      "level": 8,
+      "level": 9,
       "gender": 0
     },
     {
@@ -3633,7 +3633,7 @@
       "name": "Bawe",
       "race": 6,
       "class": 11,
-      "level": 13,
+      "level": 1,
       "gender": 1
     },
     {
@@ -3849,7 +3849,7 @@
       "name": "Berle",
       "race": 1,
       "class": 3,
-      "level": 21,
+      "level": 22,
       "gender": 1
     },
     {
@@ -3929,7 +3929,7 @@
       "name": "Bhalrin",
       "race": 4,
       "class": 3,
-      "level": 27,
+      "level": 28,
       "gender": 0
     },
     {
@@ -4377,7 +4377,7 @@
       "name": "Botandur",
       "race": 8,
       "class": 8,
-      "level": 4,
+      "level": 5,
       "gender": 1
     },
     {
@@ -5121,7 +5121,7 @@
       "name": "Cartor",
       "race": 1,
       "class": 4,
-      "level": 61,
+      "level": 62,
       "gender": 0
     },
     {
@@ -5497,7 +5497,7 @@
       "name": "Chadris",
       "race": 4,
       "class": 5,
-      "level": 29,
+      "level": 30,
       "gender": 0
     },
     {
@@ -6961,7 +6961,7 @@
       "name": "Divori",
       "race": 6,
       "class": 1,
-      "level": 11,
+      "level": 12,
       "gender": 1
     },
     {
@@ -10265,7 +10265,7 @@
       "name": "Getleec",
       "race": 7,
       "class": 1,
-      "level": 15,
+      "level": 16,
       "gender": 0
     },
     {
@@ -12825,7 +12825,7 @@
       "name": "Iralomon",
       "race": 4,
       "class": 3,
-      "level": 13,
+      "level": 14,
       "gender": 0
     },
     {
@@ -13897,7 +13897,7 @@
       "name": "Kalaei",
       "race": 4,
       "class": 5,
-      "level": 47,
+      "level": 48,
       "gender": 1
     },
     {
@@ -14409,7 +14409,7 @@
       "name": "Kelkick",
       "race": 7,
       "class": 9,
-      "level": 30,
+      "level": 31,
       "gender": 1
     },
     {
@@ -15329,7 +15329,7 @@
       "name": "Krolduahr",
       "race": 3,
       "class": 11,
-      "level": 30,
+      "level": 31,
       "gender": 0
     },
     {
@@ -15393,7 +15393,7 @@
       "name": "Krurgorhahr",
       "race": 3,
       "class": 9,
-      "level": 28,
+      "level": 29,
       "gender": 0
     },
     {
@@ -15593,7 +15593,7 @@
       "name": "Kwire",
       "race": 6,
       "class": 11,
-      "level": 20,
+      "level": 21,
       "gender": 1
     },
     {
@@ -18449,7 +18449,7 @@
       "name": "Nagyael",
       "race": 4,
       "class": 3,
-      "level": 4,
+      "level": 5,
       "gender": 0
     },
     {
@@ -18793,7 +18793,7 @@
       "name": "Neliand",
       "race": 5,
       "class": 1,
-      "level": 15,
+      "level": 16,
       "gender": 0
     },
     {
@@ -20953,7 +20953,7 @@
       "name": "Ranul",
       "race": 4,
       "class": 5,
-      "level": 18,
+      "level": 19,
       "gender": 0
     },
     {
@@ -23745,7 +23745,7 @@
       "name": "Taruhos",
       "race": 2,
       "class": 9,
-      "level": 10,
+      "level": 11,
       "gender": 1
     },
     {
@@ -24585,7 +24585,7 @@
       "name": "Thoren",
       "race": 4,
       "class": 7,
-      "level": 29,
+      "level": 30,
       "gender": 0
     },
     {
@@ -24697,7 +24697,7 @@
       "name": "Thuldund",
       "race": 3,
       "class": 1,
-      "level": 10,
+      "level": 11,
       "gender": 0
     },
     {
@@ -27249,7 +27249,7 @@
       "name": "Yazdeir",
       "race": 8,
       "class": 5,
-      "level": 15,
+      "level": 16,
       "gender": 1
     },
     {
@@ -27369,7 +27369,7 @@
       "name": "Yiwahzuh",
       "race": 8,
       "class": 11,
-      "level": 14,
+      "level": 15,
       "gender": 1
     },
     {
@@ -27953,7 +27953,7 @@
       "name": "Zesti",
       "race": 2,
       "class": 7,
-      "level": 4,
+      "level": 5,
       "gender": 1
     },
     {
@@ -28305,7 +28305,7 @@
       "name": "Zumohn",
       "race": 8,
       "class": 4,
-      "level": 9,
+      "level": 10,
       "gender": 0
     },
     {
@@ -28350,6 +28350,756 @@
     }
   ],
   "auctions": [
+    {
+      "auction_id": 108404,
+      "name": "Orca Belt",
+      "quality": 2,
+      "required_level": 71,
+      "item_level": 146,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 345830,
+      "start_bid": 280122,
+      "last_bid": 0,
+      "time_left": 1783344526,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108403,
+      "name": "Elixir of Major Firepower",
+      "quality": 1,
+      "required_level": 50,
+      "item_level": 64,
+      "class": 0,
+      "subclass": 2,
+      "quantity": 113,
+      "buyout": 703425,
+      "start_bid": 562740,
+      "last_bid": 0,
+      "time_left": 1783343746,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108402,
+      "name": "Rodentia Shortsword",
+      "quality": 1,
+      "required_level": 5,
+      "item_level": 10,
+      "class": 2,
+      "subclass": 7,
+      "quantity": 1,
+      "buyout": 266,
+      "start_bid": 186,
+      "last_bid": 0,
+      "time_left": 1783340146,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108401,
+      "name": "Felheart Bracers",
+      "quality": 4,
+      "required_level": 60,
+      "item_level": 66,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 720123,
+      "start_bid": 648110,
+      "last_bid": 0,
+      "time_left": 1783404886,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108400,
+      "name": "Sunmote",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 70,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 657450,
+      "start_bid": 657450,
+      "last_bid": 0,
+      "time_left": 1783361686,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108399,
+      "name": "Heart of Darkness",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 516400,
+      "start_bid": 397628,
+      "last_bid": 0,
+      "time_left": 1783322086,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108398,
+      "name": "Blood Scythe",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 1,
+      "buyout": 201300,
+      "start_bid": 199287,
+      "last_bid": 0,
+      "time_left": 1783390486,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108397,
+      "name": "Living Essence",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 14580,
+      "start_bid": 13704,
+      "last_bid": 0,
+      "time_left": 1783368886,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108396,
+      "name": "Glimmering Mail Coif",
+      "quality": 2,
+      "required_level": 26,
+      "item_level": 31,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 19643,
+      "start_bid": 19053,
+      "last_bid": 0,
+      "time_left": 1783397686,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108395,
+      "name": "Blood Scythe",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 1,
+      "buyout": 208800,
+      "start_bid": 202536,
+      "last_bid": 0,
+      "time_left": 1783390426,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108394,
+      "name": "Mograine's Might",
+      "quality": 3,
+      "required_level": 39,
+      "item_level": 44,
+      "class": 2,
+      "subclass": 5,
+      "quantity": 1,
+      "buyout": 340310,
+      "start_bid": 323294,
+      "last_bid": 0,
+      "time_left": 1783350826,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108393,
+      "name": "Daggercap Cover",
+      "quality": 2,
+      "required_level": 67,
+      "item_level": 130,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 410326,
+      "start_bid": 377499,
+      "last_bid": 0,
+      "time_left": 1783347226,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108392,
+      "name": "Umbrafen Boots",
+      "quality": 2,
+      "required_level": 65,
+      "item_level": 105,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 316892,
+      "start_bid": 316892,
+      "last_bid": 0,
+      "time_left": 1783401226,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108391,
+      "name": "Sunmote",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 70,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 692100,
+      "start_bid": 609048,
+      "last_bid": 0,
+      "time_left": 1783379566,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108390,
+      "name": "Legion Headguard",
+      "quality": 3,
+      "required_level": 60,
+      "item_level": 85,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 378110,
+      "start_bid": 294925,
+      "last_bid": 0,
+      "time_left": 1783390366,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108389,
+      "name": "Starlight Dagger",
+      "quality": 3,
+      "required_level": 70,
+      "item_level": 115,
+      "class": 2,
+      "subclass": 15,
+      "quantity": 1,
+      "buyout": 1191758,
+      "start_bid": 1060664,
+      "last_bid": 0,
+      "time_left": 1783329166,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108388,
+      "name": "Blood Scythe",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 1,
+      "buyout": 254850,
+      "start_bid": 216622,
+      "last_bid": 0,
+      "time_left": 1783404706,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108387,
+      "name": "Heart of Darkness",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 652400,
+      "start_bid": 626304,
+      "last_bid": 0,
+      "time_left": 1783379506,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108386,
+      "name": "Frozen Rune",
+      "quality": 3,
+      "required_level": 60,
+      "item_level": 80,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 658000,
+      "start_bid": 493500,
+      "last_bid": 0,
+      "time_left": 1783401106,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108385,
+      "name": "Living Essence",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 14145,
+      "start_bid": 12306,
+      "last_bid": 0,
+      "time_left": 1783357906,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108384,
+      "name": "Longbeard Rifle",
+      "quality": 2,
+      "required_level": 58,
+      "item_level": 84,
+      "class": 2,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 546855,
+      "start_bid": 530449,
+      "last_bid": 0,
+      "time_left": 1783386706,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108383,
+      "name": "Bayeaux Shield",
+      "quality": 2,
+      "required_level": 66,
+      "item_level": 108,
+      "class": 4,
+      "subclass": 6,
+      "quantity": 1,
+      "buyout": 499233,
+      "start_bid": 449309,
+      "last_bid": 0,
+      "time_left": 1783372306,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108382,
+      "name": "Cosmos Vestments",
+      "quality": 3,
+      "required_level": 77,
+      "item_level": 183,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 919889,
+      "start_bid": 800303,
+      "last_bid": 0,
+      "time_left": 1783372246,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108381,
+      "name": "Dark Rune",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 3,
+      "buyout": 53760,
+      "start_bid": 43008,
+      "last_bid": 0,
+      "time_left": 1783339846,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108380,
+      "name": "Essence of Water",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 12408,
+      "start_bid": 11415,
+      "last_bid": 0,
+      "time_left": 1783339786,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108379,
+      "name": "Primal Water",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 112080,
+      "start_bid": 103113,
+      "last_bid": 0,
+      "time_left": 1783375786,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108378,
+      "name": "Bloodvine",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 3,
+      "buyout": 20535,
+      "start_bid": 16836,
+      "last_bid": 0,
+      "time_left": 1783372186,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108377,
+      "name": "Gold Ore",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 25,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 13260,
+      "start_bid": 12993,
+      "last_bid": 0,
+      "time_left": 1783404586,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108376,
+      "name": "Blood Scythe",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 1,
+      "buyout": 211350,
+      "start_bid": 175420,
+      "last_bid": 0,
+      "time_left": 1783346926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108375,
+      "name": "Heart of Darkness",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 699200,
+      "start_bid": 643264,
+      "last_bid": 0,
+      "time_left": 1783400926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108374,
+      "name": "Crown of Unbridled Magic",
+      "quality": 3,
+      "required_level": 80,
+      "item_level": 200,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 620731,
+      "start_bid": 490377,
+      "last_bid": 0,
+      "time_left": 1783404526,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108373,
+      "name": "Magmus Stone",
+      "quality": 3,
+      "required_level": 53,
+      "item_level": 58,
+      "class": 4,
+      "subclass": 0,
+      "quantity": 1,
+      "buyout": 188874,
+      "start_bid": 169986,
+      "last_bid": 0,
+      "time_left": 1783343326,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108372,
+      "name": "Gold Ore",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 25,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 14910,
+      "start_bid": 11928,
+      "last_bid": 0,
+      "time_left": 1783336126,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108371,
+      "name": "Bloodvine",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 3,
+      "buyout": 15945,
+      "start_bid": 15306,
+      "last_bid": 0,
+      "time_left": 1783375726,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108370,
+      "name": "Primal Air",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 121440,
+      "start_bid": 110508,
+      "last_bid": 0,
+      "time_left": 1783328926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108369,
+      "name": "Mur'ghoul Wristwraps",
+      "quality": 2,
+      "required_level": 69,
+      "item_level": 138,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 159614,
+      "start_bid": 130883,
+      "last_bid": 0,
+      "time_left": 1783397326,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108368,
+      "name": "Felstone Helm",
+      "quality": 2,
+      "required_level": 58,
+      "item_level": 84,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 300528,
+      "start_bid": 270475,
+      "last_bid": 0,
+      "time_left": 1783382926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108367,
+      "name": "Bonelink Helmet",
+      "quality": 2,
+      "required_level": 41,
+      "item_level": 46,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 85092,
+      "start_bid": 81688,
+      "last_bid": 0,
+      "time_left": 1783386526,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108366,
+      "name": "Schematic: Arcane Bomb",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 9,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 54420,
+      "start_bid": 50610,
+      "last_bid": 0,
+      "time_left": 1783400926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108365,
+      "name": "Sentinel Cloak",
+      "quality": 2,
+      "required_level": 31,
+      "item_level": 36,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 32187,
+      "start_bid": 27358,
+      "last_bid": 0,
+      "time_left": 1783393726,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108364,
+      "name": "Fireheart Gloves",
+      "quality": 2,
+      "required_level": 58,
+      "item_level": 84,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 94716,
+      "start_bid": 90927,
+      "last_bid": 0,
+      "time_left": 1783328926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108363,
+      "name": "Hawkeye's Bracers",
+      "quality": 2,
+      "required_level": 30,
+      "item_level": 35,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 23017,
+      "start_bid": 21405,
+      "last_bid": 0,
+      "time_left": 1783382926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108362,
+      "name": "Elemental Earth",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 25,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 445,
+      "buyout": 421860,
+      "start_bid": 307940,
+      "last_bid": 0,
+      "time_left": 1783390126,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108361,
+      "name": "Large Green Sack",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 25,
+      "class": 1,
+      "subclass": 0,
+      "quantity": 1,
+      "buyout": 6075,
+      "start_bid": 5649,
+      "last_bid": 0,
+      "time_left": 1783357726,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108360,
+      "name": "Guardian Stone",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 398100,
+      "start_bid": 398100,
+      "last_bid": 0,
+      "time_left": 1783397266,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108359,
+      "name": "Eternium Bar",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 70,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 74475,
+      "start_bid": 74475,
+      "last_bid": 0,
+      "time_left": 1783404466,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108358,
+      "name": "Councillor's Boots",
+      "quality": 2,
+      "required_level": 51,
+      "item_level": 56,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 120245,
+      "start_bid": 105815,
+      "last_bid": 0,
+      "time_left": 1783343266,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108357,
+      "name": "Bristlebark Bindings",
+      "quality": 2,
+      "required_level": 17,
+      "item_level": 22,
+      "class": 4,
+      "subclass": 2,
+      "quantity": 1,
+      "buyout": 4351,
+      "start_bid": 4176,
+      "last_bid": 0,
+      "time_left": 1783350466,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108356,
+      "name": "Nethersteel Claymore",
+      "quality": 2,
+      "required_level": 68,
+      "item_level": 114,
+      "class": 2,
+      "subclass": 8,
+      "quantity": 1,
+      "buyout": 1145467,
+      "start_bid": 985101,
+      "last_bid": 0,
+      "time_left": 1783354066,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108355,
+      "name": "Zesty Clam Meat",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 45,
+      "class": 7,
+      "subclass": 8,
+      "quantity": 850,
+      "buyout": 98600,
+      "start_bid": 98600,
+      "last_bid": 0,
+      "time_left": 1783350466,
+      "owner_name": "Gnenlirgunk"
+    },
     {
       "auction_id": 108354,
       "name": "Blood Scythe",
@@ -32236,21 +32986,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 108095,
-      "name": "Thorium Widget",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 52,
-      "class": 7,
-      "subclass": 1,
-      "quantity": 418,
-      "buyout": 2340800,
-      "start_bid": 2270576,
-      "last_bid": 0,
-      "time_left": 1783318126,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 108094,
       "name": "Battered Jungle Hat",
       "quality": 1,
@@ -32263,21 +32998,6 @@
       "start_bid": 94,
       "last_bid": 0,
       "time_left": 1783325326,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 108093,
-      "name": "Warrior's Bracers",
-      "quality": 1,
-      "required_level": 4,
-      "item_level": 9,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 67,
-      "start_bid": 64,
-      "last_bid": 0,
-      "time_left": 1783318126,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -34801,21 +35521,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 107913,
-      "name": "Heart of Darkness",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 569200,
-      "start_bid": 512280,
-      "last_bid": 0,
-      "time_left": 1783318366,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 107912,
       "name": "Broken Blade of Heroes",
       "quality": 3,
@@ -35041,21 +35746,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 107897,
-      "name": "Mur'ghoul Robe",
-      "quality": 2,
-      "required_level": 69,
-      "item_level": 138,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 317756,
-      "start_bid": 308223,
-      "last_bid": 0,
-      "time_left": 1783318126,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 107896,
       "name": "Twilight Mantle",
       "quality": 2,
@@ -35128,21 +35818,6 @@
       "start_bid": 1048026,
       "last_bid": 0,
       "time_left": 1783386526,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 107891,
-      "name": "Gordok Nose Ring",
-      "quality": 2,
-      "required_level": 55,
-      "item_level": 60,
-      "class": 4,
-      "subclass": 0,
-      "quantity": 1,
-      "buyout": 293389,
-      "start_bid": 281653,
-      "last_bid": 0,
-      "time_left": 1783318126,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -38038,21 +38713,6 @@
       "start_bid": 438940,
       "last_bid": 0,
       "time_left": 1783347106,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 107668,
-      "name": "Blood Scythe",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 9,
-      "quantity": 1,
-      "buyout": 201450,
-      "start_bid": 155116,
-      "last_bid": 0,
-      "time_left": 1783318306,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -41506,21 +42166,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 107412,
-      "name": "Broken Blade of Heroes",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 38,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 1,
-      "buyout": 102250,
-      "start_bid": 89980,
-      "last_bid": 0,
-      "time_left": 1783318486,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 107410,
       "name": "Heart of Darkness",
       "quality": 3,
@@ -41851,21 +42496,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 107384,
-      "name": "Primal Fire",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 120600,
-      "start_bid": 109746,
-      "last_bid": 0,
-      "time_left": 1783318186,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 107383,
       "name": "Heart of Darkness",
       "quality": 3,
@@ -41938,21 +42568,6 @@
       "start_bid": 8526,
       "last_bid": 0,
       "time_left": 1783325326,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 107377,
-      "name": "Truesilver Bar",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 50,
-      "class": 7,
-      "subclass": 7,
-      "quantity": 3,
-      "buyout": 36411,
-      "start_bid": 36045,
-      "last_bid": 0,
-      "time_left": 1783318126,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -44761,36 +45376,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 107144,
-      "name": "Thermaplugg's Left Arm",
-      "quality": 3,
-      "required_level": 32,
-      "item_level": 37,
-      "class": 2,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 193501,
-      "start_bid": 178020,
-      "last_bid": 0,
-      "time_left": 1783318426,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 107143,
-      "name": "Aurora Pants",
-      "quality": 2,
-      "required_level": 35,
-      "item_level": 40,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 52716,
-      "start_bid": 46917,
-      "last_bid": 0,
-      "time_left": 1783318426,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 107142,
       "name": "Grave Moss",
       "quality": 1,
@@ -47551,21 +48136,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 106909,
-      "name": "Primal Air",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 126600,
-      "start_bid": 103812,
-      "last_bid": 0,
-      "time_left": 1783319386,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 106908,
       "name": "Pellet Rifle",
       "quality": 1,
@@ -47653,21 +48223,6 @@
       "start_bid": 79929,
       "last_bid": 0,
       "time_left": 1783376026,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106902,
-      "name": "Painted Wooden Beads",
-      "quality": 2,
-      "required_level": 67,
-      "item_level": 130,
-      "class": 4,
-      "subclass": 0,
-      "quantity": 1,
-      "buyout": 269903,
-      "start_bid": 248310,
-      "last_bid": 0,
-      "time_left": 1783318426,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -47803,21 +48358,6 @@
       "start_bid": 568044,
       "last_bid": 0,
       "time_left": 1783383106,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106890,
-      "name": "Blood Scythe",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 9,
-      "quantity": 1,
-      "buyout": 224400,
-      "start_bid": 172788,
-      "last_bid": 0,
-      "time_left": 1783318306,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -47971,21 +48511,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 106876,
-      "name": "Essence of Fire",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 14508,
-      "start_bid": 13926,
-      "last_bid": 0,
-      "time_left": 1783318126,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 106875,
       "name": "Essence of Earth",
       "quality": 2,
@@ -48043,21 +48568,6 @@
       "start_bid": 411549,
       "last_bid": 0,
       "time_left": 1783364926,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106871,
-      "name": "Cobra Shortblade",
-      "quality": 2,
-      "required_level": 63,
-      "item_level": 99,
-      "class": 2,
-      "subclass": 15,
-      "quantity": 1,
-      "buyout": 598761,
-      "start_bid": 502959,
-      "last_bid": 0,
-      "time_left": 1783318126,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -50881,21 +51391,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 106612,
-      "name": "Bloodvine",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 9,
-      "quantity": 3,
-      "buyout": 14220,
-      "start_bid": 11517,
-      "last_bid": 0,
-      "time_left": 1783318128,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 106611,
       "name": "Leggings of the Instructor",
       "quality": 4,
@@ -51073,21 +51568,6 @@
       "start_bid": 57031,
       "last_bid": 0,
       "time_left": 1783361268,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106597,
-      "name": "Glorious Sabatons",
-      "quality": 2,
-      "required_level": 51,
-      "item_level": 56,
-      "class": 4,
-      "subclass": 4,
-      "quantity": 1,
-      "buyout": 117548,
-      "start_bid": 111670,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -53131,21 +53611,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 106393,
-      "name": "Tundra Necklace",
-      "quality": 2,
-      "required_level": 28,
-      "item_level": 33,
-      "class": 4,
-      "subclass": 0,
-      "quantity": 1,
-      "buyout": 53053,
-      "start_bid": 51991,
-      "last_bid": 0,
-      "time_left": 1783318248,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 106392,
       "name": "Southwind Helm",
       "quality": 3,
@@ -53158,21 +53623,6 @@
       "start_bid": 427594,
       "last_bid": 0,
       "time_left": 1783346988,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106389,
-      "name": "Living Essence",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 17295,
-      "start_bid": 15045,
-      "last_bid": 0,
-      "time_left": 1783318128,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -53218,21 +53668,6 @@
       "start_bid": 298167,
       "last_bid": 0,
       "time_left": 1783339668,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106385,
-      "name": "Pattern: Stylin' Purple Hat",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 9,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 213300,
-      "start_bid": 209034,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -55456,21 +55891,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 106159,
-      "name": "Essence of Fire",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 11712,
-      "start_bid": 10071,
-      "last_bid": 0,
-      "time_left": 1783318428,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 106158,
       "name": "Gold Bar",
       "quality": 2,
@@ -55543,21 +55963,6 @@
       "start_bid": 8757,
       "last_bid": 0,
       "time_left": 1783368828,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 106151,
-      "name": "Traveler's Cloak",
-      "quality": 2,
-      "required_level": 50,
-      "item_level": 55,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 111451,
-      "start_bid": 103649,
-      "last_bid": 0,
-      "time_left": 1783318428,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -64441,36 +64846,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 105003,
-      "name": "Forest Leather Chestpiece",
-      "quality": 2,
-      "required_level": 21,
-      "item_level": 26,
-      "class": 4,
-      "subclass": 2,
-      "quantity": 1,
-      "buyout": 16862,
-      "start_bid": 16862,
-      "last_bid": 0,
-      "time_left": 1783319268,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 105001,
-      "name": "Broken Blade of Heroes",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 38,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 1,
-      "buyout": 106500,
-      "start_bid": 93720,
-      "last_bid": 0,
-      "time_left": 1783318428,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 105000,
       "name": "Frozen Rune",
       "quality": 3,
@@ -64498,21 +64873,6 @@
       "start_bid": 624780,
       "last_bid": 0,
       "time_left": 1783343568,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 104996,
-      "name": "Sunmote",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 779850,
-      "start_bid": 616080,
-      "last_bid": 0,
-      "time_left": 1783318368,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -64678,21 +65038,6 @@
       "start_bid": 59820,
       "last_bid": 0,
       "time_left": 1783336068,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 104961,
-      "name": "Guardian Stone",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 7,
-      "quantity": 3,
-      "buyout": 401400,
-      "start_bid": 349218,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -65818,21 +66163,6 @@
       "start_bid": 35698,
       "last_bid": 0,
       "time_left": 1783330188,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 104757,
-      "name": "Blood Scythe",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 9,
-      "quantity": 1,
-      "buyout": 242700,
-      "start_bid": 194160,
-      "last_bid": 0,
-      "time_left": 1783318428,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -67306,21 +67636,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 104487,
-      "name": "Gloves of Piety",
-      "quality": 3,
-      "required_level": 62,
-      "item_level": 91,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 212008,
-      "start_bid": 169606,
-      "last_bid": 0,
-      "time_left": 1783318308,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 104486,
       "name": "Demonic Rune",
       "quality": 2,
@@ -67408,21 +67723,6 @@
       "start_bid": 74388,
       "last_bid": 0,
       "time_left": 1783328868,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 104465,
-      "name": "Chief Brigadier Leggings",
-      "quality": 2,
-      "required_level": 35,
-      "item_level": 40,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 57062,
-      "start_bid": 55350,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -69706,21 +70006,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 104006,
-      "name": "Frozen Rune",
-      "quality": 3,
-      "required_level": 60,
-      "item_level": 80,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 660800,
-      "start_bid": 601328,
-      "last_bid": 0,
-      "time_left": 1783318248,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103998,
       "name": "Essence of Undeath",
       "quality": 2,
@@ -70486,21 +70771,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 103760,
-      "name": "Khorium Ore",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 7,
-      "subclass": 7,
-      "quantity": 3,
-      "buyout": 89400,
-      "start_bid": 84930,
-      "last_bid": 0,
-      "time_left": 1783318248,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103758,
       "name": "Claw of the Shadowmancer",
       "quality": 3,
@@ -70513,36 +70783,6 @@
       "start_bid": 84255,
       "last_bid": 0,
       "time_left": 1783328988,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 103757,
-      "name": "Time-Shifted Dagger",
-      "quality": 3,
-      "required_level": 66,
-      "item_level": 103,
-      "class": 2,
-      "subclass": 15,
-      "quantity": 1,
-      "buyout": 1063259,
-      "start_bid": 808076,
-      "last_bid": 0,
-      "time_left": 1783318188,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 103752,
-      "name": "Primal Fire",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 121800,
-      "start_bid": 102312,
-      "last_bid": 0,
-      "time_left": 1783318128,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -70603,21 +70843,6 @@
       "start_bid": 199777,
       "last_bid": 0,
       "time_left": 1783325268,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 103744,
-      "name": "Greatsword of Forlorn Visions",
-      "quality": 3,
-      "required_level": 70,
-      "item_level": 115,
-      "class": 2,
-      "subclass": 8,
-      "quantity": 1,
-      "buyout": 1668258,
-      "start_bid": 1451384,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -71176,21 +71401,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 103531,
-      "name": "Spineshatter",
-      "quality": 4,
-      "required_level": 60,
-      "item_level": 73,
-      "class": 2,
-      "subclass": 4,
-      "quantity": 1,
-      "buyout": 4578440,
-      "start_bid": 3937458,
-      "last_bid": 0,
-      "time_left": 1783318428,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103521,
       "name": "Pendulum of Telluric Currents",
       "quality": 3,
@@ -71218,21 +71428,6 @@
       "start_bid": 1580351,
       "last_bid": 0,
       "time_left": 1783332648,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 103517,
-      "name": "Imbued Plate Leggings",
-      "quality": 2,
-      "required_level": 56,
-      "item_level": 61,
-      "class": 4,
-      "subclass": 4,
-      "quantity": 1,
-      "buyout": 156890,
-      "start_bid": 149045,
-      "last_bid": 0,
-      "time_left": 1783318248,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -71746,21 +71941,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 103301,
-      "name": "Flimsy Male Gnome Mask",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 1,
-      "class": 4,
-      "subclass": 0,
-      "quantity": 1,
-      "buyout": 2,
-      "start_bid": 1,
-      "last_bid": 0,
-      "time_left": 1783318488,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103296,
       "name": "Recipe: Minor Magic Resistance Potion",
       "quality": 1,
@@ -71788,21 +71968,6 @@
       "start_bid": 78697,
       "last_bid": 0,
       "time_left": 1783329168,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 103287,
-      "name": "Design: Thundering Skyfire Diamond",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 73,
-      "class": 9,
-      "subclass": 10,
-      "quantity": 1,
-      "buyout": 510000,
-      "start_bid": 418200,
-      "last_bid": 0,
-      "time_left": 1783318308,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -72703,111 +72868,6 @@
       "start_bid": 4167094,
       "last_bid": 0,
       "time_left": 1783320888,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102604,
-      "name": "Ritssyn's Wand of Bad Mojo",
-      "quality": 3,
-      "required_level": 58,
-      "item_level": 63,
-      "class": 2,
-      "subclass": 19,
-      "quantity": 1,
-      "buyout": 579438,
-      "start_bid": 480933,
-      "last_bid": 0,
-      "time_left": 1783319328,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102602,
-      "name": "Large Blue Sack",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 25,
-      "class": 1,
-      "subclass": 0,
-      "quantity": 1,
-      "buyout": 4100,
-      "start_bid": 3854,
-      "last_bid": 0,
-      "time_left": 1783318488,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102578,
-      "name": "Primal Air",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 128640,
-      "start_bid": 110628,
-      "last_bid": 0,
-      "time_left": 1783318188,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102565,
-      "name": "Sunmote",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 716850,
-      "start_bid": 566310,
-      "last_bid": 0,
-      "time_left": 1783318068,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102563,
-      "name": "Heart of Darkness",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 588000,
-      "start_bid": 529200,
-      "last_bid": 0,
-      "time_left": 1783318068,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102489,
-      "name": "Infiltrator Boots",
-      "quality": 2,
-      "required_level": 28,
-      "item_level": 33,
-      "class": 4,
-      "subclass": 2,
-      "quantity": 1,
-      "buyout": 30054,
-      "start_bid": 29452,
-      "last_bid": 0,
-      "time_left": 1783318068,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102482,
-      "name": "Bloodmar Breastplate",
-      "quality": 2,
-      "required_level": 73,
-      "item_level": 154,
-      "class": 4,
-      "subclass": 4,
-      "quantity": 1,
-      "buyout": 687017,
-      "start_bid": 577094,
-      "last_bid": 0,
-      "time_left": 1783318068,
       "owner_name": "Gnenlirgunk"
     }
   ],
@@ -73954,6 +74014,61 @@
     ],
     "1983": [
       {
+        "timestamp": "2026-07-06T02:28:55",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: In Nightmares (Quest ID: 3370)"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:14",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: The Glowing Shard (Quest ID: 6981)"
+      },
+      {
+        "timestamp": "2026-07-06T02:12:39",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.82g (New Balance: 0.10g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:12:39",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Serpentbloom (Quest ID: 962)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.56g (New Balance: 0.18g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:41",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Deviate Hides (Quest ID: 1486)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:29",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.24g (New Balance: 0.25g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:29",
+        "type": "ACHIEVEMENT",
+        "details": "Earned achievement (Achievement ID: 0)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:29",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Deviate Eradication (Quest ID: 1487)"
+      },
+      {
+        "timestamp": "2026-07-06T02:09:38",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Leaders of the Fang (Quest ID: 914)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:43",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Seeking Strahad (Quest ID: 1798)"
+      },
+      {
         "timestamp": "2026-07-06T02:06:52",
         "type": "MONEY_CHANGE",
         "details": "Spent 15.36g (New Balance: 0.06g)"
@@ -74897,61 +75012,6 @@
         "timestamp": "2026-07-06T00:03:23",
         "type": "MONEY_CHANGE",
         "details": "Spent 11.06g (New Balance: 0.17g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:03:23",
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: The Night Watch (Quest ID: 56)"
-      },
-      {
-        "timestamp": "2026-07-06T00:02:21",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.23g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:01:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.23g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:01:29",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.22g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:59:04",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.22g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:59:00",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.22g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:58:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.22g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:57:53",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.22g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:57:21",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.21g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:56:44",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.21g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:57",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.19g (New Balance: 0.01g)"
       }
     ],
     "1115": [
@@ -80443,6 +80503,26 @@
     ],
     "3255": [
       {
+        "timestamp": "2026-07-06T02:28:45",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: In Nightmares (Quest ID: 3370)"
+      },
+      {
+        "timestamp": "2026-07-06T02:28:30",
+        "type": "DEATH",
+        "details": "Killed by Ike in PvP at Kalimdor"
+      },
+      {
+        "timestamp": "2026-07-06T02:28:30",
+        "type": "PVP_KILL",
+        "details": "Defeated Ike in PvP at Kalimdor"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:13",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: The Glowing Shard (Quest ID: 6981)"
+      },
+      {
         "timestamp": "2026-07-06T02:04:29",
         "type": "ACHIEVEMENT",
         "details": "Earned achievement (Achievement ID: 0)"
@@ -81421,29 +81501,19 @@
         "timestamp": "2026-07-05T23:53:53",
         "type": "MONEY_CHANGE",
         "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:30",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:15",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:52:57",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
       }
     ],
     "3256": [
+      {
+        "timestamp": "2026-07-06T02:28:34",
+        "type": "DEATH",
+        "details": "Killed by Mist in PvP at Kalimdor"
+      },
+      {
+        "timestamp": "2026-07-06T02:28:34",
+        "type": "PVP_KILL",
+        "details": "Defeated Mist in PvP at Kalimdor"
+      },
       {
         "timestamp": "2026-07-06T02:04:29",
         "type": "ACHIEVEMENT",
@@ -101009,6 +101079,131 @@
     ],
     "1982": [
       {
+        "timestamp": "2026-07-06T02:28:55",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: In Nightmares (Quest ID: 3370)"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:13",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: The Glowing Shard (Quest ID: 6981)"
+      },
+      {
+        "timestamp": "2026-07-06T02:15:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.65g (New Balance: -0.03g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:15:15",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.78g (New Balance: -0.08g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:14:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.71g (New Balance: -0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:14:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.70g (New Balance: -0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:14:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.70g (New Balance: -0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:14:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.70g (New Balance: -0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:14:41",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.70g (New Balance: -0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:12:34",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.50g (New Balance: 0.10g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:12:34",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Serpentbloom (Quest ID: 962)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:35",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.24g (New Balance: 0.18g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:35",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Deviate Hides (Quest ID: 1486)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:02",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 17.92g (New Balance: 0.25g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:11:02",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Deviate Eradication (Quest ID: 1487)"
+      },
+      {
+        "timestamp": "2026-07-06T02:09:52",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Leaders of the Fang (Quest ID: 914)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:09",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.08g (New Balance: 0.05g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:08",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.11g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:07",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.07g (New Balance: 0.02g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:07",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.10g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:06",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.07g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:06",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.06g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:05",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.03g (New Balance: 0.02g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:04",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 17.98g (New Balance: 0.03g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:07:04",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.02g (New Balance: 0.01g)"
+      },
+      {
         "timestamp": "2026-07-06T02:06:52",
         "type": "MONEY_CHANGE",
         "details": "Spent 17.97g (New Balance: 0.02g)"
@@ -101882,134 +102077,29 @@
         "timestamp": "2026-07-06T00:50:50",
         "type": "ELITE_KILL",
         "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:50:15",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:49:42",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Devouring Ectoplasm"
-      },
-      {
-        "timestamp": "2026-07-06T00:45:53",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.02g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:45:42",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Devouring Ectoplasm"
-      },
-      {
-        "timestamp": "2026-07-06T00:45:18",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Stinglash"
-      },
-      {
-        "timestamp": "2026-07-06T00:44:55",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:44:44",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:44:18",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Stinglash"
-      },
-      {
-        "timestamp": "2026-07-06T00:41:28",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Stinglash"
-      },
-      {
-        "timestamp": "2026-07-06T00:41:18",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:38:43",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.02g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:34:17",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Creeper"
-      },
-      {
-        "timestamp": "2026-07-06T00:33:52",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Creeper"
-      },
-      {
-        "timestamp": "2026-07-06T00:33:44",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Coiler"
-      },
-      {
-        "timestamp": "2026-07-06T00:32:16",
-        "type": "PVP_KILL",
-        "details": "Defeated Migy in PvP at Kalimdor"
-      },
-      {
-        "timestamp": "2026-07-06T00:30:18",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.02g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:30:06",
-        "type": "PVP_KILL",
-        "details": "Defeated Divori in PvP at Kalimdor"
-      },
-      {
-        "timestamp": "2026-07-06T00:27:57",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.74g (New Balance: 0.14g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:27:57",
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: An Old History Book (Quest ID: 337)"
-      },
-      {
-        "timestamp": "2026-07-06T00:24:21",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.89g (New Balance: -0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:24:14",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.91g (New Balance: -0.01g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:24:10",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.97g (New Balance: -0.04g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:22:17",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.81g (New Balance: 0.06g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:22:17",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.93g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:22:16",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 14.08g (New Balance: 0.39g)"
       }
     ],
     "1985": [
+      {
+        "timestamp": "2026-07-06T02:28:45",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: In Nightmares (Quest ID: 3370)"
+      },
+      {
+        "timestamp": "2026-07-06T02:28:30",
+        "type": "DEATH",
+        "details": "Killed by Schwann in PvP at Kalimdor"
+      },
+      {
+        "timestamp": "2026-07-06T02:28:30",
+        "type": "PVP_KILL",
+        "details": "Defeated Schwann in PvP at Kalimdor"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:13",
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: The Glowing Shard (Quest ID: 6981)"
+      },
       {
         "timestamp": "2026-07-06T02:04:29",
         "type": "ACHIEVEMENT",
@@ -102989,26 +103079,6 @@
         "timestamp": "2026-07-05T23:53:53",
         "type": "MONEY_CHANGE",
         "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:30",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.84g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:15",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.84g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:52:57",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.84g (New Balance: 0.00g)"
       }
     ],
     "1838": [
@@ -117428,6 +117498,26 @@
     "3342": [],
     "1982": [
       {
+        "timestamp": "2026-07-06T02:28:55",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:3370:25|h[[25] In Nightmares (3370)]|h|r"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:34",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:3370:25|h[[25] In Nightmares (3370)]|h|r"
+      },
+      {
+        "timestamp": "2026-07-06T02:26:13",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r"
+      },
+      {
+        "timestamp": "2026-07-06T02:20:44",
+        "type": "PARTY",
+        "details": "{rt1} Questie: 1/1 Speak with someone in Ratchet about the Glowing Shard for |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r!"
+      },
+      {
         "timestamp": "2026-07-06T02:05:48",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Completed: |cff808080|Hquest:959:18|h[[18] Trouble at the Docks (959)]|h|r"
@@ -118406,26 +118496,6 @@
         "timestamp": "2026-07-05T19:31:47",
         "type": "PARTY",
         "details": "{rt1} Questie: 12/12 Bluegill Murloc for |cff40c040|Hquest:279:22|h[[22] Claws from the Deep (279)]|h|r!"
-      },
-      {
-        "timestamp": "2026-07-05T19:31:38",
-        "type": "PARTY",
-        "details": "{rt1} Questie: 1/1 Gobbler's Head for |cff40c040|Hquest:279:22|h[[22] Claws from the Deep (279)]|h|r!"
-      },
-      {
-        "timestamp": "2026-07-05T04:05:46",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Accepted: |cffffff00|Hquest:464:28|h[[26] War Banners (464)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-05T04:05:46",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Completed: |cffffff00|Hquest:473:28|h[[26] Report to Captain Stoutfist (473)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-05T04:05:22",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Accepted: |cffffff00|Hquest:473:28|h[[26] Report to Captain Stoutfist (473)]|h|r"
       }
     ],
     "1985": [
@@ -119050,7 +119120,7 @@
     "richest": [
       {
         "name": "Tungro",
-        "money": 30286058,
+        "money": 30283511,
         "level": 60,
         "race": 3,
         "class": 2
@@ -119064,7 +119134,7 @@
       },
       {
         "name": "Deriano",
-        "money": 29942433,
+        "money": 29943077,
         "level": 60,
         "race": 1,
         "class": 1
@@ -119105,87 +119175,87 @@
         "class": 8
       },
       {
+        "name": "Elylaeth",
+        "money": 29344253,
+        "level": 60,
+        "race": 4,
+        "class": 3
+      },
+      {
         "name": "Wirshu",
         "money": 29343318,
         "level": 60,
         "race": 6,
         "class": 11
-      },
-      {
-        "name": "Elylaeth",
-        "money": 29336621,
-        "level": 60,
-        "race": 4,
-        "class": 3
       }
     ],
     "playtime": [
       {
         "name": "Kumrodus",
-        "totaltime": 680505,
+        "totaltime": 681885,
         "level": 9,
         "race": 3,
         "class": 4
       },
       {
         "name": "Cariia",
-        "totaltime": 679258,
+        "totaltime": 680598,
         "level": 43,
         "race": 4,
         "class": 11
       },
       {
         "name": "Terance",
-        "totaltime": 678325,
+        "totaltime": 679705,
         "level": 18,
         "race": 1,
         "class": 5
       },
       {
         "name": "Usa",
-        "totaltime": 677474,
+        "totaltime": 678844,
         "level": 31,
         "race": 3,
         "class": 3
       },
       {
         "name": "Martorin",
-        "totaltime": 676786,
+        "totaltime": 678166,
         "level": 56,
         "race": 1,
         "class": 1
       },
       {
         "name": "Raimond",
-        "totaltime": 676508,
+        "totaltime": 677888,
         "level": 60,
         "race": 1,
         "class": 9
       },
       {
         "name": "Bholdand",
-        "totaltime": 676470,
+        "totaltime": 677850,
         "level": 53,
         "race": 3,
         "class": 3
       },
       {
         "name": "Tammal",
-        "totaltime": 676085,
+        "totaltime": 677465,
         "level": 36,
         "race": 3,
         "class": 5
       },
       {
         "name": "Guni",
-        "totaltime": 675915,
+        "totaltime": 677295,
         "level": 60,
         "race": 7,
         "class": 1
       },
       {
         "name": "Ryase",
-        "totaltime": 675686,
+        "totaltime": 677066,
         "level": 25,
         "race": 4,
         "class": 11
@@ -119266,14 +119336,14 @@
     "deaths": [
       {
         "name": "Allas",
-        "count": 259,
+        "count": 261,
         "level": 5,
         "race": 3,
         "class": 3
       },
       {
         "name": "Cariia",
-        "count": 232,
+        "count": 234,
         "level": 43,
         "race": 4,
         "class": 11
@@ -119287,7 +119357,7 @@
       },
       {
         "name": "Esorean",
-        "count": 165,
+        "count": 167,
         "level": 37,
         "race": 4,
         "class": 11
@@ -119321,31 +119391,31 @@
         "class": 7
       },
       {
+        "name": "Lylynna",
+        "count": 134,
+        "level": 30,
+        "race": 4,
+        "class": 2
+      },
+      {
         "name": "Isadi",
         "count": 133,
         "level": 62,
         "race": 1,
         "class": 5
-      },
-      {
-        "name": "Lylynna",
-        "count": 133,
-        "level": 30,
-        "race": 4,
-        "class": 2
       }
     ],
     "quests": [
       {
         "name": "Malakor",
-        "count": 247,
+        "count": 254,
         "level": 31,
         "race": 1,
         "class": 9
       },
       {
         "name": "Constantine",
-        "count": 214,
+        "count": 220,
         "level": 31,
         "race": 1,
         "class": 11
@@ -119552,13 +119622,6 @@
         "class": 11
       },
       {
-        "name": "Hecas",
-        "count": 26,
-        "level": 25,
-        "race": 1,
-        "class": 2
-      },
-      {
         "name": "Gwomda",
         "count": 26,
         "level": 5,
@@ -119566,11 +119629,11 @@
         "class": 1
       },
       {
-        "name": "Ylurn",
+        "name": "Hecas",
         "count": 26,
-        "level": 60,
-        "race": 3,
-        "class": 3
+        "level": 25,
+        "race": 1,
+        "class": 2
       },
       {
         "name": "Tungro",
@@ -119578,6 +119641,13 @@
         "level": 60,
         "race": 3,
         "class": 2
+      },
+      {
+        "name": "Ylurn",
+        "count": 26,
+        "level": 60,
+        "race": 3,
+        "class": 3
       },
       {
         "name": "Gerlo",
@@ -119610,6 +119680,13 @@
         "class": 9
       },
       {
+        "name": "Eliphas",
+        "count": 3,
+        "level": 1,
+        "race": 1,
+        "class": 3
+      },
+      {
         "name": "Xalan",
         "count": 3,
         "level": 11,
@@ -119631,13 +119708,6 @@
         "class": 9
       },
       {
-        "name": "Eliphas",
-        "count": 3,
-        "level": 1,
-        "race": 1,
-        "class": 3
-      },
-      {
         "name": "Av",
         "count": 1,
         "level": 26,
@@ -119646,12 +119716,13 @@
       }
     ],
     "mount_boss_kills": [],
-    "learned_rare_mounts": [],
+    "learned_rare_spells": [],
+    "obtained_rare_items": [],
     "chat_stats": {
       "talkative": [
         {
           "name": "Constantine",
-          "count": 1330
+          "count": 1334
         },
         {
           "name": "Sorinis",
@@ -119693,15 +119764,15 @@
       "channels": [
         {
           "type": "PARTY",
-          "count": 5115
+          "count": 5119
         },
         {
           "type": "SAY",
-          "count": 653
+          "count": 655
         },
         {
           "type": "WHISPER",
-          "count": 641
+          "count": 642
         },
         {
           "type": "GUILD",
@@ -119709,6 +119780,41 @@
         }
       ],
       "funny_quotes": [
+        {
+          "name": "Ockalus",
+          "type": "SAY",
+          "message": "Ah, Malakor's grasp on shadows deepens,\nTalbar Mantle now crowns his somber quest.\nDarnassus weeps for the night he hath seized."
+        },
+        {
+          "name": "Nadriel",
+          "type": "SAY",
+          "message": "Oh hey, congrats on snagging that Talbar Mantle! Now you can dance with your moonkin like nobody's business! Let's get ready to burn some demons in the next raid. Gratz, Malakor!"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:3370:25|h[[25] In Nightmares (3370)]|h|r"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:3370:25|h[[25] In Nightmares (3370)]|h|r"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: 1/1 Speak with someone in Ratchet about the Glowing Shard for |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r!"
+        },
+        {
+          "name": "Taruhos",
+          "type": "WHISPER",
+          "message": "Concentrate on the game, Uhtooch!"
+        },
         {
           "name": "Constantine",
           "type": "PARTY",
@@ -119748,41 +119854,6 @@
           "name": "Constantine",
           "type": "PARTY",
           "message": "{rt1} Questie: 1/1 Gem of Cobrahn for |cff808080|Hquest:914:22|h[[22] Leaders of the Fang (914)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 1/1 Gem of Anacondra for |cff808080|Hquest:914:22|h[[22] Leaders of the Fang (914)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 7/7 Deviate Ravager for |cff808080|Hquest:1487:21|h[[21] Deviate Eradication (1487)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 7/7 Deviate Viper for |cff808080|Hquest:1487:21|h[[21] Deviate Eradication (1487)]|h|r!"
-        },
-        {
-          "name": "Ike",
-          "type": "SAY",
-          "message": "Yo Malakor! Heading straight to Wailing Caverns; heard you need help there. Let's crush those demons together! LFG: Level 28 Affliction Warlock / Guild Member. GRZ, Ike the warlock leader from The Schwann Brigade."
-        },
-        {
-          "name": "Ike",
-          "type": "SAY",
-          "message": "warlock leader from The Schwann Brigade."
-        },
-        {
-          "name": "Ike",
-          "type": "SAY",
-          "message": "Yo Malakor! It's Ike the tank leader from TBAC again. Heard you need an idiot... Count me in for the knockin' around! On my way to Wetlands now. Let's show those demons what we're made of! LFG: Level 28 Affliction Warlock / Guild Member. GRZ, Ike the"
-        },
-        {
-          "name": "Soren",
-          "type": "SAY",
-          "message": "better control of the situation."
         }
       ],
       "top_words": [
@@ -119792,11 +119863,11 @@
         },
         {
           "word": "questie",
-          "count": 2011
+          "count": 2015
         },
         {
           "word": "hquest",
-          "count": 1983
+          "count": 1987
         },
         {
           "word": "just",
@@ -119804,11 +119875,11 @@
         },
         {
           "word": "let",
-          "count": 173
+          "count": 174
         },
         {
           "word": "some",
-          "count": 164
+          "count": 165
         },
         {
           "word": "level",
@@ -119831,12 +119902,12 @@
           "count": 113
         },
         {
-          "word": "ding",
-          "count": 108
+          "word": "now",
+          "count": 109
         },
         {
-          "word": "now",
-          "count": 107
+          "word": "ding",
+          "count": 108
         },
         {
           "word": "got",
@@ -119844,7 +119915,7 @@
         },
         {
           "word": "hey",
-          "count": 100
+          "count": 101
         }
       ]
     }
