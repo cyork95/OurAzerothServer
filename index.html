@@ -2504,6 +2504,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <button class="sub-tab-btn active" id="stats-subbtn-wealth" onclick="switchStatsSubTab('wealth')">💰 Wealth & Playtime</button>
                 <button class="sub-tab-btn" id="stats-subbtn-quests" onclick="switchStatsSubTab('quests')">🧭 Quests & Milestones</button>
                 <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
+                <button class="sub-tab-btn" id="stats-subbtn-rarity" onclick="switchStatsSubTab('rarity')">🔮 Mount Rarity</button>
             </div>
 
             <!-- WEALTH & PLAYTIME SUB-TAB -->
@@ -2617,6 +2618,28 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <!-- Populated dynamically -->
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <!-- MOUNT RARITY SUB-TAB -->
+            <div id="stats-subtab-rarity" class="sub-tab-content" style="display: none;">
+                <div class="card">
+                    <div class="card-title" style="color: #a78bfa;">🔮 Mount Rarity & Farm Luck Tracker</div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">This panel tracks your boss run attempts and calculates your cumulative mathematical probability of having obtained each rare mount by now based on your boss kill counts across your characters (using the standard Rarity formula: <code>1 - (1 - drop_rate)^attempts</code>).</p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <label for="rarity-char-select" style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Filter by Character:</label>
+                            <select id="rarity-char-select" onchange="renderRarityTracker()" style="width: 100%; padding: 0.5rem; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); border-radius: 4px; color: #fff;">
+                                <option value="all">-- All Characters (Combined Accounts) --</option>
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="rarity-mounts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem;">
+                        <!-- Populated dynamically -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -4681,6 +4704,120 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     </tr>
                 `).join('');
             }
+
+            // Initialize Rarity Character Select Dropdown
+            const raritySelect = document.getElementById('rarity-char-select');
+            if (raritySelect && wikiData.stats) {
+                // Keep the default option
+                raritySelect.innerHTML = '<option value="all">-- All Characters (Combined Accounts) --</option>';
+                if (wikiData.stats.playtime) {
+                    const sortedChars = [...wikiData.stats.playtime].sort((a, b) => a.name.localeCompare(b.name));
+                    sortedChars.forEach(char => {
+                        const match = serverCharacters.find(c => c.name.toLowerCase() === char.name.toLowerCase());
+                        if (match) {
+                            raritySelect.innerHTML += `<option value="${match.guid}">${char.name} (Lvl ${char.level} ${CLASS_MAP[char.class] || 'Class'})</option>`;
+                        }
+                    });
+                }
+            }
+            try { renderRarityTracker(); } catch(e) { console.error("Error rendering rarity:", e); }
+        }
+
+        const RARE_MOUNTS = [
+            { id: 'deathcharger', name: "Deathcharger's Reins", boss: "Lord Rivendare", spellId: 13335, creatureIds: [4539], dropRate: 0.01 },
+            { id: 'ravenlord', name: "Reins of the Raven Lord", boss: "Anzu", spellId: 41566, creatureIds: [23035], dropRate: 0.01 },
+            { id: 'whitehawkstrider', name: "Swift White Hawkstrider", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46628, creatureIds: [24664], dropRate: 0.04 },
+            { id: 'fierywarhorse', name: "Fiery Warhorse's Reins", boss: "Attumen the Huntsman", spellId: 43666, creatureIds: [16151], dropRate: 0.01 },
+            { id: 'ashes', name: "Ashes of Al'ar", boss: "Kael'thas Sunstrider (TK)", spellId: 32458, creatureIds: [19622], dropRate: 0.01 },
+            { id: 'blueproto', name: "Reins of the Blue Proto-Drake", boss: "Skadi the Ruthless", spellId: 59996, creatureIds: [26693], dropRate: 0.01 },
+            { id: 'onyxiadrake', name: "Reins of the Onyxian Drake", boss: "Onyxia", spellId: 69395, creatureIds: [10184], dropRate: 0.01 },
+            { id: 'mimiron', name: "Mimiron's Head", boss: "Yogg-Saron", spellId: 63956, creatureIds: [33288], dropRate: 0.01 },
+            { id: 'invincible', name: "Invincible's Reins", boss: "The Lich King", spellId: 72286, creatureIds: [36597], dropRate: 0.01 }
+        ];
+
+        function renderRarityTracker() {
+            if (!wikiData || !wikiData.stats) return;
+            const stats = wikiData.stats;
+            const container = document.getElementById('rarity-mounts-container');
+            if (!container) return;
+
+            const selectEl = document.getElementById('rarity-char-select');
+            const selectedVal = selectEl ? selectEl.value : 'all';
+            const isAll = selectedVal === 'all';
+            const selectedGuid = isAll ? null : parseInt(selectedVal, 10);
+
+            const bossKills = stats.mount_boss_kills || [];
+            const learnedMounts = stats.learned_rare_mounts || [];
+
+            container.innerHTML = RARE_MOUNTS.map(m => {
+                let attempts = 0;
+                if (isAll) {
+                    attempts = bossKills
+                        .filter(k => m.creatureIds.includes(k.creature_id))
+                        .reduce((sum, curr) => sum + curr.kill_count, 0);
+                } else {
+                    const record = bossKills.find(k => k.character_guid === selectedGuid && m.creatureIds.includes(k.creature_id));
+                    attempts = record ? record.kill_count : 0;
+                }
+
+                let obtained = false;
+                if (isAll) {
+                    obtained = learnedMounts.some(l => l.spell === m.spellId);
+                } else {
+                    obtained = learnedMounts.some(l => l.guid === selectedGuid && l.spell === m.spellId);
+                }
+
+                const prob = obtained ? 1.0 : (attempts > 0 ? (1 - Math.pow(1 - m.dropRate, attempts)) : 0.0);
+                const probPct = (prob * 100).toFixed(1);
+
+                const targetAttempts = Math.ceil(Math.log(0.05) / Math.log(1 - m.dropRate));
+                const progressPct = obtained ? 100 : Math.min(100, Math.round((attempts / targetAttempts) * 100));
+
+                let statusBadge = '';
+                let borderStyle = '';
+                if (obtained) {
+                    statusBadge = `<span style="background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Obtained</span>`;
+                    borderStyle = 'border-color: rgba(16, 185, 129, 0.3); box-shadow: 0 0 10px rgba(16, 185, 129, 0.05);';
+                } else if (attempts > 0) {
+                    statusBadge = `<span style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Farming</span>`;
+                } else {
+                    statusBadge = `<span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">Unstarted</span>`;
+                }
+
+                return `
+                    <div class="card" style="margin-bottom: 0; display: flex; flex-direction: column; justify-content: space-between; min-height: 195px; background: rgba(12, 17, 27, 0.45); ${borderStyle}">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                                <div>
+                                    <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.15rem; font-weight: 600;">${m.name}</h4>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Source: <strong>${m.boss}</strong> (${(m.dropRate * 100).toFixed(1)}% drop)</span>
+                                </div>
+                                ${statusBadge}
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-top: 1rem; color: var(--text-secondary);">
+                                <span>Kills / Attempts:</span>
+                                <strong style="color: #fff;">${attempts}</strong>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text-secondary);">
+                                <span>Probability Luck:</span>
+                                <strong style="color: ${obtained ? '#34d399' : (attempts > 0 ? '#fbbf24' : '#fff')};">${probPct}%</strong>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; margin-bottom: 0.25rem;">
+                                <div style="width: ${progressPct}%; height: 100%; background: ${obtained ? 'var(--status-success)' : 'var(--accent-hover)'}; border-radius: 3px; transition: width 0.3s ease;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-secondary);">
+                                <span>${obtained ? 'Mount collected!' : `Luck progress: ${progressPct}% to expected drop`}</span>
+                                <span>${obtained ? '' : `${targetAttempts} runs threshold`}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
     </script>
