@@ -2569,17 +2569,32 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         </table>
                     </div>
                 </div>
-                <!-- Deaths Leaderboard -->
-                <div class="card" style="margin-top: 2rem;">
-                    <div class="card-title" style="color: var(--status-danger);">💀 Most Deaths (The Graveyard Club)</div>
-                    <table class="wiki-table">
-                        <thead>
-                            <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Race</th><th>Total Deaths</th></tr>
-                        </thead>
-                        <tbody id="stats-deaths-body">
-                            <!-- Populated dynamically -->
-                        </tbody>
-                    </table>
+                <!-- Achievements & Deaths columns -->
+                <div class="char-bio-columns" style="margin-top: 2rem;">
+                    <!-- Achievement Hunters -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title" style="color: #fbbf24;">🏆 Achievement Hunters</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Achievements</th></tr>
+                            </thead>
+                            <tbody id="stats-achievements-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Deaths Leaderboard -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title" style="color: var(--status-danger);">💀 Most Deaths (The Graveyard Club)</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Total Deaths</th></tr>
+                            </thead>
+                            <tbody id="stats-deaths-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -4797,6 +4812,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 }).join('');
             }
 
+            // Achievements
+            const achievementsBody = document.getElementById('stats-achievements-body');
+            if (achievementsBody && stats.achievements) {
+                achievementsBody.innerHTML = stats.achievements.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><span style="color: #fbbf24; font-weight: 600;">${char.count} unlocked</span></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
             // Deaths
             const deathsBody = document.getElementById('stats-deaths-body');
             if (deathsBody && stats.deaths) {
@@ -4805,10 +4837,9 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     return `
                         <tr>
                             <td><strong>#${index + 1}</strong></td>
-                            <td><strong style="color: ${classInfo.color};">${char.name}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
                             <td>${char.level}</td>
                             <td style="color: ${classInfo.color};">${classInfo.name}</td>
-                            <td>${RACE_NAMES[char.race] || 'Unknown'}</td>
                             <td><span style="color: var(--status-danger); font-weight: 600;">${char.count} deaths</span></td>
                         </tr>
                     `;
