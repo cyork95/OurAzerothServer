@@ -2505,6 +2505,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <button class="sub-tab-btn" id="stats-subbtn-quests" onclick="switchStatsSubTab('quests')">🧭 Quests & Milestones</button>
                 <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
                 <button class="sub-tab-btn" id="stats-subbtn-rarity" onclick="switchStatsSubTab('rarity')">🔮 Mount Rarity</button>
+                <button class="sub-tab-btn" id="stats-subbtn-chat" onclick="switchStatsSubTab('chat')">💬 Chat Trends</button>
             </div>
 
             <!-- WEALTH & PLAYTIME SUB-TAB -->
@@ -2639,6 +2640,59 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
                     <div id="rarity-mounts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem;">
                         <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAT TRENDS SUB-TAB -->
+            <div id="stats-subtab-chat" class="sub-tab-content" style="display: none;">
+                <div class="char-bio-columns">
+                    <!-- Most Talkative -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-hover);">💬 Most Talkative Characters</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">Characters (mostly AI bots) who have sent the most spatial, party, or guild messages.</p>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Messages Sent</th></tr>
+                            </thead>
+                            <tbody id="stats-chat-talkative-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Chat Channels -->
+                    <div class="card">
+                        <div class="card-title" style="color: var(--gold-light);">📢 Chat Volume by Channel</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">Volume of chatter across SAY, PARTY, GUILD, and WHISPER channels.</p>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Channel</th><th>Messages</th><th>Visual Share</th></tr>
+                            </thead>
+                            <tbody id="stats-chat-channels-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="char-bio-columns" style="margin-top: 2rem;">
+                    <!-- Most Common Words -->
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="card-title" style="color: #34d399;">🏷️ Popular Spoken Words</div>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.5rem;">The most frequent words used in chat logs (filtered to exclude common English stop words).</p>
+                            <div id="stats-chat-words-container" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;">
+                                <!-- Tag cloud populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Out of Context Quotes -->
+                    <div class="card">
+                        <div class="card-title" style="color: #f472b6;">🎭 Out of Context Ambient Chatter</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.5rem;">A live snippet board of random conversations overheard in the world.</p>
+                        <div id="stats-chat-quotes-container" style="display: flex; flex-direction: column; gap: 10px;">
+                            <!-- Populated dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -4743,6 +4797,97 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             raritySelect.innerHTML += `<option value="${match.guid}">${char.name} (Lvl ${char.level} ${classInfo.name})</option>`;
                         }
                     });
+                }
+            }
+            
+            // Populate Chat Stats
+            if (wikiData.stats && wikiData.stats.chat_stats) {
+                const cs = wikiData.stats.chat_stats;
+
+                // 1. Talkative
+                const talkativeBody = document.getElementById('stats-chat-talkative-body');
+                if (talkativeBody && cs.talkative) {
+                    talkativeBody.innerHTML = cs.talkative.map((char, index) => {
+                        const match = serverCharacters.find(c => c.name.toLowerCase() === char.name.toLowerCase());
+                        const color = match ? (CLASS_NAMES[match.class]?.color || '#fff') : '#fff';
+                        return `
+                            <tr>
+                                <td><strong>#${index + 1}</strong></td>
+                                <td><strong style="color: ${color};">${char.name}</strong></td>
+                                <td><strong>${char.count.toLocaleString()}</strong> messages</td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+
+                // 2. Channels
+                const channelsBody = document.getElementById('stats-chat-channels-body');
+                if (channelsBody && cs.channels) {
+                    const totalMsgs = cs.channels.reduce((sum, curr) => sum + curr.count, 0);
+                    channelsBody.innerHTML = cs.channels.map(chan => {
+                        const pct = totalMsgs > 0 ? ((chan.count / totalMsgs) * 100).toFixed(1) : 0;
+                        let color = 'var(--text-secondary)';
+                        if (chan.type === 'PARTY') color = '#a78bfa';
+                        else if (chan.type === 'SAY') color = '#60a5fa';
+                        else if (chan.type === 'WHISPER') color = '#f472b6';
+                        else if (chan.type === 'GUILD') color = '#34d399';
+                        
+                        return `
+                            <tr>
+                                <td><strong style="color: ${color};">${chan.type}</strong></td>
+                                <td>${chan.count.toLocaleString()}</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="flex: 1; min-width: 60px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                                            <div style="width: ${pct}%; height: 100%; background: ${color}; border-radius: 3px;"></div>
+                                        </div>
+                                        <span style="font-size: 0.75rem; color: var(--text-secondary); min-width: 35px; text-align: right;">${pct}%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+
+                // 3. Word Cloud
+                const wordsContainer = document.getElementById('stats-chat-words-container');
+                if (wordsContainer && cs.top_words) {
+                    const maxCount = cs.top_words.length > 0 ? cs.top_words[0].count : 1;
+                    wordsContainer.innerHTML = cs.top_words.map(w => {
+                        const size = 0.8 + (w.count / maxCount) * 0.7;
+                        const opacity = 0.45 + (w.count / maxCount) * 0.55;
+                        const colors = ['#c084fc', '#f472b6', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+                        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                        return `
+                            <span style="font-size: ${size}rem; opacity: ${opacity}; color: ${randomColor}; padding: 4px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; font-weight: 500; display: inline-block;" title="${w.count} occurrences">
+                                ${w.word} <span style="font-size: 0.65rem; color: var(--text-secondary); margin-left: 2px;">(${w.count})</span>
+                            </span>
+                        `;
+                    }).join('');
+                }
+
+                // 4. Quotes Board
+                const quotesContainer = document.getElementById('stats-chat-quotes-container');
+                if (quotesContainer && cs.funny_quotes) {
+                    quotesContainer.innerHTML = cs.funny_quotes.map(q => {
+                        const match = serverCharacters.find(c => c.name.toLowerCase() === q.name.toLowerCase());
+                        const color = match ? (CLASS_NAMES[match.class]?.color || '#fff') : '#fff';
+                        let chanBadge = '';
+                        if (q.type === 'PARTY') chanBadge = '<span style="color:#a78bfa; font-size:0.65rem; font-weight:bold;">[Party]</span>';
+                        else if (q.type === 'SAY') chanBadge = '<span style="color:#60a5fa; font-size:0.65rem; font-weight:bold;">[Say]</span>';
+                        else if (q.type === 'WHISPER') chanBadge = '<span style="color:#f472b6; font-size:0.65rem; font-weight:bold;">[Whisper]</span>';
+                        else if (q.type === 'GUILD') chanBadge = '<span style="color:#34d399; font-size:0.65rem; font-weight:bold;">[Guild]</span>';
+
+                        return `
+                            <div style="background: rgba(4, 7, 16, 0.45); border: 1px solid var(--border-glass); padding: 0.75rem 1rem; border-radius: 6px; font-style: italic; font-size: 0.88rem; line-height: 1.4; color: var(--text-primary);">
+                                <div style="display:flex; justify-content:space-between; margin-bottom: 0.25rem;">
+                                    <strong style="color: ${color}; font-style: normal; font-size:0.8rem;">${q.name}</strong>
+                                    ${chanBadge}
+                                </div>
+                                "${q.message}"
+                            </div>
+                        `;
+                    }).join('');
                 }
             }
             try { renderRarityTracker(); } catch(e) { console.error("Error rendering rarity:", e); }
