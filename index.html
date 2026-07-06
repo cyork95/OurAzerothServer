@@ -5636,7 +5636,8 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 } else {
                     homeActivityContainer.innerHTML = activityFeed.map(evt => {
                         const classInfo = CLASS_NAMES[evt.class] || { name: 'Unknown', color: '#fff' };
-                        const timestamp = new Date(evt.timestamp * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        const dateVal = typeof evt.timestamp === 'string' ? new Date(evt.timestamp) : new Date(evt.timestamp * 1000);
+                        const timestamp = dateVal.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                         let message = '';
                         
                         if (evt.type === 'LEVEL_UP') {
@@ -5861,4 +5862,4 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
     </script>
 </body>
 </html>
-<!-- Trigger Redeploy 8 -->
+<!-- Trigger Redeploy 9 -->
