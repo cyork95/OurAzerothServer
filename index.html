@@ -2505,38 +2505,141 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
 
         <!-- TAB 4: AI OLLAMA CHAT -->
         <div id="tab-ai-ollama" class="wiki-tab-content" style="display: none;">
-            <div class="card">
-                <div class="card-title">Talking to Bots (Ollama AI Chat Integration)</div>
-                <p>The server is integrated with a local Large Language Model (Ollama). This allows the playerbots in the game world to behave like real players, complete with unique personalities, factions, and area awareness. You can have conversations with them!</p>
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin-bottom: 2rem; align-items: start;">
                 
-                <h3>How to Chat with Bots</h3>
-                <ul>
-                    <li><strong>Say Chat (`/s [Message]`)</strong>: Stand near a bot in the world and type in local Say chat. For example, if you stand near Dianne, type <code>/s Hey Dianne, nice weather today.</code> There is a **90% chance** she will reply back to you privately or in local chat!</li>
-                    <li><strong>Party Chat (`/p [Message]`)</strong>: If you invite bots to a group, they will listen to party chat. If you say something to the group, bots have a **90% chance** to reply, joke, or chime in on your conversation.</li>
-                </ul>
+                <!-- Left Column: Ollama Config & Health -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Health Check / Status Card -->
+                    <div class="card" style="margin-bottom: 0; overflow: visible;">
+                        <div class="card-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span>🧠 Ollama Status</span>
+                            <span id="ollama-health-badge" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: bold;">Offline</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; flex-direction: column;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.5rem; align-items: center;">
+                                <span style="color: var(--text-secondary);">Enable Chat Module:</span>
+                                <label class="switch-container" style="position: relative; display: inline-block; width: 36px; height: 20px; margin: 0;">
+                                    <input type="checkbox" id="ollama-config-enable" onchange="updateOllamaConfigField('OllamaChat.Enable', this.checked ? '1' : '0')" />
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                            <div style="font-size: 0.85rem;">
+                                <span style="color: var(--text-secondary); display: block; margin-bottom: 0.25rem;">API Endpoint:</span>
+                                <input type="text" id="ollama-config-url" placeholder="http://localhost:11434/api/generate" style="width: 100%; margin-bottom: 0.5rem;" />
+                            </div>
+                            <div style="font-size: 0.85rem;">
+                                <span style="color: var(--text-secondary); display: block; margin-bottom: 0.25rem;">Model Name:</span>
+                                <input type="text" id="ollama-config-model" placeholder="dolphin3:latest" style="width: 100%; margin-bottom: 0.5rem;" />
+                            </div>
+                            <div style="font-size: 0.85rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span style="color: var(--text-secondary);">Temperature:</span>
+                                    <strong id="ollama-temp-val" style="color: var(--accent-hover);">0.8</strong>
+                                </div>
+                                <input type="range" id="ollama-config-temp" min="0.1" max="1.5" step="0.05" value="0.8" oninput="document.getElementById('ollama-temp-val').innerText = this.value" onchange="updateOllamaConfigField('OllamaChat.Temperature', this.value)" style="width: 100%;" />
+                            </div>
+                            <button class="btn btn-secondary" onclick="checkOllamaHealth()" style="width: 100%; margin-top: 0.5rem;">⚡ Check Connection</button>
+                        </div>
+                    </div>
 
-                <div class="alert alert-warning">
-                    <strong>🔒 Why Whispers Do Not Trigger AI Chat</strong>
-                    <p>Whisper replies are disabled for Ollama. Whispering a bot (e.g. <code>/w BotName hello</code>) will not generate an AI response.</p>
-                    <p><strong>Reason:</strong> Whispers are strictly reserved for playerbot control commands (like <code>follow</code>, <code>stay</code>, <code>init=auto</code>). If Ollama intercepted whispers, the AI would try to carry on a conversation instead of letting you control their movement and gear!</p>
-                    <p>To chat with a bot, always use local <strong>Say</strong> or group <strong>Party</strong> chat.</p>
+                    <!-- Config Toggles Card -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title">⚙️ Chat Options</div>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.88rem; margin-top: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: var(--text-secondary);">Silence In Combat:</span>
+                                <label class="switch-container" style="margin:0;">
+                                    <input type="checkbox" id="ollama-config-combat" onchange="updateOllamaConfigField('OllamaChat.DisableRepliesInCombat', this.checked ? '1' : '0')" />
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: var(--text-secondary);">Random World Chatter:</span>
+                                <label class="switch-container" style="margin:0;">
+                                    <input type="checkbox" id="ollama-config-chatter" onchange="updateOllamaConfigField('OllamaChat.EnableRandomChatter', this.checked ? '1' : '0')" />
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: var(--text-secondary);">Disable in Custom Channels:</span>
+                                <label class="switch-container" style="margin:0;">
+                                    <input type="checkbox" id="ollama-config-channels" onchange="updateOllamaConfigField('OllamaChat.DisableForCustomChannels', this.checked ? '1' : '0')" />
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                            <button class="btn" onclick="saveAllOllamaConfig()" style="width: 100%; margin-top: 0.75rem;">💾 Save Configuration</button>
+                        </div>
+                    </div>
                 </div>
 
-                <h3 style="margin-top: 2rem;">Available AI Personalities</h3>
-                <p>When creating a custom follower on the admin dashboard, you can assign them one of the following AI personalities. This shapes how the local Ollama LLM generates their dialogue in Say and Party chat:</p>
-                
-                <div class="admin-table-container" style="margin-top: 1rem; max-height: 400px; overflow-y: auto; border: 1px solid var(--border-glass); border-radius: 8px;">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th style="padding: 0.75rem 1rem;">Personality Key</th>
-                                <th style="padding: 0.75rem 1rem;">Behavior Prompt / System Instructions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ollama-personalities-body">
-                            <!-- Populated via JavaScript -->
-                        </tbody>
-                    </table>
+                <!-- Right Column: Templates Editor & Sandbox Play -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Sandbox Vibe Tester -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title">🧪 Bot Personality Sandbox & Vibe Tester</div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Select any bot, configure their template prompt or type a custom instruction, and test their generated replies live in the sandbox.</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.8rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Choose Bot Follower:</label>
+                                <select id="sandbox-bot-select" onchange="loadSandboxBotPersonality(this.value)" style="width: 100%;">
+                                    <option value="">-- Select active bot --</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.8rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Assign Vibe Template:</label>
+                                <select id="sandbox-template-select" onchange="onSandboxTemplateChange(this.value)" style="width: 100%;">
+                                    <option value="">-- No custom template --</option>
+                                    <option value="custom">-- Custom System Prompt --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; font-size: 0.8rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Active System Instructions:</label>
+                            <textarea id="sandbox-active-prompt" rows="3" placeholder="Describe the personality, tone, behavior, and class constraints..." style="width:100%; box-sizing:border-box; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:0.5rem; border-radius:6px; font-family:inherit; font-size:0.88rem; resize:vertical;"></textarea>
+                        </div>
+
+                        <!-- Vibe Tester Chat Simulator -->
+                        <div style="border: 1px solid var(--border-glass); border-radius: 8px; background: rgba(4, 7, 16, 0.45); padding: 1rem; margin-bottom: 1rem;">
+                            <div id="sandbox-chat-history" style="height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; padding-right: 0.5rem; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03);">
+                                <div style="color: var(--text-secondary); font-size: 0.8rem; font-style: italic; text-align: center; margin: auto;">No messages sent yet. Use this area to simulate spatial Say/Party conversations.</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="text" id="sandbox-chat-input" placeholder="Type something to bot (e.g. 'Hey, want to run a dungeon?')..." style="flex: 1; margin-bottom: 0;" onkeydown="if(event.key==='Enter') testBotVibeResponse()" />
+                                <button class="btn" id="sandbox-test-btn" onclick="testBotVibeResponse()" style="padding: 0 1.25rem;">Test Reply</button>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+                            <button class="btn btn-secondary" onclick="saveBotPersonalityAssignment()">Save Bot Personality</button>
+                        </div>
+                    </div>
+
+                    <!-- Vibe Template Manager Card -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div class="card-title" style="margin-bottom: 0;">🎭 Personality Vibe Templates</div>
+                            <button class="btn btn-secondary" style="padding: 2px 10px; font-size: 0.8rem;" onclick="openTemplateEditorModal('', '')">+ Add Vibe</button>
+                        </div>
+                        <div class="admin-table-container" style="border: 1px solid var(--border-glass); border-radius: 8px; max-height: 250px; overflow-y: auto;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 0.5rem 0.75rem; font-size: 0.85rem;">Vibe Key</th>
+                                        <th style="padding: 0.5rem 0.75rem; font-size: 0.85rem;">System instructions / Prompt</th>
+                                        <th style="padding: 0.5rem 0.75rem; font-size: 0.85rem; text-align: center; width: 100px;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ollama-sandbox-templates-body">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -3975,8 +4078,34 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
             </div>
         </div>
-
     </main>
+
+    <!-- MODAL FOR OLLAMA TEMPLATE EDITOR -->
+    <div id="ollama-template-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="card" style="width: 500px; max-width: 90%; background: #0c111b; border: 1px solid var(--accent-hover); box-shadow: 0 0 30px rgba(79, 195, 247, 0.15); padding: 1.5rem; margin-bottom: 0;">
+            <div class="card-title" id="template-modal-title" style="margin-bottom: 1rem;">🎭 Edit Vibe Template</div>
+            
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Template Key (uppercase, e.g. MY_VIBE):</label>
+                <input type="text" id="template-modal-key" style="width: 100%; box-sizing: border-box;" />
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">System Prompt / Personality Instructions:</label>
+                <textarea id="template-modal-prompt" rows="6" placeholder="Instructions shaping speech pattern..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem; border-radius: 6px; font-family: inherit; font-size: 0.88rem; resize: vertical;"></textarea>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem;">
+                <input type="checkbox" id="template-modal-manual" style="margin: 0; width: auto;" />
+                <label for="template-modal-manual" style="color: var(--text-secondary); cursor: pointer; user-select: none;">Manual selection only (exclude from bot random assignments)</label>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+                <button class="btn btn-secondary" onclick="closeTemplateEditorModal()" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">Cancel</button>
+                <button class="btn" onclick="saveTemplateFromModal()">Save Template</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Ensure trailing slash for correct relative path resolution on GitHub Pages
@@ -4089,6 +4218,10 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             // Find clicked button and activate it
             const activeBtn = document.getElementById('tabbtn-' + tabId);
             if (activeBtn) activeBtn.classList.add('active');
+
+            if (tabId === 'ai-ollama') {
+                initOllamaSandbox();
+            }
         }
 
         // Sub Tab Switcher (Commands)
@@ -5859,6 +5992,412 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             }).join('');
         }
 
+        // Ollama Sandbox Management
+        let ollamaConfig = {};
+        let ollamaTemplates = [];
+        let botPersonalities = [];
+
+        function escapeJsString(str) {
+            return str.replace(/\\/g, '\\\\')
+                      .replace(/'/g, "\\'")
+                      .replace(/"/g, '\\"')
+                      .replace(/\r/g, '\\r')
+                      .replace(/\n/g, '\\n');
+        }
+
+        function initOllamaSandbox() {
+            const botSelect = document.getElementById('sandbox-bot-select');
+            if (botSelect && serverCharacters) {
+                botSelect.innerHTML = '<option value="">-- Select active bot --</option>' + 
+                    serverCharacters.map(c => {
+                        const classInfo = CLASS_NAMES[c.class] || { name: 'Unknown' };
+                        return `<option value="${c.guid}">${c.name} (Lvl ${c.level} ${classInfo.name})</option>`;
+                    }).join('');
+            }
+
+            fetchOllamaConfig();
+            fetchOllamaTemplates();
+            fetchBotPersonalities();
+        }
+
+        function fetchOllamaConfig() {
+            fetch('https://yorkdevelops.com/admin/index.php?action=get_ollama_config')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.config) {
+                    ollamaConfig = data.config;
+                    document.getElementById('ollama-config-enable').checked = data.config['OllamaChat.Enable'] === '1';
+                    document.getElementById('ollama-config-url').value = data.config['OllamaChat.Url'] || 'http://localhost:11434/api/generate';
+                    document.getElementById('ollama-config-model').value = data.config['OllamaChat.Model'] || 'dolphin3:latest';
+                    
+                    const temp = data.config['OllamaChat.Temperature'] || '0.8';
+                    document.getElementById('ollama-config-temp').value = temp;
+                    document.getElementById('ollama-temp-val').innerText = temp;
+
+                    document.getElementById('ollama-config-combat').checked = data.config['OllamaChat.DisableRepliesInCombat'] === '1';
+                    document.getElementById('ollama-config-chatter').checked = data.config['OllamaChat.EnableRandomChatter'] === '1';
+                    document.getElementById('ollama-config-channels').checked = data.config['OllamaChat.DisableForCustomChannels'] === '1';
+                }
+            })
+            .catch(err => console.error("Failed to load Ollama config:", err));
+        }
+
+        function fetchOllamaTemplates() {
+            fetch('https://yorkdevelops.com/admin/index.php?action=get_ollama_templates')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.templates) {
+                    ollamaTemplates = data.templates;
+                    renderOllamaTemplates();
+                }
+            })
+            .catch(err => console.error("Failed to load templates:", err));
+        }
+
+        function renderOllamaTemplates() {
+            const tempSelect = document.getElementById('sandbox-template-select');
+            if (tempSelect) {
+                tempSelect.innerHTML = '<option value="">-- No custom template --</option>' +
+                    ollamaTemplates.map(t => `<option value="${t.key}">${t.key}</option>`).join('') +
+                    '<option value="custom">-- Custom System Prompt --</option>';
+            }
+
+            const body = document.getElementById('ollama-sandbox-templates-body');
+            if (body) {
+                body.innerHTML = ollamaTemplates.map(t => `
+                    <tr style="border-bottom: 1px solid rgba(79, 195, 247, 0.05);">
+                        <td style="padding: 0.5rem 0.75rem;"><strong style="color: var(--accent-hover);">${t.key}</strong></td>
+                        <td style="padding: 0.5rem 0.75rem; font-size: 0.82rem; color: var(--text-secondary); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${t.prompt}</td>
+                        <td style="padding: 0.5rem 0.75rem; text-align: center;">
+                            <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                                <button class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.72rem; background: rgba(79, 195, 247, 0.1);" onclick="openTemplateEditorModal('${t.key}', '${escapeJsString(t.prompt)}', ${t.manual_only})">Edit</button>
+                                <button class="btn" style="padding: 2px 8px; font-size: 0.72rem; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); color: #f87171;" onclick="deleteOllamaTemplate('${t.key}')">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function fetchBotPersonalities() {
+            fetch('https://yorkdevelops.com/admin/index.php?action=get_bot_personalities')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.mappings) {
+                    botPersonalities = data.mappings;
+                }
+            })
+            .catch(err => console.error("Failed to load bot mappings:", err));
+        }
+
+        function loadSandboxBotPersonality(guid) {
+            if (!guid) {
+                document.getElementById('sandbox-template-select').value = '';
+                document.getElementById('sandbox-active-prompt').value = '';
+                return;
+            }
+            const mapping = botPersonalities.find(m => m.guid == guid);
+            const key = mapping ? mapping.personality : '';
+            
+            const tempSelect = document.getElementById('sandbox-template-select');
+            const promptArea = document.getElementById('sandbox-active-prompt');
+
+            if (key) {
+                if (key.startsWith('CUSTOM_')) {
+                    tempSelect.value = 'custom';
+                    fetch(`https://yorkdevelops.com/admin/index.php?action=get_character_personality&guid=${guid}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            promptArea.value = data.prompt || '';
+                        }
+                    });
+                } else {
+                    tempSelect.value = key;
+                    const tmpl = ollamaTemplates.find(t => t.key === key);
+                    promptArea.value = tmpl ? tmpl.prompt : '';
+                }
+            } else {
+                tempSelect.value = '';
+                promptArea.value = '';
+            }
+        }
+
+        function onSandboxTemplateChange(val) {
+            const promptArea = document.getElementById('sandbox-active-prompt');
+            if (val === 'custom') {
+                promptArea.value = '';
+                promptArea.removeAttribute('readonly');
+            } else if (val) {
+                const tmpl = ollamaTemplates.find(t => t.key === val);
+                promptArea.value = tmpl ? tmpl.prompt : '';
+                promptArea.setAttribute('readonly', 'true');
+            } else {
+                promptArea.value = '';
+                promptArea.setAttribute('readonly', 'true');
+            }
+        }
+
+        function saveBotPersonalityAssignment() {
+            const guid = document.getElementById('sandbox-bot-select').value;
+            const key = document.getElementById('sandbox-template-select').value;
+            const prompt = document.getElementById('sandbox-active-prompt').value;
+
+            if (!guid) {
+                alert('Please select a bot character first.');
+                return;
+            }
+
+            const char = serverCharacters.find(c => c.guid == guid);
+            const name = char ? char.name : 'Unknown';
+
+            const formData = new URLSearchParams();
+            formData.append('guid', guid);
+            formData.append('name', name);
+            formData.append('personality', key);
+            formData.append('prompt', prompt);
+
+            fetch('https://yorkdevelops.com/admin/index.php?action=save_character_personality', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('AI Personality assigned and saved successfully!');
+                    fetchBotPersonalities();
+                } else {
+                    alert('Error: ' + data.output);
+                }
+            })
+            .catch(err => alert('Save request failed: ' + err));
+        }
+
+        function updateOllamaConfigField(key, val) {
+            ollamaConfig[key] = val;
+        }
+
+        function saveAllOllamaConfig() {
+            const urlVal = document.getElementById('ollama-config-url').value;
+            const modelVal = document.getElementById('ollama-config-model').value;
+            
+            ollamaConfig['OllamaChat.Url'] = urlVal;
+            ollamaConfig['OllamaChat.Model'] = modelVal;
+
+            const formData = new URLSearchParams();
+            for (const [k, v] of Object.entries(ollamaConfig)) {
+                formData.append(`config[${k}]`, v);
+            }
+
+            fetch('https://yorkdevelops.com/admin/index.php?action=save_ollama_config', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Ollama config saved and hot-reloaded successfully!');
+                } else {
+                    alert('Error: ' + data.output);
+                }
+            })
+            .catch(err => alert('Failed to save config: ' + err));
+        }
+
+        function checkOllamaHealth() {
+            const badge = document.getElementById('ollama-health-badge');
+            const url = document.getElementById('ollama-config-url').value || 'http://localhost:11434/api/generate';
+            const model = document.getElementById('ollama-config-model').value || 'dolphin3:latest';
+
+            badge.innerText = 'Checking...';
+            badge.style.background = 'rgba(245, 158, 11, 0.15)';
+            badge.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+            badge.style.color = '#fbbf24';
+
+            const formData = new URLSearchParams();
+            formData.append('system', 'You are a test bot.');
+            formData.append('message', 'ping');
+            formData.append('url', url);
+            formData.append('model', model);
+
+            fetch('https://yorkdevelops.com/admin/index.php?action=test_ollama_prompt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    badge.innerText = 'Online';
+                    badge.style.background = 'rgba(16, 185, 129, 0.15)';
+                    badge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+                    badge.style.color = '#34d399';
+                } else {
+                    throw new Error(data.output);
+                }
+            })
+            .catch(err => {
+                badge.innerText = 'Offline';
+                badge.style.background = 'rgba(239, 68, 68, 0.15)';
+                badge.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+                badge.style.color = '#f87171';
+                console.warn("Connection test failed:", err);
+            });
+        }
+
+        function testBotVibeResponse() {
+            const guid = document.getElementById('sandbox-bot-select').value;
+            const system = document.getElementById('sandbox-active-prompt').value;
+            const message = document.getElementById('sandbox-chat-input').value.trim();
+            const history = document.getElementById('sandbox-chat-history');
+            const testBtn = document.getElementById('sandbox-test-btn');
+
+            if (!message) return;
+            if (!guid) {
+                alert('Please select a bot character first.');
+                return;
+            }
+
+            const char = serverCharacters.find(c => c.guid == guid);
+            const classInfo = CLASS_NAMES[char.class] || { color: '#fff' };
+
+            if (history.innerHTML.includes('No messages sent yet')) {
+                history.innerHTML = '';
+            }
+
+            history.innerHTML += `
+                <div style="align-self: flex-end; max-width: 80%; background: var(--accent-primary); color: #fff; padding: 0.5rem 0.75rem; border-radius: 8px 8px 0 8px; font-size: 0.88rem; line-height: 1.4; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    ${message}
+                </div>
+            `;
+            document.getElementById('sandbox-chat-input').value = '';
+            history.scrollTop = history.scrollHeight;
+
+            testBtn.innerText = 'Thinking...';
+            testBtn.disabled = true;
+
+            const url = document.getElementById('ollama-config-url').value || 'http://localhost:11434/api/generate';
+            const model = document.getElementById('ollama-config-model').value || 'dolphin3:latest';
+            const temp = document.getElementById('ollama-config-temp').value || '0.8';
+
+            const formData = new URLSearchParams();
+            formData.append('system', system);
+            formData.append('message', message);
+            formData.append('url', url);
+            formData.append('model', model);
+            formData.append('temperature', temp);
+
+            fetch('https://yorkdevelops.com/admin/index.php?action=test_ollama_prompt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                testBtn.innerText = 'Test Reply';
+                testBtn.disabled = false;
+
+                if (data.success) {
+                    history.innerHTML += `
+                        <div style="align-self: flex-start; max-width: 80%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 0.5rem 0.75rem; border-radius: 8px 8px 8px 0; font-size: 0.88rem; line-height: 1.4; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <strong style="color: ${classInfo.color}; display: block; font-size: 0.75rem; margin-bottom: 0.15rem;">${char.name}</strong>
+                            ${data.reply || '...'}
+                        </div>
+                    `;
+                } else {
+                    history.innerHTML += `
+                        <div style="align-self: flex-start; max-width: 80%; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #f87171; padding: 0.5rem 0.75rem; border-radius: 8px 8px 8px 0; font-size: 0.82rem; font-style: italic;">
+                            Error: ${data.output}
+                        </div>
+                    `;
+                }
+                history.scrollTop = history.scrollHeight;
+            })
+            .catch(err => {
+                testBtn.innerText = 'Test Reply';
+                testBtn.disabled = false;
+                alert('Test request failed: ' + err);
+            });
+        }
+
+        function openTemplateEditorModal(key, prompt, manual) {
+            const modal = document.getElementById('ollama-template-modal');
+            const keyInput = document.getElementById('template-modal-key');
+            const promptInput = document.getElementById('template-modal-prompt');
+            const manualCheck = document.getElementById('template-modal-manual');
+            const title = document.getElementById('template-modal-title');
+
+            if (key) {
+                title.innerText = '🎭 Edit Vibe Template';
+                keyInput.value = key;
+                keyInput.setAttribute('disabled', 'true');
+                promptInput.value = prompt;
+                manualCheck.checked = manual === 1;
+            } else {
+                title.innerText = '🎭 Create New Vibe Template';
+                keyInput.value = '';
+                keyInput.removeAttribute('disabled');
+                promptInput.value = '';
+                manualCheck.checked = false;
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeTemplateEditorModal() {
+            document.getElementById('ollama-template-modal').style.display = 'none';
+        }
+
+        function saveTemplateFromModal() {
+            const key = document.getElementById('template-modal-key').value.trim();
+            const prompt = document.getElementById('template-modal-prompt').value.trim();
+            const manual = document.getElementById('template-modal-manual').checked ? 1 : 0;
+
+            if (!key || !prompt) {
+                alert('Template key and prompt cannot be empty.');
+                return;
+            }
+
+            const formData = new URLSearchParams();
+            formData.append('key', key);
+            formData.append('prompt', prompt);
+            formData.append('manual_only', manual);
+
+            fetch('https://yorkdevelops.com/admin/index.php?action=save_ollama_template', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    closeTemplateEditorModal();
+                    fetchOllamaTemplates();
+                } else {
+                    alert('Error: ' + data.output);
+                }
+            })
+            .catch(err => alert('Failed to save template: ' + err));
+        }
+
+        function deleteOllamaTemplate(key) {
+            if (!confirm(`Are you sure you want to delete the vibe template '${key}'? This cannot be undone.`)) {
+                return;
+            }
+
+            fetch(`https://yorkdevelops.com/admin/index.php?action=delete_ollama_template&key=${key}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    fetchOllamaTemplates();
+                } else {
+                    alert('Error: ' + data.output);
+                }
+            })
+            .catch(err => alert('Failed to delete template: ' + err));
+        }
     </script>
 </body>
 </html>
