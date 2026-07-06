@@ -1641,7 +1641,7 @@
       "name": "Aeveelle",
       "race": 11,
       "class": 3,
-      "level": 41,
+      "level": 42,
       "gender": 1
     },
     {
@@ -3521,7 +3521,7 @@
       "name": "Balthas",
       "race": 4,
       "class": 11,
-      "level": 21,
+      "level": 22,
       "gender": 0
     },
     {
@@ -8033,7 +8033,7 @@
       "name": "Elii",
       "race": 11,
       "class": 11,
-      "level": 28,
+      "level": 29,
       "gender": 1
     },
     {
@@ -8985,7 +8985,7 @@
       "name": "Fanallius",
       "race": 11,
       "class": 7,
-      "level": 17,
+      "level": 24,
       "gender": 0
     },
     {
@@ -12473,7 +12473,7 @@
       "name": "Ilalaeth",
       "race": 4,
       "class": 2,
-      "level": 4,
+      "level": 24,
       "gender": 0
     },
     {
@@ -28350,6 +28350,36 @@
     }
   ],
   "auctions": [
+    {
+      "auction_id": 108406,
+      "name": "Glowworm Cavern Bindings",
+      "quality": 3,
+      "required_level": 73,
+      "item_level": 167,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 524746,
+      "start_bid": 482766,
+      "last_bid": 0,
+      "time_left": 1783348186,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108405,
+      "name": "Primal Air",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 111720,
+      "start_bid": 91608,
+      "last_bid": 0,
+      "time_left": 1783322986,
+      "owner_name": "Gnenlirgunk"
+    },
     {
       "auction_id": 108404,
       "name": "Orca Belt",
@@ -117498,6 +117528,21 @@
     "3342": [],
     "1982": [
       {
+        "timestamp": "2026-07-06T02:35:09",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1013:26|h[[26] The Book of Ur (1013)]|h|r"
+      },
+      {
+        "timestamp": "2026-07-06T02:34:55",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1098:25|h[[25] Deathstalkers in Shadowfang (1098)]|h|r"
+      },
+      {
+        "timestamp": "2026-07-06T02:34:40",
+        "type": "PARTY",
+        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1014:27|h[[27] Arugal Must Die (1014)]|h|r"
+      },
+      {
         "timestamp": "2026-07-06T02:28:55",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:3370:25|h[[25] In Nightmares (3370)]|h|r"
@@ -118481,21 +118526,6 @@
         "timestamp": "2026-07-05T19:36:19",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:305:24|h[[24] In Search of The Excavation Team (305)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-05T19:36:12",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:294:24|h[[24] Ormer's Revenge (294)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-05T19:31:48",
-        "type": "PARTY",
-        "details": "nc +aggressive"
-      },
-      {
-        "timestamp": "2026-07-05T19:31:47",
-        "type": "PARTY",
-        "details": "{rt1} Questie: 12/12 Bluegill Murloc for |cff40c040|Hquest:279:22|h[[22] Claws from the Deep (279)]|h|r!"
       }
     ],
     "1985": [
@@ -119162,7 +119192,7 @@
       },
       {
         "name": "Kivim",
-        "money": 29433093,
+        "money": 29433764,
         "level": 60,
         "race": 6,
         "class": 5
@@ -119192,70 +119222,70 @@
     "playtime": [
       {
         "name": "Kumrodus",
-        "totaltime": 681885,
+        "totaltime": 682246,
         "level": 9,
         "race": 3,
         "class": 4
       },
       {
         "name": "Cariia",
-        "totaltime": 680598,
+        "totaltime": 681019,
         "level": 43,
         "race": 4,
         "class": 11
       },
       {
         "name": "Terance",
-        "totaltime": 679705,
+        "totaltime": 680066,
         "level": 18,
         "race": 1,
         "class": 5
       },
       {
         "name": "Usa",
-        "totaltime": 678844,
+        "totaltime": 679204,
         "level": 31,
         "race": 3,
         "class": 3
       },
       {
         "name": "Martorin",
-        "totaltime": 678166,
+        "totaltime": 678527,
         "level": 56,
         "race": 1,
         "class": 1
       },
       {
         "name": "Raimond",
-        "totaltime": 677888,
+        "totaltime": 678249,
         "level": 60,
         "race": 1,
         "class": 9
       },
       {
         "name": "Bholdand",
-        "totaltime": 677850,
+        "totaltime": 678211,
         "level": 53,
         "race": 3,
         "class": 3
       },
       {
         "name": "Tammal",
-        "totaltime": 677465,
+        "totaltime": 677826,
         "level": 36,
         "race": 3,
         "class": 5
       },
       {
         "name": "Guni",
-        "totaltime": 677295,
+        "totaltime": 677656,
         "level": 60,
         "race": 7,
         "class": 1
       },
       {
         "name": "Ryase",
-        "totaltime": 677066,
+        "totaltime": 677427,
         "level": 25,
         "race": 4,
         "class": 11
@@ -119336,15 +119366,22 @@
     "deaths": [
       {
         "name": "Allas",
-        "count": 261,
+        "count": 262,
         "level": 5,
         "race": 3,
         "class": 3
       },
       {
         "name": "Cariia",
-        "count": 234,
+        "count": 236,
         "level": 43,
+        "race": 4,
+        "class": 11
+      },
+      {
+        "name": "Esorean",
+        "count": 169,
+        "level": 37,
         "race": 4,
         "class": 11
       },
@@ -119354,13 +119391,6 @@
         "level": 62,
         "race": 7,
         "class": 4
-      },
-      {
-        "name": "Esorean",
-        "count": 167,
-        "level": 37,
-        "race": 4,
-        "class": 11
       },
       {
         "name": "Glenkiblun",
@@ -119470,10 +119500,10 @@
         "class": 1
       },
       {
-        "name": "Corhula",
+        "name": "Adalio",
         "count": 47,
-        "level": 62,
-        "race": 11,
+        "level": 23,
+        "race": 1,
         "class": 1
       }
     ],
@@ -119601,6 +119631,13 @@
     ],
     "mounts": [
       {
+        "name": "Maranka",
+        "count": 27,
+        "level": 60,
+        "race": 1,
+        "class": 9
+      },
+      {
         "name": "Mascard",
         "count": 27,
         "level": 60,
@@ -119608,11 +119645,25 @@
         "class": 5
       },
       {
-        "name": "Maranka",
-        "count": 27,
+        "name": "Purshe",
+        "count": 26,
         "level": 60,
-        "race": 1,
-        "class": 9
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Tretaz",
+        "count": 26,
+        "level": 54,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Laeith",
+        "count": 26,
+        "level": 26,
+        "race": 4,
+        "class": 4
       },
       {
         "name": "Turian",
@@ -119648,27 +119699,6 @@
         "level": 60,
         "race": 3,
         "class": 3
-      },
-      {
-        "name": "Gerlo",
-        "count": 26,
-        "level": 58,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Purshe",
-        "count": 26,
-        "level": 60,
-        "race": 6,
-        "class": 3
-      },
-      {
-        "name": "Tretaz",
-        "count": 26,
-        "level": 54,
-        "race": 2,
-        "class": 1
       }
     ],
     "pets": [
@@ -119676,6 +119706,13 @@
         "name": "Malakor",
         "count": 6,
         "level": 31,
+        "race": 1,
+        "class": 9
+      },
+      {
+        "name": "Malavus",
+        "count": 3,
+        "level": 9,
         "race": 1,
         "class": 9
       },
@@ -119701,13 +119738,6 @@
         "class": 11
       },
       {
-        "name": "Malavus",
-        "count": 3,
-        "level": 9,
-        "race": 1,
-        "class": 9
-      },
-      {
         "name": "Av",
         "count": 1,
         "level": 26,
@@ -119715,14 +119745,2271 @@
         "class": 8
       }
     ],
-    "mount_boss_kills": [],
+    "mount_boss_kills": [
+      {
+        "character_guid": 3,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 33
+      },
+      {
+        "character_guid": 6,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 9,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 12,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 14,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 14,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 16,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 17,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 23
+      },
+      {
+        "character_guid": 20,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 22,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 23,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 23,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 27,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 29,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 30,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 33,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 39,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 41,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 44,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 45,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 28
+      },
+      {
+        "character_guid": 46,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 58,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 34
+      },
+      {
+        "character_guid": 60,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 64,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 72,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 74
+      },
+      {
+        "character_guid": 76,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 80,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 81,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 83,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 83,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 86,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 88,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 91,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 21
+      },
+      {
+        "character_guid": 93,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 95,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 97,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 98,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 98,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 19
+      },
+      {
+        "character_guid": 100,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 105,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 105,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 21
+      },
+      {
+        "character_guid": 107,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 108,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 31
+      },
+      {
+        "character_guid": 109,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 113,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 113,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 117,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 51
+      },
+      {
+        "character_guid": 120,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 121,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 134,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 135,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 135,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 140,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 140,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 148,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 152,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 152,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 153,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 163,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 33
+      },
+      {
+        "character_guid": 168,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 169,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 76
+      },
+      {
+        "character_guid": 170,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 26
+      },
+      {
+        "character_guid": 172,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 173,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 180,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 184,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 41
+      },
+      {
+        "character_guid": 184,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 192,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 193,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 194,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 197,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 199,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 200,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 200,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 201,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 204,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 208,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 209,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 210,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 30
+      },
+      {
+        "character_guid": 214,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 218,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 222,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 225,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 226,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 228,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 228,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 230,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 232,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 234,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 42
+      },
+      {
+        "character_guid": 236,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 239,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 243,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 249,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 26
+      },
+      {
+        "character_guid": 252,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 256,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 37
+      },
+      {
+        "character_guid": 256,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 258,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 259,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 259,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 265,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 39
+      },
+      {
+        "character_guid": 273,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 276,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 281,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 283,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 284,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 286,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 287,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 290,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 295,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 297,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 309,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 309,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 314,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 315,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 321,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 329,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 331,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 338,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 345,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 74
+      },
+      {
+        "character_guid": 347,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 351,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 356,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 356,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 357,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 25
+      },
+      {
+        "character_guid": 359,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 361,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 16
+      },
+      {
+        "character_guid": 361,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 368,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 371,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 371,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 373,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 376,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 378,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 387,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 388,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 23
+      },
+      {
+        "character_guid": 392,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 395,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 18
+      },
+      {
+        "character_guid": 794,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 794,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 797,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 800,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 805,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 809,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 814,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 815,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 19
+      },
+      {
+        "character_guid": 820,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 40
+      },
+      {
+        "character_guid": 824,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 834,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 835,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 851,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 853,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 854,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 36
+      },
+      {
+        "character_guid": 858,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 863,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 863,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 865,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 18
+      },
+      {
+        "character_guid": 866,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 867,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 869,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 51
+      },
+      {
+        "character_guid": 871,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 871,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 875,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 875,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 878,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 892,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 898,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 899,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 901,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 37
+      },
+      {
+        "character_guid": 907,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 909,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 913,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 915,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 915,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 916,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 918,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 19
+      },
+      {
+        "character_guid": 918,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 919,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 920,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 922,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 80
+      },
+      {
+        "character_guid": 924,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 936,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 941,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 942,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 20
+      },
+      {
+        "character_guid": 943,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 950,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 961,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 961,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 962,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1091,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1093,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1094,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1095,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1095,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1097,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1098,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 33
+      },
+      {
+        "character_guid": 1099,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1100,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1125,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1128,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 40
+      },
+      {
+        "character_guid": 1152,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1155,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1156,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1156,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 16
+      },
+      {
+        "character_guid": 1165,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 1165,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1174,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1175,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1176,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1187,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1188,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1206,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 1208,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1209,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 1219,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1226,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 1237,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1240,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 1244,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1245,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 21
+      },
+      {
+        "character_guid": 1246,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 41
+      },
+      {
+        "character_guid": 1249,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1262,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1266,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 19
+      },
+      {
+        "character_guid": 1279,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1280,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 1288,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1298,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 1298,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1299,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 1305,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 1308,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1309,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1313,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1317,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1317,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 1318,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 38
+      },
+      {
+        "character_guid": 1322,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1324,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1325,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 12
+      },
+      {
+        "character_guid": 1327,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 1330,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1335,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1337,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1339,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 16
+      },
+      {
+        "character_guid": 1339,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 1340,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1344,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 1349,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1349,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 1354,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1356,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 36
+      },
+      {
+        "character_guid": 1363,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1365,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 1370,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1370,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1374,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 1375,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1377,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 1383,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 1388,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1390,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 16
+      },
+      {
+        "character_guid": 1392,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1404,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1405,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 1408,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1449,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1451,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1454,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 18
+      },
+      {
+        "character_guid": 1458,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1463,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 34
+      },
+      {
+        "character_guid": 1472,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1492,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1518,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1527,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1535,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 1542,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 1545,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 1555,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 1582,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1584,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1586,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 1592,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 1596,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1600,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 1617,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1637,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1651,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1660,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 17
+      },
+      {
+        "character_guid": 1667,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1670,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1699,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 24
+      },
+      {
+        "character_guid": 1708,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1724,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 1727,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1768,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 1768,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1769,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1778,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 1810,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 1822,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 1826,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1848,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1864,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 3
+      },
+      {
+        "character_guid": 1898,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1912,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 1914,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 1929,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1933,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1946,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 1953,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 1981,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2002,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2007,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2008,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2013,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2042,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2068,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 2071,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2087,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 28
+      },
+      {
+        "character_guid": 2092,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      },
+      {
+        "character_guid": 2102,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 12
+      },
+      {
+        "character_guid": 2121,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 12
+      },
+      {
+        "character_guid": 2132,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 2142,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 31
+      },
+      {
+        "character_guid": 2149,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 12
+      },
+      {
+        "character_guid": 2160,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2167,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2179,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 19
+      },
+      {
+        "character_guid": 2192,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2205,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 2236,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 2240,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 2273,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 11
+      },
+      {
+        "character_guid": 2279,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 2282,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 2299,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 2306,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2317,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2328,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2340,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2364,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 21
+      },
+      {
+        "character_guid": 2373,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2386,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 14
+      },
+      {
+        "character_guid": 2400,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 38
+      },
+      {
+        "character_guid": 2431,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2431,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2451,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2464,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2497,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2499,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2521,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 16
+      },
+      {
+        "character_guid": 2525,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 2535,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2578,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2584,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 22
+      },
+      {
+        "character_guid": 2589,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 2619,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 9
+      },
+      {
+        "character_guid": 2638,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2641,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 28
+      },
+      {
+        "character_guid": 2644,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 4
+      },
+      {
+        "character_guid": 2660,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 13
+      },
+      {
+        "character_guid": 2677,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 1
+      },
+      {
+        "character_guid": 2704,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2716,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 2737,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 2775,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 5
+      },
+      {
+        "character_guid": 2855,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 8
+      },
+      {
+        "character_guid": 2887,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 25
+      },
+      {
+        "character_guid": 2914,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 7
+      },
+      {
+        "character_guid": 2948,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 15
+      },
+      {
+        "character_guid": 3006,
+        "creature_id": 18124,
+        "creature_name": "Withered Giant",
+        "kill_count": 12
+      },
+      {
+        "character_guid": 3018,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 30
+      },
+      {
+        "character_guid": 3051,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 3069,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 6
+      },
+      {
+        "character_guid": 3096,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 2
+      },
+      {
+        "character_guid": 3097,
+        "creature_id": 1561,
+        "creature_name": "Bloodsail Raider",
+        "kill_count": 10
+      }
+    ],
     "learned_rare_spells": [],
     "obtained_rare_items": [],
     "chat_stats": {
       "talkative": [
         {
           "name": "Constantine",
-          "count": 1334
+          "count": 1337
         },
         {
           "name": "Sorinis",
@@ -119764,11 +122051,11 @@
       "channels": [
         {
           "type": "PARTY",
-          "count": 5119
+          "count": 5122
         },
         {
           "type": "SAY",
-          "count": 655
+          "count": 661
         },
         {
           "type": "WHISPER",
@@ -119780,6 +122067,51 @@
         }
       ],
       "funny_quotes": [
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1013:26|h[[26] The Book of Ur (1013)]|h|r"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1098:25|h[[25] Deathstalkers in Shadowfang (1098)]|h|r"
+        },
+        {
+          "name": "Constantine",
+          "type": "PARTY",
+          "message": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1014:27|h[[27] Arugal Must Die (1014)]|h|r"
+        },
+        {
+          "name": "Fyfliso",
+          "type": "SAY",
+          "message": "yo wtf im fylis d gn0m3 w4rri0rz f0n 31 lvls pwning kayneth stillwind bmc n00b ass n00bz k34nz m0lf3d c4ll sm h4x0rz fr0m ocr5z"
+        },
+        {
+          "name": "Ockalus",
+          "type": "SAY",
+          "message": "Power Word: Fortitude heals allies. Be cautious of aggro,"
+        },
+        {
+          "name": "Aelleri",
+          "type": "SAY",
+          "message": "nasty Night Elves. Let's go grind some Naxxramas, I need more experience in my... *hiccup* What were we"
+        },
+        {
+          "name": "Aelleri",
+          "type": "SAY",
+          "message": "Aelleri the Drunk: \"Hey there, pretty little goblin! *hic* I'm so confused... Horde's just a buncha jerks, yeah? Alliance's where it's at, with our cool leader, Varian Wrynn! *slur* But seriously, pass me another Dwarven Stout before you engage those"
+        },
+        {
+          "name": "Kynkuk",
+          "type": "SAY",
+          "message": "achievement"
+        },
+        {
+          "name": "Keinlas",
+          "type": "SAY",
+          "message": "Keinlas here, seen ya completed that new frontier quest! Bet ya didn't expect a 10-man pull at lvl 80+ eh? Congrats on the sweet gear and that epic achievement! Now spill the beans on who got wiped in the process. 😎"
+        },
         {
           "name": "Ockalus",
           "type": "SAY",
@@ -119809,51 +122141,6 @@
           "name": "Constantine",
           "type": "PARTY",
           "message": "{rt1} Questie: 1/1 Speak with someone in Ratchet about the Glowing Shard for |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r!"
-        },
-        {
-          "name": "Taruhos",
-          "type": "WHISPER",
-          "message": "Concentrate on the game, Uhtooch!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: Quest Completed: |cff808080|Hquest:959:18|h[[18] Trouble at the Docks (959)]|h|r"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: Quest Completed: |cff808080|Hquest:1491:18|h[[18] Smart Drinks (1491)]|h|r"
-        },
-        {
-          "name": "Adalio",
-          "type": "WHISPER",
-          "message": "Bhalrin, what is a just?"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 1/1 Gem of Serpentis for |cff808080|Hquest:914:22|h[[22] Leaders of the Fang (914)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 7/7 Deviate Dreadfang for |cff808080|Hquest:1487:21|h[[21] Deviate Eradication (1487)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 1/1 Gem of Pythas for |cff808080|Hquest:914:22|h[[22] Leaders of the Fang (914)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 7/7 Deviate Shambler for |cff808080|Hquest:1487:21|h[[21] Deviate Eradication (1487)]|h|r!"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 1/1 Gem of Cobrahn for |cff808080|Hquest:914:22|h[[22] Leaders of the Fang (914)]|h|r!"
         }
       ],
       "top_words": [
@@ -119863,23 +122150,23 @@
         },
         {
           "word": "questie",
-          "count": 2015
+          "count": 2018
         },
         {
           "word": "hquest",
-          "count": 1987
+          "count": 1990
         },
         {
           "word": "just",
-          "count": 193
+          "count": 194
         },
         {
           "word": "let",
-          "count": 174
+          "count": 175
         },
         {
           "word": "some",
-          "count": 165
+          "count": 166
         },
         {
           "word": "level",
@@ -119895,15 +122182,15 @@
         },
         {
           "word": "those",
-          "count": 132
+          "count": 133
         },
         {
           "word": "here",
-          "count": 113
+          "count": 114
         },
         {
           "word": "now",
-          "count": 109
+          "count": 110
         },
         {
           "word": "ding",
@@ -119911,11 +122198,11 @@
         },
         {
           "word": "got",
-          "count": 106
+          "count": 107
         },
         {
           "word": "hey",
-          "count": 101
+          "count": 102
         }
       ]
     }

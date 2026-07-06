@@ -1191,6 +1191,9 @@
             <button class="menu-btn" id="tabbtn-auctionhouse" onclick="switchTab('auctionhouse')">
                 <span class="icon">⚖️</span> Auction House
             </button>
+            <button class="menu-btn" id="tabbtn-rarity-tracker" onclick="switchTab('rarity-tracker')">
+                <span class="icon">🔮</span> Farm Luck Tracker
+            </button>
             <button class="menu-btn" id="tabbtn-server-stats" onclick="switchTab('server-stats')">
                 <span class="icon">📊</span> Server Statistics
             </button>
@@ -2504,7 +2507,6 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <button class="sub-tab-btn active" id="stats-subbtn-wealth" onclick="switchStatsSubTab('wealth')">💰 Wealth & Playtime</button>
                 <button class="sub-tab-btn" id="stats-subbtn-quests" onclick="switchStatsSubTab('quests')">🧭 Quests & Milestones</button>
                 <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
-                <button class="sub-tab-btn" id="stats-subbtn-rarity" onclick="switchStatsSubTab('rarity')">🔮 Mount Rarity</button>
                 <button class="sub-tab-btn" id="stats-subbtn-chat" onclick="switchStatsSubTab('chat')">💬 Chat Trends</button>
             </div>
 
@@ -2622,33 +2624,6 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 </div>
             </div>
 
-            <!-- MOUNT RARITY SUB-TAB -->
-            <div id="stats-subtab-rarity" class="sub-tab-content" style="display: none;">
-                <div class="card">
-                    <div class="card-title" style="color: #a78bfa;">🔮 Mount Rarity & Farm Luck Tracker</div>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">This panel tracks your boss run attempts and calculates your cumulative mathematical probability of having obtained each rare mount by now based on your boss kill counts across your characters (using the standard Rarity formula: <code>1 - (1 - drop_rate)^attempts</code>).</p>
-                    
-                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; position: relative;">
-                        <div style="flex: 1; min-width: 280px; position: relative; max-width: 450px;">
-                            <label style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Search Character Profile (leave blank for server totals):</label>
-                            <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center;">
-                                <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary);">🔍</span>
-                                <input type="text" id="rarityCharSearchInput" placeholder="Type character name..." autocomplete="off" oninput="filterRarityCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;" />
-                                <button id="rarityClearSearchBtn" onclick="clearRarityCharSearch()" style="position: absolute; right: 10px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; padding: 4px;">×</button>
-                            </div>
-                            <div id="rarityCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; left: 0; right: 0; z-index: 100; max-height: 250px; overflow-y: auto;">
-                                <!-- Dropdown items populated dynamically -->
-                            </div>
-                            <input type="hidden" id="rarity-char-guid-val" value="all" />
-                        </div>
-                    </div>
-
-                    <div id="rarity-mounts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem;">
-                        <!-- Populated dynamically -->
-                    </div>
-                </div>
-            </div>
-
             <!-- CHAT TRENDS SUB-TAB -->
             <div id="stats-subtab-chat" class="sub-tab-content" style="display: none;">
                 <div class="char-bio-columns">
@@ -2699,6 +2674,33 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <!-- Populated dynamically -->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: FARM LUCK TRACKER -->
+        <div id="tab-rarity-tracker" class="wiki-tab-content" style="display: none;">
+            <div class="card">
+                <div class="card-title" style="color: #a78bfa;">🔮 Farm Luck & Rarity Tracker</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">This panel tracks your boss run attempts and calculates your cumulative mathematical probability of having obtained rare mounts, companion pets, and legendary/transmog items by now based on your boss kill counts across your characters (using the standard Rarity formula: <code>1 - (1 - drop_rate)^attempts</code>).</p>
+                
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; position: relative;">
+                    <div style="flex: 1; min-width: 280px; position: relative; max-width: 450px;">
+                        <label style="display: block; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem; font-weight: 600;">Search Character Profile (leave blank for server totals):</label>
+                        <div class="search-input-wrapper" style="position: relative; display: flex; align-items: center;">
+                            <span class="search-icon" style="position: absolute; left: 12px; color: var(--text-secondary);">🔍</span>
+                            <input type="text" id="rarityCharSearchInput" placeholder="Type character name..." autocomplete="off" oninput="filterRarityCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;" />
+                            <button id="rarityClearSearchBtn" onclick="clearRarityCharSearch()" style="position: absolute; right: 10px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; padding: 4px;">×</button>
+                        </div>
+                        <div id="rarityCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; left: 0; right: 0; z-index: 100; max-height: 250px; overflow-y: auto;">
+                            <!-- Dropdown items populated dynamically -->
+                        </div>
+                        <input type="hidden" id="rarity-char-guid-val" value="all" />
+                    </div>
+                </div>
+
+                <div id="rarity-mounts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem;">
+                    <!-- Populated dynamically -->
                 </div>
             </div>
         </div>
@@ -4961,11 +4963,20 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             { type: 'mount', id: 'azure_drake', name: "Reins of the Azure Drake", boss: "Malygos (EoE)", spellId: 43955, creatureIds: [28859], dropRate: 0.015 },
             { type: 'mount', id: 'blue_drake', name: "Reins of the Blue Drake", boss: "Malygos (EoE)", spellId: 43952, creatureIds: [28859], dropRate: 0.015 },
             { type: 'mount', id: 'tlpd', name: "Time-Lost Proto-Drake", boss: "Time-Lost Proto-Drake", spellId: 60002, creatureIds: [32491], dropRate: 1.0 },
+            { type: 'mount', id: 'bronzedrake', name: "Reins of the Bronze Drake", boss: "Infinite Corruptor (Timed)", spellId: 59569, creatureIds: [32273], dropRate: 1.0 },
+            { type: 'mount', id: 'horseman_reins', name: "Headless Horseman's Reins", boss: "Headless Horseman", spellId: 48025, creatureIds: [23682], dropRate: 0.01 },
+            { type: 'mount', id: 'blackdrake', name: "Reins of the Black Drake", boss: "Sartharion (3D 10-man)", spellId: 59650, creatureIds: [28860], dropRate: 1.0 },
+            { type: 'mount', id: 'twilightdrake', name: "Reins of the Twilight Drake", boss: "Sartharion (3D 25-man)", spellId: 59651, creatureIds: [28860], dropRate: 1.0 },
+            { type: 'mount', id: 'brewfestram', name: "Brewfest Swift Ram", boss: "Coren Direbrew", spellId: 43900, creatureIds: [23872], dropRate: 0.03 },
+            { type: 'mount', id: 'brewfestkodo', name: "Great Brewfest Kodo", boss: "Coren Direbrew", spellId: 48027, creatureIds: [23872], dropRate: 0.03 },
 
             // Companion Pets
             { type: 'pet', id: 'phoenix_hatchling', name: "Phoenix Hatchling", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46599, creatureIds: [24664], dropRate: 0.08 },
             { type: 'pet', id: 'mojo_frog', name: "Mojo", boss: "Hex Lord Malacrass", spellId: 43918, creatureIds: [24239], dropRate: 0.015 },
             { type: 'pet', id: 'squashling', name: "Sinister Squashling", boss: "Headless Horseman", spellId: 42614, creatureIds: [23682], dropRate: 0.015 },
+            { type: 'pet', id: 'firefly', name: "Captured Firefly", boss: "Bogflare Needler", spellId: 34710, creatureIds: [18124], dropRate: 0.001 },
+            { type: 'pet', id: 'macaw', name: "Hyacinth Macaw", boss: "Stranglethorn Pirates", spellId: 10682, creatureIds: [1561], dropRate: 0.0001 },
+            { type: 'pet', id: 'spritedarter', name: "Sprite Darter Hatchling", boss: "Sprite Darter", spellId: 15067, creatureIds: [5420], dropRate: 0.005 },
 
             // Transmogs & Legendaries (Items)
             { type: 'transmog', id: 'tf_left', name: "Bindings of the Windseeker (Left)", boss: "Baron Geddon", itemId: 18563, creatureIds: [12057], dropRate: 0.03 },
@@ -4977,7 +4988,13 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             { type: 'transmog', id: 'warglaive_off', name: "Warglaive of Azzinoth (Off)", boss: "Illidan Stormrage", itemId: 32838, creatureIds: [22917], dropRate: 0.04 },
             { type: 'transmog', id: 'thoridal', name: "Thori'dal, the Stars' Fury", boss: "Kil'jaeden", itemId: 34334, creatureIds: [25315], dropRate: 0.06 },
             { type: 'transmog', id: 'bulwark', name: "Bulwark of Azzinoth", boss: "Illidan Stormrage", itemId: 32863, creatureIds: [22917], dropRate: 0.02 },
-            { type: 'transmog', id: 'zinrokh', name: "Zin'rokh, Destroyer of Worlds", boss: "Hakkar the Soulflayer", itemId: 18608, creatureIds: [14834], dropRate: 0.015 }
+            { type: 'transmog', id: 'zinrokh', name: "Zin'rokh, Destroyer of Worlds", boss: "Hakkar the Soulflayer", itemId: 18608, creatureIds: [14834], dropRate: 0.015 },
+            { type: 'transmog', id: 'valanyr', name: "Val'anyr, Hammer of Kings", boss: "Yogg-Saron (Ulduar)", itemId: 46017, creatureIds: [33288], dropRate: 0.05 },
+            { type: 'transmog', id: 'shadowmourne', name: "Shadowmourne", boss: "The Lich King (ICC)", itemId: 49623, creatureIds: [36597], dropRate: 0.05 },
+            { type: 'transmog', id: 'aegis_sunbird', name: "Aegis of the Sunbird", boss: "Sunseeker Astromage", itemId: 28214, creatureIds: [18036], dropRate: 0.01 },
+            { type: 'transmog', id: 'gressil', name: "Gressil, Dawn of Ruin", boss: "Kel'Thuzad (Naxx)", itemId: 23054, creatureIds: [15990], dropRate: 0.05 },
+            { type: 'transmog', id: 'hungering_cold', name: "Hungering Cold", boss: "Kel'Thuzad (Naxx)", itemId: 23577, creatureIds: [15990], dropRate: 0.05 },
+            { type: 'transmog', id: 'ashbringer', name: "Corrupted Ashbringer", boss: "Four Horsemen Chest", itemId: 22691, creatureIds: [16064], dropRate: 0.02 }
         ];
 
         function renderRarityTracker() {
