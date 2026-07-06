@@ -4587,122 +4587,145 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             const stats = wikiData.stats;
 
             function formatNameCol(name, raceId, classId, level) {
-                const className = CLASS_MAP[classId] || 'Unknown';
-                const color = CLASS_COLORS[classId] || '#fff';
-                const raceName = RACE_MAP[raceId] || 'Unknown';
-                return `<strong style="color: ${color};">${name}</strong> <span style="color: var(--text-secondary); font-size: 0.78rem;">(${raceName} ${className})</span>`;
+                const classInfo = CLASS_NAMES[classId] || { name: 'Unknown', color: '#fff' };
+                const raceName = RACE_NAMES[raceId] || 'Unknown';
+                return `<strong style="color: ${classInfo.color};">${name}</strong> <span style="color: var(--text-secondary); font-size: 0.78rem;">(${raceName} ${classInfo.name})</span>`;
             }
 
             // Richest
             const richestBody = document.getElementById('stats-richest-body');
             if (richestBody && stats.richest) {
-                richestBody.innerHTML = stats.richest.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td>${formatMoney(char.money)}</td>
-                    </tr>
-                `).join('');
+                richestBody.innerHTML = stats.richest.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td>${formatMoney(char.money)}</td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Playtime
             const playtimeBody = document.getElementById('stats-playtime-body');
             if (playtimeBody && stats.playtime) {
-                playtimeBody.innerHTML = stats.playtime.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td>${formatPlaytime(char.totaltime)}</td>
-                    </tr>
-                `).join('');
+                playtimeBody.innerHTML = stats.playtime.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td>${formatPlaytime(char.totaltime)}</td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Quests
             const questsBody = document.getElementById('stats-quests-body');
             if (questsBody && stats.quests) {
-                questsBody.innerHTML = stats.quests.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td><strong>${char.count}</strong> quests</td>
-                    </tr>
-                `).join('');
+                questsBody.innerHTML = stats.quests.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong>${char.count}</strong> quests</td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Elite Kills
             const elitesBody = document.getElementById('stats-elites-body');
             if (elitesBody && stats.elite_kills) {
-                elitesBody.innerHTML = stats.elite_kills.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td><span style="color: var(--status-warning); font-weight: 600;">${char.count} kills</span></td>
-                    </tr>
-                `).join('');
+                elitesBody.innerHTML = stats.elite_kills.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><span style="color: var(--status-warning); font-weight: 600;">${char.count} kills</span></td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Deaths
             const deathsBody = document.getElementById('stats-deaths-body');
             if (deathsBody && stats.deaths) {
-                deathsBody.innerHTML = stats.deaths.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td>${RACE_MAP[char.race] || 'Unknown'}</td>
-                        <td><span style="color: var(--status-danger); font-weight: 600;">${char.count} deaths</span></td>
-                    </tr>
-                `).join('');
+                deathsBody.innerHTML = stats.deaths.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td><strong style="color: ${classInfo.color};">${char.name}</strong></td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td>${RACE_NAMES[char.race] || 'Unknown'}</td>
+                            <td><span style="color: var(--status-danger); font-weight: 600;">${char.count} deaths</span></td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Creature Kills
             const creaturesBody = document.getElementById('stats-creatures-body');
             if (creaturesBody && stats.creature_kills) {
-                creaturesBody.innerHTML = stats.creature_kills.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
-                        <td><strong style="color: #fff;">${char.creature_name}</strong></td>
-                        <td>${char.level}</td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td><strong>${char.kill_count.toLocaleString()}</strong> kills</td>
-                    </tr>
-                `).join('');
+                creaturesBody.innerHTML = stats.creature_kills.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td><strong style="color: ${classInfo.color};">${char.name}</strong></td>
+                            <td><strong style="color: #fff;">${char.creature_name}</strong></td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong>${char.kill_count.toLocaleString()}</strong> kills</td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Mounts
             const mountsBody = document.getElementById('stats-mounts-body');
             if (mountsBody && stats.mounts) {
-                mountsBody.innerHTML = stats.mounts.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td><span style="color: #a78bfa; font-weight: 600;">${char.count} mounts</span></td>
-                    </tr>
-                `).join('');
+                mountsBody.innerHTML = stats.mounts.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td><strong style="color: ${classInfo.color};">${char.name}</strong></td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><span style="color: #a78bfa; font-weight: 600;">${char.count} mounts</span></td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Pets
             const petsBody = document.getElementById('stats-pets-body');
             if (petsBody && stats.pets) {
-                petsBody.innerHTML = stats.pets.map((char, index) => `
-                    <tr>
-                        <td><strong>#${index + 1}</strong></td>
-                        <td><strong style="color: ${CLASS_COLORS[char.class] || '#fff'};">${char.name}</strong></td>
-                        <td style="color: ${CLASS_COLORS[char.class] || '#fff'};">${CLASS_MAP[char.class] || 'Unknown'}</td>
-                        <td><span style="color: #f472b6; font-weight: 600;">${char.count} companion pets</span></td>
-                    </tr>
-                `).join('');
+                petsBody.innerHTML = stats.pets.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td><strong style="color: ${classInfo.color};">${char.name}</strong></td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><span style="color: #f472b6; font-weight: 600;">${char.count} companion pets</span></td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
             // Initialize Rarity Character Select Dropdown
@@ -4715,7 +4738,8 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     sortedChars.forEach(char => {
                         const match = serverCharacters.find(c => c.name.toLowerCase() === char.name.toLowerCase());
                         if (match) {
-                            raritySelect.innerHTML += `<option value="${match.guid}">${char.name} (Lvl ${char.level} ${CLASS_MAP[char.class] || 'Class'})</option>`;
+                            const classInfo = CLASS_NAMES[char.class] || { name: 'Class', color: '#fff' };
+                            raritySelect.innerHTML += `<option value="${match.guid}">${char.name} (Lvl ${char.level} ${classInfo.name})</option>`;
                         }
                     });
                 }
@@ -4823,4 +4847,4 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
     </script>
 </body>
 </html>
-<!-- Trigger Redeploy 5 -->
+<!-- Trigger Redeploy 6 -->
