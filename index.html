@@ -2508,6 +2508,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <button class="sub-tab-btn" id="stats-subbtn-quests" onclick="switchStatsSubTab('quests')">🧭 Quests & Milestones</button>
                 <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
                 <button class="sub-tab-btn" id="stats-subbtn-chat" onclick="switchStatsSubTab('chat')">💬 Chat Trends</button>
+                <button class="sub-tab-btn" id="stats-subbtn-professions" onclick="switchStatsSubTab('professions')">🛠️ Profession Masters</button>
             </div>
 
             <!-- WEALTH & PLAYTIME SUB-TAB -->
@@ -2674,6 +2675,18 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <!-- Populated dynamically -->
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- PROFESSIONS SUB-TAB -->
+            <div id="stats-subtab-professions" class="sub-tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div class="card-title" style="color: #60a5fa;">🛠️ Profession Masters Leaderboards</div>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">The master artisans of the server. Characters with the highest skill level in each crafting, gathering, and secondary profession.</p>
+                </div>
+                
+                <div id="professions-grid-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+                    <!-- Populated dynamically by JS -->
                 </div>
             </div>
         </div>
@@ -4941,7 +4954,57 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             </div>
                         `;
                     }).join('');
-                }
+            }
+            
+            // Populate Profession Leaderboards
+            const profContainer = document.getElementById('professions-grid-container');
+            if (profContainer && wikiData.stats && wikiData.stats.professions) {
+                const profs = wikiData.stats.professions;
+                const emojiMap = {
+                    'Alchemy': '🧪',
+                    'Blacksmithing': '🔨',
+                    'Enchanting': '✨',
+                    'Engineering': '⚙️',
+                    'Herbalism': '🌿',
+                    'Inscription': '📜',
+                    'Jewelcrafting': '💎',
+                    'Leatherworking': '🧥',
+                    'Mining': '⛏️',
+                    'Skinning': '🔪',
+                    'Tailoring': '🧵',
+                    'Cooking': '🍳',
+                    'First Aid': '🏥',
+                    'Fishing': '🎣'
+                };
+                
+                profContainer.innerHTML = Object.entries(profs).map(([name, players]) => {
+                    const emoji = emojiMap[name] || '🛠️';
+                    const rowsHtml = players.map((p, idx) => {
+                        const match = serverCharacters.find(c => c.name.toLowerCase() === p.name.toLowerCase());
+                        const color = match ? (CLASS_NAMES[match.class]?.color || '#fff') : '#fff';
+                        
+                        return `
+                            <tr>
+                                <td style="width: 15%; font-weight: bold; color: var(--text-secondary);">#${idx + 1}</td>
+                                <td style="width: 55%;"><strong style="color: ${color};">${p.name}</strong></td>
+                                <td style="width: 30%; text-align: right; font-weight: bold; color: var(--gold-light);">${p.value}/450</td>
+                            </tr>
+                        `;
+                    }).join('');
+                    
+                    return `
+                        <div class="card" style="margin-bottom: 0; background: rgba(12, 17, 27, 0.45); border: 1px solid var(--border-glass); border-radius: 8px;">
+                            <div class="card-title" style="font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 0.75rem; color: #fff; display: flex; align-items: center; gap: 6px;">
+                                <span>${emoji}</span> ${name}
+                            </div>
+                            <table class="wiki-table" style="font-size: 0.82rem; line-height: 1.3;">
+                                <tbody>
+                                    ${rowsHtml || '<tr><td colspan="3" style="text-align:center; color:var(--text-secondary);">No master yet</td></tr>'}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                }).join('');
             }
             try { renderRarityTracker(); } catch(e) { console.error("Error rendering rarity:", e); }
         }
@@ -4969,6 +5032,13 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             { type: 'mount', id: 'twilightdrake', name: "Reins of the Twilight Drake", boss: "Sartharion (3D 25-man)", spellId: 59651, creatureIds: [28860], dropRate: 1.0 },
             { type: 'mount', id: 'brewfestram', name: "Brewfest Swift Ram", boss: "Coren Direbrew", spellId: 43900, creatureIds: [23872], dropRate: 0.03 },
             { type: 'mount', id: 'brewfestkodo', name: "Great Brewfest Kodo", boss: "Coren Direbrew", spellId: 48027, creatureIds: [23872], dropRate: 0.03 },
+            { type: 'mount', id: 'plagued_proto', name: "Plagued Proto-Drake", boss: "Glory of the Raider (10)", spellId: 60024, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'black_proto', name: "Black Proto-Drake", boss: "Glory of the Raider (25)", spellId: 60021, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'rusted_proto', name: "Rusted Proto-Drake", boss: "Glory of the Ulduar Raider (10)", spellId: 63968, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'ironbound_proto', name: "Ironbound Proto-Drake", boss: "Glory of the Ulduar Raider (25)", spellId: 63967, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'bloodbathed_vanq', name: "Bloodbathed Frostbrood Vanquisher", boss: "Glory of the Icecrown Raider (10)", spellId: 72292, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'icebound_vanq', name: "Icebound Frostbrood Vanquisher", boss: "Glory of the Icecrown Raider (25)", spellId: 72293, creatureIds: [], dropRate: 1.0 },
+            { type: 'mount', id: 'seaturtle', name: "Sea Turtle", boss: "Fishing (Northrend Pools)", spellId: 64730, creatureIds: [], dropRate: 0.001 },
 
             // Companion Pets
             { type: 'pet', id: 'phoenix_hatchling', name: "Phoenix Hatchling", boss: "Kael'thas Sunstrider (Mgt)", spellId: 46599, creatureIds: [24664], dropRate: 0.08 },
@@ -4977,6 +5047,9 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             { type: 'pet', id: 'firefly', name: "Captured Firefly", boss: "Bogflare Needler", spellId: 34710, creatureIds: [18124], dropRate: 0.001 },
             { type: 'pet', id: 'macaw', name: "Hyacinth Macaw", boss: "Stranglethorn Pirates", spellId: 10682, creatureIds: [1561], dropRate: 0.0001 },
             { type: 'pet', id: 'spritedarter', name: "Sprite Darter Hatchling", boss: "Sprite Darter", spellId: 15067, creatureIds: [5420], dropRate: 0.005 },
+            { type: 'pet', id: 'azure_whelp', name: "Azure Whelpling", boss: "Coldarra Spellsworn", spellId: 61357, creatureIds: [], dropRate: 0.001 },
+            { type: 'pet', id: 'gundrak_raptor', name: "Gundrak Raptor", boss: "Gundrak Raptors (Zul'Drak)", spellId: 61351, creatureIds: [], dropRate: 0.002 },
+            { type: 'pet', id: 'deviate_hatchling', name: "Deviate Hatchling", boss: "Deviate Guardians (WC)", spellId: 61354, creatureIds: [], dropRate: 0.002 },
 
             // Transmogs & Legendaries (Items)
             { type: 'transmog', id: 'tf_left', name: "Bindings of the Windseeker (Left)", boss: "Baron Geddon", itemId: 18563, creatureIds: [12057], dropRate: 0.03 },
@@ -4994,7 +5067,12 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             { type: 'transmog', id: 'aegis_sunbird', name: "Aegis of the Sunbird", boss: "Sunseeker Astromage", itemId: 28214, creatureIds: [18036], dropRate: 0.01 },
             { type: 'transmog', id: 'gressil', name: "Gressil, Dawn of Ruin", boss: "Kel'Thuzad (Naxx)", itemId: 23054, creatureIds: [15990], dropRate: 0.05 },
             { type: 'transmog', id: 'hungering_cold', name: "Hungering Cold", boss: "Kel'Thuzad (Naxx)", itemId: 23577, creatureIds: [15990], dropRate: 0.05 },
-            { type: 'transmog', id: 'ashbringer', name: "Corrupted Ashbringer", boss: "Four Horsemen Chest", itemId: 22691, creatureIds: [16064], dropRate: 0.02 }
+            { type: 'transmog', id: 'ashbringer', name: "Corrupted Ashbringer", boss: "Four Horsemen Chest", itemId: 22691, creatureIds: [16064], dropRate: 0.02 },
+            { type: 'transmog', id: 'ashkandi', name: "Ashkandi, Greatsword of Brotherhood", boss: "Nefarian (BWL)", itemId: 19364, creatureIds: [11583], dropRate: 0.05 },
+            { type: 'transmog', id: 'lokamir', name: "Lok'amir il Romathis", boss: "Nefarian (BWL)", itemId: 19360, creatureIds: [11583], dropRate: 0.05 },
+            { type: 'transmog', id: 'atiesh', name: "Atiesh, Greatstaff of the Guardian", boss: "Kel'Thuzad (Naxx classic)", itemId: 22589, creatureIds: [15990], dropRate: 0.02 },
+            { type: 'transmog', id: 'apocalypse', name: "Apocalypse", boss: "Kil'jaeden (Sunwell)", itemId: 34247, creatureIds: [25315], dropRate: 0.06 },
+            { type: 'transmog', id: 'golden_bow', name: "Golden Bow of Quel'Thalas", boss: "Eredar Twins (Sunwell)", itemId: 34181, creatureIds: [25165, 25166], dropRate: 0.06 }
         ];
 
         function renderRarityTracker() {

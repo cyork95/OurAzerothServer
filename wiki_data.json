@@ -1393,7 +1393,7 @@
       "name": "Adalio",
       "race": 1,
       "class": 1,
-      "level": 23,
+      "level": 24,
       "gender": 0
     },
     {
@@ -5025,7 +5025,7 @@
       "name": "Camerius",
       "race": 1,
       "class": 2,
-      "level": 11,
+      "level": 12,
       "gender": 0
     },
     {
@@ -5905,7 +5905,7 @@
       "name": "Cogg",
       "race": 2,
       "class": 1,
-      "level": 4,
+      "level": 5,
       "gender": 0
     },
     {
@@ -6169,7 +6169,7 @@
       "name": "Cyliene",
       "race": 4,
       "class": 8,
-      "level": 6,
+      "level": 7,
       "gender": 1
     },
     {
@@ -12537,7 +12537,7 @@
       "name": "Illiaciea",
       "race": 4,
       "class": 11,
-      "level": 47,
+      "level": 48,
       "gender": 1
     },
     {
@@ -25761,7 +25761,7 @@
       "name": "Ulam",
       "race": 2,
       "class": 1,
-      "level": 26,
+      "level": 27,
       "gender": 0
     },
     {
@@ -28350,6 +28350,21 @@
     }
   ],
   "auctions": [
+    {
+      "auction_id": 108407,
+      "name": "Armor Scraps",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 1,
+      "class": 12,
+      "subclass": 0,
+      "quantity": 913,
+      "buyout": 2739,
+      "start_bid": 1826,
+      "last_bid": 0,
+      "time_left": 1783363246,
+      "owner_name": "Gnenlirgunk"
+    },
     {
       "auction_id": 108406,
       "name": "Glowworm Cavern Bindings",
@@ -69961,21 +69976,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 104028,
-      "name": "Fish Oil",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 1,
-      "class": 15,
-      "subclass": 1,
-      "quantity": 274,
-      "buyout": 2740,
-      "start_bid": 2192,
-      "last_bid": 0,
-      "time_left": 1783319988,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 104027,
       "name": "Heart of Darkness",
       "quality": 3,
@@ -74044,6 +74044,41 @@
     ],
     "1983": [
       {
+        "timestamp": "2026-07-06T02:43:12",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 16.00g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 16.00g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.99g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.98g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 15.98g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:56",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 16.02g (New Balance: -0.02g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:31",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 16.03g (New Balance: -0.01g)"
+      },
+      {
         "timestamp": "2026-07-06T02:28:55",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: In Nightmares (Quest ID: 3370)"
@@ -75007,41 +75042,6 @@
         "timestamp": "2026-07-06T00:08:42",
         "type": "MONEY_CHANGE",
         "details": "Spent 11.63g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:08:12",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.62g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:07:47",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.62g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:05:12",
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: Look To The Stars (Quest ID: 177)"
-      },
-      {
-        "timestamp": "2026-07-06T00:04:09",
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: Worgen in the Woods (Quest ID: 223)"
-      },
-      {
-        "timestamp": "2026-07-06T00:03:31",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.18g (New Balance: 0.22g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:03:31",
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: Worgen in the Woods (Quest ID: 222)"
-      },
-      {
-        "timestamp": "2026-07-06T00:03:23",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 11.06g (New Balance: 0.17g)"
       }
     ],
     "1115": [
@@ -80533,6 +80533,41 @@
     ],
     "3255": [
       {
+        "timestamp": "2026-07-06T02:43:12",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 568.41g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:43:11",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Bleak Worg"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 568.41g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 568.40g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:58",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Bleak Worg"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 568.40g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 568.40g (New Balance: 0.00g)"
+      },
+      {
         "timestamp": "2026-07-06T02:28:45",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: In Nightmares (Quest ID: 3370)"
@@ -81496,44 +81531,39 @@
         "timestamp": "2026-07-05T23:55:57",
         "type": "MONEY_CHANGE",
         "details": "Spent 567.46g (New Balance: 0.01g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.46g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:01",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.46g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:54",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:22",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:10",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:53",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 567.45g (New Balance: 0.00g)"
       }
     ],
     "3256": [
+      {
+        "timestamp": "2026-07-06T02:43:12",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1136.05g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1136.05g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1136.04g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:16",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Bleak Worg"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1136.04g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1136.04g (New Balance: 0.00g)"
+      },
       {
         "timestamp": "2026-07-06T02:28:34",
         "type": "DEATH",
@@ -101109,6 +101139,86 @@
     ],
     "1982": [
       {
+        "timestamp": "2026-07-06T02:43:12",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.13g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:43:11",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Shadowfang Whitescalp"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.13g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.12g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:11",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Shadowfang Whitescalp"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.11g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:48",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Bleak Worg"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:20",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Bleak Worg"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.11g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:30",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.16g (New Balance: 0.37g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:30",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.77g (New Balance: 0.12g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:30",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.95g (New Balance: 0.07g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:30",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 19.07g (New Balance: 0.02g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:19",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.57g (New Balance: -0.02g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:37:00",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.62g (New Balance: -0.04g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:36:38",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 18.60g (New Balance: -0.01g)"
+      },
+      {
         "timestamp": "2026-07-06T02:28:55",
         "type": "QUEST_COMPLETE",
         "details": "Completed quest: In Nightmares (Quest ID: 3370)"
@@ -102027,89 +102137,49 @@
         "timestamp": "2026-07-06T01:02:16",
         "type": "MONEY_CHANGE",
         "details": "Spent 15.04g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T01:01:24",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.04g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T01:01:06",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Druid of the Fang"
-      },
-      {
-        "timestamp": "2026-07-06T01:01:00",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.04g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T01:00:59",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Druid of the Fang"
-      },
-      {
-        "timestamp": "2026-07-06T01:00:06",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.03g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:59:44",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.03g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:59:22",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.03g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:58:43",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Adder"
-      },
-      {
-        "timestamp": "2026-07-06T00:56:11",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Kresh"
-      },
-      {
-        "timestamp": "2026-07-06T00:55:29",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 15.02g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-06T00:55:07",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Ravager"
-      },
-      {
-        "timestamp": "2026-07-06T00:54:15",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Evolving Ectoplasm"
-      },
-      {
-        "timestamp": "2026-07-06T00:54:05",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Ravager"
-      },
-      {
-        "timestamp": "2026-07-06T00:51:42",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Devouring Ectoplasm"
-      },
-      {
-        "timestamp": "2026-07-06T00:51:23",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
-      },
-      {
-        "timestamp": "2026-07-06T00:50:50",
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Deviate Slayer"
       }
     ],
     "1985": [
+      {
+        "timestamp": "2026-07-06T02:43:12",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1222.80g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Shadowfang Whitescalp"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:28",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1222.80g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:42:24",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1222.79g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:50",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1222.79g (New Balance: 0.01g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:43",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Shadowfang Whitescalp"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:16",
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1222.79g (New Balance: 0.00g)"
+      },
+      {
+        "timestamp": "2026-07-06T02:41:11",
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Shadowfang Whitescalp"
+      },
       {
         "timestamp": "2026-07-06T02:28:45",
         "type": "QUEST_COMPLETE",
@@ -103069,46 +103139,6 @@
         "timestamp": "2026-07-05T23:56:44",
         "type": "MONEY_CHANGE",
         "details": "Spent 1221.86g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:57",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.01g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:41",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.86g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:55:01",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:54",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:22",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:54:10",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
-      },
-      {
-        "timestamp": "2026-07-05T23:53:53",
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1221.85g (New Balance: 0.00g)"
       }
     ],
     "1838": [
@@ -106360,6 +106390,10 @@
       },
       {
         "name": "Thragomm",
+        "count": 1
+      },
+      {
+        "name": "Bleak Worg",
         "count": 1
       },
       {
@@ -110214,6 +110248,11 @@
     "1834": [],
     "1983": [
       {
+        "timestamp": "2026-07-06T02:40:18",
+        "type": "PARTY",
+        "details": "summon"
+      },
+      {
         "timestamp": "2026-07-06T00:52:42",
         "type": "SAY",
         "details": "Oops, I'll probably need an idiot to be knocked around for me..."
@@ -111207,11 +111246,6 @@
         "timestamp": "2026-07-04T23:04:49",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Completed: |cff808080|Hquest:967:18|h[[18] The Tower of Althalaxx (967)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-04T23:04:49",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:970:21|h[[21] The Tower of Althalaxx (970)]|h|r"
       }
     ],
     "1115": [
@@ -117528,6 +117562,11 @@
     "3342": [],
     "1982": [
       {
+        "timestamp": "2026-07-06T02:36:29",
+        "type": "PARTY",
+        "details": "summon"
+      },
+      {
         "timestamp": "2026-07-06T02:35:09",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:1013:26|h[[26] The Book of Ur (1013)]|h|r"
@@ -118521,11 +118560,6 @@
         "timestamp": "2026-07-05T19:36:19",
         "type": "PARTY",
         "details": "{rt1} Questie: Quest Accepted: |cff40c040|Hquest:306:24|h[[24] In Search of The Excavation Team (306)]|h|r"
-      },
-      {
-        "timestamp": "2026-07-05T19:36:19",
-        "type": "PARTY",
-        "details": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:305:24|h[[24] In Search of The Excavation Team (305)]|h|r"
       }
     ],
     "1985": [
@@ -119178,7 +119212,7 @@
       },
       {
         "name": "Kandina",
-        "money": 29600071,
+        "money": 29600703,
         "level": 60,
         "race": 10,
         "class": 1
@@ -119222,70 +119256,70 @@
     "playtime": [
       {
         "name": "Kumrodus",
-        "totaltime": 682246,
+        "totaltime": 682706,
         "level": 9,
         "race": 3,
         "class": 4
       },
       {
         "name": "Cariia",
-        "totaltime": 681019,
+        "totaltime": 681459,
         "level": 43,
         "race": 4,
         "class": 11
       },
       {
         "name": "Terance",
-        "totaltime": 680066,
+        "totaltime": 680526,
         "level": 18,
         "race": 1,
         "class": 5
       },
       {
         "name": "Usa",
-        "totaltime": 679204,
+        "totaltime": 679675,
         "level": 31,
         "race": 3,
         "class": 3
       },
       {
         "name": "Martorin",
-        "totaltime": 678527,
+        "totaltime": 678987,
         "level": 56,
         "race": 1,
         "class": 1
       },
       {
         "name": "Raimond",
-        "totaltime": 678249,
+        "totaltime": 678709,
         "level": 60,
         "race": 1,
         "class": 9
       },
       {
         "name": "Bholdand",
-        "totaltime": 678211,
+        "totaltime": 678671,
         "level": 53,
         "race": 3,
         "class": 3
       },
       {
         "name": "Tammal",
-        "totaltime": 677826,
+        "totaltime": 678286,
         "level": 36,
         "race": 3,
         "class": 5
       },
       {
         "name": "Guni",
-        "totaltime": 677656,
+        "totaltime": 678116,
         "level": 60,
         "race": 7,
         "class": 1
       },
       {
         "name": "Ryase",
-        "totaltime": 677427,
+        "totaltime": 677887,
         "level": 25,
         "race": 4,
         "class": 11
@@ -119294,14 +119328,14 @@
     "elite_kills": [
       {
         "name": "Schwann",
-        "count": 165,
+        "count": 168,
         "level": 31,
         "race": 1,
         "class": 1
       },
       {
         "name": "Constantine",
-        "count": 164,
+        "count": 168,
         "level": 31,
         "race": 1,
         "class": 11
@@ -119314,18 +119348,18 @@
         "class": 8
       },
       {
+        "name": "Ike",
+        "count": 108,
+        "level": 31,
+        "race": 1,
+        "class": 1
+      },
+      {
         "name": "Avelie",
         "count": 107,
         "level": 62,
         "race": 1,
         "class": 2
-      },
-      {
-        "name": "Ike",
-        "count": 106,
-        "level": 31,
-        "race": 1,
-        "class": 1
       },
       {
         "name": "Araenya",
@@ -119400,18 +119434,18 @@
         "class": 4
       },
       {
-        "name": "Elesta",
-        "count": 145,
-        "level": 43,
-        "race": 1,
-        "class": 9
-      },
-      {
         "name": "Damad",
         "count": 145,
         "level": 10,
         "race": 1,
         "class": 8
+      },
+      {
+        "name": "Elesta",
+        "count": 145,
+        "level": 43,
+        "race": 1,
+        "class": 9
       },
       {
         "name": "Hotte",
@@ -119502,7 +119536,7 @@
       {
         "name": "Adalio",
         "count": 47,
-        "level": 23,
+        "level": 24,
         "race": 1,
         "class": 1
       }
@@ -119645,6 +119679,13 @@
         "class": 5
       },
       {
+        "name": "Gerlo",
+        "count": 26,
+        "level": 58,
+        "race": 5,
+        "class": 8
+      },
+      {
         "name": "Purshe",
         "count": 26,
         "level": 60,
@@ -119692,13 +119733,6 @@
         "level": 60,
         "race": 3,
         "class": 2
-      },
-      {
-        "name": "Ylurn",
-        "count": 26,
-        "level": 60,
-        "race": 3,
-        "class": 3
       }
     ],
     "pets": [
@@ -119708,6 +119742,13 @@
         "level": 31,
         "race": 1,
         "class": 9
+      },
+      {
+        "name": "Reaper",
+        "count": 3,
+        "level": 11,
+        "race": 10,
+        "class": 11
       },
       {
         "name": "Malavus",
@@ -119729,13 +119770,6 @@
         "level": 11,
         "race": 10,
         "class": 9
-      },
-      {
-        "name": "Reaper",
-        "count": 3,
-        "level": 11,
-        "race": 10,
-        "class": 11
       },
       {
         "name": "Av",
@@ -120326,7 +120360,7 @@
         "character_guid": 258,
         "creature_id": 5420,
         "creature_name": "Glasshide Gazer",
-        "kill_count": 24
+        "kill_count": 25
       },
       {
         "character_guid": 259,
@@ -122005,11 +122039,531 @@
     ],
     "learned_rare_spells": [],
     "obtained_rare_items": [],
+    "professions": {
+      "Alchemy": [
+        {
+          "name": "Aelin",
+          "value": 315,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Cartor",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Kratuk",
+          "value": 305,
+          "level": 62,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Iweelda",
+          "value": 305,
+          "level": 61,
+          "race": 7,
+          "class": 11
+        }
+      ],
+      "Blacksmithing": [
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Kratuk",
+          "value": 310,
+          "level": 62,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Corhula",
+          "value": 305,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Firahee",
+          "value": 305,
+          "level": 61,
+          "race": 6,
+          "class": 1
+        },
+        {
+          "name": "Poldik",
+          "value": 305,
+          "level": 61,
+          "race": 7,
+          "class": 4
+        }
+      ],
+      "Enchanting": [
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Omke",
+          "value": 305,
+          "level": 61,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Aelin",
+          "value": 300,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Heethkuklun",
+          "value": 300,
+          "level": 62,
+          "race": 7,
+          "class": 4
+        },
+        {
+          "name": "Isadi",
+          "value": 300,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        }
+      ],
+      "Engineering": [
+        {
+          "name": "Cartor",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Isadi",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        },
+        {
+          "name": "Rhohnaege",
+          "value": 305,
+          "level": 61,
+          "race": 8,
+          "class": 4
+        },
+        {
+          "name": "Aelin",
+          "value": 300,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 300,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        }
+      ],
+      "Herbalism": [
+        {
+          "name": "Avelie",
+          "value": 321,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Thellaana",
+          "value": 321,
+          "level": 62,
+          "race": 11,
+          "class": 3
+        },
+        {
+          "name": "Punlobeern",
+          "value": 318,
+          "level": 60,
+          "race": 7,
+          "class": 8
+        },
+        {
+          "name": "Isadi",
+          "value": 316,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        },
+        {
+          "name": "Aelin",
+          "value": 315,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        }
+      ],
+      "Inscription": [
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        },
+        {
+          "name": "Kratuk",
+          "value": 310,
+          "level": 62,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Lainaeri",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 5
+        },
+        {
+          "name": "Heethkuklun",
+          "value": 305,
+          "level": 62,
+          "race": 7,
+          "class": 4
+        },
+        {
+          "name": "Isadi",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        }
+      ],
+      "Jewelcrafting": [
+        {
+          "name": "Aelin",
+          "value": 310,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        },
+        {
+          "name": "Isadi",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        },
+        {
+          "name": "Avelie",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Cartor",
+          "value": 305,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        }
+      ],
+      "Leatherworking": [
+        {
+          "name": "Aelin",
+          "value": 310,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Corhula",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Heethkuklun",
+          "value": 310,
+          "level": 62,
+          "race": 7,
+          "class": 4
+        },
+        {
+          "name": "Thellaana",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 3
+        },
+        {
+          "name": "Lainaeri",
+          "value": 305,
+          "level": 62,
+          "race": 3,
+          "class": 5
+        }
+      ],
+      "Mining": [
+        {
+          "name": "Aelin",
+          "value": 311,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Corhula",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        },
+        {
+          "name": "Heethkuklun",
+          "value": 310,
+          "level": 62,
+          "race": 7,
+          "class": 4
+        }
+      ],
+      "Skinning": [
+        {
+          "name": "Isadi",
+          "value": 414,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        },
+        {
+          "name": "Emda",
+          "value": 401,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        },
+        {
+          "name": "Kratuk",
+          "value": 391,
+          "level": 62,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Cartor",
+          "value": 388,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Iweelda",
+          "value": 388,
+          "level": 61,
+          "race": 7,
+          "class": 11
+        }
+      ],
+      "Tailoring": [
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Omke",
+          "value": 305,
+          "level": 61,
+          "race": 7,
+          "class": 9
+        },
+        {
+          "name": "Aelin",
+          "value": 300,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Heethkuklun",
+          "value": 300,
+          "level": 62,
+          "race": 7,
+          "class": 4
+        },
+        {
+          "name": "Isadi",
+          "value": 300,
+          "level": 62,
+          "race": 1,
+          "class": 5
+        }
+      ],
+      "Cooking": [
+        {
+          "name": "Aelin",
+          "value": 315,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Cartor",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Corhula",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        }
+      ],
+      "First Aid": [
+        {
+          "name": "Aelin",
+          "value": 315,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Cartor",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Corhula",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        }
+      ],
+      "Fishing": [
+        {
+          "name": "Aelin",
+          "value": 315,
+          "level": 63,
+          "race": 4,
+          "class": 4
+        },
+        {
+          "name": "Avelie",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 2
+        },
+        {
+          "name": "Cartor",
+          "value": 310,
+          "level": 62,
+          "race": 1,
+          "class": 4
+        },
+        {
+          "name": "Corhula",
+          "value": 310,
+          "level": 62,
+          "race": 11,
+          "class": 1
+        },
+        {
+          "name": "Emda",
+          "value": 310,
+          "level": 62,
+          "race": 3,
+          "class": 3
+        }
+      ]
+    },
     "chat_stats": {
       "talkative": [
         {
           "name": "Constantine",
-          "count": 1337
+          "count": 1338
         },
         {
           "name": "Sorinis",
@@ -122021,7 +122575,7 @@
         },
         {
           "name": "Malakor",
-          "count": 686
+          "count": 687
         },
         {
           "name": "Eliphas",
@@ -122051,7 +122605,7 @@
       "channels": [
         {
           "type": "PARTY",
-          "count": 5122
+          "count": 5124
         },
         {
           "type": "SAY",
@@ -122059,7 +122613,7 @@
         },
         {
           "type": "WHISPER",
-          "count": 642
+          "count": 643
         },
         {
           "type": "GUILD",
@@ -122067,6 +122621,11 @@
         }
       ],
       "funny_quotes": [
+        {
+          "name": "Olymanu",
+          "type": "WHISPER",
+          "message": "are you talking?"
+        },
         {
           "name": "Constantine",
           "type": "PARTY",
@@ -122136,11 +122695,6 @@
           "name": "Constantine",
           "type": "PARTY",
           "message": "{rt1} Questie: Quest Completed: |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r"
-        },
-        {
-          "name": "Constantine",
-          "type": "PARTY",
-          "message": "{rt1} Questie: 1/1 Speak with someone in Ratchet about the Glowing Shard for |cff40c040|Hquest:6981:26|h[[26] The Glowing Shard (6981)]|h|r!"
         }
       ],
       "top_words": [
@@ -122174,7 +122728,7 @@
         },
         {
           "word": "summon",
-          "count": 156
+          "count": 158
         },
         {
           "word": "keep",
