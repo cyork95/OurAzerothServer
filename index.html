@@ -2509,6 +2509,8 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <button class="sub-tab-btn" id="stats-subbtn-hunting" onclick="switchStatsSubTab('hunting')">🐾 Companions & Hunting</button>
                 <button class="sub-tab-btn" id="stats-subbtn-chat" onclick="switchStatsSubTab('chat')">💬 Chat Trends</button>
                 <button class="sub-tab-btn" id="stats-subbtn-professions" onclick="switchStatsSubTab('professions')">🛠️ Profession Masters</button>
+                <button class="sub-tab-btn" id="stats-subbtn-pvp" onclick="switchStatsSubTab('pvp')">⚔️ PvP Champions</button>
+                <button class="sub-tab-btn" id="stats-subbtn-bots" onclick="switchStatsSubTab('bots')">🤖 Bot Network</button>
             </div>
 
             <!-- WEALTH & PLAYTIME SUB-TAB -->
@@ -2534,6 +2536,18 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                                 <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Playtime</th></tr>
                             </thead>
                             <tbody id="stats-playtime-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Auction House Merchants Card -->
+                    <div class="card">
+                        <div class="card-title" style="color: #60a5fa;">⚖️ Auction House Merchants</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Active Auctions</th></tr>
+                            </thead>
+                            <tbody id="stats-ah-merchants-body">
                                 <!-- Populated dynamically -->
                             </tbody>
                         </table>
@@ -2564,6 +2578,30 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                                 <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Elite Kills</th></tr>
                             </thead>
                             <tbody id="stats-elites-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Exalted Reputations -->
+                    <div class="card">
+                        <div class="card-title" style="color: #34d399;">🛡️ Reputation Legends</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Exalted Factions</th></tr>
+                            </thead>
+                            <tbody id="stats-exalted-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Boss Kill Conquests -->
+                    <div class="card">
+                        <div class="card-title" style="color: #f472b6;">⚔️ Raid Boss Conquests</div>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Raid Boss Kills</th></tr>
+                            </thead>
+                            <tbody id="stats-bosses-body">
                                 <!-- Populated dynamically -->
                             </tbody>
                         </table>
@@ -2702,6 +2740,54 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 
                 <div id="professions-grid-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
                     <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- PVP CHAMPIONS SUB-TAB -->
+            <div id="stats-subtab-pvp" class="sub-tab-content" style="display: none;">
+                <div class="char-bio-columns">
+                    <!-- Honorable Kills -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title" style="color: var(--status-danger);">⚔️ Honorable Kills Grinders</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">Lifetime PVP Honorable Kills achieved in Battlegrounds and World PvP.</p>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Honorable Kills</th></tr>
+                            </thead>
+                            <tbody id="stats-pvp-hks-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Arena Points -->
+                    <div class="card" style="margin-bottom: 0;">
+                        <div class="card-title" style="color: #60a5fa;">🛡️ Arena Points Leaders</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">Characters with the largest current pool of unspent Arena Points.</p>
+                        <table class="wiki-table">
+                            <thead>
+                                <tr><th>Rank</th><th>Character</th><th>Level</th><th>Class</th><th>Arena Points</th></tr>
+                            </thead>
+                            <tbody id="stats-pvp-arena-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOT NETWORK SUB-TAB -->
+            <div id="stats-subtab-bots" class="sub-tab-content" style="display: none;">
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div class="card-title" style="color: #fbbf24;">🤖 AI Bot Army Network</div>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Breakdown of the AI companion bots actively populating the server world, simulating a live economy and group finder.</p>
+                </div>
+                <div class="char-bio-columns">
+                    <div class="card" style="flex: 1; margin-bottom: 0;">
+                        <div class="card-title" style="font-size: 1rem; margin-bottom: 1rem; color: #fff;">🛡️ Class Distribution Breakdown</div>
+                        <div id="bot-distribution-container" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- Dynamically populated class bar meters -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -4778,6 +4864,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 }).join('');
             }
 
+            // AH Merchants
+            const ahMerchantsBody = document.getElementById('stats-ah-merchants-body');
+            if (ahMerchantsBody && stats.ah_merchants) {
+                ahMerchantsBody.innerHTML = stats.ah_merchants.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong style="color: #60a5fa;">${char.count} listings</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
             // Quests
             const questsBody = document.getElementById('stats-quests-body');
             if (questsBody && stats.quests) {
@@ -4807,6 +4910,40 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <td>${char.level}</td>
                             <td style="color: ${classInfo.color};">${classInfo.name}</td>
                             <td><span style="color: var(--status-warning); font-weight: 600;">${char.count} kills</span></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Exalted Reputations
+            const exaltedBody = document.getElementById('stats-exalted-body');
+            if (exaltedBody && stats.exalted_rep) {
+                exaltedBody.innerHTML = stats.exalted_rep.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong style="color: #34d399;">${char.count} exalted</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Boss Conquests
+            const bossesBody = document.getElementById('stats-bosses-body');
+            if (bossesBody && stats.boss_conquests) {
+                bossesBody.innerHTML = stats.boss_conquests.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong style="color: #f472b6;">${char.count} kills</strong></td>
                         </tr>
                     `;
                 }).join('');
@@ -5033,6 +5170,63 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                                     ${rowsHtml || '<tr><td colspan="3" style="text-align:center; color:var(--text-secondary);">No master yet</td></tr>'}
                                 </tbody>
                             </table>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // PvP Honorable Kills
+            const pvpHksBody = document.getElementById('stats-pvp-hks-body');
+            if (pvpHksBody && stats.pvp_hks) {
+                pvpHksBody.innerHTML = stats.pvp_hks.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong style="color: var(--status-danger);">${char.count.toLocaleString()} HKs</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // PvP Arena Points
+            const pvpArenaBody = document.getElementById('stats-pvp-arena-body');
+            if (pvpArenaBody && stats.pvp_arena) {
+                pvpArenaBody.innerHTML = stats.pvp_arena.map((char, index) => {
+                    const classInfo = CLASS_NAMES[char.class] || { name: 'Unknown', color: '#fff' };
+                    return `
+                        <tr>
+                            <td><strong>#${index + 1}</strong></td>
+                            <td>${formatNameCol(char.name, char.race, char.class, char.level)}</td>
+                            <td>${char.level}</td>
+                            <td style="color: ${classInfo.color};">${classInfo.name}</td>
+                            <td><strong style="color: #60a5fa;">${char.count.toLocaleString()} AP</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Bot Distribution
+            const botDistContainer = document.getElementById('bot-distribution-container');
+            if (botDistContainer && stats.bot_distribution) {
+                const totalBots = stats.bot_distribution.reduce((sum, c) => sum + c.count, 0);
+                const sortedBots = [...stats.bot_distribution].sort((a, b) => b.count - a.count);
+                
+                botDistContainer.innerHTML = sortedBots.map(bd => {
+                    const classInfo = CLASS_NAMES[bd.class] || { name: 'Unknown', color: '#fff' };
+                    const pct = totalBots > 0 ? ((bd.count / totalBots) * 100).toFixed(1) : 0;
+                    return `
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                                <strong style="color: ${classInfo.color};">${classInfo.name}</strong>
+                                <span style="color: var(--text-secondary); font-size: 0.8rem;">${bd.count} bots (${pct}%)</span>
+                            </div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden;">
+                                <div style="width: ${pct}%; height: 100%; background: ${classInfo.color}; border-radius: 4px;"></div>
+                            </div>
                         </div>
                     `;
                 }).join('');
