@@ -2871,7 +2871,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                             <input type="text" id="rarityCharSearchInput" placeholder="Type character name..." autocomplete="off" oninput="filterRarityCharSearch(this.value)" style="padding-left: 36px; margin-bottom: 0; width: 100%;" />
                             <button id="rarityClearSearchBtn" onclick="clearRarityCharSearch()" style="position: absolute; right: 10px; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; display: none; font-size: 1.1rem; padding: 4px;">×</button>
                         </div>
-                        <div id="rarityCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; left: 0; right: 0; z-index: 100; max-height: 250px; overflow-y: auto;">
+                        <div id="rarityCharSearchDropdown" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; max-height: 250px; overflow-y: auto; background: #060a14; border: 1px solid var(--border-glass); border-radius: 8px; z-index: 1000; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); margin-top: 5px; padding: 0.25rem;">
                             <!-- Dropdown items populated dynamically -->
                         </div>
                         <input type="hidden" id="rarity-char-guid-val" value="all" />
@@ -4220,7 +4220,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     const raceName = RACE_NAMES[c.race] || 'Unknown';
                     
                     return `
-                        <div class="autocomplete-item" onclick="selectCharacter(${c.guid}, '${escapeJsString(c.name)}')">
+                        <div class="autocomplete-item" onmousedown="selectCharacter(${c.guid}, '${escapeJsString(c.name)}')">
                             <div>
                                 <strong style="color: #fff; font-size: 0.95rem;">${c.name}</strong>
                                 <span style="color: var(--text-secondary); font-size: 0.85rem; margin-left: 0.5rem;">Lvl ${c.level} ${raceName}</span>
@@ -4273,7 +4273,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     const raceName = RACE_NAMES[c.race] || 'Unknown';
                     
                     return `
-                        <div class="autocomplete-item" onclick="selectRarityCharacter(${c.guid}, '${escapeJsString(c.name)}')">
+                        <div class="autocomplete-item" onmousedown="selectRarityCharacter(${c.guid}, '${escapeJsString(c.name)}')">
                             <div>
                                 <strong style="color: #fff; font-size: 0.95rem;">${c.name}</strong>
                                 <span style="color: var(--text-secondary); font-size: 0.85rem; margin-left: 0.5rem;">Lvl ${c.level} ${raceName}</span>
