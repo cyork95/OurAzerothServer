@@ -11269,7 +11269,7 @@
       "name": "Gwohgeangle",
       "race": 3,
       "class": 9,
-      "level": 8,
+      "level": 9,
       "gender": 1
     },
     {
@@ -18197,7 +18197,7 @@
       "name": "Morlienne",
       "race": 4,
       "class": 5,
-      "level": 7,
+      "level": 8,
       "gender": 1
     },
     {
@@ -18693,7 +18693,7 @@
       "name": "Natia",
       "race": 1,
       "class": 5,
-      "level": 12,
+      "level": 13,
       "gender": 1
     },
     {
@@ -19101,7 +19101,7 @@
       "name": "Noche",
       "race": 6,
       "class": 11,
-      "level": 8,
+      "level": 9,
       "gender": 1
     },
     {
@@ -23309,7 +23309,7 @@
       "name": "Sudrann",
       "race": 3,
       "class": 9,
-      "level": 31,
+      "level": 32,
       "gender": 0
     },
     {
@@ -28410,6 +28410,171 @@
     }
   ],
   "auctions": [
+    {
+      "auction_id": 108761,
+      "name": "Sunmote",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 70,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 673650,
+      "start_bid": 613020,
+      "last_bid": 0,
+      "time_left": 1783378786,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108760,
+      "name": "Bloodvine",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 3,
+      "buyout": 12570,
+      "start_bid": 10683,
+      "last_bid": 0,
+      "time_left": 1783342786,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108759,
+      "name": "Ornate Cloak",
+      "quality": 2,
+      "required_level": 48,
+      "item_level": 53,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 100725,
+      "start_bid": 81587,
+      "last_bid": 0,
+      "time_left": 1783346386,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108758,
+      "name": "Big Iron Bomb",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 43,
+      "class": 7,
+      "subclass": 2,
+      "quantity": 256,
+      "buyout": 303360,
+      "start_bid": 218368,
+      "last_bid": 0,
+      "time_left": 1783382386,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108757,
+      "name": "Myrmidon's Defender",
+      "quality": 2,
+      "required_level": 46,
+      "item_level": 51,
+      "class": 4,
+      "subclass": 6,
+      "quantity": 1,
+      "buyout": 216225,
+      "start_bid": 175142,
+      "last_bid": 0,
+      "time_left": 1783375126,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108756,
+      "name": "Blue Pearl",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 1,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 741,
+      "buyout": 63726,
+      "start_bid": 50388,
+      "last_bid": 0,
+      "time_left": 1783411126,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108755,
+      "name": "Fel Iron Ore",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 60,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 671,
+      "buyout": 1120570,
+      "start_bid": 963556,
+      "last_bid": 0,
+      "time_left": 1783328326,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108754,
+      "name": "Green Dragonscale",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 50,
+      "class": 7,
+      "subclass": 6,
+      "quantity": 296,
+      "buyout": 293040,
+      "start_bid": 240056,
+      "last_bid": 0,
+      "time_left": 1783403926,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108753,
+      "name": "Light Hide",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 10,
+      "class": 7,
+      "subclass": 6,
+      "quantity": 293,
+      "buyout": 34867,
+      "start_bid": 33109,
+      "last_bid": 0,
+      "time_left": 1783364326,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108752,
+      "name": "Grave Moss",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 24,
+      "class": 7,
+      "subclass": 9,
+      "quantity": 315,
+      "buyout": 17325,
+      "start_bid": 15750,
+      "last_bid": 0,
+      "time_left": 1783339126,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 108751,
+      "name": "Raw Slitherskin Mackerel",
+      "quality": 1,
+      "required_level": 1,
+      "item_level": 5,
+      "class": 7,
+      "subclass": 8,
+      "quantity": 364,
+      "buyout": 364,
+      "start_bid": 0,
+      "last_bid": 0,
+      "time_left": 1783339126,
+      "owner_name": "Gnenlirgunk"
+    },
     {
       "auction_id": 108750,
       "name": "Handgrips of Assassination",
@@ -38308,21 +38473,6 @@
       "start_bid": 245894,
       "last_bid": 0,
       "time_left": 1783364386,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 108058,
-      "name": "Arachnidian Footpads",
-      "quality": 2,
-      "required_level": 46,
-      "item_level": 51,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 107532,
-      "start_bid": 96778,
-      "last_bid": 0,
-      "time_left": 1783324786,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -63061,21 +63211,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 105593,
-      "name": "Overcharged Capacitor",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 7,
-      "subclass": 1,
-      "quantity": 341,
-      "buyout": 7692960,
-      "start_bid": 6231093,
-      "last_bid": 0,
-      "time_left": 1783324728,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 105589,
       "name": "Heart of Darkness",
       "quality": 3,
@@ -64543,21 +64678,6 @@
       "start_bid": 23019,
       "last_bid": 0,
       "time_left": 1783328388,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 105369,
-      "name": "Mail Combat Armguards",
-      "quality": 2,
-      "required_level": 28,
-      "item_level": 33,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 20880,
-      "start_bid": 17956,
-      "last_bid": 0,
-      "time_left": 1783324788,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -66043,21 +66163,6 @@
       "start_bid": 293940,
       "last_bid": 0,
       "time_left": 1783353648,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 105133,
-      "name": "Frozen Rune",
-      "quality": 3,
-      "required_level": 60,
-      "item_level": 80,
-      "class": 7,
-      "subclass": 11,
-      "quantity": 2,
-      "buyout": 574800,
-      "start_bid": 482832,
-      "last_bid": 0,
-      "time_left": 1783324728,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -69496,21 +69601,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 104417,
-      "name": "Primal Bat Leather",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 6,
-      "quantity": 706,
-      "buyout": 3431160,
-      "start_bid": 2435700,
-      "last_bid": 0,
-      "time_left": 1783324788,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 104408,
       "name": "Discolored Worg Heart",
       "quality": 1,
@@ -71806,21 +71896,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 103686,
-      "name": "Furious Crawdad",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 8,
-      "quantity": 763,
-      "buyout": 10682,
-      "start_bid": 9919,
-      "last_bid": 0,
-      "time_left": 1783324788,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103681,
       "name": "Sage's Sash",
       "quality": 2,
@@ -72586,21 +72661,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 103198,
-      "name": "Runecloth",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 50,
-      "class": 7,
-      "subclass": 5,
-      "quantity": 457,
-      "buyout": 341836,
-      "start_bid": 331325,
-      "last_bid": 0,
-      "time_left": 1783324788,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 103193,
       "name": "Moongraze Stag Tenderloin",
       "quality": 1,
@@ -72838,21 +72898,6 @@
       "start_bid": 28530,
       "last_bid": 0,
       "time_left": 1783324848,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 102972,
-      "name": "Gold Bar",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 30,
-      "class": 7,
-      "subclass": 7,
-      "quantity": 3,
-      "buyout": 20880,
-      "start_bid": 17955,
-      "last_bid": 0,
-      "time_left": 1783324728,
       "owner_name": "Gnenlirgunk"
     }
   ],
@@ -100760,6 +100805,11 @@
     ],
     "1114": [
       {
+        "timestamp": "2026-07-06T04:00:13",
+        "type": "LOGOUT",
+        "details": "Logged out of the game"
+      },
+      {
         "timestamp": "2026-07-06T03:57:40",
         "type": "MONEY_CHANGE",
         "details": "Spent 138.78g (New Balance: 0.14g)"
@@ -124263,70 +124313,70 @@
     "playtime": [
       {
         "name": "Kumrodus",
-        "totaltime": 687149,
+        "totaltime": 687329,
         "level": 9,
         "race": 3,
         "class": 4
       },
       {
         "name": "Cariia",
-        "totaltime": 685962,
+        "totaltime": 686082,
         "level": 43,
         "race": 4,
         "class": 11
       },
       {
         "name": "Terance",
-        "totaltime": 685029,
+        "totaltime": 685149,
         "level": 18,
         "race": 1,
         "class": 5
       },
       {
         "name": "Usa",
-        "totaltime": 684118,
+        "totaltime": 684298,
         "level": 31,
         "race": 3,
         "class": 3
       },
       {
         "name": "Martorin",
-        "totaltime": 683490,
+        "totaltime": 683610,
         "level": 56,
         "race": 1,
         "class": 1
       },
       {
         "name": "Raimond",
-        "totaltime": 683212,
+        "totaltime": 683332,
         "level": 60,
         "race": 1,
         "class": 9
       },
       {
         "name": "Bholdand",
-        "totaltime": 683174,
+        "totaltime": 683294,
         "level": 53,
         "race": 3,
         "class": 3
       },
       {
         "name": "Tammal",
-        "totaltime": 682789,
+        "totaltime": 682909,
         "level": 36,
         "race": 3,
         "class": 5
       },
       {
         "name": "Guni",
-        "totaltime": 682619,
+        "totaltime": 682739,
         "level": 60,
         "race": 7,
         "class": 1
       },
       {
         "name": "Ryase",
-        "totaltime": 682390,
+        "totaltime": 682510,
         "level": 25,
         "race": 4,
         "class": 11
@@ -124414,6 +124464,13 @@
         "class": 2
       },
       {
+        "name": "Thotlonis",
+        "count": 30,
+        "level": 34,
+        "race": 7,
+        "class": 1
+      },
+      {
         "name": "Chelene",
         "count": 30,
         "level": 26,
@@ -124447,13 +124504,6 @@
         "level": 21,
         "race": 3,
         "class": 4
-      },
-      {
-        "name": "Thotlonis",
-        "count": 30,
-        "level": 34,
-        "race": 7,
-        "class": 1
       },
       {
         "name": "Avianne",
@@ -124515,7 +124565,7 @@
       },
       {
         "name": "Araenya",
-        "count": 69,
+        "count": 71,
         "level": 32,
         "race": 4,
         "class": 1
@@ -124747,7 +124797,7 @@
     "ah_merchants": [
       {
         "name": "Gnenlirgunk",
-        "count": 2963,
+        "count": 2966,
         "level": 10,
         "race": 7,
         "class": 1
@@ -124902,7 +124952,7 @@
         "level": 33,
         "race": 8,
         "class": 5,
-        "zone": 17,
+        "zone": 1637,
         "map": 1,
         "gender": 0
       },
@@ -126045,7 +126095,7 @@
         "level": 39,
         "race": 6,
         "class": 11,
-        "zone": 215,
+        "zone": 17,
         "map": 1,
         "gender": 0
       },
@@ -126420,7 +126470,7 @@
       },
       {
         "name": "Natia",
-        "level": 12,
+        "level": 13,
         "race": 1,
         "class": 5,
         "zone": 38,
@@ -127098,7 +127148,7 @@
         "level": 60,
         "race": 7,
         "class": 8,
-        "zone": 139,
+        "zone": 45,
         "map": 0,
         "gender": 1
       },
@@ -128282,15 +128332,6 @@
         "gender": 1
       },
       {
-        "name": "Banko",
-        "level": 1,
-        "race": 1,
-        "class": 5,
-        "zone": 1519,
-        "map": 0,
-        "gender": 0
-      },
-      {
         "name": "Zetalor",
         "level": 52,
         "race": 10,
@@ -128529,7 +128570,7 @@
         "level": 60,
         "race": 3,
         "class": 1,
-        "zone": 139,
+        "zone": 46,
         "map": 0,
         "gender": 1
       },
@@ -128538,7 +128579,7 @@
         "level": 48,
         "race": 4,
         "class": 5,
-        "zone": 357,
+        "zone": 440,
         "map": 1,
         "gender": 1
       },
@@ -130257,7 +130298,7 @@
         "level": 42,
         "race": 2,
         "class": 7,
-        "zone": 1637,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -130293,7 +130334,7 @@
         "level": 60,
         "race": 4,
         "class": 3,
-        "zone": 12,
+        "zone": 1537,
         "map": 0,
         "gender": 1
       },
@@ -130527,7 +130568,7 @@
         "level": 45,
         "race": 4,
         "class": 11,
-        "zone": 47,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -130794,7 +130835,7 @@
       },
       {
         "name": "Noche",
-        "level": 8,
+        "level": 9,
         "race": 6,
         "class": 11,
         "zone": 215,
@@ -130887,7 +130928,7 @@
         "level": 28,
         "race": 11,
         "class": 3,
-        "zone": 406,
+        "zone": 331,
         "map": 1,
         "gender": 1
       },
@@ -131040,7 +131081,7 @@
         "level": 60,
         "race": 11,
         "class": 7,
-        "zone": 1,
+        "zone": 51,
         "map": 0,
         "gender": 0
       },
@@ -133200,7 +133241,7 @@
         "level": 60,
         "race": 11,
         "class": 11,
-        "zone": 3483,
+        "zone": 3521,
         "map": 530,
         "gender": 1
       },
@@ -133713,7 +133754,7 @@
         "level": 32,
         "race": 7,
         "class": 3,
-        "zone": 33,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -133902,7 +133943,7 @@
         "level": 27,
         "race": 1,
         "class": 5,
-        "zone": 331,
+        "zone": 406,
         "map": 1,
         "gender": 0
       },
@@ -133929,7 +133970,7 @@
         "level": 50,
         "race": 6,
         "class": 3,
-        "zone": 11,
+        "zone": 47,
         "map": 0,
         "gender": 0
       },
@@ -134082,7 +134123,7 @@
         "level": 45,
         "race": 8,
         "class": 5,
-        "zone": 38,
+        "zone": 51,
         "map": 0,
         "gender": 0
       },
@@ -134433,7 +134474,7 @@
         "level": 54,
         "race": 4,
         "class": 4,
-        "zone": 51,
+        "zone": 46,
         "map": 0,
         "gender": 0
       },
@@ -135369,7 +135410,7 @@
         "level": 45,
         "race": 7,
         "class": 1,
-        "zone": 440,
+        "zone": 1657,
         "map": 1,
         "gender": 1
       },
@@ -135393,7 +135434,7 @@
       },
       {
         "name": "Morlienne",
-        "level": 7,
+        "level": 8,
         "race": 4,
         "class": 5,
         "zone": 141,
@@ -135441,7 +135482,7 @@
         "level": 42,
         "race": 10,
         "class": 2,
-        "zone": 3,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -135450,7 +135491,7 @@
         "level": 47,
         "race": 11,
         "class": 3,
-        "zone": 440,
+        "zone": 1657,
         "map": 1,
         "gender": 0
       },
@@ -135672,7 +135713,7 @@
       },
       {
         "name": "Gwohgeangle",
-        "level": 8,
+        "level": 9,
         "race": 3,
         "class": 9,
         "zone": 1,
@@ -135990,7 +136031,7 @@
         "level": 26,
         "race": 8,
         "class": 8,
-        "zone": 400,
+        "zone": 406,
         "map": 1,
         "gender": 1
       },
@@ -135999,7 +136040,7 @@
         "level": 60,
         "race": 7,
         "class": 11,
-        "zone": 16,
+        "zone": 331,
         "map": 1,
         "gender": 1
       },
@@ -136527,10 +136568,10 @@
       },
       {
         "name": "Sudrann",
-        "level": 31,
+        "level": 32,
         "race": 3,
         "class": 9,
-        "zone": 10,
+        "zone": 267,
         "map": 0,
         "gender": 0
       },
@@ -137574,7 +137615,7 @@
         "level": 29,
         "race": 4,
         "class": 1,
-        "zone": 12,
+        "zone": 10,
         "map": 0,
         "gender": 1
       },
@@ -137736,8 +137777,8 @@
         "level": 60,
         "race": 2,
         "class": 7,
-        "zone": 139,
-        "map": 0,
+        "zone": 1377,
+        "map": 1,
         "gender": 0
       },
       {
@@ -137853,8 +137894,8 @@
         "level": 14,
         "race": 2,
         "class": 1,
-        "zone": 33,
-        "map": 0,
+        "zone": 17,
+        "map": 1,
         "gender": 0
       },
       {
@@ -138310,211 +138351,94 @@
     ],
     "activity_feed": [
       {
-        "name": "Mathaelleas",
-        "level": 27,
+        "name": "Nynaeth",
+        "level": 40,
         "race": 4,
-        "class": 2,
+        "class": 5,
         "type": "MONEY_CHANGE",
-        "details": "Spent 84.74g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:58:01"
+        "details": "Spent 1499.40g (New Balance: 0.02g)",
+        "timestamp": "2026-07-06T04:00:25"
+      },
+      {
+        "name": "Mooldi",
+        "level": 28,
+        "race": 8,
+        "class": 3,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 843.94g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:24"
+      },
+      {
+        "name": "Arizim",
+        "level": 44,
+        "race": 1,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1396.40g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:22"
+      },
+      {
+        "name": "Yyell",
+        "level": 25,
+        "race": 4,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 476.75g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:22"
+      },
+      {
+        "name": "Shuwdore",
+        "level": 7,
+        "race": 2,
+        "class": 4,
+        "type": "DEATH",
+        "details": "Killed by Razormane Quilboar in Kalimdor",
+        "timestamp": "2026-07-06T04:00:21"
+      },
+      {
+        "name": "Ardag",
+        "level": 23,
+        "race": 3,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 333.26g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:21"
+      },
+      {
+        "name": "Balthas",
+        "level": 22,
+        "race": 4,
+        "class": 11,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 94.53g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:21"
       },
       {
         "name": "Ywhaga",
         "level": 35,
         "race": 3,
         "class": 3,
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Bubbling Swamp Ooze",
-        "timestamp": "2026-07-06T03:57:58"
-      },
-      {
-        "name": "Lylynna",
-        "level": 30,
-        "race": 4,
-        "class": 2,
         "type": "MONEY_CHANGE",
-        "details": "Spent 612.00g (New Balance: 0.01g)",
-        "timestamp": "2026-07-06T03:57:57"
+        "details": "Spent 707.80g (New Balance: 0.03g)",
+        "timestamp": "2026-07-06T04:00:20"
       },
       {
-        "name": "Twamuthun",
-        "level": 53,
-        "race": 3,
-        "class": 5,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2047.87g (New Balance: 0.01g)",
-        "timestamp": "2026-07-06T03:57:54"
-      },
-      {
-        "name": "Tenkenick",
-        "level": 5,
-        "race": 7,
-        "class": 4,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 58.62g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:54"
-      },
-      {
-        "name": "Harandero",
-        "level": 55,
-        "race": 1,
-        "class": 1,
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: Gnome Engineering (Quest ID: 3632)",
-        "timestamp": "2026-07-06T03:57:52"
-      },
-      {
-        "name": "Elerine",
-        "level": 26,
-        "race": 1,
-        "class": 4,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 600.78g (New Balance: 0.01g)",
-        "timestamp": "2026-07-06T03:57:52"
-      },
-      {
-        "name": "Corhula",
-        "level": 62,
-        "race": 11,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2421.42g (New Balance: 0.07g)",
-        "timestamp": "2026-07-06T03:57:49"
-      },
-      {
-        "name": "Galande",
-        "level": 18,
-        "race": 1,
-        "class": 8,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 211.47g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:48"
-      },
-      {
-        "name": "Renlin",
-        "level": 60,
-        "race": 6,
-        "class": 7,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1874.57g (New Balance: 0.02g)",
-        "timestamp": "2026-07-06T03:57:48"
-      },
-      {
-        "name": "Baanis",
-        "level": 58,
-        "race": 11,
-        "class": 7,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1701.89g (New Balance: 0.05g)",
-        "timestamp": "2026-07-06T03:57:47"
-      },
-      {
-        "name": "Sudrann",
-        "level": 31,
-        "race": 3,
-        "class": 9,
-        "type": "QUEST_COMPLETE",
-        "details": "Completed quest: Worgen in the Woods (Quest ID: 222)",
-        "timestamp": "2026-07-06T03:57:46"
-      },
-      {
-        "name": "Sudrann",
-        "level": 31,
-        "race": 3,
-        "class": 9,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1117.88g (New Balance: 0.22g)",
-        "timestamp": "2026-07-06T03:57:46"
-      },
-      {
-        "name": "Talarian",
-        "level": 54,
-        "race": 4,
-        "class": 4,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2518.67g (New Balance: -0.08g)",
-        "timestamp": "2026-07-06T03:57:43"
-      },
-      {
-        "name": "Pada",
-        "level": 28,
-        "race": 11,
-        "class": 7,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 382.37g (New Balance: 0.01g)",
-        "timestamp": "2026-07-06T03:57:41"
-      },
-      {
-        "name": "Zhuza",
-        "level": 33,
+        "name": "Malroorih",
+        "level": 41,
         "race": 8,
-        "class": 3,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 889.84g (New Balance: 0.01g)",
-        "timestamp": "2026-07-06T03:57:40"
-      },
-      {
-        "name": "Banko",
-        "level": 1,
-        "race": 1,
         "class": 5,
         "type": "MONEY_CHANGE",
-        "details": "Spent 138.78g (New Balance: 0.14g)",
-        "timestamp": "2026-07-06T03:57:40"
+        "details": "Spent 1402.73g (New Balance: 0.03g)",
+        "timestamp": "2026-07-06T04:00:19"
       },
       {
-        "name": "Arinek",
-        "level": 28,
-        "race": 1,
-        "class": 7,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1101.68g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:40"
-      },
-      {
-        "name": "Malaeth",
-        "level": 39,
+        "name": "Karai",
+        "level": 29,
         "race": 4,
         "class": 11,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1381.54g (New Balance: 0.03g)",
-        "timestamp": "2026-07-06T03:57:39"
-      },
-      {
-        "name": "Mathaelleas",
-        "level": 27,
-        "race": 4,
-        "class": 2,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 84.74g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:39"
-      },
-      {
-        "name": "Araldrian",
-        "level": 18,
-        "race": 1,
-        "class": 1,
-        "type": "ELITE_KILL",
-        "details": "Defeated Elite monster: Thragomm",
-        "timestamp": "2026-07-06T03:57:39"
-      },
-      {
-        "name": "Tenkenick",
-        "level": 5,
-        "race": 7,
-        "class": 4,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 58.62g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:37"
-      },
-      {
-        "name": "Adalio",
-        "level": 24,
-        "race": 1,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 320.10g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:37"
+        "details": "Spent 570.63g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:18"
       },
       {
         "name": "Marinere",
@@ -138522,62 +138446,179 @@
         "race": 5,
         "class": 4,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1712.09g (New Balance: 0.05g)",
-        "timestamp": "2026-07-06T03:57:34"
+        "details": "Spent 1712.30g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:18"
       },
       {
-        "name": "Sekefo",
-        "level": 27,
-        "race": 7,
-        "class": 9,
-        "type": "DEATH",
-        "details": "Killed by Skeleton in Eastern Kingdoms",
-        "timestamp": "2026-07-06T03:57:33"
-      },
-      {
-        "name": "Iglian",
-        "level": 28,
-        "race": 3,
-        "class": 3,
+        "name": "Keldrannul",
+        "level": 8,
+        "race": 4,
+        "class": 8,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1184.18g (New Balance: 0.00g)",
-        "timestamp": "2026-07-06T03:57:32"
+        "details": "Spent 36.32g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:17"
       },
       {
-        "name": "Olin",
-        "level": 60,
+        "name": "Turian",
+        "level": 44,
         "race": 4,
         "class": 11,
         "type": "DEATH",
-        "details": "Killed by Twilight Stonecaller in Kalimdor",
-        "timestamp": "2026-07-06T03:57:29"
+        "details": "Killed by Voidwalker Minion in Kalimdor",
+        "timestamp": "2026-07-06T04:00:17"
       },
       {
-        "name": "Galoraen",
-        "level": 30,
-        "race": 4,
-        "class": 5,
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Scorn's Icy Choker",
-        "timestamp": "2026-07-06T03:57:28"
+        "name": "Cathermina",
+        "level": 9,
+        "race": 5,
+        "class": 9,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 39.77g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:16"
       },
       {
-        "name": "Galoraen",
-        "level": 30,
-        "race": 4,
-        "class": 5,
-        "type": "EQUIP_ITEM",
-        "details": "Equipped item: Holy Shroud",
-        "timestamp": "2026-07-06T03:57:28"
+        "name": "Mooldi",
+        "level": 28,
+        "race": 8,
+        "class": 3,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 843.94g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:16"
       },
       {
-        "name": "Galoraen",
-        "level": 30,
+        "name": "Iweelda",
+        "level": 61,
+        "race": 7,
+        "class": 11,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1648.44g (New Balance: 0.06g)",
+        "timestamp": "2026-07-06T04:00:15"
+      },
+      {
+        "name": "Aovan",
+        "level": 59,
+        "race": 11,
+        "class": 7,
+        "type": "DEATH",
+        "details": "Killed by Shattered Hand Guard in Outland",
+        "timestamp": "2026-07-06T04:00:15"
+      },
+      {
+        "name": "Idrinea",
+        "level": 21,
         "race": 4,
         "class": 5,
-        "type": "LEVEL_UP",
-        "details": "Reached level 30 (was 29)",
-        "timestamp": "2026-07-06T03:57:28"
+        "type": "DEATH",
+        "details": "Killed by Feral Mountain Lion in Eastern Kingdoms",
+        "timestamp": "2026-07-06T04:00:15"
+      },
+      {
+        "name": "Sylvia",
+        "level": 45,
+        "race": 1,
+        "class": 8,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1987.02g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:15"
+      },
+      {
+        "name": "Geamnomwin",
+        "level": 28,
+        "race": 3,
+        "class": 4,
+        "type": "DEATH",
+        "details": "Killed by Bluegill Raider in Eastern Kingdoms",
+        "timestamp": "2026-07-06T04:00:14"
+      },
+      {
+        "name": "Arinek",
+        "level": 28,
+        "race": 1,
+        "class": 7,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1101.69g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:14"
+      },
+      {
+        "name": "Twamuthun",
+        "level": 53,
+        "race": 3,
+        "class": 5,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 2047.91g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:14"
+      },
+      {
+        "name": "Mathaelleas",
+        "level": 27,
+        "race": 4,
+        "class": 2,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 84.75g (New Balance: 0.00g)",
+        "timestamp": "2026-07-06T04:00:14"
+      },
+      {
+        "name": "Ilalas",
+        "level": 26,
+        "race": 4,
+        "class": 5,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 274.83g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:14"
+      },
+      {
+        "name": "Araenya",
+        "level": 32,
+        "race": 4,
+        "class": 1,
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Bookie Herod (Quest ID: 200)",
+        "timestamp": "2026-07-06T04:00:13"
+      },
+      {
+        "name": "Marinere",
+        "level": 57,
+        "race": 5,
+        "class": 4,
+        "type": "ELITE_KILL",
+        "details": "Defeated Rare monster: General Fangferror",
+        "timestamp": "2026-07-06T04:00:13"
+      },
+      {
+        "name": "Thoren",
+        "level": 30,
+        "race": 4,
+        "class": 7,
+        "type": "PVP_KILL",
+        "details": "Defeated Thoren in PvP at Kalimdor",
+        "timestamp": "2026-07-06T04:00:13"
+      },
+      {
+        "name": "Thoren",
+        "level": 30,
+        "race": 4,
+        "class": 7,
+        "type": "DEATH",
+        "details": "Killed by Thoren in PvP at Kalimdor",
+        "timestamp": "2026-07-06T04:00:13"
+      },
+      {
+        "name": "Muaniir",
+        "level": 60,
+        "race": 11,
+        "class": 7,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 2127.18g (New Balance: -0.08g)",
+        "timestamp": "2026-07-06T04:00:13"
+      },
+      {
+        "name": "Araenya",
+        "level": 32,
+        "race": 4,
+        "class": 1,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 733.47g (New Balance: 0.01g)",
+        "timestamp": "2026-07-06T04:00:13"
       }
     ],
     "guilds": [
@@ -140795,7 +140836,7 @@
         "character_guid": 2087,
         "creature_id": 18124,
         "creature_name": "Withered Giant",
-        "kill_count": 30
+        "kill_count": 31
       },
       {
         "character_guid": 2092,
