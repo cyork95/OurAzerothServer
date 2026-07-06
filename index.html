@@ -4025,6 +4025,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         serverCharacters = data.characters || [];
                         activeAuctions = data.auctions || [];
                         humanCharacters = data.human_characters || [];
+                        ZONE_NAMES = data.zones || {};
                     } catch(e) { showError('data-assign', e); return; }
 
                     // Populate Game Events
@@ -4196,6 +4197,8 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             1: 'Human', 2: 'Orc', 3: 'Dwarf', 4: 'Night Elf', 5: 'Undead',
             6: 'Tauren', 7: 'Gnome', 8: 'Troll', 10: 'Blood Elf', 11: 'Draenei'
         };
+
+        let ZONE_NAMES = {};
 
         function filterCharSearch(val) {
             const dropdown = document.getElementById('bioCharSearchDropdown');
