@@ -16037,7 +16037,7 @@
       "name": "Kwelli",
       "race": 6,
       "class": 11,
-      "level": 15,
+      "level": 16,
       "gender": 1
     },
     {
@@ -17685,7 +17685,7 @@
       "name": "Marinere",
       "race": 5,
       "class": 4,
-      "level": 59,
+      "level": 60,
       "gender": 1
     },
     {
@@ -22485,7 +22485,7 @@
       "name": "Rulan",
       "race": 3,
       "class": 3,
-      "level": 6,
+      "level": 7,
       "gender": 1
     },
     {
@@ -27389,7 +27389,7 @@
       "name": "Voras",
       "race": 11,
       "class": 8,
-      "level": 3,
+      "level": 4,
       "gender": 0
     },
     {
@@ -29226,6 +29226,291 @@
     }
   ],
   "auctions": [
+    {
+      "auction_id": 130487,
+      "name": "Boots of Elements",
+      "quality": 3,
+      "required_level": 54,
+      "item_level": 59,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 332226,
+      "start_bid": 322259,
+      "last_bid": 0,
+      "time_left": 1783692774,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130486,
+      "name": "Lavastone Hammer",
+      "quality": 3,
+      "required_level": 53,
+      "item_level": 58,
+      "class": 2,
+      "subclass": 5,
+      "quantity": 1,
+      "buyout": 716341,
+      "start_bid": 637543,
+      "last_bid": 0,
+      "time_left": 1783660374,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130485,
+      "name": "Primal Earth",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 139680,
+      "start_bid": 134091,
+      "last_bid": 0,
+      "time_left": 1783689174,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130484,
+      "name": "Protector Waistband",
+      "quality": 2,
+      "required_level": 45,
+      "item_level": 50,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 68173,
+      "start_bid": 60673,
+      "last_bid": 0,
+      "time_left": 1783732374,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130483,
+      "name": "Stormfront Gauntlets",
+      "quality": 3,
+      "required_level": 66,
+      "item_level": 103,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 349086,
+      "start_bid": 300213,
+      "last_bid": 0,
+      "time_left": 1783721514,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130482,
+      "name": "Frostweaver Cape",
+      "quality": 3,
+      "required_level": 58,
+      "item_level": 63,
+      "class": 4,
+      "subclass": 1,
+      "quantity": 1,
+      "buyout": 234729,
+      "start_bid": 197172,
+      "last_bid": 0,
+      "time_left": 1783674714,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130481,
+      "name": "Essence of Earth",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 13668,
+      "start_bid": 13257,
+      "last_bid": 0,
+      "time_left": 1783725114,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130480,
+      "name": "Essence of Fire",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 16404,
+      "start_bid": 13779,
+      "last_bid": 0,
+      "time_left": 1783674714,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130479,
+      "name": "Gold Bar",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 30,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 18036,
+      "start_bid": 15690,
+      "last_bid": 0,
+      "time_left": 1783714314,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130478,
+      "name": "Truesilver Ore",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 40,
+      "class": 7,
+      "subclass": 7,
+      "quantity": 3,
+      "buyout": 20775,
+      "start_bid": 19527,
+      "last_bid": 0,
+      "time_left": 1783696314,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130477,
+      "name": "Orca Belt",
+      "quality": 2,
+      "required_level": 71,
+      "item_level": 146,
+      "class": 4,
+      "subclass": 3,
+      "quantity": 1,
+      "buyout": 266325,
+      "start_bid": 247682,
+      "last_bid": 0,
+      "time_left": 1783699914,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130476,
+      "name": "Plans: Reinforced Cobalt Shoulders",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 75,
+      "class": 9,
+      "subclass": 4,
+      "quantity": 1,
+      "buyout": 781200,
+      "start_bid": 695268,
+      "last_bid": 0,
+      "time_left": 1783685514,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130475,
+      "name": "Alabaster Plate Vambraces",
+      "quality": 2,
+      "required_level": 48,
+      "item_level": 53,
+      "class": 4,
+      "subclass": 4,
+      "quantity": 1,
+      "buyout": 62998,
+      "start_bid": 54178,
+      "last_bid": 0,
+      "time_left": 1783732314,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130474,
+      "name": "Elemental Water",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 25,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 251,
+      "buyout": 219876,
+      "start_bid": 200047,
+      "last_bid": 0,
+      "time_left": 1783685514,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130473,
+      "name": "Sacred Mojo",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 0,
+      "class": 12,
+      "subclass": 0,
+      "quantity": 571,
+      "buyout": 7108950,
+      "start_bid": 5971518,
+      "last_bid": 0,
+      "time_left": 1783717914,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130472,
+      "name": "Heart of Darkness",
+      "quality": 3,
+      "required_level": 0,
+      "item_level": 65,
+      "class": 7,
+      "subclass": 11,
+      "quantity": 2,
+      "buyout": 509200,
+      "start_bid": 392084,
+      "last_bid": 0,
+      "time_left": 1783667454,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130471,
+      "name": "Essence of Water",
+      "quality": 2,
+      "required_level": 0,
+      "item_level": 55,
+      "class": 7,
+      "subclass": 10,
+      "quantity": 3,
+      "buyout": 10548,
+      "start_bid": 9807,
+      "last_bid": 0,
+      "time_left": 1783692654,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130470,
+      "name": "Flimsy Male Draenei Mask",
+      "quality": 1,
+      "required_level": 0,
+      "item_level": 1,
+      "class": 4,
+      "subclass": 0,
+      "quantity": 1,
+      "buyout": 2,
+      "start_bid": 1,
+      "last_bid": 0,
+      "time_left": 1783667454,
+      "owner_name": "Gnenlirgunk"
+    },
+    {
+      "auction_id": 130469,
+      "name": "Elixir of the Mongoose",
+      "quality": 1,
+      "required_level": 46,
+      "item_level": 56,
+      "class": 0,
+      "subclass": 2,
+      "quantity": 840,
+      "buyout": 2247000,
+      "start_bid": 2178960,
+      "last_bid": 0,
+      "time_left": 1783660254,
+      "owner_name": "Gnenlirgunk"
+    },
     {
       "auction_id": 130468,
       "name": "Broken Blade of Heroes",
@@ -36112,21 +36397,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 130004,
-      "name": "Recipe: Haste Potion",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 9,
-      "subclass": 6,
-      "quantity": 1,
-      "buyout": 202000,
-      "start_bid": 165640,
-      "last_bid": 0,
-      "time_left": 1783653114,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 130003,
       "name": "Mithril Ore",
       "quality": 1,
@@ -42322,21 +42592,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 129538,
-      "name": "Essence of Air",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 13632,
-      "start_bid": 12675,
-      "last_bid": 0,
-      "time_left": 1783653169,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 129537,
       "name": "Khorium Bar",
       "quality": 2,
@@ -42454,21 +42709,6 @@
       "start_bid": 13224,
       "last_bid": 0,
       "time_left": 1783681909,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 129529,
-      "name": "Grunt's Cape",
-      "quality": 2,
-      "required_level": 14,
-      "item_level": 19,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 3982,
-      "start_bid": 3982,
-      "last_bid": 0,
-      "time_left": 1783653109,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -45667,21 +45907,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 129279,
-      "name": "Silver Bar",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 10,
-      "class": 7,
-      "subclass": 7,
-      "quantity": 3,
-      "buyout": 3882,
-      "start_bid": 3258,
-      "last_bid": 0,
-      "time_left": 1783653109,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 129278,
       "name": "Living Essence",
       "quality": 2,
@@ -45724,21 +45949,6 @@
       "start_bid": 12125,
       "last_bid": 0,
       "time_left": 1783678309,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 129274,
-      "name": "Elixir of Camouflage",
-      "quality": 1,
-      "required_level": 50,
-      "item_level": 61,
-      "class": 0,
-      "subclass": 2,
-      "quantity": 330,
-      "buyout": 1377750,
-      "start_bid": 1294920,
-      "last_bid": 0,
-      "time_left": 1783653109,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -51322,21 +51532,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 128786,
-      "name": "Design: Subtle Living Ruby",
-      "quality": 3,
-      "required_level": 0,
-      "item_level": 70,
-      "class": 9,
-      "subclass": 10,
-      "quantity": 1,
-      "buyout": 382500,
-      "start_bid": 363375,
-      "last_bid": 0,
-      "time_left": 1783653169,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 128783,
       "name": "Carapace of Tuten'kash",
       "quality": 3,
@@ -53584,21 +53779,6 @@
       "start_bid": 511872,
       "last_bid": 0,
       "time_left": 1783703569,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 128564,
-      "name": "Bloodshot Greaves",
-      "quality": 3,
-      "required_level": 49,
-      "item_level": 54,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 210666,
-      "start_bid": 208559,
-      "last_bid": 0,
-      "time_left": 1783653109,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -56032,21 +56212,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 128320,
-      "name": "Primal Water",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 65,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 141360,
-      "start_bid": 134292,
-      "last_bid": 0,
-      "time_left": 1783653109,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 128319,
       "name": "Primal Water",
       "quality": 2,
@@ -56074,21 +56239,6 @@
       "start_bid": 16035,
       "last_bid": 0,
       "time_left": 1783685509,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 128317,
-      "name": "Essence of Undeath",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 24270,
-      "start_bid": 21600,
-      "last_bid": 0,
-      "time_left": 1783653109,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -66592,21 +66742,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 126919,
-      "name": "Mok'Nathal Beast-Mask",
-      "quality": 3,
-      "required_level": 65,
-      "item_level": 100,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 438967,
-      "start_bid": 399459,
-      "last_bid": 0,
-      "time_left": 1783653229,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 126918,
       "name": "Soulpriest's Ring of Resolve",
       "quality": 3,
@@ -66667,21 +66802,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 126911,
-      "name": "Breeches of the Caller",
-      "quality": 3,
-      "required_level": 80,
-      "item_level": 200,
-      "class": 4,
-      "subclass": 1,
-      "quantity": 1,
-      "buyout": 842237,
-      "start_bid": 816969,
-      "last_bid": 0,
-      "time_left": 1783653169,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 126910,
       "name": "Ornate Leggings of the Venerated",
       "quality": 3,
@@ -66694,21 +66814,6 @@
       "start_bid": 730495,
       "last_bid": 0,
       "time_left": 1783681969,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 126909,
-      "name": "Orca Footwraps",
-      "quality": 2,
-      "required_level": 71,
-      "item_level": 146,
-      "class": 4,
-      "subclass": 3,
-      "quantity": 1,
-      "buyout": 374360,
-      "start_bid": 366872,
-      "last_bid": 0,
-      "time_left": 1783653169,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -66769,21 +66874,6 @@
       "start_bid": 3573,
       "last_bid": 0,
       "time_left": 1783674709,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 126899,
-      "name": "Red Dragonscale",
-      "quality": 1,
-      "required_level": 0,
-      "item_level": 60,
-      "class": 7,
-      "subclass": 6,
-      "quantity": 715,
-      "buyout": 1619475,
-      "start_bid": 1149720,
-      "last_bid": 0,
-      "time_left": 1783653109,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -68059,21 +68149,6 @@
       "start_bid": 1445200,
       "last_bid": 0,
       "time_left": 1783678256,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 126682,
-      "name": "Golem Vambraces",
-      "quality": 2,
-      "required_level": 78,
-      "item_level": 174,
-      "class": 4,
-      "subclass": 4,
-      "quantity": 1,
-      "buyout": 320105,
-      "start_bid": 275290,
-      "last_bid": 0,
-      "time_left": 1783653056,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -72202,21 +72277,6 @@
       "owner_name": "Gnenlirgunk"
     },
     {
-      "auction_id": 125719,
-      "name": "Felstone Spaulders",
-      "quality": 3,
-      "required_level": 68,
-      "item_level": 109,
-      "class": 4,
-      "subclass": 2,
-      "quantity": 1,
-      "buyout": 494855,
-      "start_bid": 390935,
-      "last_bid": 0,
-      "time_left": 1783653056,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
       "auction_id": 125709,
       "name": "Gold Ore",
       "quality": 2,
@@ -73564,21 +73624,6 @@
       "start_bid": 696330,
       "last_bid": 0,
       "time_left": 1783656716,
-      "owner_name": "Gnenlirgunk"
-    },
-    {
-      "auction_id": 125016,
-      "name": "Essence of Undeath",
-      "quality": 2,
-      "required_level": 0,
-      "item_level": 55,
-      "class": 7,
-      "subclass": 10,
-      "quantity": 3,
-      "buyout": 38970,
-      "start_bid": 37800,
-      "last_bid": 0,
-      "time_left": 1783653056,
       "owner_name": "Gnenlirgunk"
     },
     {
@@ -134242,14 +134287,14 @@
     "richest": [
       {
         "name": "Emda",
-        "money": 30535254,
+        "money": 30543605,
         "level": 67,
         "race": 3,
         "class": 3
       },
       {
         "name": "Judragrius",
-        "money": 30388484,
+        "money": 30388694,
         "level": 65,
         "race": 3,
         "class": 2
@@ -134314,70 +134359,70 @@
     "playtime": [
       {
         "name": "Kumrodus",
-        "totaltime": 1014168,
+        "totaltime": 1014348,
         "level": 8,
         "race": 3,
         "class": 4
       },
       {
         "name": "Cariia",
-        "totaltime": 1012747,
+        "totaltime": 1012987,
         "level": 49,
         "race": 4,
         "class": 11
       },
       {
         "name": "Terance",
-        "totaltime": 1011934,
+        "totaltime": 1012114,
         "level": 31,
         "race": 1,
         "class": 5
       },
       {
         "name": "Usa",
-        "totaltime": 1010976,
+        "totaltime": 1011156,
         "level": 44,
         "race": 3,
         "class": 3
       },
       {
         "name": "Martorin",
-        "totaltime": 1010089,
+        "totaltime": 1010269,
         "level": 59,
         "race": 1,
         "class": 1
       },
       {
         "name": "Bholdand",
-        "totaltime": 1010022,
+        "totaltime": 1010263,
         "level": 55,
         "race": 3,
         "class": 3
       },
       {
         "name": "Tammal",
-        "totaltime": 1009397,
+        "totaltime": 1009577,
         "level": 38,
         "race": 3,
         "class": 5
       },
       {
         "name": "Guni",
-        "totaltime": 1009190,
+        "totaltime": 1009370,
         "level": 47,
         "race": 7,
         "class": 1
       },
       {
         "name": "Elenlomon",
-        "totaltime": 1008715,
+        "totaltime": 1008955,
         "level": 48,
         "race": 4,
         "class": 11
       },
       {
         "name": "Tarion",
-        "totaltime": 1007702,
+        "totaltime": 1007942,
         "level": 43,
         "race": 4,
         "class": 11
@@ -134486,7 +134531,7 @@
       },
       {
         "name": "Manathaan",
-        "count": 508,
+        "count": 509,
         "level": 45,
         "race": 4,
         "class": 11
@@ -134507,7 +134552,7 @@
       },
       {
         "name": "Jeyhgivu",
-        "count": 347,
+        "count": 348,
         "level": 39,
         "race": 3,
         "class": 2
@@ -134691,7 +134736,7 @@
       {
         "name": "Estantin",
         "creature_name": "Mangy Wolf",
-        "kill_count": 514,
+        "kill_count": 516,
         "level": 7,
         "race": 1,
         "class": 5
@@ -134869,7 +134914,7 @@
     "ah_merchants": [
       {
         "name": "Gnenlirgunk",
-        "count": 2966,
+        "count": 2969,
         "level": 10,
         "race": 7,
         "class": 1
@@ -134940,7 +134985,7 @@
       },
       {
         "name": "Kwelli",
-        "level": 15,
+        "level": 16,
         "race": 6,
         "class": 11,
         "zone": 17,
@@ -134970,7 +135015,7 @@
         "level": 55,
         "race": 3,
         "class": 3,
-        "zone": 46,
+        "zone": 28,
         "map": 0,
         "gender": 0
       },
@@ -134979,7 +135024,7 @@
         "level": 24,
         "race": 3,
         "class": 4,
-        "zone": 12,
+        "zone": 10,
         "map": 0,
         "gender": 0
       },
@@ -135291,11 +135336,11 @@
       },
       {
         "name": "Marinere",
-        "level": 59,
+        "level": 60,
         "race": 5,
         "class": 4,
-        "zone": 139,
-        "map": 0,
+        "zone": 3521,
+        "map": 530,
         "gender": 1
       },
       {
@@ -135843,7 +135888,7 @@
         "level": 30,
         "race": 1,
         "class": 4,
-        "zone": 12,
+        "zone": 10,
         "map": 0,
         "gender": 1
       },
@@ -136617,7 +136662,7 @@
         "level": 49,
         "race": 4,
         "class": 5,
-        "zone": 440,
+        "zone": 490,
         "map": 1,
         "gender": 1
       },
@@ -137355,8 +137400,8 @@
         "level": 60,
         "race": 3,
         "class": 2,
-        "zone": 3521,
-        "map": 530,
+        "zone": 1519,
+        "map": 0,
         "gender": 1
       },
       {
@@ -138300,8 +138345,8 @@
         "level": 27,
         "race": 4,
         "class": 3,
-        "zone": 331,
-        "map": 1,
+        "zone": 267,
+        "map": 0,
         "gender": 1
       },
       {
@@ -138912,7 +138957,7 @@
         "level": 39,
         "race": 4,
         "class": 11,
-        "zone": 3524,
+        "zone": 3557,
         "map": 530,
         "gender": 0
       },
@@ -138948,8 +138993,8 @@
         "level": 36,
         "race": 1,
         "class": 5,
-        "zone": 33,
-        "map": 0,
+        "zone": 15,
+        "map": 1,
         "gender": 0
       },
       {
@@ -139317,7 +139362,7 @@
         "level": 42,
         "race": 4,
         "class": 11,
-        "zone": 15,
+        "zone": 357,
         "map": 1,
         "gender": 1
       },
@@ -139380,7 +139425,7 @@
         "level": 60,
         "race": 4,
         "class": 11,
-        "zone": 618,
+        "zone": 16,
         "map": 1,
         "gender": 1
       },
@@ -139542,7 +139587,7 @@
         "level": 66,
         "race": 7,
         "class": 4,
-        "zone": 3522,
+        "zone": 3518,
         "map": 530,
         "gender": 1
       },
@@ -139875,7 +139920,7 @@
         "level": 65,
         "race": 4,
         "class": 11,
-        "zone": 3522,
+        "zone": 3519,
         "map": 530,
         "gender": 1
       },
@@ -140955,7 +141000,7 @@
         "level": 56,
         "race": 1,
         "class": 1,
-        "zone": 51,
+        "zone": 46,
         "map": 0,
         "gender": 1
       },
@@ -141483,7 +141528,7 @@
       },
       {
         "name": "Voras",
-        "level": 3,
+        "level": 4,
         "race": 11,
         "class": 8,
         "zone": 3524,
@@ -141936,8 +141981,8 @@
         "level": 39,
         "race": 7,
         "class": 4,
-        "zone": 15,
-        "map": 1,
+        "zone": 33,
+        "map": 0,
         "gender": 0
       },
       {
@@ -142125,7 +142170,7 @@
         "level": 60,
         "race": 4,
         "class": 11,
-        "zone": 11,
+        "zone": 45,
         "map": 0,
         "gender": 0
       },
@@ -143106,7 +143151,7 @@
         "level": 42,
         "race": 1,
         "class": 3,
-        "zone": 45,
+        "zone": 47,
         "map": 0,
         "gender": 0
       },
@@ -143187,7 +143232,7 @@
         "level": 46,
         "race": 7,
         "class": 1,
-        "zone": 15,
+        "zone": 331,
         "map": 1,
         "gender": 1
       },
@@ -143556,7 +143601,7 @@
         "level": 46,
         "race": 11,
         "class": 2,
-        "zone": 357,
+        "zone": 15,
         "map": 1,
         "gender": 0
       },
@@ -144267,7 +144312,7 @@
         "level": 53,
         "race": 4,
         "class": 8,
-        "zone": 361,
+        "zone": 616,
         "map": 1,
         "gender": 1
       },
@@ -144687,7 +144732,7 @@
       },
       {
         "name": "Rulan",
-        "level": 6,
+        "level": 7,
         "race": 3,
         "class": 3,
         "zone": 1,
@@ -145482,8 +145527,8 @@
         "level": 60,
         "race": 3,
         "class": 3,
-        "zone": 618,
-        "map": 1,
+        "zone": 28,
+        "map": 0,
         "gender": 0
       },
       {
@@ -145662,7 +145707,7 @@
         "level": 36,
         "race": 4,
         "class": 4,
-        "zone": 1,
+        "zone": 45,
         "map": 0,
         "gender": 1
       },
@@ -145806,7 +145851,7 @@
         "level": 39,
         "race": 1,
         "class": 2,
-        "zone": 11,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -145869,7 +145914,7 @@
         "level": 50,
         "race": 3,
         "class": 2,
-        "zone": 139,
+        "zone": 28,
         "map": 0,
         "gender": 1
       },
@@ -146328,7 +146373,7 @@
         "level": 35,
         "race": 7,
         "class": 3,
-        "zone": 12,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -146499,7 +146544,7 @@
         "level": 45,
         "race": 1,
         "class": 8,
-        "zone": 47,
+        "zone": 45,
         "map": 0,
         "gender": 1
       },
@@ -146724,7 +146769,7 @@
         "level": 60,
         "race": 1,
         "class": 11,
-        "zone": 28,
+        "zone": 36,
         "map": 0,
         "gender": 1
       },
@@ -147021,7 +147066,7 @@
         "level": 38,
         "race": 1,
         "class": 7,
-        "zone": 0,
+        "zone": 15,
         "map": 1,
         "gender": 0
       },
@@ -147399,7 +147444,7 @@
         "level": 60,
         "race": 11,
         "class": 9,
-        "zone": 45,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -147435,7 +147480,7 @@
         "level": 40,
         "race": 3,
         "class": 7,
-        "zone": 45,
+        "zone": 11,
         "map": 0,
         "gender": 1
       },
@@ -148200,8 +148245,8 @@
         "level": 39,
         "race": 2,
         "class": 11,
-        "zone": 3,
-        "map": 0,
+        "zone": 15,
+        "map": 1,
         "gender": 1
       },
       {
@@ -148423,184 +148468,121 @@
     ],
     "activity_feed": [
       {
-        "name": "Firahee",
-        "level": 63,
+        "name": "Dewhemmo",
+        "level": 59,
         "race": 6,
-        "class": 1,
+        "class": 7,
         "type": "MONEY_CHANGE",
-        "details": "Spent 689.61g (New Balance: 0.11g)",
-        "timestamp": "2026-07-09T23:10:08"
+        "details": "Spent 2556.15g (New Balance: -0.07g)",
+        "timestamp": "2026-07-09T23:13:35"
       },
       {
-        "name": "Otkesh",
-        "level": 48,
+        "name": "Glenkiblun",
+        "level": 52,
+        "race": 7,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 702.73g (New Balance: 0.03g)",
+        "timestamp": "2026-07-09T23:13:34"
+      },
+      {
+        "name": "Twaimdanes",
+        "level": 37,
+        "race": 3,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1437.44g (New Balance: 0.02g)",
+        "timestamp": "2026-07-09T23:13:32"
+      },
+      {
+        "name": "Shienzuzeah",
+        "level": 19,
+        "race": 8,
+        "class": 4,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 409.03g (New Balance: 0.00g)",
+        "timestamp": "2026-07-09T23:13:32"
+      },
+      {
+        "name": "Gnitasi",
+        "level": 38,
+        "race": 7,
+        "class": 1,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1276.20g (New Balance: 0.02g)",
+        "timestamp": "2026-07-09T23:13:32"
+      },
+      {
+        "name": "Kynkuk",
+        "level": 32,
         "race": 7,
         "class": 8,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1073.30g (New Balance: 0.02g)",
-        "timestamp": "2026-07-09T23:10:07"
+        "details": "Spent 585.50g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:31"
       },
       {
-        "name": "Jynick",
-        "level": 26,
-        "race": 7,
-        "class": 2,
-        "type": "PVP_KILL",
-        "details": "Defeated Jynick in PvP at Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:10:06"
-      },
-      {
-        "name": "Jynick",
-        "level": 26,
-        "race": 7,
-        "class": 2,
-        "type": "DEATH",
-        "details": "Killed by Jynick in PvP at Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:10:06"
-      },
-      {
-        "name": "Izora",
-        "level": 30,
-        "race": 1,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 422.80g (New Balance: 0.01g)",
-        "timestamp": "2026-07-09T23:10:06"
-      },
-      {
-        "name": "Lilalyia",
-        "level": 65,
+        "name": "Mathaelleas",
+        "level": 42,
         "race": 4,
+        "class": 2,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1934.04g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:30"
+      },
+      {
+        "name": "Irnok",
+        "level": 28,
+        "race": 3,
         "class": 11,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2580.74g (New Balance: -0.10g)",
-        "timestamp": "2026-07-09T23:10:04"
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Report to Captain Stoutfist (Quest ID: 473)",
+        "timestamp": "2026-07-09T23:13:29"
       },
       {
-        "name": "Nitloll",
-        "level": 46,
-        "race": 7,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1326.66g (New Balance: -0.06g)",
-        "timestamp": "2026-07-09T23:10:03"
-      },
-      {
-        "name": "Poldik",
+        "name": "Heethkuklun",
         "level": 66,
         "race": 7,
         "class": 4,
-        "type": "DEATH",
-        "details": "Killed by Bloodmaul Warlock in Outland",
-        "timestamp": "2026-07-09T23:10:02"
-      },
-      {
-        "name": "Corhula",
-        "level": 66,
-        "race": 11,
-        "class": 1,
         "type": "MONEY_CHANGE",
-        "details": "Spent 2613.08g (New Balance: 0.07g)",
-        "timestamp": "2026-07-09T23:10:01"
+        "details": "Spent 1852.47g (New Balance: 0.04g)",
+        "timestamp": "2026-07-09T23:13:29"
       },
       {
-        "name": "Zalestia",
-        "level": 43,
+        "name": "Derolano",
+        "level": 60,
         "race": 1,
-        "class": 8,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 1384.73g (New Balance: 0.03g)",
-        "timestamp": "2026-07-09T23:10:01"
-      },
-      {
-        "name": "Allas",
-        "level": 5,
-        "race": 3,
-        "class": 3,
-        "type": "DEATH",
-        "details": "Killed by Ragged Young Wolf in Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:10:00"
-      },
-      {
-        "name": "Amaris",
-        "level": 9,
-        "race": 1,
-        "class": 9,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 172.03g (New Balance: 0.00g)",
-        "timestamp": "2026-07-09T23:09:59"
-      },
-      {
-        "name": "Araenya",
-        "level": 47,
-        "race": 4,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 788.37g (New Balance: 0.03g)",
-        "timestamp": "2026-07-09T23:09:59"
-      },
-      {
-        "name": "Genagwobach",
-        "level": 44,
-        "race": 6,
-        "class": 11,
-        "type": "DEATH",
-        "details": "Killed by Witherbark Caller in Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:09:54"
-      },
-      {
-        "name": "Klylush",
-        "level": 8,
-        "race": 7,
-        "class": 8,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 254.95g (New Balance: 0.00g)",
-        "timestamp": "2026-07-09T23:09:54"
-      },
-      {
-        "name": "Soshago",
-        "level": 57,
-        "race": 3,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2198.68g (New Balance: 0.02g)",
-        "timestamp": "2026-07-09T23:09:52"
-      },
-      {
-        "name": "Afelliz",
-        "level": 63,
-        "race": 7,
-        "class": 7,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 2075.55g (New Balance: 0.05g)",
-        "timestamp": "2026-07-09T23:09:52"
-      },
-      {
-        "name": "Edirgirn",
-        "level": 40,
-        "race": 7,
-        "class": 1,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 578.93g (New Balance: 0.02g)",
-        "timestamp": "2026-07-09T23:09:52"
-      },
-      {
-        "name": "Merio",
-        "level": 22,
-        "race": 1,
-        "class": 8,
-        "type": "MONEY_CHANGE",
-        "details": "Spent 593.08g (New Balance: 0.00g)",
-        "timestamp": "2026-07-09T23:09:51"
-      },
-      {
-        "name": "Twoteaste",
-        "level": 46,
-        "race": 3,
         "class": 2,
+        "type": "QUEST_COMPLETE",
+        "details": "Completed quest: Know your Enemy (Quest ID: 10160)",
+        "timestamp": "2026-07-09T23:13:29"
+      },
+      {
+        "name": "Nalaan",
+        "level": 35,
+        "race": 11,
+        "class": 8,
+        "type": "DEATH",
+        "details": "Killed by Kurzen Commando in Eastern Kingdoms",
+        "timestamp": "2026-07-09T23:13:26"
+      },
+      {
+        "name": "Rohano",
+        "level": 37,
+        "race": 1,
+        "class": 3,
         "type": "MONEY_CHANGE",
-        "details": "Spent 2071.04g (New Balance: 0.01g)",
-        "timestamp": "2026-07-09T23:09:50"
+        "details": "Spent 429.05g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:26"
+      },
+      {
+        "name": "Ravelanne",
+        "level": 34,
+        "race": 1,
+        "class": 11,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 286.67g (New Balance: 0.03g)",
+        "timestamp": "2026-07-09T23:13:25"
       },
       {
         "name": "Elerine",
@@ -148608,26 +148590,62 @@
         "race": 1,
         "class": 4,
         "type": "MONEY_CHANGE",
-        "details": "Spent 610.03g (New Balance: -0.03g)",
-        "timestamp": "2026-07-09T23:09:50"
+        "details": "Spent 610.00g (New Balance: -0.03g)",
+        "timestamp": "2026-07-09T23:13:25"
       },
       {
-        "name": "Glissus",
-        "level": 39,
-        "race": 7,
-        "class": 11,
+        "name": "Mythalas",
+        "level": 56,
+        "race": 4,
+        "class": 7,
         "type": "MONEY_CHANGE",
-        "details": "Spent 813.31g (New Balance: 0.02g)",
-        "timestamp": "2026-07-09T23:09:47"
+        "details": "Spent 698.85g (New Balance: 0.05g)",
+        "timestamp": "2026-07-09T23:13:25"
       },
       {
-        "name": "Edirgirn",
-        "level": 40,
-        "race": 7,
-        "class": 1,
+        "name": "Twaimdanes",
+        "level": 37,
+        "race": 3,
+        "class": 4,
         "type": "MONEY_CHANGE",
-        "details": "Spent 578.91g (New Balance: 0.02g)",
-        "timestamp": "2026-07-09T23:09:47"
+        "details": "Spent 1437.42g (New Balance: 0.02g)",
+        "timestamp": "2026-07-09T23:13:24"
+      },
+      {
+        "name": "Inigordan",
+        "level": 8,
+        "race": 1,
+        "class": 2,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 177.10g (New Balance: 0.00g)",
+        "timestamp": "2026-07-09T23:13:23"
+      },
+      {
+        "name": "Atun",
+        "level": 61,
+        "race": 11,
+        "class": 5,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 727.38g (New Balance: 0.07g)",
+        "timestamp": "2026-07-09T23:13:22"
+      },
+      {
+        "name": "Mauren",
+        "level": 60,
+        "race": 5,
+        "class": 5,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 1721.57g (New Balance: 0.02g)",
+        "timestamp": "2026-07-09T23:13:21"
+      },
+      {
+        "name": "Adorin",
+        "level": 9,
+        "race": 5,
+        "class": 8,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 96.84g (New Balance: 0.00g)",
+        "timestamp": "2026-07-09T23:13:21"
       },
       {
         "name": "Elenelina",
@@ -148636,7 +148654,7 @@
         "class": 7,
         "type": "PVP_KILL",
         "details": "Defeated Elenelina in PvP at Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:09:46"
+        "timestamp": "2026-07-09T23:13:21"
       },
       {
         "name": "Elenelina",
@@ -148645,34 +148663,25 @@
         "class": 7,
         "type": "DEATH",
         "details": "Killed by Elenelina in PvP at Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:09:46"
+        "timestamp": "2026-07-09T23:13:21"
       },
       {
-        "name": "Patke",
-        "level": 35,
-        "race": 7,
+        "name": "Aeran",
+        "level": 31,
+        "race": 10,
         "class": 9,
         "type": "DEATH",
-        "details": "Killed by Zanzil Hunter in Eastern Kingdoms",
-        "timestamp": "2026-07-09T23:09:46"
+        "details": "Killed by Xavian Felsworn in Kalimdor",
+        "timestamp": "2026-07-09T23:13:21"
       },
       {
-        "name": "Jilia",
-        "level": 42,
-        "race": 4,
-        "class": 9,
+        "name": "Banah",
+        "level": 60,
+        "race": 11,
+        "class": 7,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1144.97g (New Balance: 0.01g)",
-        "timestamp": "2026-07-09T23:09:46"
-      },
-      {
-        "name": "Twamuthun",
-        "level": 59,
-        "race": 3,
-        "class": 5,
-        "type": "LOOT_ITEM",
-        "details": "Looted Rare item: Two of Elementals x1",
-        "timestamp": "2026-07-09T23:09:44"
+        "details": "Spent 1596.21g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:20"
       },
       {
         "name": "Kynkuk",
@@ -148680,17 +148689,53 @@
         "race": 7,
         "class": 8,
         "type": "MONEY_CHANGE",
-        "details": "Spent 585.48g (New Balance: 0.00g)",
-        "timestamp": "2026-07-09T23:09:43"
+        "details": "Spent 585.48g (New Balance: 0.02g)",
+        "timestamp": "2026-07-09T23:13:20"
       },
       {
-        "name": "Ilyeriia",
-        "level": 64,
-        "race": 4,
-        "class": 4,
+        "name": "Dignahr",
+        "level": 25,
+        "race": 3,
+        "class": 7,
         "type": "MONEY_CHANGE",
-        "details": "Spent 1669.53g (New Balance: 0.07g)",
-        "timestamp": "2026-07-09T23:09:43"
+        "details": "Spent 678.82g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:20"
+      },
+      {
+        "name": "Gaedoril",
+        "level": 65,
+        "race": 4,
+        "class": 11,
+        "type": "ELITE_KILL",
+        "details": "Defeated Elite monster: Thunderlord Grunt",
+        "timestamp": "2026-07-09T23:13:20"
+      },
+      {
+        "name": "Brunwohdi",
+        "level": 50,
+        "race": 3,
+        "class": 1,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 799.55g (New Balance: 0.05g)",
+        "timestamp": "2026-07-09T23:13:13"
+      },
+      {
+        "name": "Rohano",
+        "level": 37,
+        "race": 1,
+        "class": 3,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 429.04g (New Balance: 0.01g)",
+        "timestamp": "2026-07-09T23:13:12"
+      },
+      {
+        "name": "Araenya",
+        "level": 47,
+        "race": 4,
+        "class": 1,
+        "type": "MONEY_CHANGE",
+        "details": "Spent 788.50g (New Balance: 0.05g)",
+        "timestamp": "2026-07-09T23:13:12"
       }
     ],
     "guilds": [
@@ -151397,7 +151442,7 @@
         "character_guid": 1587,
         "creature_id": 5420,
         "creature_name": "Glasshide Gazer",
-        "kill_count": 3
+        "kill_count": 4
       },
       {
         "character_guid": 1592,
@@ -151832,6 +151877,12 @@
         "kill_count": 3
       },
       {
+        "character_guid": 2006,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
+      },
+      {
         "character_guid": 2007,
         "creature_id": 5420,
         "creature_name": "Glasshide Gazer",
@@ -152189,7 +152240,7 @@
         "character_guid": 2299,
         "creature_id": 5420,
         "creature_name": "Glasshide Gazer",
-        "kill_count": 47
+        "kill_count": 49
       },
       {
         "character_guid": 2302,
@@ -152790,6 +152841,12 @@
         "creature_id": 1561,
         "creature_name": "Bloodsail Raider",
         "kill_count": 9
+      },
+      {
+        "character_guid": 2934,
+        "creature_id": 5420,
+        "creature_name": "Glasshide Gazer",
+        "kill_count": 1
       },
       {
         "character_guid": 2937,
@@ -153556,7 +153613,7 @@
         },
         {
           "type": "WHISPER",
-          "count": 1134
+          "count": 1135
         },
         {
           "type": "SAY",
