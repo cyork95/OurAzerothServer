@@ -3592,10 +3592,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--accent-primary); padding-left: 1.5rem; margin-left: 0.5rem;">
-                    <!-- VERSION 1.1.0 -->
+                    <!-- VERSION 1.1.1 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary); box-shadow: 0 0 8px var(--accent-glow);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.0 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.1 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 10, 2026</p>
+                        
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Database & Factions</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Restored Default NPC Faction Templates:</strong> Automatically compared and restored NPC faction template settings from clean AzerothCore upstream database sources (fixing remaining mismatches such as Legionnaire Teena).</li>
+                            <li><strong>Live Reload Applied:</strong> Issued live server command <code>.reload creature_template</code> to apply NPC faction fixes immediately.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.1.0 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.0</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 5, 2026</p>
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Server & Module Updates</h4>
