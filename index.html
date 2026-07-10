@@ -3600,7 +3600,7 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Database & Factions</h4>
                         <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                            <li><strong>Restored Default NPC Faction Templates:</strong> Automatically compared and restored NPC faction template settings from clean AzerothCore upstream database sources (fixing remaining mismatches such as Legionnaire Teena).</li>
+                            <li><strong>Restored Default NPC Faction Templates:</strong> Automatically compared all 30,192 NPC entries in the database against the clean AzerothCore upstream database sources and restored **204 creature templates** that had mismatched faction values (including Stitches, watchmen, guards, and quest creatures).</li>
                             <li><strong>Reset Human Cross-Faction Reputations:</strong> Wiped the custom neutral faction templates left behind by <code>mod-Faction-Free</code> on all human player characters. Resetting 345 rows to correctly restore default hostility toward the opposing faction on login.</li>
                             <li><strong>Live Reload Applied:</strong> Issued live server command <code>.reload creature_template</code> to apply NPC faction fixes immediately.</li>
                         </ul>
