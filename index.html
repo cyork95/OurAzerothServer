@@ -3592,10 +3592,25 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--accent-primary); padding-left: 1.5rem; margin-left: 0.5rem;">
-                    <!-- VERSION 1.1.1 -->
+                    <!-- VERSION 1.1.2 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary); box-shadow: 0 0 8px var(--accent-glow);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.1 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.2 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 11, 2026</p>
+                        
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🛠️ Complete Faction Isolation & DBC Restoration</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Extracted Clean Official Blizzard DBCs:</strong> Discovered that <code>mod-Faction-Free</code> had poisoned the server's extracted DBC files during initial generation. Used a custom extraction script to pull clean, unmodified <code>Faction.dbc</code> and <code>FactionTemplate.dbc</code> files directly from the official Blizzard 3.3.5a client archive.</li>
+                            <li><strong>Overwrote Server DBC Files:</strong> Stopped the server and deployed the clean DBCs to <code>/home/coyofroyo/azeroth-server/data/dbc/</code> to restore official hostility and faction flags in server memory.</li>
+                            <li><strong>Disabled Client-Side Faction Patch:</strong> Renamed <code>Patch-F.MPQ</code> to <code>Patch-F.MPQ.bak</code> in the player client directory (<code>C:/Users/coyof/Documents/OurAzeroth/3.3.5a_Client/Data/</code>), removing the client-side display override that was preventing targeting and right-click attacks.</li>
+                            <li><strong>Extended DB Rep Cleanup:</strong> Performed an additional sweep to purge residual cross-faction reputation entries for player characters.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.1.1 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.1</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 10, 2026</p>
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">⚙️ Database & Factions</h4>
