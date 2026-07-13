@@ -1166,9 +1166,16 @@
 
     <!-- Fixed Left Sidebar Panel -->
     <aside class="wiki-sidebar">
-        <div class="sidebar-brand">
+        <div class="sidebar-brand" style="padding-bottom: 1.25rem;">
             <h2>OurAzeroth</h2>
-            <span class="badge-tag">Wiki & Guide</span>
+            <span class="badge-tag" style="margin-bottom: 0.75rem;">Wiki & Guide</span>
+            <div style="width: 100%; margin-top: 0.5rem; padding: 0 0.5rem;">
+                <select id="wiki-expansion-selector" onchange="changeWikiExpansion(this.value)" style="width: 100%; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 0.45rem; border-radius: 6px; font-family: inherit; font-size: 0.82rem; outline: none; cursor: pointer; transition: border-color 0.2s; box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);">
+                    <option value="wotlk">Wrath of the Lich King (3.3.5a)</option>
+                    <option value="tbc">The Burning Crusade (2.4.3)</option>
+                    <option value="classic">Classic WoW (1.12.1)</option>
+                </select>
+            </div>
         </div>
         <nav class="sidebar-menu">
             <!-- Welcome & Setup -->
@@ -4166,15 +4173,31 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
             }
         }
 
-        function initApp() {
-            // Start interactive particle effects immediately
-            try { initWotlkEffects(); } catch(e) { showError('initWotlkEffects', e); }
+        let activeWikiExp = 'wotlk';
 
-            // Use the same search parameters to bust cache for the JSON file
+        function changeWikiExpansion(exp) {
+            activeWikiExp = exp;
+            let filename = 'wiki_data.json';
+            if (exp === 'tbc') {
+                filename = 'wiki_data_tbc.json';
+            } else if (exp === 'classic') {
+                filename = 'wiki_data_classic.json';
+            }
+            
+            // Show/hide WotLK-only tabs
+            const ollamaTabBtn = document.getElementById('tabbtn-ai-ollama');
+            if (ollamaTabBtn) {
+                ollamaTabBtn.style.display = (exp === 'wotlk') ? 'block' : 'none';
+            }
+            
+            loadWikiData(filename);
+        }
+
+        function loadWikiData(filename) {
             const cacheBuster = '?t=' + Date.now();
-            fetch('wiki_data.json' + cacheBuster)
+            fetch(filename + cacheBuster)
                 .then(res => {
-                    if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching wiki_data.json');
+                    if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching ' + filename);
                     return res.json();
                 })
                 .then(data => {
@@ -4190,27 +4213,36 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     try {
                         const eventsBody = document.getElementById('wiki-events-body');
                         const eventsCount = document.getElementById('events-count');
-                        if (eventsBody && data.events) {
-                            eventsCount.textContent = data.events.length;
-                            eventsBody.innerHTML = data.events.map(evt => `
-                                <tr class="wiki-event-row" data-search="${evt.id} ${evt.name.toLowerCase()}" style="border-bottom: 1px solid rgba(79, 195, 247, 0.02);">
-                                    <td style="padding: 0.25rem 0.5rem; font-weight: 600; color: var(--text-primary);">#${evt.id}</td>
-                                    <td style="padding: 0.25rem 0.5rem;">${evt.name}</td>
-                                </tr>
-                            `).join('');
+                        if (eventsBody) {
+                            if (data.events && data.events.length > 0) {
+                                eventsCount.textContent = data.events.length;
+                                eventsBody.innerHTML = data.events.map(evt => `
+                                    <tr class="wiki-event-row" data-search="${evt.id} ${evt.name.toLowerCase()}" style="border-bottom: 1px solid rgba(79, 195, 247, 0.02);">
+                                        <td style="padding: 0.25rem 0.5rem; font-weight: 600; color: var(--text-primary);">#${evt.id}</td>
+                                        <td style="padding: 0.25rem 0.5rem;">${evt.name}</td>
+                                    </tr>
+                                `).join('');
+                            } else {
+                                eventsCount.textContent = '0';
+                                eventsBody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: var(--text-secondary); padding: 1.5rem;">No active events found for this expansion.</td></tr>';
+                            }
                         }
                     } catch(e) { showError('populate-events', e); }
 
                     // Populate Ollama Personalities
                     try {
                         const personalitiesBody = document.getElementById('ollama-personalities-body');
-                        if (personalitiesBody && data.personalities) {
-                            personalitiesBody.innerHTML = data.personalities.map(pers => `
-                                <tr style="border-bottom: 1px solid rgba(79, 195, 247, 0.05);">
-                                    <td style="padding: 0.75rem 1rem;"><strong style="color: var(--accent-hover);">${pers.key}</strong></td>
-                                    <td style="padding: 0.75rem 1rem; color: var(--text-primary); font-size: 0.85rem;">${pers.prompt}</td>
-                                </tr>
-                            `).join('');
+                        if (personalitiesBody) {
+                            if (data.personalities && data.personalities.length > 0) {
+                                personalitiesBody.innerHTML = data.personalities.map(pers => `
+                                    <tr style="border-bottom: 1px solid rgba(79, 195, 247, 0.05);">
+                                        <td style="padding: 0.75rem 1rem;"><strong style="color: var(--accent-hover);">${pers.key}</strong></td>
+                                        <td style="padding: 0.75rem 1rem; color: var(--text-primary); font-size: 0.85rem;">${pers.prompt}</td>
+                                    </tr>
+                                `).join('');
+                            } else {
+                                personalitiesBody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: var(--text-secondary); padding: 1.5rem;">Ollama spatial chat is only active on the Wrath of the Lich King realm.</td></tr>';
+                            }
                         }
                     } catch(e) { showError('populate-personalities', e); }
 
@@ -4221,8 +4253,14 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                     try { initServerStats(); } catch(e) { showError('initServerStats', e); }
                 })
                 .catch(err => {
-                    showError('fetch-wiki_data.json', err);
+                    showError('fetch-' + filename, err);
                 });
+        }
+
+        function initApp() {
+            // Start interactive particle effects immediately
+            try { initWotlkEffects(); } catch(e) { showError('initWotlkEffects', e); }
+            changeWikiExpansion('wotlk');
         }
 
         if (document.readyState === 'loading') {

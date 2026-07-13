@@ -1,0 +1,42 @@
+{
+  "events": [],
+  "personalities": [],
+  "characters": [],
+  "auctions": [],
+  "human_characters": [],
+  "biographies": {},
+  "kills": {},
+  "chats": {},
+  "equipments": {},
+  "zones": {},
+  "stats": {
+    "richest": [],
+    "playtime": [],
+    "elite_kills": [],
+    "deaths": [],
+    "creature_kills": [],
+    "boss_conquests": [],
+    "achievements": [],
+    "quests": [],
+    "pvp_hks": [],
+    "pvp_arena": [],
+    "ah_merchants": [],
+    "exalted_rep": [],
+    "bot_distribution": [],
+    "online_players": [],
+    "activity_feed": [],
+    "guilds": [],
+    "mounts": [],
+    "pets": [],
+    "mount_boss_kills": [],
+    "learned_rare_spells": [],
+    "obtained_rare_items": [],
+    "professions": {},
+    "chat_stats": {
+      "talkative": [],
+      "channels": [],
+      "funny_quotes": [],
+      "top_words": []
+    }
+  }
+}

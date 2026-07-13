@@ -1,0 +1,419 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Midsummer Fire Festival"
+    },
+    {
+      "id": 2,
+      "name": "Feast of Winter Veil"
+    },
+    {
+      "id": 4,
+      "name": "Darkmoon Faire (Elwynn)"
+    },
+    {
+      "id": 5,
+      "name": "Darkmoon Faire (Mulgore)"
+    },
+    {
+      "id": 6,
+      "name": "Fireworks"
+    },
+    {
+      "id": 7,
+      "name": "Lunar Festival"
+    },
+    {
+      "id": 8,
+      "name": "Love is in the Air"
+    },
+    {
+      "id": 10,
+      "name": "Children's Week"
+    },
+    {
+      "id": 11,
+      "name": "Harvest Festival"
+    },
+    {
+      "id": 12,
+      "name": "Hallow's End"
+    },
+    {
+      "id": 13,
+      "name": "Elemental Invasion"
+    },
+    {
+      "id": 14,
+      "name": "Stranglethorn Fishing Extravaganza: Announce"
+    },
+    {
+      "id": 15,
+      "name": "Stranglethorn Fishing Extravaganza: Tournament"
+    },
+    {
+      "id": 16,
+      "name": "Gurubashi Arena Booty Run"
+    },
+    {
+      "id": 17,
+      "name": "Scourge Invasion"
+    },
+    {
+      "id": 18,
+      "name": "Call to Arms: Alterac Valley"
+    },
+    {
+      "id": 19,
+      "name": "Call to Arms, Warsong Gulch"
+    },
+    {
+      "id": 20,
+      "name": "Call to Arms, Arathi Basin"
+    },
+    {
+      "id": 21,
+      "name": "Feast of Winter Veil: Gifts"
+    },
+    {
+      "id": 22,
+      "name": "AQ War Effort (NPC & GO 'Initial')"
+    },
+    {
+      "id": 23,
+      "name": "Darkmoon Faire Building (Elwynn)"
+    },
+    {
+      "id": 24,
+      "name": "Darkmoon Faire Building (Mulgore)"
+    },
+    {
+      "id": 25,
+      "name": "Call to Arms"
+    },
+    {
+      "id": 27,
+      "name": "Night"
+    },
+    {
+      "id": 28,
+      "name": "Noblegarden"
+    },
+    {
+      "id": 29,
+      "name": "Edge of Madness, Gri'lek"
+    },
+    {
+      "id": 30,
+      "name": "Edge of Madness, Hazza'rah"
+    },
+    {
+      "id": 31,
+      "name": "Edge of Madness, Renataki"
+    },
+    {
+      "id": 32,
+      "name": "Edge of Madness, Wushoolay"
+    },
+    {
+      "id": 33,
+      "name": "Arena Tournament"
+    },
+    {
+      "id": 34,
+      "name": "New Year's Eve"
+    },
+    {
+      "id": 35,
+      "name": "The Maul: Mushgog"
+    },
+    {
+      "id": 36,
+      "name": "The Maul: Skarr the Unbreakable"
+    },
+    {
+      "id": 37,
+      "name": "The Maul: Razza"
+    },
+    {
+      "id": 38,
+      "name": "Chinese New Year"
+    },
+    {
+      "id": 39,
+      "name": "Post Firework Toasting Goblets"
+    },
+    {
+      "id": 40,
+      "name": "Stranglethorn Fishing Extravaganza: The Crew"
+    },
+    {
+      "id": 41,
+      "name": "July 4th Fireworks Spectacular (US Only)"
+    },
+    {
+      "id": 42,
+      "name": "September 30th Peon Day (EU Only)"
+    },
+    {
+      "id": 43,
+      "name": "Lunar Festival: Minions of Omen"
+    },
+    {
+      "id": 45,
+      "name": "Fishing: summer period (for Raw Summer Bass)"
+    },
+    {
+      "id": 46,
+      "name": "Fishing: winter period (for Winter Squid)"
+    },
+    {
+      "id": 47,
+      "name": "Fishing: Sunscale Cycle"
+    },
+    {
+      "id": 48,
+      "name": "Fishing: Nightfin Cycle"
+    },
+    {
+      "id": 49,
+      "name": "Pyrewood Village Night"
+    },
+    {
+      "id": 52,
+      "name": "AQ War Effort (NPC Reput 'Only War Effort')"
+    },
+    {
+      "id": 53,
+      "name": "AQ War Effort (NPC Reput Named 'Officer')"
+    },
+    {
+      "id": 54,
+      "name": "AQ War Troop Silithus (NPC & GO) DAY 1"
+    },
+    {
+      "id": 55,
+      "name": "AQ War Troop Silithus (NPC & GO) DAY 2"
+    },
+    {
+      "id": 56,
+      "name": "AQ War Troop Silithus (NPC & GO) DAY 3"
+    },
+    {
+      "id": 57,
+      "name": "AQ War Troop Silithus (NPC & GO) DAY 4"
+    },
+    {
+      "id": 58,
+      "name": "AQ War Troop Silithus (NPC & GO) DAY 5"
+    },
+    {
+      "id": 59,
+      "name": "AQ War Effort (Cenarion Hold attack)"
+    },
+    {
+      "id": 60,
+      "name": "AQ War Troop Silithus 3 (NPC & GO)"
+    },
+    {
+      "id": 61,
+      "name": "AQ War Final Battle (NPC)"
+    },
+    {
+      "id": 62,
+      "name": "AQ War - Secrets of the Colossus Ashi"
+    },
+    {
+      "id": 63,
+      "name": "AQ War - Secrets of the Colossus Regal"
+    },
+    {
+      "id": 64,
+      "name": "AQ War - Secrets of the Colossus Zora"
+    },
+    {
+      "id": 65,
+      "name": "AQ War - Spawn of Crystals"
+    },
+    {
+      "id": 66,
+      "name": "Dragons of Nightmare Spawn"
+    },
+    {
+      "id": 68,
+      "name": "Elemental Invasion: Fire (Un'goro Crater)"
+    },
+    {
+      "id": 69,
+      "name": "Elemental Invasion: Air (Silithus)"
+    },
+    {
+      "id": 70,
+      "name": "Elemental Invasion: Earth (Azshara)"
+    },
+    {
+      "id": 71,
+      "name": "Elemental Invasion: Water (Winterspring)"
+    },
+    {
+      "id": 72,
+      "name": "Elemental Invasion: Baron Charr (Un'goro Crater)"
+    },
+    {
+      "id": 73,
+      "name": "Elemental Invasion: The Windreaver (Silithus)"
+    },
+    {
+      "id": 74,
+      "name": "Elemental Invasion: Avalanchion (Azshara)"
+    },
+    {
+      "id": 75,
+      "name": "Elemental Invasion: Princess Tempestria (Winterspring)"
+    },
+    {
+      "id": 78,
+      "name": "Hourly Bells"
+    },
+    {
+      "id": 81,
+      "name": "Scourge Invasion - Boss in instance activation"
+    },
+    {
+      "id": 83,
+      "name": "AQ Gate"
+    },
+    {
+      "id": 84,
+      "name": "AQ War Effort (master event)"
+    },
+    {
+      "id": 85,
+      "name": "AQ War Effort (gong)"
+    },
+    {
+      "id": 86,
+      "name": "AQ War Effort (post-event)"
+    },
+    {
+      "id": 90,
+      "name": "Scourge Invasion - Attacking Winterspring"
+    },
+    {
+      "id": 91,
+      "name": "Scourge Invasion - Attacking Tanaris"
+    },
+    {
+      "id": 92,
+      "name": "Scourge Invasion - Attacking Azshara"
+    },
+    {
+      "id": 93,
+      "name": "Scourge Invasion - Attacking Blasted Lands"
+    },
+    {
+      "id": 94,
+      "name": "Scourge Invasion - Attacking Eastern Plaguelands"
+    },
+    {
+      "id": 95,
+      "name": "Scourge Invasion - Attacking Burning Steppes"
+    },
+    {
+      "id": 96,
+      "name": "Scourge Invasion - 50 Invasions Done"
+    },
+    {
+      "id": 97,
+      "name": "Scourge Invasion - 100 Invasions Done"
+    },
+    {
+      "id": 98,
+      "name": "Scourge Invasion - 150 Invasions Done"
+    },
+    {
+      "id": 99,
+      "name": "Scourge Invasion - Invasions Done"
+    },
+    {
+      "id": 103,
+      "name": "Event PVP Silithus"
+    },
+    {
+      "id": 110,
+      "name": "Love is in the Air - Popularity Contest Winner: Darnassus"
+    },
+    {
+      "id": 111,
+      "name": "Love is in the Air - Popularity Contest Winner: Ironforge"
+    },
+    {
+      "id": 112,
+      "name": "Love is in the Air - Popularity Contest Winner: Stormwind"
+    },
+    {
+      "id": 113,
+      "name": "Love is in the Air - Popularity Contest Winner: Orgrimmar"
+    },
+    {
+      "id": 114,
+      "name": "Love is in the Air - Popularity Contest Winner: Thunder Bluff"
+    },
+    {
+      "id": 115,
+      "name": "Love is in the Air - Popularity Contest Winner: Undercity"
+    },
+    {
+      "id": 129,
+      "name": "Scourge Invasion - Phase 2 - Invasion Stormwind"
+    },
+    {
+      "id": 130,
+      "name": "Scourge Invasion - Phase 2 - Invasion Undercity"
+    },
+    {
+      "id": 152,
+      "name": "Southshore Assassins"
+    }
+  ],
+  "personalities": [],
+  "characters": [],
+  "auctions": [],
+  "human_characters": [],
+  "biographies": {},
+  "kills": {},
+  "chats": {},
+  "equipments": {},
+  "zones": {},
+  "stats": {
+    "richest": [],
+    "playtime": [],
+    "elite_kills": [],
+    "deaths": [],
+    "creature_kills": [],
+    "boss_conquests": [],
+    "achievements": [],
+    "quests": [],
+    "pvp_hks": [],
+    "pvp_arena": [],
+    "ah_merchants": [],
+    "exalted_rep": [],
+    "bot_distribution": [],
+    "online_players": [],
+    "activity_feed": [],
+    "guilds": [],
+    "mounts": [],
+    "pets": [],
+    "mount_boss_kills": [],
+    "learned_rare_spells": [],
+    "obtained_rare_items": [],
+    "professions": {},
+    "chat_stats": {
+      "talkative": [],
+      "channels": [],
+      "funny_quotes": [],
+      "top_words": []
+    }
+  }
+}
