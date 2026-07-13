@@ -15108,48 +15108,6 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Tehre",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Benelinari",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Uzmu",
-        "count": 19,
-        "level": 62,
-        "race": 8,
-        "class": 8
-      },
-      {
-        "name": "Suhedia",
-        "count": 19,
-        "level": 69,
-        "race": 6,
-        "class": 1
-      },
-      {
-        "name": "Yolandy",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 1
-      },
-      {
-        "name": "Tuzu",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 7
-      },
-      {
         "name": "Baus",
         "count": 19,
         "level": 70,
@@ -15176,6 +15134,48 @@
         "level": 67,
         "race": 2,
         "class": 3
+      },
+      {
+        "name": "Matzen",
+        "count": 19,
+        "level": 65,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Hus",
+        "count": 19,
+        "level": 63,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Vesteria",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
+        "name": "Laesheh",
+        "count": 19,
+        "level": 66,
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Shalatha",
+        "count": 19,
+        "level": 63,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Darlion",
+        "count": 19,
+        "level": 60,
+        "race": 10,
+        "class": 4
       }
     ],
     "bot_distribution": [
