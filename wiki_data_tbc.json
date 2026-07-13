@@ -15108,73 +15108,73 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Matzen",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Hus",
-        "count": 19,
-        "level": 63,
-        "race": 2,
-        "class": 1
-      },
-      {
-        "name": "Vesteria",
+        "name": "Tehre",
         "count": 19,
         "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Laesheh",
-        "count": 19,
-        "level": 66,
         "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Shalatha",
-        "count": 19,
-        "level": 63,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Darlion",
-        "count": 19,
-        "level": 60,
-        "race": 10,
         "class": 4
       },
       {
-        "name": "Doshkiak",
+        "name": "Benelinari",
         "count": 19,
         "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Uzmu",
+        "count": 19,
+        "level": 62,
+        "race": 8,
+        "class": 8
+      },
+      {
+        "name": "Suhedia",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Yolandy",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 1
+      },
+      {
+        "name": "Tuzu",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Baus",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 3
+      },
+      {
+        "name": "Gelansel",
+        "count": 19,
+        "level": 69,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Cilangedew",
+        "count": 19,
+        "level": 65,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Itdis",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Azaleane",
+        "name": "Gehi",
         "count": 19,
         "level": 67,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Maris",
-        "count": 19,
-        "level": 66,
-        "race": 10,
+        "race": 2,
         "class": 3
       }
     ],
@@ -17732,70 +17732,70 @@
     ],
     "mounts": [
       {
-        "name": "Managdug",
+        "name": "Chirka",
         "count": 4,
         "level": 70,
-        "race": 3,
-        "class": 3
+        "race": 6,
+        "class": 11
       },
       {
-        "name": "Lotheas",
+        "name": "Doshkiak",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Gabrick",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 9
+      },
+      {
+        "name": "Masca",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Calvian",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 5
+      },
+      {
+        "name": "Baus",
         "count": 4,
         "level": 70,
         "race": 10,
-        "class": 4
+        "class": 3
       },
       {
-        "name": "Bellata",
+        "name": "Aveaan",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 2
+      },
+      {
+        "name": "Restor",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 5
+      },
+      {
+        "name": "Emethea",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 1
       },
       {
-        "name": "Kilniir",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 5
-      },
-      {
-        "name": "Becalanea",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 5
-      },
-      {
-        "name": "Gotine",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Saelor",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Sexonash",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Faldron",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Dendo",
+        "name": "Velineve",
         "count": 4,
         "level": 70,
         "race": 1,
