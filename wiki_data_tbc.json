@@ -732,7 +732,7 @@
       "name": "Adoriane",
       "race": 1,
       "class": 4,
-      "level": 1,
+      "level": 54,
       "gender": 1
     },
     {
@@ -748,7 +748,7 @@
       "name": "Adricharan",
       "race": 5,
       "class": 9,
-      "level": 1,
+      "level": 70,
       "gender": 0
     },
     {
@@ -852,7 +852,7 @@
       "name": "Ahgah",
       "race": 8,
       "class": 4,
-      "level": 1,
+      "level": 17,
       "gender": 0
     },
     {
@@ -956,7 +956,7 @@
       "name": "Alasia",
       "race": 1,
       "class": 9,
-      "level": 1,
+      "level": 55,
       "gender": 1
     },
     {
@@ -1516,7 +1516,7 @@
       "name": "Ariannise",
       "race": 5,
       "class": 4,
-      "level": 1,
+      "level": 12,
       "gender": 1
     },
     {
@@ -1580,7 +1580,7 @@
       "name": "Arrent",
       "race": 1,
       "class": 1,
-      "level": 1,
+      "level": 21,
       "gender": 0
     },
     {
@@ -2292,7 +2292,7 @@
       "name": "Benora",
       "race": 5,
       "class": 5,
-      "level": 1,
+      "level": 23,
       "gender": 1
     },
     {
@@ -2476,7 +2476,7 @@
       "name": "Bitis",
       "race": 10,
       "class": 4,
-      "level": 1,
+      "level": 46,
       "gender": 0
     },
     {
@@ -2628,7 +2628,7 @@
       "name": "Brance",
       "race": 5,
       "class": 8,
-      "level": 1,
+      "level": 65,
       "gender": 1
     },
     {
@@ -2704,19 +2704,19 @@
       "gender": 0
     },
     {
-      "guid": 1301,
-      "name": "Bucitlo",
-      "race": 6,
-      "class": 7,
-      "level": 28,
-      "gender": 0
-    },
-    {
       "guid": 547,
       "name": "Bucitlo",
       "race": 6,
       "class": 11,
       "level": 1,
+      "gender": 0
+    },
+    {
+      "guid": 1301,
+      "name": "Bucitlo",
+      "race": 6,
+      "class": 7,
+      "level": 28,
       "gender": 0
     },
     {
@@ -2836,7 +2836,7 @@
       "name": "Caeen",
       "race": 10,
       "class": 8,
-      "level": 1,
+      "level": 10,
       "gender": 0
     },
     {
@@ -2860,7 +2860,7 @@
       "name": "Caelazar",
       "race": 1,
       "class": 8,
-      "level": 1,
+      "level": 70,
       "gender": 0
     },
     {
@@ -3148,7 +3148,7 @@
       "name": "Celericia",
       "race": 1,
       "class": 8,
-      "level": 1,
+      "level": 20,
       "gender": 1
     },
     {
@@ -3460,7 +3460,7 @@
       "name": "Clerim",
       "race": 1,
       "class": 8,
-      "level": 1,
+      "level": 2,
       "gender": 0
     },
     {
@@ -3516,7 +3516,7 @@
       "name": "Conatius",
       "race": 1,
       "class": 9,
-      "level": 1,
+      "level": 23,
       "gender": 0
     },
     {
@@ -3532,7 +3532,7 @@
       "name": "Conrato",
       "race": 1,
       "class": 8,
-      "level": 1,
+      "level": 36,
       "gender": 0
     },
     {
@@ -3716,7 +3716,7 @@
       "name": "Dalnaal",
       "race": 4,
       "class": 3,
-      "level": 1,
+      "level": 42,
       "gender": 0
     },
     {
@@ -3940,7 +3940,7 @@
       "name": "Deemlon",
       "race": 7,
       "class": 8,
-      "level": 1,
+      "level": 56,
       "gender": 0
     },
     {
@@ -3956,7 +3956,7 @@
       "name": "Delios",
       "race": 1,
       "class": 1,
-      "level": 1,
+      "level": 13,
       "gender": 0
     },
     {
@@ -4052,7 +4052,7 @@
       "name": "Denrynn",
       "race": 4,
       "class": 4,
-      "level": 1,
+      "level": 39,
       "gender": 1
     },
     {
@@ -4244,7 +4244,7 @@
       "name": "Donathal",
       "race": 1,
       "class": 9,
-      "level": 1,
+      "level": 47,
       "gender": 0
     },
     {
@@ -4848,19 +4848,19 @@
       "gender": 1
     },
     {
-      "guid": 818,
-      "name": "Ellolun",
-      "race": 11,
-      "class": 7,
-      "level": 1,
-      "gender": 1
-    },
-    {
       "guid": 1345,
       "name": "Ellolun",
       "race": 11,
       "class": 7,
       "level": 42,
+      "gender": 1
+    },
+    {
+      "guid": 818,
+      "name": "Ellolun",
+      "race": 11,
+      "class": 7,
+      "level": 1,
       "gender": 1
     },
     {
@@ -5004,7 +5004,7 @@
       "name": "Emerianne",
       "race": 5,
       "class": 8,
-      "level": 1,
+      "level": 70,
       "gender": 1
     },
     {
@@ -5476,7 +5476,7 @@
       "name": "Eydron",
       "race": 4,
       "class": 4,
-      "level": 1,
+      "level": 26,
       "gender": 0
     },
     {
@@ -5740,7 +5740,7 @@
       "name": "Filora",
       "race": 4,
       "class": 11,
-      "level": 1,
+      "level": 70,
       "gender": 1
     },
     {
@@ -5868,7 +5868,7 @@
       "name": "Fule",
       "race": 6,
       "class": 3,
-      "level": 1,
+      "level": 64,
       "gender": 1
     },
     {
@@ -5900,7 +5900,7 @@
       "name": "Futhack",
       "race": 7,
       "class": 4,
-      "level": 1,
+      "level": 70,
       "gender": 0
     },
     {
@@ -6500,7 +6500,7 @@
       "name": "Grirmeke",
       "race": 2,
       "class": 7,
-      "level": 1,
+      "level": 10,
       "gender": 1
     },
     {
@@ -6604,7 +6604,7 @@
       "name": "Haelarim",
       "race": 1,
       "class": 8,
-      "level": 1,
+      "level": 69,
       "gender": 0
     },
     {
@@ -7028,7 +7028,7 @@
       "name": "Hinlee",
       "race": 6,
       "class": 7,
-      "level": 1,
+      "level": 66,
       "gender": 1
     },
     {
@@ -7196,7 +7196,7 @@
       "name": "Hythofla",
       "race": 7,
       "class": 9,
-      "level": 1,
+      "level": 7,
       "gender": 1
     },
     {
@@ -7204,7 +7204,7 @@
       "name": "Ibalai",
       "race": 1,
       "class": 9,
-      "level": 2,
+      "level": 28,
       "gender": 0
     },
     {
@@ -7324,7 +7324,7 @@
       "name": "Illirena",
       "race": 4,
       "class": 1,
-      "level": 1,
+      "level": 68,
       "gender": 1
     },
     {
@@ -7516,7 +7516,7 @@
       "name": "Irzara",
       "race": 10,
       "class": 3,
-      "level": 3,
+      "level": 34,
       "gender": 1
     },
     {
@@ -8564,7 +8564,7 @@
       "name": "Kritan",
       "race": 5,
       "class": 4,
-      "level": 1,
+      "level": 70,
       "gender": 0
     },
     {
@@ -8940,7 +8940,7 @@
       "name": "Lersipu",
       "race": 8,
       "class": 3,
-      "level": 1,
+      "level": 37,
       "gender": 0
     },
     {
@@ -9396,7 +9396,7 @@
       "name": "Marren",
       "race": 4,
       "class": 1,
-      "level": 1,
+      "level": 64,
       "gender": 0
     },
     {
@@ -9604,7 +9604,7 @@
       "name": "Meltheas",
       "race": 10,
       "class": 9,
-      "level": 1,
+      "level": 39,
       "gender": 0
     },
     {
@@ -9696,19 +9696,19 @@
       "gender": 1
     },
     {
-      "guid": 1738,
-      "name": "Miladan",
-      "race": 4,
-      "class": 3,
-      "level": 1,
-      "gender": 0
-    },
-    {
       "guid": 11,
       "name": "Miladan",
       "race": 4,
       "class": 11,
       "level": 31,
+      "gender": 0
+    },
+    {
+      "guid": 1738,
+      "name": "Miladan",
+      "race": 4,
+      "class": 3,
+      "level": 1,
       "gender": 0
     },
     {
@@ -9924,7 +9924,7 @@
       "name": "Mumhaa",
       "race": 11,
       "class": 7,
-      "level": 1,
+      "level": 25,
       "gender": 1
     },
     {
@@ -10044,7 +10044,7 @@
       "name": "Naderi",
       "race": 5,
       "class": 1,
-      "level": 1,
+      "level": 19,
       "gender": 1
     },
     {
@@ -10320,19 +10320,19 @@
       "gender": 0
     },
     {
-      "guid": 106,
-      "name": "Nerthis",
-      "race": 10,
-      "class": 9,
-      "level": 66,
-      "gender": 0
-    },
-    {
       "guid": 924,
       "name": "Nerthis",
       "race": 10,
       "class": 2,
       "level": 1,
+      "gender": 0
+    },
+    {
+      "guid": 106,
+      "name": "Nerthis",
+      "race": 10,
+      "class": 9,
+      "level": 66,
       "gender": 0
     },
     {
@@ -10460,7 +10460,7 @@
       "name": "Norin",
       "race": 10,
       "class": 2,
-      "level": 1,
+      "level": 18,
       "gender": 1
     },
     {
@@ -10644,7 +10644,7 @@
       "name": "Ogtison",
       "race": 8,
       "class": 3,
-      "level": 1,
+      "level": 70,
       "gender": 0
     },
     {
@@ -10700,7 +10700,7 @@
       "name": "Omastian",
       "race": 1,
       "class": 2,
-      "level": 1,
+      "level": 9,
       "gender": 0
     },
     {
@@ -11196,7 +11196,7 @@
       "name": "Pitosh",
       "race": 7,
       "class": 8,
-      "level": 1,
+      "level": 66,
       "gender": 0
     },
     {
@@ -11300,7 +11300,7 @@
       "name": "Punlobeern",
       "race": 7,
       "class": 8,
-      "level": 1,
+      "level": 20,
       "gender": 0
     },
     {
@@ -11432,19 +11432,19 @@
       "gender": 0
     },
     {
-      "guid": 255,
-      "name": "Raphanda",
-      "race": 1,
-      "class": 2,
-      "level": 37,
-      "gender": 1
-    },
-    {
       "guid": 1297,
       "name": "Raphanda",
       "race": 1,
       "class": 4,
       "level": 70,
+      "gender": 1
+    },
+    {
+      "guid": 255,
+      "name": "Raphanda",
+      "race": 1,
+      "class": 2,
+      "level": 37,
       "gender": 1
     },
     {
@@ -11560,19 +11560,19 @@
       "gender": 0
     },
     {
-      "guid": 219,
-      "name": "Relressian",
-      "race": 4,
-      "class": 3,
-      "level": 69,
-      "gender": 0
-    },
-    {
       "guid": 727,
       "name": "Relressian",
       "race": 4,
       "class": 3,
       "level": 1,
+      "gender": 0
+    },
+    {
+      "guid": 219,
+      "name": "Relressian",
+      "race": 4,
+      "class": 3,
+      "level": 69,
       "gender": 0
     },
     {
@@ -11684,7 +11684,7 @@
       "name": "Rhindun",
       "race": 8,
       "class": 3,
-      "level": 1,
+      "level": 19,
       "gender": 0
     },
     {
@@ -11852,7 +11852,7 @@
       "name": "Rumateon",
       "race": 11,
       "class": 7,
-      "level": 1,
+      "level": 37,
       "gender": 0
     },
     {
@@ -12068,7 +12068,7 @@
       "name": "Samees",
       "race": 7,
       "class": 8,
-      "level": 1,
+      "level": 70,
       "gender": 1
     },
     {
@@ -12116,7 +12116,7 @@
       "name": "Sarem",
       "race": 11,
       "class": 5,
-      "level": 1,
+      "level": 7,
       "gender": 0
     },
     {
@@ -12204,7 +12204,7 @@
       "name": "Sellyn",
       "race": 4,
       "class": 5,
-      "level": 1,
+      "level": 30,
       "gender": 1
     },
     {
@@ -12212,7 +12212,7 @@
       "name": "Selria",
       "race": 4,
       "class": 1,
-      "level": 1,
+      "level": 13,
       "gender": 1
     },
     {
@@ -12240,19 +12240,19 @@
       "gender": 1
     },
     {
-      "guid": 1662,
-      "name": "Seriariia",
-      "race": 4,
-      "class": 11,
-      "level": 1,
-      "gender": 1
-    },
-    {
       "guid": 941,
       "name": "Seriariia",
       "race": 4,
       "class": 3,
       "level": 26,
+      "gender": 1
+    },
+    {
+      "guid": 1662,
+      "name": "Seriariia",
+      "race": 4,
+      "class": 11,
+      "level": 1,
       "gender": 1
     },
     {
@@ -12516,7 +12516,7 @@
       "name": "Silasae",
       "race": 4,
       "class": 11,
-      "level": 1,
+      "level": 54,
       "gender": 1
     },
     {
@@ -12732,7 +12732,7 @@
       "name": "Suhia",
       "race": 6,
       "class": 7,
-      "level": 1,
+      "level": 65,
       "gender": 0
     },
     {
@@ -13132,7 +13132,7 @@
       "name": "Terino",
       "race": 1,
       "class": 4,
-      "level": 1,
+      "level": 69,
       "gender": 0
     },
     {
@@ -13160,6 +13160,14 @@
       "gender": 1
     },
     {
+      "guid": 1801,
+      "name": "Testing",
+      "race": 11,
+      "class": 8,
+      "level": 1,
+      "gender": 1
+    },
+    {
       "guid": 484,
       "name": "Tetishu",
       "race": 6,
@@ -13180,7 +13188,7 @@
       "name": "Tharyn",
       "race": 4,
       "class": 3,
-      "level": 1,
+      "level": 61,
       "gender": 1
     },
     {
@@ -13444,7 +13452,7 @@
       "name": "Tokomti",
       "race": 6,
       "class": 7,
-      "level": 1,
+      "level": 36,
       "gender": 1
     },
     {
@@ -13652,7 +13660,7 @@
       "name": "Ukiz",
       "race": 7,
       "class": 4,
-      "level": 1,
+      "level": 33,
       "gender": 1
     },
     {
@@ -14124,7 +14132,7 @@
       "name": "Vilysia",
       "race": 4,
       "class": 5,
-      "level": 1,
+      "level": 11,
       "gender": 1
     },
     {
@@ -14192,14 +14200,6 @@
       "gender": 0
     },
     {
-      "guid": 835,
-      "name": "Voron",
-      "race": 8,
-      "class": 4,
-      "level": 39,
-      "gender": 0
-    },
-    {
       "guid": 1350,
       "name": "Voron",
       "race": 8,
@@ -14208,11 +14208,19 @@
       "gender": 0
     },
     {
+      "guid": 835,
+      "name": "Voron",
+      "race": 8,
+      "class": 4,
+      "level": 39,
+      "gender": 0
+    },
+    {
       "guid": 307,
       "name": "Vunrok",
       "race": 8,
       "class": 3,
-      "level": 1,
+      "level": 42,
       "gender": 0
     },
     {
@@ -14276,7 +14284,7 @@
       "name": "Warieth",
       "race": 4,
       "class": 3,
-      "level": 1,
+      "level": 58,
       "gender": 1
     },
     {
@@ -14764,7 +14772,7 @@
       "name": "Zardina",
       "race": 10,
       "class": 2,
-      "level": 1,
+      "level": 53,
       "gender": 1
     },
     {
@@ -14796,7 +14804,7 @@
       "name": "Zarraden",
       "race": 10,
       "class": 3,
-      "level": 1,
+      "level": 50,
       "gender": 1
     },
     {
@@ -14844,7 +14852,7 @@
       "name": "Zedrel",
       "race": 10,
       "class": 3,
-      "level": 1,
+      "level": 65,
       "gender": 1
     },
     {
@@ -15017,80 +15025,122 @@
     }
   ],
   "auctions": [],
-  "human_characters": [],
+  "human_characters": [
+    {
+      "account_id": 205,
+      "username": "ADMIN",
+      "guid": 1801,
+      "name": "Testing",
+      "race": 11,
+      "class": 8,
+      "level": 1,
+      "gender": 1
+    }
+  ],
   "biographies": {},
   "kills": {},
   "chats": {},
-  "equipments": {},
+  "equipments": {
+    "1801": [
+      {
+        "slot": 6,
+        "entry": 23478,
+        "name": "Recruit's Pants",
+        "quality": 0,
+        "inv_type": 7
+      },
+      {
+        "slot": 4,
+        "entry": 23479,
+        "name": "Recruit's Robe",
+        "quality": 0,
+        "inv_type": 20
+      },
+      {
+        "slot": 15,
+        "entry": 35,
+        "name": "Bent Staff",
+        "quality": 1,
+        "inv_type": 17
+      },
+      {
+        "slot": 3,
+        "entry": 23473,
+        "name": "Recruit's Shirt",
+        "quality": 1,
+        "inv_type": 4
+      }
+    ]
+  },
   "zones": {},
   "stats": {
     "richest": [
       {
         "name": "Vivishia",
-        "money": 3470000,
+        "money": 3478972,
         "level": 70,
         "race": 4,
         "class": 3
       },
       {
+        "name": "Adricharan",
+        "money": 3472449,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
         "name": "Herenevita",
-        "money": 3460000,
+        "money": 3466946,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Calvian",
-        "money": 3430000,
-        "level": 70,
-        "race": 1,
-        "class": 5
-      },
-      {
         "name": "Caaen",
-        "money": 3420000,
+        "money": 3435912,
         "level": 70,
         "race": 10,
         "class": 8
       },
       {
         "name": "Ehtesse",
-        "money": 3390000,
+        "money": 3396576,
         "level": 70,
         "race": 3,
         "class": 2
       },
       {
         "name": "Fyllorn",
-        "money": 3390000,
+        "money": 3395074,
         "level": 70,
         "race": 4,
         "class": 4
       },
       {
         "name": "Velenmin",
-        "money": 3380000,
+        "money": 3387262,
         "level": 70,
         "race": 10,
         "class": 3
       },
       {
         "name": "Kormi",
-        "money": 3370000,
+        "money": 3377676,
         "level": 70,
         "race": 6,
         "class": 1
       },
       {
         "name": "Emeniel",
-        "money": 3330000,
+        "money": 3341189,
         "level": 70,
         "race": 10,
         "class": 8
       },
       {
         "name": "Nhenar",
-        "money": 3320000,
+        "money": 3323427,
         "level": 67,
         "race": 4,
         "class": 5
@@ -15102,118 +15152,189 @@
     "creature_kills": [],
     "boss_conquests": [],
     "achievements": [],
-    "quests": [],
-    "pvp_hks": [],
-    "pvp_arena": [],
-    "ah_merchants": [],
-    "exalted_rep": [
+    "quests": [
       {
-        "name": "Dariustan",
-        "count": 19,
+        "name": "Leandrin",
+        "count": 4,
         "level": 70,
         "race": 5,
         "class": 4
       },
       {
-        "name": "Tadrea",
+        "name": "Hezkir",
+        "count": 3,
+        "level": 68,
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Fyllorn",
+        "count": 3,
+        "level": 70,
+        "race": 4,
+        "class": 4
+      },
+      {
+        "name": "Mydrarus",
+        "count": 3,
+        "level": 70,
+        "race": 4,
+        "class": 3
+      },
+      {
+        "name": "Raphanda",
+        "count": 3,
+        "level": 70,
+        "race": 1,
+        "class": 4
+      },
+      {
+        "name": "Kritan",
+        "count": 3,
+        "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Kilniir",
+        "count": 2,
+        "level": 70,
+        "race": 11,
+        "class": 5
+      },
+      {
+        "name": "Dandern",
+        "count": 2,
+        "level": 66,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Hamelian",
+        "count": 2,
+        "level": 70,
+        "race": 1,
+        "class": 8
+      },
+      {
+        "name": "Gabrick",
+        "count": 2,
+        "level": 70,
+        "race": 1,
+        "class": 9
+      }
+    ],
+    "pvp_hks": [],
+    "pvp_arena": [],
+    "ah_merchants": [],
+    "exalted_rep": [
+      {
+        "name": "Doshkiak",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Elvedon",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 8
+      },
+      {
+        "name": "Chirka",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Itdis",
         "count": 19,
         "level": 70,
         "race": 10,
         "class": 9
       },
       {
-        "name": "Diyuzoia",
+        "name": "Azaleane",
         "count": 19,
-        "level": 70,
+        "level": 67,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Fule",
+        "count": 19,
+        "level": 64,
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Yurine",
+        "count": 19,
+        "level": 60,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Dandern",
+        "count": 19,
+        "level": 66,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Chailtsen",
+        "count": 19,
+        "level": 60,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Olivando",
-        "count": 19,
-        "level": 62,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Leandrin",
+        "name": "Kritan",
         "count": 19,
         "level": 70,
         "race": 5,
         "class": 4
-      },
-      {
-        "name": "Ophella",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Verinerina",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Yolandy",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 1
-      },
-      {
-        "name": "Zianlie",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 1
-      },
-      {
-        "name": "Dingocam",
-        "count": 19,
-        "level": 61,
-        "race": 6,
-        "class": 11
       }
     ],
     "bot_distribution": [
       {
         "class": 1,
-        "count": 629
+        "count": 894
       },
       {
         "class": 2,
-        "count": 603
+        "count": 822
       },
       {
         "class": 3,
-        "count": 777
+        "count": 1116
       },
       {
         "class": 4,
-        "count": 767
+        "count": 1106
       },
       {
         "class": 5,
-        "count": 537
+        "count": 729
       },
       {
         "class": 7,
-        "count": 532
+        "count": 747
       },
       {
         "class": 8,
-        "count": 696
+        "count": 1015
       },
       {
         "class": 9,
-        "count": 554
+        "count": 772
       },
       {
         "class": 11,
-        "count": 497
+        "count": 662
       }
     ],
     "online_players": [
@@ -15222,8 +15343,8 @@
         "level": 51,
         "race": 10,
         "class": 8,
-        "zone": 3430,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 0
       },
       {
@@ -15249,7 +15370,7 @@
         "level": 56,
         "race": 1,
         "class": 9,
-        "zone": 139,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -15276,8 +15397,8 @@
         "level": 68,
         "race": 1,
         "class": 2,
-        "zone": 12,
-        "map": 0,
+        "zone": 3519,
+        "map": 530,
         "gender": 1
       },
       {
@@ -15285,7 +15406,7 @@
         "level": 7,
         "race": 6,
         "class": 11,
-        "zone": 14,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -15294,8 +15415,8 @@
         "level": 70,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 3519,
+        "map": 530,
         "gender": 1
       },
       {
@@ -15303,7 +15424,7 @@
         "level": 70,
         "race": 1,
         "class": 5,
-        "zone": 12,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -15330,7 +15451,7 @@
         "level": 20,
         "race": 11,
         "class": 7,
-        "zone": 3525,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -15366,7 +15487,7 @@
         "level": 65,
         "race": 10,
         "class": 2,
-        "zone": 3519,
+        "zone": 3430,
         "map": 530,
         "gender": 0
       },
@@ -15384,7 +15505,7 @@
         "level": 36,
         "race": 7,
         "class": 4,
-        "zone": 267,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -15393,7 +15514,7 @@
         "level": 43,
         "race": 4,
         "class": 11,
-        "zone": 357,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -15402,7 +15523,7 @@
         "level": 52,
         "race": 2,
         "class": 7,
-        "zone": 357,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -15420,7 +15541,7 @@
         "level": 48,
         "race": 8,
         "class": 5,
-        "zone": 357,
+        "zone": 1637,
         "map": 1,
         "gender": 1
       },
@@ -15429,7 +15550,7 @@
         "level": 23,
         "race": 5,
         "class": 5,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -15438,7 +15559,7 @@
         "level": 33,
         "race": 1,
         "class": 2,
-        "zone": 267,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -15447,7 +15568,7 @@
         "level": 48,
         "race": 5,
         "class": 4,
-        "zone": 47,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -15456,7 +15577,16 @@
         "level": 23,
         "race": 10,
         "class": 4,
-        "zone": 3433,
+        "zone": 1637,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Nowae",
+        "level": 56,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -15465,8 +15595,8 @@
         "level": 25,
         "race": 10,
         "class": 4,
-        "zone": 3430,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 0
       },
       {
@@ -15474,7 +15604,7 @@
         "level": 61,
         "race": 11,
         "class": 1,
-        "zone": 3483,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -15483,7 +15613,7 @@
         "level": 59,
         "race": 1,
         "class": 1,
-        "zone": 41,
+        "zone": 36,
         "map": 0,
         "gender": 0
       },
@@ -15492,8 +15622,98 @@
         "level": 70,
         "race": 1,
         "class": 1,
-        "zone": 41,
+        "zone": 3519,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Sholma",
+        "level": 58,
+        "race": 8,
+        "class": 8,
+        "zone": 1377,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Kedraes",
+        "level": 6,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Chaelani",
+        "level": 30,
+        "race": 1,
+        "class": 5,
+        "zone": 1,
         "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Bagicles",
+        "level": 27,
+        "race": 7,
+        "class": 8,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Jugunn",
+        "level": 70,
+        "race": 3,
+        "class": 1,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Croruth",
+        "level": 47,
+        "race": 2,
+        "class": 9,
+        "zone": 357,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Ooathodza",
+        "level": 10,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Klethul",
+        "level": 17,
+        "race": 7,
+        "class": 4,
+        "zone": 3703,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Tallien",
+        "level": 37,
+        "race": 10,
+        "class": 3,
+        "zone": 33,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Avini",
+        "level": 22,
+        "race": 5,
+        "class": 8,
+        "zone": 1637,
+        "map": 1,
         "gender": 1
       },
       {
@@ -15501,7 +15721,7 @@
         "level": 17,
         "race": 3,
         "class": 4,
-        "zone": 44,
+        "zone": 38,
         "map": 0,
         "gender": 0
       },
@@ -15510,8 +15730,8 @@
         "level": 70,
         "race": 4,
         "class": 11,
-        "zone": 141,
-        "map": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 0
       },
       {
@@ -15519,7 +15739,7 @@
         "level": 40,
         "race": 5,
         "class": 4,
-        "zone": 3,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -15529,6 +15749,33 @@
         "race": 4,
         "class": 1,
         "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Crimtenul",
+        "level": 47,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Sumon",
+        "level": 65,
+        "race": 4,
+        "class": 11,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Kegyl",
+        "level": 42,
+        "race": 4,
+        "class": 1,
+        "zone": 400,
         "map": 1,
         "gender": 0
       },
@@ -15546,25 +15793,115 @@
         "level": 66,
         "race": 10,
         "class": 3,
-        "zone": 3521,
+        "zone": 3430,
         "map": 530,
         "gender": 0
+      },
+      {
+        "name": "Banodal",
+        "level": 15,
+        "race": 3,
+        "class": 2,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Nitklik",
+        "level": 44,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Kelaar",
+        "level": 8,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Velineve",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Sedala",
+        "level": 38,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Santanton",
+        "level": 34,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Himkil",
+        "level": 48,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Uzmu",
         "level": 62,
         "race": 8,
         "class": 8,
-        "zone": 1377,
+        "zone": 14,
         "map": 1,
         "gender": 1
+      },
+      {
+        "name": "Thurun",
+        "level": 55,
+        "race": 7,
+        "class": 1,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Cralnoz",
+        "level": 43,
+        "race": 2,
+        "class": 3,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Bhalean",
+        "level": 8,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
       },
       {
         "name": "Folcas",
         "level": 7,
         "race": 1,
         "class": 5,
-        "zone": 1,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -15573,17 +15910,62 @@
         "level": 56,
         "race": 5,
         "class": 8,
-        "zone": 28,
+        "zone": 85,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Edries",
+        "level": 32,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Elaurora",
+        "level": 49,
+        "race": 5,
+        "class": 1,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Seleanel",
         "level": 58,
         "race": 4,
         "class": 11,
-        "zone": 490,
+        "zone": 141,
         "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Trangol",
+        "level": 23,
+        "race": 8,
+        "class": 3,
+        "zone": 331,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Nelantan",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Caednis",
+        "level": 10,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
         "gender": 0
       },
       {
@@ -15591,8 +15973,170 @@
         "level": 35,
         "race": 10,
         "class": 4,
+        "zone": 405,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Palateema",
+        "level": 66,
+        "race": 11,
+        "class": 3,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Gerrannul",
+        "level": 50,
+        "race": 4,
+        "class": 3,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Acaammetho",
+        "level": 70,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Mataa",
+        "level": 10,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Jedeyn",
+        "level": 39,
+        "race": 10,
+        "class": 8,
+        "zone": 3,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Miteema",
+        "level": 69,
+        "race": 11,
+        "class": 3,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Botlibrosh",
+        "level": 37,
+        "race": 7,
+        "class": 1,
+        "zone": 15,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Kilniir",
+        "level": 70,
+        "race": 11,
+        "class": 5,
+        "zone": 3520,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Richaron",
+        "level": 64,
+        "race": 1,
+        "class": 9,
+        "zone": 3483,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Noneda",
+        "level": 22,
+        "race": 10,
+        "class": 5,
+        "zone": 1637,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Selalleas",
+        "level": 16,
+        "race": 4,
+        "class": 3,
+        "zone": 148,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Valumon",
+        "level": 32,
+        "race": 11,
+        "class": 3,
+        "zone": 405,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Sheraeth",
+        "level": 34,
+        "race": 4,
+        "class": 1,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Kasule",
+        "level": 34,
+        "race": 7,
+        "class": 8,
+        "zone": 45,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Elestra",
+        "level": 41,
+        "race": 10,
+        "class": 4,
         "zone": 3430,
         "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Roluk",
+        "level": 17,
+        "race": 3,
+        "class": 5,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Valuett",
+        "level": 70,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Amipiah",
+        "level": 7,
+        "race": 8,
+        "class": 4,
+        "zone": 14,
+        "map": 1,
         "gender": 0
       },
       {
@@ -15600,16 +16144,25 @@
         "level": 50,
         "race": 5,
         "class": 9,
-        "zone": 47,
+        "zone": 85,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Terdris",
+        "level": 46,
+        "race": 10,
+        "class": 2,
+        "zone": 36,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Elydras",
         "level": 43,
         "race": 4,
         "class": 4,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -15623,11 +16176,38 @@
         "gender": 1
       },
       {
+        "name": "Vievera",
+        "level": 18,
+        "race": 5,
+        "class": 4,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Tugarm",
+        "level": 35,
+        "race": 3,
+        "class": 1,
+        "zone": 45,
+        "map": 0,
+        "gender": 0
+      },
+      {
         "name": "Elera",
         "level": 64,
         "race": 11,
         "class": 5,
-        "zone": 3483,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Gehi",
+        "level": 67,
+        "race": 2,
+        "class": 3,
+        "zone": 3518,
         "map": 530,
         "gender": 1
       },
@@ -15641,31 +16221,283 @@
         "gender": 0
       },
       {
+        "name": "Kaelarion",
+        "level": 69,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Anthenis",
+        "level": 23,
+        "race": 10,
+        "class": 3,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Bihlnirm",
+        "level": 12,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Butlos",
+        "level": 21,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Calorcan",
+        "level": 10,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Baclae",
+        "level": 70,
+        "race": 10,
+        "class": 9,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Brandrian",
+        "level": 11,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Nerthis",
+        "level": 66,
+        "race": 10,
+        "class": 9,
+        "zone": 3521,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Baus",
+        "level": 70,
+        "race": 10,
+        "class": 3,
+        "zone": 3518,
+        "map": 530,
+        "gender": 0
+      },
+      {
         "name": "Managdug",
         "level": 70,
         "race": 3,
         "class": 3,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Shaszi",
+        "level": 38,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Rulro",
+        "level": 53,
+        "race": 8,
+        "class": 1,
+        "zone": 361,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Delaris",
+        "level": 14,
+        "race": 1,
+        "class": 1,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Itdis",
         "level": 70,
         "race": 10,
         "class": 9,
-        "zone": 3523,
+        "zone": 3430,
         "map": 530,
         "gender": 0
+      },
+      {
+        "name": "Ilerea",
+        "level": 11,
+        "race": 10,
+        "class": 8,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
       },
       {
         "name": "Thozmudu",
         "level": 45,
         "race": 2,
         "class": 7,
-        "zone": 357,
+        "zone": 14,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Bemarlin",
+        "level": 14,
+        "race": 10,
+        "class": 5,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Becalanea",
+        "level": 70,
+        "race": 4,
+        "class": 5,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Samanne",
+        "level": 46,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Fyrnea",
+        "level": 33,
+        "race": 4,
+        "class": 11,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Erelan",
+        "level": 37,
+        "race": 10,
+        "class": 9,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Tehre",
+        "level": 70,
+        "race": 8,
+        "class": 4,
+        "zone": 3519,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Renelan",
+        "level": 57,
+        "race": 1,
+        "class": 1,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Edrette",
+        "level": 23,
+        "race": 11,
+        "class": 7,
+        "zone": 11,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Colian",
+        "level": 58,
+        "race": 11,
+        "class": 1,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Emdir",
+        "level": 43,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Cilangedew",
+        "level": 65,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Drugord",
+        "level": 27,
+        "race": 1,
+        "class": 1,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Shalatha",
+        "level": 63,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Nabawhelok",
+        "level": 62,
+        "race": 6,
+        "class": 7,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Motsa",
+        "level": 12,
+        "race": 6,
+        "class": 7,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Zianlie",
@@ -15677,11 +16509,20 @@
         "gender": 1
       },
       {
+        "name": "Aurnem",
+        "level": 13,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 0
+      },
+      {
         "name": "Engun",
         "level": 35,
         "race": 3,
         "class": 5,
-        "zone": 45,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -15690,8 +16531,71 @@
         "level": 12,
         "race": 10,
         "class": 2,
+        "zone": 3487,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Hitkank",
+        "level": 59,
+        "race": 7,
+        "class": 8,
+        "zone": 1519,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Benevan",
+        "level": 49,
+        "race": 1,
+        "class": 8,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Kohrugir",
+        "level": 9,
+        "race": 3,
+        "class": 3,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Tuzu",
+        "level": 70,
+        "race": 8,
+        "class": 7,
+        "zone": 3519,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Belelia",
+        "level": 54,
+        "race": 10,
+        "class": 8,
         "zone": 3430,
         "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Iresela",
+        "level": 41,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Hus",
+        "level": 63,
+        "race": 2,
+        "class": 1,
+        "zone": 14,
+        "map": 1,
         "gender": 0
       },
       {
@@ -15699,9 +16603,18 @@
         "level": 49,
         "race": 6,
         "class": 11,
-        "zone": 440,
+        "zone": 215,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Doru",
+        "level": 45,
+        "race": 3,
+        "class": 3,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Doshkiak",
@@ -15713,12 +16626,147 @@
         "gender": 0
       },
       {
+        "name": "Tohketer",
+        "level": 36,
+        "race": 2,
+        "class": 1,
+        "zone": 400,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Sexonash",
+        "level": 70,
+        "race": 8,
+        "class": 4,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Darnir",
+        "level": 51,
+        "race": 10,
+        "class": 2,
+        "zone": 16,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Aralastor",
+        "level": 70,
+        "race": 5,
+        "class": 8,
+        "zone": 3523,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Sigoa",
+        "level": 16,
+        "race": 6,
+        "class": 7,
+        "zone": 3433,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Ahodaan",
+        "level": 55,
+        "race": 11,
+        "class": 2,
+        "zone": 3524,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Josina",
+        "level": 33,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Bimeewun",
         "level": 52,
         "race": 7,
         "class": 8,
-        "zone": 51,
+        "zone": 1,
         "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Marton",
+        "level": 15,
+        "race": 1,
+        "class": 8,
+        "zone": 40,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Irzara",
+        "level": 34,
+        "race": 10,
+        "class": 3,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Bader",
+        "level": 9,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Ittlos",
+        "level": 70,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Vivishia",
+        "level": 70,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Nutsa",
+        "level": 18,
+        "race": 6,
+        "class": 1,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Emethea",
+        "level": 70,
+        "race": 1,
+        "class": 1,
+        "zone": 3520,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Alemorhan",
+        "level": 12,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
         "gender": 0
       },
       {
@@ -15726,7 +16774,7 @@
         "level": 64,
         "race": 7,
         "class": 8,
-        "zone": 139,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -15749,8 +16797,71 @@
         "gender": 0
       },
       {
+        "name": "Benessa",
+        "level": 50,
+        "race": 1,
+        "class": 5,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Suhedia",
+        "level": 69,
+        "race": 6,
+        "class": 1,
+        "zone": 3518,
+        "map": 530,
+        "gender": 0
+      },
+      {
         "name": "Rydiir",
         "level": 70,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Vestrica",
+        "level": 70,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Milin",
+        "level": 16,
+        "race": 1,
+        "class": 4,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Remarco",
+        "level": 42,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Lilya",
+        "level": 70,
+        "race": 4,
+        "class": 3,
+        "zone": 3520,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Relnul",
+        "level": 33,
         "race": 4,
         "class": 4,
         "zone": 141,
@@ -15762,8 +16873,62 @@
         "level": 35,
         "race": 4,
         "class": 4,
-        "zone": 405,
+        "zone": 141,
         "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Amaenna",
+        "level": 50,
+        "race": 4,
+        "class": 5,
+        "zone": 1657,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Balterenz",
+        "level": 38,
+        "race": 5,
+        "class": 1,
+        "zone": 85,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Owaindo",
+        "level": 38,
+        "race": 5,
+        "class": 4,
+        "zone": 17,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Rotsas",
+        "level": 45,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Dendo",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Dina",
+        "level": 64,
+        "race": 1,
+        "class": 8,
+        "zone": 3519,
+        "map": 530,
         "gender": 1
       },
       {
@@ -15771,7 +16936,7 @@
         "level": 27,
         "race": 6,
         "class": 11,
-        "zone": 331,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -15780,7 +16945,7 @@
         "level": 68,
         "race": 11,
         "class": 7,
-        "zone": 3518,
+        "zone": 3479,
         "map": 530,
         "gender": 0
       },
@@ -15794,12 +16959,48 @@
         "gender": 0
       },
       {
+        "name": "Elanai",
+        "level": 6,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Mecina",
+        "level": 24,
+        "race": 4,
+        "class": 11,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Palaleen",
+        "level": 57,
+        "race": 11,
+        "class": 5,
+        "zone": 28,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Celestani",
         "level": 58,
         "race": 1,
         "class": 5,
-        "zone": 28,
+        "zone": 139,
         "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Phaeette",
+        "level": 26,
+        "race": 11,
+        "class": 8,
+        "zone": 3524,
+        "map": 530,
         "gender": 1
       },
       {
@@ -15807,8 +17008,17 @@
         "level": 70,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 3703,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Telin",
+        "level": 33,
+        "race": 7,
+        "class": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 0
       },
       {
@@ -15816,36 +17026,288 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 3520,
+        "zone": 1637,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Avesa",
+        "level": 17,
+        "race": 11,
+        "class": 1,
+        "zone": 3524,
         "map": 530,
         "gender": 1
+      },
+      {
+        "name": "Luci",
+        "level": 25,
+        "race": 6,
+        "class": 11,
+        "zone": 1638,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Mokwi",
+        "level": 16,
+        "race": 6,
+        "class": 7,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Paadaikan",
+        "level": 18,
+        "race": 8,
+        "class": 8,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Giancy",
+        "level": 53,
+        "race": 1,
+        "class": 9,
+        "zone": 490,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Sphon",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Abero",
+        "level": 43,
+        "race": 1,
+        "class": 8,
+        "zone": 1657,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Baririon",
+        "level": 13,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Jaiderio",
+        "level": 28,
+        "race": 1,
+        "class": 1,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Hestine",
+        "level": 19,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Ibalai",
+        "level": 28,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Darlion",
+        "level": 60,
+        "race": 10,
+        "class": 4,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Kiasca",
+        "level": 45,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Darinaris",
+        "level": 20,
+        "race": 1,
+        "class": 9,
+        "zone": 1519,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Daryllis",
+        "level": 11,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Krirgicles",
+        "level": 61,
+        "race": 7,
+        "class": 4,
+        "zone": 3483,
+        "map": 530,
+        "gender": 0
       },
       {
         "name": "Sylannul",
         "level": 25,
         "race": 4,
         "class": 3,
-        "zone": 331,
-        "map": 1,
+        "zone": 10,
+        "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Artinarina",
+        "level": 36,
+        "race": 1,
+        "class": 5,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Auroni",
+        "level": 70,
+        "race": 10,
+        "class": 4,
+        "zone": 3523,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Yilmat",
+        "level": 53,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Gotine",
+        "level": 70,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Orentiano",
+        "level": 59,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Evelah",
+        "level": 51,
+        "race": 1,
+        "class": 2,
+        "zone": 1519,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Ranca",
+        "level": 46,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Uldamyr",
         "level": 59,
         "race": 4,
         "class": 1,
-        "zone": 1377,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Kwihu",
+        "level": 48,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Kirdritge",
+        "level": 53,
+        "race": 2,
+        "class": 3,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Glutiblirn",
+        "level": 70,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Azaleane",
+        "level": 67,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
+        "map": 530,
+        "gender": 1
       },
       {
         "name": "Bellea",
         "level": 31,
         "race": 1,
         "class": 2,
-        "zone": 45,
+        "zone": 12,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Relressian",
+        "level": 69,
+        "race": 4,
+        "class": 3,
+        "zone": 36,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Asthis",
@@ -15857,20 +17319,146 @@
         "gender": 0
       },
       {
+        "name": "Zedrel",
+        "level": 65,
+        "race": 10,
+        "class": 3,
+        "zone": 1637,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Itlok",
+        "level": 70,
+        "race": 7,
+        "class": 8,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Masca",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 3703,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Taristera",
+        "level": 70,
+        "race": 1,
+        "class": 2,
+        "zone": 3523,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Linevelina",
+        "level": 37,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Clemerie",
         "level": 36,
         "race": 5,
         "class": 5,
-        "zone": 45,
+        "zone": 85,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Almere",
+        "level": 53,
+        "race": 11,
+        "class": 3,
+        "zone": 47,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Eocanaar",
+        "level": 25,
+        "race": 11,
+        "class": 3,
+        "zone": 11,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Shathas",
+        "level": 26,
+        "race": 4,
+        "class": 3,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Bemaleron",
+        "level": 27,
+        "race": 10,
+        "class": 9,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Vanico",
+        "level": 31,
+        "race": 5,
+        "class": 9,
+        "zone": 10,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Jeltsann",
         "level": 62,
         "race": 8,
         "class": 3,
-        "zone": 1377,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Tadun",
+        "level": 23,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Andro",
+        "level": 32,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Hinlee",
+        "level": 66,
+        "race": 6,
+        "class": 7,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Dingocam",
+        "level": 61,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -15884,20 +17472,47 @@
         "gender": 0
       },
       {
+        "name": "Welveth",
+        "level": 19,
+        "race": 10,
+        "class": 2,
+        "zone": 3487,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Vesteria",
+        "level": 70,
+        "race": 5,
+        "class": 9,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Kagulkom",
         "level": 43,
         "race": 2,
         "class": 3,
-        "zone": 440,
+        "zone": 14,
         "map": 1,
         "gender": 1
+      },
+      {
+        "name": "Cemliir",
+        "level": 47,
+        "race": 11,
+        "class": 8,
+        "zone": 46,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Vinian",
         "level": 64,
         "race": 1,
         "class": 5,
-        "zone": 12,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -15906,8 +17521,26 @@
         "level": 70,
         "race": 11,
         "class": 2,
-        "zone": 3523,
+        "zone": 3524,
         "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Lotheas",
+        "level": 70,
+        "race": 10,
+        "class": 4,
+        "zone": 3521,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Dymgonvin",
+        "level": 22,
+        "race": 3,
+        "class": 2,
+        "zone": 1,
+        "map": 0,
         "gender": 1
       },
       {
@@ -15915,9 +17548,63 @@
         "level": 24,
         "race": 6,
         "class": 7,
-        "zone": 406,
+        "zone": 215,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Galestra",
+        "level": 17,
+        "race": 10,
+        "class": 5,
+        "zone": 3487,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Gelansel",
+        "level": 69,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Ewda",
+        "level": 55,
+        "race": 2,
+        "class": 1,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Laesheh",
+        "level": 66,
+        "race": 8,
+        "class": 5,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Zontojo",
+        "level": 45,
+        "race": 8,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Dumah",
+        "level": 46,
+        "race": 11,
+        "class": 2,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
       },
       {
         "name": "Syely",
@@ -15929,11 +17616,65 @@
         "gender": 1
       },
       {
+        "name": "Adrianus",
+        "level": 52,
+        "race": 1,
+        "class": 4,
+        "zone": 1519,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Raphanda",
+        "level": 37,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Minamah",
         "level": 70,
         "race": 11,
         "class": 2,
-        "zone": 3520,
+        "zone": 3518,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Mamaador",
+        "level": 34,
+        "race": 11,
+        "class": 1,
+        "zone": 3703,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Hamerim",
+        "level": 65,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Mamstraa",
+        "level": 70,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Sedalle",
+        "level": 10,
+        "race": 10,
+        "class": 9,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -15942,16 +17683,52 @@
         "level": 56,
         "race": 1,
         "class": 5,
-        "zone": 139,
+        "zone": 28,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Donathal",
+        "level": 47,
+        "race": 1,
+        "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Celericia",
+        "level": 20,
+        "race": 1,
+        "class": 8,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Tharyn",
+        "level": 61,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Benora",
+        "level": 23,
+        "race": 5,
+        "class": 5,
+        "zone": 331,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Oshissoa",
         "level": 14,
         "race": 6,
         "class": 7,
-        "zone": 17,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -15960,7 +17737,16 @@
         "level": 20,
         "race": 10,
         "class": 8,
-        "zone": 3433,
+        "zone": 1637,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Zarraden",
+        "level": 50,
+        "race": 10,
+        "class": 3,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -15978,7 +17764,34 @@
         "level": 44,
         "race": 4,
         "class": 11,
-        "zone": 15,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Ukiz",
+        "level": 33,
+        "race": 7,
+        "class": 4,
+        "zone": 10,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Rumateon",
+        "level": 37,
+        "race": 11,
+        "class": 7,
+        "zone": 3524,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Grirmeke",
+        "level": 10,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -15987,34 +17800,304 @@
         "level": 64,
         "race": 7,
         "class": 8,
-        "zone": 139,
+        "zone": 1657,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Lersipu",
+        "level": 37,
+        "race": 8,
+        "class": 3,
+        "zone": 15,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Caelazar",
+        "level": 70,
+        "race": 1,
+        "class": 8,
+        "zone": 1657,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Omastian",
+        "level": 9,
+        "race": 1,
+        "class": 2,
+        "zone": 12,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Terino",
+        "level": 69,
+        "race": 1,
+        "class": 4,
+        "zone": 33,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Caeen",
+        "level": 10,
+        "race": 10,
+        "class": 8,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Adoriane",
+        "level": 54,
+        "race": 1,
+        "class": 4,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Deemlon",
+        "level": 56,
+        "race": 7,
+        "class": 8,
+        "zone": 3703,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Silasae",
+        "level": 54,
+        "race": 4,
+        "class": 11,
+        "zone": 46,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Sellyn",
+        "level": 30,
+        "race": 4,
+        "class": 5,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Naderi",
+        "level": 19,
+        "race": 5,
+        "class": 1,
+        "zone": 406,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Kritan",
+        "level": 70,
+        "race": 5,
+        "class": 4,
+        "zone": 3520,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Conatius",
+        "level": 23,
+        "race": 1,
+        "class": 9,
+        "zone": 331,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Punlobeern",
+        "level": 20,
+        "race": 7,
+        "class": 8,
+        "zone": 44,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Filora",
+        "level": 70,
+        "race": 4,
+        "class": 11,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Alariale",
         "level": 45,
         "race": 4,
         "class": 1,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 1
+      },
+      {
+        "name": "Norin",
+        "level": 18,
+        "race": 10,
+        "class": 2,
+        "zone": 3433,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Sarem",
+        "level": 7,
+        "race": 11,
+        "class": 5,
+        "zone": 3524,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Samees",
+        "level": 70,
+        "race": 7,
+        "class": 8,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Tokomti",
+        "level": 36,
+        "race": 6,
+        "class": 7,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Bitis",
+        "level": 46,
+        "race": 10,
+        "class": 4,
+        "zone": 267,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Zolana",
         "level": 70,
         "race": 1,
         "class": 2,
-        "zone": 41,
+        "zone": 1519,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Conrato",
+        "level": 36,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Jahumu",
         "level": 14,
         "race": 8,
         "class": 7,
-        "zone": 17,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Adricharan",
+        "level": 70,
+        "race": 5,
+        "class": 9,
+        "zone": 85,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Illirena",
+        "level": 68,
+        "race": 4,
+        "class": 1,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Delios",
+        "level": 13,
+        "race": 1,
+        "class": 1,
+        "zone": 12,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Alasia",
+        "level": 55,
+        "race": 1,
+        "class": 9,
+        "zone": 10,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Marren",
+        "level": 64,
+        "race": 4,
+        "class": 1,
+        "zone": 1657,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Haelarim",
+        "level": 69,
+        "race": 1,
+        "class": 8,
+        "zone": 1657,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Emerianne",
+        "level": 70,
+        "race": 5,
+        "class": 8,
+        "zone": 3520,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Ariannise",
+        "level": 12,
+        "race": 5,
+        "class": 4,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Vilysia",
+        "level": 11,
+        "race": 4,
+        "class": 5,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Vunrok",
+        "level": 42,
+        "race": 8,
+        "class": 3,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -16023,24 +18106,87 @@
         "level": 21,
         "race": 10,
         "class": 3,
-        "zone": 3433,
+        "zone": 3430,
         "map": 530,
         "gender": 1
+      },
+      {
+        "name": "Warieth",
+        "level": 58,
+        "race": 4,
+        "class": 3,
+        "zone": 139,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Fule",
+        "level": 64,
+        "race": 6,
+        "class": 3,
+        "zone": 3521,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Futhack",
+        "level": 70,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Ogtison",
+        "level": 70,
+        "race": 8,
+        "class": 3,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Eydron",
+        "level": 26,
+        "race": 4,
+        "class": 4,
+        "zone": 10,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Florisy",
         "level": 44,
         "race": 5,
         "class": 4,
-        "zone": 3,
+        "zone": 85,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Rhindun",
+        "level": 19,
+        "race": 8,
+        "class": 3,
+        "zone": 17,
+        "map": 1,
+        "gender": 0
       },
       {
         "name": "Karanie",
         "level": 14,
         "race": 1,
         "class": 9,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Selria",
+        "level": 13,
+        "race": 4,
+        "class": 1,
         "zone": 40,
         "map": 0,
         "gender": 1
@@ -16050,7 +18196,34 @@
         "level": 19,
         "race": 10,
         "class": 2,
-        "zone": 3433,
+        "zone": 17,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Meltheas",
+        "level": 39,
+        "race": 10,
+        "class": 9,
+        "zone": 3430,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Pitosh",
+        "level": 66,
+        "race": 7,
+        "class": 8,
+        "zone": 3522,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Zardina",
+        "level": 53,
+        "race": 10,
+        "class": 2,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -16059,25 +18232,106 @@
         "level": 26,
         "race": 11,
         "class": 7,
-        "zone": 3524,
-        "map": 530,
+        "zone": 331,
+        "map": 1,
         "gender": 1
+      },
+      {
+        "name": "Denrynn",
+        "level": 39,
+        "race": 4,
+        "class": 4,
+        "zone": 405,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Mumhaa",
+        "level": 25,
+        "race": 11,
+        "class": 7,
+        "zone": 11,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Ahgah",
+        "level": 17,
+        "race": 8,
+        "class": 4,
+        "zone": 17,
+        "map": 1,
+        "gender": 0
       },
       {
         "name": "Oferous",
         "level": 19,
         "race": 10,
         "class": 9,
-        "zone": 3433,
+        "zone": 3430,
         "map": 530,
         "gender": 1
+      },
+      {
+        "name": "Suhia",
+        "level": 65,
+        "race": 6,
+        "class": 7,
+        "zone": 3519,
+        "map": 530,
+        "gender": 0
+      },
+      {
+        "name": "Dalnaal",
+        "level": 42,
+        "race": 4,
+        "class": 3,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Hythofla",
+        "level": 7,
+        "race": 7,
+        "class": 9,
+        "zone": 3524,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Brance",
+        "level": 65,
+        "race": 5,
+        "class": 8,
+        "zone": 3483,
+        "map": 530,
+        "gender": 1
+      },
+      {
+        "name": "Arrent",
+        "level": 21,
+        "race": 1,
+        "class": 1,
+        "zone": 10,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Komdin",
         "level": 60,
         "race": 3,
         "class": 3,
-        "zone": 28,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Clerim",
+        "level": 2,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16095,7 +18349,7 @@
         "level": 50,
         "race": 7,
         "class": 8,
-        "zone": 51,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16113,7 +18367,7 @@
         "level": 25,
         "race": 4,
         "class": 5,
-        "zone": 331,
+        "zone": 406,
         "map": 1,
         "gender": 1
       },
@@ -16122,7 +18376,7 @@
         "level": 52,
         "race": 1,
         "class": 9,
-        "zone": 10,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -16131,7 +18385,7 @@
         "level": 70,
         "race": 5,
         "class": 9,
-        "zone": 85,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16149,7 +18403,7 @@
         "level": 35,
         "race": 5,
         "class": 4,
-        "zone": 33,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -16158,7 +18412,7 @@
         "level": 63,
         "race": 4,
         "class": 11,
-        "zone": 618,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -16167,7 +18421,7 @@
         "level": 32,
         "race": 5,
         "class": 4,
-        "zone": 10,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -16176,7 +18430,7 @@
         "level": 70,
         "race": 11,
         "class": 2,
-        "zone": 3518,
+        "zone": 3703,
         "map": 530,
         "gender": 0
       },
@@ -16194,7 +18448,7 @@
         "level": 61,
         "race": 2,
         "class": 3,
-        "zone": 1377,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -16203,7 +18457,7 @@
         "level": 14,
         "race": 4,
         "class": 11,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -16221,7 +18475,7 @@
         "level": 21,
         "race": 2,
         "class": 7,
-        "zone": 17,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -16230,7 +18484,7 @@
         "level": 62,
         "race": 5,
         "class": 4,
-        "zone": 139,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -16239,7 +18493,7 @@
         "level": 44,
         "race": 6,
         "class": 7,
-        "zone": 357,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -16257,7 +18511,7 @@
         "level": 39,
         "race": 3,
         "class": 2,
-        "zone": 8,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -16275,7 +18529,7 @@
         "level": 69,
         "race": 10,
         "class": 3,
-        "zone": 3520,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -16293,7 +18547,7 @@
         "level": 66,
         "race": 11,
         "class": 7,
-        "zone": 3519,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -16302,8 +18556,8 @@
         "level": 25,
         "race": 8,
         "class": 4,
-        "zone": 331,
-        "map": 1,
+        "zone": 11,
+        "map": 0,
         "gender": 0
       },
       {
@@ -16320,7 +18574,7 @@
         "level": 56,
         "race": 4,
         "class": 1,
-        "zone": 361,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -16329,7 +18583,7 @@
         "level": 28,
         "race": 7,
         "class": 8,
-        "zone": 11,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16347,7 +18601,7 @@
         "level": 11,
         "race": 1,
         "class": 8,
-        "zone": 12,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -16356,7 +18610,7 @@
         "level": 41,
         "race": 2,
         "class": 3,
-        "zone": 405,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -16365,7 +18619,7 @@
         "level": 50,
         "race": 8,
         "class": 3,
-        "zone": 440,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -16374,7 +18628,7 @@
         "level": 33,
         "race": 7,
         "class": 8,
-        "zone": 45,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -16383,8 +18637,8 @@
         "level": 52,
         "race": 5,
         "class": 9,
-        "zone": 51,
-        "map": 0,
+        "zone": 16,
+        "map": 1,
         "gender": 1
       },
       {
@@ -16401,8 +18655,8 @@
         "level": 31,
         "race": 1,
         "class": 1,
-        "zone": 267,
-        "map": 0,
+        "zone": 17,
+        "map": 1,
         "gender": 1
       },
       {
@@ -16419,7 +18673,7 @@
         "level": 70,
         "race": 1,
         "class": 1,
-        "zone": 41,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -16428,8 +18682,8 @@
         "level": 70,
         "race": 5,
         "class": 5,
-        "zone": 41,
-        "map": 0,
+        "zone": 3522,
+        "map": 530,
         "gender": 0
       },
       {
@@ -16437,8 +18691,8 @@
         "level": 17,
         "race": 10,
         "class": 9,
-        "zone": 3433,
-        "map": 530,
+        "zone": 17,
+        "map": 1,
         "gender": 1
       },
       {
@@ -16446,7 +18700,7 @@
         "level": 21,
         "race": 8,
         "class": 5,
-        "zone": 406,
+        "zone": 17,
         "map": 1,
         "gender": 1
       },
@@ -16455,7 +18709,7 @@
         "level": 62,
         "race": 10,
         "class": 2,
-        "zone": 3483,
+        "zone": 3521,
         "map": 530,
         "gender": 1
       },
@@ -16464,7 +18718,7 @@
         "level": 63,
         "race": 2,
         "class": 1,
-        "zone": 1377,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -16473,7 +18727,7 @@
         "level": 63,
         "race": 1,
         "class": 8,
-        "zone": 139,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16518,7 +18772,7 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 41,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -16554,7 +18808,7 @@
         "level": 18,
         "race": 4,
         "class": 1,
-        "zone": 148,
+        "zone": 1657,
         "map": 1,
         "gender": 1
       },
@@ -16572,7 +18826,7 @@
         "level": 21,
         "race": 1,
         "class": 8,
-        "zone": 40,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -16590,7 +18844,7 @@
         "level": 64,
         "race": 10,
         "class": 2,
-        "zone": 3519,
+        "zone": 3430,
         "map": 530,
         "gender": 0
       },
@@ -16599,7 +18853,7 @@
         "level": 24,
         "race": 10,
         "class": 5,
-        "zone": 3433,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -16608,7 +18862,7 @@
         "level": 70,
         "race": 11,
         "class": 7,
-        "zone": 3520,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -16617,7 +18871,7 @@
         "level": 55,
         "race": 4,
         "class": 11,
-        "zone": 361,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -16635,7 +18889,7 @@
         "level": 60,
         "race": 10,
         "class": 2,
-        "zone": 3483,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -16644,8 +18898,8 @@
         "level": 34,
         "race": 10,
         "class": 8,
-        "zone": 3430,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 0
       },
       {
@@ -16662,7 +18916,7 @@
         "level": 70,
         "race": 11,
         "class": 2,
-        "zone": 3518,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -16671,8 +18925,8 @@
         "level": 25,
         "race": 11,
         "class": 8,
-        "zone": 3524,
-        "map": 530,
+        "zone": 267,
+        "map": 0,
         "gender": 0
       },
       {
@@ -16680,7 +18934,7 @@
         "level": 7,
         "race": 1,
         "class": 2,
-        "zone": 1,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16707,8 +18961,8 @@
         "level": 47,
         "race": 11,
         "class": 7,
-        "zone": 3524,
-        "map": 530,
+        "zone": 1519,
+        "map": 0,
         "gender": 1
       },
       {
@@ -16725,8 +18979,8 @@
         "level": 62,
         "race": 3,
         "class": 3,
-        "zone": 139,
-        "map": 0,
+        "zone": 3483,
+        "map": 530,
         "gender": 0
       },
       {
@@ -16734,7 +18988,7 @@
         "level": 70,
         "race": 1,
         "class": 2,
-        "zone": 41,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16743,8 +18997,8 @@
         "level": 46,
         "race": 11,
         "class": 2,
-        "zone": 3524,
-        "map": 530,
+        "zone": 47,
+        "map": 0,
         "gender": 0
       },
       {
@@ -16752,7 +19006,7 @@
         "level": 23,
         "race": 6,
         "class": 3,
-        "zone": 331,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -16761,7 +19015,7 @@
         "level": 62,
         "race": 6,
         "class": 11,
-        "zone": 1377,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -16770,7 +19024,7 @@
         "level": 60,
         "race": 5,
         "class": 4,
-        "zone": 139,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -16806,7 +19060,7 @@
         "level": 27,
         "race": 5,
         "class": 1,
-        "zone": 11,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -16815,7 +19069,7 @@
         "level": 37,
         "race": 1,
         "class": 2,
-        "zone": 36,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16842,7 +19096,7 @@
         "level": 39,
         "race": 7,
         "class": 1,
-        "zone": 33,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16851,7 +19105,7 @@
         "level": 70,
         "race": 10,
         "class": 8,
-        "zone": 3520,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -16860,7 +19114,7 @@
         "level": 22,
         "race": 3,
         "class": 4,
-        "zone": 11,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16869,7 +19123,7 @@
         "level": 42,
         "race": 1,
         "class": 8,
-        "zone": 33,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -16878,7 +19132,7 @@
         "level": 45,
         "race": 1,
         "class": 9,
-        "zone": 8,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -16887,8 +19141,8 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 85,
-        "map": 0,
+        "zone": 3523,
+        "map": 530,
         "gender": 1
       },
       {
@@ -16896,7 +19150,7 @@
         "level": 54,
         "race": 5,
         "class": 4,
-        "zone": 28,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -16905,7 +19159,7 @@
         "level": 37,
         "race": 1,
         "class": 1,
-        "zone": 36,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -16914,8 +19168,8 @@
         "level": 61,
         "race": 4,
         "class": 4,
-        "zone": 1377,
-        "map": 1,
+        "zone": 3483,
+        "map": 530,
         "gender": 1
       },
       {
@@ -16932,7 +19186,7 @@
         "level": 70,
         "race": 6,
         "class": 3,
-        "zone": 215,
+        "zone": 1637,
         "map": 1,
         "gender": 1
       },
@@ -16941,8 +19195,8 @@
         "level": 70,
         "race": 1,
         "class": 1,
-        "zone": 41,
-        "map": 0,
+        "zone": 3520,
+        "map": 530,
         "gender": 1
       },
       {
@@ -16950,8 +19204,8 @@
         "level": 70,
         "race": 5,
         "class": 9,
-        "zone": 85,
-        "map": 0,
+        "zone": 3520,
+        "map": 530,
         "gender": 0
       },
       {
@@ -16959,8 +19213,8 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 41,
-        "map": 0,
+        "zone": 3703,
+        "map": 530,
         "gender": 1
       },
       {
@@ -16977,7 +19231,7 @@
         "level": 10,
         "race": 6,
         "class": 7,
-        "zone": 14,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -16986,7 +19240,7 @@
         "level": 29,
         "race": 1,
         "class": 5,
-        "zone": 10,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -16995,7 +19249,7 @@
         "level": 70,
         "race": 1,
         "class": 4,
-        "zone": 12,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -17004,7 +19258,7 @@
         "level": 54,
         "race": 8,
         "class": 4,
-        "zone": 16,
+        "zone": 1637,
         "map": 1,
         "gender": 0
       },
@@ -17013,7 +19267,7 @@
         "level": 64,
         "race": 11,
         "class": 7,
-        "zone": 3483,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -17022,7 +19276,7 @@
         "level": 44,
         "race": 4,
         "class": 3,
-        "zone": 357,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17031,7 +19285,7 @@
         "level": 50,
         "race": 1,
         "class": 9,
-        "zone": 10,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -17040,8 +19294,8 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 41,
-        "map": 0,
+        "zone": 3703,
+        "map": 530,
         "gender": 0
       },
       {
@@ -17049,7 +19303,7 @@
         "level": 52,
         "race": 5,
         "class": 8,
-        "zone": 47,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17067,7 +19321,7 @@
         "level": 38,
         "race": 1,
         "class": 9,
-        "zone": 3,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -17085,7 +19339,7 @@
         "level": 50,
         "race": 4,
         "class": 3,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17094,7 +19348,7 @@
         "level": 17,
         "race": 4,
         "class": 3,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17112,8 +19366,8 @@
         "level": 70,
         "race": 4,
         "class": 11,
-        "zone": 141,
-        "map": 1,
+        "zone": 3519,
+        "map": 530,
         "gender": 1
       },
       {
@@ -17121,7 +19375,7 @@
         "level": 52,
         "race": 5,
         "class": 8,
-        "zone": 51,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17139,8 +19393,8 @@
         "level": 51,
         "race": 11,
         "class": 7,
-        "zone": 3524,
-        "map": 530,
+        "zone": 493,
+        "map": 1,
         "gender": 0
       },
       {
@@ -17148,8 +19402,8 @@
         "level": 70,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 3518,
+        "map": 530,
         "gender": 1
       },
       {
@@ -17166,7 +19420,7 @@
         "level": 41,
         "race": 2,
         "class": 3,
-        "zone": 440,
+        "zone": 15,
         "map": 1,
         "gender": 0
       },
@@ -17175,7 +19429,7 @@
         "level": 51,
         "race": 2,
         "class": 1,
-        "zone": 440,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -17184,7 +19438,7 @@
         "level": 51,
         "race": 2,
         "class": 9,
-        "zone": 361,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -17193,8 +19447,8 @@
         "level": 45,
         "race": 10,
         "class": 4,
-        "zone": 3430,
-        "map": 530,
+        "zone": 8,
+        "map": 0,
         "gender": 1
       },
       {
@@ -17202,7 +19456,7 @@
         "level": 52,
         "race": 4,
         "class": 4,
-        "zone": 361,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17211,7 +19465,7 @@
         "level": 70,
         "race": 1,
         "class": 4,
-        "zone": 41,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -17220,8 +19474,8 @@
         "level": 13,
         "race": 4,
         "class": 11,
-        "zone": 148,
-        "map": 1,
+        "zone": 1519,
+        "map": 0,
         "gender": 0
       },
       {
@@ -17229,7 +19483,7 @@
         "level": 51,
         "race": 4,
         "class": 5,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17247,8 +19501,8 @@
         "level": 13,
         "race": 1,
         "class": 1,
-        "zone": 38,
-        "map": 0,
+        "zone": 3524,
+        "map": 530,
         "gender": 1
       },
       {
@@ -17256,7 +19510,7 @@
         "level": 62,
         "race": 6,
         "class": 7,
-        "zone": 1377,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -17274,7 +19528,7 @@
         "level": 48,
         "race": 1,
         "class": 8,
-        "zone": 3,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -17292,7 +19546,7 @@
         "level": 39,
         "race": 8,
         "class": 4,
-        "zone": 15,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -17310,7 +19564,7 @@
         "level": 13,
         "race": 1,
         "class": 1,
-        "zone": 38,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -17319,7 +19573,7 @@
         "level": 24,
         "race": 1,
         "class": 8,
-        "zone": 10,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -17328,7 +19582,7 @@
         "level": 47,
         "race": 2,
         "class": 1,
-        "zone": 440,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -17337,8 +19591,8 @@
         "level": 66,
         "race": 1,
         "class": 8,
-        "zone": 12,
-        "map": 0,
+        "zone": 1657,
+        "map": 1,
         "gender": 1
       },
       {
@@ -17346,8 +19600,8 @@
         "level": 70,
         "race": 7,
         "class": 4,
-        "zone": 41,
-        "map": 0,
+        "zone": 3520,
+        "map": 530,
         "gender": 0
       },
       {
@@ -17355,8 +19609,8 @@
         "level": 70,
         "race": 8,
         "class": 8,
-        "zone": 14,
-        "map": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 1
       },
       {
@@ -17364,8 +19618,8 @@
         "level": 70,
         "race": 3,
         "class": 2,
-        "zone": 41,
-        "map": 0,
+        "zone": 3518,
+        "map": 530,
         "gender": 0
       },
       {
@@ -17382,7 +19636,7 @@
         "level": 56,
         "race": 8,
         "class": 4,
-        "zone": 1377,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -17400,7 +19654,7 @@
         "level": 60,
         "race": 3,
         "class": 2,
-        "zone": 28,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -17418,7 +19672,7 @@
         "level": 68,
         "race": 8,
         "class": 5,
-        "zone": 14,
+        "zone": 1637,
         "map": 1,
         "gender": 1
       },
@@ -17427,8 +19681,8 @@
         "level": 70,
         "race": 1,
         "class": 8,
-        "zone": 41,
-        "map": 0,
+        "zone": 3522,
+        "map": 530,
         "gender": 1
       },
       {
@@ -17436,7 +19690,7 @@
         "level": 26,
         "race": 1,
         "class": 1,
-        "zone": 10,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -17445,7 +19699,7 @@
         "level": 70,
         "race": 7,
         "class": 8,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -17463,7 +19717,7 @@
         "level": 59,
         "race": 5,
         "class": 1,
-        "zone": 139,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17472,8 +19726,8 @@
         "level": 53,
         "race": 10,
         "class": 8,
-        "zone": 3430,
-        "map": 530,
+        "zone": 490,
+        "map": 1,
         "gender": 1
       },
       {
@@ -17481,7 +19735,7 @@
         "level": 35,
         "race": 1,
         "class": 8,
-        "zone": 36,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -17508,8 +19762,8 @@
         "level": 67,
         "race": 7,
         "class": 8,
-        "zone": 1,
-        "map": 0,
+        "zone": 3518,
+        "map": 530,
         "gender": 0
       },
       {
@@ -17517,7 +19771,7 @@
         "level": 70,
         "race": 7,
         "class": 9,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -17526,7 +19780,7 @@
         "level": 26,
         "race": 4,
         "class": 3,
-        "zone": 331,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17535,7 +19789,7 @@
         "level": 19,
         "race": 4,
         "class": 1,
-        "zone": 406,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17544,7 +19798,7 @@
         "level": 69,
         "race": 10,
         "class": 2,
-        "zone": 3520,
+        "zone": 3430,
         "map": 530,
         "gender": 0
       },
@@ -17553,7 +19807,7 @@
         "level": 70,
         "race": 11,
         "class": 7,
-        "zone": 3522,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -17562,8 +19816,8 @@
         "level": 43,
         "race": 1,
         "class": 8,
-        "zone": 47,
-        "map": 0,
+        "zone": 440,
+        "map": 1,
         "gender": 0
       },
       {
@@ -17571,7 +19825,7 @@
         "level": 43,
         "race": 10,
         "class": 8,
-        "zone": 3430,
+        "zone": 3487,
         "map": 530,
         "gender": 0
       },
@@ -17580,7 +19834,7 @@
         "level": 69,
         "race": 7,
         "class": 9,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -17607,7 +19861,7 @@
         "level": 24,
         "race": 4,
         "class": 3,
-        "zone": 331,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -17616,7 +19870,7 @@
         "level": 70,
         "race": 11,
         "class": 5,
-        "zone": 3522,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -17634,8 +19888,8 @@
         "level": 31,
         "race": 10,
         "class": 9,
-        "zone": 3430,
-        "map": 530,
+        "zone": 400,
+        "map": 1,
         "gender": 1
       },
       {
@@ -17643,7 +19897,7 @@
         "level": 52,
         "race": 6,
         "class": 3,
-        "zone": 490,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -17670,7 +19924,7 @@
         "level": 9,
         "race": 2,
         "class": 7,
-        "zone": 215,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -17679,7 +19933,7 @@
         "level": 17,
         "race": 2,
         "class": 3,
-        "zone": 17,
+        "zone": 1637,
         "map": 1,
         "gender": 0
       },
@@ -17688,7 +19942,7 @@
         "level": 61,
         "race": 1,
         "class": 2,
-        "zone": 28,
+        "zone": 1519,
         "map": 0,
         "gender": 0
       },
@@ -17697,7 +19951,7 @@
         "level": 43,
         "race": 1,
         "class": 4,
-        "zone": 3,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -17706,7 +19960,7 @@
         "level": 55,
         "race": 1,
         "class": 8,
-        "zone": 28,
+        "zone": 139,
         "map": 0,
         "gender": 0
       },
@@ -17724,7 +19978,7 @@
         "level": 65,
         "race": 10,
         "class": 3,
-        "zone": 3521,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -17742,7 +19996,7 @@
         "level": 16,
         "race": 5,
         "class": 9,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17751,7 +20005,7 @@
         "level": 54,
         "race": 8,
         "class": 5,
-        "zone": 490,
+        "zone": 440,
         "map": 1,
         "gender": 0
       },
@@ -17760,7 +20014,7 @@
         "level": 70,
         "race": 8,
         "class": 4,
-        "zone": 14,
+        "zone": 1637,
         "map": 1,
         "gender": 1
       },
@@ -17769,7 +20023,7 @@
         "level": 57,
         "race": 8,
         "class": 7,
-        "zone": 618,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -17796,7 +20050,7 @@
         "level": 22,
         "race": 1,
         "class": 8,
-        "zone": 40,
+        "zone": 10,
         "map": 0,
         "gender": 0
       },
@@ -17805,7 +20059,7 @@
         "level": 25,
         "race": 5,
         "class": 5,
-        "zone": 11,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17823,8 +20077,8 @@
         "level": 70,
         "race": 1,
         "class": 2,
-        "zone": 41,
-        "map": 0,
+        "zone": 3519,
+        "map": 530,
         "gender": 0
       },
       {
@@ -17832,8 +20086,8 @@
         "level": 17,
         "race": 8,
         "class": 8,
-        "zone": 17,
-        "map": 1,
+        "zone": 130,
+        "map": 0,
         "gender": 1
       },
       {
@@ -17841,8 +20095,8 @@
         "level": 56,
         "race": 5,
         "class": 5,
-        "zone": 28,
-        "map": 0,
+        "zone": 1377,
+        "map": 1,
         "gender": 0
       },
       {
@@ -17850,8 +20104,8 @@
         "level": 21,
         "race": 5,
         "class": 4,
-        "zone": 40,
-        "map": 0,
+        "zone": 17,
+        "map": 1,
         "gender": 0
       },
       {
@@ -17859,7 +20113,7 @@
         "level": 70,
         "race": 11,
         "class": 7,
-        "zone": 3520,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -17868,7 +20122,7 @@
         "level": 70,
         "race": 11,
         "class": 7,
-        "zone": 3520,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -17877,7 +20131,7 @@
         "level": 18,
         "race": 5,
         "class": 8,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -17886,7 +20140,7 @@
         "level": 34,
         "race": 4,
         "class": 1,
-        "zone": 405,
+        "zone": 17,
         "map": 1,
         "gender": 0
       },
@@ -17913,8 +20167,8 @@
         "level": 69,
         "race": 6,
         "class": 11,
-        "zone": 215,
-        "map": 1,
+        "zone": 3518,
+        "map": 530,
         "gender": 1
       },
       {
@@ -17922,8 +20176,8 @@
         "level": 15,
         "race": 10,
         "class": 4,
-        "zone": 3433,
-        "map": 530,
+        "zone": 17,
+        "map": 1,
         "gender": 0
       },
       {
@@ -17931,7 +20185,7 @@
         "level": 26,
         "race": 2,
         "class": 3,
-        "zone": 406,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -17940,7 +20194,7 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 41,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -17976,7 +20230,7 @@
         "level": 39,
         "race": 8,
         "class": 1,
-        "zone": 15,
+        "zone": 400,
         "map": 1,
         "gender": 1
       },
@@ -18003,7 +20257,7 @@
         "level": 41,
         "race": 6,
         "class": 7,
-        "zone": 405,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -18012,8 +20266,8 @@
         "level": 61,
         "race": 3,
         "class": 1,
-        "zone": 139,
-        "map": 0,
+        "zone": 3524,
+        "map": 530,
         "gender": 1
       },
       {
@@ -18021,8 +20275,8 @@
         "level": 24,
         "race": 10,
         "class": 9,
-        "zone": 3433,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 0
       },
       {
@@ -18030,8 +20284,8 @@
         "level": 70,
         "race": 10,
         "class": 3,
-        "zone": 3519,
-        "map": 530,
+        "zone": 85,
+        "map": 0,
         "gender": 0
       },
       {
@@ -18039,7 +20293,7 @@
         "level": 30,
         "race": 4,
         "class": 11,
-        "zone": 400,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -18048,7 +20302,7 @@
         "level": 15,
         "race": 5,
         "class": 9,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -18066,8 +20320,8 @@
         "level": 66,
         "race": 4,
         "class": 11,
-        "zone": 141,
-        "map": 1,
+        "zone": 3521,
+        "map": 530,
         "gender": 0
       },
       {
@@ -18075,7 +20329,7 @@
         "level": 70,
         "race": 10,
         "class": 3,
-        "zone": 3520,
+        "zone": 3519,
         "map": 530,
         "gender": 1
       },
@@ -18093,7 +20347,7 @@
         "level": 14,
         "race": 11,
         "class": 7,
-        "zone": 3525,
+        "zone": 3524,
         "map": 530,
         "gender": 0
       },
@@ -18129,7 +20383,7 @@
         "level": 52,
         "race": 5,
         "class": 4,
-        "zone": 51,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -18138,7 +20392,7 @@
         "level": 46,
         "race": 2,
         "class": 3,
-        "zone": 440,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -18147,7 +20401,7 @@
         "level": 52,
         "race": 6,
         "class": 11,
-        "zone": 440,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -18156,7 +20410,7 @@
         "level": 51,
         "race": 2,
         "class": 3,
-        "zone": 361,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -18165,7 +20419,7 @@
         "level": 36,
         "race": 6,
         "class": 3,
-        "zone": 405,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -18192,7 +20446,7 @@
         "level": 56,
         "race": 6,
         "class": 11,
-        "zone": 1377,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -18210,7 +20464,7 @@
         "level": 70,
         "race": 10,
         "class": 4,
-        "zone": 3520,
+        "zone": 3523,
         "map": 530,
         "gender": 1
       },
@@ -18219,8 +20473,8 @@
         "level": 70,
         "race": 7,
         "class": 1,
-        "zone": 1,
-        "map": 0,
+        "zone": 3557,
+        "map": 530,
         "gender": 1
       },
       {
@@ -18237,7 +20491,7 @@
         "level": 13,
         "race": 7,
         "class": 8,
-        "zone": 40,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18255,7 +20509,7 @@
         "level": 9,
         "race": 7,
         "class": 9,
-        "zone": 12,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18273,7 +20527,7 @@
         "level": 29,
         "race": 8,
         "class": 4,
-        "zone": 400,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -18282,7 +20536,7 @@
         "level": 29,
         "race": 2,
         "class": 1,
-        "zone": 400,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -18291,7 +20545,7 @@
         "level": 70,
         "race": 10,
         "class": 9,
-        "zone": 3520,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -18300,7 +20554,7 @@
         "level": 63,
         "race": 7,
         "class": 9,
-        "zone": 139,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -18318,8 +20572,8 @@
         "level": 62,
         "race": 3,
         "class": 2,
-        "zone": 139,
-        "map": 0,
+        "zone": 2017,
+        "map": 329,
         "gender": 0
       },
       {
@@ -18327,7 +20581,7 @@
         "level": 69,
         "race": 10,
         "class": 2,
-        "zone": 3520,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -18336,7 +20590,7 @@
         "level": 70,
         "race": 1,
         "class": 8,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -18354,7 +20608,7 @@
         "level": 49,
         "race": 2,
         "class": 1,
-        "zone": 361,
+        "zone": 1637,
         "map": 1,
         "gender": 0
       },
@@ -18363,7 +20617,7 @@
         "level": 21,
         "race": 11,
         "class": 7,
-        "zone": 3525,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -18381,7 +20635,7 @@
         "level": 49,
         "race": 5,
         "class": 5,
-        "zone": 51,
+        "zone": 47,
         "map": 0,
         "gender": 1
       },
@@ -18399,8 +20653,8 @@
         "level": 12,
         "race": 4,
         "class": 4,
-        "zone": 141,
-        "map": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 0
       },
       {
@@ -18408,8 +20662,8 @@
         "level": 70,
         "race": 1,
         "class": 4,
-        "zone": 41,
-        "map": 0,
+        "zone": 3523,
+        "map": 530,
         "gender": 1
       },
       {
@@ -18417,7 +20671,7 @@
         "level": 33,
         "race": 1,
         "class": 9,
-        "zone": 36,
+        "zone": 45,
         "map": 0,
         "gender": 1
       },
@@ -18426,8 +20680,8 @@
         "level": 70,
         "race": 1,
         "class": 1,
-        "zone": 41,
-        "map": 0,
+        "zone": 3523,
+        "map": 530,
         "gender": 0
       },
       {
@@ -18435,7 +20689,7 @@
         "level": 28,
         "race": 6,
         "class": 7,
-        "zone": 331,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -18453,7 +20707,7 @@
         "level": 40,
         "race": 6,
         "class": 1,
-        "zone": 15,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -18462,7 +20716,7 @@
         "level": 16,
         "race": 2,
         "class": 7,
-        "zone": 17,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -18476,20 +20730,11 @@
         "gender": 1
       },
       {
-        "name": "Visrien",
-        "level": 13,
-        "race": 4,
-        "class": 11,
-        "zone": 148,
-        "map": 1,
-        "gender": 1
-      },
-      {
         "name": "Gnumitlosh",
         "level": 12,
         "race": 7,
         "class": 8,
-        "zone": 12,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18498,7 +20743,7 @@
         "level": 12,
         "race": 10,
         "class": 4,
-        "zone": 3433,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -18507,7 +20752,7 @@
         "level": 70,
         "race": 3,
         "class": 3,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -18516,7 +20761,7 @@
         "level": 61,
         "race": 10,
         "class": 2,
-        "zone": 3483,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -18525,17 +20770,8 @@
         "level": 60,
         "race": 6,
         "class": 11,
-        "zone": 1377,
+        "zone": 215,
         "map": 1,
-        "gender": 1
-      },
-      {
-        "name": "Nerene",
-        "level": 67,
-        "race": 5,
-        "class": 8,
-        "zone": 85,
-        "map": 0,
         "gender": 1
       },
       {
@@ -18543,7 +20779,7 @@
         "level": 50,
         "race": 4,
         "class": 3,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -18552,8 +20788,8 @@
         "level": 38,
         "race": 10,
         "class": 2,
-        "zone": 3430,
-        "map": 530,
+        "zone": 85,
+        "map": 0,
         "gender": 0
       },
       {
@@ -18561,7 +20797,7 @@
         "level": 52,
         "race": 5,
         "class": 8,
-        "zone": 47,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -18579,7 +20815,7 @@
         "level": 70,
         "race": 1,
         "class": 2,
-        "zone": 41,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -18588,8 +20824,8 @@
         "level": 48,
         "race": 1,
         "class": 8,
-        "zone": 47,
-        "map": 0,
+        "zone": 440,
+        "map": 1,
         "gender": 1
       },
       {
@@ -18597,7 +20833,7 @@
         "level": 42,
         "race": 5,
         "class": 5,
-        "zone": 3,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -18606,7 +20842,7 @@
         "level": 38,
         "race": 4,
         "class": 5,
-        "zone": 405,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -18615,8 +20851,8 @@
         "level": 40,
         "race": 6,
         "class": 11,
-        "zone": 405,
-        "map": 1,
+        "zone": 267,
+        "map": 0,
         "gender": 1
       },
       {
@@ -18624,7 +20860,7 @@
         "level": 36,
         "race": 4,
         "class": 4,
-        "zone": 405,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -18633,7 +20869,7 @@
         "level": 10,
         "race": 7,
         "class": 9,
-        "zone": 12,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -18642,7 +20878,7 @@
         "level": 21,
         "race": 4,
         "class": 3,
-        "zone": 406,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -18651,16 +20887,7 @@
         "level": 70,
         "race": 10,
         "class": 8,
-        "zone": 3523,
-        "map": 530,
-        "gender": 0
-      },
-      {
-        "name": "Sarvun",
-        "level": 27,
-        "race": 11,
-        "class": 3,
-        "zone": 3524,
+        "zone": 3430,
         "map": 530,
         "gender": 0
       },
@@ -18669,7 +20896,7 @@
         "level": 55,
         "race": 1,
         "class": 1,
-        "zone": 28,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -18678,7 +20905,7 @@
         "level": 20,
         "race": 5,
         "class": 1,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -18687,7 +20914,7 @@
         "level": 32,
         "race": 1,
         "class": 2,
-        "zone": 11,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -18696,17 +20923,8 @@
         "level": 17,
         "race": 4,
         "class": 11,
-        "zone": 148,
-        "map": 1,
-        "gender": 0
-      },
-      {
-        "name": "Oake",
-        "level": 70,
-        "race": 6,
-        "class": 1,
-        "zone": 215,
-        "map": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 0
       },
       {
@@ -18714,7 +20932,7 @@
         "level": 70,
         "race": 11,
         "class": 5,
-        "zone": 3523,
+        "zone": 3518,
         "map": 530,
         "gender": 0
       },
@@ -18723,7 +20941,7 @@
         "level": 49,
         "race": 7,
         "class": 4,
-        "zone": 51,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18732,7 +20950,7 @@
         "level": 46,
         "race": 3,
         "class": 3,
-        "zone": 33,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18741,7 +20959,7 @@
         "level": 33,
         "race": 1,
         "class": 5,
-        "zone": 45,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -18750,7 +20968,7 @@
         "level": 19,
         "race": 10,
         "class": 2,
-        "zone": 3433,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -18759,7 +20977,7 @@
         "level": 51,
         "race": 1,
         "class": 4,
-        "zone": 51,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -18777,7 +20995,7 @@
         "level": 48,
         "race": 4,
         "class": 3,
-        "zone": 440,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -18786,26 +21004,17 @@
         "level": 70,
         "race": 8,
         "class": 3,
-        "zone": 14,
+        "zone": 1637,
         "map": 1,
         "gender": 1
-      },
-      {
-        "name": "Guvikkiha",
-        "level": 13,
-        "race": 6,
-        "class": 11,
-        "zone": 215,
-        "map": 1,
-        "gender": 0
       },
       {
         "name": "Alios",
         "level": 40,
         "race": 10,
         "class": 8,
-        "zone": 3430,
-        "map": 530,
+        "zone": 1638,
+        "map": 1,
         "gender": 0
       },
       {
@@ -18813,8 +21022,8 @@
         "level": 47,
         "race": 8,
         "class": 8,
-        "zone": 440,
-        "map": 1,
+        "zone": 2917,
+        "map": 450,
         "gender": 0
       },
       {
@@ -18840,25 +21049,16 @@
         "level": 33,
         "race": 3,
         "class": 3,
-        "zone": 45,
+        "zone": 36,
         "map": 0,
         "gender": 1
-      },
-      {
-        "name": "Vaetalor",
-        "level": 11,
-        "race": 10,
-        "class": 5,
-        "zone": 3430,
-        "map": 530,
-        "gender": 0
       },
       {
         "name": "Fyleasia",
         "level": 30,
         "race": 4,
         "class": 5,
-        "zone": 331,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -18867,7 +21067,7 @@
         "level": 14,
         "race": 4,
         "class": 4,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -18885,8 +21085,8 @@
         "level": 33,
         "race": 1,
         "class": 8,
-        "zone": 10,
-        "map": 0,
+        "zone": 405,
+        "map": 1,
         "gender": 1
       },
       {
@@ -18894,7 +21094,7 @@
         "level": 14,
         "race": 5,
         "class": 5,
-        "zone": 130,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -18917,20 +21117,11 @@
         "gender": 1
       },
       {
-        "name": "Cygorn",
-        "level": 16,
-        "race": 4,
-        "class": 11,
-        "zone": 148,
-        "map": 1,
-        "gender": 0
-      },
-      {
         "name": "Elvedon",
         "level": 70,
         "race": 10,
         "class": 8,
-        "zone": 3518,
+        "zone": 3522,
         "map": 530,
         "gender": 0
       },
@@ -18939,8 +21130,8 @@
         "level": 25,
         "race": 10,
         "class": 2,
-        "zone": 3430,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 1
       },
       {
@@ -18948,7 +21139,7 @@
         "level": 13,
         "race": 1,
         "class": 1,
-        "zone": 12,
+        "zone": 40,
         "map": 0,
         "gender": 0
       },
@@ -18957,7 +21148,7 @@
         "level": 44,
         "race": 4,
         "class": 1,
-        "zone": 357,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -18975,7 +21166,7 @@
         "level": 70,
         "race": 11,
         "class": 1,
-        "zone": 3523,
+        "zone": 3522,
         "map": 530,
         "gender": 1
       },
@@ -18984,8 +21175,8 @@
         "level": 35,
         "race": 10,
         "class": 3,
-        "zone": 3430,
-        "map": 530,
+        "zone": 405,
+        "map": 1,
         "gender": 0
       },
       {
@@ -19002,8 +21193,8 @@
         "level": 32,
         "race": 5,
         "class": 8,
-        "zone": 11,
-        "map": 0,
+        "zone": 17,
+        "map": 1,
         "gender": 1
       },
       {
@@ -19011,7 +21202,7 @@
         "level": 46,
         "race": 1,
         "class": 9,
-        "zone": 51,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -19020,7 +21211,7 @@
         "level": 31,
         "race": 1,
         "class": 8,
-        "zone": 267,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -19038,7 +21229,7 @@
         "level": 70,
         "race": 5,
         "class": 1,
-        "zone": 41,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -19047,18 +21238,9 @@
         "level": 11,
         "race": 6,
         "class": 11,
-        "zone": 215,
+        "zone": 1637,
         "map": 1,
         "gender": 1
-      },
-      {
-        "name": "Simim",
-        "level": 50,
-        "race": 1,
-        "class": 5,
-        "zone": 4,
-        "map": 0,
-        "gender": 0
       },
       {
         "name": "Sylise",
@@ -19074,7 +21256,7 @@
         "level": 12,
         "race": 4,
         "class": 5,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -19083,8 +21265,8 @@
         "level": 66,
         "race": 4,
         "class": 1,
-        "zone": 141,
-        "map": 1,
+        "zone": 3519,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19092,8 +21274,8 @@
         "level": 70,
         "race": 8,
         "class": 5,
-        "zone": 14,
-        "map": 1,
+        "zone": 3523,
+        "map": 530,
         "gender": 1
       },
       {
@@ -19101,7 +21283,7 @@
         "level": 52,
         "race": 1,
         "class": 4,
-        "zone": 4,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -19110,7 +21292,7 @@
         "level": 63,
         "race": 6,
         "class": 1,
-        "zone": 1377,
+        "zone": 1638,
         "map": 1,
         "gender": 1
       },
@@ -19119,7 +21301,7 @@
         "level": 70,
         "race": 10,
         "class": 4,
-        "zone": 3523,
+        "zone": 3430,
         "map": 530,
         "gender": 1
       },
@@ -19133,21 +21315,12 @@
         "gender": 1
       },
       {
-        "name": "Canyaan",
-        "level": 52,
-        "race": 6,
-        "class": 3,
-        "zone": 490,
-        "map": 1,
-        "gender": 0
-      },
-      {
         "name": "Omashald",
         "level": 64,
         "race": 1,
         "class": 1,
-        "zone": 139,
-        "map": 0,
+        "zone": 3521,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19155,7 +21328,7 @@
         "level": 14,
         "race": 6,
         "class": 11,
-        "zone": 215,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -19173,18 +21346,9 @@
         "level": 68,
         "race": 3,
         "class": 1,
-        "zone": 1,
-        "map": 0,
+        "zone": 3518,
+        "map": 530,
         "gender": 0
-      },
-      {
-        "name": "Diyuzoia",
-        "level": 70,
-        "race": 6,
-        "class": 11,
-        "zone": 215,
-        "map": 1,
-        "gender": 1
       },
       {
         "name": "Danthis",
@@ -19200,7 +21364,7 @@
         "level": 23,
         "race": 5,
         "class": 5,
-        "zone": 11,
+        "zone": 85,
         "map": 0,
         "gender": 0
       },
@@ -19209,8 +21373,8 @@
         "level": 70,
         "race": 4,
         "class": 1,
-        "zone": 141,
-        "map": 1,
+        "zone": 3523,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19218,8 +21382,8 @@
         "level": 41,
         "race": 1,
         "class": 4,
-        "zone": 33,
-        "map": 0,
+        "zone": 15,
+        "map": 1,
         "gender": 1
       },
       {
@@ -19254,8 +21418,8 @@
         "level": 70,
         "race": 7,
         "class": 4,
-        "zone": 41,
-        "map": 0,
+        "zone": 3523,
+        "map": 530,
         "gender": 1
       },
       {
@@ -19277,20 +21441,11 @@
         "gender": 0
       },
       {
-        "name": "Kydine",
-        "level": 65,
-        "race": 10,
-        "class": 8,
-        "zone": 3521,
-        "map": 530,
-        "gender": 1
-      },
-      {
         "name": "Thonkeklik",
         "level": 33,
         "race": 7,
         "class": 8,
-        "zone": 45,
+        "zone": 1519,
         "map": 0,
         "gender": 1
       },
@@ -19304,20 +21459,11 @@
         "gender": 0
       },
       {
-        "name": "Ponadis",
-        "level": 51,
-        "race": 10,
-        "class": 3,
-        "zone": 3430,
-        "map": 530,
-        "gender": 0
-      },
-      {
         "name": "Vyatheas",
         "level": 11,
         "race": 10,
         "class": 8,
-        "zone": 3430,
+        "zone": 3487,
         "map": 530,
         "gender": 0
       },
@@ -19326,8 +21472,8 @@
         "level": 70,
         "race": 6,
         "class": 11,
-        "zone": 215,
-        "map": 1,
+        "zone": 3520,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19344,8 +21490,8 @@
         "level": 62,
         "race": 5,
         "class": 8,
-        "zone": 139,
-        "map": 0,
+        "zone": 1638,
+        "map": 1,
         "gender": 1
       },
       {
@@ -19353,7 +21499,7 @@
         "level": 22,
         "race": 2,
         "class": 1,
-        "zone": 17,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -19362,7 +21508,7 @@
         "level": 22,
         "race": 6,
         "class": 11,
-        "zone": 406,
+        "zone": 215,
         "map": 1,
         "gender": 1
       },
@@ -19371,25 +21517,16 @@
         "level": 62,
         "race": 5,
         "class": 5,
-        "zone": 139,
+        "zone": 85,
         "map": 0,
         "gender": 0
-      },
-      {
-        "name": "Clestina",
-        "level": 16,
-        "race": 5,
-        "class": 4,
-        "zone": 130,
-        "map": 0,
-        "gender": 1
       },
       {
         "name": "Drambaku",
         "level": 58,
         "race": 8,
         "class": 7,
-        "zone": 618,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -19398,8 +21535,8 @@
         "level": 56,
         "race": 2,
         "class": 3,
-        "zone": 361,
-        "map": 1,
+        "zone": 267,
+        "map": 0,
         "gender": 0
       },
       {
@@ -19416,7 +21553,7 @@
         "level": 16,
         "race": 1,
         "class": 9,
-        "zone": 40,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -19425,18 +21562,9 @@
         "level": 31,
         "race": 5,
         "class": 4,
-        "zone": 11,
+        "zone": 85,
         "map": 0,
         "gender": 0
-      },
-      {
-        "name": "Eyan",
-        "level": 70,
-        "race": 8,
-        "class": 5,
-        "zone": 14,
-        "map": 1,
-        "gender": 1
       },
       {
         "name": "Raenian",
@@ -19470,7 +21598,7 @@
         "level": 70,
         "race": 1,
         "class": 5,
-        "zone": 41,
+        "zone": 12,
         "map": 0,
         "gender": 1
       },
@@ -19479,7 +21607,7 @@
         "level": 55,
         "race": 4,
         "class": 11,
-        "zone": 490,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -19488,7 +21616,7 @@
         "level": 42,
         "race": 4,
         "class": 5,
-        "zone": 15,
+        "zone": 141,
         "map": 1,
         "gender": 0
       },
@@ -19506,7 +21634,7 @@
         "level": 36,
         "race": 7,
         "class": 9,
-        "zone": 33,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -19515,18 +21643,9 @@
         "level": 36,
         "race": 7,
         "class": 8,
-        "zone": 33,
+        "zone": 1,
         "map": 0,
         "gender": 1
-      },
-      {
-        "name": "Evedilad",
-        "level": 21,
-        "race": 4,
-        "class": 4,
-        "zone": 17,
-        "map": 1,
-        "gender": 0
       },
       {
         "name": "Auteon",
@@ -19547,29 +21666,11 @@
         "gender": 1
       },
       {
-        "name": "Kynklosh",
-        "level": 70,
-        "race": 7,
-        "class": 9,
-        "zone": 41,
-        "map": 0,
-        "gender": 1
-      },
-      {
         "name": "Kynysa",
         "level": 25,
         "race": 4,
         "class": 11,
-        "zone": 331,
-        "map": 1,
-        "gender": 1
-      },
-      {
-        "name": "Felyura",
-        "level": 15,
-        "race": 4,
-        "class": 11,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 1
       },
@@ -19578,8 +21679,8 @@
         "level": 70,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 3523,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19587,7 +21688,7 @@
         "level": 23,
         "race": 2,
         "class": 7,
-        "zone": 331,
+        "zone": 14,
         "map": 1,
         "gender": 0
       },
@@ -19596,7 +21697,7 @@
         "level": 19,
         "race": 3,
         "class": 3,
-        "zone": 38,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -19605,8 +21706,8 @@
         "level": 25,
         "race": 10,
         "class": 4,
-        "zone": 3430,
-        "map": 530,
+        "zone": 267,
+        "map": 0,
         "gender": 1
       },
       {
@@ -19614,7 +21715,7 @@
         "level": 38,
         "race": 7,
         "class": 1,
-        "zone": 3,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -19623,7 +21724,7 @@
         "level": 44,
         "race": 4,
         "class": 5,
-        "zone": 357,
+        "zone": 17,
         "map": 1,
         "gender": 0
       },
@@ -19632,7 +21733,7 @@
         "level": 31,
         "race": 8,
         "class": 1,
-        "zone": 400,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -19641,8 +21742,8 @@
         "level": 69,
         "race": 1,
         "class": 1,
-        "zone": 12,
-        "map": 0,
+        "zone": 3522,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19650,8 +21751,8 @@
         "level": 18,
         "race": 7,
         "class": 9,
-        "zone": 40,
-        "map": 0,
+        "zone": 148,
+        "map": 1,
         "gender": 0
       },
       {
@@ -19664,20 +21765,11 @@
         "gender": 1
       },
       {
-        "name": "Amaelath",
-        "level": 34,
-        "race": 4,
-        "class": 11,
-        "zone": 405,
-        "map": 1,
-        "gender": 0
-      },
-      {
         "name": "Tibin",
         "level": 60,
         "race": 7,
         "class": 8,
-        "zone": 139,
+        "zone": 1,
         "map": 0,
         "gender": 0
       },
@@ -19686,7 +21778,7 @@
         "level": 27,
         "race": 3,
         "class": 2,
-        "zone": 267,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -19695,54 +21787,27 @@
         "level": 39,
         "race": 6,
         "class": 3,
-        "zone": 405,
+        "zone": 215,
         "map": 1,
         "gender": 0
-      },
-      {
-        "name": "Tanesta",
-        "level": 46,
-        "race": 5,
-        "class": 5,
-        "zone": 33,
-        "map": 0,
-        "gender": 1
       },
       {
         "name": "Kallistacy",
         "level": 28,
         "race": 5,
         "class": 5,
-        "zone": 11,
-        "map": 0,
-        "gender": 1
-      },
-      {
-        "name": "Badamad",
-        "level": 8,
-        "race": 5,
-        "class": 9,
         "zone": 85,
         "map": 0,
-        "gender": 0
+        "gender": 1
       },
       {
         "name": "Lowris",
         "level": 29,
         "race": 1,
         "class": 5,
-        "zone": 267,
+        "zone": 12,
         "map": 0,
         "gender": 1
-      },
-      {
-        "name": "Alandriano",
-        "level": 60,
-        "race": 1,
-        "class": 9,
-        "zone": 28,
-        "map": 0,
-        "gender": 0
       },
       {
         "name": "Tynmitu",
@@ -19754,39 +21819,21 @@
         "gender": 1
       },
       {
-        "name": "Uslethia",
-        "level": 10,
-        "race": 6,
-        "class": 11,
-        "zone": 14,
-        "map": 1,
-        "gender": 0
-      },
-      {
         "name": "Shelaea",
         "level": 16,
         "race": 4,
         "class": 5,
-        "zone": 148,
+        "zone": 141,
         "map": 1,
         "gender": 1
-      },
-      {
-        "name": "Elalleas",
-        "level": 32,
-        "race": 4,
-        "class": 11,
-        "zone": 405,
-        "map": 1,
-        "gender": 0
       },
       {
         "name": "Harnatol",
         "level": 47,
         "race": 11,
         "class": 7,
-        "zone": 3524,
-        "map": 530,
+        "zone": 1519,
+        "map": 0,
         "gender": 0
       },
       {
@@ -19794,7 +21841,7 @@
         "level": 20,
         "race": 11,
         "class": 7,
-        "zone": 3525,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -19803,7 +21850,7 @@
         "level": 25,
         "race": 6,
         "class": 11,
-        "zone": 331,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -19830,7 +21877,7 @@
         "level": 35,
         "race": 3,
         "class": 4,
-        "zone": 45,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -19839,7 +21886,7 @@
         "level": 55,
         "race": 6,
         "class": 11,
-        "zone": 361,
+        "zone": 1638,
         "map": 1,
         "gender": 1
       },
@@ -19857,7 +21904,7 @@
         "level": 15,
         "race": 6,
         "class": 7,
-        "zone": 17,
+        "zone": 1638,
         "map": 1,
         "gender": 0
       },
@@ -19866,7 +21913,7 @@
         "level": 27,
         "race": 6,
         "class": 3,
-        "zone": 331,
+        "zone": 361,
         "map": 1,
         "gender": 0
       },
@@ -19875,7 +21922,7 @@
         "level": 57,
         "race": 1,
         "class": 2,
-        "zone": 28,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -19893,7 +21940,7 @@
         "level": 64,
         "race": 11,
         "class": 2,
-        "zone": 3521,
+        "zone": 3524,
         "map": 530,
         "gender": 1
       },
@@ -19911,8 +21958,8 @@
         "level": 70,
         "race": 1,
         "class": 8,
-        "zone": 12,
-        "map": 0,
+        "zone": 1657,
+        "map": 1,
         "gender": 0
       },
       {
@@ -19929,8 +21976,8 @@
         "level": 12,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 3524,
+        "map": 530,
         "gender": 0
       },
       {
@@ -19938,7 +21985,7 @@
         "level": 21,
         "race": 6,
         "class": 11,
-        "zone": 17,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -19949,15 +21996,6 @@
         "class": 8,
         "zone": 3430,
         "map": 530,
-        "gender": 0
-      },
-      {
-        "name": "Otherio",
-        "level": 15,
-        "race": 1,
-        "class": 8,
-        "zone": 40,
-        "map": 0,
         "gender": 0
       },
       {
@@ -19974,8 +22012,8 @@
         "level": 9,
         "race": 4,
         "class": 3,
-        "zone": 141,
-        "map": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 0
       },
       {
@@ -19983,17 +22021,8 @@
         "level": 22,
         "race": 11,
         "class": 7,
-        "zone": 3524,
-        "map": 530,
-        "gender": 1
-      },
-      {
-        "name": "Teslanea",
-        "level": 55,
-        "race": 4,
-        "class": 3,
-        "zone": 361,
-        "map": 1,
+        "zone": 1519,
+        "map": 0,
         "gender": 1
       },
       {
@@ -20001,7 +22030,7 @@
         "level": 51,
         "race": 5,
         "class": 4,
-        "zone": 47,
+        "zone": 85,
         "map": 0,
         "gender": 1
       },
@@ -20019,7 +22048,7 @@
         "level": 58,
         "race": 4,
         "class": 3,
-        "zone": 1377,
+        "zone": 148,
         "map": 1,
         "gender": 1
       },
@@ -20028,7 +22057,7 @@
         "level": 60,
         "race": 11,
         "class": 2,
-        "zone": 3524,
+        "zone": 3483,
         "map": 530,
         "gender": 0
       },
@@ -20037,7 +22066,7 @@
         "level": 17,
         "race": 6,
         "class": 11,
-        "zone": 17,
+        "zone": 215,
         "map": 1,
         "gender": 0
       },
@@ -20046,18 +22075,9 @@
         "level": 35,
         "race": 1,
         "class": 8,
-        "zone": 267,
+        "zone": 12,
         "map": 0,
         "gender": 0
-      },
-      {
-        "name": "Eddine",
-        "level": 9,
-        "race": 11,
-        "class": 7,
-        "zone": 3524,
-        "map": 530,
-        "gender": 1
       },
       {
         "name": "Fultor",
@@ -20073,7 +22093,7 @@
         "level": 43,
         "race": 6,
         "class": 11,
-        "zone": 15,
+        "zone": 215,
         "map": 1,
         "gender": 1
       }
@@ -20086,6 +22106,22 @@
         "leader_name": "Vivialarin",
         "info": "27",
         "createdate": 1783927620,
+        "member_count": 29
+      },
+      {
+        "guildid": 4,
+        "name": "Watchdogs",
+        "leader_name": "Constal",
+        "info": "26",
+        "createdate": 1783927620,
+        "member_count": 29
+      },
+      {
+        "guildid": 17,
+        "name": "Blood Consortium",
+        "leader_name": "Aleallaeth",
+        "info": "25",
+        "createdate": 1783927622,
         "member_count": 27
       },
       {
@@ -20094,7 +22130,7 @@
         "leader_name": "Kilath",
         "info": "29",
         "createdate": 1783927622,
-        "member_count": 26
+        "member_count": 27
       },
       {
         "guildid": 19,
@@ -20102,37 +22138,21 @@
         "leader_name": "Lelalaria",
         "info": "26",
         "createdate": 1783927622,
-        "member_count": 26
+        "member_count": 25
+      },
+      {
+        "guildid": 5,
+        "name": "Morgantis",
+        "leader_name": "Saelor",
+        "info": "22",
+        "createdate": 1783927620,
+        "member_count": 25
       },
       {
         "guildid": 13,
         "name": "Souls of Azeroth",
         "leader_name": "Tydrine",
         "info": "27",
-        "createdate": 1783927622,
-        "member_count": 26
-      },
-      {
-        "guildid": 18,
-        "name": "Vanguard of the Right",
-        "leader_name": "Rewta",
-        "info": "27",
-        "createdate": 1783927622,
-        "member_count": 26
-      },
-      {
-        "guildid": 4,
-        "name": "Watchdogs",
-        "leader_name": "Constal",
-        "info": "26",
-        "createdate": 1783927620,
-        "member_count": 26
-      },
-      {
-        "guildid": 17,
-        "name": "Blood Consortium",
-        "leader_name": "Aleallaeth",
-        "info": "25",
         "createdate": 1783927622,
         "member_count": 25
       },
@@ -20142,23 +22162,7 @@
         "leader_name": "Barerze",
         "info": "24",
         "createdate": 1783927622,
-        "member_count": 23
-      },
-      {
-        "guildid": 8,
-        "name": "Guardians of Honor",
-        "leader_name": "Calvian",
-        "info": "24",
-        "createdate": 1783927620,
-        "member_count": 23
-      },
-      {
-        "guildid": 6,
-        "name": "Knights of the Sovereign",
-        "leader_name": "Emerine",
-        "info": "26",
-        "createdate": 1783927620,
-        "member_count": 23
+        "member_count": 24
       },
       {
         "guildid": 1,
@@ -20169,6 +22173,22 @@
         "member_count": 23
       },
       {
+        "guildid": 18,
+        "name": "Vanguard of the Right",
+        "leader_name": "Rewta",
+        "info": "27",
+        "createdate": 1783927622,
+        "member_count": 23
+      },
+      {
+        "guildid": 6,
+        "name": "Knights of the Sovereign",
+        "leader_name": "Emerine",
+        "info": "26",
+        "createdate": 1783927620,
+        "member_count": 22
+      },
+      {
         "guildid": 16,
         "name": "Dalaran Fair",
         "leader_name": "Naskish",
@@ -20177,20 +22197,12 @@
         "member_count": 21
       },
       {
-        "guildid": 15,
-        "name": "Sacrificial Brotherhood",
-        "leader_name": "Matzen",
-        "info": "21",
-        "createdate": 1783927622,
-        "member_count": 21
-      },
-      {
-        "guildid": 2,
-        "name": "Drunken Thunder",
-        "leader_name": "Vyillan",
-        "info": "21",
+        "guildid": 8,
+        "name": "Guardians of Honor",
+        "leader_name": "Calvian",
+        "info": "24",
         "createdate": 1783927620,
-        "member_count": 20
+        "member_count": 21
       },
       {
         "guildid": 3,
@@ -20198,21 +22210,21 @@
         "leader_name": "Chirka",
         "info": "20",
         "createdate": 1783927620,
-        "member_count": 20
+        "member_count": 19
       },
       {
-        "guildid": 5,
-        "name": "Morgantis",
-        "leader_name": "Saelor",
-        "info": "22",
+        "guildid": 2,
+        "name": "Drunken Thunder",
+        "leader_name": "Vyillan",
+        "info": "21",
         "createdate": 1783927620,
-        "member_count": 20
+        "member_count": 18
       },
       {
-        "guildid": 9,
-        "name": "Heart Knights",
-        "leader_name": "Miladan",
-        "info": "20",
+        "guildid": 15,
+        "name": "Sacrificial Brotherhood",
+        "leader_name": "Matzen",
+        "info": "21",
         "createdate": 1783927622,
         "member_count": 16
       },
@@ -20222,15 +22234,15 @@
         "leader_name": "Aelnalana",
         "info": "16",
         "createdate": 1783927622,
-        "member_count": 15
+        "member_count": 14
       },
       {
-        "guildid": 20,
-        "name": "Architects of the Green",
-        "leader_name": "Hando",
-        "info": "10",
+        "guildid": 9,
+        "name": "Heart Knights",
+        "leader_name": "Miladan",
+        "info": "20",
         "createdate": 1783927622,
-        "member_count": 10
+        "member_count": 14
       },
       {
         "guildid": 14,
@@ -20239,78 +22251,86 @@
         "info": "10",
         "createdate": 1783927622,
         "member_count": 10
+      },
+      {
+        "guildid": 20,
+        "name": "Architects of the Green",
+        "leader_name": "Hando",
+        "info": "10",
+        "createdate": 1783927622,
+        "member_count": 9
       }
     ],
     "mounts": [
       {
-        "name": "Itdis",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Vivishia",
+        "name": "Saelor",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 3
-      },
-      {
-        "name": "Auroni",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Shamgy",
-        "count": 4,
-        "level": 70,
-        "race": 2,
-        "class": 1
-      },
-      {
-        "name": "Sahath",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 3
-      },
-      {
-        "name": "Doshkiak",
-        "count": 4,
-        "level": 70,
-        "race": 6,
         "class": 11
       },
       {
-        "name": "Gabrick",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 9
-      },
-      {
-        "name": "Larane",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 8
-      },
-      {
-        "name": "Hulzuth",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Masca",
+        "name": "Velineve",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
+      },
+      {
+        "name": "Kormi",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Emerie",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Gajoth",
+        "count": 4,
+        "level": 70,
+        "race": 8,
+        "class": 8
+      },
+      {
+        "name": "Aleerany",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
+        "name": "Itlok",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 8
+      },
+      {
+        "name": "Aminetta",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 1
+      },
+      {
+        "name": "Solatea",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 4
+      },
+      {
+        "name": "Enauch",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
       }
     ],
     "pets": [],
@@ -20341,18 +22361,18 @@
           "class": 1
         },
         {
-          "name": "Himkil",
-          "value": 218,
-          "level": 48,
-          "race": 7,
-          "class": 9
+          "name": "Zarraden",
+          "value": 234,
+          "level": 50,
+          "race": 10,
+          "class": 3
         },
         {
-          "name": "Jeis",
-          "value": 144,
-          "level": 30,
+          "name": "Bitis",
+          "value": 230,
+          "level": 46,
           "race": 10,
-          "class": 2
+          "class": 4
         }
       ],
       "Blacksmithing": [
@@ -20415,18 +22435,18 @@
           "class": 9
         },
         {
+          "name": "Adricharan",
+          "value": 370,
+          "level": 70,
+          "race": 5,
+          "class": 9
+        },
+        {
           "name": "Traagshijin",
           "value": 369,
           "level": 70,
           "race": 8,
           "class": 8
-        },
-        {
-          "name": "Akvar",
-          "value": 366,
-          "level": 70,
-          "race": 11,
-          "class": 5
         }
       ],
       "Engineering": [
@@ -20512,6 +22532,13 @@
           "class": 8
         },
         {
+          "name": "Emerianne",
+          "value": 372,
+          "level": 70,
+          "race": 5,
+          "class": 8
+        },
+        {
           "name": "Caaen",
           "value": 371,
           "level": 70,
@@ -20531,19 +22558,19 @@
           "level": 70,
           "race": 11,
           "class": 5
-        },
-        {
-          "name": "Thylinne",
-          "value": 366,
-          "level": 70,
-          "race": 4,
-          "class": 5
         }
       ],
       "Leatherworking": [
         {
           "name": "Leandrin",
           "value": 375,
+          "level": 70,
+          "race": 5,
+          "class": 4
+        },
+        {
+          "name": "Kritan",
+          "value": 373,
           "level": 70,
           "race": 5,
           "class": 4
@@ -20568,13 +22595,6 @@
           "level": 70,
           "race": 4,
           "class": 11
-        },
-        {
-          "name": "Raphanda",
-          "value": 370,
-          "level": 70,
-          "race": 1,
-          "class": 4
         }
       ],
       "Mining": [
@@ -20607,11 +22627,11 @@
           "class": 1
         },
         {
-          "name": "Ophella",
-          "value": 353,
-          "level": 70,
-          "race": 5,
-          "class": 4
+          "name": "Pitosh",
+          "value": 354,
+          "level": 66,
+          "race": 7,
+          "class": 8
         }
       ],
       "Skinning": [
@@ -20638,7 +22658,7 @@
         },
         {
           "name": "Duas",
-          "value": 366,
+          "value": 367,
           "level": 70,
           "race": 11,
           "class": 7
@@ -20681,11 +22701,11 @@
           "class": 5
         },
         {
-          "name": "Elera",
-          "value": 337,
-          "level": 64,
-          "race": 11,
-          "class": 5
+          "name": "Brance",
+          "value": 338,
+          "level": 65,
+          "race": 5,
+          "class": 8
         }
       ],
       "Cooking": [
@@ -20727,6 +22747,13 @@
       ],
       "First Aid": [
         {
+          "name": "Emerianne",
+          "value": 374,
+          "level": 70,
+          "race": 5,
+          "class": 8
+        },
+        {
           "name": "Gotine",
           "value": 374,
           "level": 70,
@@ -20753,13 +22780,6 @@
           "level": 70,
           "race": 10,
           "class": 3
-        },
-        {
-          "name": "Seriastra",
-          "value": 371,
-          "level": 70,
-          "race": 4,
-          "class": 4
         }
       ],
       "Fishing": [
@@ -20792,11 +22812,11 @@
           "class": 4
         },
         {
-          "name": "Hamelian",
+          "name": "Futhack",
           "value": 372,
           "level": 70,
-          "race": 1,
-          "class": 8
+          "race": 7,
+          "class": 4
         }
       ]
     },
