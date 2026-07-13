@@ -15108,6 +15108,62 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
+        "name": "Aralastor",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 8
+      },
+      {
+        "name": "Lotheas",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Tehre",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 4
+      },
+      {
+        "name": "Benelinari",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Uzmu",
+        "count": 19,
+        "level": 62,
+        "race": 8,
+        "class": 8
+      },
+      {
+        "name": "Suhedia",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Yolandy",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 1
+      },
+      {
+        "name": "Tuzu",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
         "name": "Baus",
         "count": 19,
         "level": 70,
@@ -15120,62 +15176,6 @@
         "level": 69,
         "race": 10,
         "class": 2
-      },
-      {
-        "name": "Cilangedew",
-        "count": 19,
-        "level": 65,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Gehi",
-        "count": 19,
-        "level": 67,
-        "race": 2,
-        "class": 3
-      },
-      {
-        "name": "Matzen",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Hus",
-        "count": 19,
-        "level": 63,
-        "race": 2,
-        "class": 1
-      },
-      {
-        "name": "Vesteria",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Laesheh",
-        "count": 19,
-        "level": 66,
-        "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Shalatha",
-        "count": 19,
-        "level": 63,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Darlion",
-        "count": 19,
-        "level": 60,
-        "race": 10,
-        "class": 4
       }
     ],
     "bot_distribution": [
@@ -17732,74 +17732,74 @@
     ],
     "mounts": [
       {
-        "name": "Chirka",
+        "name": "Itlok",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 8
+      },
+      {
+        "name": "Zianlie",
         "count": 4,
         "level": 70,
         "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Doshkiak",
-        "count": 4,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Gabrick",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 9
-      },
-      {
-        "name": "Masca",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Calvian",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 5
-      },
-      {
-        "name": "Baus",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Aveaan",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 2
-      },
-      {
-        "name": "Restor",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 5
-      },
-      {
-        "name": "Emethea",
-        "count": 4,
-        "level": 70,
-        "race": 1,
         "class": 1
       },
       {
-        "name": "Velineve",
+        "name": "Vivialarin",
         "count": 4,
         "level": 70,
-        "race": 1,
-        "class": 2
+        "race": 4,
+        "class": 3
+      },
+      {
+        "name": "Aralastor",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 8
+      },
+      {
+        "name": "Lilya",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 3
+      },
+      {
+        "name": "Glutiblirn",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Mamstraa",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Auroni",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Yolandy",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 1
+      },
+      {
+        "name": "Itdis",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 9
       }
     ],
     "pets": [],
