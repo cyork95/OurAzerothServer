@@ -4470,74 +4470,74 @@
     ],
     "playtime": [
       {
-        "name": "Thrallera",
-        "totaltime": 17194,
-        "level": 50,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Falwise",
-        "totaltime": 17156,
-        "level": 1,
-        "race": 1,
-        "class": 9
-      },
-      {
-        "name": "Pipdormu",
-        "totaltime": 17154,
-        "level": 36,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Yserajin",
-        "totaltime": 17128,
-        "level": 44,
-        "race": 5,
-        "class": 1
-      },
-      {
-        "name": "Legdo",
-        "totaltime": 17116,
-        "level": 12,
-        "race": 2,
-        "class": 1
-      },
-      {
-        "name": "Garepin",
-        "totaltime": 17089,
-        "level": 20,
-        "race": 3,
+        "name": "Tharrosh",
+        "totaltime": 20693,
+        "level": 47,
+        "race": 6,
         "class": 3
       },
       {
-        "name": "Rexlas",
-        "totaltime": 17080,
-        "level": 6,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Gardormu",
-        "totaltime": 17057,
-        "level": 23,
-        "race": 3,
-        "class": 2
-      },
-      {
         "name": "Pipera",
-        "totaltime": 17053,
+        "totaltime": 20650,
         "level": 29,
         "race": 6,
         "class": 7
       },
       {
-        "name": "Arosh",
-        "totaltime": 17013,
+        "name": "Pipdormu",
+        "totaltime": 20577,
+        "level": 36,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Volepin",
+        "totaltime": 20573,
+        "level": 21,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Volar",
+        "totaltime": 20558,
+        "level": 30,
+        "race": 4,
+        "class": 1
+      },
+      {
+        "name": "Mulgera",
+        "totaltime": 20483,
+        "level": 36,
+        "race": 8,
+        "class": 1
+      },
+      {
+        "name": "Braklas",
+        "totaltime": 20382,
         "level": 29,
+        "race": 7,
+        "class": 1
+      },
+      {
+        "name": "Arepin",
+        "totaltime": 20336,
+        "level": 57,
         "race": 2,
         "class": 3
+      },
+      {
+        "name": "Broxan",
+        "totaltime": 20289,
+        "level": 32,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Thoas",
+        "totaltime": 20270,
+        "level": 1,
+        "race": 6,
+        "class": 7
       }
     ],
     "elite_kills": [],
@@ -4662,6 +4662,33 @@
         "gender": 0
       },
       {
+        "name": "Argar",
+        "level": 9,
+        "race": 3,
+        "class": 5,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Brakera",
+        "level": 6,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Zulera",
+        "level": 4,
+        "race": 1,
+        "class": 8,
+        "zone": 12,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Volus",
         "level": 10,
         "race": 2,
@@ -4671,6 +4698,15 @@
         "gender": 1
       },
       {
+        "name": "Thohoof",
+        "level": 18,
+        "race": 4,
+        "class": 1,
+        "zone": 141,
+        "map": 1,
+        "gender": 0
+      },
+      {
         "name": "Nozus",
         "level": 33,
         "race": 2,
@@ -4678,6 +4714,15 @@
         "zone": 14,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Tharka",
+        "level": 47,
+        "race": 6,
+        "class": 1,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Fadar",
@@ -4704,6 +4749,15 @@
         "class": 8,
         "zone": 14,
         "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Tirus",
+        "level": 33,
+        "race": 3,
+        "class": 1,
+        "zone": 1,
+        "map": 0,
         "gender": 1
       },
       {
@@ -4806,6 +4860,15 @@
         "gender": 1
       },
       {
+        "name": "Mergar",
+        "level": 31,
+        "race": 6,
+        "class": 1,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
         "name": "Tyrli",
         "level": 18,
         "race": 2,
@@ -4896,6 +4959,15 @@
         "gender": 1
       },
       {
+        "name": "Dundormu",
+        "level": 43,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
         "name": "Garka",
         "level": 44,
         "race": 8,
@@ -4910,6 +4982,15 @@
         "race": 6,
         "class": 11,
         "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Tharas",
+        "level": 1,
+        "race": 2,
+        "class": 1,
+        "zone": 14,
         "map": 1,
         "gender": 1
       },
@@ -4938,6 +5019,15 @@
         "class": 1,
         "zone": 85,
         "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Samgar",
+        "level": 16,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
         "gender": 1
       },
       {
@@ -4983,6 +5073,15 @@
         "class": 7,
         "zone": 14,
         "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Falomir",
+        "level": 39,
+        "race": 5,
+        "class": 1,
+        "zone": 85,
+        "map": 0,
         "gender": 1
       },
       {
@@ -5166,6 +5265,15 @@
         "gender": 1
       },
       {
+        "name": "Mulghoof",
+        "level": 38,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
         "name": "Gromdar",
         "level": 32,
         "race": 1,
@@ -5179,6 +5287,42 @@
         "level": 24,
         "race": 7,
         "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Yseradormu",
+        "level": 38,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Samwise",
+        "level": 25,
+        "race": 6,
+        "class": 11,
+        "zone": 215,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Mulgar",
+        "level": 17,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Krolas",
+        "level": 39,
+        "race": 3,
+        "class": 3,
         "zone": 1,
         "map": 0,
         "gender": 0
@@ -5227,6 +5371,15 @@
         "zone": 14,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Falli",
+        "level": 22,
+        "race": 8,
+        "class": 1,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Eldormu",
@@ -5290,6 +5443,24 @@
         "zone": 1,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Cairneor",
+        "level": 54,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Rexepin",
+        "level": 24,
+        "race": 8,
+        "class": 5,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
       },
       {
         "name": "Brakstraza",
@@ -5364,6 +5535,15 @@
         "gender": 0
       },
       {
+        "name": "Faiadoc",
+        "level": 11,
+        "race": 5,
+        "class": 8,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Legdormu",
         "level": 23,
         "race": 8,
@@ -5380,6 +5560,24 @@
         "zone": 85,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Garomir",
+        "level": 52,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
+        "name": "Jainagore",
+        "level": 37,
+        "race": 6,
+        "class": 1,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
       },
       {
         "name": "Elagorn",
@@ -5445,6 +5643,15 @@
         "gender": 0
       },
       {
+        "name": "Malfrosh",
+        "level": 23,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Jainaka",
         "level": 50,
         "race": 4,
@@ -5495,6 +5702,15 @@
         "race": 7,
         "class": 9,
         "zone": 1,
+        "map": 0,
+        "gender": 0
+      },
+      {
+        "name": "Legdar",
+        "level": 40,
+        "race": 1,
+        "class": 5,
+        "zone": 12,
         "map": 0,
         "gender": 0
       },
@@ -5643,6 +5859,15 @@
         "gender": 1
       },
       {
+        "name": "Tyran",
+        "level": 52,
+        "race": 8,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 0
+      },
+      {
         "name": "Rexthas",
         "level": 8,
         "race": 4,
@@ -5686,6 +5911,15 @@
         "zone": 12,
         "map": 0,
         "gender": 1
+      },
+      {
+        "name": "Varomir",
+        "level": 22,
+        "race": 7,
+        "class": 9,
+        "zone": 1,
+        "map": 0,
+        "gender": 0
       },
       {
         "name": "Zulepin",
@@ -5775,6 +6009,15 @@
         "class": 1,
         "zone": 215,
         "map": 1,
+        "gender": 1
+      },
+      {
+        "name": "Illius",
+        "level": 47,
+        "race": 1,
+        "class": 1,
+        "zone": 12,
+        "map": 0,
         "gender": 1
       },
       {
@@ -5868,6 +6111,15 @@
         "gender": 1
       },
       {
+        "name": "Borepin",
+        "level": 39,
+        "race": 8,
+        "class": 3,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
         "name": "Volera",
         "level": 29,
         "race": 1,
@@ -5893,6 +6145,15 @@
         "zone": 141,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Jainagar",
+        "level": 20,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
       },
       {
         "name": "Frorosh",
@@ -5929,6 +6190,15 @@
         "zone": 12,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Arus",
+        "level": 45,
+        "race": 8,
+        "class": 5,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Thoka",
@@ -5985,6 +6255,15 @@
         "gender": 0
       },
       {
+        "name": "Yserajin",
+        "level": 44,
+        "race": 5,
+        "class": 1,
+        "zone": 85,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Tyrkash",
         "level": 45,
         "race": 6,
@@ -5992,6 +6271,15 @@
         "zone": 215,
         "map": 1,
         "gender": 0
+      },
+      {
+        "name": "Tirjin",
+        "level": 22,
+        "race": 2,
+        "class": 3,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Krothas",
@@ -6048,6 +6336,15 @@
         "gender": 1
       },
       {
+        "name": "Samus",
+        "level": 19,
+        "race": 2,
+        "class": 7,
+        "zone": 14,
+        "map": 1,
+        "gender": 1
+      },
+      {
         "name": "Merus",
         "level": 8,
         "race": 3,
@@ -6093,6 +6390,15 @@
         "gender": 0
       },
       {
+        "name": "Illidormu",
+        "level": 14,
+        "race": 7,
+        "class": 4,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Garli",
         "level": 27,
         "race": 6,
@@ -6117,6 +6423,15 @@
         "class": 7,
         "zone": 215,
         "map": 1,
+        "gender": 0
+      },
+      {
+        "name": "Draus",
+        "level": 14,
+        "race": 5,
+        "class": 1,
+        "zone": 85,
+        "map": 0,
         "gender": 0
       },
       {
@@ -6264,6 +6579,15 @@
         "gender": 1
       },
       {
+        "name": "Samli",
+        "level": 19,
+        "race": 3,
+        "class": 5,
+        "zone": 1,
+        "map": 0,
+        "gender": 1
+      },
+      {
         "name": "Kaelka",
         "level": 14,
         "race": 8,
@@ -6300,6 +6624,15 @@
         "gender": 0
       },
       {
+        "name": "Bordo",
+        "level": 38,
+        "race": 6,
+        "class": 3,
+        "zone": 215,
+        "map": 1,
+        "gender": 0
+      },
+      {
         "name": "Tirvanas",
         "level": 28,
         "race": 4,
@@ -6325,6 +6658,15 @@
         "zone": 1,
         "map": 0,
         "gender": 0
+      },
+      {
+        "name": "Gimthas",
+        "level": 4,
+        "race": 4,
+        "class": 4,
+        "zone": 141,
+        "map": 1,
+        "gender": 1
       },
       {
         "name": "Merhoof",
