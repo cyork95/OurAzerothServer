@@ -378,7 +378,16 @@
     }
   ],
   "personalities": [],
-  "characters": [],
+  "characters": [
+    {
+      "guid": 1,
+      "name": "Testing",
+      "race": 1,
+      "class": 9,
+      "level": 1,
+      "gender": 1
+    }
+  ],
   "auctions": [],
   "human_characters": [],
   "biographies": {},
@@ -387,8 +396,24 @@
   "equipments": {},
   "zones": {},
   "stats": {
-    "richest": [],
-    "playtime": [],
+    "richest": [
+      {
+        "name": "Testing",
+        "money": 0,
+        "level": 1,
+        "race": 1,
+        "class": 9
+      }
+    ],
+    "playtime": [
+      {
+        "name": "Testing",
+        "totaltime": 352,
+        "level": 1,
+        "race": 1,
+        "class": 9
+      }
+    ],
     "elite_kills": [],
     "deaths": [],
     "creature_kills": [],
