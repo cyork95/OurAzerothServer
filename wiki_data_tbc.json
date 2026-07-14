@@ -15237,20 +15237,6 @@
         "class": 3
       },
       {
-        "name": "Tohketer",
-        "count": 8,
-        "level": 36,
-        "race": 2,
-        "class": 1
-      },
-      {
-        "name": "Bellata",
-        "count": 8,
-        "level": 70,
-        "race": 1,
-        "class": 1
-      },
-      {
         "name": "Saelor",
         "count": 8,
         "level": 70,
@@ -15265,11 +15251,18 @@
         "class": 11
       },
       {
-        "name": "Deywae",
-        "count": 7,
-        "level": 60,
-        "race": 10,
-        "class": 2
+        "name": "Tohketer",
+        "count": 8,
+        "level": 36,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Bellata",
+        "count": 8,
+        "level": 70,
+        "race": 1,
+        "class": 1
       },
       {
         "name": "Kedraes",
@@ -15277,6 +15270,13 @@
         "level": 6,
         "race": 4,
         "class": 4
+      },
+      {
+        "name": "Deywae",
+        "count": 7,
+        "level": 60,
+        "race": 10,
+        "class": 2
       }
     ],
     "pvp_hks": [],
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Kritan",
+        "name": "Matzen",
         "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Wasutuku",
-        "count": 19,
-        "level": 69,
-        "race": 6,
-        "class": 3
-      },
-      {
-        "name": "Nelantino",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 5
-      },
-      {
-        "name": "Maris",
-        "count": 19,
-        "level": 66,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Gelansel",
-        "count": 19,
-        "level": 69,
+        "level": 65,
         "race": 10,
         "class": 2
       },
       {
-        "name": "Bonrac",
+        "name": "Tuzu",
         "count": 19,
         "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Hinlee",
+        "count": 19,
+        "level": 66,
+        "race": 6,
+        "class": 7
+      },
+      {
+        "name": "Otharago",
+        "count": 19,
+        "level": 68,
         "race": 5,
         "class": 5
       },
       {
-        "name": "Gilsaup",
+        "name": "Cameronso",
+        "count": 19,
+        "level": 68,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Omolubik",
         "count": 19,
         "level": 70,
         "race": 6,
         "class": 1
       },
       {
-        "name": "Kydine",
+        "name": "Baus",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 3
+      },
+      {
+        "name": "Shamgy",
+        "count": 19,
+        "level": 70,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Vyas",
         "count": 19,
         "level": 65,
         "race": 10,
-        "class": 8
+        "class": 2
       },
       {
-        "name": "Barerze",
+        "name": "Lopan",
         "count": 19,
-        "level": 69,
-        "race": 2,
-        "class": 7
-      },
-      {
-        "name": "Nabawhelok",
-        "count": 19,
-        "level": 62,
+        "level": 61,
         "race": 6,
-        "class": 7
+        "class": 11
       }
     ],
     "bot_distribution": [
@@ -15369,7 +15369,7 @@
       },
       {
         "class": 4,
-        "count": 1289
+        "count": 1288
       },
       {
         "class": 5,
@@ -16024,15 +16024,6 @@
         "gender": 0
       },
       {
-        "name": "Faniar",
-        "level": 35,
-        "race": 10,
-        "class": 4,
-        "zone": 3487,
-        "map": 530,
-        "gender": 0
-      },
-      {
         "name": "Palateema",
         "level": 66,
         "race": 11,
@@ -16631,7 +16622,7 @@
         "level": 45,
         "race": 3,
         "class": 3,
-        "zone": 33,
+        "zone": 1,
         "map": 0,
         "gender": 1
       },
@@ -16964,8 +16955,8 @@
         "level": 70,
         "race": 5,
         "class": 4,
-        "zone": 3522,
-        "map": 530,
+        "zone": 1637,
+        "map": 1,
         "gender": 1
       },
       {
@@ -17410,6 +17401,13 @@
         "class": 3
       },
       {
+        "name": "Hamelian",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 8
+      },
+      {
         "name": "Sourmonn",
         "count": 4,
         "level": 70,
@@ -17422,13 +17420,6 @@
         "level": 70,
         "race": 1,
         "class": 5
-      },
-      {
-        "name": "Hamelian",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 8
       },
       {
         "name": "Bellata",
