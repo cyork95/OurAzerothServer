@@ -17359,13 +17359,6 @@
     ],
     "mounts": [
       {
-        "name": "Celoerenis",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
         "name": "Vestrica",
         "count": 4,
         "level": 70,
@@ -17373,11 +17366,11 @@
         "class": 4
       },
       {
-        "name": "Mihom",
+        "name": "Celoerenis",
         "count": 4,
         "level": 70,
-        "race": 2,
-        "class": 9
+        "race": 10,
+        "class": 2
       },
       {
         "name": "Cleander",
@@ -17415,17 +17408,24 @@
         "class": 8
       },
       {
-        "name": "Luruna",
+        "name": "Mihom",
         "count": 4,
         "level": 70,
-        "race": 11,
+        "race": 2,
+        "class": 9
+      },
+      {
+        "name": "Caaen",
+        "count": 4,
+        "level": 70,
+        "race": 10,
         "class": 8
       },
       {
-        "name": "Braalus",
+        "name": "Sylise",
         "count": 4,
         "level": 70,
-        "race": 11,
+        "race": 10,
         "class": 3
       }
     ],
