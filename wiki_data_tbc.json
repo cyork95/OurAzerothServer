@@ -15284,13 +15284,6 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Demaran",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
         "name": "Acaammetho",
         "count": 19,
         "level": 70,
@@ -15298,18 +15291,11 @@
         "class": 11
       },
       {
-        "name": "Derise",
-        "count": 19,
-        "level": 67,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Wingeha",
+        "name": "Demaran",
         "count": 19,
         "level": 70,
-        "race": 6,
-        "class": 3
+        "race": 5,
+        "class": 9
       },
       {
         "name": "Sexonash",
@@ -15324,6 +15310,20 @@
         "level": 70,
         "race": 5,
         "class": 9
+      },
+      {
+        "name": "Derise",
+        "count": 19,
+        "level": 67,
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Wingeha",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 3
       },
       {
         "name": "Hishiap",
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Vestrica",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 4
-      },
-      {
-        "name": "Celoerenis",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Aveaan",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 2
-      },
-      {
-        "name": "Samees",
-        "count": 4,
-        "level": 70,
-        "race": 7,
-        "class": 8
-      },
-      {
-        "name": "Mihom",
-        "count": 4,
-        "level": 70,
-        "race": 2,
-        "class": 9
-      },
-      {
-        "name": "Cleander",
+        "name": "Berond",
         "count": 4,
         "level": 70,
         "race": 5,
         "class": 9
       },
       {
-        "name": "Diyuzoia",
+        "name": "Herenevita",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Endaron",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 4
+      },
+      {
+        "name": "Mamstraa",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Bonrac",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Tiolgazem",
         "count": 4,
         "level": 70,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Yolandy",
+        "name": "Potku",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 1
+        "race": 7,
+        "class": 4
       },
       {
-        "name": "Caelazar",
+        "name": "Nelantan",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 8
+        "class": 2
       },
       {
-        "name": "Luruna",
+        "name": "Gotine",
         "count": 4,
         "level": 70,
         "race": 11,
-        "class": 8
+        "class": 7
+      },
+      {
+        "name": "Alynyssa",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 11
       }
     ],
     "pets": [],
