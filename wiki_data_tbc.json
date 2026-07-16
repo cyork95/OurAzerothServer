@@ -15237,20 +15237,6 @@
         "class": 3
       },
       {
-        "name": "Saelor",
-        "count": 8,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Ooathodza",
-        "count": 8,
-        "level": 10,
-        "race": 6,
-        "class": 11
-      },
-      {
         "name": "Tohketer",
         "count": 8,
         "level": 36,
@@ -15263,6 +15249,20 @@
         "level": 70,
         "race": 1,
         "class": 1
+      },
+      {
+        "name": "Saelor",
+        "count": 8,
+        "level": 70,
+        "race": 4,
+        "class": 11
+      },
+      {
+        "name": "Ooathodza",
+        "count": 8,
+        "level": 10,
+        "race": 6,
+        "class": 11
       },
       {
         "name": "Kedraes",
@@ -15284,73 +15284,73 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Gornul",
+        "name": "Darlion",
         "count": 19,
-        "level": 61,
-        "race": 2,
-        "class": 3
-      },
-      {
-        "name": "Dariustan",
-        "count": 19,
-        "level": 70,
-        "race": 5,
+        "level": 60,
+        "race": 10,
         "class": 4
       },
       {
-        "name": "Dandern",
-        "count": 19,
-        "level": 66,
-        "race": 5,
-        "class": 5
-      },
-      {
-        "name": "Chailtsen",
-        "count": 19,
-        "level": 60,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Zaldori",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Berond",
+        "name": "Adricharan",
         "count": 19,
         "level": 70,
         "race": 5,
         "class": 9
       },
       {
-        "name": "Kalinise",
-        "count": 19,
-        "level": 69,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Cilangedew",
+        "name": "Qoanyohidoo",
         "count": 19,
         "level": 65,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Fizodes",
+        "name": "Usanda",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Zohky",
+        "count": 19,
+        "level": 66,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Carurg",
+        "count": 19,
+        "level": 67,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Zitsute",
         "count": 19,
         "level": 70,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Emeniel",
+        "name": "Eyan",
         "count": 19,
         "level": 70,
-        "race": 10,
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Doshkiak",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Stanora",
+        "count": 19,
+        "level": 70,
+        "race": 5,
         "class": 8
       }
     ],
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Ogtison",
+        "name": "Rohdi",
         "count": 4,
         "level": 70,
         "race": 8,
-        "class": 3
+        "class": 4
       },
       {
-        "name": "Thoallus",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 1
-      },
-      {
-        "name": "Hatith",
+        "name": "Feyrin",
         "count": 4,
         "level": 70,
         "race": 10,
-        "class": 2
+        "class": 4
       },
       {
-        "name": "Pheret",
+        "name": "Ellicia",
         "count": 4,
         "level": 70,
-        "race": 11,
+        "race": 5,
         "class": 1
       },
       {
-        "name": "Kritan",
+        "name": "Foxi",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Stanora",
-        "count": 4,
-        "level": 70,
-        "race": 5,
+        "race": 7,
         "class": 8
       },
       {
-        "name": "Jolara",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Elinata",
+        "name": "Restor",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 8
+        "class": 5
       },
       {
-        "name": "Jidreath",
+        "name": "Klemull",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Fizodes",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Carymara",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 3
+        "class": 11
       },
       {
-        "name": "Baus",
+        "name": "Thylinne",
         "count": 4,
         "level": 70,
-        "race": 10,
-        "class": 3
+        "race": 4,
+        "class": 5
+      },
+      {
+        "name": "Kilniir",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 5
       }
     ],
     "pets": [],
