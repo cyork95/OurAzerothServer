@@ -17359,6 +17359,13 @@
     ],
     "mounts": [
       {
+        "name": "Berond",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
         "name": "Herenevita",
         "count": 4,
         "level": 70,
@@ -17385,13 +17392,6 @@
         "level": 70,
         "race": 5,
         "class": 5
-      },
-      {
-        "name": "Berond",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 9
       },
       {
         "name": "Tiolgazem",
