@@ -3599,10 +3599,23 @@ SET gxRefresh "60"</code><button class="btn-copy" onclick="copyText('SET gxWindo
                 <p>Welcome to the server change log! This section tracks all updates, modifications, addon shims, and server-side configurations performed on <strong>OurAzerothServer</strong>.</p>
                 
                 <div class="timeline" style="margin-top: 1.5rem; border-left: 2px solid var(--accent-primary); padding-left: 1.5rem; margin-left: 0.5rem;">
-                    <!-- VERSION 1.1.2 -->
+                    <!-- VERSION 1.1.3 -->
                     <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
                         <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary); box-shadow: 0 0 8px var(--accent-glow);"></div>
-                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.2 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.3 <span style="font-size: 0.85rem; padding: 2px 8px; border-radius: 12px; background: var(--accent-glow); color: var(--accent-primary); font-weight: normal; margin-left: 0.5rem;">Current Release</span></h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 17, 2026</p>
+                        
+                        <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">👥 Customized Bot Personalities & Prompt Cleanup</h4>
+                        <ul style="margin-left: 1.25rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li><strong>Custom Elf Hardcore Group Personalities:</strong> Registered unique, rich backstories and behavioral templates for the three hardcore companion bots: Fendrel (Cynical Warlock), Maldrion (Serene Shaman), and Xylander (Academic Mage). Assigned these custom personalities permanently to their respective GUIDs.</li>
+                            <li><strong>Removed Technical Codes from Prompts:</strong> Patched the Ollama prompt templates in <code>mod_ollama_chat.conf</code> to strip out the internal database keys (like <code>{bot_personality_name}</code>), preventing bots from identifying themselves as technical strings (e.g. <code>PALADIN_AI_PERSONALITY</code>) in chat or comments.</li>
+                        </ul>
+                    </div>
+
+                    <!-- VERSION 1.1.2 -->
+                    <div class="version-entry" style="margin-bottom: 2rem; position: relative;">
+                        <div class="bullet" style="width: 12px; height: 12px; border-radius: 50%; background: var(--accent-primary); position: absolute; left: -28px; top: 6px; border: 2px solid var(--bg-primary);"></div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Version 1.1.2</h3>
                         <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: -0.25rem; margin-bottom: 1rem;">Released: July 11, 2026</p>
                         
                         <h4 style="color: var(--accent-primary); font-size: 0.95rem; margin-bottom: 0.25rem;">🛠️ Complete Faction Isolation & DBC Restoration</h4>
