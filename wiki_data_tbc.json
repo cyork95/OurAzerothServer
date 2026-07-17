@@ -15284,6 +15284,62 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
+        "name": "Kritan",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Wasutuku",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Nelantino",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Maris",
+        "count": 19,
+        "level": 66,
+        "race": 10,
+        "class": 3
+      },
+      {
+        "name": "Gelansel",
+        "count": 19,
+        "level": 69,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Bonrac",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Gilsaup",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Kydine",
+        "count": 19,
+        "level": 65,
+        "race": 10,
+        "class": 8
+      },
+      {
         "name": "Barerze",
         "count": 19,
         "level": 69,
@@ -15296,62 +15352,6 @@
         "level": 62,
         "race": 6,
         "class": 7
-      },
-      {
-        "name": "Brance",
-        "count": 19,
-        "level": 65,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Ulgo",
-        "count": 19,
-        "level": 63,
-        "race": 6,
-        "class": 1
-      },
-      {
-        "name": "Baclae",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Draarrin",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Gumto",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 1
-      },
-      {
-        "name": "Sotumiol",
-        "count": 19,
-        "level": 62,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Sahath",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 3
-      },
-      {
-        "name": "Acaammetho",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
       }
     ],
     "bot_distribution": [
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Ophella",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Perrian",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 8
-      },
-      {
-        "name": "Fyllorn",
+        "name": "Faldron",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 4
+        "class": 11
       },
       {
-        "name": "Halion",
+        "name": "Masca",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Hubin",
+        "name": "Tetishu",
         "count": 4,
         "level": 70,
-        "race": 7,
-        "class": 1
+        "race": 6,
+        "class": 11
       },
       {
-        "name": "Hamar",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 4
-      },
-      {
-        "name": "Jaldo",
-        "count": 4,
-        "level": 70,
-        "race": 7,
-        "class": 1
-      },
-      {
-        "name": "Warrec",
+        "name": "Elerette",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 8
+        "class": 1
       },
       {
-        "name": "Herenevita",
+        "name": "Gilsaup",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Sabianey",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Endaron",
+        "name": "Eyan",
+        "count": 4,
+        "level": 70,
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Acaammetho",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Rydiir",
         "count": 4,
         "level": 70,
         "race": 4,
         "class": 4
+      },
+      {
+        "name": "Cenar",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
       }
     ],
     "pets": [],
