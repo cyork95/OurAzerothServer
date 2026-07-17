@@ -15237,13 +15237,6 @@
         "class": 3
       },
       {
-        "name": "Saelor",
-        "count": 8,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
         "name": "Ooathodza",
         "count": 8,
         "level": 10,
@@ -15265,6 +15258,13 @@
         "class": 1
       },
       {
+        "name": "Saelor",
+        "count": 8,
+        "level": 70,
+        "race": 4,
+        "class": 11
+      },
+      {
         "name": "Kedraes",
         "count": 7,
         "level": 6,
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Gornul",
+        "name": "Emerianne",
         "count": 19,
-        "level": 61,
-        "race": 2,
-        "class": 3
+        "level": 70,
+        "race": 5,
+        "class": 8
       },
       {
-        "name": "Dariustan",
+        "name": "Jidina",
+        "count": 19,
+        "level": 67,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Hatith",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Yurine",
+        "count": 19,
+        "level": 60,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Ucamo",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Varris",
+        "count": 19,
+        "level": 69,
+        "race": 10,
+        "class": 5
+      },
+      {
+        "name": "Leandrin",
         "count": 19,
         "level": 70,
         "race": 5,
         "class": 4
       },
       {
-        "name": "Dandern",
+        "name": "Nerene",
         "count": 19,
-        "level": 66,
+        "level": 67,
         "race": 5,
-        "class": 5
-      },
-      {
-        "name": "Chailtsen",
-        "count": 19,
-        "level": 60,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Zaldori",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Berond",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Kalinise",
-        "count": 19,
-        "level": 69,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Cilangedew",
-        "count": 19,
-        "level": 65,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Fizodes",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Emeniel",
-        "count": 19,
-        "level": 70,
-        "race": 10,
         "class": 8
+      },
+      {
+        "name": "Lotheas",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Emerie",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 4
       }
     ],
     "bot_distribution": [
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Pheret",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 1
-      },
-      {
-        "name": "Ogtison",
+        "name": "Hulzuth",
         "count": 4,
         "level": 70,
         "race": 8,
-        "class": 3
+        "class": 5
       },
       {
-        "name": "Thoallus",
+        "name": "Saelor",
         "count": 4,
         "level": 70,
-        "race": 11,
-        "class": 1
+        "race": 4,
+        "class": 11
       },
       {
-        "name": "Hatith",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Elinata",
+        "name": "Velineve",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 8
+        "class": 2
       },
       {
-        "name": "Jidreath",
+        "name": "Emeranu",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 1
+      },
+      {
+        "name": "Ugdol",
+        "count": 4,
+        "level": 70,
+        "race": 3,
+        "class": 2
+      },
+      {
+        "name": "Inenei",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Amaris",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Amase",
         "count": 4,
         "level": 70,
         "race": 4,
         "class": 3
       },
       {
-        "name": "Baus",
+        "name": "Larane",
         "count": 4,
         "level": 70,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Kritan",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Stanora",
-        "count": 4,
-        "level": 70,
-        "race": 5,
+        "race": 1,
         "class": 8
       },
       {
-        "name": "Jolara",
+        "name": "Ehtesse",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 4
+        "race": 3,
+        "class": 2
       }
     ],
     "pets": [],
