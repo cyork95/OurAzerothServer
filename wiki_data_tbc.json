@@ -17359,20 +17359,6 @@
     ],
     "mounts": [
       {
-        "name": "Klemull",
-        "count": 4,
-        "level": 70,
-        "race": 7,
-        "class": 9
-      },
-      {
-        "name": "Fizodes",
-        "count": 4,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
         "name": "Carymara",
         "count": 4,
         "level": 70,
@@ -17415,18 +17401,32 @@
         "class": 5
       },
       {
-        "name": "Aminetta",
+        "name": "Klemull",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Fizodes",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Herey",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 1
       },
       {
-        "name": "Vehar",
+        "name": "Thylinne",
         "count": 4,
         "level": 70,
-        "race": 8,
-        "class": 3
+        "race": 4,
+        "class": 5
       }
     ],
     "pets": [],
