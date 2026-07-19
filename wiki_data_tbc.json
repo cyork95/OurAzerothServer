@@ -15284,20 +15284,6 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Darlion",
-        "count": 19,
-        "level": 60,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Adricharan",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
         "name": "Qoanyohidoo",
         "count": 19,
         "level": 65,
@@ -15317,6 +15303,20 @@
         "level": 66,
         "race": 2,
         "class": 7
+      },
+      {
+        "name": "Darlion",
+        "count": 19,
+        "level": 60,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Adricharan",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 9
       },
       {
         "name": "Carurg",
@@ -15340,17 +15340,17 @@
         "class": 5
       },
       {
-        "name": "Doshkiak",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
         "name": "Stanora",
         "count": 19,
         "level": 70,
         "race": 5,
+        "class": 8
+      },
+      {
+        "name": "Perrian",
+        "count": 19,
+        "level": 70,
+        "race": 10,
         "class": 8
       }
     ],
@@ -17359,27 +17359,6 @@
     ],
     "mounts": [
       {
-        "name": "Rohdi",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Feyrin",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Ellicia",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 1
-      },
-      {
         "name": "Foxi",
         "count": 4,
         "level": 70,
@@ -17413,6 +17392,27 @@
         "level": 70,
         "race": 4,
         "class": 11
+      },
+      {
+        "name": "Rohdi",
+        "count": 4,
+        "level": 70,
+        "race": 8,
+        "class": 4
+      },
+      {
+        "name": "Feyrin",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Ellicia",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 1
       },
       {
         "name": "Thylinne",
