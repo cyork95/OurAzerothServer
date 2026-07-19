@@ -15284,11 +15284,67 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Acaammetho",
+        "name": "Nabawhelok",
+        "count": 19,
+        "level": 62,
+        "race": 6,
+        "class": 7
+      },
+      {
+        "name": "Brance",
+        "count": 19,
+        "level": 65,
+        "race": 5,
+        "class": 8
+      },
+      {
+        "name": "Ulgo",
+        "count": 19,
+        "level": 63,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Barerze",
+        "count": 19,
+        "level": 69,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Baclae",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Draarrin",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Gumto",
         "count": 19,
         "level": 70,
         "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Sotumiol",
+        "count": 19,
+        "level": 62,
+        "race": 6,
         "class": 11
+      },
+      {
+        "name": "Sahath",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 3
       },
       {
         "name": "Demaran",
@@ -15296,62 +15352,6 @@
         "level": 70,
         "race": 5,
         "class": 9
-      },
-      {
-        "name": "Sexonash",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Vesteria",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Derise",
-        "count": 19,
-        "level": 67,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Wingeha",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 3
-      },
-      {
-        "name": "Hishiap",
-        "count": 19,
-        "level": 65,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Ellicia",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 1
-      },
-      {
-        "name": "Celoerenis",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Nalina",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 3
       }
     ],
     "bot_distribution": [
@@ -17359,70 +17359,70 @@
     ],
     "mounts": [
       {
-        "name": "Mamstraa",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Bonrac",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 5
-      },
-      {
-        "name": "Berond",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Herenevita",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Endaron",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 4
-      },
-      {
-        "name": "Alynyssa",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Draarrin",
+        "name": "Baclae",
         "count": 4,
         "level": 70,
         "race": 10,
         "class": 9
       },
       {
-        "name": "Tiolgazem",
+        "name": "Gabrick",
         "count": 4,
         "level": 70,
-        "race": 6,
-        "class": 11
+        "race": 1,
+        "class": 9
       },
       {
-        "name": "Potku",
+        "name": "Damelicia",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 8
+      },
+      {
+        "name": "Elbamos",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Akvar",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 5
+      },
+      {
+        "name": "Kynklosh",
         "count": 4,
         "level": 70,
         "race": 7,
-        "class": 4
+        "class": 9
       },
       {
-        "name": "Nelantan",
+        "name": "Vivialarin",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 3
+      },
+      {
+        "name": "Valuett",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Tuzu",
+        "count": 4,
+        "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Dendo",
         "count": 4,
         "level": 70,
         "race": 1,
