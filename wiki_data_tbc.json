@@ -15265,18 +15265,18 @@
         "class": 11
       },
       {
-        "name": "Kedraes",
-        "count": 7,
-        "level": 6,
-        "race": 4,
-        "class": 4
-      },
-      {
         "name": "Deywae",
         "count": 7,
         "level": 60,
         "race": 10,
         "class": 2
+      },
+      {
+        "name": "Kedraes",
+        "count": 7,
+        "level": 6,
+        "race": 4,
+        "class": 4
       }
     ],
     "pvp_hks": [],
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Lotheas",
+        "name": "Acaammetho",
         "count": 19,
         "level": 70,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Emerie",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Shalatha",
-        "count": 19,
-        "level": 63,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Suhia",
-        "count": 19,
-        "level": 65,
         "race": 6,
-        "class": 7
+        "class": 11
       },
       {
-        "name": "Celmarrin",
-        "count": 19,
-        "level": 64,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Damelicia",
+        "name": "Demaran",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 8
+        "class": 9
       },
       {
-        "name": "Elawea",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Zeadrea",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Hulzuth",
+        "name": "Sexonash",
         "count": 19,
         "level": 70,
         "race": 8,
-        "class": 5
+        "class": 4
       },
       {
-        "name": "Darlion",
+        "name": "Vesteria",
         "count": 19,
-        "level": 60,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
+        "name": "Derise",
+        "count": 19,
+        "level": 67,
         "race": 10,
-        "class": 4
+        "class": 9
+      },
+      {
+        "name": "Wingeha",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Hishiap",
+        "count": 19,
+        "level": 65,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Ellicia",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 1
+      },
+      {
+        "name": "Celoerenis",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Nalina",
+        "count": 19,
+        "level": 65,
+        "race": 10,
+        "class": 3
       }
     ],
     "bot_distribution": [
@@ -17359,73 +17359,73 @@
     ],
     "mounts": [
       {
-        "name": "Sagrimouhr",
+        "name": "Herenevita",
         "count": 4,
         "level": 70,
-        "race": 3,
+        "race": 1,
         "class": 2
       },
       {
-        "name": "Cornatol",
+        "name": "Endaron",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 4
+      },
+      {
+        "name": "Mamstraa",
         "count": 4,
         "level": 70,
         "race": 11,
         "class": 7
       },
       {
-        "name": "Usanda",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 7
-      },
-      {
-        "name": "Leandrin",
+        "name": "Bonrac",
         "count": 4,
         "level": 70,
         "race": 5,
-        "class": 4
+        "class": 5
       },
       {
-        "name": "Demaran",
+        "name": "Berond",
         "count": 4,
         "level": 70,
         "race": 5,
         "class": 9
       },
       {
-        "name": "Zitsute",
+        "name": "Potku",
         "count": 4,
         "level": 70,
-        "race": 6,
+        "race": 7,
+        "class": 4
+      },
+      {
+        "name": "Nelantan",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Gotine",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
+        "name": "Alynyssa",
+        "count": 4,
+        "level": 70,
+        "race": 4,
         "class": 11
       },
       {
-        "name": "Tehre",
+        "name": "Draarrin",
         "count": 4,
         "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Merany",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 1
-      },
-      {
-        "name": "Dariustan",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Nelan",
-        "count": 4,
-        "level": 70,
-        "race": 1,
+        "race": 10,
         "class": 9
       }
     ],
