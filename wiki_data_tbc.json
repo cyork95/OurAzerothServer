@@ -17415,18 +17415,18 @@
         "class": 1
       },
       {
+        "name": "Mamstraa",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 7
+      },
+      {
         "name": "Bonrac",
         "count": 4,
         "level": 70,
         "race": 5,
         "class": 5
-      },
-      {
-        "name": "Berond",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 9
       }
     ],
     "pets": [],
