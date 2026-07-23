@@ -15284,67 +15284,11 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Lotheas",
+        "name": "Zohky",
         "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Emerie",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Shalatha",
-        "count": 19,
-        "level": 63,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Suhia",
-        "count": 19,
-        "level": 65,
-        "race": 6,
+        "level": 66,
+        "race": 2,
         "class": 7
-      },
-      {
-        "name": "Celmarrin",
-        "count": 19,
-        "level": 64,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Damelicia",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Elawea",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Zeadrea",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Hulzuth",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 5
       },
       {
         "name": "Darlion",
@@ -15352,6 +15296,62 @@
         "level": 60,
         "race": 10,
         "class": 4
+      },
+      {
+        "name": "Adricharan",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
+        "name": "Qoanyohidoo",
+        "count": 19,
+        "level": 65,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Usanda",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Zitsute",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Eyan",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Carurg",
+        "count": 19,
+        "level": 67,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Tadrea",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Diyuzoia",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
       }
     ],
     "bot_distribution": [
@@ -17359,70 +17359,70 @@
     ],
     "mounts": [
       {
-        "name": "Sagrimouhr",
+        "name": "Restor",
         "count": 4,
         "level": 70,
-        "race": 3,
-        "class": 2
+        "race": 1,
+        "class": 5
       },
       {
-        "name": "Cornatol",
+        "name": "Klemull",
         "count": 4,
         "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Usanda",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 7
-      },
-      {
-        "name": "Leandrin",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Demaran",
-        "count": 4,
-        "level": 70,
-        "race": 5,
+        "race": 7,
         "class": 9
       },
       {
-        "name": "Zitsute",
+        "name": "Fizodes",
         "count": 4,
         "level": 70,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Tehre",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Filora",
+        "name": "Carymara",
         "count": 4,
         "level": 70,
         "race": 4,
         "class": 11
       },
       {
-        "name": "Merany",
+        "name": "Rohdi",
         "count": 4,
         "level": 70,
-        "race": 1,
+        "race": 8,
+        "class": 4
+      },
+      {
+        "name": "Feyrin",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Ellicia",
+        "count": 4,
+        "level": 70,
+        "race": 5,
         "class": 1
       },
       {
-        "name": "Dariustan",
+        "name": "Foxi",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 8
+      },
+      {
+        "name": "Kilniir",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 5
+      },
+      {
+        "name": "Galaster",
         "count": 4,
         "level": 70,
         "race": 5,
