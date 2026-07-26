@@ -17359,6 +17359,20 @@
     ],
     "mounts": [
       {
+        "name": "Omolubik",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Dryro",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 8
+      },
+      {
         "name": "Aumiis",
         "count": 4,
         "level": 70,
@@ -17408,24 +17422,10 @@
         "class": 2
       },
       {
-        "name": "Omolubik",
+        "name": "Emeniel",
         "count": 4,
         "level": 70,
-        "race": 6,
-        "class": 1
-      },
-      {
-        "name": "Dryro",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 8
-      },
-      {
-        "name": "Cimink",
-        "count": 4,
-        "level": 70,
-        "race": 7,
+        "race": 10,
         "class": 8
       }
     ],
