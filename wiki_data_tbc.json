@@ -15237,13 +15237,6 @@
         "class": 3
       },
       {
-        "name": "Ooathodza",
-        "count": 8,
-        "level": 10,
-        "race": 6,
-        "class": 11
-      },
-      {
         "name": "Tohketer",
         "count": 8,
         "level": 36,
@@ -15265,11 +15258,11 @@
         "class": 11
       },
       {
-        "name": "Kedraes",
-        "count": 7,
-        "level": 6,
-        "race": 4,
-        "class": 4
+        "name": "Ooathodza",
+        "count": 8,
+        "level": 10,
+        "race": 6,
+        "class": 11
       },
       {
         "name": "Deywae",
@@ -15277,6 +15270,13 @@
         "level": 60,
         "race": 10,
         "class": 2
+      },
+      {
+        "name": "Kedraes",
+        "count": 7,
+        "level": 6,
+        "race": 4,
+        "class": 4
       }
     ],
     "pvp_hks": [],
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Emerianne",
+        "name": "Doshkiak",
         "count": 19,
         "level": 70,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Jidina",
-        "count": 19,
-        "level": 67,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Hatith",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Yurine",
-        "count": 19,
-        "level": 60,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Ucamo",
-        "count": 19,
-        "level": 69,
         "race": 6,
         "class": 11
       },
       {
-        "name": "Varris",
-        "count": 19,
-        "level": 69,
-        "race": 10,
-        "class": 5
-      },
-      {
-        "name": "Leandrin",
+        "name": "Stanora",
         "count": 19,
         "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Nerene",
-        "count": 19,
-        "level": 67,
         "race": 5,
         "class": 8
       },
       {
-        "name": "Lotheas",
+        "name": "Perrian",
         "count": 19,
         "level": 70,
         "race": 10,
-        "class": 4
+        "class": 8
       },
       {
-        "name": "Emerie",
+        "name": "Pajizme",
+        "count": 19,
+        "level": 60,
+        "race": 8,
+        "class": 7
+      },
+      {
+        "name": "Tadrea",
         "count": 19,
         "level": 70,
-        "race": 5,
-        "class": 4
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Diyuzoia",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Chirka",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Itdis",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 9
+      },
+      {
+        "name": "Azaleane",
+        "count": 19,
+        "level": 67,
+        "race": 10,
+        "class": 2
+      },
+      {
+        "name": "Fule",
+        "count": 19,
+        "level": 64,
+        "race": 6,
+        "class": 3
       }
     ],
     "bot_distribution": [
@@ -17359,73 +17359,73 @@
     ],
     "mounts": [
       {
-        "name": "Emeranu",
+        "name": "Omolubik",
         "count": 4,
         "level": 70,
-        "race": 1,
+        "race": 6,
         "class": 1
       },
       {
-        "name": "Ugdol",
+        "name": "Dryro",
         "count": 4,
         "level": 70,
-        "race": 3,
-        "class": 2
+        "race": 11,
+        "class": 8
       },
       {
-        "name": "Inenei",
+        "name": "Aumiis",
         "count": 4,
         "level": 70,
         "race": 11,
         "class": 7
       },
       {
-        "name": "Amaris",
+        "name": "Raphanda",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 2
+        "class": 4
       },
       {
-        "name": "Amase",
+        "name": "Mydrarus",
         "count": 4,
         "level": 70,
         "race": 4,
         "class": 3
       },
       {
-        "name": "Larane",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 8
-      },
-      {
-        "name": "Hulzuth",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Saelor",
+        "name": "Becalanea",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 11
+        "class": 5
       },
       {
-        "name": "Velineve",
+        "name": "Emethea",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 1
+      },
+      {
+        "name": "Zolana",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Itlok",
+        "name": "Duncanon",
         "count": 4,
         "level": 70,
-        "race": 7,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Emeniel",
+        "count": 4,
+        "level": 70,
+        "race": 10,
         "class": 8
       }
     ],
