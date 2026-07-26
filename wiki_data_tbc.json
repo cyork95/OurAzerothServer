@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Doshkiak",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Stanora",
+        "name": "Kritan",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 8
+        "class": 4
       },
       {
-        "name": "Perrian",
+        "name": "Wasutuku",
         "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 8
-      },
-      {
-        "name": "Pajizme",
-        "count": 19,
-        "level": 60,
-        "race": 8,
-        "class": 7
-      },
-      {
-        "name": "Tadrea",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Diyuzoia",
-        "count": 19,
-        "level": 70,
+        "level": 69,
         "race": 6,
-        "class": 11
+        "class": 3
       },
       {
-        "name": "Chirka",
+        "name": "Nelantino",
         "count": 19,
         "level": 70,
-        "race": 6,
-        "class": 11
+        "race": 5,
+        "class": 5
       },
       {
-        "name": "Itdis",
+        "name": "Maris",
         "count": 19,
-        "level": 70,
+        "level": 66,
         "race": 10,
-        "class": 9
+        "class": 3
       },
       {
-        "name": "Azaleane",
+        "name": "Gelansel",
         "count": 19,
-        "level": 67,
+        "level": 69,
         "race": 10,
         "class": 2
       },
       {
-        "name": "Fule",
+        "name": "Bonrac",
         "count": 19,
-        "level": 64,
+        "level": 70,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Gilsaup",
+        "count": 19,
+        "level": 70,
         "race": 6,
-        "class": 3
+        "class": 1
+      },
+      {
+        "name": "Kydine",
+        "count": 19,
+        "level": 65,
+        "race": 10,
+        "class": 8
+      },
+      {
+        "name": "Barerze",
+        "count": 19,
+        "level": 69,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Nabawhelok",
+        "count": 19,
+        "level": 62,
+        "race": 6,
+        "class": 7
       }
     ],
     "bot_distribution": [
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Emethea",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 1
-      },
-      {
-        "name": "Zolana",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Duncanon",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Omolubik",
+        "name": "Gilsaup",
         "count": 4,
         "level": 70,
         "race": 6,
         "class": 1
       },
       {
-        "name": "Dryro",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 8
-      },
-      {
-        "name": "Aumiis",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Raphanda",
+        "name": "Sabianey",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 4
+        "class": 2
       },
       {
-        "name": "Mydrarus",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 3
-      },
-      {
-        "name": "Becalanea",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 5
-      },
-      {
-        "name": "Sexonash",
+        "name": "Eyan",
         "count": 4,
         "level": 70,
         "race": 8,
-        "class": 4
+        "class": 5
+      },
+      {
+        "name": "Faldron",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 11
+      },
+      {
+        "name": "Masca",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Tetishu",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Elerette",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 1
+      },
+      {
+        "name": "Talan",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 11
+      },
+      {
+        "name": "Hafstraa",
+        "count": 4,
+        "level": 70,
+        "race": 11,
+        "class": 5
+      },
+      {
+        "name": "Zeadrea",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 3
       }
     ],
     "pets": [],
