@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Gornul",
+        "name": "Matzen",
         "count": 19,
-        "level": 61,
-        "race": 2,
-        "class": 3
+        "level": 65,
+        "race": 10,
+        "class": 2
       },
       {
-        "name": "Dariustan",
+        "name": "Tuzu",
         "count": 19,
         "level": 70,
-        "race": 5,
-        "class": 4
+        "race": 8,
+        "class": 7
       },
       {
-        "name": "Dandern",
+        "name": "Hinlee",
         "count": 19,
         "level": 66,
+        "race": 6,
+        "class": 7
+      },
+      {
+        "name": "Otharago",
+        "count": 19,
+        "level": 68,
         "race": 5,
         "class": 5
       },
       {
-        "name": "Chailtsen",
+        "name": "Cameronso",
         "count": 19,
-        "level": 60,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Zaldori",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Berond",
-        "count": 19,
-        "level": 70,
+        "level": 68,
         "race": 5,
-        "class": 9
+        "class": 5
       },
       {
-        "name": "Kalinise",
+        "name": "Omolubik",
         "count": 19,
-        "level": 69,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Baus",
+        "count": 19,
+        "level": 70,
+        "race": 10,
+        "class": 3
+      },
+      {
+        "name": "Shamgy",
+        "count": 19,
+        "level": 70,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Vyas",
+        "count": 19,
+        "level": 65,
         "race": 10,
         "class": 2
       },
       {
-        "name": "Cilangedew",
+        "name": "Lopan",
         "count": 19,
-        "level": 65,
+        "level": 61,
         "race": 6,
         "class": 11
-      },
-      {
-        "name": "Fizodes",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Emeniel",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 8
       }
     ],
     "bot_distribution": [
@@ -17359,73 +17359,73 @@
     ],
     "mounts": [
       {
-        "name": "Ogtison",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 3
-      },
-      {
-        "name": "Thoallus",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 1
-      },
-      {
-        "name": "Hatith",
+        "name": "Itdis",
         "count": 4,
         "level": 70,
         "race": 10,
-        "class": 2
+        "class": 9
       },
       {
-        "name": "Pheret",
+        "name": "Ittlos",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Lotheas",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 4
+      },
+      {
+        "name": "Marini",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 9
+      },
+      {
+        "name": "Toravun",
         "count": 4,
         "level": 70,
         "race": 11,
-        "class": 1
+        "class": 7
       },
       {
-        "name": "Kritan",
+        "name": "Verinerina",
         "count": 4,
         "level": 70,
         "race": 5,
         "class": 4
       },
       {
-        "name": "Stanora",
+        "name": "Inke",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 8
+        "race": 7,
+        "class": 9
       },
       {
-        "name": "Jolara",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Elinata",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 8
-      },
-      {
-        "name": "Jidreath",
+        "name": "Ryseam",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 3
+        "class": 1
       },
       {
-        "name": "Baus",
+        "name": "Doshkiak",
         "count": 4,
         "level": 70,
-        "race": 10,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Idaron",
+        "count": 4,
+        "level": 70,
+        "race": 4,
         "class": 3
       }
     ],
