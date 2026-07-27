@@ -15216,18 +15216,18 @@
         "class": 9
       },
       {
-        "name": "Kegyl",
-        "count": 10,
-        "level": 42,
-        "race": 4,
-        "class": 1
-      },
-      {
         "name": "Lilya",
         "count": 10,
         "level": 70,
         "race": 4,
         "class": 3
+      },
+      {
+        "name": "Kegyl",
+        "count": 10,
+        "level": 42,
+        "race": 4,
+        "class": 1
       },
       {
         "name": "Idaron",
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Hishiap",
-        "count": 19,
-        "level": 65,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Ellicia",
+        "name": "Kritan",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 1
+        "class": 4
       },
       {
-        "name": "Celoerenis",
+        "name": "Wasutuku",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Nelantino",
         "count": 19,
         "level": 70,
-        "race": 10,
-        "class": 2
+        "race": 5,
+        "class": 5
       },
       {
-        "name": "Nalina",
+        "name": "Kydine",
         "count": 19,
         "level": 65,
+        "race": 10,
+        "class": 8
+      },
+      {
+        "name": "Maris",
+        "count": 19,
+        "level": 66,
         "race": 10,
         "class": 3
       },
       {
-        "name": "Laesheh",
+        "name": "Gelansel",
         "count": 19,
-        "level": 66,
-        "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Tetishu",
-        "count": 19,
-        "level": 70,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Dutheas",
-        "count": 19,
-        "level": 67,
+        "level": 69,
         "race": 10,
         "class": 2
       },
       {
-        "name": "Cleander",
+        "name": "Bonrac",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 9
+        "class": 5
       },
       {
-        "name": "Enauch",
+        "name": "Gilsaup",
         "count": 19,
         "level": 70,
         "race": 6,
-        "class": 11
+        "class": 1
       },
       {
-        "name": "Yolandy",
+        "name": "Ulgo",
         "count": 19,
-        "level": 70,
-        "race": 5,
+        "level": 63,
+        "race": 6,
         "class": 1
+      },
+      {
+        "name": "Barerze",
+        "count": 19,
+        "level": 69,
+        "race": 2,
+        "class": 7
       }
     ],
     "bot_distribution": [
@@ -17359,73 +17359,73 @@
     ],
     "mounts": [
       {
-        "name": "Elbamos",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Akvar",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 5
-      },
-      {
-        "name": "Kynklosh",
-        "count": 4,
-        "level": 70,
-        "race": 7,
-        "class": 9
-      },
-      {
-        "name": "Vivialarin",
+        "name": "Faldron",
         "count": 4,
         "level": 70,
         "race": 4,
-        "class": 3
+        "class": 11
       },
       {
-        "name": "Baclae",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 9
-      },
-      {
-        "name": "Gabrick",
+        "name": "Masca",
         "count": 4,
         "level": 70,
         "race": 1,
-        "class": 9
+        "class": 2
       },
       {
-        "name": "Damelicia",
+        "name": "Tetishu",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 8
+        "race": 6,
+        "class": 11
       },
       {
-        "name": "Leecite",
+        "name": "Elerette",
         "count": 4,
         "level": 70,
-        "race": 7,
-        "class": 4
+        "race": 1,
+        "class": 1
       },
       {
-        "name": "Valuett",
+        "name": "Gilsaup",
         "count": 4,
         "level": 70,
-        "race": 11,
-        "class": 7
+        "race": 6,
+        "class": 1
       },
       {
-        "name": "Tuzu",
+        "name": "Sabianey",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Eyan",
         "count": 4,
         "level": 70,
         "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Acaammetho",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Rydiir",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 4
+      },
+      {
+        "name": "Cenar",
+        "count": 4,
+        "level": 70,
+        "race": 11,
         "class": 7
       }
     ],
