@@ -15237,6 +15237,13 @@
         "class": 3
       },
       {
+        "name": "Tohketer",
+        "count": 8,
+        "level": 36,
+        "race": 2,
+        "class": 1
+      },
+      {
         "name": "Bellata",
         "count": 8,
         "level": 70,
@@ -15258,11 +15265,11 @@
         "class": 11
       },
       {
-        "name": "Tohketer",
-        "count": 8,
-        "level": 36,
-        "race": 2,
-        "class": 1
+        "name": "Deywae",
+        "count": 7,
+        "level": 60,
+        "race": 10,
+        "class": 2
       },
       {
         "name": "Kedraes",
@@ -15270,13 +15277,6 @@
         "level": 6,
         "race": 4,
         "class": 4
-      },
-      {
-        "name": "Deywae",
-        "count": 7,
-        "level": 60,
-        "race": 10,
-        "class": 2
       }
     ],
     "pvp_hks": [],
@@ -15284,74 +15284,74 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
-        "name": "Aralastor",
+        "name": "Kritan",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 8
+        "class": 4
       },
       {
-        "name": "Marini",
+        "name": "Wasutuku",
+        "count": 19,
+        "level": 69,
+        "race": 6,
+        "class": 3
+      },
+      {
+        "name": "Nelantino",
         "count": 19,
         "level": 70,
         "race": 5,
-        "class": 9
+        "class": 5
       },
       {
-        "name": "Deywae",
+        "name": "Maris",
         "count": 19,
-        "level": 60,
+        "level": 66,
+        "race": 10,
+        "class": 3
+      },
+      {
+        "name": "Gelansel",
+        "count": 19,
+        "level": 69,
         "race": 10,
         "class": 2
       },
       {
-        "name": "Hezkir",
+        "name": "Bonrac",
         "count": 19,
-        "level": 68,
-        "race": 8,
+        "level": 70,
+        "race": 5,
         "class": 5
       },
       {
-        "name": "Tehre",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 4
-      },
-      {
-        "name": "Zedrel",
-        "count": 19,
-        "level": 65,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Ogtison",
-        "count": 19,
-        "level": 70,
-        "race": 8,
-        "class": 3
-      },
-      {
-        "name": "Kormi",
+        "name": "Gilsaup",
         "count": 19,
         "level": 70,
         "race": 6,
         "class": 1
       },
       {
-        "name": "Zovtumm",
+        "name": "Kydine",
         "count": 19,
-        "level": 70,
-        "race": 2,
-        "class": 9
+        "level": 65,
+        "race": 10,
+        "class": 8
       },
       {
-        "name": "Velenmin",
+        "name": "Barerze",
         "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 3
+        "level": 69,
+        "race": 2,
+        "class": 7
+      },
+      {
+        "name": "Nabawhelok",
+        "count": 19,
+        "level": 62,
+        "race": 6,
+        "class": 7
       }
     ],
     "bot_distribution": [
@@ -17359,74 +17359,74 @@
     ],
     "mounts": [
       {
-        "name": "Adricharan",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 9
-      },
-      {
-        "name": "Solatea",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 4
-      },
-      {
-        "name": "Velenmin",
-        "count": 4,
-        "level": 70,
-        "race": 10,
-        "class": 3
-      },
-      {
-        "name": "Kaelando",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 1
-      },
-      {
-        "name": "Larand",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 3
-      },
-      {
-        "name": "Seriastra",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 4
-      },
-      {
-        "name": "Calvian",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 5
-      },
-      {
-        "name": "Aralastor",
-        "count": 4,
-        "level": 70,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Sphon",
+        "name": "Sabianey",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Vesteria",
+        "name": "Eyan",
         "count": 4,
         "level": 70,
-        "race": 5,
-        "class": 9
+        "race": 8,
+        "class": 5
+      },
+      {
+        "name": "Faldron",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 11
+      },
+      {
+        "name": "Masca",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 2
+      },
+      {
+        "name": "Tetishu",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Elerette",
+        "count": 4,
+        "level": 70,
+        "race": 1,
+        "class": 1
+      },
+      {
+        "name": "Gilsaup",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 1
+      },
+      {
+        "name": "Bohtonlu",
+        "count": 4,
+        "level": 70,
+        "race": 3,
+        "class": 3
+      },
+      {
+        "name": "Acaammetho",
+        "count": 4,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Rydiir",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 4
       }
     ],
     "pets": [],
