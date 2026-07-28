@@ -4579,18 +4579,18 @@
     "achievements": [],
     "quests": [
       {
-        "name": "Xorr",
-        "count": 2,
-        "level": 1,
-        "race": 1,
-        "class": 1
-      },
-      {
         "name": "Eliphas",
         "count": 2,
         "level": 2,
         "race": 4,
         "class": 3
+      },
+      {
+        "name": "Xorr",
+        "count": 2,
+        "level": 1,
+        "race": 1,
+        "class": 1
       }
     ],
     "pvp_hks": [],
