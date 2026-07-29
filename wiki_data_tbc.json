@@ -15284,6 +15284,62 @@
     "ah_merchants": [],
     "exalted_rep": [
       {
+        "name": "Galaster",
+        "count": 19,
+        "level": 70,
+        "race": 5,
+        "class": 4
+      },
+      {
+        "name": "Tisotti",
+        "count": 19,
+        "level": 63,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Shawgothit",
+        "count": 19,
+        "level": 70,
+        "race": 2,
+        "class": 9
+      },
+      {
+        "name": "Deanderio",
+        "count": 19,
+        "level": 62,
+        "race": 5,
+        "class": 5
+      },
+      {
+        "name": "Hus",
+        "count": 19,
+        "level": 63,
+        "race": 2,
+        "class": 1
+      },
+      {
+        "name": "Dingocam",
+        "count": 19,
+        "level": 61,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Shugsqirre",
+        "count": 19,
+        "level": 70,
+        "race": 6,
+        "class": 11
+      },
+      {
+        "name": "Gajoth",
+        "count": 19,
+        "level": 70,
+        "race": 8,
+        "class": 8
+      },
+      {
         "name": "Emerianne",
         "count": 19,
         "level": 70,
@@ -15296,62 +15352,6 @@
         "level": 67,
         "race": 10,
         "class": 2
-      },
-      {
-        "name": "Hatith",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 2
-      },
-      {
-        "name": "Yurine",
-        "count": 19,
-        "level": 60,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Ucamo",
-        "count": 19,
-        "level": 69,
-        "race": 6,
-        "class": 11
-      },
-      {
-        "name": "Varris",
-        "count": 19,
-        "level": 69,
-        "race": 10,
-        "class": 5
-      },
-      {
-        "name": "Leandrin",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
-      },
-      {
-        "name": "Nerene",
-        "count": 19,
-        "level": 67,
-        "race": 5,
-        "class": 8
-      },
-      {
-        "name": "Lotheas",
-        "count": 19,
-        "level": 70,
-        "race": 10,
-        "class": 4
-      },
-      {
-        "name": "Emerie",
-        "count": 19,
-        "level": 70,
-        "race": 5,
-        "class": 4
       }
     ],
     "bot_distribution": [
@@ -17359,73 +17359,73 @@
     ],
     "mounts": [
       {
-        "name": "Emeranu",
+        "name": "Glutiblirn",
+        "count": 4,
+        "level": 70,
+        "race": 7,
+        "class": 9
+      },
+      {
+        "name": "Ralthar",
+        "count": 4,
+        "level": 70,
+        "race": 5,
+        "class": 1
+      },
+      {
+        "name": "Traagshijin",
+        "count": 4,
+        "level": 70,
+        "race": 8,
+        "class": 8
+      },
+      {
+        "name": "Elvedon",
+        "count": 4,
+        "level": 70,
+        "race": 10,
+        "class": 8
+      },
+      {
+        "name": "Bellata",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 1
       },
       {
-        "name": "Ugdol",
-        "count": 4,
-        "level": 70,
-        "race": 3,
-        "class": 2
-      },
-      {
-        "name": "Inenei",
-        "count": 4,
-        "level": 70,
-        "race": 11,
-        "class": 7
-      },
-      {
-        "name": "Amaris",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 2
-      },
-      {
-        "name": "Amase",
+        "name": "Lilya",
         "count": 4,
         "level": 70,
         "race": 4,
         "class": 3
       },
       {
-        "name": "Larane",
-        "count": 4,
-        "level": 70,
-        "race": 1,
-        "class": 8
-      },
-      {
-        "name": "Hulzuth",
-        "count": 4,
-        "level": 70,
-        "race": 8,
-        "class": 5
-      },
-      {
-        "name": "Saelor",
-        "count": 4,
-        "level": 70,
-        "race": 4,
-        "class": 11
-      },
-      {
-        "name": "Velineve",
+        "name": "Stalando",
         "count": 4,
         "level": 70,
         "race": 1,
         "class": 2
       },
       {
-        "name": "Emerie",
+        "name": "Sahath",
         "count": 4,
         "level": 70,
-        "race": 5,
+        "race": 8,
+        "class": 3
+      },
+      {
+        "name": "Vivishia",
+        "count": 4,
+        "level": 70,
+        "race": 4,
+        "class": 3
+      },
+      {
+        "name": "Auroni",
+        "count": 4,
+        "level": 70,
+        "race": 10,
         "class": 4
       }
     ],
