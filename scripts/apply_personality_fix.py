@@ -1,6 +1,5 @@
 import subprocess
 import os
-import sys
 
 # Server configuration from AGENTS.md
 SSH_KEY = os.getenv("SSH_KEY_PATH", r"C:\Users\coyof\.ssh\id_ed25519")
