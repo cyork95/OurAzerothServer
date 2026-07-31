@@ -1658,7 +1658,8 @@ if (isset($_GET['action'])) {
             
             // Mail to character if name provided
             if (!empty($char_name)) {
-                $r = sendSoapCommand('send mail ' . $char_name . ' "Custom Item Forged" "Here is your custom forged item!" ' . $new_entry);
+                $safe_char_name = '"' . addcslashes($char_name, '"\\') . '"';
+                $r = sendSoapCommand('send mail ' . $safe_char_name . ' "Custom Item Forged" "Here is your custom forged item!" ' . $new_entry);
                 $output .= "\\nMailed to $char_name: " . $r['output'];
             }
 
