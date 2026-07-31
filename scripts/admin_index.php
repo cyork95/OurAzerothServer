@@ -1398,7 +1398,13 @@ if (isset($_GET['action'])) {
         if ($cmd === 'summon') $soapCmd = 'bot summon';
         elseif ($cmd === 'dismiss') $soapCmd = 'bot remove';
         elseif ($cmd === 'gear') $soapCmd = 'bot gear';
-        elseif ($cmd === 'add') $soapCmd = 'bot add ' . $class;
+        elseif ($cmd === 'add') {
+            if (!preg_match('/^[a-zA-Z]+$/', $class)) {
+                echo json_encode(array('success' => false, 'output' => 'Invalid class format.'));
+                exit;
+            }
+            $soapCmd = 'bot add ' . $class;
+        }
 
         if (empty($soapCmd)) {
             echo json_encode(array('success' => false, 'output' => 'Invalid bot command.'));
