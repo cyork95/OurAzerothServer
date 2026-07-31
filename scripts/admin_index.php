@@ -1423,9 +1423,14 @@ if (isset($_GET['action'])) {
             exit;
         }
 
-        // Clean subject and body from double quotes to prevent SOAP syntax error
-        $subject = str_replace('"', "'", $subject);
-        $body = str_replace('"', "'", $body);
+        if (!ctype_alnum($recipient)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid recipient name.'));
+            exit;
+        }
+
+        // Escape subject and body to prevent SOAP command injection
+        $subject = addcslashes($subject, '"\\');
+        $body = addcslashes($body, '"\\');
 
         $outputs = array();
         
@@ -1477,6 +1482,11 @@ if (isset($_GET['action'])) {
             exit;
         }
 
+        if (!ctype_alnum($name)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid character name.'));
+            exit;
+        }
+
         $commands = array();
         if ($package === 'bags') {
             // Send 4x Netherweave Bags (ID: 21841)
@@ -1520,6 +1530,11 @@ if (isset($_GET['action'])) {
 
         if (empty($name)) {
             echo json_encode(array('success' => false, 'output' => 'No character name provided.'));
+            exit;
+        }
+
+        if (!ctype_alnum($name)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid character name.'));
             exit;
         }
 
