@@ -3,10 +3,10 @@ import json
 import os
 
 db_config = {
-    'host': 'localhost',
-    'user': 'acore',
-    'password': 'acore',
-    'charset': 'utf8mb4'
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'user': os.getenv('DB_USER', 'acore'),
+    'password': os.getenv('DB_PASS', 'acore'),
+    'charset': os.getenv('DB_CHARSET', 'utf8mb4')
 }
 
 class DateTimeEncoder(json.JSONEncoder):
