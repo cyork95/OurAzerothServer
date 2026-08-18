@@ -1,5 +1,6 @@
 import mysql.connector
 import json
+import os
 
 db_config = {
     'host': os.getenv('DB_HOST', 'localhost'),
