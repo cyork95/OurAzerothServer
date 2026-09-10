@@ -6,7 +6,26 @@ import os
 # Ensure the root directory is in the python path to import update_wiki
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from update_wiki import run_cmd, update_wiki
+from update_wiki import run_cmd, update_wiki, get_config
+
+def test_get_config_success():
+    env_vars = {
+        "SSH_KEY_PATH": "/path/to/key",
+        "SERVER_IP": "192.168.1.1",
+        "SERVER_USER": "admin"
+    }
+    with patch.dict(os.environ, env_vars, clear=True):
+        ssh_key, target_ip, user = get_config()
+        assert ssh_key == "/path/to/key"
+        assert target_ip == "192.168.1.1"
+        assert user == "admin"
+
+def test_get_config_missing_env():
+    with patch.dict(os.environ, {}, clear=True):
+        ssh_key, target_ip, user = get_config()
+        assert ssh_key is None
+        assert target_ip is None
+        assert user is None
 
 def test_run_cmd():
     with patch('subprocess.run') as mock_run:
