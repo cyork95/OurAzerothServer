@@ -26,6 +26,9 @@ function updateConfigOption($path, $regex, $replacement) {
 
 // Helper to send SOAP Remote Access Command
 function sendSoapCommand($command) {
+    if (preg_match('/[\r\n\0]/', $command)) {
+        return array('success' => false, 'output' => 'Invalid command format.');
+    }
     $oldTimeout = ini_get('default_socket_timeout');
     try {
         ini_set('default_socket_timeout', 3);
@@ -53,9 +56,13 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
     if ($action === 'console') {
-        $cmd = $_POST['command'] ?? '';
+        $cmd = trim($_POST['command'] ?? '');
         if (empty($cmd)) {
             echo json_encode(array('success' => false, 'output' => 'Command cannot be empty.'));
+            exit;
+        }
+        if (preg_match('/[\r\n\0;]/', $cmd) || preg_match('/[\x00-\x1F\x7F]/', $cmd)) {
+            echo json_encode(array('success' => false, 'output' => 'Invalid command format.'));
             exit;
         }
         $res = sendSoapCommand($cmd);
