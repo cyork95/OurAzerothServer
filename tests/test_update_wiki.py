@@ -27,6 +27,28 @@ def test_get_config_missing_env():
         assert target_ip is None
         assert user is None
 
+def test_get_config_partial_env():
+    env_vars = {
+        "SSH_KEY_PATH": "/path/to/key"
+    }
+    with patch.dict(os.environ, env_vars, clear=True):
+        ssh_key, target_ip, user = get_config()
+        assert ssh_key == "/path/to/key"
+        assert target_ip is None
+        assert user is None
+
+def test_get_config_empty_strings():
+    env_vars = {
+        "SSH_KEY_PATH": "",
+        "SERVER_IP": "",
+        "SERVER_USER": ""
+    }
+    with patch.dict(os.environ, env_vars, clear=True):
+        ssh_key, target_ip, user = get_config()
+        assert ssh_key == ""
+        assert target_ip == ""
+        assert user == ""
+
 def test_run_cmd():
     with patch('subprocess.run') as mock_run:
         mock_res = MagicMock()
